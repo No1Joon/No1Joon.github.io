@@ -21,9 +21,30 @@
     </div>
   </header>
 
-  <main class="site-main">
-    {{ content }}
-  </main>
+  <div class="site-body">
+    <aside class="site-sidebar">
+      <nav class="sidebar-nav">
+        <div class="sidebar-section">
+          <span class="sidebar-label">Posts</span>
+          {% assign sorted_posts = site.posts | sort: 'category' %}
+          {% assign current_category = "" %}
+          {% for post in sorted_posts %}
+            {% if post.category != current_category %}
+              {% assign current_category = post.category %}
+              <div class="sidebar-category">{{ post.category }}</div>
+            {% endif %}
+            <a href="{{ post.url | relative_url }}" class="sidebar-link{% if page.url == post.url %} active{% endif %}">
+              {{ post.title | split: " — " | first }}
+            </a>
+          {% endfor %}
+        </div>
+      </nav>
+    </aside>
+
+    <main class="site-main">
+      {{ content }}
+    </main>
+  </div>
 
   <footer class="site-footer">
     <p>© {{ 'now' | date: "%Y" }} No1Joon — Built with Jekyll & GitHub Pages</p>
