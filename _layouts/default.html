@@ -13,7 +13,12 @@
 <body>
   <header class="site-header">
     <div class="inner">
-      <a href="{{ '/' | relative_url }}" class="site-title">No1Joon<span>.dev</span></a>
+      <div class="header-left">
+        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+          <span></span><span></span><span></span>
+        </button>
+        <a href="{{ '/' | relative_url }}" class="site-title">No1Joon<span>.dev</span></a>
+      </div>
       <nav>
         <a href="{{ '/' | relative_url }}">Posts</a>
         <a href="https://github.com/No1Joon" target="_blank">GitHub</a>
@@ -21,8 +26,8 @@
     </div>
   </header>
 
-  <div class="site-body">
-    <aside class="site-sidebar">
+  <div class="site-body" id="siteBody">
+    <aside class="site-sidebar" id="siteSidebar">
       <nav class="sidebar-nav">
         <div class="sidebar-section">
           <span class="sidebar-label">Posts</span>
@@ -49,5 +54,35 @@
   <footer class="site-footer">
     <p>© {{ 'now' | date: "%Y" }} No1Joon — Built with Jekyll & GitHub Pages</p>
   </footer>
+
+  <script>
+    const toggle = document.getElementById('sidebarToggle');
+    const body = document.getElementById('siteBody');
+    const sidebar = document.getElementById('siteSidebar');
+    const STORAGE_KEY = 'sidebar-open';
+
+    const isOpen = localStorage.getItem(STORAGE_KEY) !== 'false';
+    if (!isOpen) collapse();
+
+    toggle.addEventListener('click', () => {
+      if (body.classList.contains('sidebar-closed')) {
+        expand();
+        localStorage.setItem(STORAGE_KEY, 'true');
+      } else {
+        collapse();
+        localStorage.setItem(STORAGE_KEY, 'false');
+      }
+    });
+
+    function expand() {
+      body.classList.remove('sidebar-closed');
+      toggle.classList.remove('collapsed');
+    }
+
+    function collapse() {
+      body.classList.add('sidebar-closed');
+      toggle.classList.add('collapsed');
+    }
+  </script>
 </body>
 </html>
