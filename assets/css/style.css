@@ -175,8 +175,7 @@ nav a:hover { color: var(--text); }
 .site-main {
   flex: 1;
   min-width: 0;
-  max-width: 900px;
-  padding: 2.5rem 2.5rem 4rem;
+  padding: 2.5rem 1.5rem 4rem;
 }
 
 .site-footer {
@@ -328,7 +327,7 @@ nav a:hover { color: var(--text); }
 .badge-devtools  { background: #1f1f1f; color: #8B949E; border: 1px solid #30363D; }
 
 /* ── Post Content ── */
-.post-content { max-width: 720px; }
+.post-content { max-width: 100%; }
 
 .post-content h2 {
   font-size: 1.25rem;
