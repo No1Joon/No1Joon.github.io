@@ -1,123 +1,269 @@
 ---
-title: "하네스 엔지니어링 2단계 — 환경 구성 및 Delegate 설치"
-description: Harness 계정 설정부터 Kubernetes Delegate 설치까지 실전 가이드입니다.
+title: "Harness Delegate — 인프라와 플랫폼을 연결하는 에이전트 설치 가이드"
+description: Harness Delegate의 동작 원리를 이해하고, Kubernetes 환경에 Helm으로 설치하는 전 과정을 다룹니다.
 date: 2026-04-08
 order: 2
 category: Harness
-tags: [harness, delegate, kubernetes, setup]
+tags: [harness, delegate, kubernetes, helm, connector, secret-manager]
 ---
 
-## 사전 준비
+## Delegate란 무엇인가
 
-| 항목 | 권장 사양 |
+Harness는 SaaS 플랫폼이지만, 실제 배포 명령은 사용자 인프라 안에서 실행됩니다. 이 역할을 하는 것이 **Delegate**입니다.
+
+Delegate는 Kubernetes Pod 또는 VM에 설치되는 경량 에이전트로, Harness 플랫폼과 **아웃바운드 HTTPS 연결**만 유지합니다. 인바운드 포트를 열 필요가 없어 네트워크 보안 정책을 그대로 유지할 수 있습니다.
+
+```
+[Harness Platform] ←── polling ──── [Delegate Pod]
+                                          │
+                                    ┌─────┴──────┐
+                                  kubectl       helm
+                                    │             │
+                              [K8s API]    [Helm Charts]
+```
+
+Delegate가 Harness로부터 태스크를 받으면, 실제 인프라에 kubectl·helm·terraform 등의 명령을 실행하고 결과를 다시 플랫폼으로 전송합니다.
+
+## 사전 요구사항
+
+| 항목 | 요구 사양 |
 |------|-----------|
-| Kubernetes 클러스터 | 1.24+ |
+| Kubernetes | 1.24 이상 |
 | Helm | 3.x |
-| CPU / Memory | 0.5 vCPU / 768Mi 이상 |
-| 아웃바운드 인터넷 | `app.harness.io` 443 포트 허용 |
+| Delegate Pod CPU | 최소 0.5 vCPU, 권장 1 vCPU |
+| Delegate Pod Memory | 최소 768Mi, 권장 2Gi |
+| 아웃바운드 연결 | `app.harness.io:443`, `storage.googleapis.com:443` |
+| 클러스터 권한 | `cluster-admin` 또는 커스텀 RBAC |
 
-## 1. Harness 계정 생성
+## 1단계 — Harness 계정 준비
 
-`app.harness.io` 에서 무료 플랜으로 시작할 수 있습니다.
+`app.harness.io` 에서 계정을 생성합니다. Free Plan은 제한이 있지만 PoC에는 충분합니다.
 
-- **Account ID** — 설정 > Overview에서 확인
-- **Account Secret** — Delegate 설치 시 사용
+설치에 필요한 두 가지 값을 미리 확인합니다.
 
-## 2. Connector 등록
+- **Account ID**: `Account Settings > Overview`
+- **Delegate Token**: `Account Settings > Delegates > Tokens > New Token`
+
+<div class="callout why">
+  <div class="callout-title">Token vs Account Secret</div>
+  Delegate Token은 Delegate 전용 인증 토큰입니다. Account Secret과 별개로 관리되며, Delegate별로 다른 토큰을 발급해 권한을 분리할 수 있습니다. 프로덕션 환경과 스테이징 환경의 Delegate는 토큰을 분리하는 것을 권장합니다.
+</div>
+
+## 2단계 — Kubernetes Delegate 설치
+
+### Helm 레포지토리 추가
+
+```bash
+helm repo add harness https://app.harness.io/storage/harness-download/harness-helm-charts/
+helm repo update
+```
+
+### Delegate 설치
+
+```bash
+helm install harness-delegate harness/harness-delegate-ng \
+  --namespace harness-delegate \
+  --create-namespace \
+  --set delegateName=k8s-prod-delegate \
+  --set accountId=YOUR_ACCOUNT_ID \
+  --set delegateToken=YOUR_DELEGATE_TOKEN \
+  --set managerEndpoint=https://app.harness.io \
+  --set delegateDockerImage=harness/delegate:24.10.84200 \
+  --set replicas=2 \
+  --set upgrader.enabled=true
+```
+
+- `replicas=2`: Delegate HA 구성. 최소 2개 이상을 권장합니다.
+- `upgrader.enabled=true`: Delegate 자동 업그레이드 활성화.
+
+### 설치 확인
+
+```bash
+kubectl get pods -n harness-delegate
+
+# 정상 출력
+NAME                                    READY   STATUS    RESTARTS   AGE
+k8s-prod-delegate-7d9f8b6c4-xk2jm      1/1     Running   0          2m
+k8s-prod-delegate-7d9f8b6c4-zp8nq      1/1     Running   0          2m
+```
+
+Harness UI에서도 확인합니다: `Account Settings > Delegates` 에서 `CONNECTED` 상태인지 확인합니다.
+
+### Delegate RBAC 커스터마이징
+
+기본 설치는 `cluster-admin` 권한을 사용합니다. 최소 권한 원칙을 따르려면 별도 ClusterRole을 생성합니다.
+
+```yaml
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: harness-delegate-role
+rules:
+  - apiGroups: ["*"]
+    resources: ["deployments", "services", "configmaps", "secrets",
+                "pods", "replicasets", "statefulsets", "daemonsets",
+                "ingresses", "horizontalpodautoscalers"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+  - apiGroups: ["apps"]
+    resources: ["deployments", "replicasets"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+```
+
+## 3단계 — Connector 등록
+
+Connector는 외부 서비스와의 인증 정보를 저장합니다. 한 번 등록하면 모든 파이프라인에서 재사용합니다.
 
 ### GitHub Connector
 
 ```yaml
 connector:
   name: github-main
+  identifier: github_main
   type: Github
   spec:
     url: https://github.com/your-org
+    connectionType: Account
     authentication:
       type: Http
       spec:
         type: UsernameToken
         spec:
-          username: your-username
-          tokenRef: github_pat_secret
+          username: your-github-username
+          tokenRef: account.github_pat
+    apiAccess:
+      type: Token
+      spec:
+        tokenRef: account.github_pat
 ```
 
-<div class="callout why">
-  <div class="callout-title">Why</div>
-  PAT(Personal Access Token)는 Harness Secret Manager에 저장합니다. 파이프라인 YAML에 토큰을 직접 쓰지 않아도 됩니다.
-</div>
+`tokenRef` 는 Secret Manager에 저장된 시크릿을 참조합니다. YAML에 토큰을 직접 쓰지 않습니다.
 
-### GCP Connector
+### GCP Connector (Service Account Key 방식)
 
 ```yaml
 connector:
   name: gcp-prod
+  identifier: gcp_prod
   type: Gcp
   spec:
     credential:
       type: ManualConfig
       spec:
-        secretKeyRef: gcp_sa_key
+        secretKeyRef: account.gcp_sa_key_prod
 ```
 
-## 3. Kubernetes Delegate 설치
+### Artifact Registry Connector
 
-### Helm으로 설치
+GCP Artifact Registry에서 이미지를 pull/push하는 Connector입니다.
 
-```bash
-helm repo add harness https://app.harness.io/storage/harness-download/harness-helm-charts/
-helm repo update
-
-helm install harness-delegate harness/harness-delegate-ng \
-  --namespace harness-delegate \
-  --create-namespace \
-  --set delegateName=k8s-delegate \
-  --set accountId=YOUR_ACCOUNT_ID \
-  --set delegateToken=YOUR_DELEGATE_TOKEN \
-  --set managerEndpoint=https://app.harness.io \
-  --set delegateDockerImage=harness/delegate:latest \
-  --set replicas=1
+```yaml
+connector:
+  name: gar-prod
+  identifier: gar_prod
+  type: GcpContainerRegistry
+  spec:
+    url: asia-northeast3-docker.pkg.dev
+    credentialType: ManualConfig
+    manualConfig:
+      usernameRef: account.gar_username
+      passwordRef: account.gcp_sa_key_prod
 ```
 
-### Delegate 상태 확인
+## 4단계 — Secret Manager 설정
 
-```bash
-kubectl get pods -n harness-delegate
+Harness는 기본 내장 Secret Manager를 제공하지만, 프로덕션에서는 GCP Secret Manager 또는 HashiCorp Vault 연동을 권장합니다.
 
-# 정상 출력 예시
-NAME                               READY   STATUS    RESTARTS
-harness-delegate-xxx-yyy           1/1     Running   0
-```
-
-Harness UI에서 **Account Settings > Delegates** 로 이동하면 연결된 Delegate 목록과 상태를 확인할 수 있습니다.
-
-## 4. Secret Manager 구성
-
-Harness는 기본으로 내장 Secret Manager를 제공하지만, GCP Secret Manager 또는 HashiCorp Vault와 연동할 수 있습니다.
+### GCP Secret Manager 연동
 
 ```yaml
 secretManager:
-  name: gcp-secret-manager
+  name: gcp-secret-manager-prod
+  identifier: gcp_sm_prod
   type: GcpSecretManager
   spec:
-    credentialsRef: gcp-connector
-    projectId: your-gcp-project
+    credentialsRef: account.gcp_prod
+    projectId: your-gcp-project-id
+    isDefault: true
 ```
 
-## 5. 환경(Environment) 및 인프라 정의
+`isDefault: true` 로 설정하면 새로 생성하는 모든 시크릿이 이 Secret Manager에 저장됩니다.
+
+### 시크릿 등록 예시
+
+```yaml
+secret:
+  name: github-pat
+  identifier: github_pat
+  type: SecretText
+  spec:
+    secretManagerIdentifier: gcp_sm_prod
+    valueType: Reference
+    value: projects/your-project/secrets/github-pat/versions/latest
+```
+
+## 5단계 — Environment와 Infrastructure 정의
+
+배포 대상 환경을 정의합니다. Environment는 논리적 환경이고, Infrastructure는 실제 클러스터 연결 정보입니다.
 
 ```yaml
 environment:
   name: production
+  identifier: production
   type: Production
 
-infrastructure:
+---
+
+infrastructureDefinition:
   name: k8s-prod-cluster
-  type: KubernetesDirect
+  identifier: k8s_prod_cluster
+  environmentRef: production
+  deploymentType: Kubernetes
   spec:
-    connectorRef: gcp-prod
-    namespace: production
-    releaseName: release-<+INFRA_KEY>
+    type: KubernetesDirect
+    spec:
+      connectorRef: account.gcp_prod
+      namespace: production
+      releaseName: release-<+INFRA_KEY>
 ```
 
-다음 단계에서는 이 환경 위에 실제 CI/CD 파이프라인을 구축합니다.
+`<+INFRA_KEY>` 는 Harness가 자동 생성하는 인프라 식별자로, 같은 클러스터에 여러 서비스를 배포할 때 릴리즈 이름 충돌을 방지합니다.
+
+## Delegate 운영 팁
+
+### 버전 관리
+
+Harness Platform과 Delegate 간 버전 차이는 최대 **3 minor 버전** 이내로 유지해야 합니다. `upgrader.enabled=true` 설정으로 자동 업그레이드를 활성화하거나, 주기적으로 수동 업그레이드합니다.
+
+```bash
+# 현재 Delegate 버전 확인
+kubectl exec -n harness-delegate \
+  $(kubectl get pod -n harness-delegate -l app=harness-delegate -o jsonpath='{.items[0].metadata.name}') \
+  -- cat /opt/harness-delegate/version
+```
+
+### 로그 모니터링
+
+```bash
+# 실시간 로그
+kubectl logs -f -n harness-delegate -l app=harness-delegate
+
+# 특정 태스크 로그 필터링
+kubectl logs -n harness-delegate -l app=harness-delegate | grep "TASK_ID"
+```
+
+### Delegate Selector
+
+여러 Delegate가 있을 때 특정 파이프라인이 특정 Delegate를 사용하도록 제한할 수 있습니다.
+
+```yaml
+# Delegate에 태그 설정 (Helm values)
+delegateTags:
+  - prod-cluster
+  - gcp-region-kr
+
+# 파이프라인에서 Selector 사용
+delegateSelectors:
+  - prod-cluster
+```
+
+다음 글에서는 이 환경 위에 실제 CI/CD 파이프라인을 설계하고 Canary 배포를 구현합니다.
