@@ -2,6 +2,7 @@
 title: "하네스 엔지니어링 3단계 — CI/CD 파이프라인 구축"
 description: Harness로 빌드부터 Canary 배포까지 실전 파이프라인을 구성하는 방법을 다룹니다.
 date: 2026-04-08
+order: 3
 category: Harness
 tags: [harness, pipeline, ci, cd, canary, blue-green]
 ---

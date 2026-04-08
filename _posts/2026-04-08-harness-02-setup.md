@@ -2,6 +2,7 @@
 title: "하네스 엔지니어링 2단계 — 환경 구성 및 Delegate 설치"
 description: Harness 계정 설정부터 Kubernetes Delegate 설치까지 실전 가이드입니다.
 date: 2026-04-08
+order: 2
 category: Harness
 tags: [harness, delegate, kubernetes, setup]
 ---

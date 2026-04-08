@@ -2,6 +2,7 @@
 title: "하네스 엔지니어링 1단계 — 개요 및 핵심 개념"
 description: Harness가 무엇인지, 왜 기존 CI/CD 도구와 다른지, 핵심 개념을 정리합니다.
 date: 2026-04-08
+order: 1
 category: Harness
 tags: [harness, ci-cd, devops, platform-engineering]
 ---

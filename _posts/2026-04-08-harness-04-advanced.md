@@ -2,6 +2,7 @@
 title: "하네스 엔지니어링 4단계 — 고급 기능 및 운영"
 description: Feature Flags, Blue/Green 배포, Harness Git Experience, 운영 시 주의사항을 다룹니다.
 date: 2026-04-08
+order: 4
 category: Harness
 tags: [harness, feature-flags, blue-green, git-experience, ops]
 ---
