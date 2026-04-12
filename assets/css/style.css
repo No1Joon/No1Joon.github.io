@@ -130,23 +130,34 @@ nav a:hover { color: var(--text); }
   pointer-events: none;
 }
 
+.sidebar-section {
+  margin-bottom: 1.5rem;
+}
+
 .sidebar-label {
   display: block;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--text-muted);
-  margin-bottom: 0.75rem;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.35rem;
+  border-bottom: 1px solid var(--border);
 }
 
-.sidebar-category {
+.sidebar-subcategory {
   font-size: 0.7rem;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
+  margin: 0.6rem 0 0.15rem 0.25rem;
+  opacity: 0.5;
+}
+
+.sidebar-subcategory.has-posts {
   color: var(--primary);
-  margin: 1rem 0 0.25rem;
+  opacity: 1;
 }
 
 .sidebar-link {
@@ -154,7 +165,7 @@ nav a:hover { color: var(--text); }
   font-size: 0.82rem;
   color: var(--text-muted);
   text-decoration: none;
-  padding: 0.2rem 0.5rem;
+  padding: 0.2rem 0.5rem 0.2rem 0.75rem;
   border-radius: 4px;
   line-height: 1.4;
   transition: color 0.15s, background 0.15s;

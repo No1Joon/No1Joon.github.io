@@ -31,21 +31,18 @@
       <nav class="sidebar-nav">
         {% for cat in site.data.categories %}
           {% assign cat_posts = site.posts | where: "category", cat.name | sort: 'order' %}
-          {% if cat_posts.size > 0 %}
           <div class="sidebar-section">
             <span class="sidebar-label">{{ cat.name }}</span>
-            {% assign current_sub = "" %}
-            {% for post in cat_posts %}
-              {% if post.subcategory != current_sub %}
-                {% assign current_sub = post.subcategory %}
-                <div class="sidebar-category">{{ post.subcategory }}</div>
-              {% endif %}
-              <a href="{{ post.url | relative_url }}" class="sidebar-link{% if page.url == post.url %} active{% endif %}">
-                {{ post.title | split: " — " | first }}
-              </a>
+            {% for sub in cat.subcategories %}
+              {% assign sub_posts = cat_posts | where: "subcategory", sub.name %}
+              <div class="sidebar-subcategory{% if sub_posts.size > 0 %} has-posts{% endif %}">{{ sub.name }}</div>
+              {% for post in sub_posts %}
+                <a href="{{ post.url | relative_url }}" class="sidebar-link{% if page.url == post.url %} active{% endif %}">
+                  {{ post.title | split: " — " | first }}
+                </a>
+              {% endfor %}
             {% endfor %}
           </div>
-          {% endif %}
         {% endfor %}
       </nav>
     </aside>
