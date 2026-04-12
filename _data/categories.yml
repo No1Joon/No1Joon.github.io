@@ -1,0 +1,81 @@
+- name: CI/CD
+  slug: ci-cd
+  subcategories:
+    - name: Harness
+      slug: harness
+    - name: GitHub Actions
+      slug: github-actions
+    - name: Jenkins
+      slug: jenkins
+    - name: ArgoCD / GitOps
+      slug: argocd-gitops
+
+- name: Container & Orchestration
+  slug: container-orchestration
+  subcategories:
+    - name: Docker
+      slug: docker
+    - name: Kubernetes
+      slug: kubernetes
+    - name: Helm
+      slug: helm
+    - name: Service Mesh
+      slug: service-mesh
+
+- name: Cloud Infrastructure
+  slug: cloud-infrastructure
+  subcategories:
+    - name: AWS
+      slug: aws
+    - name: GCP
+      slug: gcp
+    - name: Azure
+      slug: azure
+    - name: Terraform / IaC
+      slug: terraform-iac
+
+- name: Observability
+  slug: observability
+  subcategories:
+    - name: Monitoring
+      slug: monitoring
+    - name: Logging
+      slug: logging
+    - name: Tracing
+      slug: tracing
+
+- name: DevOps & SRE
+  slug: devops-sre
+  subcategories:
+    - name: Platform Engineering
+      slug: platform-engineering
+    - name: Incident Management
+      slug: incident-management
+    - name: Cost Optimization
+      slug: cost-optimization
+    - name: Security / DevSecOps
+      slug: security-devsecops
+
+- name: Development
+  slug: development
+  subcategories:
+    - name: Backend
+      slug: backend
+    - name: Database
+      slug: database
+    - name: API Design
+      slug: api-design
+    - name: Testing
+      slug: testing
+
+- name: Architecture
+  slug: architecture
+  subcategories:
+    - name: MSA / Microservices
+      slug: msa-microservices
+    - name: Event-Driven
+      slug: event-driven
+    - name: Design Patterns
+      slug: design-patterns
+    - name: System Design
+      slug: system-design

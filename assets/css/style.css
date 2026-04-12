@@ -317,14 +317,52 @@ nav a:hover { color: var(--text); }
   font-weight: 600;
 }
 
-.badge-frontend  { background: #1a2a3a; color: #58A6FF; border: 1px solid #1f3a5f; }
-.badge-backend   { background: #1a2a1a; color: #3FB950; border: 1px solid #1f4a1f; }
-.badge-gcp       { background: #2a1a1a; color: #F78166; border: 1px solid #4a1f1f; }
-.badge-database  { background: #1a1a2a; color: #D2A8FF; border: 1px solid #2a1f4a; }
-.badge-infra     { background: #2a2a1a; color: #E3B341; border: 1px solid #4a3a1f; }
-.badge-realtime  { background: #1a2a2a; color: #39D353; border: 1px solid #1f4a3a; }
-.badge-design    { background: #2a1a2a; color: #F778BA; border: 1px solid #4a1f3a; }
-.badge-devtools  { background: #1f1f1f; color: #8B949E; border: 1px solid #30363D; }
+.badge-ci-cd                    { background: #1a2a3a; color: #58A6FF; border: 1px solid #1f3a5f; }
+.badge-container---orchestration { background: #1a2a2a; color: #39D353; border: 1px solid #1f4a3a; }
+.badge-cloud-infrastructure     { background: #2a1a1a; color: #F78166; border: 1px solid #4a1f1f; }
+.badge-observability            { background: #2a2a1a; color: #E3B341; border: 1px solid #4a3a1f; }
+.badge-devops---sre             { background: #1a1a2a; color: #D2A8FF; border: 1px solid #2a1f4a; }
+.badge-development              { background: #1a2a1a; color: #3FB950; border: 1px solid #1f4a1f; }
+.badge-architecture             { background: #2a1a2a; color: #F778BA; border: 1px solid #4a1f3a; }
+.badge-sub                      { background: #1f1f1f; color: #8B949E; border: 1px solid #30363D; }
+
+/* ── Category Filter ── */
+.category-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.filter-btn {
+  background: var(--panel);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.82rem;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.filter-btn:hover {
+  color: var(--text);
+  border-color: var(--text-muted);
+}
+
+.filter-btn.active {
+  background: var(--primary);
+  color: var(--bg);
+  border-color: var(--primary);
+  font-weight: 600;
+}
+
+.post-card-subcategory {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-top: -0.25rem;
+}
 
 /* ── Post Content ── */
 .post-content { max-width: 100%; }
