@@ -136,28 +136,29 @@ nav a:hover { color: var(--text); }
 
 .sidebar-label {
   display: block;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--text);
+  color: var(--text-muted);
   margin-bottom: 0.5rem;
   padding-bottom: 0.35rem;
   border-bottom: 1px solid var(--border);
 }
 
 .sidebar-subcategory {
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
   color: var(--text-muted);
-  margin: 0.6rem 0 0.15rem 0.25rem;
-  opacity: 0.5;
+  margin: 0.5rem 0 0.15rem 0.4rem;
+  opacity: 0.35;
 }
 
 .sidebar-subcategory.has-posts {
-  color: var(--primary);
-  opacity: 1;
+  color: var(--text);
+  font-weight: 600;
+  opacity: 0.7;
 }
 
 .sidebar-link {
@@ -245,7 +246,7 @@ nav a:hover { color: var(--text); }
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: var(--primary);
+  color: var(--text-muted);
 }
 
 .post-card h2 {
@@ -328,14 +329,14 @@ nav a:hover { color: var(--text); }
   font-weight: 600;
 }
 
-.badge-ci-cd                    { background: #1a2a3a; color: #58A6FF; border: 1px solid #1f3a5f; }
-.badge-container---orchestration { background: #1a2a2a; color: #39D353; border: 1px solid #1f4a3a; }
-.badge-cloud-infrastructure     { background: #2a1a1a; color: #F78166; border: 1px solid #4a1f1f; }
-.badge-observability            { background: #2a2a1a; color: #E3B341; border: 1px solid #4a3a1f; }
-.badge-devops---sre             { background: #1a1a2a; color: #D2A8FF; border: 1px solid #2a1f4a; }
-.badge-development              { background: #1a2a1a; color: #3FB950; border: 1px solid #1f4a1f; }
-.badge-architecture             { background: #2a1a2a; color: #F778BA; border: 1px solid #4a1f3a; }
-.badge-sub                      { background: #1f1f1f; color: #8B949E; border: 1px solid #30363D; }
+.badge-ci-cd,
+.badge-container---orchestration,
+.badge-cloud-infrastructure,
+.badge-observability,
+.badge-devops---sre,
+.badge-development,
+.badge-architecture { background: var(--panel); color: var(--text-muted); border: 1px solid var(--border); }
+.badge-sub          { background: transparent; color: var(--text-muted); border: 1px solid var(--border); }
 
 /* ── Category Filter ── */
 .category-filter {
@@ -363,9 +364,9 @@ nav a:hover { color: var(--text); }
 }
 
 .filter-btn.active {
-  background: var(--primary);
-  color: var(--bg);
-  border-color: var(--primary);
+  background: var(--panel);
+  color: var(--text);
+  border-color: var(--text-muted);
   font-weight: 600;
 }
 
