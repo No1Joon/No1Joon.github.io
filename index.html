@@ -7,11 +7,26 @@ title: Posts
   <p>기술 스택과 아키텍처 선택에 대한 기록</p>
 </div>
 
-<div class="posts-grid">
+<div class="category-filter" id="categoryFilter">
+  <button class="filter-btn active" data-category="all">All</button>
+  {% for cat in site.data.categories %}
+    {% assign cat_posts = site.posts | where: "category", cat.name %}
+    {% if cat_posts.size > 0 %}
+    <button class="filter-btn" data-category="{{ cat.slug }}">{{ cat.name }}</button>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<div class="posts-grid" id="postsGrid">
   {% assign sorted_posts = site.posts | sort: 'order' %}
   {% for post in sorted_posts %}
-  <a href="{{ post.url | relative_url }}" class="post-card">
+  {% assign cat_slug = "" %}
+  {% for cat in site.data.categories %}
+    {% if cat.name == post.category %}{% assign cat_slug = cat.slug %}{% endif %}
+  {% endfor %}
+  <a href="{{ post.url | relative_url }}" class="post-card" data-category="{{ cat_slug }}">
     <div class="post-card-category">{{ post.category }}</div>
+    <div class="post-card-subcategory">{{ post.subcategory }}</div>
     <h2>{{ post.title }}</h2>
     {% if post.description %}
     <p>{{ post.description }}</p>
@@ -25,3 +40,16 @@ title: Posts
   </a>
   {% endfor %}
 </div>
+
+<script>
+  document.getElementById('categoryFilter').addEventListener('click', function(e) {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cat = btn.dataset.category;
+    document.querySelectorAll('.post-card').forEach(card => {
+      card.style.display = (cat === 'all' || card.dataset.category === cat) ? '' : 'none';
+    });
+  });
+</script>

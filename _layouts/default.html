@@ -29,20 +29,24 @@
   <div class="site-body" id="siteBody">
     <aside class="site-sidebar" id="siteSidebar">
       <nav class="sidebar-nav">
-        <div class="sidebar-section">
-          <span class="sidebar-label">Posts</span>
-          {% assign sorted_posts = site.posts | sort: 'order' %}
-          {% assign current_category = "" %}
-          {% for post in sorted_posts %}
-            {% if post.category != current_category %}
-              {% assign current_category = post.category %}
-              <div class="sidebar-category">{{ post.category }}</div>
-            {% endif %}
-            <a href="{{ post.url | relative_url }}" class="sidebar-link{% if page.url == post.url %} active{% endif %}">
-              {{ post.title | split: " — " | first }}
-            </a>
-          {% endfor %}
-        </div>
+        {% for cat in site.data.categories %}
+          {% assign cat_posts = site.posts | where: "category", cat.name | sort: 'order' %}
+          {% if cat_posts.size > 0 %}
+          <div class="sidebar-section">
+            <span class="sidebar-label">{{ cat.name }}</span>
+            {% assign current_sub = "" %}
+            {% for post in cat_posts %}
+              {% if post.subcategory != current_sub %}
+                {% assign current_sub = post.subcategory %}
+                <div class="sidebar-category">{{ post.subcategory }}</div>
+              {% endif %}
+              <a href="{{ post.url | relative_url }}" class="sidebar-link{% if page.url == post.url %} active{% endif %}">
+                {{ post.title | split: " — " | first }}
+              </a>
+            {% endfor %}
+          </div>
+          {% endif %}
+        {% endfor %}
       </nav>
     </aside>
 

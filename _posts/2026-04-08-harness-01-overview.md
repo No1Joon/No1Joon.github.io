@@ -3,7 +3,8 @@ title: "Harness가 Jenkins와 GitHub Actions를 대체할 수 있는 이유"
 description: Harness의 핵심 철학과 구조를 이해하고, 기존 CI/CD 도구와 무엇이 근본적으로 다른지 분석합니다.
 date: 2026-04-08
 order: 1
-category: Harness
+category: CI/CD
+subcategory: Harness
 tags: [harness, ci-cd, devops, platform-engineering]
 ---
 

@@ -3,7 +3,8 @@ title: "Harness Delegate — 인프라와 플랫폼을 연결하는 에이전트
 description: Harness Delegate의 동작 원리를 이해하고, Kubernetes 환경에 Helm으로 설치하는 전 과정을 다룹니다.
 date: 2026-04-08
 order: 2
-category: Harness
+category: CI/CD
+subcategory: Harness
 tags: [harness, delegate, kubernetes, helm, connector, secret-manager]
 ---
 

@@ -3,7 +3,8 @@ title: "Harness 파이프라인 설계 — Canary 배포와 자동 검증 구현
 description: CI Stage 구성부터 Canary 배포, Prometheus 기반 자동 검증, Failure Strategy까지 실전 파이프라인을 설계합니다.
 date: 2026-04-08
 order: 3
-category: Harness
+category: CI/CD
+subcategory: Harness
 tags: [harness, pipeline, ci, cd, canary, verification, prometheus]
 ---
 
