@@ -54,15 +54,41 @@ tags: [kebab-case, tags]
 
 1. **Opening**: state the problem or context in one or two paragraphs. e.g., "~팀이라면 공통적으로 겪는 문제가 있어요."
 2. **`##` sections**: concept → structure → real usage. Each section short and purposeful.
-3. **Use tables aggressively**: prefer Markdown tables for comparisons, options, type breakdowns over long prose.
-4. **Code blocks**: always specify the language (`yaml`, `bash`, `python`, `rego`, etc.).
-5. **Diagrams**: use ```` ```mermaid ```` blocks for graphs and architecture. No ASCII art.
+3. **설명 우선, 코드는 최소한**: 각 섹션은 `개념 한 문단 → 표·다이어그램 → 필요하면 코드 발췌` 순으로 써요. 코드를 먼저 던지고 해석을 붙이지 않아요.
+4. **Use tables aggressively**: prefer Markdown tables for comparisons, options, type breakdowns over long prose.
+5. **Code blocks**: always specify the language (`yaml`, `bash`, `python`, `rego`, etc.).
+6. **Diagrams**: use ```` ```mermaid ```` blocks for graphs and architecture. No ASCII art.
    - Directory trees and config hierarchies can stay in plain code blocks since they are already textual structures.
-6. **Closing paragraph**: tease the next post ("다음 글에서는 ~를 다뤄요.") or summarize the key points.
+7. **Closing paragraph**: tease the next post ("다음 글에서는 ~를 다뤄요.") or summarize the key points.
 
-### Diagrams
+### 코드 최소화 원칙
 
-When including mermaid blocks, follow `.claude/skills/mermaid.md`. It defines the color palette, line styles, and node-shape conventions.
+읽는 사람이 이해해야 할 건 **"무엇을 왜 하는가"** 이지 YAML·코드 전문이 아니에요. 코드는 개념을 **보조하는 용도로만** 넣어요.
+
+- 전체 설정 덤프 금지. 핵심 필드 **5~15줄** 만 발췌하고 나머지는 `...` 또는 생략 주석.
+- 같은 개념을 여러 번 코드로 반복하지 않아요. 한 번 보여줬으면 그 다음은 문장·표로.
+- 반복되는 보일러플레이트(`runs-on`, `steps`, 표준 import 등)는 맥락상 필요할 때만 포함.
+- 코드 없이 표와 다이어그램만으로 전달되면 그렇게 해요. 코드는 **기본값이 아니라 선택**이에요.
+
+### 시각화 방침
+
+시각화 도구 선택은 섹션의 **이해 난이도** 에 맞춰요. 고정된 개수 규칙은 없어요.
+
+- **이해가 어려운 섹션**(구조가 여러 겹, 흐름에 순서가 있음, 추상적 관계 등)에는 **개수 상관없이** 시각화를 넣어요. 필요하면 한 섹션에 여러 개도 괜찮아요.
+- **단순 열거·정의** 섹션에는 시각화를 억지로 넣지 않아요. 산문만으로 충분하면 그대로 둬요.
+
+용도별 선택:
+
+| 상황 | 권장 시각화 |
+|------|-------------|
+| 아키텍처·컴포넌트 관계 | mermaid `flowchart` |
+| 시간 순 호출 흐름 | mermaid `sequenceDiagram` |
+| 상태 전이·라이프사이클 | mermaid `stateDiagram-v2` |
+| 옵션·타입·속성 비교 | 표 (Markdown table) |
+| 설정 계층·디렉토리 트리 | plain code block |
+| UI 스크린샷 등 실제 화면 | 이미지 (`assets/images/`) |
+
+mermaid 작성 시에는 `.claude/skills/mermaid.md` 의 색상 팔레트·노드 모양·선 스타일 규칙을 따라요.
 
 ### Callout box (use sparingly)
 
