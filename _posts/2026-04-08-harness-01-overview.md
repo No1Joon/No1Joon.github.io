@@ -89,8 +89,8 @@ flowchart LR
     subgraph cluster["고객 클러스터"]
         D["Delegate"]
         K["Kubernetes API"]
-        H[["Helm Chart 배포"]]
-        I[["이미지 빌드"]]
+        H["Helm Chart 배포"]
+        I["이미지 빌드"]
     end
 
     D -. "polling (HTTPS 아웃바운드)" .-> P
