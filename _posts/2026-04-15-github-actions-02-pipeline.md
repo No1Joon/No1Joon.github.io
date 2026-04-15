@@ -82,83 +82,63 @@ jobs:
 
 ## Build Job과 출력 전달
 
-Build는 Lint·Test가 모두 성공해야 실행돼요. `outputs` 로 다음 Job에 이미지 태그를 넘겨요.
+Build는 Lint·Test가 모두 성공해야 실행돼요(`needs: [lint, test]`). 핵심 구성은 세 가지예요.
+
+- `permissions.id-token: write` — OIDC로 GCP·AWS 인증
+- `outputs.image` — 다음 Job이 참조할 이미지 경로 공유
+- `steps.<id>.outputs` — `echo "key=val" >> "$GITHUB_OUTPUT"` 로 Step 간 값 전달
 
 ```yaml
-  build:
-    needs: [lint, test]
-    if: github.event_name == 'push'
-    runs-on: ubuntu-latest
-    outputs:
-      image: ${{ steps.meta.outputs.image }}
-    permissions:
-      contents: read
-      id-token: write
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Authenticate to GCP
-        uses: google-github-actions/auth@v2
-        with:
-          workload_identity_provider: ${{ vars.GCP_WIF_PROVIDER }}
-          service_account: ${{ vars.GCP_DEPLOY_SA }}
-
-      - name: Configure docker
-        run: gcloud auth configure-docker asia-northeast3-docker.pkg.dev -q
-
-      - id: meta
-        run: |
-          IMAGE=asia-northeast3-docker.pkg.dev/${{ vars.GCP_PROJECT }}/app/service:${{ github.sha }}
-          echo "image=$IMAGE" >> "$GITHUB_OUTPUT"
-
-      - name: Build & Push
-        run: |
-          docker build -t "${{ steps.meta.outputs.image }}" .
-          docker push "${{ steps.meta.outputs.image }}"
+build:
+  needs: [lint, test]
+  if: github.event_name == 'push'
+  runs-on: ubuntu-latest
+  outputs:
+    image: ${{ steps.meta.outputs.image }}
+  permissions: { contents: read, id-token: write }
+  steps:
+    - uses: actions/checkout@v4
+    - uses: google-github-actions/auth@v2
+      with:
+        workload_identity_provider: ${{ vars.GCP_WIF_PROVIDER }}
+        service_account: ${{ vars.GCP_DEPLOY_SA }}
+    - id: meta
+      run: echo "image=asia-northeast3-docker.pkg.dev/${{ vars.GCP_PROJECT }}/app/service:${{ github.sha }}" >> "$GITHUB_OUTPUT"
+    - run: |
+        gcloud auth configure-docker asia-northeast3-docker.pkg.dev -q
+        docker build -t "${{ steps.meta.outputs.image }}" .
+        docker push "${{ steps.meta.outputs.image }}"
 ```
 
 ## Environment 기반 배포 Job
 
 GitHub Environment는 Secret·Variable·보호 규칙을 환경별로 묶는 단위예요. Staging·Production을 분리해 관리해요.
 
+배포 Job은 환경별로 `environment.name` 과 네임스페이스·timeout만 바뀌는 **구조가 동일한 Job 두 벌**이에요. 사이에 `smoke-test` 를 끼워 실패 시 Production 쪽이 자동으로 차단돼요.
+
 ```yaml
-  deploy-staging:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: staging
-      url: https://staging.your-service.internal
-    steps:
-      - uses: actions/checkout@v4
-      - name: Deploy
-        run: |
-          helm upgrade --install your-service ./chart \
-            --namespace staging \
-            --set image=${{ needs.build.outputs.image }} \
-            --wait --timeout 5m
+deploy-staging:
+  needs: build
+  runs-on: ubuntu-latest
+  environment: { name: staging, url: https://staging.your-service.internal }
+  steps:
+    - uses: actions/checkout@v4
+    - run: helm upgrade --install your-service ./chart --namespace staging --set image=${{ needs.build.outputs.image }} --wait --timeout 5m
 
-  smoke-test:
-    needs: deploy-staging
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - run: |
-          python -m scripts.smoke \
-            --base-url https://staging.your-service.internal
+smoke-test:
+  needs: deploy-staging
+  runs-on: ubuntu-latest
+  steps:
+    - uses: actions/checkout@v4
+    - run: python -m scripts.smoke --base-url https://staging.your-service.internal
 
-  deploy-production:
-    needs: smoke-test
-    runs-on: ubuntu-latest
-    environment:
-      name: production
-      url: https://your-service.com
-    steps:
-      - uses: actions/checkout@v4
-      - run: |
-          helm upgrade --install your-service ./chart \
-            --namespace production \
-            --set image=${{ needs.build.outputs.image }} \
-            --wait --timeout 10m
+deploy-production:
+  needs: smoke-test
+  runs-on: ubuntu-latest
+  environment: { name: production, url: https://your-service.com }
+  steps:
+    - uses: actions/checkout@v4
+    - run: helm upgrade --install your-service ./chart --namespace production --set image=${{ needs.build.outputs.image }} --wait --timeout 10m
 ```
 
 <div class="callout why">
@@ -181,29 +161,21 @@ GitHub Environment는 Secret·Variable·보호 규칙을 환경별로 묶는 단
 
 ## Failure 처리 전략
 
-```yaml
-jobs:
-  test:
-    strategy:
-      fail-fast: false  # 한 조합 실패해도 나머지 계속
-      matrix:
-        python: ["3.11", "3.12"]
-    steps:
-      - uses: actions/checkout@v4
-      - run: pytest
-        continue-on-error: ${{ matrix.python == '3.13' }}  # 특정 조합은 실패 허용
+실패 알림용 Job은 `needs` 에 감시 대상 Job을 나열하고 `if: failure()` 로 분기해요. 이 Job 자체는 가볍게 Slack Webhook 하나만 쏘면 충분해요.
 
-  notify-on-fail:
-    needs: [lint, test, build]
-    if: failure()
-    runs-on: ubuntu-latest
-    steps:
-      - name: Slack alert
-        run: |
-          curl -X POST -H 'Content-type: application/json' \
-            --data '{"text":"🚨 파이프라인 실패: ${{ github.workflow }}"}' \
-            ${{ secrets.SLACK_WEBHOOK }}
+```yaml
+notify-on-fail:
+  needs: [lint, test, build]
+  if: failure()
+  runs-on: ubuntu-latest
+  steps:
+    - run: |
+        curl -X POST -H 'Content-type: application/json' \
+          --data '{"text":"파이프라인 실패: ${{ github.workflow }}"}' \
+          ${{ secrets.SLACK_WEBHOOK }}
 ```
+
+Matrix·`continue-on-error` 는 다음 글(Matrix Strategy)에서 다루고, 여기서는 **실패를 탐지해 알리는 지점**만 챙기면 돼요.
 
 ## Concurrency 제어
 

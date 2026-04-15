@@ -105,109 +105,46 @@ Harness UI에서도 확인해요: `Account Settings > Delegates` 에서 `CONNECT
 
 ### Delegate RBAC 커스터마이징
 
-기본 설치는 `cluster-admin` 권한을 사용해요. 최소 권한 원칙을 따르려면 별도 ClusterRole을 생성해요.
-
-```yaml
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
-metadata:
-  name: harness-delegate-role
-rules:
-  - apiGroups: ["*"]
-    resources: ["deployments", "services", "configmaps", "secrets",
-                "pods", "replicasets", "statefulsets", "daemonsets",
-                "ingresses", "horizontalpodautoscalers"]
-    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
-  - apiGroups: ["apps"]
-    resources: ["deployments", "replicasets"]
-    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
-```
+기본 설치는 `cluster-admin` 을 사용해요. 최소 권한을 적용하려면 배포 대상 리소스(Deployment·Service·ConfigMap·Secret·Ingress 등)와 `apps/*` 에 대해 `get/list/watch/create/update/patch/delete` 만 부여하는 ClusterRole을 만들어 Delegate ServiceAccount에 바인딩해요.
 
 ## 3단계 — Connector 등록
 
-Connector는 외부 서비스와의 인증 정보를 저장해요. 한 번 등록하면 모든 파이프라인에서 재사용해요.
+Connector는 외부 서비스와의 인증 정보를 저장해요. 한 번 등록하면 모든 파이프라인에서 재사용해요. 공통 원칙은 **토큰·키를 YAML에 직접 쓰지 않고 `*Ref` 필드로 Secret Manager를 참조**하는 거예요.
 
-### GitHub Connector
+| Connector 타입 | 주요 용도 | 필수 참조 |
+|----------------|-----------|-----------|
+| `Github` | 코드 체크아웃·Webhook 트리거 | `tokenRef`, `apiAccess.tokenRef` |
+| `Gcp` | GKE·Artifact Registry·Secret Manager | `secretKeyRef` (SA key) |
+| `GcpContainerRegistry` | GAR 이미지 pull/push | `usernameRef`, `passwordRef` |
+| `Kubernetes` | 클러스터 API 호출 | `credentialsRef` (kubeconfig·SA) |
+| `AwsConnector` | ECS·EKS·S3 | `accessKeyRef`, `secretKeyRef` 또는 IRSA |
+
+대표 예시로 GitHub Connector의 핵심 필드만 보면 구조는 이런 식이에요.
 
 ```yaml
 connector:
   name: github-main
-  identifier: github_main
   type: Github
   spec:
     url: https://github.com/your-org
-    connectionType: Account
     authentication:
-      type: Http
       spec:
-        type: UsernameToken
         spec:
-          username: your-github-username
-          tokenRef: account.github_pat
+          tokenRef: account.github_pat   # Secret Manager 참조
     apiAccess:
-      type: Token
       spec:
         tokenRef: account.github_pat
 ```
 
-`tokenRef` 는 Secret Manager에 저장된 시크릿을 참조해요. YAML에 토큰을 직접 쓰지 않아요.
-
-### GCP Connector (Service Account Key 방식)
-
-```yaml
-connector:
-  name: gcp-prod
-  identifier: gcp_prod
-  type: Gcp
-  spec:
-    credential:
-      type: ManualConfig
-      spec:
-        secretKeyRef: account.gcp_sa_key_prod
-```
-
-### Artifact Registry Connector
-
-GCP Artifact Registry에서 이미지를 pull/push하는 Connector예요.
-
-```yaml
-connector:
-  name: gar-prod
-  identifier: gar_prod
-  type: GcpContainerRegistry
-  spec:
-    url: asia-northeast3-docker.pkg.dev
-    credentialType: ManualConfig
-    manualConfig:
-      usernameRef: account.gar_username
-      passwordRef: account.gcp_sa_key_prod
-```
-
 ## 4단계 — Secret Manager 설정
 
-Harness는 기본 내장 Secret Manager를 제공하지만, 프로덕션에서는 GCP Secret Manager 또는 HashiCorp Vault 연동을 권장해요.
+Harness는 기본 내장 Secret Manager를 제공하지만, 프로덕션에서는 GCP Secret Manager·AWS Secrets Manager·HashiCorp Vault 중 하나를 연결하는 걸 권장해요. 외부 Secret Manager를 **기본값(`isDefault: true`)** 으로 두면 이후 생성하는 모든 시크릿이 그쪽에 저장돼요.
 
-### GCP Secret Manager 연동
-
-```yaml
-secretManager:
-  name: gcp-secret-manager-prod
-  identifier: gcp_sm_prod
-  type: GcpSecretManager
-  spec:
-    credentialsRef: account.gcp_prod
-    projectId: your-gcp-project-id
-    isDefault: true
-```
-
-`isDefault: true` 로 설정하면 새로 생성하는 모든 시크릿이 이 Secret Manager에 저장돼요.
-
-### 시크릿 등록 예시
+시크릿을 정의할 때는 값을 복사해 붙여넣지 않고 **참조형(`valueType: Reference`)** 로 외부 경로만 지정해요.
 
 ```yaml
 secret:
   name: github-pat
-  identifier: github_pat
   type: SecretText
   spec:
     secretManagerIdentifier: gcp_sm_prod
@@ -217,19 +154,13 @@ secret:
 
 ## 5단계 — Environment와 Infrastructure 정의
 
-배포 대상 환경을 정의해요. Environment는 논리적 환경이고, Infrastructure는 실제 클러스터 연결 정보예요.
+Environment는 **논리적 환경**(Production·Staging·Dev), Infrastructure는 그 아래 연결되는 **실제 클러스터·네임스페이스**예요. 하나의 Environment에 여러 Infrastructure를 붙여 리전별·클러스터별로 분리할 수 있어요.
+
+Infrastructure의 핵심은 Connector 참조와 네임스페이스, 그리고 `releaseName` 이에요.
 
 ```yaml
-environment:
-  name: production
-  identifier: production
-  type: Production
-
----
-
 infrastructureDefinition:
   name: k8s-prod-cluster
-  identifier: k8s_prod_cluster
   environmentRef: production
   deploymentType: Kubernetes
   spec:
@@ -240,44 +171,17 @@ infrastructureDefinition:
       releaseName: release-<+INFRA_KEY>
 ```
 
-`<+INFRA_KEY>` 는 Harness가 자동 생성하는 인프라 식별자로, 같은 클러스터에 여러 서비스를 배포할 때 릴리즈 이름 충돌을 방지해요.
+`<+INFRA_KEY>` 는 Harness가 자동 생성하는 인프라 식별자로, 같은 클러스터에 여러 서비스를 배포할 때 Helm 릴리즈 이름 충돌을 방지해요.
 
 ## Delegate 운영 팁
 
-### 버전 관리
+| 항목 | 권장 |
+|------|------|
+| 버전 차이 | Platform과 최대 3 minor 이내 |
+| 자동 업그레이드 | Helm values `upgrader.enabled=true` |
+| 로그 수집 | `kubectl logs -f -l app=harness-delegate` 또는 Loki·CloudLogging 연결 |
+| Selector 전략 | Helm `delegateTags` 로 라벨 부여, 파이프라인 `delegateSelectors` 로 고정 |
 
-Harness Platform과 Delegate 간 버전 차이는 최대 **3 minor 버전** 이내로 유지해야 해요. `upgrader.enabled=true` 설정으로 자동 업그레이드를 활성화하거나, 주기적으로 수동 업그레이드해요.
-
-```bash
-# 현재 Delegate 버전 확인
-kubectl exec -n harness-delegate \
-  $(kubectl get pod -n harness-delegate -l app=harness-delegate -o jsonpath='{.items[0].metadata.name}') \
-  -- cat /opt/harness-delegate/version
-```
-
-### 로그 모니터링
-
-```bash
-# 실시간 로그
-kubectl logs -f -n harness-delegate -l app=harness-delegate
-
-# 특정 태스크 로그 필터링
-kubectl logs -n harness-delegate -l app=harness-delegate | grep "TASK_ID"
-```
-
-### Delegate Selector
-
-여러 Delegate가 있을 때 특정 파이프라인이 특정 Delegate를 사용하도록 제한할 수 있어요.
-
-```yaml
-# Delegate에 태그 설정 (Helm values)
-delegateTags:
-  - prod-cluster
-  - gcp-region-kr
-
-# 파이프라인에서 Selector 사용
-delegateSelectors:
-  - prod-cluster
-```
+Selector는 **프로덕션 Delegate만 프로덕션 파이프라인을 받게** 하는 단순 제약이지만, 설정 실수로 인한 크로스 환경 실행을 막아주는 방어선이에요.
 
 다음 글에서는 이 환경 위에 실제 CI/CD 파이프라인을 설계하고 Canary 배포를 구현해요.
