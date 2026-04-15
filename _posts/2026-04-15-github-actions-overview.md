@@ -8,6 +8,8 @@ subcategory: GitHub Actions
 tags: [github-actions, ci, cd, oidc, workflow, automation]
 ---
 
+{% raw %}
+
 ## GitHub Actions를 왜 쓰는가
 
 저장소와 CI/CD가 한 플랫폼에 있어 세팅 비용이 거의 없어요. Pull Request·이슈·릴리즈 같은 이벤트에 바로 훅을 걸 수 있고, `actions/` 마켓플레이스 덕분에 대부분의 도구가 이미 빌딩 블록으로 존재해요. 소규모 프로젝트에서는 Jenkins·CircleCI보다 압도적으로 빠르게 시작할 수 있어요.
@@ -376,3 +378,5 @@ jobs:
 | 보안 | Action은 SHA 핀, `permissions` 명시, `pull_request_target` 주의 |
 
 다음 글에서는 GitHub Actions로 멀티 환경(Staging·Production) 배포 파이프라인을 설계하고, Environments + Approval + Deploy Protection Rule을 조합하는 방법을 다뤄요.
+
+{% endraw %}
