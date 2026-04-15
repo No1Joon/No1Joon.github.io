@@ -17,12 +17,23 @@ Delegate는 Kubernetes Pod 또는 VM에 설치되는 경량 에이전트로, Har
 ```mermaid
 flowchart LR
     P["Harness Platform"]
-    D["Delegate Pod"]
+    subgraph cluster["Kubernetes Cluster"]
+        D["Delegate Pod"]
+    end
     K["K8s API"]
-    H["Helm Charts"]
+    H[["Helm Charts"]]
+
     D -. polling .-> P
     D -->|kubectl| K
     D -->|helm| H
+
+    classDef primary fill:#2563eb,stroke:#1e40af,color:#ffffff
+    classDef info fill:#0891b2,stroke:#0e7490,color:#ffffff
+    classDef neutral fill:#475569,stroke:#334155,color:#ffffff
+
+    class P primary
+    class D info
+    class K,H neutral
 ```
 
 Delegate가 Harness로부터 태스크를 받으면, 실제 인프라에 kubectl·helm·terraform 등의 명령을 실행하고 결과를 다시 플랫폼으로 전송해요.
