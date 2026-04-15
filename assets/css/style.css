@@ -1,5 +1,5 @@
 :root {
-  --bg: #0B111C;
+  --bg: #000000;
   --panel: #2C3F58;
   --border: #5D7894;
   --text: #EDDED8;
@@ -34,7 +34,7 @@ body {
   padding: 1rem 0;
   position: sticky;
   top: 0;
-  background: rgba(11, 17, 28, 0.95);
+  background: rgba(0, 0, 0, 0.95);
   backdrop-filter: blur(8px);
   z-index: 100;
 }
