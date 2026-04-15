@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="preload">
   <header class="site-header">
     <div class="inner">
       <div class="header-left">
@@ -32,12 +32,14 @@
       <nav class="sidebar-nav">
         {% for cat in site.data.categories %}
           {% assign cat_posts = site.posts | where: "category", cat.name | sort: 'order' %}
+          {% assign is_active_cat = false %}
+          {% if page.category == cat.name %}{% assign is_active_cat = true %}{% endif %}
           <div class="sidebar-section">
-            <button class="sidebar-label" aria-expanded="false">
+            <button class="sidebar-label" aria-expanded="{% if is_active_cat %}true{% else %}false{% endif %}">
               <span>{{ cat.name }}</span>
               <svg class="sidebar-chevron" width="12" height="12" viewBox="0 0 12 12"><path d="M4 2l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
             </button>
-            <div class="sidebar-body">
+            <div class="sidebar-body{% if is_active_cat %} is-open{% endif %}">
               {% for sub in cat.subcategories %}
                 {% assign sub_posts = cat_posts | where: "subcategory", sub.name %}
                 <div class="sidebar-subcategory{% if sub_posts.size > 0 %} has-posts{% endif %}">{{ sub.name }}</div>
@@ -92,26 +94,29 @@
     }
 
     document.querySelectorAll('.sidebar-label').forEach(btn => {
-      const body = btn.nextElementSibling;
-      const hasActive = body.querySelector('.sidebar-link.active');
-      if (hasActive) {
-        btn.setAttribute('aria-expanded', 'true');
-        body.style.maxHeight = body.scrollHeight + 'px';
-      }
+      const panel = btn.nextElementSibling;
       btn.addEventListener('click', () => {
         const expanded = btn.getAttribute('aria-expanded') === 'true';
         btn.setAttribute('aria-expanded', String(!expanded));
         if (expanded) {
-          body.style.maxHeight = body.scrollHeight + 'px';
-          requestAnimationFrame(() => { body.style.maxHeight = '0'; });
+          panel.classList.remove('is-open');
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+          requestAnimationFrame(() => { panel.style.maxHeight = '0'; });
         } else {
-          body.style.maxHeight = body.scrollHeight + 'px';
-          body.addEventListener('transitionend', function handler() {
-            body.removeEventListener('transitionend', handler);
-            if (btn.getAttribute('aria-expanded') === 'true') body.style.maxHeight = 'none';
+          panel.style.maxHeight = panel.scrollHeight + 'px';
+          panel.addEventListener('transitionend', function handler() {
+            panel.removeEventListener('transitionend', handler);
+            if (btn.getAttribute('aria-expanded') === 'true') {
+              panel.classList.add('is-open');
+              panel.style.maxHeight = '';
+            }
           });
         }
       });
+    });
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => document.body.classList.remove('preload'));
     });
   </script>
 </body>
