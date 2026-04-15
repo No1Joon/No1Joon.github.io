@@ -43,8 +43,11 @@ Present the plan as a compact Markdown table plus a one-line rationale. Keep it 
 
 ## Title 작성 원칙
 
-- **해요체를 유지**하되, 제목은 명사형·체언 종결도 허용. 예: "Harness 파이프라인 설계 — Canary 배포와 자동 검증 구현".
-- 시리즈 제목은 **주제 + 부제** 구조 권장. `—` 로 구분해 핵심 키워드를 앞세워요.
+- **간결하게.** 제목은 한 줄로 핵심 키워드만. 15자 내외가 이상적, 길어도 25자를 넘기지 않아요.
+- **부제 금지.** `—` 로 설명을 덧붙이지 말고 한 구절로 끝내요. 상세 설명은 `description` 에 담아요.
+  - ❌ "GitHub Actions 핵심 구조 — Workflow·Job·Step·Action이 맞물리는 방식"
+  - ✅ "GitHub Actions 핵심 구조"
+- **해요체를 유지**하되, 제목은 명사형·체언 종결도 허용. 예: "Harness 파이프라인 설계".
 - 01편은 개요/왜 쓰는가, 마지막 편은 고급·운영·보안 같은 마무리 주제로 두는 게 일반적.
 - 중간 편들은 **독립적으로도 읽히도록** 주제를 분리. "Part 2", "계속" 같은 모호한 제목 금지.
 
@@ -76,10 +79,10 @@ Present the plan as a compact Markdown table plus a one-line rationale. Keep it 
 
 | order | 파일명 | 제목 |
 |-------|--------|------|
-| 1 | `2026-04-15-kubernetes-01-overview.md` | "Kubernetes 핵심 구조 — Control Plane과 Worker Node가 하는 일" |
-| 2 | `2026-04-15-kubernetes-02-workloads.md` | "Pod·Deployment·Service — Workload 오브젝트 제대로 쓰기" |
-| 3 | `2026-04-15-kubernetes-03-networking.md` | "Kubernetes 네트워킹 — Service·Ingress·NetworkPolicy 설계" |
-| 4 | `2026-04-15-kubernetes-04-operations.md` | "프로덕션 운영 — 리소스 관리, Autoscaling, 장애 대응 패턴" |
+| 1 | `2026-04-15-kubernetes-01-overview.md` | "Kubernetes 핵심 구조" |
+| 2 | `2026-04-15-kubernetes-02-workloads.md` | "Pod와 Workload 오브젝트" |
+| 3 | `2026-04-15-kubernetes-03-networking.md` | "Kubernetes 네트워킹" |
+| 4 | `2026-04-15-kubernetes-04-operations.md` | "프로덕션 운영 패턴" |
 
 **구성 의도**: 구조 → 워크로드 → 네트워킹 → 운영 순으로 현업에서 접하는 순서대로 쌓아요.
 
