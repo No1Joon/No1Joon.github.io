@@ -491,6 +491,22 @@ body.preload .site-body {
   font-size: 0.875rem;
 }
 
+.post-content .mermaid {
+  display: flex;
+  justify-content: center;
+  margin: 1.25rem 0;
+  padding: 1rem;
+  background: var(--card-bg, #fff);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow-x: auto;
+}
+
+.post-content .mermaid svg {
+  max-width: 100%;
+  height: auto;
+}
+
 /* ── Tables ── */
 .post-content table {
   width: 100%;
