@@ -496,10 +496,30 @@ body.preload .site-body {
   justify-content: center;
   margin: 1.25rem 0;
   padding: 1rem;
-  background: var(--card-bg, #fff);
+  background: var(--panel);
   border: 1px solid var(--border);
   border-radius: 6px;
   overflow-x: auto;
+}
+
+.post-content .mermaid .edgeLabel,
+.post-content .mermaid .edgeLabel rect,
+.post-content .mermaid .edgeLabel p,
+.post-content .mermaid .edgeLabel span {
+  background-color: transparent !important;
+  fill: transparent !important;
+  color: var(--text) !important;
+}
+
+.post-content .mermaid .edgeLabel p,
+.post-content .mermaid .edgeLabel span,
+.post-content .mermaid .edgeLabel foreignObject div {
+  color: var(--text) !important;
+  font-weight: 600;
+  text-shadow:
+    0 0 4px var(--panel),
+    0 0 4px var(--panel),
+    0 0 4px var(--panel);
 }
 
 .post-content .mermaid svg {
