@@ -1,6 +1,6 @@
 ---
 title: "Harness Feature Flags와 거버넌스 — 배포와 릴리즈를 분리하는 방법"
-description: Feature Flags로 코드 없이 기능을 제어하고, OPA 정책과 Approval 게이트로 배포 거버넌스를 구축합니다.
+description: Feature Flags로 코드 없이 기능을 제어하고, OPA 정책과 Approval 게이트로 배포 거버넌스를 구축해요.
 date: 2026-04-08
 order: 4
 category: CI/CD
@@ -10,21 +10,21 @@ tags: [harness, feature-flags, blue-green, opa, governance, git-experience]
 
 ## 배포와 릴리즈의 분리
 
-전통적인 배포에서는 코드를 프로덕션에 올리는 순간 사용자에게 노출됩니다. 이 두 가지를 분리하면 다음이 가능해집니다.
+전통적인 배포에서는 코드를 프로덕션에 올리는 순간 사용자에게 노출돼요. 이 두 가지를 분리하면 다음이 가능해져요.
 
 - 기능이 완성되지 않아도 코드를 먼저 배포
 - 특정 사용자 그룹에만 새 기능 노출
 - 문제가 생기면 코드 배포 없이 즉시 비활성화
 
-Harness Feature Flags는 이 패턴을 플랫폼 수준에서 지원합니다.
+Harness Feature Flags는 이 패턴을 플랫폼 수준에서 지원해요.
 
 ## Feature Flags 구조
 
-Feature Flag는 **Flag** 와 **Target** 두 개념으로 동작합니다.
+Feature Flag는 **Flag** 와 **Target** 두 개념으로 동작해요.
 
-- **Flag**: 켜고 끌 수 있는 기능의 단위. Boolean, String, Number, JSON 타입을 지원합니다.
-- **Target**: Flag의 ON/OFF 대상. 사용자 ID, 이메일, 국가 등 속성으로 정의합니다.
-- **Segment**: Target의 그룹. 여러 Target을 묶어 규칙을 적용합니다.
+- **Flag**: 켜고 끌 수 있는 기능의 단위. Boolean, String, Number, JSON 타입을 지원해요.
+- **Target**: Flag의 ON/OFF 대상. 사용자 ID, 이메일, 국가 등 속성으로 정의해요.
+- **Segment**: Target의 그룹. 여러 Target을 묶어 규칙을 적용해요.
 
 ```
 Flag: new-checkout-flow
@@ -102,7 +102,7 @@ async def feature_flag_middleware(request: Request, call_next):
 
 ### Kill Switch
 
-장애 발생 시 코드 배포 없이 즉시 기능을 비활성화합니다.
+장애 발생 시 코드 배포 없이 즉시 기능을 비활성화해요.
 
 ```python
 # 외부 API 호출 기능에 Kill Switch 적용
@@ -118,7 +118,7 @@ async def call_external_api(data: dict) -> dict:
 
 ### Percentage Rollout
 
-Harness UI에서 설정하며, SDK 코드 변경 없이 비율을 조절합니다.
+Harness UI에서 설정하고, SDK 코드 변경 없이 비율을 조절해요.
 
 | 단계 | 설정 | 기간 |
 |------|------|------|
@@ -141,11 +141,11 @@ return render_button(text=variant)
 
 ## Blue/Green 배포
 
-Canary 배포와 달리 Blue/Green은 두 개의 완전한 환경을 유지합니다. 전환이 즉각적이며 롤백도 서비스 셀렉터 변경만으로 즉시 가능합니다.
+Canary 배포와 달리 Blue/Green은 두 개의 완전한 환경을 유지해요. 전환이 즉각적이고 롤백도 서비스 셀렉터 변경만으로 즉시 가능해요.
 
 <div class="callout why">
   <div class="callout-title">Canary vs Blue/Green 선택 기준</div>
-  Canary는 점진적 트래픽 이동으로 위험을 분산하지만 전환 시간이 길고 설정이 복잡합니다. Blue/Green은 즉각적인 전환과 롤백이 가능하지만 리소스를 2배 사용합니다. DB 스키마 마이그레이션이 포함된 배포나 즉각적인 롤백이 필요한 서비스에는 Blue/Green을 선택합니다.
+  Canary는 점진적 트래픽 이동으로 위험을 분산하지만 전환 시간이 길고 설정이 복잡해요. Blue/Green은 즉각적인 전환과 롤백이 가능하지만 리소스를 2배 사용해요. DB 스키마 마이그레이션이 포함된 배포나 즉각적인 롤백이 필요한 서비스에는 Blue/Green을 선택해요.
 </div>
 
 ```yaml
@@ -189,7 +189,7 @@ execution:
 
 ## Harness Git Experience
 
-파이프라인, 서비스, 환경, 템플릿을 Git 저장소에 YAML로 저장하는 기능입니다. GitOps 원칙에 따라 모든 변경이 코드 리뷰를 거칩니다.
+파이프라인, 서비스, 환경, 템플릿을 Git 저장소에 YAML로 저장하는 기능이에요. GitOps 원칙에 따라 모든 변경이 코드 리뷰를 거쳐요.
 
 ```
 your-repo/
@@ -212,7 +212,7 @@ your-repo/
 
 ### Template 재사용
 
-반복되는 Stage를 템플릿으로 추출해 여러 파이프라인에서 공유합니다.
+반복되는 Stage를 템플릿으로 추출해 여러 파이프라인에서 공유해요.
 
 ```yaml
 # .harness/templates/canary-stage-template.yaml
@@ -271,7 +271,7 @@ template:
 
 ## OPA 기반 거버넌스 정책
 
-Harness는 Open Policy Agent(OPA)를 사용해 파이프라인 실행 전에 정책을 검사합니다.
+Harness는 Open Policy Agent(OPA)를 사용해 파이프라인 실행 전에 정책을 검사해요.
 
 ### latest 태그 사용 차단
 
@@ -287,7 +287,7 @@ deny contains msg if {
   tag := stage.stage.spec.serviceConfig.serviceDefinition.spec.artifacts.primary.spec.tag
   tag == "latest"
   msg := sprintf(
-    "Stage '%v': latest 태그는 프로덕션 배포에 사용할 수 없습니다.",
+    "Stage '%v': latest 태그는 프로덕션 배포에 사용할 수 없어요.",
     [stage.stage.name]
   )
 }
@@ -303,7 +303,7 @@ deny contains msg if {
   stage.stage.type == "Deployment"
   stage.stage.spec.environment.environmentRef == "production"
   not has_approval_before(input.pipeline.stages, stage)
-  msg := "Production 배포 전에 Approval Stage가 반드시 있어야 합니다."
+  msg := "Production 배포 전에 Approval Stage가 반드시 있어야 해요."
 }
 
 has_approval_before(stages, target_stage) if {
@@ -324,13 +324,13 @@ deny contains msg if {
   stage.stage.spec.environment.environmentRef == "production"
   hour := time.clock(time.now_ns())[0]
   not (hour >= 10 and hour < 18)
-  msg := "Production 배포는 업무 시간(10:00~18:00 KST)에만 가능합니다."
+  msg := "Production 배포는 업무 시간(10:00~18:00 KST)에만 가능해요."
 }
 ```
 
 ## Approval 게이트
 
-배포 전에 사람의 승인을 받거나, Jira·ServiceNow 티켓 상태를 확인하는 Step입니다.
+배포 전에 사람의 승인을 받거나, Jira·ServiceNow 티켓 상태를 확인하는 Step이에요.
 
 ```yaml
 - stage:
@@ -372,7 +372,7 @@ deny contains msg if {
 
 ## Delegate HA 운영
 
-프로덕션 환경의 Delegate는 단일 장애점을 없애기 위해 반드시 2개 이상 운영합니다.
+프로덕션 환경의 Delegate는 단일 장애점을 없애기 위해 반드시 2개 이상 운영해요.
 
 ```bash
 # Delegate 상태 모니터링
@@ -420,4 +420,4 @@ spec:
 | **OPA 정책** | latest 태그 차단, Approval 강제, 배포 시간 제한 |
 | **Delegate HA** | 최소 2개 운영, 자동 업그레이드 활성화 |
 
-Harness는 초기 설정 비용이 크지만, 배포 자동화를 넘어 **배포 신뢰성을 플랫폼이 보장** 하는 수준까지 끌어올립니다. 특히 팀이 커지고 배포 빈도가 높아질수록 OPA 정책과 Feature Flags의 가치가 더욱 커집니다.
+Harness는 초기 설정 비용이 크지만, 배포 자동화를 넘어 **배포 신뢰성을 플랫폼이 보장** 하는 수준까지 끌어올려요. 특히 팀이 커지고 배포 빈도가 높아질수록 OPA 정책과 Feature Flags의 가치가 더 커져요.

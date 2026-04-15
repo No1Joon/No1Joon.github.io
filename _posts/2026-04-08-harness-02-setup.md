@@ -1,6 +1,6 @@
 ---
 title: "Harness Delegate — 인프라와 플랫폼을 연결하는 에이전트 설치 가이드"
-description: Harness Delegate의 동작 원리를 이해하고, Kubernetes 환경에 Helm으로 설치하는 전 과정을 다룹니다.
+description: Harness Delegate의 동작 원리를 이해하고, Kubernetes 환경에 Helm으로 설치하는 전 과정을 다뤄요.
 date: 2026-04-08
 order: 2
 category: CI/CD
@@ -10,9 +10,9 @@ tags: [harness, delegate, kubernetes, helm, connector, secret-manager]
 
 ## Delegate란 무엇인가
 
-Harness는 SaaS 플랫폼이지만, 실제 배포 명령은 사용자 인프라 안에서 실행됩니다. 이 역할을 하는 것이 **Delegate**입니다.
+Harness는 SaaS 플랫폼이지만, 실제 배포 명령은 사용자 인프라 안에서 실행돼요. 이 역할을 하는 게 **Delegate**예요.
 
-Delegate는 Kubernetes Pod 또는 VM에 설치되는 경량 에이전트로, Harness 플랫폼과 **아웃바운드 HTTPS 연결**만 유지합니다. 인바운드 포트를 열 필요가 없어 네트워크 보안 정책을 그대로 유지할 수 있습니다.
+Delegate는 Kubernetes Pod 또는 VM에 설치되는 경량 에이전트로, Harness 플랫폼과 **아웃바운드 HTTPS 연결**만 유지해요. 인바운드 포트를 열 필요가 없어서 네트워크 보안 정책을 그대로 유지할 수 있어요.
 
 ```mermaid
 flowchart LR
@@ -25,7 +25,7 @@ flowchart LR
     D -->|helm| H
 ```
 
-Delegate가 Harness로부터 태스크를 받으면, 실제 인프라에 kubectl·helm·terraform 등의 명령을 실행하고 결과를 다시 플랫폼으로 전송합니다.
+Delegate가 Harness로부터 태스크를 받으면, 실제 인프라에 kubectl·helm·terraform 등의 명령을 실행하고 결과를 다시 플랫폼으로 전송해요.
 
 ## 사전 요구사항
 
@@ -40,16 +40,16 @@ Delegate가 Harness로부터 태스크를 받으면, 실제 인프라에 kubectl
 
 ## 1단계 — Harness 계정 준비
 
-`app.harness.io` 에서 계정을 생성합니다. Free Plan은 제한이 있지만 PoC에는 충분합니다.
+`app.harness.io` 에서 계정을 생성해요. Free Plan은 제한이 있지만 PoC에는 충분해요.
 
-설치에 필요한 두 가지 값을 미리 확인합니다.
+설치에 필요한 두 가지 값을 미리 확인해요.
 
 - **Account ID**: `Account Settings > Overview`
 - **Delegate Token**: `Account Settings > Delegates > Tokens > New Token`
 
 <div class="callout why">
   <div class="callout-title">Token vs Account Secret</div>
-  Delegate Token은 Delegate 전용 인증 토큰입니다. Account Secret과 별개로 관리되며, Delegate별로 다른 토큰을 발급해 권한을 분리할 수 있습니다. 프로덕션 환경과 스테이징 환경의 Delegate는 토큰을 분리하는 것을 권장합니다.
+  Delegate Token은 Delegate 전용 인증 토큰이에요. Account Secret과 별개로 관리되고, Delegate별로 다른 토큰을 발급해 권한을 분리할 수 있어요. 프로덕션 환경과 스테이징 환경의 Delegate는 토큰을 분리하는 걸 권장해요.
 </div>
 
 ## 2단계 — Kubernetes Delegate 설치
@@ -76,7 +76,7 @@ helm install harness-delegate harness/harness-delegate-ng \
   --set upgrader.enabled=true
 ```
 
-- `replicas=2`: Delegate HA 구성. 최소 2개 이상을 권장합니다.
+- `replicas=2`: Delegate HA 구성. 최소 2개 이상을 권장해요.
 - `upgrader.enabled=true`: Delegate 자동 업그레이드 활성화.
 
 ### 설치 확인
@@ -90,11 +90,11 @@ k8s-prod-delegate-7d9f8b6c4-xk2jm      1/1     Running   0          2m
 k8s-prod-delegate-7d9f8b6c4-zp8nq      1/1     Running   0          2m
 ```
 
-Harness UI에서도 확인합니다: `Account Settings > Delegates` 에서 `CONNECTED` 상태인지 확인합니다.
+Harness UI에서도 확인해요: `Account Settings > Delegates` 에서 `CONNECTED` 상태인지 확인해요.
 
 ### Delegate RBAC 커스터마이징
 
-기본 설치는 `cluster-admin` 권한을 사용합니다. 최소 권한 원칙을 따르려면 별도 ClusterRole을 생성합니다.
+기본 설치는 `cluster-admin` 권한을 사용해요. 최소 권한 원칙을 따르려면 별도 ClusterRole을 생성해요.
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -114,7 +114,7 @@ rules:
 
 ## 3단계 — Connector 등록
 
-Connector는 외부 서비스와의 인증 정보를 저장합니다. 한 번 등록하면 모든 파이프라인에서 재사용합니다.
+Connector는 외부 서비스와의 인증 정보를 저장해요. 한 번 등록하면 모든 파이프라인에서 재사용해요.
 
 ### GitHub Connector
 
@@ -139,7 +139,7 @@ connector:
         tokenRef: account.github_pat
 ```
 
-`tokenRef` 는 Secret Manager에 저장된 시크릿을 참조합니다. YAML에 토큰을 직접 쓰지 않습니다.
+`tokenRef` 는 Secret Manager에 저장된 시크릿을 참조해요. YAML에 토큰을 직접 쓰지 않아요.
 
 ### GCP Connector (Service Account Key 방식)
 
@@ -157,7 +157,7 @@ connector:
 
 ### Artifact Registry Connector
 
-GCP Artifact Registry에서 이미지를 pull/push하는 Connector입니다.
+GCP Artifact Registry에서 이미지를 pull/push하는 Connector예요.
 
 ```yaml
 connector:
@@ -174,7 +174,7 @@ connector:
 
 ## 4단계 — Secret Manager 설정
 
-Harness는 기본 내장 Secret Manager를 제공하지만, 프로덕션에서는 GCP Secret Manager 또는 HashiCorp Vault 연동을 권장합니다.
+Harness는 기본 내장 Secret Manager를 제공하지만, 프로덕션에서는 GCP Secret Manager 또는 HashiCorp Vault 연동을 권장해요.
 
 ### GCP Secret Manager 연동
 
@@ -189,7 +189,7 @@ secretManager:
     isDefault: true
 ```
 
-`isDefault: true` 로 설정하면 새로 생성하는 모든 시크릿이 이 Secret Manager에 저장됩니다.
+`isDefault: true` 로 설정하면 새로 생성하는 모든 시크릿이 이 Secret Manager에 저장돼요.
 
 ### 시크릿 등록 예시
 
@@ -206,7 +206,7 @@ secret:
 
 ## 5단계 — Environment와 Infrastructure 정의
 
-배포 대상 환경을 정의합니다. Environment는 논리적 환경이고, Infrastructure는 실제 클러스터 연결 정보입니다.
+배포 대상 환경을 정의해요. Environment는 논리적 환경이고, Infrastructure는 실제 클러스터 연결 정보예요.
 
 ```yaml
 environment:
@@ -229,13 +229,13 @@ infrastructureDefinition:
       releaseName: release-<+INFRA_KEY>
 ```
 
-`<+INFRA_KEY>` 는 Harness가 자동 생성하는 인프라 식별자로, 같은 클러스터에 여러 서비스를 배포할 때 릴리즈 이름 충돌을 방지합니다.
+`<+INFRA_KEY>` 는 Harness가 자동 생성하는 인프라 식별자로, 같은 클러스터에 여러 서비스를 배포할 때 릴리즈 이름 충돌을 방지해요.
 
 ## Delegate 운영 팁
 
 ### 버전 관리
 
-Harness Platform과 Delegate 간 버전 차이는 최대 **3 minor 버전** 이내로 유지해야 합니다. `upgrader.enabled=true` 설정으로 자동 업그레이드를 활성화하거나, 주기적으로 수동 업그레이드합니다.
+Harness Platform과 Delegate 간 버전 차이는 최대 **3 minor 버전** 이내로 유지해야 해요. `upgrader.enabled=true` 설정으로 자동 업그레이드를 활성화하거나, 주기적으로 수동 업그레이드해요.
 
 ```bash
 # 현재 Delegate 버전 확인
@@ -256,7 +256,7 @@ kubectl logs -n harness-delegate -l app=harness-delegate | grep "TASK_ID"
 
 ### Delegate Selector
 
-여러 Delegate가 있을 때 특정 파이프라인이 특정 Delegate를 사용하도록 제한할 수 있습니다.
+여러 Delegate가 있을 때 특정 파이프라인이 특정 Delegate를 사용하도록 제한할 수 있어요.
 
 ```yaml
 # Delegate에 태그 설정 (Helm values)
@@ -269,4 +269,4 @@ delegateSelectors:
   - prod-cluster
 ```
 
-다음 글에서는 이 환경 위에 실제 CI/CD 파이프라인을 설계하고 Canary 배포를 구현합니다.
+다음 글에서는 이 환경 위에 실제 CI/CD 파이프라인을 설계하고 Canary 배포를 구현해요.
