@@ -21,7 +21,7 @@ flowchart LR
         D["Delegate Pod"]
     end
     K["K8s API"]
-    H[["Helm Charts"]]
+    H["Helm Charts"]
 
     D -. polling .-> P
     D -->|kubectl| K

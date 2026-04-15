@@ -18,7 +18,7 @@ tags: [github-actions, ci, cd, workflow, automation]
 
 ```mermaid
 flowchart LR
-    E(("Event<br/>(push, PR, cron)"))
+    E["Event<br/>(push, PR, cron)"]
     subgraph wf["Workflow (YAML 파일)"]
         J1["Job A"]
         J2["Job B"]
@@ -27,7 +27,7 @@ flowchart LR
     J1 --- S1["Step: checkout"]
     J1 --- S2["Step: setup-python"]
     J1 --- S3["Step: run pytest"]
-    S2 -.-> A1[["Action:<br/>actions/setup-python"]]
+    S2 -.-> A1["Action:<br/>actions/setup-python"]
 
     E ==> J1
 

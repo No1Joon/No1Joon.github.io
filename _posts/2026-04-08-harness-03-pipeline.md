@@ -36,7 +36,7 @@ flowchart TD
 
     S3 --> S3G["StepGroup: Canary Phase"]
     S3G --> S3A["Canary Deploy (20%)"]
-    S3G --> S3B{"Verify<br/>(Prometheus)"}
+    S3G --> S3B["Verify<br/>(Prometheus)"]
     S3B --> S3C["Canary Delete"]
     S3 --> S3D["Rolling Deploy (100%)"]
 
@@ -110,7 +110,7 @@ Canary 배포의 핵심은 **소량의 트래픽으로 먼저 검증하고, 문�
 ```mermaid
 flowchart LR
     subgraph canary["StepGroup: Canary Phase"]
-        A["K8sCanaryDeploy<br/>(20%)"] ==> B{"Verify<br/>(Prometheus)"}
+        A["K8sCanaryDeploy<br/>(20%)"] ==> B["Verify<br/>(Prometheus)"]
         B ==> C["K8sCanaryDelete"]
     end
     C ==> D["K8sRollingDeploy<br/>(100%)"]

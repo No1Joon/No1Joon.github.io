@@ -40,12 +40,36 @@ layout: default
 </article>
 
 <script type="module">
-  document.querySelectorAll('.post-content pre > code.language-mermaid').forEach(code => {
+  document.querySelectorAll('.post-content pre > code').forEach(code => {
+    if (code.classList.contains('language-mermaid')) {
+      const pre = code.parentElement;
+      const wrapper = document.createElement('div');
+      wrapper.className = 'mermaid';
+      wrapper.textContent = code.textContent;
+      pre.replaceWith(wrapper);
+      return;
+    }
+
+    // 일반 코드 블록인 경우 Mac Code window 래퍼 씌우기
+    const langClass = Array.from(code.classList).find(c => c.startsWith('language-'));
+    const lang = langClass ? langClass.replace('language-', '') : 'code';
     const pre = code.parentElement;
+
     const wrapper = document.createElement('div');
-    wrapper.className = 'mermaid';
-    wrapper.textContent = code.textContent;
-    pre.replaceWith(wrapper);
+    wrapper.className = 'code-window';
+    
+    const header = document.createElement('div');
+    header.className = 'code-header';
+    header.innerHTML = `
+      <div class="mac-dots">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="code-lang-label">${lang}</div>
+    `;
+    
+    pre.parentNode.insertBefore(wrapper, pre);
+    wrapper.appendChild(header);
+    wrapper.appendChild(pre);
   });
 
   if (document.querySelector('.mermaid')) {
