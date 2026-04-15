@@ -1,95 +1,97 @@
 ---
 name: blog-post
-description: No1Joon 블로그에 새 포스트를 작성할 때 사용. 이 블로그의 톤·말투·구조를 유지하며 `_posts/` 하위에 Jekyll 포스트를 생성한다.
+description: Use when writing a new post for the No1Joon blog. Creates a Jekyll post under `_posts/` while preserving this blog's tone, voice, and structure.
 ---
 
-No1Joon 블로그에 새로운 기술 블로그 포스트를 작성한다. 이 블로그 고유의 톤·말투·구조를 유지하는 것이 핵심이다.
+Write a new technical blog post for the No1Joon blog. The critical part is preserving this blog's unique tone, voice, and structure.
 
-## 언제 사용하는가
+## When to use
 
-- 사용자가 "블로그 써줘", "포스트 하나 추가해줘", "~에 대한 글 써줘" 와 같이 **개별 포스트 작성**을 요청할 때.
-- 기술 스택 전체를 카테고리별로 쪼개 생성하는 경우가 아니라 (그건 `/tech-blog` 스킬 담당), **한 개의 독립적인 글**을 작성하는 경우에 사용.
+- When the user asks for an **individual post**, e.g. "write a blog post", "add a post", "write an article about ~".
+- Use this for **a single standalone post**, not when splitting a whole tech stack into per-category posts (that's the `/tech-blog` skill).
 
-## 말투 규칙 (엄격하게 준수)
+## Voice rules (strict)
 
-**해요체를 사용한다. 합쇼체 금지.**
+**Use 해요체 (polite informal). Never use 합쇼체 (formal).**
+
+The blog is written in Korean. All prose must follow 해요체.
 
 - ❌ "있습니다.", "발생합니다.", "사용합니다.", "됩니다." → ✅ "있어요.", "발생해요.", "사용해요.", "돼요."
 - ❌ "~할 수 있습니다." → ✅ "~할 수 있어요."
 - ❌ "~입니다." → ✅ "~이에요." / "~예요."
-- ❌ "권장합니다." → ✅ "권장해요." 또는 "권장드려요."
+- ❌ "권장합니다." → ✅ "권장해요." or "권장드려요."
 - ❌ "~를 다룹니다." → ✅ "~를 다뤄요."
 
-예외:
-- 표, 목록의 설명 문구는 간결한 명사형이나 동사 원형으로 둬도 됨 ("빌드 결과물 전달", "설치", "확인" 등)
-- 코드 주석은 원래 문체 유지
-- front matter의 `description` 필드는 한 문장 요약이므로 해요체/~합니다 중 **해요체를 우선**, 어색하면 명사형 종결("~를 분석", "~를 정리") 사용
+Exceptions:
+- Short phrases inside tables and lists may stay in noun form or dictionary form ("빌드 결과물 전달", "설치", "확인", etc.).
+- Keep code comments in their original style.
+- The `description` field in front matter is a one-line summary — prefer 해요체, and if it sounds awkward, fall back to noun-form endings ("~를 분석", "~를 정리").
 
-## 구조 규칙
+## Structure rules
 
-### Front matter (필수)
+### Front matter (required)
 
 ```yaml
 ---
-title: "글의 핵심을 담은 제목"
-description: 검색·공유용 한 문장 요약
+title: "A title that captures the core idea"
+description: One-line summary for search and sharing
 date: YYYY-MM-DD
 order: 1
-category: CI/CD            # _data/categories.yml 에 정의된 카테고리 중 하나
-subcategory: Harness       # 해당 category 내 subcategory
+category: CI/CD            # one of the categories defined in _data/categories.yml
+subcategory: Harness       # a subcategory under that category
 tags: [kebab-case, tags]
 ---
 ```
 
-- `order`: 같은 카테고리 내 정렬 순서. 시리즈 글이면 1부터.
-- `category` / `subcategory`: 반드시 `_data/categories.yml` 을 먼저 읽어 유효한 값을 사용. 없으면 사용자에게 확인.
+- `order`: sort order within the same category. Start from 1 for series posts.
+- `category` / `subcategory`: always read `_data/categories.yml` first and use valid values. If missing, ask the user.
 
-### 파일명
+### Filename
 
-`_posts/YYYY-MM-DD-slug.md` 형식. 시리즈면 `_posts/YYYY-MM-DD-{series}-{nn}-{topic}.md` (예: `2026-04-08-harness-01-overview.md`).
+`_posts/YYYY-MM-DD-slug.md`. For series, use `_posts/YYYY-MM-DD-{series}-{nn}-{topic}.md` (e.g., `2026-04-08-harness-01-overview.md`).
 
-### 본문 구조
+### Body structure
 
-1. **도입부**: 문제 제기 또는 배경. 한두 문단. 예: "~팀이라면 공통적으로 겪는 문제가 있어요."
-2. **`##` 섹션들**: 개념 정의 → 구조 → 실제 사용 순. 각 섹션은 짧고 목적이 분명하게.
-3. **표 적극 활용**: 비교/옵션/타입 구분은 Markdown 테이블로. 과도한 산문 설명보다 표가 먼저.
-4. **코드 블록**: 언어 지정 필수 (`yaml`, `bash`, `python`, `rego` 등).
-5. **다이어그램**: 그래프/아키텍처는 ```` ```mermaid ```` 블록 사용. ASCII art 금지.
-   - 디렉토리 트리, 설정 계층 같은 비그래프 구조는 plain code block 유지.
-6. **마무리 문단**: "다음 글에서는 ~를 다뤄요." 식의 후속 예고 또는 요점 정리.
+1. **Opening**: state the problem or context in one or two paragraphs. e.g., "~팀이라면 공통적으로 겪는 문제가 있어요."
+2. **`##` sections**: concept → structure → real usage. Each section short and purposeful.
+3. **Use tables aggressively**: prefer Markdown tables for comparisons, options, type breakdowns over long prose.
+4. **Code blocks**: always specify the language (`yaml`, `bash`, `python`, `rego`, etc.).
+5. **Diagrams**: use ```` ```mermaid ```` blocks for graphs and architecture. No ASCII art.
+   - Directory trees and config hierarchies can stay in plain code blocks since they are already textual structures.
+6. **Closing paragraph**: tease the next post ("다음 글에서는 ~를 다뤄요.") or summarize the key points.
 
-### 다이어그램
+### Diagrams
 
-mermaid 블록을 넣을 때는 `.claude/skills/mermaid.md` 스킬을 참고. 색상 팔레트, 선 스타일, 노드 모양 규칙이 정리돼 있어요.
+When including mermaid blocks, follow `.claude/skills/mermaid.md`. It defines the color palette, line styles, and node-shape conventions.
 
-### 강조 박스 (필요할 때만)
+### Callout box (use sparingly)
 
 ```html
 <div class="callout why">
   <div class="callout-title">핵심 차이</div>
-  글의 핵심 주장을 한 문단으로 강조. 너무 자주 쓰지 않음.
+  Use one paragraph to emphasize the central claim of the post. Do not overuse.
 </div>
 ```
 
-### 문장 스타일
+### Sentence style
 
-- 문장은 짧게. 기술 용어는 원어 + 한글 설명 병기 가능.
-- 불필요한 부사 제거. ("매우", "정말", "굉장히" 등 지양)
-- 리스트는 `-` 사용, 하위 항목은 2칸 들여쓰기.
-- `**굵게**` 는 개념 단어 한두 개에만. 문장 전체 강조 금지.
+- Keep sentences short. Technical terms may appear in the original language alongside a Korean gloss.
+- Strip unnecessary intensifiers ("매우", "정말", "굉장히", etc.).
+- Use `-` for lists; indent sub-items by 2 spaces.
+- Use `**bold**` only on one or two conceptual words. Never bold an entire sentence.
 
-## 작업 순서
+## Workflow
 
-1. `_data/categories.yml` 읽어 카테고리/서브카테고리 확인.
-2. 기존 `_posts/` 를 1~2개 샘플로 읽어 현재 스타일 재확인.
-3. 사용자가 주제/카테고리/order/태그 중 빠진 게 있으면 간단히 질문.
-4. `_posts/YYYY-MM-DD-slug.md` 로 파일 작성. 날짜는 `CLAUDE.md` 의 `Today's date` 기준.
-5. 작성 후 간단히 요약만 보고. (본문을 다시 붙여넣지 않음)
+1. Read `_data/categories.yml` to confirm category/subcategory values.
+2. Read 1–2 existing posts from `_posts/` as style references.
+3. If the user has not specified topic/category/order/tags, ask briefly.
+4. Write the file as `_posts/YYYY-MM-DD-slug.md`. Use the `Today's date` value from `CLAUDE.md` for the date.
+5. After writing, report only a short summary — do not paste the body back.
 
-## 금지 사항
+## Prohibitions
 
-- 합쇼체 사용 금지 (`~습니다`, `~합니다`).
-- 이모지 사용 금지 (사용자가 명시적으로 요청하지 않는 한).
-- 과장된 홍보 문구 금지 ("최고의", "혁신적인" 등).
-- 근거 없는 성능 수치 금지.
-- 한 글에 `##` 섹션이 10개 넘어가면 분할 고려.
+- No 합쇼체 (`~습니다`, `~합니다`).
+- No emojis unless the user explicitly asks for them.
+- No marketing superlatives ("최고의", "혁신적인", etc.).
+- No performance numbers without a source.
+- If a single post grows past 10 `##` sections, consider splitting it.
