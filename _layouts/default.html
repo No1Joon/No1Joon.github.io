@@ -14,7 +14,7 @@
   <header class="site-header">
     <div class="inner">
       <div class="header-left">
-        <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
+        <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
           <span></span><span></span><span></span>
         </button>
         <a href="{{ '/' | relative_url }}" class="site-title">No1Joon<span>.dev</span></a>
@@ -35,7 +35,7 @@
           {% assign is_active_cat = false %}
           {% if page.category == cat.name %}{% assign is_active_cat = true %}{% endif %}
           <div class="sidebar-section">
-            <button class="sidebar-label" aria-expanded="{% if is_active_cat %}true{% else %}false{% endif %}">
+            <button type="button" class="sidebar-label" aria-expanded="{% if is_active_cat %}true{% else %}false{% endif %}">
               <span>{{ cat.name }}</span>
               <svg class="sidebar-chevron" width="12" height="12" viewBox="0 0 12 12"><path d="M4 2l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
             </button>
@@ -96,22 +96,20 @@
     document.querySelectorAll('.sidebar-label').forEach(btn => {
       const panel = btn.nextElementSibling;
       btn.addEventListener('click', () => {
-        const expanded = btn.getAttribute('aria-expanded') === 'true';
-        btn.setAttribute('aria-expanded', String(!expanded));
-        if (expanded) {
-          panel.classList.remove('is-open');
+        const isOpen = panel.classList.contains('is-open');
+        btn.setAttribute('aria-expanded', String(!isOpen));
+        if (isOpen) {
           panel.style.maxHeight = panel.scrollHeight + 'px';
+          panel.classList.remove('is-open');
           requestAnimationFrame(() => { panel.style.maxHeight = '0'; });
         } else {
           panel.style.maxHeight = panel.scrollHeight + 'px';
-          panel.addEventListener('transitionend', function handler() {
-            panel.removeEventListener('transitionend', handler);
-            if (btn.getAttribute('aria-expanded') === 'true') {
-              panel.classList.add('is-open');
-              panel.style.maxHeight = '';
-            }
-          });
+          panel.classList.add('is-open');
         }
+      });
+      panel.addEventListener('transitionend', e => {
+        if (e.target !== panel || e.propertyName !== 'max-height') return;
+        if (panel.classList.contains('is-open')) panel.style.maxHeight = '';
       });
     });
 

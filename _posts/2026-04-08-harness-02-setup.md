@@ -14,13 +14,15 @@ Harness는 SaaS 플랫폼이지만, 실제 배포 명령은 사용자 인프라 
 
 Delegate는 Kubernetes Pod 또는 VM에 설치되는 경량 에이전트로, Harness 플랫폼과 **아웃바운드 HTTPS 연결**만 유지합니다. 인바운드 포트를 열 필요가 없어 네트워크 보안 정책을 그대로 유지할 수 있습니다.
 
-```
-[Harness Platform] ←── polling ──── [Delegate Pod]
-                                          │
-                                    ┌─────┴──────┐
-                                  kubectl       helm
-                                    │             │
-                              [K8s API]    [Helm Charts]
+```mermaid
+flowchart LR
+    P["Harness Platform"]
+    D["Delegate Pod"]
+    K["K8s API"]
+    H["Helm Charts"]
+    D -. polling .-> P
+    D -->|kubectl| K
+    D -->|helm| H
 ```
 
 Delegate가 Harness로부터 태스크를 받으면, 실제 인프라에 kubectl·helm·terraform 등의 명령을 실행하고 결과를 다시 플랫폼으로 전송합니다.
