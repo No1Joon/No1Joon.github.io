@@ -3,9 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% if page.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
   <meta name="google-site-verification" content="EbllXhyf3VWQ6q7y4H5cPTMM7x3zW3uZLK0QnPA2mwM" />
+  <!-- 네이버 서치어드바이저 등록 후 발급받은 코드로 아래 줄의 주석을 해제하고 교체하세요.
+  <meta name="naver-site-verification" content="YOUR_NAVER_CODE_HERE" />
+  -->
+  <link rel="icon" type="image/png" href="{{ '/assets/favicon.png' | relative_url }}">
+  {% seo %}
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&display=swap" rel="stylesheet">

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /.claude/
+Disallow: /.gemini/
+
+Sitemap: https://No1Joon.github.io/sitemap.xml

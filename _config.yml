@@ -2,7 +2,18 @@ title: No1Joon's Tech Blog
 description: 기술 스택, 아키텍처, 개발 경험을 기록하는 블로그
 baseurl: ""
 url: "https://No1Joon.github.io"
-author: No1Joon
+lang: ko
+logo: /assets/og-default.png
+image: /assets/og-default.png
+
+author:
+  name: No1Joon
+  url: https://github.com/No1Joon
+
+social:
+  name: No1Joon
+  links:
+    - https://github.com/No1Joon
 
 markdown: kramdown
 highlighter: rouge
