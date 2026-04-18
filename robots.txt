@@ -4,4 +4,4 @@ Allow: /
 Disallow: /.claude/
 Disallow: /.gemini/
 
-Sitemap: https://No1Joon.github.io/sitemap.xml
+Sitemap: https://no1joon.github.io/sitemap.xml
