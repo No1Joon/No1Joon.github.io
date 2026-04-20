@@ -260,25 +260,25 @@ Service Mesh 시리즈 3편 추가
 
 #### GCP (4편)
 
-- [ ] **4.1** `_posts/2026-04-20-gcp-01-iam.md`
+- [x] **4.1** `_posts/2026-04-20-gcp-01-iam.md`
   - 제목: `GCP 프로젝트와 IAM`
   - description: `GCP의 Organization·Folder·Project 계층과 IAM Role 모델을 AWS와 비교해서 정리해요.`
   - tags: `[gcp, iam, project, organization, security]`
   - 다룰 것: Resource Hierarchy(Org/Folder/Project), Predefined vs Custom Role, Service Account 사용법, AWS IAM과의 차이
 
-- [ ] **4.2** `_posts/2026-04-20-gcp-02-gke.md`
+- [x] **4.2** `_posts/2026-04-20-gcp-02-gke.md`
   - 제목: `GKE 운영의 핵심`
   - description: `GKE Autopilot·Standard 모드 차이와 노드풀·Workload Identity 중심의 운영 포인트를 정리해요.`
   - tags: `[gcp, gke, kubernetes, autopilot, workload-identity]`
   - 다룰 것: Autopilot vs Standard, 노드풀 설계, Workload Identity(IAM 연동), Multi-cluster 지원, 자동 업그레이드
 
-- [ ] **4.3** `_posts/2026-04-20-gcp-03-network.md`
+- [x] **4.3** `_posts/2026-04-20-gcp-03-network.md`
   - 제목: `VPC와 Load Balancing`
   - description: `GCP의 글로벌 VPC와 7계층 Load Balancer 구조를 AWS와 대비해서 정리해요.`
   - tags: `[gcp, vpc, load-balancer, network, global]`
   - 다룰 것: 글로벌 VPC 개념(AWS와 가장 큰 차이), Subnet은 Region 스코프, HTTP(S) LB 구조, Cloud Armor
 
-- [ ] **4.4** `_posts/2026-04-20-gcp-04-data.md`
+- [x] **4.4** `_posts/2026-04-20-gcp-04-data.md`
   - 제목: `BigQuery와 데이터 플랫폼`
   - description: `서버리스 데이터 웨어하우스 BigQuery와 Pub/Sub·Dataflow의 조합을 정리해요.`
   - tags: `[gcp, bigquery, pubsub, dataflow, analytics]`
