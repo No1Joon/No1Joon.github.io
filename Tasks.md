@@ -202,25 +202,25 @@ Service Mesh 시리즈 3편 추가
 
 #### Terraform/IaC (4편)
 
-- [ ] **2.1** `_posts/2026-04-20-terraform-iac-01-overview.md`
+- [x] **2.1** `_posts/2026-04-20-terraform-iac-01-overview.md`
   - 제목: `Terraform 기본 구조`
   - description: `HCL 문법과 provider·resource·data·output 구성 요소가 선언적 IaC를 어떻게 구성하는지 정리해요.`
   - tags: `[terraform, iac, hcl, provider, infrastructure]`
   - 다룰 것: Terraform vs CloudFormation vs Pulumi, HCL 구조(provider/resource/variable/output), plan → apply 흐름, 선언적 사고
 
-- [ ] **2.2** `_posts/2026-04-20-terraform-iac-02-modules.md`
+- [x] **2.2** `_posts/2026-04-20-terraform-iac-02-modules.md`
   - 제목: `모듈과 재사용 설계`
   - description: `인프라 중복을 제거하는 Terraform 모듈 구조와 root·child 모듈 설계 원칙을 정리해요.`
   - tags: `[terraform, module, reusable, iac, design]`
   - 다룰 것: module 개념, public vs private module, input/output 설계, 버전 고정, 폴더 구조 패턴
 
-- [ ] **2.3** `_posts/2026-04-20-terraform-iac-03-state.md`
+- [x] **2.3** `_posts/2026-04-20-terraform-iac-03-state.md`
   - 제목: `State 관리와 협업`
   - description: `tfstate 원격 백엔드와 state locking으로 팀 협업을 안전하게 만드는 방법을 정리해요.`
   - tags: `[terraform, state, backend, s3, locking]`
   - 다룰 것: state가 뭐고 왜 중요한가, remote backend (S3+DynamoDB, Terraform Cloud), state locking, import/mv/rm 기본
 
-- [ ] **2.4** `_posts/2026-04-20-terraform-iac-04-cicd.md`
+- [x] **2.4** `_posts/2026-04-20-terraform-iac-04-cicd.md`
   - 제목: `Terraform CI와 테스트`
   - description: `plan 리뷰·tflint·terratest로 IaC를 코드처럼 검증하는 파이프라인을 구성해요.`
   - tags: `[terraform, cicd, testing, terratest, tflint]`
