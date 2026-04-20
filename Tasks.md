@@ -286,19 +286,19 @@ Service Mesh 시리즈 3편 추가
 
 #### Azure (3편)
 
-- [ ] **5.1** `_posts/2026-04-20-azure-01-rbac.md`
+- [x] **5.1** `_posts/2026-04-20-azure-01-rbac.md`
   - 제목: `Azure 계정과 RBAC`
   - description: `Management Group·Subscription·Resource Group 계층과 Azure AD 기반 RBAC를 정리해요.`
   - tags: `[azure, rbac, azure-ad, subscription, management-group]`
   - 다룰 것: 계정 계층, Azure AD와 RBAC 연동, Built-in Role, Conditional Access 개요
 
-- [ ] **5.2** `_posts/2026-04-20-azure-02-aks.md`
+- [x] **5.2** `_posts/2026-04-20-azure-02-aks.md`
   - 제목: `AKS와 네트워킹`
   - description: `AKS의 네트워크 모델(Kubenet·Azure CNI)과 ingress 구성을 정리해요.`
   - tags: `[azure, aks, kubernetes, cni, ingress]`
   - 다룰 것: AKS 아키텍처, Kubenet vs Azure CNI, Managed Identity 연동, Application Gateway Ingress Controller
 
-- [ ] **5.3** `_posts/2026-04-20-azure-03-services.md`
+- [x] **5.3** `_posts/2026-04-20-azure-03-services.md`
   - 제목: `주요 컴퓨트와 DB 서비스`
   - description: `VM·App Service·Functions·Cosmos DB 등 Azure 핵심 PaaS 서비스의 선택 기준을 정리해요.`
   - tags: `[azure, vm, app-service, functions, cosmos-db]`
