@@ -178,19 +178,19 @@ Service Mesh 시리즈 3편 추가
 
 #### Service Mesh (3편)
 
-- [ ] **1.1** `_posts/2026-04-20-service-mesh-01-overview.md`
+- [x] **1.1** `_posts/2026-04-20-service-mesh-01-overview.md`
   - 제목: `Service Mesh 개념과 구조`
   - description: `사이드카 기반 Service Mesh가 해결하는 문제와 Istio·Linkerd 데이터 플레인 구조를 정리해요.`
   - tags: `[service-mesh, istio, linkerd, sidecar, kubernetes]`
   - 다룰 것: 왜 Service Mesh인가(라이브러리 대비 장점), 데이터 플레인 vs 컨트롤 플레인, Envoy 사이드카 동작, Istio·Linkerd 간단 비교
 
-- [ ] **1.2** `_posts/2026-04-20-service-mesh-02-traffic.md`
+- [x] **1.2** `_posts/2026-04-20-service-mesh-02-traffic.md`
   - 제목: `트래픽 관리와 라우팅 정책`
   - description: `VirtualService·DestinationRule로 Canary·재시도·타임아웃을 구현하는 패턴을 정리해요.`
   - tags: `[service-mesh, istio, traffic, canary, circuit-breaker]`
   - 다룰 것: VirtualService/DestinationRule 역할, Canary·Weight 분산, Retry·Timeout·Circuit Breaker, Fault Injection
 
-- [ ] **1.3** `_posts/2026-04-20-service-mesh-03-security.md`
+- [x] **1.3** `_posts/2026-04-20-service-mesh-03-security.md`
   - 제목: `mTLS와 관측성 통합`
   - description: `Service Mesh가 제공하는 자동 mTLS와 분산 추적·메트릭 수집의 원리를 정리해요.`
   - tags: `[service-mesh, mtls, observability, istio, security]`
