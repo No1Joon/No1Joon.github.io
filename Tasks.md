@@ -228,31 +228,31 @@ Service Mesh 시리즈 3편 추가
 
 #### AWS (5편)
 
-- [ ] **3.1** `_posts/2026-04-20-aws-01-iam.md`
+- [x] **3.1** `_posts/2026-04-20-aws-01-iam.md`
   - 제목: `AWS 계정 구조와 IAM`
   - description: `Organizations·SCP·IAM Role 기반의 멀티 계정 권한 모델을 정리해요.`
   - tags: `[aws, iam, organizations, scp, security]`
   - 다룰 것: 멀티 계정 왜(분리·청구·격리), Organizations·OU·SCP, IAM User vs Role, AssumeRole 플로우, 최소 권한
 
-- [ ] **3.2** `_posts/2026-04-20-aws-02-network.md`
+- [x] **3.2** `_posts/2026-04-20-aws-02-network.md`
   - 제목: `VPC와 네트워킹`
   - description: `VPC·Subnet·Route Table·NAT Gateway가 맞물리는 방식과 멀티 AZ 네트워크 설계를 정리해요.`
   - tags: `[aws, vpc, network, subnet, nat]`
   - 다룰 것: VPC/CIDR 설계, Public/Private Subnet, IGW·NAT·Route Table, Transit Gateway/PrivateLink 개요
 
-- [ ] **3.3** `_posts/2026-04-20-aws-03-compute.md`
+- [x] **3.3** `_posts/2026-04-20-aws-03-compute.md`
   - 제목: `EC2·ECS·EKS 선택 기준`
   - description: `AWS 컴퓨트 옵션을 워크로드 성격에 따라 어떻게 선택할지 기준을 정리해요.`
   - tags: `[aws, ec2, ecs, eks, fargate]`
   - 다룰 것: EC2 vs ECS vs EKS vs Fargate vs Lambda, 각 오퍼링의 책임 경계, 마이그레이션 경로, Auto Scaling
 
-- [ ] **3.4** `_posts/2026-04-20-aws-04-storage.md`
+- [x] **3.4** `_posts/2026-04-20-aws-04-storage.md`
   - 제목: `S3와 RDS 설계`
   - description: `S3 스토리지 클래스와 RDS 엔진별 운영 특성을 비교해요.`
   - tags: `[aws, s3, rds, storage, database]`
   - 다룰 것: S3 스토리지 클래스·라이프사이클·버저닝, RDS vs Aurora, Multi-AZ·Read Replica, 백업·스냅샷
 
-- [ ] **3.5** `_posts/2026-04-20-aws-05-serverless.md`
+- [x] **3.5** `_posts/2026-04-20-aws-05-serverless.md`
   - 제목: `Lambda와 서버리스 패턴`
   - description: `Lambda·API Gateway·EventBridge로 서버리스 아키텍처를 구성하는 실전 패턴을 정리해요.`
   - tags: `[aws, lambda, serverless, api-gateway, eventbridge]`
