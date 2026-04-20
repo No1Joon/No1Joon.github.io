@@ -336,19 +336,19 @@ Service Mesh 시리즈 3편 추가
 
 #### Logging (3편)
 
-- [ ] **7.1** `_posts/2026-04-20-logging-01-structured.md`
+- [x] **7.1** `_posts/2026-04-20-logging-01-structured.md`
   - 제목: `구조화 로깅 원칙`
   - description: `텍스트 로그에서 JSON 구조화로 전환할 때의 설계 포인트와 필드 네이밍을 정리해요.`
   - tags: `[logging, structured-logging, json, observability, schema]`
   - 다룰 것: 왜 구조화, 표준 필드(timestamp/level/trace_id/service), PII·민감정보 필터링, 레벨 철학
 
-- [ ] **7.2** `_posts/2026-04-20-logging-02-pipeline.md`
+- [x] **7.2** `_posts/2026-04-20-logging-02-pipeline.md`
   - 제목: `로그 수집 파이프라인`
   - description: `Fluent Bit·Vector·Loki·ELK가 각자 어떤 역할을 맡는지 수집 파이프라인 구조로 정리해요.`
   - tags: `[logging, fluent-bit, loki, elk, pipeline]`
   - 다룰 것: Agent (Fluent Bit/Vector), Aggregator, Storage(Loki/Elasticsearch/S3), 사이드카 vs DaemonSet
 
-- [ ] **7.3** `_posts/2026-04-20-logging-03-search.md`
+- [x] **7.3** `_posts/2026-04-20-logging-03-search.md`
   - 제목: `검색과 보존 정책`
   - description: `로그 보존 비용과 검색 요구 사이의 트레이드오프를 해결하는 계층화 전략을 정리해요.`
   - tags: `[logging, retention, search, cost, archival]`
