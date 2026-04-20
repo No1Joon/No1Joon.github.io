@@ -310,25 +310,25 @@ Service Mesh 시리즈 3편 추가
 
 #### Monitoring (4편)
 
-- [ ] **6.1** `_posts/2026-04-20-monitoring-01-metrics.md`
+- [x] **6.1** `_posts/2026-04-20-monitoring-01-metrics.md`
   - 제목: `메트릭 설계와 분류`
   - description: `USE·RED·Four Golden Signals로 어떤 메트릭을 수집해야 할지 기준을 잡아요.`
   - tags: `[monitoring, metrics, use-method, red-method, sre]`
   - 다룰 것: Gauge/Counter/Histogram/Summary 차이, USE·RED·Golden Signals, 메트릭 네이밍·라벨 설계
 
-- [ ] **6.2** `_posts/2026-04-20-monitoring-02-prometheus.md`
+- [x] **6.2** `_posts/2026-04-20-monitoring-02-prometheus.md`
   - 제목: `Prometheus 아키텍처`
   - description: `Pull 기반 수집·TSDB·PromQL·Alertmanager가 맞물리는 구조를 정리해요.`
   - tags: `[monitoring, prometheus, promql, tsdb, alertmanager]`
   - 다룰 것: Pull 모델 왜, ServiceMonitor/PodMonitor, TSDB 구조, PromQL 기본, Alertmanager 라우팅
 
-- [ ] **6.3** `_posts/2026-04-20-monitoring-03-grafana.md`
+- [x] **6.3** `_posts/2026-04-20-monitoring-03-grafana.md`
   - 제목: `Grafana 대시보드 설계`
   - description: `잘 읽히는 대시보드를 만드는 레이아웃·시각화 선택 원칙을 정리해요.`
   - tags: `[monitoring, grafana, dashboard, visualization, ux]`
   - 다룰 것: 대시보드 계층(Overview → Detail), 패널 유형별 쓰임, 변수/템플릿, 대시보드 as code (Grafonnet/JSON)
 
-- [ ] **6.4** `_posts/2026-04-20-monitoring-04-slo.md`
+- [x] **6.4** `_posts/2026-04-20-monitoring-04-slo.md`
   - 제목: `SLO와 알람 전략`
   - description: `SLI·SLO·Error Budget 기반 알람으로 피로도를 줄이는 방법을 정리해요.`
   - tags: `[monitoring, slo, sli, error-budget, alerting]`
