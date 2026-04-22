@@ -490,5 +490,31 @@ Service Mesh 시리즈 3편 추가
 
 #### Database (4편)
 
-- [ ] **14.1** `_posts/2026-04-20-database-01-relational.md`
+- [x] **14.1** `_posts/2026-04-20-database-01-relational.md`
+  - 제목: `관계형 DB와 인덱스`
+  - description: `B-Tree 인덱스와 실행 계획을 읽는 감각을 기본부터 정리해요.`
+  - tags: `[database, rdbms, index, b-tree, execution-plan]`
+  - 다룰 것: B-Tree/Hash Index, Clustered vs Non-clustered, Covering Index, EXPLAIN 읽기
+
+- [x] **14.2** `_posts/2026-04-20-database-02-transaction.md`
+  - 제목: `트랜잭션과 격리 수준`
+  - description: `ACID와 4가지 격리 수준에서 발생하는 현상과 MVCC의 작동 원리를 정리해요.`
+  - tags: `[database, transaction, isolation, mvcc, acid]`
+  - 다룰 것: ACID, Dirty Read/Non-repeatable/Phantom, 4 Isolation Level, MVCC(PostgreSQL), Serializable 비용
+
+- [x] **14.3** `_posts/2026-04-20-database-03-nosql.md`
+  - 제목: `NoSQL 유형별 선택`
+  - description: `Document·Key-Value·Wide-Column·Graph DB가 각자 어떤 모델에 적합한지 비교해요.`
+  - tags: `[database, nosql, mongodb, cassandra, dynamodb]`
+  - 다룰 것: 4가지 NoSQL 패턴, CAP/PACELC, DynamoDB·MongoDB·Cassandra 쓰임, SQL과의 경계선
+
+- [x] **14.4** `_posts/2026-04-20-database-04-scaling.md`
+  - 제목: `복제와 샤딩 전략`
+  - description: `Read Replica·Sharding·Partitioning으로 DB를 수평 확장하는 기본 패턴을 정리해요.`
+  - tags: `[database, replication, sharding, partition, scaling]`
+  - 다룰 것: Master-Replica, Sync vs Async Replication, Sharding 키 선택, Partitioning 종류, Global DB
+
+#### API Design (3편)
+
+- [ ] **15.1** `_posts/2026-04-20-api-design-01-styles.md`
 ...
