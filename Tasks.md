@@ -470,5 +470,25 @@ Service Mesh 시리즈 3편 추가
 
 #### Backend (3편)
 
-- [ ] **13.1** `_posts/2026-04-20-backend-01-architecture.md`
+- [x] **13.1** `_posts/2026-04-20-backend-01-architecture.md`
+  - 제목: `백엔드 아키텍처 스타일`
+  - description: `Layered·Hexagonal·Clean 아키텍처가 같은 문제를 다르게 푸는 방식을 비교해요.`
+  - tags: `[backend, architecture, layered, hexagonal, clean]`
+  - 다룰 것: Layered의 문제, Hexagonal(Port/Adapter), Clean의 원 구조, 언제 어떤 스타일
+
+- [x] **13.2** `_posts/2026-04-20-backend-02-concurrency.md`
+  - 제목: `동시성과 성능`
+  - description: `스레드·이벤트 루프·코루틴이 동시성을 어떻게 다르게 처리하는지 정리해요.`
+  - tags: `[backend, concurrency, thread, event-loop, coroutine]`
+  - 다룰 것: 스레드 기반(Java/Go) vs 이벤트 루프(Node) vs 코루틴(Kotlin/Python asyncio), 선택 기준, backpressure
+
+- [x] **13.3** `_posts/2026-04-20-backend-03-caching.md`
+  - 제목: `캐싱과 메시지 큐`
+  - description: `Redis 캐시 전략과 Kafka·RabbitMQ 메시지 큐가 백엔드 부하를 분산시키는 방식을 정리해요.`
+  - tags: `[backend, caching, redis, kafka, message-queue]`
+  - 다룰 것: Cache-aside/Write-through/Write-behind, Cache Stampede·Thundering Herd, Queue(Kafka) vs Broker(RabbitMQ) 특성
+
+#### Database (4편)
+
+- [ ] **14.1** `_posts/2026-04-20-database-01-relational.md`
 ...
