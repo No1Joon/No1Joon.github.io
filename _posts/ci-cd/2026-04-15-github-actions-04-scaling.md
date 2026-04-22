@@ -12,11 +12,11 @@ tags: [github-actions, reusable-workflow, matrix, cache, self-hosted]
 
 ## 확장의 세 가지 축
 
-여러 저장소·워크플로우가 생기면 중복이 폭발적으로 늘어납니다. GitHub Actions에서는 세 가지 축으로 확장성과 속도를 확보합니다.
+여러 저장소·워크플로우가 생기면 중복이 폭발적으로 늘어납니다. GitHub Actions에서는 세 가지 축으로 확장성과 속도를 확보합니다
 
-1. **재사용**: Reusable Workflow·Composite Action으로 중복 제거.
-2. **병렬**: Matrix Strategy로 여러 조합을 동시에 실행.
-3. **캐시**: 의존성·빌드 산출물을 Run 간에 보존해 시간 절약.
+1. **재사용**: Reusable Workflow·Composite Action으로 중복 제거
+2. **병렬**: Matrix Strategy로 여러 조합을 동시에 실행
+3. **캐시**: 의존성·빌드 산출물을 Run 간에 보존해 시간 절약
 
 ## Reusable Workflow 구조
 
@@ -40,7 +40,7 @@ flowchart LR
     class caller,central neutral
 ```
 
-피호출 워크플로우는 `on: workflow_call` 트리거를 선언하고, 호출 측은 `uses:` 로 파일 경로를 참조합니다.
+피호출 워크플로우는 `on: workflow_call` 트리거를 선언하고, 호출 측은 `uses:` 로 파일 경로를 참조합니다
 
 ### 피호출 워크플로우
 
@@ -100,7 +100,7 @@ jobs:
       - run: echo "Image ${{ needs.build.outputs.image-tag }}"
 ```
 
-중앙 저장소의 태그(`@v1`)를 고정해 호출 측이 영향받지 않도록 관리합니다.
+중앙 저장소의 태그(`@v1`)를 고정해 호출 측이 영향받지 않도록 관리합니다
 
 ## Reusable Workflow vs Composite Action
 
@@ -139,11 +139,11 @@ runs:
     python-version: "3.12"
 ```
 
-Step 레벨에서 반복되는 동작은 Composite, 파이프라인 전체를 공유하려면 Reusable Workflow를 씁니다.
+Step 레벨에서 반복되는 동작은 Composite, 파이프라인 전체를 공유하려면 Reusable Workflow를 씁니다
 
 ## Matrix Strategy
 
-여러 버전·OS 조합을 한 선언으로 병렬 실행합니다.
+여러 버전·OS 조합을 한 선언으로 병렬 실행합니다
 
 ```yaml
 jobs:
@@ -180,7 +180,7 @@ jobs:
 
 ## Cache 전략
 
-의존성 다운로드·빌드 산출물을 Run 간에 보존합니다. 키 설계가 성능을 좌우합니다.
+의존성 다운로드·빌드 산출물을 Run 간에 보존합니다. 키 설계가 성능을 좌우합니다
 
 ```yaml
 - uses: actions/cache@v4
@@ -196,7 +196,7 @@ jobs:
 
 <div class="callout why">
   <div class="callout-title">key와 restore-keys의 역할 구분</div>
-  <code>key</code> 가 정확히 일치하는 캐시가 있으면 그걸 복원하고, 없으면 새로 저장합니다. <code>restore-keys</code> 는 정확한 매치가 없을 때 prefix 매칭으로 이전 캐시를 복원하지만 **새로 저장하지는 않습니다**. 의존성 파일이 바뀌어도 가까운 이전 캐시를 부분 활용해 설치 시간을 줄이는 게 목적입니다.
+  <code>key</code> 가 정확히 일치하는 캐시가 있으면 그걸 복원하고, 없으면 새로 저장합니다. <code>restore-keys</code> 는 정확한 매치가 없을 때 prefix 매칭으로 이전 캐시를 복원하지만 **새로 저장하지는 않습니다**. 의존성 파일이 바뀌어도 가까운 이전 캐시를 부분 활용해 설치 시간을 줄이는 게 목적입니다
 </div>
 
 ### Docker 레이어 캐시
@@ -212,17 +212,17 @@ jobs:
     cache-to: type=gha,mode=max
 ```
 
-`type=gha` 는 GitHub Actions 캐시 API를 레이어 저장소로 씁니다. 별도 Registry 없이 동작합니다.
+`type=gha` 는 GitHub Actions 캐시 API를 레이어 저장소로 씁니다. 별도 Registry 없이 동작합니다
 
 ### 캐시 제한
 
-- 저장소당 총 10GB입니다. 초과분은 LRU로 자동 삭제됩니다.
-- 7일간 미사용 캐시는 자동 삭제됩니다.
-- 브랜치별로 격리됩니다 — PR은 base 브랜치 캐시를 읽을 수 있지만 PR에서 저장한 캐시는 base에서 못 읽습니다.
+- 저장소당 총 10GB입니다. 초과분은 LRU로 자동 삭제됩니다
+- 7일간 미사용 캐시는 자동 삭제됩니다
+- 브랜치별로 격리됩니다 — PR은 base 브랜치 캐시를 읽을 수 있지만 PR에서 저장한 캐시는 base에서 못 읽습니다
 
 ## Artifact 전달
 
-Artifact는 Job 간·워크플로우 간 파일 전달용입니다. 캐시와 목적이 다릅니다.
+Artifact는 Job 간·워크플로우 간 파일 전달용입니다. 캐시와 목적이 다릅니다
 
 | 구분 | Cache | Artifact |
 |------|-------|----------|
@@ -267,7 +267,7 @@ tar xzf actions-runner-linux-x64-2.320.0.tar.gz
 ./svc.sh start
 ```
 
-라벨을 여러 개 붙이면 워크플로우에서 정밀하게 지정할 수 있습니다.
+라벨을 여러 개 붙이면 워크플로우에서 정밀하게 지정할 수 있습니다
 
 ```yaml
 jobs:
@@ -279,12 +279,12 @@ jobs:
 
 <div class="callout why">
   <div class="callout-title">퍼블릭 리포에서는 금지</div>
-  퍼블릭 저장소의 PR은 누구나 열 수 있습니다. Self-hosted Runner에서 PR의 코드를 그대로 실행하면 사내망 공격이 가능합니다. 반드시 **프라이빗 리포 전용**으로 두거나, 퍼블릭 리포라면 조직 멤버 PR만 실행되도록 조직 설정에서 제한합니다.
+  퍼블릭 저장소의 PR은 누구나 열 수 있습니다. Self-hosted Runner에서 PR의 코드를 그대로 실행하면 사내망 공격이 가능합니다. 반드시 **프라이빗 리포 전용**으로 두거나, 퍼블릭 리포라면 조직 멤버 PR만 실행되도록 조직 설정에서 제한합니다
 </div>
 
 ### Ephemeral Runner
 
-매 Job마다 Runner를 새로 띄워 격리하는 방식입니다. actions-runner-controller(ARC)로 Kubernetes 위에서 운영하면 자동 스케일링과 자동 폐기가 동시에 됩니다.
+매 Job마다 Runner를 새로 띄워 격리하는 방식입니다. actions-runner-controller(ARC)로 Kubernetes 위에서 운영하면 자동 스케일링과 자동 폐기가 동시에 됩니다
 
 ```yaml
 # ARC RunnerSet 예시
@@ -319,6 +319,6 @@ spec:
 | Cache | lock 해시 기반 `key` + prefix `restore-keys` |
 | Self-hosted | 프라이빗 리포 또는 Ephemeral(ARC) 필수 |
 
-GitHub Actions 시리즈는 여기서 마무리합니다. 구조·파이프라인·보안·확장 네 축이 준비되면 대부분의 팀이 쓰는 CI/CD 요구를 커버할 수 있습니다.
+GitHub Actions 시리즈는 여기서 마무리합니다. 구조·파이프라인·보안·확장 네 축이 준비되면 대부분의 팀이 쓰는 CI/CD 요구를 커버할 수 있습니다
 
 {% endraw %}

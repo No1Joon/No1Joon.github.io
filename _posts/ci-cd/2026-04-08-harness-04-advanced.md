@@ -10,21 +10,21 @@ tags: [harness, feature-flags, blue-green, opa, governance, git-experience]
 
 ## 배포와 릴리즈의 분리
 
-전통적인 배포에서는 코드를 프로덕션에 올리는 순간 사용자에게 노출됩니다. 이 두 가지를 분리하면 다음이 가능해집니다.
+전통적인 배포에서는 코드를 프로덕션에 올리는 순간 사용자에게 노출됩니다. 이 두 가지를 분리하면 다음이 가능해집니다
 
 - 기능이 완성되지 않아도 코드를 먼저 배포
 - 특정 사용자 그룹에만 새 기능 노출
 - 문제가 생기면 코드 배포 없이 즉시 비활성화
 
-Harness Feature Flags는 이 패턴을 플랫폼 수준에서 지원합니다.
+Harness Feature Flags는 이 패턴을 플랫폼 수준에서 지원합니다
 
 ## Feature Flags 구조
 
-Feature Flag는 **Flag** 와 **Target** 두 개념으로 동작합니다.
+Feature Flag는 **Flag** 와 **Target** 두 개념으로 동작합니다
 
-- **Flag**: 켜고 끌 수 있는 기능의 단위. Boolean, String, Number, JSON 타입을 지원합니다.
-- **Target**: Flag의 ON/OFF 대상. 사용자 ID, 이메일, 국가 등 속성으로 정의합니다.
-- **Segment**: Target의 그룹. 여러 Target을 묶어 규칙을 적용합니다.
+- **Flag**: 켜고 끌 수 있는 기능의 단위. Boolean, String, Number, JSON 타입을 지원합니다
+- **Target**: Flag의 ON/OFF 대상. 사용자 ID, 이메일, 국가 등 속성으로 정의합니다
+- **Segment**: Target의 그룹. 여러 Target을 묶어 규칙을 적용합니다
 
 ```
 Flag: new-checkout-flow
@@ -35,7 +35,7 @@ Flag: new-checkout-flow
 
 ## SDK 연동
 
-SDK는 **앱 시작 시 1회 초기화** → **요청마다 Target 생성** → **Flag 평가** 세 단계만 기억하면 됩니다. Target은 사용자 ID를 식별자로 쓰고 이메일·플랜·국가 같은 속성을 붙여 Segment 규칙 매칭에 활용합니다.
+SDK는 **앱 시작 시 1회 초기화** → **요청마다 Target 생성** → **Flag 평가** 세 단계만 기억하면 됩니다. Target은 사용자 ID를 식별자로 쓰고 이메일·플랜·국가 같은 속성을 붙여 Segment 규칙 매칭에 활용합니다
 
 ```python
 from featureflags.client import CfClient
@@ -51,7 +51,7 @@ if client.bool_variation("new-checkout-flow", target, default=False):
 return legacy_checkout_handler()
 ```
 
-FastAPI 같은 웹 프레임워크에서는 `lifespan` 에서 `CfClient` 를 싱글톤으로 띄우고, 미들웨어에서 요청 Target을 `request.state` 에 주입하는 패턴이 표준입니다.
+FastAPI 같은 웹 프레임워크에서는 `lifespan` 에서 `CfClient` 를 싱글톤으로 띄우고, 미들웨어에서 요청 Target을 `request.state` 에 주입하는 패턴이 표준입니다
 
 ## Feature Flag 활용 패턴
 
@@ -62,7 +62,7 @@ FastAPI 같은 웹 프레임워크에서는 `lifespan` 에서 `CfClient` 를 싱
 | A/B 테스트 | `string_variation` | 버튼 텍스트·결제 플로우 변형 |
 | 권한별 노출 | Segment 규칙 | 베타 테스터·내부 팀 우선 공개 |
 
-Kill Switch는 SDK 관점에서 **default 값을 `True` 로 두는 게 포인트**입니다. FF 서비스에 장애가 생겨 Flag 조회가 실패해도 기능이 계속 동작하도록요. 차단이 필요할 때만 콘솔에서 OFF로 내립니다.
+Kill Switch는 SDK 관점에서 **default 값을 `True` 로 두는 게 포인트**입니다. FF 서비스에 장애가 생겨 Flag 조회가 실패해도 기능이 계속 동작하도록요. 차단이 필요할 때만 콘솔에서 OFF로 내립니다
 
 ```python
 async def call_external_api(data):
@@ -73,14 +73,14 @@ async def call_external_api(data):
 
 ## Blue/Green 배포
 
-Canary 배포와 달리 Blue/Green은 두 개의 완전한 환경을 유지합니다. 전환이 즉각적이고 롤백도 서비스 셀렉터 변경만으로 즉시 가능합니다.
+Canary 배포와 달리 Blue/Green은 두 개의 완전한 환경을 유지합니다. 전환이 즉각적이고 롤백도 서비스 셀렉터 변경만으로 즉시 가능합니다
 
 <div class="callout why">
   <div class="callout-title">Canary vs Blue/Green 선택 기준</div>
-  Canary는 점진적 트래픽 이동으로 위험을 분산하지만 전환 시간이 길고 설정이 복잡합니다. Blue/Green은 즉각적인 전환과 롤백이 가능하지만 리소스를 2배 사용합니다. DB 스키마 마이그레이션이 포함된 배포나 즉각적인 롤백이 필요한 서비스에는 Blue/Green을 선택합니다.
+  Canary는 점진적 트래픽 이동으로 위험을 분산하지만 전환 시간이 길고 설정이 복잡합니다. Blue/Green은 즉각적인 전환과 롤백이 가능하지만 리소스를 2배 사용합니다. DB 스키마 마이그레이션이 포함된 배포나 즉각적인 롤백이 필요한 서비스에는 Blue/Green을 선택합니다
 </div>
 
-순서는 **Green 배포 → Verify → Traffic Swap → Blue Scale Down**, 롤백은 `K8sSwapServiceSelectors` 하나로 Blue로 되돌립니다.
+순서는 **Green 배포 → Verify → Traffic Swap → Blue Scale Down**, 롤백은 `K8sSwapServiceSelectors` 하나로 Blue로 되돌립니다
 
 ```yaml
 execution:
@@ -98,7 +98,7 @@ rollbackSteps:
 
 ## Harness Git Experience
 
-파이프라인, 서비스, 환경, 템플릿을 Git 저장소에 YAML로 저장하는 기능입니다. GitOps 원칙에 따라 모든 변경이 코드 리뷰를 거칩니다.
+파이프라인, 서비스, 환경, 템플릿을 Git 저장소에 YAML로 저장하는 기능입니다. GitOps 원칙에 따라 모든 변경이 코드 리뷰를 거칩니다
 
 ```
 your-repo/
@@ -121,7 +121,7 @@ your-repo/
 
 ### Template 재사용
 
-반복되는 Stage·StepGroup·Step은 템플릿으로 추출하고 **`versionLabel`** 로 버전을 고정합니다. 템플릿 내부의 값 중 파이프라인마다 달라지는 부분은 `<+input>` 으로 비워두면, 파이프라인에서 `templateInputs` 로 주입합니다.
+반복되는 Stage·StepGroup·Step은 템플릿으로 추출하고 **`versionLabel`** 로 버전을 고정합니다. 템플릿 내부의 값 중 파이프라인마다 달라지는 부분은 `<+input>` 으로 비워두면, 파이프라인에서 `templateInputs` 로 주입합니다
 
 ```yaml
 # 파이프라인 쪽
@@ -140,13 +140,13 @@ your-repo/
                     - step: { timeout: 10m }
 ```
 
-`versionLabel` 을 올리지 않고 템플릿을 수정하면 **기존 파이프라인에 즉시 영향**이 갑니다. 운영 팁은 *수정 시 새 버전 라벨을 부여하고, 파이프라인은 준비되는 대로 점진 전환* 입니다.
+`versionLabel` 을 올리지 않고 템플릿을 수정하면 **기존 파이프라인에 즉시 영향**이 갑니다. 운영 팁은 *수정 시 새 버전 라벨을 부여하고, 파이프라인은 준비되는 대로 점진 전환* 입니다
 
 ## OPA 기반 거버넌스 정책
 
-Harness는 파이프라인 실행 전에 OPA 정책을 평가하고, `deny` 가 하나라도 발생하면 실행을 막습니다. 입력은 파이프라인 YAML을 JSON으로 파싱한 구조 전체(`input.pipeline.*`)입니다.
+Harness는 파이프라인 실행 전에 OPA 정책을 평가하고, `deny` 가 하나라도 발생하면 실행을 막습니다. 입력은 파이프라인 YAML을 JSON으로 파싱한 구조 전체(`input.pipeline.*`)입니다
 
-자주 쓰는 정책 아이디어.
+자주 쓰는 정책 아이디어
 
 | 정책 | 검사 지점 |
 |------|-----------|
@@ -155,7 +155,7 @@ Harness는 파이프라인 실행 전에 OPA 정책을 평가하고, `deny` 가 
 | 업무 시간 외 배포 차단 | `time.clock(time.now_ns())[0]` 가 10~18 범위 밖 |
 | Canary 단계 필수 | `Deployment` Stage에 `K8sCanaryDeploy` Step 존재 |
 
-대표 예시 하나만 보면 Rego 작성 패턴이 그대로 보입니다.
+대표 예시 하나만 보면 Rego 작성 패턴이 그대로 보입니다
 
 ```rego
 package pipeline
@@ -173,9 +173,9 @@ deny contains msg if {
 
 ## Approval 게이트
 
-배포 전에 사람의 승인을 받거나, Jira·ServiceNow 티켓 상태를 확인하는 Step입니다.
+배포 전에 사람의 승인을 받거나, Jira·ServiceNow 티켓 상태를 확인하는 Step입니다
 
-`HarnessApproval` Step은 `approvers.userGroups` 로 승인자를 지정하고, `approvalMessage` 에 Harness 표현식을 섞어 맥락을 자동으로 채웁니다. `timeout` 을 명시하지 않으면 파이프라인이 무기한 대기하니 8시간 정도로 두는 게 안전합니다.
+`HarnessApproval` Step은 `approvers.userGroups` 로 승인자를 지정하고, `approvalMessage` 에 Harness 표현식을 섞어 맥락을 자동으로 채웁니다. `timeout` 을 명시하지 않으면 파이프라인이 무기한 대기하니 8시간 정도로 두는 게 안전합니다
 
 ```yaml
 - step:
@@ -192,7 +192,7 @@ deny contains msg if {
 
 ## Delegate HA 운영
 
-프로덕션 Delegate는 반드시 2개 이상. 단일 장애점을 없애는 동시에, 자동 업그레이드가 순차적으로 돌 때 파이프라인이 끊기지 않습니다.
+프로덕션 Delegate는 반드시 2개 이상. 단일 장애점을 없애는 동시에, 자동 업그레이드가 순차적으로 돌 때 파이프라인이 끊기지 않습니다
 
 | 항목 | 권장 |
 |------|------|
@@ -211,4 +211,4 @@ deny contains msg if {
 | **OPA 정책** | latest 태그 차단, Approval 강제, 배포 시간 제한 |
 | **Delegate HA** | 최소 2개 운영, 자동 업그레이드 활성화 |
 
-Harness는 초기 설정 비용이 크지만, 배포 자동화를 넘어 **배포 신뢰성을 플랫폼이 보장** 하는 수준까지 끌어올립니다. 특히 팀이 커지고 배포 빈도가 높아질수록 OPA 정책과 Feature Flags의 가치가 더 커집니다.
+Harness는 초기 설정 비용이 크지만, 배포 자동화를 넘어 **배포 신뢰성을 플랫폼이 보장** 하는 수준까지 끌어올립니다. 특히 팀이 커지고 배포 빈도가 높아질수록 OPA 정책과 Feature Flags의 가치가 더 커집니다
