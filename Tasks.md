@@ -446,5 +446,29 @@ Service Mesh 시리즈 3편 추가
 
 #### Cost Optimization (3편)
 
-- [ ] **12.1** `_posts/2026-04-20-cost-optimization-01-finops.md`
+- [x] **12.1** `_posts/2026-04-20-cost-optimization-01-finops.md`
+  - 제목: `FinOps 기본 원칙`
+  - description: `FinOps 3단계(Inform·Optimize·Operate)와 태그·Showback·Chargeback으로 비용을 가시화해요.`
+  - tags: `[finops, cost, tagging, chargeback, cloud]`
+  - 다룰 것: FinOps 정의, 3 Phases, Tagging 전략, Showback vs Chargeback, 책임 분산
+
+- [x] **12.2** `_posts/2026-04-20-cost-optimization-02-compute.md`
+  - 제목: `컴퓨트·스토리지 최적화`
+  - description: `Spot/Reserved·Rightsizing·Lifecycle Policy로 컴퓨트와 스토리지 비용을 줄이는 방법을 정리해요.`
+  - tags: `[finops, spot, reserved, rightsizing, storage]`
+  - 다룰 것: Spot/Reserved/Savings Plan, Rightsizing 기준, S3 스토리지 클래스 전환, 비용 알람
+
+- [x] **12.3** `_posts/2026-04-20-cost-optimization-03-kubernetes.md`
+  - 제목: `Kubernetes 비용 관리`
+  - description: `Kubecost·Karpenter로 쿠버네티스 워크로드의 비용을 투명하게 관리해요.`
+  - tags: `[finops, kubernetes, kubecost, karpenter, autoscaling]`
+  - 다룰 것: 요청/한도 기반 비용 분배, Kubecost, Karpenter 클러스터 오토스케일러, bin-packing
+
+---
+
+### 💻 Development
+
+#### Backend (3편)
+
+- [ ] **13.1** `_posts/2026-04-20-backend-01-architecture.md`
 ...
