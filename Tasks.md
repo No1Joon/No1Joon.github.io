@@ -7,7 +7,7 @@ No1Joon Tech Blog(Jekyll·GitHub Pages)에 **총 69편**의 한국어 기술 포
 - 저장소: `/Users/joon/Documents/blog/No1Joon.github.io`
 - 포스트 위치: `_posts/`
 - 라이브 URL: <https://no1joon.github.io>
-- 카테고리 정의: `_data/categories.yml`
+- category 정의: `_data/categories.yml`
 
 ---
 
@@ -282,7 +282,7 @@ Service Mesh 시리즈 3편 추가
   - 제목: `BigQuery와 데이터 플랫폼`
   - description: `서버리스 데이터 웨어하우스 BigQuery와 Pub/Sub·Dataflow의 조합을 정리해요.`
   - tags: `[gcp, bigquery, pubsub, dataflow, analytics]`
-  - 다룰 것: BigQuery 컬럼 스토리지·파티셔닝·슬롯 과금, Pub/Sub, Dataflow(Apache Beam), Looker Studio 개요
+  - 다룰 것: BigQuery 컬럼 스토리지·파티셔닝·슬롯 과금, Pub/Sub, 데이터 플로우(Apache Beam), Looker Studio 개요
 
 #### Azure (3편)
 
@@ -575,7 +575,7 @@ Service Mesh 시리즈 3편 추가
 - [x] **17.3** `_posts/2026-04-20-system-design-03-consistency.md`
   - 제목: `일관성과 CAP 정리`
   - description: `CAP·PACELC와 다양한 일관성 모델이 분산 시스템 설계에 주는 의미를 정리해요.`
-  - tags: `[system-design, consistency, cap, pacelc, distributed]`
+  - tags: `[system-design, consistency, cap, pacelc, distributed] `
   - 다룰 것: CAP 정리, PACELC 확장, Eventual/Strong/Causal, Quorum, Linearizability
 
 - [x] **17.4** `_posts/2026-04-20-system-design-04-cache.md`
@@ -586,5 +586,31 @@ Service Mesh 시리즈 3편 추가
 
 #### MSA/Microservices (4편)
 
-- [ ] **18.1** `_posts/2026-04-20-msa-microservices-01-decompose.md`
+- [x] **18.1** `_posts/2026-04-20-msa-microservices-01-decompose.md`
+  - 제목: `서비스 분해 원칙`
+  - description: `DDD Bounded Context 기반으로 모놀리식을 분해할 때의 기준과 함정을 정리해요.`
+  - tags: `[msa, microservices, ddd, bounded-context, decomposition]`
+  - 다룰 것: 왜 분해·왜 분해하면 안 되는가, Bounded Context, Strangler Fig, Distributed Monolith 경고
+
+- [x] **18.2** `_posts/2026-04-20-msa-microservices-02-communication.md`
+  - 제목: `동기·비동기 통신`
+  - description: `서비스 간 REST·gRPC 동기 호출과 Event·Message 비동기 통신의 트레이드오프를 정리해요.`
+  - tags: `[msa, communication, sync, async, event]`
+  - 다룰 것: REST/gRPC 동기, Event/Message 비동기, Request-Reply over Queue, API Gateway·BFF
+
+- [x] **18.3** `_posts/2026-04-20-msa-microservices-03-saga.md`
+  - 제목: `분산 트랜잭션과 Saga`
+  - description: `Choreography·Orchestration Saga 패턴으로 분산 환경에서 일관성을 만드는 방법을 정리해요.`
+  - tags: `[msa, saga, distributed-transaction, compensation, consistency]`
+  - 다룰 것: 2PC의 한계, Saga 두 가지 스타일, Compensating Transaction, Outbox 패턴
+
+- [x] **18.4** `_posts/2026-04-20-msa-microservices-04-resilience.md`
+  - 제목: `Resilience 패턴`
+  - description: `Circuit Breaker·Retry·Bulkhead·Timeout이 장애 전파를 어떻게 막는지 정리해요.`
+  - tags: `[msa, resilience, circuit-breaker, retry, bulkhead]`
+  - 다룰 것: 장애 격리 원칙, Circuit Breaker 상태 전이, Retry with Backoff, Bulkhead, Idempotency
+
+#### Event-Driven (3편)
+
+- [ ] **19.1** `_posts/2026-04-20-event-driven-01-concept.md`
 ...
