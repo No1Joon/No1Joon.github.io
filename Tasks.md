@@ -632,5 +632,27 @@ Service Mesh 시리즈 3편 추가
 
 #### Design Patterns (3편)
 
-- [ ] **20.1** `_posts/2026-04-20-design-patterns-01-gof.md`
+- [x] **20.1** `_posts/2026-04-20-design-patterns-01-gof.md`
+  - 제목: `GoF 패턴 재조명`
+  - description: `생성·구조·행위 패턴에서 현대 언어에서도 살아남은 것들과 의미가 퇴색한 것들을 정리해요.`
+  - tags: `[design-patterns, gof, oop, creational, structural]`
+  - 다룰 것: 3분류, 여전히 유용한 패턴(Factory/Strategy/Observer), 구식화된 패턴, 함수형 대체
+
+- [x] **20.2** `_posts/2026-04-20-design-patterns-02-ddd.md`
+  - 제목: `DDD 전술 패턴`
+  - description: `Entity·Value Object·Aggregate·Repository가 도메인 모델을 보호하는 방식을 정리해요.`
+  - tags: `[design-patterns, ddd, aggregate, entity, value-object]`
+  - 다룰 것: Entity vs VO, Aggregate Root, Repository, Domain Event, 흔한 모델링 실수
+
+- [x] **20.3** `_posts/2026-04-20-design-patterns-03-hexagonal.md`
+  - 제목: `클린·헥사고날 아키텍처`
+  - description: `Port·Adapter 구조로 도메인 코어를 인프라 기술에서 분리하는 설계를 정리해요.`
+  - tags: `[design-patterns, hexagonal, clean-architecture, port, adapter]`
+  - 다룰 것: Dependency Inversion, Port·Adapter, Use Case 경계, 테스트 용이성, 실용적 축소 버전
+
+---
+
+## 최종 검증 (전체 완료 후)
+
+1. **빌드 확인**
 ...
