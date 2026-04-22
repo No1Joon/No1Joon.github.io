@@ -560,5 +560,31 @@ Service Mesh 시리즈 3편 추가
 
 #### System Design (4편)
 
-- [ ] **17.1** `_posts/2026-04-20-system-design-01-thinking.md`
+- [x] **17.1** `_posts/2026-04-20-system-design-01-thinking.md`
+  - 제목: `시스템 설계 사고법`
+  - description: `요구사항·제약·트레이드오프에서 시작하는 시스템 설계의 사고 프레임을 정리해요.`
+  - tags: `[system-design, trade-off, requirements, architecture, thinking]`
+  - 다룰 것: Functional vs Non-functional Requirement, 트레이드오프 축(일관성·지연·비용), 설계 인터뷰 프레임워크
+
+- [x] **17.2** `_posts/2026-04-20-system-design-02-scale.md`
+  - 제목: `확장성과 부하 분산`
+  - description: `Vertical·Horizontal Scaling과 Load Balancer·CDN 계층이 부하를 나누는 방법을 정리해요.`
+  - tags: `[system-design, scalability, load-balancer, cdn, horizontal-scaling]`
+  - 다룰 것: Scale-up vs Scale-out, L4 vs L7 LB, Sticky Session, CDN 계층, DNS 기반 LB
+
+- [x] **17.3** `_posts/2026-04-20-system-design-03-consistency.md`
+  - 제목: `일관성과 CAP 정리`
+  - description: `CAP·PACELC와 다양한 일관성 모델이 분산 시스템 설계에 주는 의미를 정리해요.`
+  - tags: `[system-design, consistency, cap, pacelc, distributed]`
+  - 다룰 것: CAP 정리, PACELC 확장, Eventual/Strong/Causal, Quorum, Linearizability
+
+- [x] **17.4** `_posts/2026-04-20-system-design-04-cache.md`
+  - 제목: `데이터 저장과 캐시 전략`
+  - description: `OLTP·OLAP·검색 엔진·캐시가 각자 맡는 역할과 데이터 흐름을 정리해요.`
+  - tags: `[system-design, cache, olap, oltp, search]`
+  - 다룰 것: OLTP vs OLAP, Polyglot Persistence, Cache Layer(Client/CDN/Application/DB), Search(Elasticsearch)
+
+#### MSA/Microservices (4편)
+
+- [ ] **18.1** `_posts/2026-04-20-msa-microservices-01-decompose.md`
 ...
