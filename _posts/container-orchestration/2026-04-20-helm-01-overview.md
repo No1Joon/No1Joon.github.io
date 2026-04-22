@@ -1,6 +1,6 @@
 ---
 title: "Helm과 차트 패키징"
-description: Kubernetes 매니페스트 중복을 제거하는 Helm의 템플릿·values·release 개념과 차트 구조를 정리해요.
+description: Kubernetes 매니페스트 중복을 제거하는 Helm의 템플릿·values·release 개념과 차트 구조를 정리합니다.
 date: 2026-04-20
 order: 1
 category: Container & Orchestration
@@ -60,12 +60,13 @@ my-chart/
 ├── values.yaml         # 기본 설정값
 ├── templates/          # 매니페스트 템플릿
 │   ├── deployment.yaml
+│   ├── service.yaml
 │   ├── _helpers.tpl    # 공통 함수 정의
 │   └── NOTES.txt       # 배포 후 안내 문구
 └── .helmignore
 ```
 
-`Chart.yaml`에서는 차트 버전과 앱 버전을 분리하여 관리하는 것이 중요합니다. 인프라 구조 변경 시에는 차트 버전을, 소스 코드 변경 시에는 앱 버전을 갱신해요.
+`Chart.yaml`에서는 차트 버전과 앱 버전을 분리하여 관리하는 것이 중요합니다. 인프라 구조 변경 시에는 차트 버전을, 소스 코드 변경 시에는 앱 버전을 갱신합니다.
 
 ## 템플릿 엔진 활용
 
@@ -113,11 +114,11 @@ helm history my-app
 helm rollback my-app 1
 ```
 
-모든 배포 기록은 클러스터 내의 Secret에 저장되므로 별도의 데이터베이스 없이도 안정적인 롤백이 가능해요.
+모든 배포 기록은 클러스터 내의 Secret에 저장되므로 별도의 데이터베이스 없이도 안정적인 롤백이 가능합니다.
 
 <div class="callout why">
   <div class="callout-title">최종 상태의 기록</div>
-  Helm은 렌더링된 전체 매니페스트를 통째로 보관합니다. 이전 리비전으로 롤백한다는 것은 당시의 매니페스트 상태를 그대로 재적용하는 것을 의미해요. 이력 관리를 위해 <code>--history-max</code> 옵션으로 보관 개수를 조절하는 것이 운영상 유리합니다.
+  Helm은 렌더링된 전체 매니페스트를 통째로 보관합니다. 이전 리비전으로 롤백한다는 것은 당시의 매니페스트 상태를 그대로 재적용하는 것을 의미합니다. 이력 관리를 위해 <code>--history-max</code> 옵션으로 보관 개수를 조절하는 것이 운영상 유리합니다.
 </div>
 
 ## 정리
@@ -127,6 +128,6 @@ helm rollback my-app 1
 - 배포 이력을 추적하여 쉽고 안전한 **롤백**을 지원합니다.
 - `upgrade --install` 명령으로 배포 과정을 자동화합니다.
 
-다음 글에서는 차트를 더 효율적으로 설계하기 위한 **재사용 패턴과 라이브러리 차트** 구성을 정리해요.
+다음 글에서는 차트를 더 효율적으로 설계하기 위한 **재사용 패턴과 라이브러리 차트** 구성을 정리합니다.
 
 {% endraw %}

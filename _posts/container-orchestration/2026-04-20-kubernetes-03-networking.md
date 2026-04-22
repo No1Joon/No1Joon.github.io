@@ -1,6 +1,6 @@
 ---
 title: "Kubernetes 네트워킹"
-description: Service·Ingress·NetworkPolicy로 Pod 간 통신과 외부 노출·보안 경계를 만드는 방법을 정리해요.
+description: Service·Ingress·NetworkPolicy로 Pod 간 통신과 외부 노출·보안 경계를 만드는 방법을 정리합니다.
 date: 2026-04-20
 order: 3
 category: Container & Orchestration
@@ -68,7 +68,7 @@ flowchart TB
     class R1,R2 info
 ```
 
-실제 처리는 NGINX나 AWS ALB 같은 **Ingress Controller**가 담당합니다. SSL/TLS 인증서 터미네이션도 여기서 처리하여 관리를 단일화해요.
+실제 처리는 NGINX나 AWS ALB 같은 **Ingress Controller**가 담당합니다. SSL/TLS 인증서 터미네이션도 여기서 처리하여 관리를 단일화합니다.
 
 ## 보안 경계: NetworkPolicy
 
@@ -81,7 +81,7 @@ flowchart TB
 
 <div class="callout why">
   <div class="callout-title">CNI의 역할</div>
-  NetworkPolicy는 실제 네트워크를 구현하는 <b>CNI(Container Network Interface)</b> 플러그인이 이를 지원해야 작동합니다. Calico나 Cilium 같은 플러그인은 이 정책을 기반으로 iptables나 eBPF 규칙을 생성하여 통신을 차단해요.
+  NetworkPolicy는 실제 네트워크를 구현하는 <b>CNI(Container Network Interface)</b> 플러그인이 이를 지원해야 작동합니다. Calico나 Cilium 같은 플러그인은 이 정책을 기반으로 iptables나 eBPF 규칙을 생성하여 통신을 차단합니다.
 </div>
 
 ## 이름 해석: CoreDNS
@@ -93,6 +93,6 @@ Kubernetes는 내부적으로 **DNS**를 활용하여 서비스를 찾습니다.
 - **Service**는 Pod의 동적인 IP 문제를 해결하는 안정적인 진입점입니다.
 - **Ingress**는 L7 계층의 복잡한 라우팅과 SSL 관리를 담당합니다.
 - **NetworkPolicy**를 통해 세밀한 보안 경계를 구축합니다.
-- 클러스터 내 모든 통신은 **DNS** 이름을 기반으로 이루어지는 것이 권장됩니다.
+- 클러스터 내 모든 통신은 **DNS** 이름을 기반으로 이루어지는 것을 권장합니다.
 
-다음 글에서는 워크로드를 안정적으로 운영하기 위한 **리소스 관리와 오토스케일링** 기법을 정리해요.
+다음 글에서는 워크로드를 안정적으로 운영하기 위한 **리소스 관리와 오토스케일링** 기법을 정리합니다.

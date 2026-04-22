@@ -1,6 +1,6 @@
 ---
 title: "차트 배포와 릴리즈 파이프라인"
-description: Helm 차트를 저장·공유하는 레포지토리·OCI registry와 CI로 차트를 검증·릴리즈하는 파이프라인 구성을 정리해요.
+description: Helm 차트를 저장·공유하는 레포지토리·OCI registry와 CI로 차트를 검증·릴리즈하는 파이프라인 구성을 정리합니다.
 date: 2026-04-20
 order: 3
 category: Container & Orchestration
@@ -8,7 +8,7 @@ subcategory: Helm
 tags: [helm, repository, oci, ci-cd, release]
 ---
 
-설계된 차트를 실제 환경에 적용하기 위해서는 효율적인 공유와 배포 체계가 필요합니다. Helm 차트를 패키징하고 저장소에 등록하여 다른 팀이나 클러스터에서 안정적으로 활용할 수 있게 만드는 전체 워크플로우를 정리해요.
+설계된 차트를 실제 환경에 적용하기 위해서는 효율적인 공유와 배포 체계가 필요합니다. Helm 차트를 패키징하고 저장소에 등록하여 다른 팀이나 클러스터에서 안정적으로 활용할 수 있게 만드는 전체 워크플로우를 정리합니다.
 
 ## 차트 저장소 관리 방식
 

@@ -1,6 +1,6 @@
 ---
 title: "트래픽 관리와 라우팅 정책"
-description: VirtualService·DestinationRule로 Canary·재시도·타임아웃을 구현하는 패턴을 정리해요.
+description: VirtualService·DestinationRule로 Canary·재시도·타임아웃을 구현하는 패턴을 정리합니다.
 date: 2026-04-20
 order: 2
 category: Container & Orchestration
@@ -17,15 +17,13 @@ Service Mesh를 사용하는 가장 강력한 이유 중 하나는 트래픽의 
 
 ```mermaid
 flowchart LR
-    Ingress["Traffic Entry"]
-    VS["VirtualService<br/>(Rules)"]
+    Ingress["Traffic Entry"] --> VS["VirtualService<br/>(Rules)"]
     
     subgraph DR [DestinationRule Subsets]
         V1["v1 (Stable)"]
         V2["v2 (Canary)"]
     end
 
-    Ingress --> VS
     VS -->|"90%"| V1
     VS -->|"10%"| V2
 
@@ -45,7 +43,7 @@ flowchart LR
 1. **DestinationRule**에서 라벨을 기반으로 서비스의 버전을 나눕니다.
 2. **VirtualService**에서 각 버전별 가중치(weight)를 설정합니다.
 
-이를 통해 Pod의 개수 비율에 의존하지 않고 실제 트래픽의 비율을 정확하게 제어할 수 있어요.
+이를 통해 Pod의 개수 비율에 의존하지 않고 실제 트래픽의 비율을 정확하게 제어할 수 있습니다.
 
 ## 회복성 강화: 재시도와 타임아웃
 
@@ -62,7 +60,7 @@ flowchart LR
 
 <div class="callout why">
   <div class="callout-title">장애 주입 테스트</div>
-  작성한 회복성 정책이 제대로 동작하는지 확인하기 위해 고의로 에러를 발생시키는 <b>Fault Injection</b>을 사용할 수 있습니다. 특정 트래픽에 응답 지연이나 HTTP 오류를 인위적으로 섞어 시스템의 견고함을 테스트해요.
+  작성한 회복성 정책이 제대로 동작하는지 확인하기 위해 고의로 에러를 발생시키는 <b>Fault Injection</b>을 사용할 수 있습니다. 특정 트래픽에 응답 지연이나 HTTP 오류를 인위적으로 섞어 시스템의 견고함을 테스트합니다.
 </div>
 
 ## 헤더 기반 라우팅
@@ -76,4 +74,4 @@ flowchart LR
 - **재시도, 타임아웃, 서킷 브레이커**를 통해 시스템의 내결함성을 높입니다.
 - 인프라 레벨에서 트래픽을 제어하여 비즈니스 로직의 복잡성을 줄입니다.
 
-다음 글에서는 사이드카 프록시가 제공하는 강력한 보안 기능인 **자동 mTLS와 관측성** 활용법을 정리해요.
+다음 글에서는 사이드카 프록시가 제공하는 강력한 보안 기능인 **자동 mTLS와 관측성** 활용법을 정리합니다.
