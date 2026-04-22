@@ -352,7 +352,7 @@ Service Mesh 시리즈 3편 추가
   - 제목: `검색과 보존 정책`
   - description: `로그 보존 비용과 검색 요구 사이의 트레이드오프를 해결하는 계층화 전략을 정리해요.`
   - tags: `[logging, retention, search, cost, archival]`
-  - 다룰 것: Hot/Warm/Cold tier, LogQL vs Lucene, 샘플링·집계, 규제(GDPR)와 보존 기간
+  - d 다룰 것: Hot/Warm/Cold tier, LogQL vs Lucene, 샘플링·집계, 규제(GDPR)와 보존 기간
 
 #### Tracing (3편)
 
@@ -380,19 +380,19 @@ Service Mesh 시리즈 3편 추가
 
 #### Platform Engineering (3편)
 
-- [ ] **9.1** `_posts/2026-04-20-platform-engineering-01-overview.md`
+- [x] **9.1** `_posts/2026-04-20-platform-engineering-01-overview.md`
   - 제목: `플랫폼 엔지니어링이란`
   - description: `DevOps의 한계를 극복하려는 Platform Engineering의 등장 배경과 팀 구성을 정리해요.`
   - tags: `[platform-engineering, devops, team-topologies, idp, culture]`
   - 다룰 것: DevOps vs PlatformEng, Team Topologies의 Stream-aligned/Platform 팀, 플랫폼의 "제품" 관점
 
-- [ ] **9.2** `_posts/2026-04-20-platform-engineering-02-idp.md`
+- [x] **9.2** `_posts/2026-04-20-platform-engineering-02-idp.md`
   - 제목: `내부 개발자 플랫폼 설계`
   - description: `Backstage·Port 같은 IDP가 제공하는 Self-service와 Catalog 구조를 정리해요.`
   - tags: `[platform-engineering, idp, backstage, port, self-service]`
   - 다룰 것: IDP란, Backstage의 Software Catalog·Template, Scaffolder 개념, 성공하는 IDP의 조건
 
-- [ ] **9.3** `_posts/2026-04-20-platform-engineering-03-paths.md`
+- [x] **9.3** `_posts/2026-04-20-platform-engineering-03-paths.md`
   - 제목: `골든 패스와 생산성`
   - description: `Golden Path로 반복되는 결정을 플랫폼 기본값에 담아 개발 속도를 올리는 방법을 정리해요.`
   - tags: `[platform-engineering, golden-path, productivity, paved-road, dx]`
@@ -435,7 +435,7 @@ Service Mesh 시리즈 3편 추가
 - [ ] **11.2** `_posts/2026-04-20-incident-management-02-response.md`
   - 제목: `장애 대응 플레이북`
   - description: `심각도 분류·Incident Commander·커뮤니케이션 채널로 혼돈을 구조화하는 방법을 정리해요.`
-  - tags: `[incident-management, playbook, severity, communication, ics]`
+  - tags: `[incident-management, playbook, 처리 severity, communication, ics]`
   - 다룰 것: Severity 레벨 정의, 역할 분담(IC/Ops/Comms), 상태 페이지, chatops
 
 - [ ] **11.3** `_posts/2026-04-20-incident-management-03-postmortem.md`
