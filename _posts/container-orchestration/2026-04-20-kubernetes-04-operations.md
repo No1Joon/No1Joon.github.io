@@ -1,6 +1,6 @@
 ---
 title: "프로덕션 운영 패턴"
-description: 리소스 제한·HPA·PDB·affinity로 Kubernetes 워크로드를 안정적으로 운영하는 기준을 정리해요.
+description: 리소스 제한·HPA·PDB·affinity로 Kubernetes 워크로드를 안정적으로 운영하는 기준을 정리합니다.
 date: 2026-04-20
 order: 4
 category: Container & Orchestration
@@ -8,7 +8,7 @@ subcategory: Kubernetes
 tags: [kubernetes, hpa, pdb, resources, autoscaling, operations]
 ---
 
-애플리케이션을 Kubernetes에 배포하는 것을 넘어, 프로덕션 환경에서 장애에 견디고 자원을 효율적으로 사용하기 위해서는 명확한 **운영 정책**이 필요합니다. 리소스 할당부터 자동 확장, 고가용성 보장을 위한 핵심 패턴들을 정리해요.
+애플리케이션을 Kubernetes에 배포하는 것을 넘어, 프로덕션 환경에서 장애에 견디고 자원을 효율적으로 사용하기 위해서는 명확한 **운영 정책**이 필요합니다. 리소스 할당부터 자동 확장, 고가용성 보장을 위한 핵심 패턴들을 정리합니다.
 
 ## 리소스 관리: Requests와 Limits
 
@@ -19,7 +19,7 @@ tags: [kubernetes, hpa, pdb, resources, autoscaling, operations]
 | Requests | 최소 보장량 | 스케줄러가 노드를 선택하는 기준 |
 | Limits | 최대 제한량 | 초과 시 CPU는 쓰로틀링, 메모리는 종료(OOM) |
 
-메모리의 경우 **Requests와 Limits를 동일하게** 설정하여 성능 예측 가능성을 높이는 것이 권장됩니다.
+메모리의 경우 **Requests와 Limits를 동일하게** 설정하여 성능 예측 가능성을 높이는 것을 권장합니다.
 
 ## 오토스케일링 전략
 
@@ -50,7 +50,7 @@ flowchart LR
 노드 점검이나 업데이트 상황에서도 서비스 연속성을 유지하기 위한 장치들입니다.
 
 ### Pod Disruption Budget (PDB)
-자발적인 점검 상황에서 동시에 중단될 수 있는 Pod의 최대 개수나 최소 유지 개수를 정의합니다. 이를 통해 무리한 노드 비우기 작업으로부터 서비스를 보호해요.
+자발적인 점검 상황에서 동시에 중단될 수 있는 Pod의 최대 개수나 최소 유지 개수를 정의합니다. 이를 통해 무리한 노드 비우기 작업으로부터 서비스를 보호합니다.
 
 ### Affinity와 Anti-Affinity
 - **Affinity**: 특정 노드나 다른 Pod와 가까운 곳에 배치되도록 유도합니다.
@@ -80,4 +80,4 @@ Pod가 종료될 때 처리 중인 요청을 안전하게 마무리하는 과정
 - **PDB**와 **분산 배치** 정책으로 예기치 못한 중단을 방어합니다.
 - 정상 종료 처리를 통해 사용자 경험의 단절을 막습니다.
 
-이로써 Kubernetes의 핵심 운영 패턴을 살펴보았습니다. 다음 시리즈에서는 복잡한 매니페스트를 재사용 가능한 패키지로 관리하는 **Helm**에 대해 알아볼게요.
+이로써 Kubernetes의 핵심 운영 패턴을 살펴보았습니다. 다음 시리즈에서는 복잡한 매니페스트를 재사용 가능한 패키지로 관리하는 **Helm**에 대해 알아봅니다.
