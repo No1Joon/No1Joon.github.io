@@ -4,4 +4,29 @@ Allow: /
 Disallow: /.claude/
 Disallow: /.gemini/
 
+# AI 검색/학습 크롤러 — 검색 노출 최적화 위해 명시적 허용
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
 Sitemap: https://no1joon.github.io/sitemap.xml
