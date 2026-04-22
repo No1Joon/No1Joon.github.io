@@ -426,5 +426,25 @@ Service Mesh 시리즈 3편 추가
 
 #### Incident Management (3편)
 
-- [ ] **11.1** `_posts/2026-04-20-incident-management-01-oncall.md`
+- [x] **11.1** `_posts/2026-04-20-incident-management-01-oncall.md`
+  - 제목: `온콜과 알람 체계`
+  - description: `지속 가능한 온콜 로테이션과 알람 신호·소음을 구분하는 기준을 정리해요.`
+  - tags: `[incident-management, oncall, alerting, pagerduty, sre]`
+  - 다룰 것: 로테이션 패턴(Follow-the-Sun), alert vs notification, 에스컬레이션, 온콜 피로 대응
+
+- [x] **11.2** `_posts/2026-04-20-incident-management-02-response.md`
+  - 제목: `장애 대응 플레이북`
+  - description: `심각도 분류·Incident Commander·커뮤니케이션 채널로 혼돈을 구조화하는 방법을 정리해요.`
+  - tags: `[incident-management, playbook, severity, communication, ics]`
+  - 다룰 것: Severity 레벨 정의, 역할 분담(IC/Ops/Comms), 상태 페이지, chatops
+
+- [x] **11.3** `_posts/2026-04-20-incident-management-03-postmortem.md`
+  - 제목: `포스트모템과 학습`
+  - description: `Blameless 포스트모템으로 장애를 조직 학습 자산으로 바꾸는 방법을 정리해요.`
+  - tags: `[incident-management, postmortem, blameless, retrospective, learning]`
+  - 다룰 것: Blameless 원칙, 5 Whys vs 시스템 사고, Action Item 추적, Incident Review 문화
+
+#### Cost Optimization (3편)
+
+- [ ] **12.1** `_posts/2026-04-20-cost-optimization-01-finops.md`
 ...
