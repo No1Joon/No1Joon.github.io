@@ -282,7 +282,7 @@ Service Mesh 시리즈 3편 추가
   - 제목: `BigQuery와 데이터 플랫폼`
   - description: `서버리스 데이터 웨어하우스 BigQuery와 Pub/Sub·Dataflow의 조합을 정리해요.`
   - tags: `[gcp, bigquery, pubsub, dataflow, analytics]`
-  - 다룰 것: BigQuery 컬럼 스토리지·파티셔닝·슬롯 과금, Pub/Sub, Dataflow(Apache Beam), Looker Studio 개요
+  - 다룰 것: BigQuery 컬럼 스토리지·파티셔닝·슬롯 과금, Pub/Sub, 데이터 플로우(Apache Beam), Looker Studio 개요
 
 #### Azure (3편)
 
@@ -516,5 +516,25 @@ Service Mesh 시리즈 3편 추가
 
 #### API Design (3편)
 
-- [ ] **15.1** `_posts/2026-04-20-api-design-01-styles.md`
+- [x] **15.1** `_posts/2026-04-20-api-design-01-styles.md`
+  - 제목: `REST·GraphQL·gRPC 비교`
+  - description: `API 스타일 선택이 팀·클라이언트·성능에 미치는 영향을 세 프로토콜로 비교해요.`
+  - tags: `[api, rest, graphql, grpc, design]`
+  - 다룰 것: REST 원칙·HATEOAS, GraphQL 장단점, gRPC 스트리밍·Protocol Buffer, 선택 기준
+
+- [x] **15.2** `_posts/2026-04-20-api-design-02-versioning.md`
+  - 제목: `버전닝과 호환성`
+  - description: `URL·Header·Media Type 버저닝과 Breaking Change를 관리하는 원칙을 정리해요.`
+  - tags: `[api, versioning, backward-compatibility, semver, deprecation]`
+  - 다룰 것: Versioning 방식 3가지, Breaking vs Non-breaking, Deprecation 프로세스, Consumer-driven
+
+- [x] **15.3** `_posts/2026-04-20-api-design-03-auth.md`
+  - 제목: `인증·인가와 문서화`
+  - description: `OAuth2·JWT 인증 흐름과 OpenAPI 기반 문서 자동화를 정리해요.`
+  - tags: `[api, auth, oauth2, jwt, openapi]`
+  - 다룰 것: OAuth2 Grant Type, JWT 구조·주의점, API Key vs Token, OpenAPI/Swagger, API Linter
+
+#### Testing (3편)
+
+- [ ] **16.1** `_posts/2026-04-20-testing-01-pyramid.md`
 ...
