@@ -8,259 +8,76 @@ subcategory: Kubernetes
 tags: [kubernetes, hpa, pdb, resources, autoscaling, operations]
 ---
 
-개발 환경에서 잘 돌던 매니페스트가 프로덕션에서 멈추는 이유는 대부분 같아요. **리소스 선언 없음, 오토스케일링 없음, 장애 격리 규칙 없음**. 이 글에서는 Pod 하나를 "프로덕션 급"으로 끌어올리는 핵심 정책을 정리해요.
+애플리케이션을 Kubernetes에 배포하는 것을 넘어, 프로덕션 환경에서 장애에 견디고 자원을 효율적으로 사용하기 위해서는 명확한 **운영 정책**이 필요합니다. 리소스 할당부터 자동 확장, 고가용성 보장을 위한 핵심 패턴들을 정리해요.
 
-## 리소스 Requests·Limits — 모든 운영의 출발점
+## 리소스 관리: Requests와 Limits
 
-가장 많이 빠뜨리고, 가장 큰 장애 원인이에요. 설정 안 하면 스케줄러도 커널도 Pod를 "무제한"으로 취급해요.
+가장 기초적이면서 중요한 설정입니다. 리소스를 정의하지 않으면 하나의 Pod가 노드의 모든 자원을 점유하여 다른 서비스에 영향을 줄 수 있습니다.
 
-| 설정 | 의미 | 빠뜨리면 |
+| 설정 | 역할 | 특징 |
 |---|---|---|
-| `requests` | 스케줄러가 노드 배치할 때 예약하는 최소량 | Pod끼리 한 노드에 몰려서 노드 OOM |
-| `limits` | 컨테이너가 쓸 수 있는 최대량 | 한 Pod가 폭주해서 노드 전체 먹통 |
+| Requests | 최소 보장량 | 스케줄러가 노드를 선택하는 기준 |
+| Limits | 최대 제한량 | 초과 시 CPU는 쓰로틀링, 메모리는 종료(OOM) |
 
-```yaml
-resources:
-  requests:
-    cpu: 100m
-    memory: 256Mi
-  limits:
-    cpu: 500m
-    memory: 512Mi
-```
+메모리의 경우 **Requests와 Limits를 동일하게** 설정하여 성능 예측 가능성을 높이는 것이 권장됩니다.
 
-### CPU와 Memory는 다르게 동작해요
+## 오토스케일링 전략
 
-| 자원 | limit 초과 시 |
-|---|---|
-| **CPU** | **쓰로틀링** — 느려지지만 죽지 않음 |
-| **Memory** | **OOMKilled** — 컨테이너 즉시 종료 |
+트래픽 변동에 유연하게 대응하기 위해 자동화된 확장 체계를 구축합니다.
 
-이 차이 때문에:
-- **Memory**: requests = limits로 맞추는 게 안전 (Guaranteed QoS)
-- **CPU**: requests는 평균 사용량, limits는 버스트 허용치로 여유롭게
-
-<div class="callout why">
-  <div class="callout-title">QoS Class가 퇴거(eviction) 순서를 결정해요</div>
-  노드 메모리가 부족해지면 kubelet이 Pod를 강제 퇴거시켜요. 이때 <b>QoS Class</b> 순서로 쫓겨나요.
-  <br><br>
-  <code>BestEffort</code> (requests·limits 없음) → <code>Burstable</code> (일부만) → <code>Guaranteed</code> (둘 다 같게)
-  <br><br>
-  프로덕션 핵심 서비스는 <b>Guaranteed</b>로 맞추면 노드 이상 시에도 가장 늦게 퇴거돼요.
-</div>
-
-## HPA — 트래픽 따라 자동 스케일링
-
-Horizontal Pod Autoscaler는 CPU·Memory·custom metric을 감시하면서 replicas를 자동 조절해요.
-
-```yaml
-apiVersion: autoscaling/v2
-kind: HorizontalPodAutoscaler
-metadata:
-  name: api-hpa
-spec:
-  scaleTargetRef:
-    apiVersion: apps/v1
-    kind: Deployment
-    name: api
-  minReplicas: 3
-  maxReplicas: 20
-  metrics:
-  - type: Resource
-    resource:
-      name: cpu
-      target:
-        type: Utilization
-        averageUtilization: 70
-  behavior:
-    scaleDown:
-      stabilizationWindowSeconds: 300  # 급격한 축소 방지
-```
+- **HPA**(Horizontal Pod Autoscaler): CPU나 메모리 사용량에 따라 Pod의 개수를 조절합니다.
+- **VPA**(Vertical Pod Autoscaler): 실제 사용량에 맞춰 Pod의 리소스 예약 값을 조정합니다.
+- **CA**(Cluster Autoscaler): 노드 자원이 부족할 때 새로운 서버를 자동으로 추가합니다.
 
 ```mermaid
 flowchart LR
-    METRIC["metrics-server<br/>CPU·Memory"]
+    Metrics["Metrics Server"]
     HPA["HPA Controller"]
-    DEP["Deployment replicas"]
-    POD["Pod 수 조정"]
+    Dep["Deployment"]
+    Pod["Pod Instances"]
 
-    METRIC -->|"주기적 조회"| HPA
-    HPA -->|"목표 대비 계산"| DEP
-    DEP --> POD
+    Metrics --> HPA --> Dep --> Pod
 
-    classDef metric fill:#0891b2,stroke:#0e7490,color:#ffffff
-    classDef controller fill:#059669,stroke:#047857,color:#ffffff
-    classDef workload fill:#2563eb,stroke:#1e40af,color:#ffffff
+    classDef primary fill:#2563eb,stroke:#1e40af,color:#ffffff
+    classDef success fill:#059669,stroke:#047857,color:#ffffff
 
-    class METRIC metric
-    class HPA controller
-    class DEP,POD workload
+    class Metrics,HPA primary
+    class Dep,Pod success
 ```
 
-### HPA의 흔한 실수
+## 가용성 보장: PDB와 Affinity
 
-1. **requests 설정 없음** → HPA가 CPU 사용률을 계산 못 함 (`Unknown` 상태)
-2. **minReplicas를 1로** → 트래픽 급증 시 스케일업 전에 다운
-3. **stabilizationWindow 기본값** → 짧은 트래픽 변동에 요요처럼 흔들림
+노드 점검이나 업데이트 상황에서도 서비스 연속성을 유지하기 위한 장치들입니다.
 
-### KEDA — 이벤트 기반 오토스케일러
+### Pod Disruption Budget (PDB)
+자발적인 점검 상황에서 동시에 중단될 수 있는 Pod의 최대 개수나 최소 유지 개수를 정의합니다. 이를 통해 무리한 노드 비우기 작업으로부터 서비스를 보호해요.
 
-Kafka 메시지 적체량, SQS 큐 길이, Prometheus metric 같은 **비-리소스 신호**로 스케일하고 싶으면 KEDA를 써요. HPA가 지원하지 않는 수십 개 소스에 바로 붙일 수 있고, **replicas를 0으로 줄이는 것도 가능**(cold start 허용 시).
+### Affinity와 Anti-Affinity
+- **Affinity**: 특정 노드나 다른 Pod와 가까운 곳에 배치되도록 유도합니다.
+- **Anti-Affinity**: 동일 서비스의 Pod들이 서로 다른 노드나 가용 영역(AZ)에 흩어지도록 강제하여 노드 장애 시 전체 중단을 막습니다.
 
-## PodDisruptionBudget — 장애 격리
+## Graceful Shutdown 설정
 
-노드 업그레이드·cordoning 같은 **자발적 중단**(voluntary disruption) 시, 동시에 얼마나 많은 Pod가 사라져도 되는지 선언해요.
+Pod가 종료될 때 처리 중인 요청을 안전하게 마무리하는 과정이 필요합니다. `preStop` 훅을 사용하여 트래픽이 완전히 차단될 때까지 앱 종료를 지연시키고, `terminationGracePeriodSeconds`를 통해 정리 시간을 충분히 부여합니다.
 
-```yaml
-apiVersion: policy/v1
-kind: PodDisruptionBudget
-metadata:
-  name: api-pdb
-spec:
-  minAvailable: 2       # 항상 최소 2개는 살아있어야 함
-  selector:
-    matchLabels:
-      app: api
-```
+<div class="callout why">
+  <div class="callout-title">QoS 클래스의 이해</div>
+  리소스 설정 방식에 따라 <b>Guaranteed, Burstable, BestEffort</b> 클래스가 결정됩니다. 노드 자원이 부족하여 Pod를 쫓아내야 할 때, 중요한 서비스가 먼저 종료되지 않도록 <b>Guaranteed</b> 등급을 유지하는 것이 중요합니다.
+</div>
 
-PDB가 없으면 `kubectl drain`이 한 노드의 Pod를 전부 한꺼번에 죽일 수 있어요. PDB가 있으면 "최소 2개 유지"를 지키기 위해 **다른 Pod가 먼저 떠야 drain이 진행**돼요.
+## 안정적인 운영을 위한 체크리스트
 
-| 옵션 | 의미 |
-|---|---|
-| `minAvailable: N` | 항상 N개 이상 살아있어야 |
-| `minAvailable: 50%` | 50% 이상 살아있어야 |
-| `maxUnavailable: N` | 동시에 N개까지만 죽일 수 있음 |
+1. 모든 컨테이너에 리소스 **Requests/Limits** 선언
+2. **Liveness/Readiness Probe**의 세밀한 튜닝
+3. 가용성 보장을 위한 **PDB** 적용
+4. 다중 노드/영역 분산을 위한 **Anti-Affinity** 설정
+5. 배포 안전을 위한 **RollingUpdate** 전략 수립
 
-**replicas 1짜리 워크로드에 PDB를 거는 건 의미 없어요.** PDB는 ≥2 replicas 전제에서 작동해요.
+## 정리
 
-## Affinity·Anti-affinity — Pod 배치 통제
+- **리소스 제한**은 클러스터 안정성의 시작점입니다.
+- **HPA**와 **CA**의 조합으로 인프라 효율과 가용성을 동시에 잡습니다.
+- **PDB**와 **분산 배치** 정책으로 예기치 못한 중단을 방어합니다.
+- 정상 종료 처리를 통해 사용자 경험의 단절을 막습니다.
 
-같은 Deployment의 Pod들이 한 노드에 몰려 있으면, 그 노드가 죽을 때 서비스 전체가 멈춰요. **Anti-affinity**로 분산 배치를 강제해요.
-
-```yaml
-affinity:
-  podAntiAffinity:
-    requiredDuringSchedulingIgnoredDuringExecution:
-    - labelSelector:
-        matchExpressions:
-        - key: app
-          operator: In
-          values: [api]
-      topologyKey: kubernetes.io/hostname  # 노드 단위 분산
-```
-
-`topologyKey`를 `topology.kubernetes.io/zone`으로 바꾸면 **AZ(가용 영역) 단위 분산**이 돼요. 클라우드 AZ 하나가 날아가도 다른 AZ의 Pod가 살아남아요.
-
-```mermaid
-flowchart TB
-    subgraph zone_a ["AZ-a"]
-        N1["Node 1"]
-        N2["Node 2"]
-        P1["api Pod"]
-        P2["api Pod"]
-        N1 --- P1
-        N2 --- P2
-    end
-
-    subgraph zone_b ["AZ-b"]
-        N3["Node 3"]
-        N4["Node 4"]
-        P3["api Pod"]
-        P4["api Pod"]
-        N3 --- P3
-        N4 --- P4
-    end
-
-    classDef zone_a_style fill:#2563eb,stroke:#1e40af,color:#ffffff
-    classDef zone_b_style fill:#059669,stroke:#047857,color:#ffffff
-
-    class N1,N2,P1,P2 zone_a_style
-    class N3,N4,P3,P4 zone_b_style
-```
-
-### topologySpreadConstraints — 더 깔끔한 대안
-
-Anti-affinity는 문법이 어지러워서, 최근에는 `topologySpreadConstraints`를 많이 써요.
-
-```yaml
-topologySpreadConstraints:
-- maxSkew: 1
-  topologyKey: topology.kubernetes.io/zone
-  whenUnsatisfiable: DoNotSchedule
-  labelSelector:
-    matchLabels:
-      app: api
-```
-
-"모든 zone의 Pod 개수가 최대 1개 차이까지만" — 읽기 쉽고 의도가 명확해요.
-
-## Graceful Shutdown — Pod가 죽을 때 끊기지 않게
-
-Pod가 종료될 때 Kubernetes는 **동시에 두 가지**를 해요.
-
-1. Service endpoint에서 Pod 제거 (트래픽 차단)
-2. 컨테이너에 `SIGTERM` 전송
-
-문제는 **이 두 작업이 동시**라는 거예요. 1번이 반영되기 전에 2번이 실행되면 **이미 전송된 요청이 잘려요**.
-
-해결: `preStop` hook으로 잠깐 sleep.
-
-```yaml
-lifecycle:
-  preStop:
-    exec:
-      command: ["sleep", "15"]
-terminationGracePeriodSeconds: 60
-```
-
-15초 sleep 동안 Service endpoint 전파가 완료되고, 그 후 앱이 SIGTERM을 받아 남은 요청을 마무리해요. **15~30초가 일반적인 값**이에요.
-
-## Node 장애 대응
-
-노드 하나가 죽으면 그 위의 Pod는 `NotReady` 상태가 되고, 5분(`pod-eviction-timeout` 기본값) 후에 다른 노드로 재스케줄돼요. 이 5분이 꽤 길어서 장애 시간이 늘어나요.
-
-| 대응 | 효과 |
-|---|---|
-| **PodDisruptionBudget** | drain 시 점진적 이동 보장 |
-| **Anti-affinity (AZ)** | 한 AZ 장애가 전체에 영향 안 감 |
-| **readinessProbe** | 실패 노드의 Pod를 빠르게 트래픽에서 제외 |
-| **Cluster Autoscaler** | 노드 부족 시 자동 추가 |
-
-## PodPriority — 누가 먼저 살아야 하나
-
-노드 리소스가 부족하면 priority가 낮은 Pod가 먼저 퇴거돼요. 결제·인증 같은 **핵심 서비스에 높은 priority**를 부여하면 장애 시 살아남을 확률이 높아져요.
-
-```yaml
-apiVersion: scheduling.k8s.io/v1
-kind: PriorityClass
-metadata:
-  name: critical
-value: 1000000
-globalDefault: false
-description: "결제·인증 등 핵심 서비스"
-```
-
-## 체크리스트 — 프로덕션 배포 전
-
-| 항목 | 이유 |
-|---|---|
-| `resources.requests/limits` 설정 | 노드 안정성 |
-| `readinessProbe`·`livenessProbe` 설정 | 무중단 배포 |
-| `preStop` + `terminationGracePeriodSeconds` | graceful shutdown |
-| replicas ≥ 2 + PDB | 단일 Pod 장애 허용 |
-| Pod anti-affinity (최소 host 레벨) | 노드 장애 허용 |
-| HPA 연결 | 트래픽 변동 대응 |
-| PriorityClass (핵심 서비스) | 리소스 부족 시 우선순위 |
-
-## 시리즈 마무리
-
-4편으로 Kubernetes의 구조·워크로드·네트워킹·운영을 훑었어요. 핵심 메시지는:
-
-**"컨테이너를 실행하는 게 아니라, 원하는 상태를 선언하는 거예요."**
-
-- 01: Control Plane + Data Plane, 선언적 reconcile
-- 02: 워크로드별 보장 (Deployment·StatefulSet·DaemonSet·Job)
-- 03: Service·Ingress·NetworkPolicy 3층 네트워킹
-- 04: 리소스·HPA·PDB·affinity 운영 안전장치
-
-다음 시리즈에서는 이 수많은 매니페스트를 **어떻게 재사용 가능한 패키지로 묶을지** — Helm과 차트 설계를 다뤄요.
+이로써 Kubernetes의 핵심 운영 패턴을 살펴보았습니다. 다음 시리즈에서는 복잡한 매니페스트를 재사용 가능한 패키지로 관리하는 **Helm**에 대해 알아볼게요.

@@ -8,246 +8,89 @@ subcategory: Helm
 tags: [helm, repository, oci, ci-cd, release]
 ---
 
-차트를 잘 설계했어도 **어떻게 다른 팀·다른 클러스터에 공유할지**가 해결되지 않으면 쓸모가 제한돼요. 이 글에서는 Helm 차트를 패키징해서 저장소에 올리고, CI로 자동 릴리즈하고, 소비자 쪽에서 버전을 핀닝해서 안정적으로 받아쓰는 파이프라인 전체 흐름을 정리해요.
+설계된 차트를 실제 환경에 적용하기 위해서는 효율적인 공유와 배포 체계가 필요합니다. Helm 차트를 패키징하고 저장소에 등록하여 다른 팀이나 클러스터에서 안정적으로 활용할 수 있게 만드는 전체 워크플로우를 정리해요.
 
-## 차트 저장소 — 3가지 방식
+## 차트 저장소 관리 방식
 
-| 저장소 | 백엔드 | 장점 | 단점 |
-|---|---|---|---|
-| **HTTP 기반** | 정적 파일 서버 | 단순함, 무료 (GitHub Pages) | index.yaml 수동 관리 |
-| **ChartMuseum** | 자체 서버 | 차트 업로드 API 제공 | 운영 부담 |
-| **OCI Registry** | Docker registry (ECR·GHCR·Harbor) | 컨테이너 이미지와 동일 인프라 | Helm 3.8+ 필요 |
+차트를 보관하는 방식은 기술적 성숙도와 요구사항에 따라 달라집니다.
 
-**최근 표준은 OCI**예요. 이미지 레지스트리와 동일한 인프라·권한·서명을 그대로 쓸 수 있어서 운영 일원화가 돼요.
+| 방식 | 특징 | 비고 |
+|---|---|---|
+| OCI Registry | 이미지 레지스트리(ECR, GHCR) 사용 | 현재 가장 권장되는 표준 방식 |
+| ChartMuseum | 전용 서버 운영 | API 기반 관리 용이 |
+| HTTP Server | 정적 파일 서비스 | 단순한 구성, GitHub Pages 등 활용 |
+
+**OCI**(Open Container Initiative) 방식은 컨테이너 이미지와 동일한 인프라를 사용할 수 있어 운영 효율성이 매우 높습니다.
 
 ```mermaid
 flowchart LR
-    DEV["개발자·CI"]
-    PKG["helm package"]
-    REG[("OCI Registry<br/>ghcr.io / ECR")]
-    CONS["소비자 (ArgoCD·CI)"]
+    CI["CI Pipeline"]
+    PKG["Helm Package"]
+    REG[("OCI Registry")]
+    CD["CD / ArgoCD"]
 
-    DEV --> PKG --> REG
-    REG --> CONS
+    CI --> PKG --> REG
+    REG --> CD
 
-    classDef actor fill:#2563eb,stroke:#1e40af,color:#ffffff
+    classDef primary fill:#2563eb,stroke:#1e40af,color:#ffffff
+    classDef success fill:#059669,stroke:#047857,color:#ffffff
     classDef action fill:#0891b2,stroke:#0e7490,color:#ffffff
-    classDef storage fill:#059669,stroke:#047857,color:#ffffff
 
-    class DEV,CONS actor
+    class CI,CD primary
     class PKG action
-    class REG storage
+    class REG success
 ```
 
-## OCI 레지스트리로 업로드
+## OCI 레지스트리 활용
+
+별도의 차트 저장소 서버를 구축하지 않고 기존 이미지 레지스트리를 활용합니다. 권한 관리와 보안 정책을 이미지와 일원화할 수 있다는 장점이 있습니다.
 
 ```bash
-# 1. 차트 패키징
-helm package ./charts/my-api
-# my-api-1.2.0.tgz 생성
+# 차트 패키징 및 로그인
+helm package ./my-chart
+helm registry login ghcr.io
 
-# 2. 레지스트리 로그인
-helm registry login ghcr.io -u USERNAME -p TOKEN
-
-# 3. 푸시
-helm push my-api-1.2.0.tgz oci://ghcr.io/my-org/charts
+# 레지스트리 푸시
+helm push my-chart-1.0.0.tgz oci://ghcr.io/org/charts
 ```
 
-소비자 쪽 사용:
+사용 시에는 `oci://` 프로토콜을 명시하여 차트를 가져옵니다.
 
-```bash
-helm install my-api oci://ghcr.io/my-org/charts/my-api --version 1.2.0
-```
+## 버전 관리 전략
 
-**OCI URL에 차트 이름은 안 들어가요.** `oci://host/namespace`까지만 쓰고, 차트 이름은 command 인자로 줘요.
+Helm 차트는 **SemVer**(Semantic Versioning)를 엄격히 준수해야 합니다.
 
-### 이미지 레지스트리와 권한 일원화
+- **Major**: `values.yaml` 구조가 변경되어 호환성이 깨질 때
+- **Minor**: 기능이 추가되거나 템플릿이 개선되었을 때
+- **Patch**: 단순한 버그 수정이나 설정 보완 시
 
-OCI 방식의 가장 큰 장점이에요. GitHub Container Registry를 쓰면 **같은 org token으로 이미지·차트를 모두 관리**할 수 있고, ArgoCD도 **같은 pullSecret으로 차트와 이미지를 함께** 가져와요.
+`appVersion`은 실제 애플리케이션의 버전을 나타내며 차트 버전과 독립적으로 관리합니다.
 
-## HTTP 기반 저장소 (GitHub Pages)
+## CI/CD 파이프라인 통합
 
-간단한 팀은 GitHub Pages로 시작하는 경우도 많아요.
+차트의 생명주기를 자동화하기 위해 다음과 같은 단계로 파이프라인을 구성합니다.
 
-```mermaid
-flowchart LR
-    REPO[("Git: charts-repo")]
-    GH["GitHub Actions<br/>chart-releaser"]
-    PAGES["GitHub Pages<br/>(index.yaml + tgz)"]
+1. **검증**: `lint` 및 스키마 체크를 통해 구조적 결함 확인
+2. **패키징**: 차트 메타데이터를 기반으로 압축 파일 생성
+3. **서명**: **Cosign** 등을 사용하여 이미지 무결성 보장
+4. **배포**: 레지스트리 업로드 및 ArgoCD 알림
 
-    REPO -->|"PR merge"| GH
-    GH -->|"package + commit"| PAGES
+<div class="callout why">
+  <div class="callout-title">서명의 중요성</div>
+  이미지와 마찬가지로 차트에도 서명을 추가하여 공급망 보안을 강화해야 합니다. 클러스터 배포 시 서명이 검증된 차트만 실행하도록 설정함으로써 인프라의 신뢰도를 높일 수 있습니다.
+</div>
 
-    classDef repo fill:#475569,stroke:#334155,color:#ffffff
-    classDef ci fill:#0891b2,stroke:#0e7490,color:#ffffff
-    classDef host fill:#059669,stroke:#047857,color:#ffffff
+## 소비자 관점의 업데이트 관리
 
-    class REPO repo
-    class GH ci
-    class PAGES host
-```
+차트 사용자는 버전 범위를 지정하여 안정적인 업데이트를 보장받아야 합니다. **ArgoCD**에서는 특정 마이너 버전 내의 최신 패치를 자동으로 따라가도록 설정할 수 있습니다.
 
-### chart-releaser 액션
+또한 **Renovate**와 같은 도구를 사용하면 새로운 차트 버전이 출시되었을 때 자동으로 PR을 생성하여 업데이트 과정을 체계화할 수 있습니다.
 
-`helm/chart-releaser-action`이 차트 디렉토리를 감지해서 자동으로 패키징·릴리즈·index.yaml 업데이트까지 해줘요.
+## 정리
 
-```yaml
-# .github/workflows/release.yml
-on:
-  push:
-    branches: [main]
+- **OCI Registry**를 차트 저장소의 표준으로 채택하여 운영 효율을 높입니다.
+- **SemVer** 원칙에 따라 차트 버전을 엄격히 관리합니다.
+- 배포 파이프라인 전 과정에 자동화된 **검증**과 **서명**을 추가합니다.
+- 버전 핀닝과 자동 업데이트 도구를 통해 클러스터 상태를 안정적으로 유지합니다.
 
-jobs:
-  release:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Configure Git
-        run: |
-          git config user.name "$GITHUB_ACTOR"
-          git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
-      - uses: azure/setup-helm@v4
-      - name: Run chart-releaser
-        uses: helm/chart-releaser-action@v1
-        env:
-          CR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-```
-
-소비자 등록:
-
-```bash
-helm repo add my-org https://my-org.github.io/charts-repo
-helm repo update
-helm install my-api my-org/my-api --version 1.2.0
-```
-
-## 차트 버전 관리 원칙
-
-차트 버전은 **SemVer**를 따르되, "앱 버전"과 "차트 버전"을 확실히 분리해야 해요.
-
-| 변경 유형 | 차트 version | 차트 appVersion |
-|---|---|---|
-| 앱 이미지 태그만 업데이트 (bug fix) | patch (1.2.0 → 1.2.1) | v2.5.1 → v2.5.2 |
-| 앱 기능 추가 (new feature) | minor (1.2.0 → 1.3.0) | v2.5.1 → v2.6.0 |
-| values 구조 변경 (breaking) | major (1.2.0 → 2.0.0) | 동일 유지 가능 |
-
-**values 구조가 바뀌면 반드시 major**여야 해요. 소비자는 minor까지만 자동 upgrade하는 게 관례인데, breaking을 minor에 숨기면 자동 배포가 깨져요.
-
-## CI 파이프라인 전체 그림
-
-```mermaid
-flowchart TB
-    PR["PR 생성"]
-    LINT["helm lint"]
-    TPL["helm template + kubeconform"]
-    CT["chart-testing (kind)"]
-    MERGE["main 머지"]
-    PKG["helm package"]
-    SIGN["cosign sign"]
-    PUSH["OCI push"]
-    NOTIFY["소비자 알림<br/>(renovate PR)"]
-
-    PR --> LINT --> TPL --> CT
-    CT -->|"pass"| MERGE
-    MERGE --> PKG --> SIGN --> PUSH --> NOTIFY
-
-    classDef pr_phase fill:#0891b2,stroke:#0e7490,color:#ffffff
-    classDef check fill:#d97706,stroke:#b45309,color:#ffffff
-    classDef release fill:#059669,stroke:#047857,color:#ffffff
-
-    class PR pr_phase
-    class LINT,TPL,CT check
-    class MERGE,PKG,SIGN,PUSH,NOTIFY release
-```
-
-### 차트 서명 (cosign)
-
-이미지와 동일하게 차트도 서명해서 **출처 검증**이 가능해요.
-
-```bash
-cosign sign oci://ghcr.io/my-org/charts/my-api:1.2.0
-
-# 소비자 쪽 검증
-cosign verify oci://ghcr.io/my-org/charts/my-api:1.2.0 \
-  --certificate-identity-regexp='https://github.com/my-org/.+' \
-  --certificate-oidc-issuer='https://token.actions.githubusercontent.com'
-```
-
-ArgoCD에서도 차트 서명 검증을 통과한 것만 배포되도록 admission을 걸 수 있어요.
-
-## 소비자 쪽 — 버전 핀닝과 자동 업데이트
-
-### ArgoCD Application
-
-```yaml
-spec:
-  source:
-    repoURL: ghcr.io/my-org/charts
-    chart: my-api
-    targetRevision: 1.2.*   # patch만 자동 따라감
-    helm:
-      valueFiles:
-      - values-prod.yaml
-```
-
-`targetRevision`에 SemVer range를 쓰면 patch는 자동, minor·major는 수동으로 끊을 수 있어요.
-
-### Renovate로 PR 자동화
-
-`renovate.json`에 Helm chart 업데이트 규칙을 넣으면, 새 차트 버전이 올라올 때 자동으로 PR이 생성돼요.
-
-```json
-{
-  "extends": ["config:base"],
-  "helm-values": {
-    "fileMatch": ["^charts/.+/values.*\\.yaml$"]
-  },
-  "packageRules": [
-    {
-      "matchManagers": ["helmv3"],
-      "automerge": true,
-      "matchUpdateTypes": ["patch"]
-    }
-  ]
-}
-```
-
-**Patch 자동 merge + minor 이상 수동 리뷰**가 안전한 기본 설정이에요.
-
-## 차트 배포 전략 체크리스트
-
-| 항목 | 권장 |
-|---|---|
-| 저장소 형태 | OCI (ghcr·ECR·Harbor) |
-| 버전 정책 | SemVer 엄격 준수, breaking = major |
-| 서명 | cosign keyless |
-| 릴리즈 자동화 | GitHub Actions + chart-releaser (HTTP) / push (OCI) |
-| CI 검증 | lint + template + kubeconform + chart-testing |
-| 소비자 업데이트 | Renovate (patch auto, minor 수동) |
-| 차트 히스토리 보관 | 이전 10개 버전 이상 유지 (롤백 여력) |
-
-## Umbrella 릴리즈 vs 서비스별 릴리즈
-
-"여러 서비스 함께 배포"를 할 때 릴리즈 단위 선택도 중요해요.
-
-| 전략 | 장점 | 단점 |
-|---|---|---|
-| Umbrella chart 1개 릴리즈 | 일관된 버전, 한 번에 배포 | 한 서비스 변경도 전체 버전 증가 |
-| 서비스별 차트 독립 릴리즈 | 각 팀 독립 주기 | "플랫폼 전체 상태"가 버전으로 표현 안 됨 |
-| 서비스별 + GitOps에서 묶음 | 양쪽 장점 | ArgoCD ApplicationSet 등 추가 인프라 |
-
-**대기업 규모에서는 세 번째가 표준**이에요. 차트는 서비스별로 독립 릴리즈하되, ArgoCD ApplicationSet으로 "어느 환경에 어느 버전이 떠있는지"를 Git에서 관리해요.
-
-## 시리즈 마무리
-
-3편에 걸쳐 Helm의 개념, 재사용 설계, 배포 파이프라인을 훑었어요.
-
-- 01: Chart·Values·Release 3요소와 템플릿 기본
-- 02: Library chart·values schema·함정 피하기
-- 03: OCI 기반 배포·서명·CI 자동화
-
-핵심 메시지: **"매니페스트를 복사하지 말고 차트로 만들어라. 차트는 코드처럼 CI로 검증해라."** 차트가 없는 Kubernetes 운영은 결국 복붙 지옥으로 끝나요.
-
-다음 시리즈에서는 Pod 간 통신을 더 정교하게 제어하는 **Service Mesh**(Istio·Linkerd)를 다뤄요.
+차트는 단순히 YAML의 묶음이 아닌 인프라의 품질을 결정하는 핵심 자산입니다. 이를 코드처럼 관리하고 검증하는 문화를 구축하는 것이 중요합니다.

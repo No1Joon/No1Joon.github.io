@@ -10,293 +10,101 @@ tags: [helm, chart, design, subchart, library-chart]
 
 {% raw %}
 
-회사의 서비스가 열 개쯤 되면 각 서비스마다 Deployment·Service·HPA·PDB·ServiceMonitor가 거의 똑같은 형태로 반복돼요. 서비스마다 따로 차트를 만들면 공통 정책 하나 바꿀 때 열 군데 수정해야 하죠. 이 글에서는 **중복을 제거하는 차트 설계 패턴**을 정리해요.
+서비스 규모가 커지면 여러 애플리케이션이 거의 동일한 형태의 Kubernetes 리소스를 필요로 하게 됩니다. 이때 각 서비스마다 독립적인 차트를 유지하는 것은 중복 관리를 유발합니다. Helm의 고급 기능을 활용하여 **재사용성**을 극대화하는 설계 패턴을 정리해요.
 
-## 3가지 재사용 전략
+## 재사용 전략 비교
 
-| 전략 | 쓰임 | 장단점 |
+| 전략 | 주요 용도 | 특징 |
 |---|---|---|
-| **Umbrella + subchart** | 여러 서비스를 하나의 릴리스로 | 묶음 배포 편함, 개별 롤백 어려움 |
-| **Library chart** | 재사용 가능한 템플릿 블록 | DRY 극대화, 학습 곡선 있음 |
-| **Common values 공유** | 서비스별 차트 + 공통 values | 유연함, 규율 필요 |
+| Library Chart | 공통 템플릿 함수 정의 | DRY 원칙 실현, 렌더링되지 않음 |
+| Subchart | 복합 서비스 구성 | 여러 차트를 계층적으로 묶어 관리 |
+| Common Values | 설정 공유 | 파일 병합을 통한 환경 관리 |
 
-## Library Chart — 템플릿 함수 라이브러리
+## Library Chart 활용
 
-가장 강력한 재사용 메커니즘이에요. **렌더링되지 않는 차트**로, 다른 차트가 `import`하는 **함수 모음집** 역할을 해요.
+Library Chart는 직접 배포되지 않고 다른 차트에 **템플릿 함수**를 제공하는 역할을 합니다.
 
 ```mermaid
 flowchart TB
-    LIB["platform-lib<br/>(Library Chart)"]
-    C1["api-service"]
-    C2["worker-service"]
-    C3["batch-service"]
+    LIB["Platform Library<br/>(Common Logic)"]
+    C1["API Service"]
+    C2["Worker Service"]
+    C3["Batch Service"]
 
-    LIB -.->|"import templates"| C1
-    LIB -.->|"import templates"| C2
-    LIB -.->|"import templates"| C3
+    LIB -.->|"shares templates"| C1
+    LIB -.->|"shares templates"| C2
+    LIB -.->|"shares templates"| C3
 
-    classDef lib fill:#059669,stroke:#047857,color:#ffffff
-    classDef chart fill:#2563eb,stroke:#1e40af,color:#ffffff
+    classDef success fill:#059669,stroke:#047857,color:#ffffff
+    classDef primary fill:#2563eb,stroke:#1e40af,color:#ffffff
 
-    class LIB lib
-    class C1,C2,C3 chart
+    class LIB success
+    class C1,C2,C3 primary
 ```
 
-### Library Chart 정의
+`Chart.yaml`에서 `type: library`를 선언하면 해당 차트는 템플릿 정의 전용으로 동작하며 직접적인 리소스 생성을 하지 않습니다. 이를 통해 Deployment나 Service의 공통 구조를 한 곳에서 관리할 수 있어요.
 
-```yaml
-# platform-lib/Chart.yaml
-apiVersion: v2
-name: platform-lib
-type: library      # 🔑 핵심
-version: 1.0.0
-```
+## Values 스키마 검증
 
-```
-# platform-lib/templates/_deployment.tpl
-{{- define "platform-lib.deployment" -}}
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: {{ .Values.name }}
-  labels:
-    {{- include "platform-lib.labels" . | nindent 4 }}
-spec:
-  replicas: {{ .Values.replicas | default 3 }}
-  selector:
-    matchLabels:
-      app: {{ .Values.name }}
-  template:
-    metadata:
-      labels:
-        app: {{ .Values.name }}
-    spec:
-      containers:
-      - name: app
-        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-        resources:
-          {{- toYaml .Values.resources | nindent 10 }}
-        {{- with .Values.probes }}
-        readinessProbe:
-          {{- toYaml .readiness | nindent 10 }}
-        livenessProbe:
-          {{- toYaml .liveness | nindent 10 }}
-        {{- end }}
-{{- end -}}
-```
-
-### 사용하는 차트
-
-```yaml
-# api-service/Chart.yaml
-apiVersion: v2
-name: api-service
-type: application
-version: 0.1.0
-dependencies:
-  - name: platform-lib
-    version: 1.0.0
-    repository: "oci://ghcr.io/org/charts"
-```
-
-```
-# api-service/templates/deployment.yaml
-{{- include "platform-lib.deployment" . }}
-```
-
-이제 서비스 차트에는 **단 한 줄**만 있어요. Deployment 구조가 변경되면 library chart만 업데이트하고 각 서비스는 의존 버전만 올리면 돼요.
-
-<div class="callout why">
-  <div class="callout-title">Library Chart는 템플릿을 만들지 않아요</div>
-  <code>type: library</code> 선언이 핵심이에요. <code>application</code> 차트는 <code>templates/</code> 안의 파일을 렌더링 대상으로 쓰지만, library 차트는 <b>렌더링 대상에서 제외</b>되고 <code>_*.tpl</code> 의 <code>define</code> 블록만 다른 차트가 import할 수 있는 함수로 노출돼요.
-</div>
-
-## Values 스키마 — 타입 안전성
-
-values.yaml은 문자열과 숫자를 자유롭게 섞어 쓸 수 있어서 오타로 인한 장애가 흔해요. **`values.schema.json`** 으로 구조를 강제할 수 있어요.
+`values.yaml`의 구조를 강제하기 위해 **JSON Schema**를 도입할 수 있습니다. `values.schema.json` 파일을 작성하면 배포 전 데이터 타입을 자동으로 검증합니다.
 
 ```json
 {
-  "$schema": "https://json-schema.org/draft-07/schema",
   "type": "object",
   "required": ["image", "replicaCount"],
   "properties": {
-    "replicaCount": {
-      "type": "integer",
-      "minimum": 1,
-      "maximum": 50
-    },
+    "replicaCount": { "type": "integer", "minimum": 1 },
     "image": {
       "type": "object",
-      "required": ["repository", "tag"],
-      "properties": {
-        "repository": { "type": "string" },
-        "tag": { "type": "string" }
-      }
-    },
-    "resources": {
-      "type": "object",
-      "properties": {
-        "limits": { "$ref": "#/definitions/resource" },
-        "requests": { "$ref": "#/definitions/resource" }
-      }
+      "required": ["tag"],
+      "properties": { "tag": { "type": "string" } }
     }
   }
 }
 ```
 
-`helm install`·`helm lint` 시 스키마 위반이 발견되면 **즉시 실패**해요. CI에서 자동으로 검증되는 안전장치가 돼요.
+잘못된 값이 입력되면 `helm install` 시점에 오류를 발생시켜 실수를 방지합니다.
 
-## 환경별 values 구조
+## 계층적 설정 구조
 
-환경이 늘어나면 values 파일도 정리가 필요해요. 두 가지 대표 패턴이에요.
+환경이 복잡해질수록 설정 파일을 논리적으로 분리하는 것이 유리합니다.
 
-### 패턴 A — 환경별 전체 파일
+- **Base**: 모든 환경 공통 설정
+- **Env**: 운영, 개발 등 환경별 차이
+- **Region**: 가용 영역별 특수 설정
 
-```
-charts/api-service/
-├── values.yaml            # 공통 기본
-├── values-dev.yaml
-├── values-stg.yaml
-└── values-prod.yaml
-```
+여러 파일을 `-f` 옵션으로 순서대로 적용하면 최종 설정이 병합됩니다. 이때 나중에 입력된 파일이 더 높은 우선순위를 가져요.
 
-**장점**: 환경별 값이 한눈에 보임
-**단점**: 공통값 변경 시 여러 파일 동기화
+<div class="callout why">
+  <div class="callout-title">Secret 관리의 원칙</div>
+  설정 파일에 민감 정보를 포함해서는 안 됩니다. 비밀값은 <b>External Secrets</b>나 <b>Sealed Secrets</b> 같은 전용 도구를 통해 외부에서 주입하거나 클러스터 내에서 암호화하여 관리해야 합니다.
+</div>
 
-### 패턴 B — 계층화된 values
+## 주의해야 할 설계 함정
 
-```
-values/
-├── base/
-│   └── values.yaml
-├── env/
-│   ├── dev.yaml
-│   ├── stg.yaml
-│   └── prod.yaml
-└── region/
-    ├── ap-northeast-2.yaml
-    └── us-east-1.yaml
-```
+### 컨텍스트 범위 오류
+`range` 문 내에서 상위 컨텍스트의 값을 참조할 때는 `$` 기호를 사용하여 루트에서 시작하는 경로를 지정해야 합니다. 그렇지 않으면 루프의 로컬 범위 내에서만 값을 찾게 되어 렌더링 오류가 발생합니다.
 
-```bash
-helm upgrade api ./chart \
-  -f values/base/values.yaml \
-  -f values/env/prod.yaml \
-  -f values/region/ap-northeast-2.yaml
-```
+### 데이터 타입 불일치
+YAML에서 숫자가 문자열로 처리되지 않도록 주의해야 합니다. 특히 포트 번호나 타임아웃 값은 `| int` 파이프를 사용하여 명시적으로 형변환을 해주는 것이 안전합니다.
 
-**장점**: 차원별 재사용 (env × region)
-**단점**: 병합 순서·충돌 규칙 파악 필요
+## 테스트 및 검증
 
-규모가 커지면 B 패턴이 유리하지만, 서비스 5개 이하에서는 A가 단순해서 낫죠.
+차트 또한 코드처럼 지속적인 검증이 필요합니다.
 
-## 자주 빠지는 함정
-
-### 1. `values.yaml`에 Secret 박기
-
-```yaml
-# ❌ 절대 안 됨
-database:
-  password: s3cr3t-production
-```
-
-Secret은 **Sealed Secrets·External Secrets·Vault**로 외부화해야 해요. values.yaml은 Git에 올라가니까요.
-
-### 2. `range` 루프에서 `.Values` 컨텍스트 잃기
-
-```
-{{- range .Values.services }}
-  name: {{ .name }}
-  image: {{ .image }}
-  namespace: {{ $.Values.namespace }}  # $ 로 루트 접근 필수
-{{- end }}
-```
-
-`range` 안에서는 `.`이 현재 루프 아이템을 가리켜요. 루트 `.Values` 에 접근하려면 **`$`를 루프 밖에서 선언**해두거나 `$.Values`로 써요.
-
-### 3. 빈 문자열 vs 누락
-
-```yaml
-replicaCount:
-```
-
-YAML에서 이는 `null`이에요. `{{ .Values.replicaCount | default 3 }}`는 `null`을 감지하지만, 명시적 빈 문자열 `""`은 **default 연산자가 적용되지 않아요**. 조건 분기할 때 `empty` 함수를 쓰는 게 안전해요.
-
-### 4. 숫자가 문자열로 렌더링
-
-```yaml
-timeout: {{ .Values.timeout }}s
-```
-
-`timeout: 30`을 주면 `30s`가 되는데, `timeout: "30"`을 주면 `"30"s`가 되어 파싱 실패해요. **숫자형은 `| int`로 강제 변환**하세요.
-
-## Umbrella Chart — 언제 쓸 만한가
-
-여러 차트를 하나로 묶는 umbrella 패턴은 유혹적이지만 함정이 있어요.
-
-```mermaid
-flowchart TB
-    UMB["platform-umbrella<br/>(release 1개)"]
-    API["api subchart"]
-    WORK["worker subchart"]
-    DB["postgres subchart"]
-    REDIS["redis subchart"]
-
-    UMB --> API
-    UMB --> WORK
-    UMB --> DB
-    UMB --> REDIS
-
-    classDef umbrella fill:#d97706,stroke:#b45309,color:#ffffff
-    classDef sub fill:#2563eb,stroke:#1e40af,color:#ffffff
-
-    class UMB umbrella
-    class API,WORK,DB,REDIS sub
-```
-
-| 상황 | 적합성 |
-|---|---|
-| 초기 프로토타입·POC | ✅ 한 번에 띄우기 편함 |
-| dev 환경 | ✅ 개발자 로컬 환경 구축 |
-| 개별 서비스 롤백이 잦음 | ❌ 전체가 하나의 release라 불편 |
-| 팀별 독립 배포 주기 | ❌ 한 팀의 배포가 다른 팀 영향 |
-| 수십 개 서비스 대규모 플랫폼 | ❌ 차트가 비대해짐 |
-
-**실무 권장**: 서비스별 차트 + ArgoCD ApplicationSet 조합이 umbrella보다 운영이 깔끔해요.
-
-## 테스트 — 차트도 CI로 검증
-
-```yaml
-# .github/workflows/chart-ci.yml
-- name: Lint
-  run: helm lint ./charts/api-service
-
-- name: Template render
-  run: helm template api ./charts/api-service -f values-prod.yaml > rendered.yaml
-
-- name: Validate with kubeconform
-  run: kubeconform -strict -summary rendered.yaml
-
-- name: Chart testing (helm/chart-testing)
-  run: ct install --config ct.yaml
-```
-
-| 도구 | 검증 항목 |
-|---|---|
-| `helm lint` | 차트 구조·syntax |
-| `helm template` + `kubeconform` | 렌더링된 매니페스트가 Kubernetes 스키마 준수 |
-| `chart-testing (ct)` | 실제 kind 클러스터에 설치·upgrade 테스트 |
+| 단계 | 도구 | 검증 내용 |
+|---|---|---|
+| Lint | `helm lint` | 구조 및 문법 오류 |
+| Template | `helm template` | 렌더링된 YAML 결과 확인 |
+| 스키마 | `kubeconform` | Kubernetes API 규격 준수 여부 |
 
 ## 정리
 
-- **Library chart**로 여러 서비스의 공통 템플릿을 한 곳에 모아요
-- **`values.schema.json`**으로 values 타입 오류를 CI에서 걸러요
-- 환경이 5개 미만이면 파일별 values, 이상이면 계층화
-- **Secret은 values.yaml에 넣지 말기** — SealedSecret·ExternalSecret 사용
-- Umbrella는 매력적이지만 서비스 분리 주기가 다르면 독이 돼요
-- 차트는 **애플리케이션 코드처럼 CI로 검증**
+- **Library Chart**로 공통 로직을 통합하여 관리 비용을 줄입니다.
+- **JSON Schema**를 활용하여 설정값의 안정성을 확보합니다.
+- 설정 파일의 계층화를 통해 환경 간 차이를 명확히 구분합니다.
+- 자동화된 검증 도구를 파이프라인에 통합하여 품질을 유지합니다.
 
-다음 글에서는 차트를 **어떻게 배포하고 공유할지** — 레포지토리·OCI registry·릴리즈 자동화를 다뤄요.
+다음 글에서는 완성된 차트를 저장하고 팀원들과 공유하는 **배포 파이프라인** 구성을 정리해요.
 
 {% endraw %}

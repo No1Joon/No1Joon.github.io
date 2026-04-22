@@ -8,131 +8,72 @@ subcategory: Service Mesh
 tags: [service-mesh, istio, traffic, canary, circuit-breaker]
 ---
 
-Service Mesh를 도입하는 가장 큰 이유 중 하나는 **정교한 트래픽 제어**예요. 기본 Kubernetes의 Service 리소스는 트래픽을 Pod 개수 비율로만 분산(Round Robin)시킬 수 있어요. 하지만 실무에서는 "새 버전(v2)에 트래픽의 딱 5%만 흘려보내줘" 또는 "특정 헤더를 가진 테스터들만 v2로 보내줘" 같은 요구사항이 필요해요.
+Service Mesh를 사용하는 가장 강력한 이유 중 하나는 트래픽의 흐름을 코드 수정 없이 세밀하게 조정할 수 있다는 점입니다. 특히 Istio는 **VirtualService**와 **DestinationRule**이라는 두 가지 핵심 리소스를 사용하여 복잡한 라우팅 요구사항을 선언적으로 해결합니다.
 
-Istio는 이를 `VirtualService`와 `DestinationRule`이라는 커스텀 오브젝트(CRD)로 해결해요.
+## 라우팅 설계의 두 축
 
-## 핵심 오브젝트: VirtualService와 DestinationRule
-
-이 두 리소스는 항상 짝을 이뤄 동작해요.
-
-- **VirtualService**: "요청이 들어왔을 때 **어디로** 보낼 것인가?" (라우팅 규칙)
-- **DestinationRule**: "도착지에 도달한 후, 또는 통신 과정에서 **어떤 정책**을 적용할 것인가?" (로드밸런싱 방식, 서킷 브레이커, mTLS 정책)
+- **VirtualService**: 요청이 들어올 때 어떤 목적지로 보낼지 결정하는 **라우팅 규칙**입니다.
+- **DestinationRule**: 목적지에 도달한 트래픽을 처리하는 **방법과 정책**을 정의합니다.
 
 ```mermaid
 flowchart LR
-    APP["Client App"] --> VS["VirtualService<br/>(라우팅 규칙: v1 90%, v2 10%)"]
+    Ingress["Traffic Entry"]
+    VS["VirtualService<br/>(Rules)"]
     
-    subgraph subset [DestinationRule Subset 정의]
-        S_V1["Subset: v1"]
-        S_V2["Subset: v2"]
+    subgraph DR [DestinationRule Subsets]
+        V1["v1 (Stable)"]
+        V2["v2 (Canary)"]
     end
-    
-    VS -->|"90%"| S_V1
-    VS -->|"10%"| S_V2
-    
-    S_V1 --> POD_V1["Pod (v1)"]
-    S_V2 --> POD_V2["Pod (v2)"]
+
+    Ingress --> VS
+    VS -->|"90%"| V1
+    VS -->|"10%"| V2
 
     classDef primary fill:#2563eb,stroke:#1e40af,color:#ffffff
     classDef success fill:#059669,stroke:#047857,color:#ffffff
     classDef warn fill:#d97706,stroke:#b45309,color:#ffffff
 
-    class APP primary
+    class Ingress primary
     class VS warn
-    class S_V1,S_V2,POD_V1,POD_V2 success
+    class V1,V2 success
 ```
 
-## Canary 배포 패턴 (가중치 라우팅)
+## 카나리 배포 패턴
 
-새로운 버전을 안전하게 배포하기 위해 트래픽의 일부만 새 버전으로 라우팅하는 카나리(Canary) 배포 설정이에요.
+새 버전을 출시할 때 일부 트래픽만 흘려보내 성능과 안정성을 검증하는 방식입니다.
 
-먼저 `DestinationRule`로 버전을 구분하는 Subset을 정의해요.
+1. **DestinationRule**에서 라벨을 기반으로 서비스의 버전을 나눕니다.
+2. **VirtualService**에서 각 버전별 가중치(weight)를 설정합니다.
 
-```yaml
-# destination-rule.yaml
-apiVersion: networking.istio.io/v1alpha3
-kind: DestinationRule
-metadata:
-  name: reviews-dr
-spec:
-  host: reviews
-  subsets:
-  - name: v1
-    labels:
-      version: v1
-  - name: v2
-    labels:
-      version: v2
-```
+이를 통해 Pod의 개수 비율에 의존하지 않고 실제 트래픽의 비율을 정확하게 제어할 수 있어요.
 
-그 다음 `VirtualService`를 통해 트래픽 가중치(Weight)를 부여해요.
+## 회복성 강화: 재시도와 타임아웃
 
-```yaml
-# virtual-service.yaml
-apiVersion: networking.istio.io/v1alpha3
-kind: VirtualService
-metadata:
-  name: reviews-vs
-spec:
-  hosts:
-  - reviews
-  http:
-  - route:
-    - destination:
-        host: reviews
-        subset: v1
-      weight: 90
-    - destination:
-        host: reviews
-        subset: v2
-      weight: 10
-```
+네트워크 지연이나 일시적인 오류 상황에서 시스템의 안정성을 높이는 기법입니다.
 
-이렇게 하면 Kubernetes Service 계층의 한계를 뛰어넘어, Pod 대상이 아닌 **트래픽 비율 자체를 정확하게 제어**할 수 있어요.
+- **Timeout**: 응답이 일정 시간 내에 오지 않으면 요청을 중단하여 자원 점유를 방지합니다.
+- **Retry**: 실패한 요청을 자동으로 재시도하여 일시적 장애를 극복합니다.
 
-## 네트워크 회복성 패턴
+이러한 정책은 VirtualService 내에 간단한 선언만으로 적용되며, 애플리케이션은 재시도 로직을 직접 구현할 필요가 없습니다.
 
-네트워크는 언제든 실패할 수 있어요. 이를 보완하기 위한 Retry, Timeout, Circuit Breaker를 애플리케이션 코드 바깥에서 투명하게 처리해요.
+## 서킷 브레이커 (Circuit Breaker)
 
-### Retry와 Timeout
-
-일시적인 네트워크 단절은 몇 번 다시 요청해보면 성공하는 경우가 많아요. App 코드 수정 없이 VirtualService에 몇 줄만 추가하면 돼요.
-
-```yaml
-# Timeout과 Retry가 추가된 VirtualService 발췌
-  http:
-  - timeout: 2s
-    retries:
-      attempts: 3
-      perTryTimeout: 2s
-      retryOn: gateway-error,connect-failure,refused-stream
-```
-
-### Circuit Breaker (회로 차단기)
-
-요청 대상 시스템이 장애 상태일 때 계속해서 요청을 보내면, 장애가 전체 시스템으로 전파(Cascading Failure)될 수 있어요. 이럴 때 빠르게 연결을 차단하여 시스템을 보호하는 패턴이에요. 이는 `DestinationRule`에 정의해요.
-
-```yaml
-# 서킷 브레이커가 선언된 DestinationRule 발췌
-spec:
-  trafficPolicy:
-    outlierDetection:
-      consecutive5xxErrors: 5    # 5번 연속 5xx 에러 발생 시
-      interval: 10s              # 10초 주기 검사
-      baseEjectionTime: 30s      # 30초 동안 로드밸런싱 풀에서 제외 (차단)
-```
+특정 서비스에 장애가 발생했을 때 트래픽을 즉시 차단하여 시스템 전체로 장애가 확산되는 것을 막습니다. DestinationRule에서 설정하며, 연속된 에러 발생 횟수나 지연 시간을 기준으로 동작합니다.
 
 <div class="callout why">
-  <div class="callout-title">Fault Injection (장애 주입)</div>
-  우리가 만든 재시도나 서킷 브레이커 로직이 실제로 잘 동작하는지 어떻게 테스트할까요? Istio의 <code>Fault Injection</code> 기능을 사용하면, 특정 트래픽에 고의로 <strong>500 에러를 반환</strong>하거나 <strong>지연(Delay)을 발생</strong>시킬 수 있어요. 프로덕션 환경의 카오스 엔지니어링(Chaos Engineering)을 위해 꼭 필요한 기능이에요.
+  <div class="callout-title">장애 주입 테스트</div>
+  작성한 회복성 정책이 제대로 동작하는지 확인하기 위해 고의로 에러를 발생시키는 <b>Fault Injection</b>을 사용할 수 있습니다. 특정 트래픽에 응답 지연이나 HTTP 오류를 인위적으로 섞어 시스템의 견고함을 테스트해요.
 </div>
+
+## 헤더 기반 라우팅
+
+사용자의 등급이나 특정 헤더 값을 기준으로 라우팅 경로를 바꿀 수 있습니다. 예를 들어 "베타 테스터" 헤더를 가진 요청만 실험적인 버전으로 보내는 등의 시나리오가 가능합니다.
 
 ## 정리
 
-- **VirtualService**는 트래픽이 어떻게 라우팅될지 결정해요 (Canary 비율, 특정 헤더 매칭 등).
-- **DestinationRule**은 도착 노드들에 대한 로드밸런싱 방법, 버전 분류(Subset), 서킷 브레이커 등을 정의해요.
-- **Retry, Timeout, Circuit Breaker** 설정을 통해 통신 장애 전파를 인프라 레벨에서 막을 수 있어요.
-- 애플리케이션 코드는 어떠한 라우팅 로직도 가지지 않으며, 모든 책임은 Envoy 사이드카가 위임받아요.
+- **VirtualService**로 요청의 경로를 결정하고 **DestinationRule**로 세부 정책을 관리합니다.
+- **가중치 기반 라우팅**으로 안전한 카나리 배포를 실현합니다.
+- **재시도, 타임아웃, 서킷 브레이커**를 통해 시스템의 내결함성을 높입니다.
+- 인프라 레벨에서 트래픽을 제어하여 비즈니스 로직의 복잡성을 줄입니다.
 
-다음 글에서는 사이드카가 자동으로 처리해 주는 또 다른 거대한 이점, **mTLS 보안**과 **관측성(Observability) 통합**에 대해 알아볼게요.
+다음 글에서는 사이드카 프록시가 제공하는 강력한 보안 기능인 **자동 mTLS와 관측성** 활용법을 정리해요.
