@@ -612,5 +612,25 @@ Service Mesh 시리즈 3편 추가
 
 #### Event-Driven (3편)
 
-- [ ] **19.1** `_posts/2026-04-20-event-driven-01-concept.md`
+- [x] **19.1** `_posts/2026-04-20-event-driven-01-concept.md`
+  - 제목: `이벤트 주도 아키텍처`
+  - description: `Event·Command 차이와 Choreography·Orchestration으로 흐름을 구성하는 기본기를 정리해요.`
+  - tags: `[event-driven, event, command, choreography, orchestration]`
+  - 다룰 것: Event vs Command vs Query, Choreography vs Orchestration, 장단점, 적합한 도메인
+
+- [x] **19.2** `_posts/2026-04-20-event-driven-02-cqrs.md`
+  - 제목: `Event Sourcing과 CQRS`
+  - description: `상태 대신 이벤트를 저장하는 Event Sourcing과 읽기·쓰기 모델을 분리하는 CQRS를 정리해요.`
+  - tags: `[event-driven, event-sourcing, cqrs, projection, replay]`
+  - 다룰 것: Event Sourcing 핵심 아이디어, Projection·Materialized View, CQRS와의 관계, 리플레이, 단점
+
+- [x] **19.3** `_posts/2026-04-20-event-driven-03-kafka.md`
+  - 제목: `Kafka 운영 관점`
+  - description: `Partition·Consumer Group·Offset 관리 등 Kafka를 프로덕션에서 안전하게 운영하는 포인트를 정리해요.`
+  - tags: `[event-driven, kafka, partition, consumer-group, ops]`
+  - 다룰 것: Topic·Partition·Offset, Consumer Group 리밸런싱, Exactly-once, Schema Registry, 흔한 장애
+
+#### Design Patterns (3편)
+
+- [ ] **20.1** `_posts/2026-04-20-design-patterns-01-gof.md`
 ...
