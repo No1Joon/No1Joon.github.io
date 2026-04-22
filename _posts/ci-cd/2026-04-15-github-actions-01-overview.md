@@ -1,6 +1,6 @@
 ---
 title: "GitHub Actions 핵심 구조"
-description: Workflow·Job·Step·Action이 맞물려 돌아가는 구조와 이벤트 트리거·컨텍스트 표현식을 정리해요.
+description: Workflow·Job·Step·Action이 맞물려 돌아가는 구조와 이벤트 트리거·컨텍스트 표현식을 정리합니다.
 date: 2026-04-15
 order: 1
 category: CI/CD
@@ -12,7 +12,7 @@ tags: [github-actions, ci, cd, workflow, automation]
 
 ## GitHub Actions를 왜 쓰는가
 
-저장소와 CI/CD가 한 플랫폼에 있어 세팅 비용이 거의 없어요. Pull Request·이슈·릴리즈 같은 이벤트에 바로 훅을 걸 수 있고, 마켓플레이스 덕분에 대부분의 도구가 이미 빌딩 블록으로 존재해요. 반면 복잡한 배포 오케스트레이션(Approval·Canary·Rollback)이 필요하면 Harness·ArgoCD 같은 전용 플랫폼이 더 적합해요. GitHub Actions는 **빌드·테스트·간단한 배포까지가 스위트 스폿**이에요.
+저장소와 CI/CD가 한 플랫폼에 있어 세팅 비용이 거의 없습니다. Pull Request·이슈·릴리즈 같은 이벤트에 바로 훅을 걸 수 있고, 마켓플레이스 덕분에 대부분의 도구가 이미 빌딩 블록으로 존재합니다. 반면 복잡한 배포 오케스트레이션(Approval·Canary·Rollback)이 필요하면 Harness·ArgoCD 같은 전용 플랫폼이 더 적합합니다. GitHub Actions는 **빌드·테스트·간단한 배포까지가 스위트 스폿**입니다.
 
 ## 4단계 계층 구조
 
@@ -42,10 +42,10 @@ flowchart LR
     class A1 neutral
 ```
 
-- **Workflow**: `.github/workflows/` 하위의 YAML 파일 하나. 이벤트로 트리거돼요.
-- **Job**: 하나의 Runner(VM 또는 컨테이너)에서 실행되는 단위. Job 간 의존은 `needs` 로 표현해요.
-- **Step**: Job 안의 순차 단계. Shell 명령이나 Action을 호출해요.
-- **Action**: 재사용 가능한 작업 단위. 마켓플레이스(`actions/checkout@v4`) 또는 커스텀 리포로 배포돼요.
+- **Workflow**: `.github/workflows/` 하위의 YAML 파일 하나입니다. 이벤트로 트리거됩니다.
+- **Job**: 하나의 Runner(VM 또는 컨테이너)에서 실행되는 단위입니다. Job 간 의존은 `needs` 로 표현합니다.
+- **Step**: Job 안의 순차 단계입니다. Shell 명령이나 Action을 호출합니다.
+- **Action**: 재사용 가능한 작업 단위입니다. 마켓플레이스(`actions/checkout@v4`) 또는 커스텀 리포로 배포됩니다.
 
 ## Workflow 기본 문법
 
@@ -66,7 +66,7 @@ jobs:
         run: echo "hello"
 ```
 
-최소 구성은 **이벤트(`on`) → Job → Step** 세 블록이에요. 이 세 가지만 있으면 동작해요.
+최소 구성은 **이벤트(`on`) → Job → Step** 세 블록입니다. 이 세 가지만 있으면 동작합니다.
 
 ## 이벤트 트리거
 
@@ -99,7 +99,7 @@ on:
 
 ## Job과 Runner
 
-Job은 독립된 Runner에서 실행돼요. Runner는 Job 시작마다 깨끗한 상태로 준비돼요.
+Job은 독립된 Runner에서 실행됩니다. Runner는 Job 시작마다 깨끗한 상태로 준비됩니다.
 
 | 구분 | GitHub-hosted | Self-hosted |
 |------|---------------|-------------|
@@ -118,11 +118,11 @@ jobs:
     needs: test  # test Job이 성공해야 시작
 ```
 
-`needs` 로 의존을 지정하지 않으면 Job들은 기본적으로 병렬 실행돼요.
+`needs` 로 의존을 지정하지 않으면 Job들은 기본적으로 병렬 실행됩니다.
 
 ## Step과 Action
 
-Step은 두 가지 형태예요.
+Step은 두 가지 형태입니다.
 
 ```yaml
 steps:
@@ -142,12 +142,12 @@ steps:
 
 <div class="callout why">
   <div class="callout-title">Action 버전 지정 방법</div>
-  <code>@v4</code> 같은 태그는 재할당될 수 있어요. 보안이 중요한 워크플로우라면 <code>@<commit-sha></code> 로 핀 고정하는 게 안전해요. Dependabot이 주기적으로 업데이트 PR을 올려줘요.
+  <code>@v4</code> 같은 태그는 재할당될 수 있습니다. 보안이 중요한 워크플로우라면 <code>@<commit-sha></code> 로 핀 고정하는 게 안전합니다. Dependabot이 주기적으로 업데이트 PR을 올려줍니다.
 </div>
 
 ## Context와 표현식
 
-`${{ }}` 문법으로 런타임 값을 참조해요. 자주 쓰는 Context는 다음과 같아요.
+`${{ }}` 문법으로 런타임 값을 참조합니다. 자주 쓰는 Context는 다음과 같습니다.
 
 | 표현식 | 값 |
 |--------|----|
@@ -175,7 +175,7 @@ steps:
 
 ## 최소 예시 워크플로우
 
-Python 라이브러리 저장소에서 PR마다 테스트를 돌리는 워크플로우예요.
+Python 라이브러리 저장소에서 PR마다 테스트를 돌리는 워크플로우입니다.
 
 ```yaml
 name: test
@@ -212,8 +212,8 @@ jobs:
           path: report.xml
 ```
 
-- `timeout-minutes`: Job별 타임아웃. Runner 무한 점유 방지용으로 항상 설정해요.
-- `if: always()`: 앞 Step 실패해도 아티팩트는 업로드.
+- `timeout-minutes`: Job별 타임아웃입니다. Runner 무한 점유 방지용으로 항상 설정합니다.
+- `if: always()`: 앞 Step 실패해도 아티팩트는 업로드합니다.
 
 ## 정리
 
@@ -225,6 +225,6 @@ jobs:
 | Action | 재사용 가능한 Step 빌딩 블록 |
 | Context | `${{ github.*, secrets.*, steps.* }}` 런타임 값 |
 
-다음 글에서는 이 구조를 실전에 써서 Build·Test·Deploy가 하나의 워크플로우에서 돌아가는 파이프라인을 설계해요.
+다음 글에서는 이 구조를 실전에 써서 Build·Test·Deploy가 하나의 워크플로우에서 돌아가는 파이프라인을 설계합니다.
 
 {% endraw %}

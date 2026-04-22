@@ -14,7 +14,7 @@ Write a new technical blog post for the No1Joon blog. The critical part is prese
 
 The blog is written in **Korean**. Post body, headings, callouts, and most prose must be in Korean.
 
-- Sentence endings are flexible — 해요체, 합쇼체, or a mix are all allowed. Pick what reads most naturally for the topic and keep the chosen tone **consistent within a single post**.
+- Sentence endings are not flexible — 합쇼체. Pick what reads most naturally for the topic and keep the chosen tone **consistent within a single post**.
 - Short phrases inside tables and lists may stay in noun form or dictionary form (e.g., "빌드 결과물 전달", "설치", "확인").
 - Keep code comments in their original language (usually English).
 - The `description` field in front matter is a one-line summary — any natural ending is fine, including noun-form endings ("~를 분석", "~를 정리").
@@ -30,8 +30,8 @@ title: "A title that captures the core idea"
 description: One-line summary for search and sharing
 date: YYYY-MM-DD
 order: 1
-category: CI/CD            # one of the categories defined in _data/categories.yml
-subcategory: Harness       # a subcategory under that category
+category: CI/CD # one of the categories defined in _data/categories.yml
+subcategory: Harness # a subcategory under that category
 tags: [kebab-case, tags]
 ---
 ```
@@ -56,7 +56,7 @@ Posts live under a category-slug subfolder of `_posts/`:
 3. **Explanation first, code last.** Each section follows the order: concept paragraph → table/diagram → code snippet only if needed. Never lead with code and then explain it.
 4. **Use tables aggressively.** Prefer Markdown tables for comparisons, options, and type breakdowns over long prose.
 5. **Code blocks**: always specify the language (`yaml`, `bash`, `python`, `rego`, etc.).
-6. **Diagrams**: use ```` ```mermaid ```` blocks for graphs and architecture. No ASCII art.
+6. **Diagrams**: use ` ```mermaid ` blocks for graphs and architecture. No ASCII art.
    - Directory trees and config hierarchies may stay in plain code blocks since they are already textual structures.
 7. **Closing paragraph**: tease the next post ("다음 글에서는 ~를 다뤄요.") or summarize the key points.
 
@@ -78,14 +78,14 @@ Choose visualization based on each section's **cognitive load**. There is no fix
 
 Choice by purpose:
 
-| Situation                        | Recommended visualization   |
-| -------------------------------- | --------------------------- |
-| Architecture / component relations | mermaid `flowchart`        |
-| Time-ordered call flow           | mermaid `sequenceDiagram`   |
-| State transitions / lifecycle    | mermaid `stateDiagram-v2`   |
-| Options / types / attribute comparison | Markdown table        |
-| Config hierarchy / directory tree | Plain code block           |
-| UI screenshots                   | Image (`assets/images/`)    |
+| Situation                              | Recommended visualization |
+| -------------------------------------- | ------------------------- |
+| Architecture / component relations     | mermaid `flowchart`       |
+| Time-ordered call flow                 | mermaid `sequenceDiagram` |
+| State transitions / lifecycle          | mermaid `stateDiagram-v2` |
+| Options / types / attribute comparison | Markdown table            |
+| Config hierarchy / directory tree      | Plain code block          |
+| UI screenshots                         | Image (`assets/images/`)  |
 
 For mermaid, follow the palette, node shapes, and edge style rules in `.claude/skills/mermaid/SKILL.md`.
 

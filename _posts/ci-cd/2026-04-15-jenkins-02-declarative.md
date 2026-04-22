@@ -1,6 +1,6 @@
 ---
 title: "Declarative Pipeline 기초와 실무"
-description: 가장 많이 쓰이는 Jenkins Declarative 파이프라인의 핵심 문법과 구조, 제어 방식을 알아봐요.
+description: 가장 많이 쓰이는 Jenkins Declarative 파이프라인의 핵심 문법과 구조, 제어 방식을 알아봅니다.
 date: 2026-04-15
 order: 2
 category: CI/CD
@@ -8,11 +8,11 @@ subcategory: Jenkins
 tags: [jenkins, ci-cd, pipeline, declarative]
 ---
 
-이전 글에서 살펴본 것처럼 Jenkins 파이프라인은 코드로 전체 흐름을 관리해요. Jenkins는 자유도가 무한에 가까운 Scripted 문법과 이후에 나온 규격화된 Declarative 문법, 두 가지 방식을 지원하는데요. 구조가 직관적이고 제어가 쉬운 **Declarative Pipeline**이 현재 엔터프라이즈 환경에서의 확고한 원칙이 되었어요. 실무에서 필수로 쓰이는 문법들을 짚어볼게요.
+이전 글에서 살펴본 것처럼 Jenkins 파이프라인은 코드로 전체 흐름을 관리합니다. Jenkins는 자유도가 무한에 가까운 Scripted 문법과 이후에 나온 규격화된 Declarative 문법, 두 가지 방식을 지원하는데요. 구조가 직관적이고 제어가 쉬운 **Declarative Pipeline**이 현재 엔터프라이즈 환경에서의 확고한 원칙이 되었습니다. 실무에서 필수로 쓰이는 문법들을 짚어보겠습니다.
 
 ## Scripted vs Declarative
 
-두 문법은 작성 패러다임 자체가 달라요. Scripted가 날것의 프로그래밍이라면 Declarative는 블록 조립형 구성이에요.
+두 문법은 작성 패러다임 자체가 다릅니다. Scripted가 날것의 프로그래밍이라면 Declarative는 블록 조립형 구성입니다.
 
 | 구분 | Scripted Pipeline | Declarative Pipeline |
 |------|-------------------|----------------------|
@@ -22,9 +22,9 @@ tags: [jenkins, ci-cd, pipeline, declarative]
 | **최상위 위치** | `node { ... }` | `pipeline { ... }` |
 | **사용 권장도** | 점차 도태되는 레거시 | **오늘날 파이프라인의 표준 (Standard)** |
 
-## 파이프라인 최상위 구조 (The Anatomy)
+## 파이프라인 최상위 구조: The Anatomy
 
-Declarative 파이프라인은 가장 외곽을 `pipeline {}` 블록으로 반드시 감싸며, 그 안에 기능별 지시어(Directive)를 결합해서 살을 붙여요. 빈번하게 활용하는 구조를 시각화하면 다음과 같아요.
+Declarative 파이프라인은 가장 외곽을 `pipeline {}` 블록으로 반드시 감싸며, 그 안에 기능별 지시어(Directive)를 결합해서 살을 붙입니다. 빈번하게 활용하는 구조를 시각화하면 다음과 같습니다.
 
 ```mermaid
 flowchart TD
@@ -56,7 +56,7 @@ flowchart TD
 
 ## 필수 Section 및 Directive 역할
 
-실무에서 매일같이 쓰이는 각 설정 블록이 어떤 역할을 하는지 빠르게 훑어볼게요.
+실무에서 매일같이 쓰이는 각 설정 블록이 어떤 역할을 하는지 빠르게 훑어보겠습니다.
 
 | 블록 | 설명 | 실무 활용 예시 |
 |------|------|----------------|
@@ -69,7 +69,7 @@ flowchart TD
 
 ## 실무 파이프라인 템플릿 보기
 
-위에서 소개한 지시어들을 논리적으로 조합하면 실제 라이브 환경에서 쓰이는 강력한 배포 템플릿이 나와요.
+위에서 소개한 지시어들을 논리적으로 조합하면 실제 라이브 환경에서 쓰이는 강력한 배포 템플릿이 나옵니다.
 
 ```groovy
 pipeline {
@@ -98,15 +98,15 @@ pipeline {
 
 <div class="callout why">
   <div class="callout-title">Options 블록의 timeout은 선택이 아닌 필수</div>
-  파이프라인이 중간 사용자 입력(Input)에서 무한 대기하거나, 외부 통신 API 장애로 무한 루프 늪에 빠지면 Jenkins 스레드가 막혀 다른 중요 빌드들까지 큐잉되는 대참사가 발생해요. <code>timeout</code> 세팅은 무를 수 없는 프로덕션 필수 원칙이에요.
+  파이프라인이 중간 사용자 입력(Input)에서 무한 대기하거나, 외부 통신 API 장애로 무한 루프 늪에 빠지면 Jenkins 스레드가 막혀 다른 중요 빌드들까지 큐잉되는 대참사가 발생합니다. <code>timeout</code> 세팅은 무를 수 없는 프로덕션 필수 원칙입니다.
 </div>
 
 ## 정리
 
 | 특징 | 요약 내용 |
 |------|-----------|
-| **표준 문법** | 가독성을 위협하는 Scripted 문법을 피하고 **명확하고 엄격한 구조의 Declarative** 문법을 애용해요. |
-| **비즈니스 조건 제어** | 스크립트 덩어리의 지저분한 `if/else` 대신 `when` 블록을 사용해서 흐름을 매끄럽게 통제해요. |
-| **후행 액션 정리** | 복잡한 `try-catch` 예외 처리 대신 깔끔한 `post` 블록으로 노티피케이션과 리소스 초기화를 해결해요. |
+| **표준 문법** | 가독성을 위협하는 Scripted 문법을 피하고 **명확하고 엄격한 구조의 Declarative** 문법을 애용합니다. |
+| **비즈니스 조건 제어** | 스크립트 덩어리의 지저분한 `if/else` 대신 `when` 블록을 사용해서 흐름을 매끄럽게 통제합니다. |
+| **후행 액션 정리** | 복잡한 `try-catch` 예외 처리 대신 깔끔한 `post` 블록으로 노티피케이션과 리소스 초기화를 해결합니다. |
 
-다음 글에서는 이렇게 정교하게 작성된 파이프라인 템플릿이 사내의 수백 개 프로젝트에 복사붙여넣기 쓰일 때 발생하는 끔찍한 중복 문제를 어떻게 우아하게 제거하는지, 핵심 기법인 **Shared Libraries** 생태계를 살펴볼게요.
+다음 글에서는 이렇게 정교하게 작성된 파이프라인 템플릿이 사내의 수백 개 프로젝트에 복사붙여넣기 쓰일 때 발생하는 끔찍한 중복 문제를 어떻게 우아하게 제거하는지, 핵심 기법인 **Shared Libraries** 생태계를 살펴보겠습니다.

@@ -356,9 +356,9 @@ Service Mesh 시리즈 3편 추가
 
 #### Tracing (3편)
 
-- [ ] **8.1** `_posts/2026-04-20-tracing-01-concept.md`
+- [x] **8.1** `_posts/2026-04-20-tracing-01-concept.md`
   - 제목: `분산 추적의 이해`
-  - description: `Trace·Span·Context Propagation이 마이크로서비스 요청을 어떻게 꿰는지 정리해요.`
+  - description: `Trace·Span·Context Propagation이 마이크로서비스 요청을 어떻게 꿰는지 정리합니다.`
   - tags: `[tracing, distributed-tracing, span, context, microservices]`
   - 다룰 것: Span·Trace·Context 개념, W3C Trace Context, Sampling 필요성, Service Map
 
