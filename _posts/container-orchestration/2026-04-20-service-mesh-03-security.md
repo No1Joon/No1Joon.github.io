@@ -8,86 +8,64 @@ subcategory: Service Mesh
 tags: [service-mesh, mtls, observability, istio, security]
 ---
 
-마이크로서비스에서 네트워크 보안을 챙기려면 각 서비스 간 통신을 암호화해야 해요. 이전에는 개발자들이 각 서버마다 인증서를 심고 갱신하며 TLS 설정을 관리해야 했어요. 게다가 서비스 간의 복잡한 호출 흐름을 모니터링하려면 코드 곳곳에 추적(Trace) 라이브러리를 심어야 했죠.
+마이크로서비스 환경에서 수많은 서비스 간 통신의 보안을 확보하고 흐름을 파악하는 것은 매우 어려운 과제입니다. Service Mesh는 사이드카 프록시를 활용하여 **보안 암호화**와 **통신 가시성**을 애플리케이션 코드 수정 없이 자동으로 제공합니다.
 
-Service Mesh는 사이드카 프록시를 통해 이 두 가지 난제를 **코드를 건드리지 않고 자동화**해요.
+## 자동 mTLS (Mutual TLS)
 
-## 자동 mTLS (Mutual TLS) 동작 원리
-
-일반적인 TLS 통신(ex. 브라우저 ↔ 서버)은 클라이언트가 서버의 신원만 확인해요. 하지만 **mTLS(상호 TLS)**는 **클라이언트와 서버가 서로의 인증서를 검증**하는 양방향 신원 확인 시스템이에요.
-
-Istio는 이 복잡한 과정을 `Envoy` 사이드카와 Control Plane의 `Istiod`를 통해 완전히 숨겨버려요.
+mTLS는 클라이언트와 서버가 서로의 신원을 확인하는 양방향 인증 방식입니다. Service Mesh는 이를 인프라 레벨에서 자동화하여 네트워크 구간의 모든 트래픽을 암호화합니다.
 
 ```mermaid
 sequenceDiagram
-    participant A_App as App A
-    participant A_Proxy as Envoy (A)
-    participant Istiod as Istiod (CA)
-    participant B_Proxy as Envoy (B)
-    participant B_App as App B
+    participant A as Service A
+    participant PA as Proxy (A)
+    participant CTRL as Control Plane
+    participant PB as Proxy (B)
+    participant B as Service B
 
-    Istiod-->>A_Proxy: 단기 인증서 자동 발급 및 갱신
-    Istiod-->>B_Proxy: 단기 인증서 자동 발급 및 갱신
-
-    A_App->>A_Proxy: 평문 통신 (localhost:http)
-    A_Proxy->>B_Proxy: 1. mTLS 핸드쉐이크 (상호 인증서 검증)
-    A_Proxy->>B_Proxy: 2. 데이터 암호화 전송
-    B_Proxy->>A_Proxy: 3. 암호화 응답
-    B_Proxy->>B_App: 평문 전달 (localhost:http)
+    CTRL-->>PA: Issue Cert
+    CTRL-->>PB: Issue Cert
+    
+    A->>PA: Plaintext (localhost)
+    PA->>PB: mTLS Handshake & Encrypted Data
+    PB->>B: Plaintext (localhost)
 ```
 
-1. **인증서 발급**: `Istiod`는 내장된 CA(Certificate Authority) 역할을 하며, 각 Pod의 식별자(SPIFFE ID)를 기반으로 사이드카에 단기 인증서를 자동 발급·갱신해요.
-2. **트래픽 가로채기**: App A는 App B로 무조건 평문(HTTP)으로 호출해요.
-3. **자동 암호화**: App A의 프록시가 트래픽을 가로채 App B의 프록시와 mTLS 채널을 형성하고 암호화해요. App B의 프록시는 복호화 후 App B에게 평문으로 넘겨줘요.
+1. **인증서 관리**: 제어 영역(Control Plane)이 각 프록시에 인증서를 자동으로 발급하고 갱신합니다.
+2. **투명한 암호화**: 앱은 평문으로 통신하지만 프록시 구간에서 자동으로 암호화 및 복호화가 이루어집니다.
+3. **신원 기반 보안**: IP가 아닌 서비스의 고유 식별자를 기반으로 통신을 허용하거나 차단합니다.
 
-이 구조 덕분에 소스 코드에는 단 한 줄의 TLS 관련 설정이나 인증서 경로 유입이 없어도, 네트워크 구간은 완벽하게 암호화돼요.
+## 세밀한 접근 제어 (RBAC)
 
-## 보안 정책 제어
+mTLS가 적용된 후에는 **AuthorizationPolicy**를 통해 "누가 어떤 경로로 접근할 수 있는지" 정의합니다. 예를 들어 "주문 서비스는 결제 서비스의 특정 API만 호출할 수 있다"는 규칙을 L7 계층에서 선언적으로 관리할 수 있어요.
 
-mTLS가 적용되었다면, 이제 "누가 누구를 호출할 수 있는지"를 제어할 차례예요.
+## 관측성: 메트릭과 분산 추적
 
-### PeerAuthentication
+사이드카 프록시는 모든 트래픽의 통로이므로 통신과 관련된 모든 지표를 수집하기에 가장 좋은 지점입니다.
 
-특정 네임스페이스나 워크로드에 트래픽이 들어올 때, 반드시 mTLS를 사용하도록 강제하는 정책이에요.
-
-```yaml
-apiVersion: security.istio.io/v1beta1
-kind: PeerAuthentication
-metadata:
-  name: default-strict
-  namespace: prod-env
-spec:
-  mtls:
-    mode: STRICT  # mTLS가 아닌 평문 트래픽은 모두 거절
-```
-
-보통 도입 초기에는 `PERMISSIVE`(평문과 mTLS 모두 허용)로 두어 통신 단절을 막고, 검증이 끝나면 `STRICT`로 전환해요.
-
-### AuthorizationPolicy
-
-"Frontend 서비스는 Backend 서비스의 `GET` 메서드만 호출할 수 있다" 같은 세밀한 인가 규칙(RBAC)을 설정해요. 이는 Kubernetes NetworkPolicy(L3/L4 제어)보다 훨씬 고도화된 L7 레벨의 접근 제어예요.
-
-## 관측성(Observability) 통합
-
-수많은 서비스들이 그물처럼 얽히면 "대체 어디서 병목이 발생했는가?" 찾기가 극도로 어려워져요. 사이드카는 애플리케이션의 모든 Inbound/Outbound 트래픽을 관통하기 때문에 그 해답을 쥐고 있어요.
-
-| 관측성 요소 | 사이드카의 자동화 역할 | 도구 연동 |
+| 요소 | 역할 | 도구 연동 |
 |---|---|---|
-| **Metrics** (메트릭) | 요청 수, 응답 코드, 지연 시간(Latency) 등을 자동으로 수집해요. | Prometheus, Grafana |
-| **Distributed Tracing** (분산 추적) | 요청의 전체 호출 경로(Span)와 소요 시간을 추적해요. 단, App에서 B3 헤더는 직접 전파해줘야 해요. | Jaeger, Zipkin |
-| **Access Logs** (접근 로그) | L7 레벨의 상세한 HTTP 요청/응답 로그를 표준 포맷으로 남겨요. | ELK, Loki |
+| Metrics | 요청 수, 에러율, 응답 시간 등 수집 | Prometheus, Grafana |
+| Distributed Tracing | 서비스 간 호출 경로 및 지연 시간 추적 | Jaeger, Tempo |
+| Access Logs | 모든 HTTP 요청의 상세 로그 기록 | ELK, Loki |
 
-Envoy 프록시는 트래픽이 지나갈 때마다 풍부한 메트릭(예: `istio_requests_total`)을 기본적으로 생성해 Prometheus가 수집해 갈 수 있도록 엔드포인트를 열어줘요.
+사이드카가 자동으로 표준화된 데이터를 생성하므로, 개발자는 별도의 로깅 코드 없이도 대시보드에서 시스템의 건강 상태를 한눈에 파악할 수 있습니다.
 
 <div class="callout why">
-  <div class="callout-title">성능 오버헤드 주의사항</div>
-  Service Mesh는 분명 마법같지만 공짜는 아니에요. 각 Pod마다 프록시 컨테이너가 붙으므로 전체 클러스터의 <strong>메모리 사용량이 상승</strong>하며, 트래픽이 수많은 프록시 홉을 거치며 <strong>네트워크 레이턴시(지연)</strong>가 소폭 증가해요. 따라서 실시간성이 극도로 중요한 게임 서버 등에는 신중하게 도입해야 해요.
+  <div class="callout-title">성능과 보안의 트레이드오프</div>
+  강력한 보안과 가시성을 얻는 대신, 프록시를 거치며 발생하는 약간의 <b>네트워크 지연</b>과 사이드카 컨테이너가 차지하는 <b>리소스 오버헤드</b>를 감당해야 합니다. 시스템의 규모와 중요도에 따라 최적의 설정값을 찾는 과정이 필요해요.
 </div>
+
+## 보안 정책 모드 전환
+
+처음부터 모든 통신을 차단하면 서비스 장애가 발생할 수 있습니다.
+- **PERMISSIVE**: 평문과 mTLS 통신을 모두 허용하여 안정적으로 전환을 준비합니다.
+- **STRICT**: 오직 mTLS 통신만 허용하여 보안을 극대화합니다.
 
 ## 정리
 
-- 사이드카 구조의 진정한 완성은 **자동화된 구간 암호화(mTLS)와 텔레메트리 자동 수집**이에요.
-- **PeerAuthentication**과 **AuthorizationPolicy** 리소스를 통해 '인증'과 '인가'를 선언적으로 관리해요.
-- Envoy는 풍부한 **메트릭, 추적, 로그** 데이터를 생성하여 관측성 도구와 완벽하게 통합돼요.
+- **mTLS** 자동화를 통해 구간 암호화와 서비스 신원 증명을 구현합니다.
+- **인가 정책**을 통해 서비스 간의 통신 권한을 세밀하게 제어합니다.
+- 프록시에서 생성되는 풍부한 **텔레메트리**로 시스템 가시성을 확보합니다.
+- 보안과 운영 효율을 위해 인프라 레벨의 보안 모델을 구축합니다.
 
-Service Mesh 시리즈를 통해 "어떻게 네트워크 제어와 보안 책임을 인프라 단계로 완전히 내리는가"를 살펴보았어요. 이 원칙을 이해하면 거대한 클러스터 환경의 복잡성을 투명하게 통제할 수 있습니다.
+이로써 Service Mesh의 핵심적인 보안과 관측성 통합 방식을 살펴보았습니다. 서비스 메시를 통해 더욱 견고하고 투명한 클러스터 환경을 구축해 보세요.

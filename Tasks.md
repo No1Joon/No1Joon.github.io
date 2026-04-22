@@ -53,13 +53,13 @@ No1Joon Tech Blog(Jekyll·GitHub Pages)에 **총 69편**의 한국어 기술 포
 
 구조 여러 겹·순서 있는 흐름·추상 관계 설명 시 시각화 필수. 고정 개수 규칙 없음.
 
-| 상황 | 선택 |
-|---|---|
-| 아키텍처·컴포넌트 관계 | mermaid `flowchart` |
-| 시간 순 호출 흐름 | mermaid `sequenceDiagram` |
-| 상태 전이·라이프사이클 | mermaid `stateDiagram-v2` |
-| 옵션·타입 비교 | Markdown table |
-| 디렉토리 트리·설정 계층 | plain code block |
+| 상황                    | 선택                      |
+| ----------------------- | ------------------------- |
+| 아키텍처·컴포넌트 관계  | mermaid `flowchart`       |
+| 시간 순 호출 흐름       | mermaid `sequenceDiagram` |
+| 상태 전이·라이프사이클  | mermaid `stateDiagram-v2` |
+| 옵션·타입 비교          | Markdown table            |
+| 디렉토리 트리·설정 계층 | plain code block          |
 
 ### 5. Mermaid 색상 팔레트 (필수 통일)
 
@@ -362,15 +362,15 @@ Service Mesh 시리즈 3편 추가
   - tags: `[tracing, distributed-tracing, span, context, microservices]`
   - 다룰 것: Span·Trace·Context 개념, W3C Trace Context, Sampling 필요성, Service Map
 
-- [ ] **8.2** `_posts/2026-04-20-tracing-02-otel.md`
+- [x] **8.2** `_posts/2026-04-20-tracing-02-otel.md`
   - 제목: `OpenTelemetry 구조`
-  - description: `OTel SDK·Collector·Exporter가 벤더 중립적 관측성을 어떻게 만드는지 정리해요.`
+  - description: `OTel SDK·Collector·Exporter가 벤더 중립적 관측성을 어떻게 만드는지 정리합니다.`
   - tags: `[tracing, opentelemetry, otel, collector, exporter]`
   - 다룰 것: OTel의 세 축(API/SDK/Collector), Auto vs Manual Instrumentation, Collector 파이프라인, 백엔드 선택(Tempo/Jaeger/Honeycomb)
 
-- [ ] **8.3** `_posts/2026-04-20-tracing-03-sampling.md`
+- [x] **8.3** `_posts/2026-04-20-tracing-03-sampling.md`
   - 제목: `샘플링과 운영 전략`
-  - description: `Head·Tail 샘플링 전략과 트레이스 비용을 관리하는 프로덕션 패턴을 정리해요.`
+  - description: `Head·Tail 샘플링 전략과 트레이스 비용을 관리하는 프로덕션 패턴을 정리합니다.`
   - tags: `[tracing, sampling, tail-sampling, cost, production]`
   - 다룰 것: Head vs Tail Sampling, 에러·느린 요청 보존, 비용 모델, 관측성 예산
 
@@ -655,21 +655,27 @@ Service Mesh 시리즈 3편 추가
 ## 최종 검증 (전체 완료 후)
 
 1. **빌드 확인**
+
    ```bash
    bundle exec jekyll build 2>&1 | grep -iE "error|warning" | grep -v "Excerpt modified"
    ```
+
    출력이 비어있어야 정상.
 
 2. **포스트 수 확인**
+
    ```bash
    ls _posts/ | wc -l
    ```
+
    목표: 기존 13 + 신규 13(이미 완료) + 신규 69 = **95개**
 
 3. **Sitemap 확인**
+
    ```bash
    curl -s https://no1joon.github.io/sitemap.xml | grep -c "<loc>"
    ```
+
    목표: 95 + index + resume = 97개.
 
 4. **모든 포스트 front matter 검증**
