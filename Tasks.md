@@ -282,7 +282,7 @@ Service Mesh 시리즈 3편 추가
   - 제목: `BigQuery와 데이터 플랫폼`
   - description: `서버리스 데이터 웨어하우스 BigQuery와 Pub/Sub·Dataflow의 조합을 정리해요.`
   - tags: `[gcp, bigquery, pubsub, dataflow, analytics]`
-  - 다룰 것: BigQuery 컬럼 스토리지·파티셔닝·슬롯 과금, Pub/Sub, 데이터 플로우(Apache Beam), Looker Studio 개요
+  - 다룰 것: BigQuery 컬럼 스토리지·파티셔닝·슬롯 과금, Pub/Sub, Dataflow(Apache Beam), Looker Studio 개요
 
 #### Azure (3편)
 
@@ -536,5 +536,29 @@ Service Mesh 시리즈 3편 추가
 
 #### Testing (3편)
 
-- [ ] **16.1** `_posts/2026-04-20-testing-01-pyramid.md`
+- [x] **16.1** `_posts/2026-04-20-testing-01-pyramid.md`
+  - 제목: `테스트 피라미드 재해석`
+  - description: `Unit·Integration·E2E 비율을 결정할 때 실무적으로 고려할 점을 정리해요.`
+  - tags: `[testing, pyramid, unit, integration, strategy]`
+  - 다룰 것: 고전 피라미드·Trophy 모델, Fast/Reliable/Cheap 삼각 트레이드오프, Unit의 정의 논쟁
+
+- [x] **16.2** `_posts/2026-04-20-testing-02-integration.md`
+  - 제목: `통합과 E2E 테스트`
+  - description: `TestContainers·Playwright로 외부 의존성을 포함한 테스트를 안정적으로 만드는 방법을 정리해요.`
+  - tags: `[testing, integration, e2e, testcontainers, playwright]`
+  - 다룰 것: Integration Test 경계, TestContainers, E2E Tool 비교, Flaky test 관리
+
+- [x] **16.3** `_posts/2026-04-20-testing-03-contract.md`
+  - 제목: `계약과 성능 테스트`
+  - description: `Pact 기반 Consumer-driven Contract와 k6·Gatling 성능 테스트의 역할을 정리해요.`
+  - tags: `[testing, contract, pact, performance, k6]`
+  - 다룰 것: Contract Test 개념, Consumer-driven (Pact), 성능 테스트 종류(Load/Stress/Spike), k6
+
+---
+
+### 🏛 Architecture
+
+#### System Design (4편)
+
+- [ ] **17.1** `_posts/2026-04-20-system-design-01-thinking.md`
 ...
