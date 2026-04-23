@@ -24,15 +24,10 @@
   3. sitemap 제출: `https://no1joon.github.io/sitemap.xml`
   4. rss 제출: `https://no1joon.github.io/feed.xml`
 
-### 2. 포스트별 OG 이미지
-
-- 현재: 전 포스트가 `/assets/og-default.png` 하나로 통일됨 (`_config.yml` 의 `image`).
-- 목표: 서브카테고리(시리즈) 단위로 OG 이미지 분기 → SNS 공유·AI 검색 결과 썸네일 다양화.
-- 규격: 1200 × 630 PNG/JPG.
-- 적용 방식: 포스트 front matter 에 `image: /assets/og-{slug}.png` 추가. 값이 있으면 jekyll-seo-tag 가 자동으로 og/twitter 카드에 반영.
-- 접근 후보
-  - (A) 시리즈별 이미지 직접 제작 (Figma 등, 최소 20장 내외)
-  - (B) 빌드 타임 자동 생성 — GitHub Actions 에서 제목·카테고리 텍스트를 입력으로 PNG 생성 후 `/assets/og/` 로 커밋. 이미지 제작 부담 없이 포스트 수에 맞춰 확장 가능.
+- [x] 포스트별 OG 이미지 (빌드 타임 자동 생성)
+  - Node.js (Satori + Resvg) 기반 자동 생성 스크립트 구현 완료
+  - GitHub Actions 연동 완료
+  - 전 포스트 마크다운 `image` 필드 주입 완료
 
 ---
 

@@ -14,3 +14,6 @@ assets/raw-images/
 **/.pytest_cache/
 **/.ruff_cache/
 api/.env
+node_modules/
+assets/fonts/
+assets/og/*.png
