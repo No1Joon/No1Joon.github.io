@@ -1,19 +1,24 @@
 # api/
 
-No1Joon 블로그 댓글용 FastAPI 서비스. Cloud Run 에 배포되고 Firestore 를 데이터 저장소로 사용.
+No1Joon 블로그 댓글용 FastAPI 서비스. Cloud Run 에 배포되고 MongoDB Atlas (M0, GCP us-central1) 를 데이터 저장소로 사용.
 
 ## Structure
 
-- `app/main.py` — FastAPI 앱 팩토리. 미들웨어·라우터 조립.
-- `app/config.py` — pydantic-settings 기반 환경설정 (env/CSV 리스트 파싱).
-- `app/routers/` — 엔드포인트 (현재: `health`, 추후: `comments`, `admin`).
-- `app/security/` — 보안 레이어 (현재: 보안 헤더 미들웨어, 추후: Turnstile 검증·관리자 OAuth·레이트리밋).
+- `app/main.py` — FastAPI 앱 팩토리, lifespan 으로 DB 연결·인덱스 보장.
+- `app/config.py` — pydantic-settings 환경설정 (env/CSV 리스트 파싱).
+- `app/db.py` — pymongo `AsyncMongoClient` 싱글톤, 인덱스 생성.
+- `app/deps.py` — FastAPI DI (요청 스코프 DB 핸들).
+- `app/schemas/` — Pydantic 입출력 모델 (현재: `comment`).
+- `app/routers/` — 엔드포인트 (현재: `health`, `comments`; 추후: `admin`).
+- `app/security/` — 보안 레이어 (현재: 보안 헤더; 추후: Turnstile·레이트리밋·Google Sign-In 검증).
+- `docker-compose.yml` — 로컬 개발용 mongo:7.
 - `Dockerfile` — Cloud Run 컨테이너 빌드 (uv sync + uvicorn).
 - `.env.example` — 필요한 환경 변수 템플릿.
 
 ## Commands
 
-- `uv sync` — 의존성 설치 (`.venv/` 생성).
+- `docker compose up -d` — 로컬 mongo 기동 (`mongodb://localhost:27017`).
+- `uv sync` — 의존성 설치.
 - `uv run uvicorn app.main:app --reload --port 8000` — 로컬 개발 서버.
 - `uv run ruff check .` / `uv run ruff format .` — 린트·포맷.
 - `uv run pytest` — 테스트 실행.
@@ -22,9 +27,11 @@ No1Joon 블로그 댓글용 FastAPI 서비스. Cloud Run 에 배포되고 Firest
 ## Environment
 
 - Python 3.12 (`.python-version`).
-- 결제 수단 등록된 GCP 프로젝트 필요 (Always Free 초과분은 자동 과금). 예산 알림 설정 권장.
-- 로컬 개발 시 Firestore 는 에뮬레이터 사용 (`FIRESTORE_EMULATOR_HOST`).
+- 로컬: `docker compose up` 후 `MONGO_URI=mongodb://localhost:27017`, `MONGO_DB=no1joon_comments_dev`.
+- 프로덕션: Atlas SRV URI 를 **GCP Secret Manager** 에 저장, Cloud Run 이 Secret 바인딩으로 주입.
+- Cloud Run 설정: `max-instances=1`, `concurrency=80`, `mongo_pool_size=10` (Atlas M0 100 연결 한도 내).
 - Turnstile secret / Google OAuth Client ID / Admin emails allowlist 는 Cloud Run 환경변수로 주입.
+- Atlas M0 은 초과분 자동 과금 없음 (하드 캡). 별도 kill-switch 불필요.
 
 ## References
 

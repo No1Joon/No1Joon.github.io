@@ -1,9 +1,23 @@
+from collections.abc import AsyncIterator
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import get_settings
-from app.routers import health
+from app.db import close_db, init_db
+from app.routers import comments, health
 from app.security.headers import SecurityHeadersMiddleware
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI) -> AsyncIterator[None]:
+    settings = get_settings()
+    app.state.db = await init_db(settings)
+    try:
+        yield
+    finally:
+        await close_db()
 
 
 def create_app() -> FastAPI:
@@ -15,6 +29,7 @@ def create_app() -> FastAPI:
         docs_url="/docs" if settings.env == "dev" else None,
         redoc_url=None,
         openapi_url="/openapi.json" if settings.env == "dev" else None,
+        lifespan=lifespan,
     )
 
     app.add_middleware(SecurityHeadersMiddleware)
@@ -28,6 +43,7 @@ def create_app() -> FastAPI:
     )
 
     app.include_router(health.router)
+    app.include_router(comments.router)
 
     return app
 
