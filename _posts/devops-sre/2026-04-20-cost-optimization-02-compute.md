@@ -6,6 +6,7 @@ order: 2
 category: DevOps & SRE
 subcategory: Cost Optimization
 tags: [finops, spot, reserved, rightsizing, storage]
+image: /assets/og/2026-04-20-cost-optimization-02-compute.png
 ---
 
 클라우드 비용의 가장 큰 비중을 차지하는 것은 단연 컴퓨트와 스토리지입니다. "일단 넉넉하게 잡고 보자"는 식의 관성은 매달 불필요한 지출을 유발합니다. 기술적인 관점에서 즉시 적용할 수 있는 비용 절감 기법들을 컴퓨트와 스토리지 중심으로 정리해요

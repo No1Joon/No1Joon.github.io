@@ -6,6 +6,7 @@ order: 2
 category: Development
 subcategory: Testing
 tags: [testing, integration, e2e, testcontainers, playwright]
+image: /assets/og/2026-04-20-testing-02-integration.png
 ---
 
 모듈 내부 로직만 검증하는 단위 테스트를 넘어서면, 실제 데이터베이스에 쿼리를 날리거나 브라우저에서 버튼을 클릭하는 **통합(Integration)** 및 **E2E**(End-to-End) 테스트 단계가 필요합니다. 이 과정에서 가장 큰 복병은 외부 환경의 불확실성으로 인해 테스트가 성공과 실패를 반복하는 **Flaky Test** 현상입니다. 테스트의 신뢰성을 높여주는 실무 도구들을 정리해요

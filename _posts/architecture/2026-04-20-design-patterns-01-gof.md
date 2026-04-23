@@ -6,6 +6,7 @@ order: 1
 category: Architecture
 subcategory: Design Patterns
 tags: [design-patterns, gof, oop, creational, structural]
+image: /assets/og/2026-04-20-design-patterns-01-gof.png
 ---
 
 1994년 출간된 **GoF(Gang of Four)의 디자인 패턴**은 객체지향 설계의 바이블과 같습니다. 하지만 30년이 지난 지금, 자바의 최신 버전이나 Kotlin, Go 같은 언어의 관점에서 보면 일부 패턴은 언어의 기본 기능에 흡수되었거나 오히려 독이 되기도 합니다. 현대적인 관점에서 여전히 유효한 GoF 패턴들을 정리해요

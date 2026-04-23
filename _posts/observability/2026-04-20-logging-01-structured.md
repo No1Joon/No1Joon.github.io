@@ -6,6 +6,7 @@ order: 1
 category: Observability
 subcategory: Logging
 tags: [logging, structured-logging, json, observability, schema]
+image: /assets/og/2026-04-20-logging-01-structured.png
 ---
 
 "사용자가 장바구니에 아이템을 3개 담았습니다"라는 평문(Plain Text) 로그는 사람이 읽기엔 좋지만, 매초 수만 건이 쌓이는 MSA 환경에서는 검색도 통계도 불가능한 쓸모없는 텍스트 조각에 불과합니다

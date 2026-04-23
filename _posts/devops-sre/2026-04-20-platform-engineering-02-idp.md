@@ -6,6 +6,7 @@ order: 2
 category: DevOps & SRE
 subcategory: Platform Engineering
 tags: [platform-engineering, idp, backstage, port, self-service]
+image: /assets/og/2026-04-20-platform-engineering-02-idp.png
 ---
 
 플랫폼 엔지니어링의 정수는 **내부 개발자 플랫폼**(Internal Developer Platform, IDP)을 통해 구체화됩니다. IDP는 개발자가 애플리케이션의 전체 생애주기를 스스로 관리할 수 있게 돕는 도구의 집합입니다. 단순히 여러 도구를 모아둔 것을 넘어, 일관된 사용자 경험과 자동화된 워크플로우를 제공하는 것이 핵심입니다

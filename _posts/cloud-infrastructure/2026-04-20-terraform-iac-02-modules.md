@@ -6,6 +6,7 @@ order: 2
 category: Cloud Infrastructure
 subcategory: Terraform / IaC
 tags: [terraform, module, reusable, iac, design]
+image: /assets/og/2026-04-20-terraform-iac-02-modules.png
 ---
 
 개발을 할 때 중복되는 코드를 함수나 클래스로 빼내는 것처럼, Terraform에서도 반복적으로 생성되는 인프라 패턴을 재사용 가능한 블록으로 묶어낼 수 있습니다. 이것이 바로 **Terraform 모듈(Module)**입니다

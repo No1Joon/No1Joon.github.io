@@ -6,6 +6,7 @@ order: 3
 category: CI/CD
 subcategory: Harness
 tags: [harness, pipeline, ci, cd, canary, verification, prometheus]
+image: /assets/og/2026-04-08-harness-03-pipeline.png
 ---
 
 ## 파이프라인 설계 원칙

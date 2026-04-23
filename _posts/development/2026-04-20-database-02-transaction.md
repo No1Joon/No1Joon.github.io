@@ -6,6 +6,7 @@ order: 2
 category: Development
 subcategory: Database
 tags: [database, transaction, isolation, mvcc, acid]
+image: /assets/og/2026-04-20-database-02-transaction.png
 ---
 
 데이터베이스에서 **트랜잭션**(Transaction)은 여러 작업을 하나로 묶어 처리하는 최소 단위입니다. "계좌 이체" 상황에서 한쪽에서 돈이 빠져나갔는데 반대쪽에 입금이 안 된다면 큰일이죠. 트랜잭션은 이러한 상황을 방지하고 데이터의 무결성을 지킵니다

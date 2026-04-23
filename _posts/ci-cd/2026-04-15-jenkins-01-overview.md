@@ -6,6 +6,7 @@ order: 1
 category: CI/CD
 subcategory: Jenkins
 tags: [jenkins, ci-cd, architecture, pipeline]
+image: /assets/og/2026-04-15-jenkins-01-overview.png
 ---
 
 다양한 CI/CD 툴이 등장했지만, 여전히 가장 오랫동안 많은 기업에서 범용적으로 쓰이는 도구가 Jenkins입니다. 온프레미스부터 클라우드 네이티브까지 거대한 플러그인 생태계를 통해 어떤 환경이든 유연하게 대응할 수 있다는 점이 가장 큰 무기입니다. 이번 글에서는 Jenkins의 핵심 구조인 컨트롤러와 에이전트, 파이프라인 동작 방식을 살펴보겠습니다

@@ -6,6 +6,7 @@ order: 1
 category: CI/CD
 subcategory: GitHub Actions
 tags: [github-actions, ci, cd, workflow, automation]
+image: /assets/og/2026-04-15-github-actions-01-overview.png
 ---
 
 {% raw %}

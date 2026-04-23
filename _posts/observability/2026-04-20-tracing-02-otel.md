@@ -6,6 +6,7 @@ order: 2
 category: Observability
 subcategory: Tracing
 tags: [tracing, opentelemetry, otel, collector, exporter]
+image: /assets/og/2026-04-20-tracing-02-otel.png
 ---
 
 관측성(Observability) 데이터를 수집할 때 가장 큰 고민은 벤더 종속성(Vendor Lock-in)입니다. 특정 모니터링 도구의 라이브러리를 코드에 심으면, 나중에 도구를 바꿀 때 코드 전체를 수정해야 하기 때문입니다. **OpenTelemetry(OTel)**는 이 문제를 해결하기 위해 데이터 수집 표준을 제공하는 오픈소스 프레임워크입니다

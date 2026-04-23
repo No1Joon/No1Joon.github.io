@@ -6,6 +6,7 @@ order: 1
 category: DevOps & SRE
 subcategory: Cost Optimization
 tags: [finops, cost, tagging, chargeback, cloud]
+image: /assets/og/2026-04-20-cost-optimization-01-finops.png
 ---
 
 클라우드를 사용하다 보면 "쓰는 만큼 낸다"는 장점이 때로는 예상을 뛰어넘는 고지서라는 부메랑으로 돌아오기도 합니다. 인프라 비용은 더 이상 재무팀만의 고민이 아니며, 엔지니어가 비즈니스 가치 대비 얼마나 효율적으로 자원을 쓰고 있는지 판단해야 하는 시대가 되었습니다. **FinOps**(Cloud Financial Management)는 클라우드 비용의 책임과 문화를 정의하는 프레임워크입니다

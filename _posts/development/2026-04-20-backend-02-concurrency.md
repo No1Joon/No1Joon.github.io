@@ -6,6 +6,7 @@ order: 2
 category: Development
 subcategory: Backend
 tags: [backend, concurrency, thread, event-loop, coroutine]
+image: /assets/og/2026-04-20-backend-02-concurrency.png
 ---
 
 사용자의 요청이 몰릴 때 서버가 얼마나 많은 요청을 동시에 처리할 수 있는가는 서비스의 품질을 결정하는 핵심 지표입니다. 단순히 서버의 사양을 높이는 것보다, 프로그래밍 언어와 프레임워크가 **동시성**(Concurrency)을 어떤 방식으로 다루는지 이해하는 것이 훨씬 중요합니다

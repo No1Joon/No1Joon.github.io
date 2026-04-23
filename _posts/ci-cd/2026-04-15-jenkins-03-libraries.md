@@ -6,6 +6,7 @@ order: 3
 category: CI/CD
 subcategory: Jenkins
 tags: [jenkins, ci-cd, shared-library, pipeline, groovy]
+image: /assets/og/2026-04-15-jenkins-03-libraries.png
 ---
 
 회사의 서비스가 하나일 때는 `Jenkinsfile` 단 하나면 충분했습니다. 하지만 마이크로서비스 아키텍처(MSA)가 도입되면서 팀마다 관리해야 할 레포지토리가 수십, 수백 개로 늘어나면 어떨까요? 모든 프로젝트마다 100줄이 넘어가는 동일한 `Jenkinsfile`을 복사 & 붙여넣기 해야 하는 유지보수 악몽이 시작됩니다. 이런 중복의 고리를 끊고 **파이프라인을 일관된 공통 모듈로 묶어 중앙 통제**할 수 있게 해주는 기능이 바로 **Jenkins Shared Library**입니다

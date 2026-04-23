@@ -6,6 +6,7 @@ order: 1
 category: DevOps & SRE
 subcategory: Incident Management
 tags: [incident-management, oncall, alerting, pagerduty, sre]
+image: /assets/og/2026-04-20-incident-management-01-oncall.png
 ---
 
 시스템을 운영하다 보면 예상치 못한 장애는 반드시 발생합니다. 이때 누군가는 즉시 대응해야 하는데, 이 역할을 맡는 것이 바로 **온콜**(On-call)입니다. 하지만 24시간 쏟아지는 알람에 시달리다 보면 팀의 생산성은 급격히 떨어집니다. 지속 가능한 운영을 위해 온콜 로테이션과 효율적인 알람 체계를 구축하는 방법을 정리해요

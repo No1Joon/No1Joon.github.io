@@ -6,6 +6,7 @@ order: 4
 category: CI/CD
 subcategory: ArgoCD / GitOps
 tags: [argocd, gitops, applicationset, multi-cluster, scaling]
+image: /assets/og/2026-04-15-argocd-gitops-04-scaling.png
 ---
 
 Application을 한두 개 쓸 때는 앞 글의 방식으로 충분합니다. 하지만 서비스가 수십 개로 늘어나고, dev·stg·prod 3벌씩 구성하면 금방 **100개가 넘는 Application 리소스**를 수작업으로 관리하게 됩니다. 여기서 등장하는 게 `ApplicationSet`입니다. "Application을 만드는 템플릿"을 선언적으로 정의하면 generator가 알아서 필요한 수만큼 찍어냅니다

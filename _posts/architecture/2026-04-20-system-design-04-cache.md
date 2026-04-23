@@ -6,6 +6,7 @@ order: 4
 category: Architecture
 subcategory: System Design
 tags: [system-design, cache, olap, oltp, search]
+image: /assets/og/2026-04-20-system-design-04-cache.png
 ---
 
 현대적인 대규모 시스템에서 하나의 데이터베이스로 모든 요구사항을 충족하는 것은 불가능합니다. 트랜잭션 처리에 최적화된 DB부터 방대한 로그를 분석하는 DB까지, 각 목적에 맞는 저장소를 배치하고 데이터를 흐르게 하는 전략이 필요합니다

@@ -6,6 +6,7 @@ order: 3
 category: CI/CD
 subcategory: ArgoCD / GitOps
 tags: [argocd, gitops, kubernetes, application, sync]
+image: /assets/og/2026-04-15-argocd-gitops-03-sync.png
 ---
 
 ArgoCD에서 "배포 단위"는 Deployment도 Helm release도 아닙니다. **Application이라는 CRD 하나**입니다. 이 리소스가 "어떤 Git 경로를 어떤 클러스터·네임스페이스에 어떻게 동기화할지"를 전부 담습니다. 2편에서 본 application-controller가 무한히 감시하는 대상도 결국 이 Application 오브젝트입니다

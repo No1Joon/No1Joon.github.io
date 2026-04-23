@@ -6,6 +6,7 @@ order: 2
 category: Architecture
 subcategory: Design Patterns
 tags: [design-patterns, ddd, aggregate, entity, value-object]
+image: /assets/og/2026-04-20-design-patterns-02-ddd.png
 ---
 
 복잡한 비즈니스 로직을 가진 소프트웨어를 개발할 때, 가장 큰 위험은 비즈니스 규칙이 코드 곳곳에 흩어져 스파게티처럼 꼬이는 것입니다. **도메인 주도 설계**(Domain-Driven Design, DDD)의 **전술적 패턴**들은 핵심 로직을 특정 객체 안에 응집시키고, 외부의 오염으로부터 보호하는 구체적인 가이드라인을 제공합니다

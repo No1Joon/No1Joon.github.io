@@ -6,6 +6,7 @@ order: 3
 category: Cloud Infrastructure
 subcategory: Azure
 tags: [azure, vm, app-service, functions, cosmos-db]
+image: /assets/og/2026-04-20-azure-03-services.png
 ---
 
 엔터프라이즈 환경에서 모든 서비스를 쿠버네티스(AKS)로 구축하는 것이 항상 정답은 아닙니다. 오히려 소규모 웹 서비스, 내부 어드민 도구, 혹은 강력한 글로벌 NoSQL 기능이 필요할 때는 이미 준비된 클라우드 고유의 관리형 리소스(PaaS)를 선택하는 것이 훨씬 효율적입니다

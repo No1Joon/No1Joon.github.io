@@ -6,6 +6,7 @@ order: 2
 category: Observability
 subcategory: Logging
 tags: [logging, fluent-bit, loki, elk, pipeline]
+image: /assets/og/2026-04-20-logging-02-pipeline.png
 ---
 
 서버 수백 대에서 매초 수십만 줄씩 격렬하게 쏟아져 나오는 로그 파일들을 애플리케이션이 직접 중앙 DB 인덱서로 네트워크 요청을 보내 저장하게 엮는다면, 커넥션 과부하로 앱 자체가 응답 불능(OOM, Timeout)에 빠질 수 있습니다

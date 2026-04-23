@@ -6,6 +6,7 @@ order: 3
 category: Observability
 subcategory: Monitoring
 tags: [monitoring, grafana, dashboard, visualization, ux]
+image: /assets/og/2026-04-20-monitoring-03-grafana.png
 ---
 
 아무리 촘촘하게 메트릭을 수집하고 PromQL을 잘 짜서 뽑아내도, 장애 상황에서 모니터를 쳐다보는 엔지니어가 "대체 이게 무슨 뜻인데?" 하고 헤맨다면 실패한 모니터링입니다 

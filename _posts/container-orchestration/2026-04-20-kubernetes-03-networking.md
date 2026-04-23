@@ -6,6 +6,7 @@ order: 3
 category: Container & Orchestration
 subcategory: Kubernetes
 tags: [kubernetes, service, ingress, network-policy, networking]
+image: /assets/og/2026-04-20-kubernetes-03-networking.png
 ---
 
 Kubernetes 환경에서는 Pod의 IP가 고정되지 않고 수시로 변합니다. 이러한 동적인 환경에서 안정적인 통신 경로를 확보하고, 트래픽을 외부로 노출하며, 보안 경계를 구축하는 방식은 서비스 운영의 핵심입니다

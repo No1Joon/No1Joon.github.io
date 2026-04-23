@@ -6,6 +6,7 @@ order: 3
 category: Container & Orchestration
 subcategory: Helm
 tags: [helm, repository, oci, ci-cd, release]
+image: /assets/og/2026-04-20-helm-03-distribution.png
 ---
 
 설계된 차트를 실제 환경에 적용하기 위해서는 효율적인 공유와 배포 체계가 필요합니다. Helm 차트를 패키징하고 저장소에 등록하여 다른 팀이나 클러스터에서 안정적으로 활용할 수 있게 만드는 전체 워크플로우를 정리합니다

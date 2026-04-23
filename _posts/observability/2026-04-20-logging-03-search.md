@@ -6,6 +6,7 @@ order: 3
 category: Observability
 subcategory: Logging
 tags: [logging, retention, search, cost, archival]
+image: /assets/og/2026-04-20-logging-03-search.png
 ---
 
 "갑자기 규제가 빡세졌어. 3달 전 결제 장애 났던 날짜의 원본 로그 좀 다 뽑아줄래?"

@@ -6,6 +6,7 @@ order: 3
 category: Container & Orchestration
 subcategory: Docker
 tags: [docker, security, vulnerability, rootless, signing]
+image: /assets/og/2026-04-20-docker-03-security.png
 ---
 
 컨테이너가 격리된 환경이라는 점이 완벽한 보안을 보장하지는 않습니다. 기본 설정의 컨테이너는 대개 **루트 권한**으로 실행되며, 관리되지 않은 베이스 이미지는 수많은 취약점을 포함할 수 있습니다. 프로덕션 수준의 보안을 위해 컨테이너의 공격 표면을 줄이는 핵심 기법들을 정리합니다

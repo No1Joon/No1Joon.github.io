@@ -6,6 +6,7 @@ order: 2
 category: Container & Orchestration
 subcategory: Docker
 tags: [docker, networking, volume, bridge, storage]
+image: /assets/og/2026-04-20-docker-02-networking.png
 ---
 
 컨테이너를 하나 띄우는 것보다 중요한 것은 컨테이너 간의 통신과 **데이터 영속성**을 관리하는 일입니다. 이 글에서는 Docker가 제공하는 네 가지 네트워크 모드와 볼륨 설계의 핵심 내용을 정리합니다

@@ -6,6 +6,7 @@ order: 2
 category: CI/CD
 subcategory: ArgoCD / GitOps
 tags: [argocd, gitops, kubernetes, architecture, controller]
+image: /assets/og/2026-04-15-argocd-gitops-02-architecture.png
 ---
 
 01편에서 GitOps의 Pull 모델을 살펴봤습니다. 이제 이 패러다임을 실제로 돌리는 엔진인 ArgoCD의 내부를 열어볼 차례입니다. 겉보기엔 단일 제품이지만 안에는 각자 다른 일을 맡은 **5개의 컴포넌트가 협업**합니다. 각 컴포넌트가 왜 분리됐는지, 어디에서 병목이 생기는지 이해해두면 장애 대응이나 스케일링 설계가 훨씬 쉬워집니다

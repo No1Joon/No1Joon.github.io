@@ -6,6 +6,7 @@ order: 2
 category: DevOps & SRE
 subcategory: Incident Management
 tags: [incident-management, playbook, severity, communication, ics]
+image: /assets/og/2026-04-20-incident-management-02-response.png
 ---
 
 장애 알람이 울리는 순간, 아무런 준비가 되어 있지 않다면 현장은 순식간에 아수라장이 됩니다. 누가 상황을 지휘할지, 누구에게 알려야 할지 몰라 우왕좌왕하는 사이 장애 시간은 길어지죠. **장애 대응 플레이북**(Incident Response Playbook)은 이러한 혼돈을 방지하기 위해 사전에 약속된 행동 지침입니다

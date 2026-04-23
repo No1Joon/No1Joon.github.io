@@ -6,6 +6,7 @@ order: 2
 category: Architecture
 subcategory: MSA / Microservices
 tags: [msa, communication, sync, async, event]
+image: /assets/og/2026-04-20-msa-microservices-02-communication.png
 ---
 
 마이크로서비스 아키텍처에서 서비스들은 끊임없이 대화해야 합니다. 이때 대화의 방식을 어떻게 선택하느냐에 따라 시스템의 **응답성**(Latency)과 **결합도**(Coupling)가 결정됩니다. 즉시 응답을 기다리는 동기 방식과, 메시지를 던지고 잊어버리는 비동기 방식의 특징을 정리해요

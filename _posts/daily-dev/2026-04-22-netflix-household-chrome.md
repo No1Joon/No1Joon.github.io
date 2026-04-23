@@ -6,6 +6,7 @@ order: 1
 category: Daily Dev
 subcategory: Troubleshooting
 tags: [troubleshooting, chrome, netflix, macos, cookie]
+image: /assets/og/2026-04-22-netflix-household-chrome.png
 ---
 
 맥북에서 잘 쓰던 넷플릭스가 어느 날 크롬에서만 "이용 가구가 아닙니다" 오류를 띄우기 시작했습니다 같은 계정·같은 Wi-Fi인데 사파리에선 정상이어서 브라우저 쪽 상태가 엉킨 것으로 보고 그쪽을 건드렸습니다

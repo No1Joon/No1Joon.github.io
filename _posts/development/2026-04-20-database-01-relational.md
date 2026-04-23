@@ -6,6 +6,7 @@ order: 1
 category: Development
 subcategory: Database
 tags: [database, rdbms, index, b-tree, execution-plan]
+image: /assets/og/2026-04-20-database-01-relational.png
 ---
 
 데이터베이스 성능 튜닝의 80%는 **인덱스**(Index) 설계에서 결정됩니다. 인덱스는 책의 색인과 같아서, 방대한 데이터 속에서 원하는 정보를 빠르게 찾을 수 있게 돕습니다. 하지만 인덱스를 너무 많이 만들면 오히려 쓰기 성능이 떨어지는 부작용이 있죠. 관계형 DB의 핵심인 B-Tree 인덱스의 작동 원리와 실행 계획을 읽는 법을 정리해요

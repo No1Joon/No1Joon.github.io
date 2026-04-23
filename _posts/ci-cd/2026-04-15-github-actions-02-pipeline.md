@@ -6,6 +6,7 @@ order: 2
 category: CI/CD
 subcategory: GitHub Actions
 tags: [github-actions, ci, cd, pipeline, environments]
+image: /assets/og/2026-04-15-github-actions-02-pipeline.png
 ---
 
 {% raw %}

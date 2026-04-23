@@ -6,6 +6,7 @@ order: 3
 category: Architecture
 subcategory: Design Patterns
 tags: [design-patterns, hexagonal, clean-architecture, port, adapter]
+image: /assets/og/2026-04-20-design-patterns-03-hexagonal.png
 ---
 
 기술은 빠르게 변하지만 비즈니스 규칙은 상대적으로 천천히 변합니다. 데이터베이스를 MySQL에서 MongoDB로 바꾸거나, 웹 프레임워크를 Spring에서 NestJS로 바꾼다고 해서 "주문하면 재고가 깎여야 한다"는 비즈니스 로직이 바뀌지는 않죠. **헥사고날 아키텍처**(Hexagonal Architecture)는 이처럼 변하는 기술(인프라)로부터 변하지 않는 핵심 로직(도메인)을 분리하기 위한 설계 방식입니다

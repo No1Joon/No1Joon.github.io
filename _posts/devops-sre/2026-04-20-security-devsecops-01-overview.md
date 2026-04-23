@@ -6,6 +6,7 @@ order: 1
 category: DevOps & SRE
 subcategory: Security / DevSecOps
 tags: [devsecops, shift-left, security, culture, sdlc]
+image: /assets/og/2026-04-20-security-devsecops-01-overview.png
 ---
 
 전통적인 개발 환경에서 보안은 보통 릴리즈 직전에 수행하는 '최종 점검' 단계였습니다. 하지만 배포 주기가 빨라지면서 이러한 방식은 큰 병목이 되거나, 시간에 쫓겨 보안 취약점을 놓치는 원인이 되곤 합니다. **DevSecOps**는 보안을 개발과 운영의 모든 단계에 통합하여, 속도와 안전이라는 두 마리 토끼를 잡으려는 철학입니다

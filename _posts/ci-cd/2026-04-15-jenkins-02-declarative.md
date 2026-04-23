@@ -6,6 +6,7 @@ order: 2
 category: CI/CD
 subcategory: Jenkins
 tags: [jenkins, ci-cd, pipeline, declarative]
+image: /assets/og/2026-04-15-jenkins-02-declarative.png
 ---
 
 이전 글에서 살펴본 것처럼 Jenkins 파이프라인은 코드로 전체 흐름을 관리합니다. Jenkins는 자유도가 무한에 가까운 Scripted 문법과 이후에 나온 규격화된 Declarative 문법, 두 가지 방식을 지원하는데요. 구조가 직관적이고 제어가 쉬운 **Declarative Pipeline**이 현재 엔터프라이즈 환경에서의 확고한 원칙이 되었습니다. 실무에서 필수로 쓰이는 문법들을 짚어보겠습니다

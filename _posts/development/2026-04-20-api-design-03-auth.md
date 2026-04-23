@@ -6,6 +6,7 @@ order: 3
 category: Development
 subcategory: API Design
 tags: [api, auth, oauth2, jwt, openapi]
+image: /assets/og/2026-04-20-api-design-03-auth.png
 ---
 
 API를 완성했다면 이제 두 가지 숙제가 남습니다. 하나는 **누구에게 접근을 허용할 것인가**(Security)이고, 다른 하나는 **사용법을 어떻게 알릴 것인가**(Documentation)입니다. 안전한 통신을 위한 JWT와 표준화된 문서 형식인 OpenAPI를 정리해요

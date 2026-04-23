@@ -6,6 +6,7 @@ order: 3
 category: DevOps & SRE
 subcategory: Platform Engineering
 tags: [platform-engineering, golden-path, productivity, paved-road, dx]
+image: /assets/og/2026-04-20-platform-engineering-03-paths.png
 ---
 
 개발자가 새로운 프로젝트를 시작할 때마다 "언어 버전은 뭐로 하지?", "로깅 라이브러리는 어떤 게 좋지?", "배포 파이프라인은 어떻게 짜지?"와 같은 수많은 결정에 직면합니다. **골든 패스**(Golden Path)는 이러한 반복적인 결정들을 사내 표준으로 정의하고 자동화하여, 개발자가 가장 빠르고 안전하게 목표에 도달할 수 있는 길을 열어주는 개념입니다

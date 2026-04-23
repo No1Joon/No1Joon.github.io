@@ -6,6 +6,7 @@ order: 1
 category: Architecture
 subcategory: System Design
 tags: [system-design, trade-off, requirements, architecture, thinking]
+image: /assets/og/2026-04-20-system-design-01-thinking.png
 ---
 
 시스템 설계는 단순히 어떤 기술을 쓰느냐의 문제가 아닙니다. 주어진 비즈니스 문제를 해결하기 위해 **제한된 자원** 속에서 최선의 **트레이드오프**(Trade-off)를 선택하는 과정입니다. 복잡한 시스템을 마주했을 때 엔지니어가 가져야 할 사고 프레임워크를 정리해요
