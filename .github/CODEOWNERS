@@ -1,0 +1,20 @@
+# Default owner for everything
+* @No1Joon
+
+# Backend API (Python)
+/api/                     @No1Joon
+
+# Blog posts and content
+/_posts/                  @No1Joon
+/_data/                   @No1Joon
+/_layouts/                @No1Joon
+/assets/                  @No1Joon
+
+# Agent config and skills
+/.claude/                 @No1Joon
+/CLAUDE.md                @No1Joon
+
+# CI / deploy / security-sensitive
+/.github/                 @No1Joon
+/_config.yml              @No1Joon
+/.gitignore               @No1Joon
