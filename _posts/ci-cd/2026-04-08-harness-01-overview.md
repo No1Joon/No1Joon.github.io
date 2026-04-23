@@ -1,131 +1,54 @@
 ---
-title: "Harness가 Jenkins와 GitHub Actions를 대체할 수 있는 이유"
-description: Harness의 핵심 철학과 구조를 이해하고, 기존 CI/CD 도구와 무엇이 근본적으로 다른지 분석합니다.
+title: "OpenAI는 왜 엔지니어링 플랫폼으로 Harness를 선택했나"
+description: OpenAI가 Harness를 통해 수천 명의 엔지니어를 위한 개발자 플랫폼을 구축하고 배포를 표준화한 사례를 분석합니다
 date: 2026-04-08
 order: 1
 category: CI/CD
 subcategory: Harness
-tags: [harness, ci-cd, devops, platform-engineering]
+tags: [harness, platform-engineering, openai, developer-experience, idp]
 image: /assets/og/2026-04-08-harness-01-overview.png
 ---
 
-## 문제의 시작: 기존 도구의 한계
+## 엔지니어링 복잡성의 임계점
 
-Jenkins를 오래 운영해본 팀이라면 공통적으로 겪는 문제가 있습니다
+수천 명의 개발자가 매일 수만 번의 배포를 수행하는 조직에서는 단순한 CI/CD 도구만으로 생산성을 유지할 수 없습니다. 서비스마다 배포 방식이 다르고, 인프라 설정이 파편화되면 플랫폼 팀은 운영의 늪에 빠지게 됩니다
 
-- **플러그인 지옥**: 기능 하나를 추가할 때마다 플러그인 의존성이 쌓이고, 버전 충돌이 발생합니다
-- **배포 전략의 부재**: Canary나 Blue/Green 배포를 직접 스크립트로 구현해야 하고, 롤백 로직도 수동입니다
-- **상태 추적 불가**: 현재 어느 버전이 어느 환경에 배포되어 있는지 파이프라인 밖에서 추적하기 어렵습니다
+OpenAI 역시 비슷한 고민을 안고 있었습니다. 인공지능 모델 개발이라는 본연의 업무에 집중하기 위해서는, 인프라나 배포 파이프라인 같은 **'공통 인프라'**가 공기처럼 자연스럽게 제공되어야 했습니다. 그들이 선택한 해결책이 바로 **Harness Engineering** 기반의 플랫폼화입니다
 
-GitHub Actions는 이 문제를 일부 해결했습니다. YAML 기반의 선언적 설정, Marketplace 액션, PR 연동은 큰 개선이었습니다. 하지만 여전히 복잡한 배포 전략, 자동 검증, 롤백은 직접 구현해야 합니다
+## Harness: 배포 도구를 넘어선 플랫폼 엔지니어링
 
-Harness는 이 지점에서 출발합니다. **"빌드·배포 자동화"가 아니라 "소프트웨어 딜리버리 전체를 제품으로 만든다"** 는 철학입니다
+Harness는 단순한 파이프라인 실행기가 아닙니다. 엔지니어링 조직이 소프트웨어를 전달(Delivery)하는 모든 과정을 제품처럼 관리할 수 있게 돕는 **엔지니어링 플랫폼**입니다
 
-## Harness가 다른 이유
+| 구분 | 일반적인 CI/CD (Jenkins, GHA) | Harness Engineering 플랫폼 |
+| --- | --- | --- |
+| **관점** | 워크플로우 실행 | 엔지니어링 생산성 및 거버넌스 |
+| **인프라** | 개발자가 직접 정의 | 플랫폼 팀이 템플릿으로 추상화 |
+| **안전성** | 스크립트 기반 검증 | AI 기반 이상 감지 및 자동 롤백 |
+| **확장성** | 서비스별 개별 관리 | 수천 개 서비스의 중앙 집중형 제어 |
 
-<div class="callout why">
-  <div class="callout-title">핵심 차이</div>
-  Jenkins와 GitHub Actions는 파이프라인을 실행하는 도구입니다. Harness는 파이프라인 실행 결과를 기반으로 배포의 안전성을 판단하고, 문제가 생기면 스스로 롤백합니다. 도구가 아니라 플랫폼입니다
-</div>
+## OpenAI가 Harness를 통해 해결한 것
 
-| 비교 항목 | Jenkins | GitHub Actions | Harness |
-|-----------|---------|----------------|---------|
-| 배포 전략 | 플러그인 또는 스크립트 | 수동 구현 | Canary·Blue/Green 기본 내장 |
-| 자동 롤백 | 없음 | 없음 | ML 기반 이상 감지 후 자동 롤백 |
-| 배포 검증 | 없음 | 없음 | Prometheus·Datadog 연동 자동 검증 |
-| Feature Flags | 없음 | 없음 | 기본 모듈로 제공 |
-| 클라우드 비용 | 없음 | 없음 | Cloud Cost Management 모듈 |
-| 거버넌스 | 없음 | 제한적 | OPA 정책, Approval 게이트 |
-| 설정 방식 | Groovy DSL | YAML | YAML + UI (동기화) |
-| 서비스 카탈로그 | 없음 | 없음 | Internal Developer Portal |
+OpenAI는 Harness를 통해 '엔지니어링의 민주화'를 달성했습니다
 
-## Harness의 구조
+### 1. 서비스 생성의 표준화 (Golden Path)
+신규 프로젝트를 시작할 때 개발자가 YAML을 처음부터 작성하지 않습니다. 플랫폼 팀이 미리 정의한 **Golden Path**를 따라 몇 가지 정보만 입력하면, 표준 보안 정책과 배포 파이프라인이 포함된 서비스가 즉시 생성됩니다
 
-Harness는 여러 모듈의 집합입니다. 필요한 모듈만 선택해서 사용할 수 있습니다
+### 2. 거버넌스와 자유의 균형
+모든 배포는 **OPA(Open Policy Agent)** 기반의 정책 검증을 거칩니다. 개발자는 자유롭게 배포하되, "운영 환경에는 승인 없이 배포할 수 없다"거나 "취약점이 있는 이미지는 차단한다"는 전사적 규칙은 플랫폼 시스템이 강제로 보장합니다
 
-| 모듈 | 약자 | 역할 |
-|------|------|------|
-| Continuous Integration | CI | 빌드, 테스트, 이미지 빌드·푸시 |
-| Continuous Delivery | CD | Kubernetes, ECS, Lambda, VM 배포 |
-| Feature Flags | FF | 런타임 기능 플래그 관리 |
-| Cloud Cost Management | CCM | 클라우드 비용 가시성 및 최적화 |
-| Security Testing Orchestration | STO | SAST·DAST·SCA 결과 통합 |
-| Chaos Engineering | CE | 장애 주입과 복원력 검증 |
-| Internal Developer Portal | IDP | 서비스 카탈로그, 개발자 포털 |
-| Service Reliability Management | SRM | SLO·에러 버짓 관리 |
+### 3. AI 기반의 운영 자동화
+배포 후 서비스 상태를 모니터링 시스템(Datadog, Prometheus 등)과 연동하여 AI가 분석합니다. 평소와 다른 지표 패턴이 감지되면 사람의 개입 없이 즉시 이전 버전으로 **자동 롤백**하여 장애 시간을 최소화합니다
 
-## 핵심 개념: Pipeline부터 Delegate까지
+## Harness Engineering의 핵심 모듈
 
-### Pipeline
+OpenAI의 사례에서 핵심적으로 쓰이는 Harness의 구성 요소는 다음과 같습니다
 
-Harness의 기본 실행 단위입니다. **Stage** 의 묶음으로 구성되고, UI에서 만들거나 YAML로 직접 작성할 수 있습니다. Git 저장소에 YAML로 저장해 코드로 관리하는 것을 권장합니다
+- **Internal Developer Portal (IDP)**: 서비스 카탈로그와 셀프 서비스 템플릿을 제공하는 엔지니어링 접점입니다
+- **Continuous Delivery (CD)**: 카나리(Canary), 블루/그린 배포 등 고도화된 전략을 표준화하여 제공합니다
+- **Policy Engine**: 전사적 보안 및 규정 준수를 코드로 관리합니다 (Policy as Code)
 
-### Stage
+## 정리
 
-파이프라인 안의 독립적인 실행 블록입니다. 타입에 따라 동작이 달라집니다
+OpenAI의 사례는 현대적인 엔지니어링 조직이 나아가야 할 방향을 보여줍니다. 도구의 기능을 공부하는 시대를 지나, **"어떻게 하면 엔지니어가 비즈니스 로직에만 몰입할 수 있는 환경(Developer Experience)을 만들 것인가"**에 집중해야 합니다
 
-| Stage 타입 | 설명 |
-|------------|------|
-| `CI` | 빌드, 테스트, 이미지 푸시 |
-| `Deployment` | 서비스 배포 (Kubernetes, ECS 등) |
-| `Approval` | 사람 또는 Jira·ServiceNow 승인 게이트 |
-| `Custom` | 임의 스크립트 실행 |
-| `Feature Flag` | FF 활성화·비활성화 |
-
-### Step
-
-Stage 안의 개별 작업 단위입니다. Harness는 100개 이상의 내장 Step 타입을 제공하고, Shell Script Step으로 커스텀 작업도 가능합니다
-
-### Connector
-
-GitHub, GCP, AWS, Docker Hub 등 외부 서비스와의 인증 정보를 저장하는 설정입니다. 한 번 등록하면 모든 파이프라인에서 재사용합니다. 인증 정보는 Harness Secret Manager에 암호화 저장됩니다
-
-### Delegate
-
-Harness 플랫폼이 실제 인프라에 명령을 실행하기 위해 사용하는 **에이전트**입니다. Kubernetes 클러스터나 VM에 설치하고, Harness 플랫폼은 Delegate를 통해 kubectl, helm, terraform 등의 명령을 실행합니다
-
-```mermaid
-flowchart LR
-    P["Harness Platform<br/>(SaaS)"]
-    subgraph cluster["고객 클러스터"]
-        D["Delegate"]
-        K["Kubernetes API"]
-        H["Helm Chart 배포"]
-        I["이미지 빌드"]
-    end
-
-    D -. "polling (HTTPS 아웃바운드)" .-> P
-    D -->|kubectl| K
-    D -->|helm| H
-    D -->|docker| I
-
-    classDef primary fill:#2563eb,stroke:#1e40af,color:#ffffff
-    classDef info fill:#0891b2,stroke:#0e7490,color:#ffffff
-    classDef neutral fill:#475569,stroke:#334155,color:#ffffff
-
-    class P primary
-    class D info
-    class K,H,I neutral
-```
-
-Delegate는 **아웃바운드 연결만** 사용합니다. 인바운드 포트를 열 필요가 없어 방화벽 정책이 단순합니다
-
-### Service와 Environment
-
-- **Service**: 배포할 애플리케이션 정의. 이미지, Helm 값, manifest를 포함합니다
-- **Environment**: 배포 대상 환경. `Production`, `Staging`, `Development` 타입으로 구분합니다
-- **Infrastructure**: Environment 안의 실제 인프라 연결 정보 (클러스터, 네임스페이스 등)
-
-## Harness가 적합한 팀
-
-Harness가 특히 효과적인 상황:
-
-- 여러 팀이 동일한 배포 플랫폼을 공유해야 할 때
-- Canary·Blue/Green 배포를 신뢰성 있게 운영하고 싶을 때
-- 배포 실패 시 자동 롤백이 필요할 때
-- Feature Flags로 배포와 릴리즈를 분리하고 싶을 때
-- 클라우드 비용을 파이프라인 수준에서 추적하고 싶을 때
-
-반면 단순한 빌드·배포 자동화만 필요하다면 GitHub Actions가 더 가볍고 빠릅니다. Harness는 그 위에 **엔지니어링 플랫폼** 이 필요한 시점에 도입하는 게 적절합니다
-
-다음 글에서는 Harness의 핵심 컴포넌트인 Delegate를 실제로 설치하고 환경을 구성하는 방법을 다룹니다
+Harness는 그 거대한 전환을 가능하게 하는 든든한 뼈대 역할을 수행합니다. 다음 글에서는 OpenAI 아키텍처의 핵심인 **Harness Delegate와 하이브리드 인프라 구조**에 대해 자세히 알아봅니다
