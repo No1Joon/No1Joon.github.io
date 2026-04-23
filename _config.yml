@@ -42,3 +42,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - Tasks.md
+  - api/
+  - scripts/
+  - node_modules/
+  - vendor/
