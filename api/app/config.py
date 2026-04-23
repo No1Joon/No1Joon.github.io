@@ -1,8 +1,8 @@
 from functools import lru_cache
-from typing import Literal
+from typing import Annotated, Literal
 
 from pydantic import Field, field_validator
-from pydantic_settings import BaseSettings, SettingsConfigDict
+from pydantic_settings import BaseSettings, NoDecode, SettingsConfigDict
 
 
 class Settings(BaseSettings):
@@ -10,15 +10,16 @@ class Settings(BaseSettings):
 
     env: Literal["dev", "prod"] = "dev"
 
-    allowed_origins: list[str] = Field(default_factory=list)
+    allowed_origins: Annotated[list[str], NoDecode] = Field(default_factory=list)
 
-    admin_emails: list[str] = Field(default_factory=list)
+    admin_emails: Annotated[list[str], NoDecode] = Field(default_factory=list)
     google_oauth_client_id: str = ""
 
     turnstile_secret_key: str = ""
 
-    gcp_project_id: str = ""
-    firestore_emulator_host: str = ""
+    mongo_uri: str = ""
+    mongo_db: str = "no1joon_comments"
+    mongo_pool_size: int = 10
 
     ip_hash_salt: str = ""
 
