@@ -6,6 +6,7 @@ order: 3
 category: DevOps & SRE
 subcategory: Incident Management
 tags: [incident-management, postmortem, blameless, retrospective, learning]
+image: /assets/og/2026-04-20-incident-management-03-postmortem.png
 ---
 
 장애가 해결되었다고 상황이 끝난 것은 아닙니다. 진정한 마무리는 "왜 이런 일이 발생했는가"를 분석하고 "다시는 같은 실수를 반복하지 않기 위한 대책"을 세우는 것입니다. 이를 **포스트모템**(Post-mortem) 또는 사후 분석이라고 부릅니다. 장애를 단순한 불운이 아닌, 시스템을 개선할 수 있는 가장 값진 **학습 자산**으로 바꾸는 방법을 정리해요

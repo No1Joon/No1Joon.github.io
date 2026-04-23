@@ -6,6 +6,7 @@ order: 4
 category: Development
 subcategory: Database
 tags: [database, replication, sharding, partition, scaling]
+image: /assets/og/2026-04-20-database-04-scaling.png
 ---
 
 데이터베이스 성능이 한계에 도달했을 때 서버의 사양을 높이는 **Scale-up**은 가장 쉽지만, 비용이 기하급수적으로 늘어나고 물리적인 한계가 존재합니다. 결국 우리는 여러 대의 서버로 부하를 나누는 **Scale-out**을 고민하게 됩니다. 읽기 부하를 해결하는 '복제'와 쓰기 부하를 해결하는 '샤딩' 전략을 정리해요

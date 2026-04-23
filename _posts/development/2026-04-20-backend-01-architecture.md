@@ -6,6 +6,7 @@ order: 1
 category: Development
 subcategory: Backend
 tags: [backend, architecture, layered, hexagonal, clean]
+image: /assets/og/2026-04-20-backend-01-architecture.png
 ---
 
 좋은 백엔드 코드는 단순히 기능을 잘 수행하는 것을 넘어, 변화에 유연하게 대응할 수 있어야 합니다. 시스템이 커질수록 "어디에 코드를 둘 것인가"에 대한 규칙, 즉 아키텍처의 중요성이 커집니다. 대표적인 세 가지 아키텍처 스타일이 비즈니스 로직과 기술적 세부 사항을 어떻게 분리하는지 정리해요

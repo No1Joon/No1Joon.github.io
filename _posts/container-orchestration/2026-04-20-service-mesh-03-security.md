@@ -6,6 +6,7 @@ order: 3
 category: Container & Orchestration
 subcategory: Service Mesh
 tags: [service-mesh, mtls, observability, istio, security]
+image: /assets/og/2026-04-20-service-mesh-03-security.png
 ---
 
 마이크로서비스 환경에서 수많은 서비스 간 통신의 보안을 확보하고 흐름을 파악하는 것은 매우 어려운 과제입니다. Service Mesh는 사이드카 프록시를 활용하여 **보안 암호화**와 **통신 가시성**을 애플리케이션 코드 수정 없이 자동으로 제공합니다

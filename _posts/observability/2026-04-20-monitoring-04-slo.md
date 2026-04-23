@@ -6,6 +6,7 @@ order: 4
 category: Observability
 subcategory: Monitoring
 tags: [monitoring, slo, sli, error-budget, alerting]
+image: /assets/og/2026-04-20-monitoring-04-slo.png
 ---
 
 "CPU 사용률 80% 돌파! 서버 메모리 85% 임박!"  

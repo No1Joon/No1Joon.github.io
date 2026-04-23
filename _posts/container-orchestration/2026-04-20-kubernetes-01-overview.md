@@ -6,6 +6,7 @@ order: 1
 category: Container & Orchestration
 subcategory: Kubernetes
 tags: [kubernetes, k8s, control-plane, kubelet, architecture]
+image: /assets/og/2026-04-20-kubernetes-01-overview.png
 ---
 
 수많은 컨테이너를 여러 대의 서버에 분산 배치하고, 장애 시 자동으로 복구하며, 무중단 배포를 실현하기 위해서는 정교한 관리 체계가 필요합니다. Kubernetes는 이러한 복잡한 문제를 **선언적** 방식으로 해결하는 오케스트레이션 도구입니다

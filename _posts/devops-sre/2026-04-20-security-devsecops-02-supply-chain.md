@@ -6,6 +6,7 @@ order: 2
 category: DevOps & SRE
 subcategory: Security / DevSecOps
 tags: [devsecops, supply-chain, slsa, sigstore, sbom]
+image: /assets/og/2026-04-20-security-devsecops-02-supply-chain.png
 ---
 
 우리가 배포하는 컨테이너 이미지가 정말로 사내 빌드 시스템에서 만들어진 것일까요? 아니면 중간에 누군가 악성 코드를 심어놓지는 않았을까요? **소프트웨어 공급망 보안**(Software Supply Chain Security)은 소스 코드부터 최종 사용자에게 전달되기까지의 전 과정을 보호하고 검증하는 일입니다

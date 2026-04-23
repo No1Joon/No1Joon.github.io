@@ -6,6 +6,7 @@ order: 1
 category: Observability
 subcategory: Tracing
 tags: [tracing, distributed-tracing, span, context, microservices]
+image: /assets/og/2026-04-20-tracing-01-concept.png
 ---
 
 마이크로서비스 아키텍처(MSA)에서는 하나의 사용자 요청이 수십 개의 서비스를 거쳐 처리되곤 합니다. 어느 한 곳에서 지연이나 에러가 발생했을 때, 로그만으로는 "정확히 어디서, 왜" 문제가 생겼는지 파악하기 어렵습니다. 각 서비스의 로그는 흩어져 있고 서로 연결되어 있지 않기 때문입니다. **분산 추적(Distributed Tracing)**은 이 파편화된 요청의 경로를 하나의 실타래로 꿰어주는 기술입니다

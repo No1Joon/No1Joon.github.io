@@ -6,6 +6,7 @@ order: 1
 category: DevOps & SRE
 subcategory: Platform Engineering
 tags: [platform-engineering, devops, team-topologies, idp, culture]
+image: /assets/og/2026-04-20-platform-engineering-01-overview.png
 ---
 
 "개발자가 인프라도 다 알아야 한다"는 DevOps의 이상은 때로 개발자에게 과도한 **인지 부하**(Cognitive Load)를 주곤 합니다. 코드도 짜야 하는데 쿠버네티스 설정, 보안 스캔, 모니터링 구축까지 직접 챙겨야 한다면 개발 효율은 떨어질 수밖에 없죠. **플랫폼 엔지니어링**(Platform Engineering)은 이 문제를 해결하기 위해 등장한 개념입니다

@@ -6,6 +6,7 @@ order: 3
 category: Development
 subcategory: Database
 tags: [database, nosql, mongodb, cassandra, dynamodb]
+image: /assets/og/2026-04-20-database-03-nosql.png
 ---
 
 RDBMS는 매우 강력하지만, 수평적 확장(Scaling Out)과 유연한 데이터 구조를 다루기에는 한계가 있습니다. 이러한 배경에서 등장한 것이 **NoSQL**입니다. NoSQL은 단순히 "SQL이 없다"는 뜻이 아니라, "비관계형 저장소"를 포괄적으로 일컫습니다. 데이터의 성격에 따라 어떤 NoSQL을 선택해야 할지 정리해요

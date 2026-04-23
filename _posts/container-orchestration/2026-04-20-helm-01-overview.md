@@ -6,6 +6,7 @@ order: 1
 category: Container & Orchestration
 subcategory: Helm
 tags: [helm, kubernetes, chart, templating, package]
+image: /assets/og/2026-04-20-helm-01-overview.png
 ---
 
 {% raw %}

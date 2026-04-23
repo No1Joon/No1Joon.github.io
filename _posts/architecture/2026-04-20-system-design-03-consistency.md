@@ -6,6 +6,7 @@ order: 3
 category: Architecture
 subcategory: System Design
 tags: [system-design, consistency, cap, pacelc, distributed]
+image: /assets/og/2026-04-20-system-design-03-consistency.png
 ---
 
 여러 대의 서버와 데이터베이스가 흩어져 있는 분산 시스템에서 모든 노드가 동일한 최신 데이터를 유지하는 것은 불가능에 가깝습니다. 데이터가 복제되는 동안의 틈을 어떻게 관리할 것인가에 대한 이론적인 가이드라인인 **CAP 정리**와 **PACELC**를 정리해요

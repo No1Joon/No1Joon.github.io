@@ -6,6 +6,7 @@ order: 2
 category: Daily Dev
 subcategory: Troubleshooting
 tags: [naver, account-ban, registration, troubleshooting, cs]
+image: /assets/og/2026-04-23-naver-cs-ban-troubleshooting.png
 ---
 
 개발 및 블로그 운영 계정을 분리하기 위해 네이버 회원가입을 시도하던 중, 아무런 부정 행위 없이 가입 즉시 영구정지를 당하는 당혹스러운 경험을 했습니다. 네이버의 자동화된 고객 응대 시스템과 어뷰징 탐지 로직의 한계를 기록으로 남깁니다

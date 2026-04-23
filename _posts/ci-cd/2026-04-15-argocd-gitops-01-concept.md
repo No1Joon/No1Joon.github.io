@@ -6,6 +6,7 @@ order: 1
 category: CI/CD
 subcategory: ArgoCD / GitOps
 tags: [argocd, gitops, ci-cd, kubernetes, architecture]
+image: /assets/og/2026-04-15-argocd-gitops-01-concept.png
 ---
 
 대부분의 제품 개발팀이 애플리케이션 코드는 엄격하게 Git으로 리뷰하며 관리하지만, 인프라나 쿠버네티스의 상태 설정값들은 수동으로 스크립트를 여러 번 돌리거나 콘솔을 통해 UI로 직접 수정하는 경우가 적지 않았습니다. 문제 없이 굴러간다면 상관없지만, 이러면 결국 장애가 발생했을 때 **누가 변경했는지, 어떤 설정이 언제 잘못되었는지 원천적으로 역추적할 수단이 완전히 사라집니다.**

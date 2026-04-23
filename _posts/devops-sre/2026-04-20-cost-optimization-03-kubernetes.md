@@ -6,6 +6,7 @@ order: 3
 category: DevOps & SRE
 subcategory: Cost Optimization
 tags: [finops, kubernetes, kubecost, karpenter, autoscaling]
+image: /assets/og/2026-04-20-cost-optimization-03-kubernetes.png
 ---
 
 가상 머신(EC2) 시대에는 "누가 얼마를 썼는지"가 명확했습니다. 인스턴스 하나가 특정 부서 소유였으니까요. 하지만 Kubernetes는 여러 서비스가 노드 리소스를 공유하여 사용하므로 비용 계산이 매우 복잡해집니다. 공유 클러스터 환경에서 비용의 주인을 찾고 효율성을 높이는 기법들을 정리해요

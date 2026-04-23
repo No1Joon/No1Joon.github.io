@@ -6,6 +6,7 @@ order: 1
 category: Architecture
 subcategory: Event-Driven
 tags: [event-driven, event, command, choreography, orchestration]
+image: /assets/og/2026-04-20-event-driven-01-concept.png
 ---
 
 전통적인 시스템은 요청을 보내고 응답을 기다리는 **Request-Response** 방식이 주를 이뤘습니다. 하지만 서비스 규모가 커지면 서비스 간의 강한 결합(Coupling)이 병목이 됩니다. **이벤트 주도 아키텍처**(Event-Driven Architecture, EDA)는 상태의 변화를 '이벤트'로 발행하고, 이를 필요로 하는 곳에서 비동기적으로 처리하여 유연한 시스템을 만드는 방식입니다

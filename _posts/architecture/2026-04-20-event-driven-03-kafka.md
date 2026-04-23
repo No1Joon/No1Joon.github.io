@@ -6,6 +6,7 @@ order: 3
 category: Architecture
 subcategory: Event-Driven
 tags: [event-driven, kafka, partition, consumer-group, ops]
+image: /assets/og/2026-04-20-event-driven-03-kafka.png
 ---
 
 현대적인 이벤트 주도 아키텍처에서 **Apache Kafka**는 사실상 표준(De-facto standard)입니다. 하지만 Kafka는 단순한 메시지 큐가 아닌 분산 스트리밍 플랫폼이기 때문에, 그 내부 동작 원리를 모르면 장애 대응이 매우 어렵습니다. 프로덕션 환경에서 Kafka를 안정적으로 운영하기 위한 핵심 개념들을 정리해요

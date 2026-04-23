@@ -6,6 +6,7 @@ order: 1
 category: Architecture
 subcategory: MSA / Microservices
 tags: [msa, microservices, ddd, bounded-context, decomposition]
+image: /assets/og/2026-04-20-msa-microservices-01-decompose.png
 ---
 
 모놀리식 아키텍처에서 마이크로서비스(MSA)로 전환할 때 가장 먼저 맞닥뜨리는 거대한 벽은 "어떻게 서비스를 쪼갤 것인가"입니다. 너무 크게 쪼개면 MSA의 장점이 없고, 너무 잘게 쪼개면 관리 비용만 늘어나는 **분산 모놀리스**(Distributed Monolith)의 늪에 빠지게 됩니다. 서비스를 건강하게 분해하기 위한 핵심 원칙을 정리해요

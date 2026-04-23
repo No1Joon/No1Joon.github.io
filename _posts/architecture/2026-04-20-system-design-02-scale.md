@@ -6,6 +6,7 @@ order: 2
 category: Architecture
 subcategory: System Design
 tags: [system-design, scalability, load-balancer, cdn, horizontal-scaling]
+image: /assets/og/2026-04-20-system-design-02-scale.png
 ---
 
 사용자가 수만 명에서 수천만 명으로 늘어날 때, 시스템이 무너지지 않고 버틸 수 있는 능력을 **확장성**(Scalability)이라고 합니다. 이를 실현하기 위해 부하를 어떻게 물리적 서버들에 효과적으로 나누는지, 그리고 서버 자체를 어떻게 확장하는지 핵심 전략을 정리해요

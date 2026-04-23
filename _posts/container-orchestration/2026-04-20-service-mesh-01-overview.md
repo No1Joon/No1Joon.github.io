@@ -6,6 +6,7 @@ order: 1
 category: Container & Orchestration
 subcategory: Service Mesh
 tags: [service-mesh, istio, linkerd, sidecar, kubernetes]
+image: /assets/og/2026-04-20-service-mesh-01-overview.png
 ---
 
 마이크로서비스 아키텍처에서 서비스 간의 통신이 복잡해짐에 따라 재시도, 타임아웃, 보안, 관측성 등의 기능을 애플리케이션 외부에서 처리하려는 요구가 커졌습니다. **Service Mesh**는 이러한 네트워크 제어 로직을 인프라 계층으로 분리하여 비즈니스 로직에만 집중할 수 있게 돕는 아키텍처 패턴입니다

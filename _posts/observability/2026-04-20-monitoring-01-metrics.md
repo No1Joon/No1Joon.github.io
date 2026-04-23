@@ -6,6 +6,7 @@ order: 1
 category: Observability
 subcategory: Monitoring
 tags: [monitoring, metrics, use-method, red-method, sre]
+image: /assets/og/2026-04-20-monitoring-01-metrics.png
 ---
 
 우리가 운영하는 서버나 서비스를 들여다볼 때, "지금 멀쩡한가?"를 숫자로 정량화한 것이 바로 **메트릭(Metrics)**입니다. 하지만 무작정 쌓기만 한 메트릭은 데이터 쓰레기일 뿐, 장애 발생 시 원인을 찾는 데 아무런 도움이 되지 않아요

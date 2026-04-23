@@ -6,6 +6,7 @@ order: 2
 category: CI/CD
 subcategory: Harness
 tags: [harness, delegate, kubernetes, helm, connector, secret-manager]
+image: /assets/og/2026-04-08-harness-02-setup.png
 ---
 
 ## Delegate란 무엇인가

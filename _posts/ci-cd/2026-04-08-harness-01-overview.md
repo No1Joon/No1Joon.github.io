@@ -6,6 +6,7 @@ order: 1
 category: CI/CD
 subcategory: Harness
 tags: [harness, ci-cd, devops, platform-engineering]
+image: /assets/og/2026-04-08-harness-01-overview.png
 ---
 
 ## 문제의 시작: 기존 도구의 한계

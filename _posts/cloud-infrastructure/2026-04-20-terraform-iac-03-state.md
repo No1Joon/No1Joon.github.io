@@ -6,6 +6,7 @@ order: 3
 category: Cloud Infrastructure
 subcategory: Terraform / IaC
 tags: [terraform, state, backend, s3, locking]
+image: /assets/og/2026-04-20-terraform-iac-03-state.png
 ---
 
 Terraform을 사용하다 보면 가장 혼란스러운 순간이 바로 `.tfstate` 파일의 정체를 알게 되었을 때입니다. 단순히 HCL 코드가 AWS를 직접 찌르는 것이라면 좋겠지만, 그 중간에는 인프라의 "현재 상태"를 추적하는 **State(상태)**라는 강력하고 위험한 파일이 자리 잡고 있습니다

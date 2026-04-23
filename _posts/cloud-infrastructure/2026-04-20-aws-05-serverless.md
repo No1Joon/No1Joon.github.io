@@ -6,6 +6,7 @@ order: 5
 category: Cloud Infrastructure
 subcategory: AWS
 tags: [aws, lambda, serverless, api-gateway, eventbridge]
+image: /assets/og/2026-04-20-aws-05-serverless.png
 ---
 
 서버리스(Serverless)는 말 그대로 "서버가 없다"는 뜻이 아니라, "개발자가 관리하고 패치해야 할 가상머신(서버) 계층이 사라졌다"는 의미입니다. 개발자는 오직 자신의 비즈니스 코드에만 집중하고, 그 코드 단위가 호출(Event)될 때만 밀리초(ms) 단위로 과금하는 아키텍처입니다 

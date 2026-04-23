@@ -6,6 +6,7 @@ order: 2
 category: Container & Orchestration
 subcategory: Service Mesh
 tags: [service-mesh, istio, traffic, canary, circuit-breaker]
+image: /assets/og/2026-04-20-service-mesh-02-traffic.png
 ---
 
 Service Mesh를 사용하는 가장 강력한 이유 중 하나는 트래픽의 흐름을 코드 수정 없이 세밀하게 조정할 수 있다는 점입니다. 특히 Istio는 **VirtualService**와 **DestinationRule**이라는 두 가지 핵심 리소스를 사용하여 복잡한 라우팅 요구사항을 선언적으로 해결합니다

@@ -6,6 +6,7 @@ order: 3
 category: Development
 subcategory: Testing
 tags: [testing, contract, pact, performance, k6]
+image: /assets/og/2026-04-20-testing-03-contract.png
 ---
 
 마이크로서비스 아키텍처(MSA)에서는 수십 개의 서비스가 그물처럼 얽혀 통신합니다. 개별 서비스가 잘 작동하더라도, 서로 간의 약속이 깨지면 시스템 전체가 마비됩니다. 또한 기능적으로 완벽하더라도 실제 트래픽을 견디지 못한다면 무용지물이죠. 서비스 간 신뢰를 보장하는 **계약 테스트**와 한계를 측정하는 **성능 테스트**를 정리해요

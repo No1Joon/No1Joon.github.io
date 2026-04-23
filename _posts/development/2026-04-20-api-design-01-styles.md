@@ -6,6 +6,7 @@ order: 1
 category: Development
 subcategory: API Design
 tags: [api, rest, graphql, grpc, design]
+image: /assets/og/2026-04-20-api-design-01-styles.png
 ---
 
 시스템 간의 대화 방식인 API를 설계할 때, 어떤 프로토콜을 선택하느냐는 개발 생산성과 성능에 큰 영향을 미칩니다. 오랫동안 표준으로 자리 잡은 **REST**부터, 유연함의 대명사인 **GraphQL**, 그리고 고성능 통신을 위한 **gRPC**까지 각 기술의 특징과 선택 기준을 정리해요

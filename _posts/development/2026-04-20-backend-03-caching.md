@@ -6,6 +6,7 @@ order: 3
 category: Development
 subcategory: Backend
 tags: [backend, caching, redis, kafka, message-queue]
+image: /assets/og/2026-04-20-backend-03-caching.png
 ---
 
 데이터베이스 성능을 아무리 튜닝해도 급증하는 트래픽을 감당하기엔 한계가 있습니다. 이때 백엔드의 응답 속도를 높이고 시스템 부하를 획기적으로 낮춰주는 두 가지 핵심 도구가 **캐시**(Cache)와 **메시지 큐**(Message Queue)입니다

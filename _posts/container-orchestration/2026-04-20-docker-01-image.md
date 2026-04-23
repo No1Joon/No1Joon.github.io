@@ -6,6 +6,7 @@ order: 1
 category: Container & Orchestration
 subcategory: Docker
 tags: [docker, container, image, dockerfile, layer]
+image: /assets/og/2026-04-20-docker-01-image.png
 ---
 
 컨테이너를 다루다 보면 "왜 내 이미지는 1GB가 넘어가지?"라는 의문이 생기곤 합니다. 답은 Dockerfile이 어떻게 **레이어**로 변환되는지 이해하는 데서 시작합니다. 이 글에서는 이미지가 만들어지는 원리부터 캐시 활용, 최종 이미지 크기를 줄이는 구조적 접근까지 다룹니다

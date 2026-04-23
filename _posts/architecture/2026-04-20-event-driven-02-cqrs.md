@@ -6,6 +6,7 @@ order: 2
 category: Architecture
 subcategory: Event-Driven
 tags: [event-driven, event-sourcing, cqrs, projection, replay]
+image: /assets/og/2026-04-20-event-driven-02-cqrs.png
 ---
 
 데이터베이스의 현재 값만 저장하면, "과거에 어떤 과정을 거쳐 이 상태가 되었는가"에 대한 정보는 사라집니다. **이벤트 소싱**(Event Sourcing)은 상태의 최종 결과가 아닌, 발생한 모든 이벤트를 순서대로 저장하는 방식입니다. 여기에 읽기와 쓰기의 책임을 분리하는 **CQRS** 패턴을 더해 거대하고 유연한 시스템을 구축하는 방법을 정리해요

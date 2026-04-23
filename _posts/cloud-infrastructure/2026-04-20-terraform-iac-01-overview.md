@@ -6,6 +6,7 @@ order: 1
 category: Cloud Infrastructure
 subcategory: Terraform / IaC
 tags: [terraform, iac, hcl, provider, infrastructure]
+image: /assets/og/2026-04-20-terraform-iac-01-overview.png
 ---
 
 인프라를 AWS/GCP 콘솔에서 수작업으로 클릭하며 구축하던 시대는 끝났습니다. Infrastructure as Code(IaC)는 인프라 생성을 문서나 기억이 아닌, **"제어 가능한 코드"**로 관리하자는 철학입니다. 그중에서도 HashiCorp의 Terraform은 특정 클라우드에 종속되지 않는 사실상의 업계 표준이 되었습니다

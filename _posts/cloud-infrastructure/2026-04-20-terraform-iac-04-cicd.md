@@ -6,6 +6,7 @@ order: 4
 category: Cloud Infrastructure
 subcategory: Terraform / IaC
 tags: [terraform, cicd, testing, terratest, tflint]
+image: /assets/og/2026-04-20-terraform-iac-04-cicd.png
 ---
 
 Infrastructure as Code의 진정한 가치는 인프라가 **소프트웨어 개발 생명주기(SDLC)**에 완전히 편입될 때 나옵니다. 개발자 PC에서 누군가 은밀하게 `terraform apply`를 수행하고 있다면, 그것은 선언적인 쉘 스크립트일 뿐입니다. Git History 기반의 인프라 변경, 자동화된 검증, 그리고 안전한 반영을 위해서는 Terraform CI 파이프라인이 필수적입니다

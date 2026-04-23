@@ -6,6 +6,7 @@ order: 4
 category: CI/CD
 subcategory: Jenkins
 tags: [jenkins, ci-cd, scaling, kubernetes, architecture]
+image: /assets/og/2026-04-15-jenkins-04-scaling.png
 ---
 
 Jenkins는 역사적으로 중앙의 Controller 1대가 전체 스케줄링과 메타데이터, 상태 관리를 도맡는 태생적 구조를 가집니다. 회사 규모가 커지고 빌드가 수천 개 단위로 늘어나면 이 Controller 1대는 엄청난 병목(Bottleneck)이자 전체 서비스의 단일 장애점(SPOF)이 되어버립니다. 시리즈의 마지막인 이번 글에서는 이러한 한계를 어떻게 극복하고 모던 인프라에 맞게 파이프라인을 스케일링하는지 정리해보겠습니다

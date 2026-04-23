@@ -6,6 +6,7 @@ order: 4
 category: CI/CD
 subcategory: GitHub Actions
 tags: [github-actions, reusable-workflow, matrix, cache, self-hosted]
+image: /assets/og/2026-04-15-github-actions-04-scaling.png
 ---
 
 {% raw %}

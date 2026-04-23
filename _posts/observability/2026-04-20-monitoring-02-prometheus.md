@@ -6,6 +6,7 @@ order: 2
 category: Observability
 subcategory: Monitoring
 tags: [monitoring, prometheus, promql, tsdb, alertmanager]
+image: /assets/og/2026-04-20-monitoring-02-prometheus.png
 ---
 
 현대 클라우드 네이티브와 쿠버네티스 환경에서 가장 압도적인 점유율을 차지하는 모니터링 심장부는 **Prometheus(프로메테우스)**입니다. 왜 그토록 수많은 레거시 모니터링 도구를 몰아내고 업계 표준이 되었는지, 그 속을 들여다볼게요

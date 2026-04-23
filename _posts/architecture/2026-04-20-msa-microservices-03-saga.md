@@ -6,6 +6,7 @@ order: 3
 category: Architecture
 subcategory: MSA / Microservices
 tags: [msa, saga, distributed-transaction, compensation, consistency]
+image: /assets/og/2026-04-20-msa-microservices-03-saga.png
 ---
 
 마이크로서비스 환경에서는 서비스마다 독립된 DB를 가지기 때문에, 기존 RDBMS의 단일 트랜잭션(ACID)을 사용할 수 없습니다. "주문은 성공했는데 결제가 실패한 상황"을 어떻게 수습할까요? 여러 서비스에 걸친 데이터 정합성을 맞추기 위한 **분산 트랜잭션** 해결책인 **Saga 패턴**을 정리해요

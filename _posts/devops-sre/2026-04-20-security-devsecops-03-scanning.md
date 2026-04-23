@@ -6,6 +6,7 @@ order: 3
 category: DevOps & SRE
 subcategory: Security / DevSecOps
 tags: [devsecops, sast, dast, sca, scanning]
+image: /assets/og/2026-04-20-security-devsecops-03-scanning.png
 ---
 
 보안 사고의 상당수는 코드 자체의 결함이나 취약한 외부 라이브러리에서 시작됩니다. DevSecOps 파이프라인에는 이러한 취약점을 자동으로 찾아내기 위한 세 가지 핵심 스캔 체계가 필요합니다. 각 도구가 무엇을 보는지, 어떤 시점에 실행해야 하는지 정리해요

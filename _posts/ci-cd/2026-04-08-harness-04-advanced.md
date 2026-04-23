@@ -6,6 +6,7 @@ order: 4
 category: CI/CD
 subcategory: Harness
 tags: [harness, feature-flags, blue-green, opa, governance, git-experience]
+image: /assets/og/2026-04-08-harness-04-advanced.png
 ---
 
 ## 배포와 릴리즈의 분리

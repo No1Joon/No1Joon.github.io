@@ -6,6 +6,7 @@ order: 4
 category: Container & Orchestration
 subcategory: Kubernetes
 tags: [kubernetes, hpa, pdb, resources, autoscaling, operations]
+image: /assets/og/2026-04-20-kubernetes-04-operations.png
 ---
 
 애플리케이션을 Kubernetes에 배포하는 것을 넘어, 프로덕션 환경에서 장애에 견디고 자원을 효율적으로 사용하기 위해서는 명확한 **운영 정책**이 필요합니다. 리소스 할당부터 자동 확장, 고가용성 보장을 위한 핵심 패턴들을 정리합니다

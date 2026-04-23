@@ -6,6 +6,7 @@ order: 2
 category: Development
 subcategory: API Design
 tags: [api, versioning, backward-compatibility, semver, deprecation]
+image: /assets/og/2026-04-20-api-design-02-versioning.png
 ---
 
 API를 한 번 배포하고 나면, 이를 사용하는 클라이언트와의 **약속**(Contract)이 맺어집니다. 서버 코드를 수정했을 때 기존 클라이언트가 에러 없이 잘 작동할지 보장하는 것은 백엔드 개발자의 숙명입니다. 변화와 호환성 사이의 균형을 잡는 API 버전닝 전략을 정리해요

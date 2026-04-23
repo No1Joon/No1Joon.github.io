@@ -6,6 +6,7 @@ order: 3
 category: Daily Dev
 subcategory: Troubleshooting
 tags: [naver, account-unban, cs, troubleshooting, success]
+image: /assets/og/2026-04-24-naver-cs-unban-success.png
 ---
 
 가입 즉시 영구정지라는 황당한 상황에서 포기하지 않고 끈질기게 재문의를 넣은 결과, 마침내 네이버로부터 로그인 제한 해제 통보를 받았습니다. AI 템플릿의 벽을 넘어 사람 상담사의 검토를 끌어낸 과정을 정리합니다

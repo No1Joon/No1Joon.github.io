@@ -6,6 +6,7 @@ order: 2
 category: Container & Orchestration
 subcategory: Kubernetes
 tags: [kubernetes, deployment, statefulset, daemonset, job]
+image: /assets/og/2026-04-20-kubernetes-02-workloads.png
 ---
 
 Kubernetes에서 컨테이너를 실행할 때 가장 중요한 것은 애플리케이션의 성격에 맞는 **워크로드 오브젝트**를 선택하는 것입니다. Pod는 컨테이너 실행의 최소 단위일 뿐, 실제 운영 환경에서의 복제, 업데이트, 영속성 보장은 상위 오브젝트들이 담당합니다

@@ -6,6 +6,7 @@ order: 4
 category: Architecture
 subcategory: MSA / Microservices
 tags: [msa, resilience, circuit-breaker, retry, bulkhead]
+image: /assets/og/2026-04-20-msa-microservices-04-resilience.png
 ---
 
 마이크로서비스 아키텍처에서 가장 무서운 것은 **연쇄 장애**(Cascading Failure)입니다. 서비스 B가 느려지면 이를 기다리던 서비스 A의 스레드도 모두 점유되고, 결국 시스템 전체가 마비됩니다. 우리 서비스를 '좀비' 상태로 만들지 않고, 장애를 격리하여 회복성을 높이는 4가지 핵심 패턴을 정리해요

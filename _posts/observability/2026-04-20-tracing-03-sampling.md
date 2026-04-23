@@ -6,6 +6,7 @@ order: 3
 category: Observability
 subcategory: Tracing
 tags: [tracing, sampling, tail-sampling, cost, production]
+image: /assets/og/2026-04-20-tracing-03-sampling.png
 ---
 
 분산 추적 시스템을 운영할 때 가장 큰 도전 과제는 데이터의 양입니다. 모든 요청을 100% 수집하면 완벽한 가시성을 얻을 수 있지만, 스토리지 비용과 네트워크 대역폭 소모가 기하급수적으로 늘어납니다. 따라서 프로덕션 환경에서는 의미 있는 데이터만 골라내는 **샘플링(Sampling)** 전략이 필수입니다

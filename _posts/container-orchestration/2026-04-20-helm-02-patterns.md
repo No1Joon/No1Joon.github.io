@@ -6,6 +6,7 @@ order: 2
 category: Container & Orchestration
 subcategory: Helm
 tags: [helm, chart, design, subchart, library-chart]
+image: /assets/og/2026-04-20-helm-02-patterns.png
 ---
 
 {% raw %}

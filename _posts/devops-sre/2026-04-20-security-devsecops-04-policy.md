@@ -6,6 +6,7 @@ order: 4
 category: DevOps & SRE
 subcategory: Security / DevSecOps
 tags: [devsecops, secrets, vault, opa, policy-as-code]
+image: /assets/og/2026-04-20-security-devsecops-04-policy.png
 ---
 
 DevSecOps의 마지막 퍼즐은 사람이 수동으로 개입하던 보안 결정을 시스템이 대신하게 만드는 것입니다. 데이터베이스 패스워드 같은 **비밀 정보**(Secrets)를 안전하게 유통하고, 클러스터의 모든 리소스가 보안 표준을 따르는지 **정책**(Policy)으로 강제하는 방법을 정리해요

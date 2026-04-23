@@ -6,6 +6,7 @@ order: 1
 category: Development
 subcategory: Testing
 tags: [testing, pyramid, unit, integration, strategy]
+image: /assets/og/2026-04-20-testing-01-pyramid.png
 ---
 
 테스트를 작성하는 목적은 "이 코드가 의도대로 작동하는가"를 확인하고, 앞으로의 변경에도 시스템이 무너지지 않을 것이라는 **확신**을 얻기 위함입니다. 하지만 모든 코드를 100% 테스트하려는 시도는 때로 생산성을 해치기도 합니다. 효율적인 테스트 전략을 세우기 위한 고전적인 피라미드 모델과 현대적인 해석을 정리해요
