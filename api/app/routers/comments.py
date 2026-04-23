@@ -1,7 +1,7 @@
 from datetime import UTC, datetime
 from hashlib import md5, sha256
 
-from fastapi import APIRouter, Query, Request, status
+from fastapi import APIRouter, HTTPException, Query, Request, status
 
 from app.config import get_settings
 from app.deps import DbDep
@@ -61,6 +61,9 @@ async def create_comment(
     settings = get_settings()
     client_ip = request.client.host if request.client else "unknown"
     ip_hash = sha256(f"{settings.ip_hash_salt}:{client_ip}".encode()).hexdigest()
+
+    if await db.blocked_ips.find_one({"_id": ip_hash}, {"_id": 1}) is not None:
+        raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail="Blocked")
 
     email_hash: str | None = None
     if payload.author_email:

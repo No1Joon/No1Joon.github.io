@@ -6,7 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import get_settings
 from app.db import close_db, init_db
-from app.routers import comments, health
+from app.routers import admin, comments, health
 from app.security.headers import SecurityHeadersMiddleware
 
 
@@ -44,6 +44,7 @@ def create_app() -> FastAPI:
 
     app.include_router(health.router)
     app.include_router(comments.router)
+    app.include_router(admin.router)
 
     return app
 
