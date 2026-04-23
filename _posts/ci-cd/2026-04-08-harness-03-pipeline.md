@@ -1,251 +1,51 @@
 ---
-title: "Harness 파이프라인 설계 및 검증"
-description: CI Stage 구성부터 Canary 배포, Prometheus 기반 자동 검증, Failure Strategy까지 실전 파이프라인을 설계합니다.
+title: "Harness IDP: OpenAI 엔지니어가 서비스를 만드는 법"
+description: 개발자 포털(IDP)을 통해 복잡한 인프라 설정을 추상화하고, 엔지니어링 셀프 서비스를 실현하는 방법을 다룹니다
 date: 2026-04-08
 order: 3
 category: CI/CD
 subcategory: Harness
-tags: [harness, pipeline, ci, cd, canary, verification, prometheus]
+tags: [harness, idp, internal-developer-portal, backstage, developer-experience]
 image: /assets/og/2026-04-08-harness-03-pipeline.png
 ---
 
-## 파이프라인 설계 원칙
+## 인프라 지식의 병목 현상
 
-Harness 파이프라인을 설계할 때 고려해야 할 세 가지 원칙이 있습니다
+마이크로서비스 아키텍처에서 새로운 서비스를 하나 띄우려면 수많은 작업이 필요합니다. 저장소 생성, CI 파이프라인 설정, Kubernetes 매니페스트 작성, 모니터링 대시보드 구성 등 엔지니어링 외적인 작업들이 개발자의 발목을 잡습니다
 
-1. **관심사 분리**: CI Stage와 CD Stage는 명확히 분리합니다. 빌드 결과물(이미지 태그)을 CD Stage로 전달하는 방식을 표준화합니다
-2. **검증 자동화**: 배포 후 사람이 직접 확인하는 대신, 메트릭과 로그를 기반으로 자동 검증합니다
-3. **Failure Strategy 명시**: 모든 Stage에 실패 시 동작을 명시적으로 정의합니다
+OpenAI 같은 거대 조직에서 모든 개발자가 인프라 전문가일 수는 없습니다. 플랫폼 팀의 역할은 개발자가 이러한 복잡한 과정을 몰라도 **표준화된 서비스**를 스스로 만들 수 있는 환경을 제공하는 것입니다. 이것이 바로 **Internal Developer Portal (IDP)**의 핵심입니다
 
-## 전체 파이프라인 구조
+## Harness IDP: 백스테이지 기반의 엔지니어링 포털
 
-```mermaid
-flowchart TD
-    P(["Pipeline: deploy-production"])
-    P ==> S1["Stage 1<br/>CI (Build & Test)"]
-    S1 ==> S2["Stage 2<br/>Deploy Staging"]
-    S2 ==> S3["Stage 3<br/>Deploy Production (Canary)"]
+Harness IDP는 오픈소스인 **Backstage**를 기반으로 구축된 엔지니어링 포털입니다. 파편화된 엔지니어링 도구들을 하나의 인터페이스로 통합하여 '엔지니어링 접점'을 제공합니다
 
-    S1 --> S1A["Git Clone"]
-    S1 --> S1B["Unit Tests<br/>(pytest)"]
-    S1 --> S1C["Static Analysis<br/>(ruff, mypy)"]
-    S1 --> S1D["Build & Push Image → GAR"]
-    S1 --> S1E["Update Manifest"]
+### 핵심 기능 3가지
 
-    S2 --> S2A["Rolling Deploy → staging"]
-    S2 --> S2B["Integration Tests"]
+| 기능 | 설명 | 효과 |
+| --- | --- | --- |
+| **Service Catalog** | 전사에 흩어진 모든 마이크로서비스의 메타데이터 통합 관리 | 소유자 확인 및 중복 개발 방지 |
+| **Software Templates** | 표준화된 서비스 생성을 위한 '골든 패스' 제공 | 가입부터 첫 배포까지 10분 이내 완료 |
+| **Scorecards** | 서비스의 건강도와 규정 준수 여부를 시각화 | 보안 및 품질 기준 강제 및 개선 유도 |
 
-    S3 --> S3G["StepGroup: Canary Phase"]
-    S3G --> S3A["Canary Deploy (20%)"]
-    S3G --> S3B["Verify<br/>(Prometheus)"]
-    S3B --> S3C["Canary Delete"]
-    S3 --> S3D["Rolling Deploy (100%)"]
+## Software Templates (Golden Path)
 
-    classDef primary fill:#2563eb,stroke:#1e40af,color:#ffffff
-    classDef success fill:#059669,stroke:#047857,color:#ffffff
-    classDef warn fill:#d97706,stroke:#b45309,color:#ffffff
-    classDef neutral fill:#475569,stroke:#334155,color:#ffffff
+OpenAI 엔지니어가 새로운 서비스를 만드는 과정은 매우 단순합니다
 
-    class P,S1,S2,S3 primary
-    class S1A,S1B,S1C,S1D,S1E,S2A,S2B,S3G,S3A,S3C,S3D success
-    class S3B warn
-```
+1. **템플릿 선택**: Python API, Go Microservice 등 목적에 맞는 템플릿을 고릅니다
+2. **정보 입력**: 서비스 이름, 소유 팀, 담당자 정보를 입력합니다
+3. **자동 생성**: Harness가 배후에서 GitHub 저장소를 만들고, 표준 CI/CD 파이프라인을 심으며, 초기 인프라를 프로비저닝합니다
 
-## CI Stage 구성
+개발자는 `git clone` 후 즉시 비즈니스 로직 코딩을 시작할 수 있습니다. 플랫폼 팀이 검증한 최신 보안 정책과 모범 사례가 이미 적용되어 있기 때문입니다
 
-CI Stage는 **전용 빌드 네임스페이스의 Kubernetes Pod 위에서** 실행됩니다. `infrastructure.spec` 에 `connectorRef` 와 `namespace` 를 지정하고, 캐시 경로를 선언하면 Run 간 의존성이 보존됩니다
+## Scorecards를 통한 거버넌스 자동화
 
-Step은 세 가지 조합이면 대부분 덮입니다
+IDP는 단순히 서비스를 만드는 것에서 끝나지 않습니다. 만들어진 서비스가 계속해서 건강하게 관리되고 있는지 감시합니다
 
-| Step 타입 | 역할 | 핵심 필드 |
-|-----------|------|-----------|
-| `Run` | 컨테이너에서 임의 명령 | `image`, `command`, `reports` |
-| `BuildAndPushGAR` | GAR에 이미지 빌드·푸시 | `projectID`, `imageName`, `tags` |
-| `BuildAndPushDockerRegistry` | 일반 레지스트리 | `connectorRef`, `repo`, `tags` |
+- **체크리스트**: "README 파일 존재 여부", "테스트 커버리지 80% 이상", "중요 취약점 0건" 등을 점수로 환산합니다
+- **가시성**: 팀별, 서비스별 점수를 대시보드로 노출하여 엔지니어링 품질에 대한 건전한 경쟁과 자발적 개선을 유도합니다
 
-가장 자주 쓰는 이미지 빌드·푸시 Step의 핵심만 보면 이렇게 끝납니다
+## 정리
 
-```yaml
-- step:
-    name: Build and Push Image
-    type: BuildAndPushGAR
-    spec:
-      connectorRef: account.gcp_prod
-      host: asia-northeast3-docker.pkg.dev
-      projectID: your-gcp-project
-      imageName: your-service
-      tags:
-        - <+pipeline.sequenceId>
-        - <+trigger.commitSha>
-```
+Harness IDP는 플랫폼 엔지니어링의 최종 진화 형태입니다. OpenAI가 수천 명의 엔지니어를 보유하면서도 민첩성을 유지하는 비결은, 개별 엔지니어에게 인프라 책임을 지우는 대신 **플랫폼이 제공하는 셀프 서비스 환경**을 극대화했기 때문입니다
 
-테스트·정적 분석은 `Run` Step으로 `pytest` / `ruff` / `mypy` 를 돌리고 JUnit 리포트를 `reports.spec.paths` 로 수집합니다
-
-<div class="callout why">
-  <div class="callout-title">이미지 태그 전략</div>
-  <code>latest</code> 태그 대신 <code>pipeline.sequenceId</code>와 <code>commitSha</code>를 함께 붙입니다. sequenceId는 사람이 읽기 쉽고, commitSha는 정확한 코드 추적을 가능하게 합니다. 나중에 OPA 정책으로 <code>latest</code> 태그 사용을 차단할 수 있습니다
-</div>
-
-## Staging 배포 Stage
-
-Deployment Stage는 **Service + Environment + Infrastructure** 세 참조로 배포 대상을 묶습니다. CI Stage에서 만든 이미지 태그를 `artifacts.primary.sources.spec.tag` 로 주입합니다. 실행 순서는 `K8sRollingDeploy` → `Run`(통합 테스트) 이고, 실패 시 `K8sRollingRollback` 이 `rollbackSteps` 에서 자동 실행됩니다
-
-```yaml
-execution:
-  steps:
-    - step: { type: K8sRollingDeploy, spec: { pruningEnabled: true } }
-    - step:
-        name: Integration Tests
-        type: Run
-        spec:
-          image: python:3.12-slim
-          command: uv run pytest tests/integration/ --base-url=https://staging.your-service.internal
-rollbackSteps:
-  - step: { type: K8sRollingRollback }
-```
-
-## Production Canary 배포 Stage
-
-Canary 배포의 핵심은 **소량의 트래픽으로 먼저 검증하고, 문제가 없을 때만 전체로 확장** 하는 것입니다. Harness에서는 세 개의 Step을 하나의 StepGroup으로 묶어 "카나리 단계"를 만들고, 그 뒤에 전체 롤아웃을 이어붙입니다
-
-```mermaid
-flowchart LR
-    subgraph canary["StepGroup: Canary Phase"]
-        A["K8sCanaryDeploy<br/>(20%)"] ==> B["Verify<br/>(Prometheus)"]
-        B ==> C["K8sCanaryDelete"]
-    end
-    C ==> D["K8sRollingDeploy<br/>(100%)"]
-    B -. "Verification 실패" .-> M["ManualIntervention"]
-    M -. "timeout" .-> R["StageRollback"]
-
-    classDef success fill:#059669,stroke:#047857,color:#ffffff
-    classDef warn fill:#d97706,stroke:#b45309,color:#ffffff
-    classDef danger fill:#dc2626,stroke:#991b1b,color:#ffffff
-    classDef neutral fill:#475569,stroke:#334155,color:#ffffff
-
-    class A,C,D success
-    class B,M warn
-    class R danger
-    class canary neutral
-```
-
-StepGroup 내부의 핵심 필드만 추리면 이런 구조입니다
-
-```yaml
-- stepGroup:
-    name: Canary Phase
-    steps:
-      - step:
-          type: K8sCanaryDeploy
-          spec:
-            instanceSelection: { type: Percentage, spec: { percentage: 20 } }
-      - step:
-          type: Verify
-          timeout: 10m
-          spec:
-            type: Canary
-            healthSources: [ { identifier: prometheus_prod } ]
-            sensitivity: MEDIUM
-          failureStrategies:
-            - onFailure:
-                errors: [ Verification ]
-                action:
-                  type: ManualIntervention
-                  spec: { timeout: 30m, onTimeout: { action: { type: StageRollback } } }
-      - step: { type: K8sCanaryDelete }
-
-- step: { type: K8sRollingDeploy }   # 100% 롤아웃
-```
-
-`rollbackSteps` 에는 `K8sCanaryDelete` → `K8sRollingRollback` 순서로 넣어 부분 실패와 완전 롤아웃 후 실패를 모두 커버합니다
-
-## Prometheus 검증 설정
-
-Verify Step은 **기존 Pod(baseline)** 과 **Canary Pod** 의 동일 메트릭을 같은 시간 창에서 비교합니다. 단순 임계값 초과가 아니라 패턴의 유의미한 차이를 ML 모델로 판단합니다
-
-```mermaid
-sequenceDiagram
-    autonumber
-    participant H as Harness Verify
-    participant P as Prometheus
-    participant B as Baseline Pods
-    participant C as Canary Pods
-
-    H->>P: baseline 메트릭 query<br/>(pod=baseline-*)
-    P->>B: scrape
-    P-->>H: baseline 시계열
-    H->>P: canary 메트릭 query<br/>(pod=canary-*)
-    P->>C: scrape
-    P-->>H: canary 시계열
-    H->>H: ML 비교 · sensitivity 적용
-    H-->>H: Pass / Fail 판정
-```
-
-Harness가 baseline과 canary를 구분할 수 있도록 **`serviceInstanceFieldName`** 에 Pod 라벨을 지정합니다. 메트릭 정의는 여러 개를 붙일 수 있지만 구조는 동일합니다
-
-```yaml
-healthSources:
-  - identifier: prometheus_prod
-    type: Prometheus
-    spec:
-      connectorRef: account.prometheus_prod
-      metricDefinitions:
-        - identifier: error_rate
-          query: |
-            sum(rate(http_requests_total{service="your-service",status=~"5.."}[5m]))
-            / sum(rate(http_requests_total{service="your-service"}[5m]))
-          analysis:
-            deploymentVerification: { serviceInstanceFieldName: pod }
-            riskProfile: { category: Performance, thresholdTypes: [FailImmediately] }
-```
-
-`thresholdTypes` 는 메트릭 성격에 따라 골릅니다
-
-| 값 | 의미 | 적합한 메트릭 |
-|----|------|---------------|
-| `FailImmediately` | 즉시 실패 | 5xx 에러율 |
-| `ObserveForever` | 관찰만, 실패 유발 안 함 | 대시보드용 정보 지표 |
-| `Ignore` | 분석 제외 | 노이즈 큰 지표 |
-
-<div class="callout why">
-  <div class="callout-title">sensitivity 선택 기준</div>
-  <code>LOW</code> 는 큰 변화만 탐지(오탐 낮음·위험 통과 가능), <code>HIGH</code> 는 작은 변화도 잡음(오탐 증가). 초기에는 <code>MEDIUM</code> 으로 두고, 자주 ManualIntervention이 뜨는 팀은 <code>LOW</code> 로 완화하는 게 현실적입니다
-</div>
-
-## Harness 표현식 활용
-
-Harness는 `<+ >` 문법으로 런타임 값을 참조합니다
-
-| 표현식 | 값 |
-|--------|----|
-| `<+pipeline.sequenceId>` | 파이프라인 실행 번호 (1, 2, 3...) |
-| `<+pipeline.executionId>` | 파이프라인 실행 UUID |
-| `<+artifact.tag>` | 배포 중인 이미지 태그 |
-| `<+artifact.image>` | 이미지 전체 경로 |
-| `<+env.name>` | 현재 환경 이름 |
-| `<+env.type>` | 환경 타입 (Production, Staging 등) |
-| `<+trigger.commitSha>` | 트리거된 Git 커밋 SHA |
-| `<+trigger.targetBranch>` | PR 대상 브랜치 |
-| `<+secrets.getValue("key")>` | Secret Manager에서 값 조회 |
-| `<+stage.output.outputVariables.IMAGE_TAG>` | 이전 Stage 출력 변수 |
-
-### Stage 간 데이터 전달
-
-CI Stage에서 `outputVariables` 로 내보낸 값은 CD Stage에서 `<+pipeline.stages.<stage>.spec.execution.steps.<step>.output.outputVariables.<name>>` 경로로 참조합니다. 이미지 태그는 대부분 `<+pipeline.sequenceId>` 를 그대로 쓰면 되지만, 빌드 시 동적으로 생성한 태그가 필요하다면 이 패턴으로 넘깁니다
-
-## Failure Strategy 설계
-
-| 에러 유형 | 권장 액션 | 이유 |
-|-----------|-----------|------|
-| `AllErrors` | `StageRollback` | 예상치 못한 오류는 안전하게 롤백 |
-| `Verification` | `ManualIntervention` → timeout 후 `StageRollback` | 메트릭 이상은 사람이 판단할 여지를 줌 |
-| `Timeout` | `StageRollback` | 타임아웃은 무조건 롤백 |
-| `ApprovalRejection` | `PipelineRollback` | 승인 거부는 전체 파이프라인 중단 |
-
-Verify 실패는 사람이 판단할 여지를 주고(30분 대기), Timeout·AllErrors는 바로 롤백으로 잇는 조합이 실전에서 가장 안전합니다
-
-## 파이프라인 트리거 설정
-
-GitHub Webhook 트리거는 `payloadConditions` 로 브랜치·경로를 좁히고, `autoAbortPreviousExecutions: true` 로 연속 push 시 이전 실행을 자동 취소합니다. 이 두 옵션만 챙기면 트리거 설정은 끝납니다
-
-다음 글에서는 Feature Flags로 배포와 릴리즈를 분리하는 방법과 OPA 기반 거버넌스 정책을 다룹니다
+마지막 글에서는 Harness가 AI를 활용해 어떻게 배포 효율성을 높이고 클라우드 비용을 최적화하는지 살펴보겠습니다
