@@ -1,0 +1,28 @@
+{
+  "name": "no1joon.github.io",
+  "version": "1.0.0",
+  "description": "init",
+  "main": "index.js",
+  "scripts": {
+    "generate-og": "node scripts/generate-og.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/No1Joon/No1Joon.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/No1Joon/No1Joon.github.io/issues"
+  },
+  "homepage": "https://github.com/No1Joon/No1Joon.github.io#readme",
+  "dependencies": {
+    "@resvg/resvg-js": "^2.6.2",
+    "fs-extra": "^11.3.4",
+    "glob": "^13.0.6",
+    "gray-matter": "^4.0.3",
+    "satori": "^0.26.0"
+  }
+}
