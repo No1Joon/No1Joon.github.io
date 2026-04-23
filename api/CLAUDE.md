@@ -9,8 +9,8 @@ No1Joon 블로그 댓글용 FastAPI 서비스. Cloud Run 에 배포되고 MongoD
 - `app/db.py` — pymongo `AsyncMongoClient` 싱글톤, 인덱스 생성.
 - `app/deps.py` — FastAPI DI (요청 스코프 DB 핸들).
 - `app/schemas/` — Pydantic 입출력 모델 (현재: `comment`).
-- `app/routers/` — 엔드포인트 (현재: `health`, `comments`; 추후: `admin`).
-- `app/security/` — 보안 레이어 (현재: 보안 헤더; 추후: Turnstile·레이트리밋·Google Sign-In 검증).
+- `app/routers/` — 엔드포인트 (`health`, `comments` 공개, `admin` 관리자).
+- `app/security/` — 보안 레이어 (보안 헤더, Google ID 토큰 검증; 추후: Turnstile·레이트리밋).
 - `docker-compose.yml` — 로컬 개발용 mongo:7.
 - `Dockerfile` — Cloud Run 컨테이너 빌드 (uv sync + uvicorn).
 - `.env.example` — 필요한 환경 변수 템플릿.
