@@ -15,7 +15,8 @@ Write a new technical blog post for the No1Joon blog. The critical part is prese
 The blog is written in **Korean**. Post body, headings, callouts, and most prose must be in Korean.
 
 - Sentence endings are not flexible — **합쇼체만 허용** (해요체·혼용 금지). 톤은 한 포스트 안에서 일관 유지.
-- **맨 마지막 문장은 마침표(`.`) 제거**. 그 외 문장은 평소처럼 마침표를 찍는다. 이 규칙은 루트 포스트뿐 아니라 섹션 끝이 아닌 "글 전체의 마지막 줄" 에만 적용.
+- **모든 문장의 마지막(줄바꿈 직전) 마침표(`.`) 제거**. 문장 중간에 있는 마침표는 평소처럼 찍는다. 이 규칙은 본문, 리스트, 표 등 모든 텍스트에 적용된다.
+- 단, `v1.0`, `domain.com`, `...`(말줄임표) 등 한글 종결 어미가 아닌 경우의 마침표는 유지한다.
 - Short phrases inside tables and lists may stay in noun form or dictionary form (e.g., "빌드 결과물 전달", "설치", "확인").
 - Keep code comments in their original language (usually English).
 - The `description` field in front matter is a one-line summary — any natural ending is fine, including noun-form endings ("~를 분석", "~를 정리").
