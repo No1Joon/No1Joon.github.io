@@ -12,6 +12,7 @@ from app.schemas.comment import (
     CommentPublic,
     CommentStatus,
 )
+from app.security.turnstile import verify_turnstile_token
 
 router = APIRouter(prefix="/api/comments", tags=["comments"])
 
@@ -60,6 +61,13 @@ async def create_comment(
 ) -> CommentCreated:
     settings = get_settings()
     client_ip = request.client.host if request.client else "unknown"
+
+    await verify_turnstile_token(
+        payload.turnstile_token,
+        settings,
+        remote_ip=client_ip if client_ip != "unknown" else None,
+    )
+
     ip_hash = sha256(f"{settings.ip_hash_salt}:{client_ip}".encode()).hexdigest()
 
     if await db.blocked_ips.find_one({"_id": ip_hash}, {"_id": 1}) is not None:
