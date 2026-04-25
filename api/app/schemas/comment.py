@@ -19,6 +19,7 @@ class CommentCreate(BaseModel):
     author_name: str = Field(min_length=1, max_length=50)
     author_email: EmailStr | None = None
     body: str = Field(min_length=1, max_length=4000)
+    turnstile_token: str = Field(min_length=1, max_length=2048)
 
 
 class CommentPublic(BaseModel):
