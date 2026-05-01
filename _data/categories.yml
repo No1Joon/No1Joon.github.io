@@ -1,3 +1,11 @@
+- name: Daily Dev
+  slug: daily-dev
+  subcategories:
+    - name: Troubleshooting
+      slug: troubleshooting
+    - name: Tips & Tools
+      slug: tips-tools
+
 - name: CI/CD
   slug: ci-cd
   subcategories:
@@ -80,10 +88,8 @@
     - name: System Design
       slug: system-design
 
-- name: Daily Dev
-  slug: daily-dev
+- name: News
+  slug: news
   subcategories:
-    - name: Troubleshooting
-      slug: troubleshooting
-    - name: Tips & Tools
-      slug: tips-tools
+    - name: AI Daily
+      slug: ai-daily
