@@ -15,9 +15,16 @@
 
 ## 진행 중 — 신규 포스트 (AI Weekly 05-04 기반)
 
-- [ ] Microsoft–OpenAI 독점 종료와 멀티클라우드 AI 아키텍처 (`Architecture`)
-- [ ] NVIDIA Nemotron 3 Nano Omni: 30B Hybrid MoE 분석 (`Development`)
-- [ ] AI 보안의 진화: Claude Security와 취약점 자동 패치 (`DevOps & SRE`)
+### 1. Microsoft–OpenAI 비독점 전환과 멀티클라우드 AI 전략 (2편)
+- [ ] 1편: 파트너십 재구성의 배경과 'Post-Azure' 시대의 서막 (`Architecture`)
+- [ ] 2편: 어떤 클라우드에서도 자유로운 AI 서비스를 위한 아키텍처 설계 (`Architecture`)
+
+### 2. NVIDIA Nemotron 3 Nano Omni: Hybrid MoE 아키텍처 딥다이브 (1편)
+- [ ] 1편: 30B 모델을 3B 수준의 가벼움으로 — MoE 최적화와 멀티모달 추론 분석 (`Development`)
+
+### 3. 에이전틱 보안의 시대: Claude Security와 취약점 자동 패치 (2편)
+- [ ] 1편: 코드베이스 전체를 이해하는 Opus 4.7 기반 차세대 보안 스캐너 (`DevOps & SRE`)
+- [ ] 2편: '발견'에서 '해결'까지 — AI 보안 에이전트를 CI/CD 파이프라인에 이식하기 (`DevOps & SRE`)
 
 ---
 
