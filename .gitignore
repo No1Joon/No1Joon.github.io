@@ -19,3 +19,4 @@ api/prod.env.yaml
 node_modules/
 assets/fonts/
 assets/og/*.png
+Tasks.md
