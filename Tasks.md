@@ -33,6 +33,7 @@
 
 ## 완료된 개선
 
+- [x] 네이버 서치어드바이저 등록 및 소유 확인 (`_layouts/default.html` 에 메타 태그 삽입)
 - [x] `description` front matter — 95편 전부 존재 (`grep -L "^description:" _posts/**/*.md` 로 확인)
 - [x] `tags` front matter — 95편 전부 존재
 - [x] `robots.txt` 에 GPTBot / ChatGPT-User / OAI-SearchBot / ClaudeBot / Claude-Web / PerplexityBot / Google-Extended / CCBot 명시 허용
