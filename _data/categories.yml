@@ -65,6 +65,8 @@
 - name: Development
   slug: development
   subcategories:
+    - name: AI Models
+      slug: ai-models
     - name: Backend
       slug: backend
     - name: Database
