@@ -1,7 +1,7 @@
 [project]
 name = "no1joon-comments-api"
 version = "0.1.0"
-description = "Comments API for the No1Joon blog (FastAPI on Cloud Run + MongoDB Atlas)"
+description = "Comments API for the No1Joon blog"
 requires-python = ">=3.12"
 dependencies = [
     "fastapi>=0.115.0",
