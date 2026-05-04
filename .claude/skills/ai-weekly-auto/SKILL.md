@@ -59,7 +59,7 @@ front matter 의 `title` 만 사용. 본문에 `# 🤖 AI Weekly — ...` 가 �
 ```yaml
 ---
 title: "{핵심 토픽 1} · {핵심 토픽 2} · {핵심 토픽 3}"
-description: YYYY년 M월 D일 주간 AI 업계 핵심 소식 N건
+description: YYYY년 M월 D일 주간 AI 업계 핵심 소식 10건
 date: YYYY-MM-DD
 order: <YYYYMMDD 정수>
 category: News
@@ -71,7 +71,7 @@ tags: [news, ai, ai-weekly, weekly]
 | 필드        | 값                                                                                              |
 | ----------- | ----------------------------------------------------------------------------------------------- |
 | title       | 그 주 헤드라인 중 가장 주목도 높은 2~4개를 골라 압축 키워드로 조합 (아래 규칙)                   |
-| description | `YYYY년 M월 D일 주간 AI 업계 핵심 소식 N건` — N 은 본문 ⭐ 기사 총 개수                          |
+| description | `YYYY년 M월 D일 주간 AI 업계 핵심 소식 10건` — **총 ⭐ 기사 수는 10 고정**                        |
 | date        | 발행일 `YYYY-MM-DD`                                                                             |
 | order       | `YYYYMMDD` 정수 (예: `20260504`)                                                                |
 | category    | 항상 `News`                                                                                     |
@@ -102,7 +102,7 @@ tags: [news, ai, ai-weekly, weekly]
 ```markdown
 ---
 title: "{핵심 토픽 1} · {핵심 토픽 2} · {핵심 토픽 3}"
-description: YYYY년 M월 D일 주간 AI 업계 핵심 소식 N건
+description: YYYY년 M월 D일 주간 AI 업계 핵심 소식 10건
 date: YYYY-MM-DD
 order: <YYYYMMDD 정수>
 category: News
@@ -110,7 +110,7 @@ subcategory: AI Weekly
 tags: [news, ai, ai-weekly, weekly]
 ---
 
-> 이번 주 핵심 소식 N건
+> 이번 주 핵심 소식 10건
 
 ## 📌 헤드라인
 
@@ -168,10 +168,10 @@ tags: [news, ai, ai-weekly, weekly]
 ## Workflow
 
 1. **날짜 확정** — `date '+%Y-%m-%d'` 로 발행일, `date '+%Y%m%d'` 로 order 산출.
-2. **뉴스 수집** — WebSearch / WebFetch 로 직전 7일 AI 업계 헤드라인 검색. 5개 카테고리 각각에 대해 Tier-1 출처 1~3건씩 후보 수집. 최소 4개 카테고리는 채우는 걸 목표로.
+2. **뉴스 수집** — WebSearch / WebFetch 로 직전 7일 AI 업계 헤드라인 검색. **최종 ⭐ 기사는 총 10건 고정.** 5개 카테고리에서 충분히 후보를 모은 뒤 우선순위(숫자·고유명사·임팩트) 로 추려 10건 확정.
    - 검색 쿼리 예: `AI funding billion site:bloomberg.com 2026`, `AI model release site:techcrunch.com`, `AI regulation EU site:reuters.com`, `AI layoffs site:cnbc.com`, `AI security breach site:reuters.com`.
    - URL 을 직접 본문에 인용하므로 **반드시 검색 결과의 실제 URL 만 사용**. 검색 결과를 못 얻으면 그 항목 제외.
-3. **카테고리 분류** — 위 5개 카테고리에 매핑. 한 카테고리에 1~3건. 어디에도 안 맞으면 제외.
+3. **카테고리 분류** — 위 5개 카테고리에 매핑. **분포는 각 카테고리 1~3건 (예: 2-2-2-2-2, 3-2-2-2-1, 3-3-2-1-1)**. 한 카테고리에 Tier-1 헤드라인이 0이면 나머지 카테고리에서 보강해 합 10 유지. 어디에도 안 맞는 기사는 제외.
 4. **Title 추출** — 위 "Title 생성 규칙" 대로 가장 주목도 높은 2~4개 토픽 선정.
 5. **본문 작성** — 출력 템플릿 그대로. 톤 규칙·메타 문구 금지 규칙 지킴.
 6. **자가 검증** — 아래 체크리스트 통과 확인.
@@ -183,7 +183,7 @@ tags: [news, ai, ai-weekly, weekly]
 - [ ] 첫 줄이 `---` 로 시작 (front matter)
 - [ ] `title` 에 라벨·날짜·이모지·따옴표·괄호 없음, 60자 이내
 - [ ] `date`·`order` 가 같은 날짜 기반 (`2026-05-04`, `20260504`)
-- [ ] `description` N 값 = ⭐ 기사 총 개수 = 인용구 N
+- [ ] **총 ⭐ 기사 수 = 10**, `description` 의 `10건` = 인용구 `이번 주 핵심 소식 10건` = 본문 ⭐ 개수 모두 일치
 - [ ] 본문에 `# 🤖 AI Weekly — ...` H1 없음
 - [ ] "Tier-1 출처 기준" 등 AI 메타 문구 없음
 - [ ] 카테고리 섹션 순서 고정 (투자→모델→규제→사회→보안), 빈 카테고리는 통째로 생략
@@ -196,6 +196,6 @@ tags: [news, ai, ai-weekly, weekly]
 
 ## Edge cases
 
-- 검색 결과가 너무 적어 4개 카테고리도 못 채우면 → 채워진 카테고리만으로 발행 (헤드라인·기사 수 일치 유지). 최소 1개 카테고리는 있어야 함.
+- 검색 결과가 매우 부실해 10건을 못 채우는 드문 경우 → 실제 ⭐ 개수로 description / 인용구 숫자를 맞추고, PR body 에 부족 사유 명시 (보통은 후보를 충분히 모은 뒤 추리는 방식이므로 거의 발생 안 함).
 - 같은 날짜 파일이 이미 있으면 → 자동 모드에서는 `-2.md`, `-3.md` suffix 로 저장 후 보고.
 - WebSearch/WebFetch 가 실패하면 → 실패 사유와 함께 종료. **fake URL 절대 생성 금지**.
