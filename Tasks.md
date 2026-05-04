@@ -1,6 +1,6 @@
 # No1Joon Blog — 진행 작업
 
-대량 포스트(69편) 시리즈 작업은 완료됨. 이 파일은 현재 진행 중인 SEO·메타 개선 작업을 추적합니다.
+대량 포스트(69편) 시리즈 작업은 완료됨. 이 파일은 현재 진행 중인 SEO·메타 및 신규 콘텐츠 작업을 추적합니다.
 
 ## 스타일 참고 (글 작성·수정 시)
 
@@ -13,21 +13,11 @@
 
 ---
 
-## 진행 중 — SEO 개선
+## 진행 중 — 신규 포스트 (AI Weekly 05-04 기반)
 
-### 1. 네이버 서치어드바이저 등록
-
-- 상태: **네이버 계정 생성 중 (대기)**
-- 계정 준비 후 작업:
-  1. <https://searchadvisor.naver.com> 에 사이트 등록 및 소유 확인
-  2. 발급받은 메타 태그로 `_layouts/default.html` 의 주석된 `naver-site-verification` 라인 교체하고 주석 해제
-  3. sitemap 제출: `https://no1joon.github.io/sitemap.xml`
-  4. rss 제출: `https://no1joon.github.io/feed.xml`
-
-- [x] 포스트별 OG 이미지 (빌드 타임 자동 생성)
-  - Node.js (Satori + Resvg) 기반 자동 생성 스크립트 구현 완료
-  - GitHub Actions 연동 완료
-  - 전 포스트 마크다운 `image` 필드 주입 완료
+- [ ] Microsoft–OpenAI 독점 종료와 멀티클라우드 AI 아키텍처 (`Architecture`)
+- [ ] NVIDIA Nemotron 3 Nano Omni: 30B Hybrid MoE 분석 (`Development`)
+- [ ] AI 보안의 진화: Claude Security와 취약점 자동 패치 (`DevOps & SRE`)
 
 ---
 
