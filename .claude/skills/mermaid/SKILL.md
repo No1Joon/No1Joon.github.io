@@ -53,7 +53,7 @@ muted    (reference / auxiliary)       fill:#e2e8f0  stroke:#94a3b8  color:#0f17
 | Node role                    | Palette         | Examples                      |
 | ---------------------------- | --------------- | ----------------------------- |
 | User, client, trigger        | primary         | User, Webhook, PR Merge       |
-| Platform, main component     | primary or info | Harness Platform, API Gateway |
+| Platform, main component     | primary or info | API Gateway, Core Service     |
 | External SaaS / API          | info            | GitHub, GCP, Datadog          |
 | Success / happy path         | success         | Deploy Success, Approved      |
 | Verification / approval      | warn            | Verify, Approval, Review      |

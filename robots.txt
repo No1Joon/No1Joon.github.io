@@ -29,4 +29,7 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
+User-agent: Yeti
+Allow:/
+
 Sitemap: https://no1joon.github.io/sitemap.xml

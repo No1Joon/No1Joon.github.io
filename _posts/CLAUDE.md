@@ -5,7 +5,7 @@ Jekyll 블로그 포스트 디렉터리. 카테고리 slug 기준으로 서브�
 ## Structure
 
 - `_posts/{category-slug}/` — 각 최상위 카테고리의 포스트.
-- 시리즈 포스트 네이밍: `YYYY-MM-DD-{subcategory-slug}-{nn}-{topic}.md` (예: `2026-04-08-harness-01-overview.md`).
+- 시리즈 포스트 네이밍: `YYYY-MM-DD-{subcategory-slug}-{nn}-{topic}.md` (예: `2026-04-15-github-actions-01-overview.md`).
 - Daily Dev 네이밍: `_posts/daily-dev/YYYY-MM-DD-{slug}.md` (subcategory/order prefix 없음).
 - 카테고리 slug 목록 (`_data/categories.yml` 기준): `daily-dev`, `ci-cd`, `container-orchestration`, `cloud-infrastructure`, `observability`, `devops-sre`, `development`, `architecture`, `news`.
 - News (AI Weekly 등) 네이밍: `_posts/news/YYYY-MM-DD-{series-slug}.md` (예: `2026-05-04-ai-weekly.md`). 본문 변경 없이 front matter 만 부착하는 워크플로는 `news-post` 스킬 참조.

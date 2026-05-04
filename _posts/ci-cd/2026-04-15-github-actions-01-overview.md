@@ -13,7 +13,7 @@ image: /assets/og/2026-04-15-github-actions-01-overview.png
 
 ## GitHub Actions를 왜 쓰는가
 
-저장소와 CI/CD가 한 플랫폼에 있어 세팅 비용이 거의 없습니다. Pull Request·이슈·릴리즈 같은 이벤트에 바로 훅을 걸 수 있고, 마켓플레이스 덕분에 대부분의 도구가 이미 빌딩 블록으로 존재합니다. 반면 복잡한 배포 오케스트레이션(Approval·Canary·Rollback)이 필요하면 Harness·ArgoCD 같은 전용 플랫폼이 더 적합합니다. GitHub Actions는 **빌드·테스트·간단한 배포까지가 스위트 스폿**입니다
+저장소와 CI/CD가 한 플랫폼에 있어 세팅 비용이 거의 없습니다. Pull Request·이슈·릴리즈 같은 이벤트에 바로 훅을 걸 수 있고, 마켓플레이스 덕분에 대부분의 도구가 이미 빌딩 블록으로 존재합니다. 반면 복잡한 배포 오케스트레이션(Approval·Canary·Rollback)이 필요하면 ArgoCD 같은 전용 플랫폼이 더 적합합니다. GitHub Actions는 **빌드·테스트·간단한 배포까지가 스위트 스폿**입니다
 
 ## 4단계 계층 구조
 

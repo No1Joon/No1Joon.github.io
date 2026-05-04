@@ -9,8 +9,6 @@
 - name: CI/CD
   slug: ci-cd
   subcategories:
-    - name: Harness
-      slug: harness
     - name: GitHub Actions
       slug: github-actions
     - name: Jenkins

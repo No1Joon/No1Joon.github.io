@@ -33,7 +33,7 @@ description: One-line summary for search and sharing
 date: YYYY-MM-DD
 order: 1
 category: CI/CD # one of the categories defined in _data/categories.yml
-subcategory: Harness # a subcategory under that category
+subcategory: GitHub Actions # a subcategory under that category
 tags: [kebab-case, tags]
 ---
 ```
@@ -47,7 +47,7 @@ Posts live under a category-slug subfolder of `_posts/`:
 
 - Path: `_posts/{category-slug}/YYYY-MM-DD-slug.md`
 - Series: `_posts/{category-slug}/YYYY-MM-DD-{series}-{nn}-{topic}.md`
-- Example: `_posts/ci-cd/2026-04-08-harness-01-overview.md`
+- Example: `_posts/ci-cd/2026-04-15-github-actions-01-overview.md`
 
 `{category-slug}` is the top-level `slug` defined in `_data/categories.yml` (e.g., `ci-cd`, `container-orchestration`, `cloud-infrastructure`, `observability`, `devops-sre`, `development`, `architecture`). If the subfolder does not yet exist (first post in that category), create it. Jekyll recursively scans `_posts/`, so the subfolder does not affect URLs — `permalink: /posts/:title/` is driven by the title.
 
