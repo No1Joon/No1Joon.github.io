@@ -15,7 +15,7 @@ Jekyll 기반 GitHub Pages 블로그 (Claude·Gemini 공통 컨텍스트). 기�
 - `_config.yml` — Jekyll 설정.
 - `assets/` — CSS·이미지. 이미지 구조·raw 보존 규칙은 `assets/CLAUDE.md`.
 - `scripts/add-screenshot.py` — Desktop 스크린샷 → WebP 변환 및 배치.
-- `api/` — 댓글 시스템 FastAPI 서비스 (Cloud Run + Firestore). 상세는 `api/CLAUDE.md`.
+- `api/` — 댓글 시스템 FastAPI 서비스. 상세는 `api/CLAUDE.md`.
 - `.claude/skills/` — 작업별 가이드라인 (Skills 섹션).
 - `.gemini/` — Gemini CLI 설정 (동일 컨텍스트 공유).
 - `Tasks.md` — 진행 중 작업 트래커 (SEO·메타 개선 등).

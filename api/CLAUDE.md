@@ -1,6 +1,6 @@
 # api/
 
-No1Joon 블로그 댓글용 FastAPI 서비스. Cloud Run 에 배포되고 MongoDB Atlas (M0, GCP us-central1) 를 데이터 저장소로 사용.
+No1Joon 블로그 댓글용 FastAPI 서비스.
 
 ## Structure
 
@@ -27,11 +27,8 @@ No1Joon 블로그 댓글용 FastAPI 서비스. Cloud Run 에 배포되고 MongoD
 ## Environment
 
 - Python 3.12 (`.python-version`).
-- 로컬: `docker compose up` 후 `MONGO_URI=mongodb://localhost:27017`, `MONGO_DB=no1joon_comments_dev`.
-- 프로덕션: Atlas SRV URI 를 **GCP Secret Manager** 에 저장, Cloud Run 이 Secret 바인딩으로 주입.
-- Cloud Run 설정: `max-instances=1`, `concurrency=80`, `mongo_pool_size=10` (Atlas M0 100 연결 한도 내).
-- Turnstile secret / Google OAuth Client ID / Admin emails allowlist 는 Cloud Run 환경변수로 주입.
-- Atlas M0 은 초과분 자동 과금 없음 (하드 캡). 별도 kill-switch 불필요.
+- 로컬 개발: `docker compose up -d` 후 `MONGO_URI=mongodb://localhost:27017`.
+- 프로덕션 환경 변수와 인프라 설정은 이 저장소에 포함하지 않음 (별도 비공개 관리).
 
 ## References
 
