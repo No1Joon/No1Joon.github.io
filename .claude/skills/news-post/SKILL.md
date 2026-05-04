@@ -1,18 +1,18 @@
 ---
 name: news-post
-description: Use when the user delivers a daily AI news brief (e.g. "🤖 AI 데일리 — YYYY.MM.DD") to post to the No1Joon blog. Saves the brief verbatim as a Jekyll post under `_posts/news/`. Do not rewrite, restyle, or summarize the body — only attach front matter and strip the duplicated H1.
+description: Use when the user delivers a weekly AI news brief (e.g. "🤖 AI 위클리 — YYYY.MM.DD") to post to the No1Joon blog. Saves the brief verbatim as a Jekyll post under `_posts/news/`. Do not rewrite, restyle, or summarize the body — only attach front matter and strip the duplicated H1.
 ---
 
-Publish a daily news brief as-is. 사용자는 이미 완성된 브리핑을 마크다운으로 전달한다. 이 스킬의 역할은 **본문을 절대 변경하지 않고** Jekyll 포스트로 그대로 저장하는 것뿐이다. 합쇼체 변환·마침표 제거·문장 다듬기·섹션 재정렬 모두 금지.
+Publish a weekly news brief as-is. 사용자는 이미 완성된 브리핑을 마크다운으로 전달한다. 이 스킬의 역할은 **본문을 절대 변경하지 않고** Jekyll 포스트로 그대로 저장하는 것뿐이다. 합쇼체 변환·마침표 제거·문장 다듬기·섹션 재정렬 모두 금지.
 
 ## When to use
 
 사용자가 아래 형태의 마크다운을 붙여넣고 "포스팅", "올려줘", "이거 글로" 등으로 요청할 때.
 
 ```
-# 🤖 AI 데일리 — YYYY.MM.DD
+# 🤖 AI 위클리 — YYYY.MM.DD
 
-> 오늘의 핵심 소식 N건 · ...
+> 이번 주 핵심 소식 N건 · ...
 
 ## 📌 헤드라인
 ...
@@ -54,12 +54,12 @@ strip 후 라인이 비어버리면 그 줄도 같이 제거. 다른 단어는 �
 ```yaml
 ---
 title: "{핵심 토픽 1} · {핵심 토픽 2} · {핵심 토픽 3}"
-description: YYYY년 M월 D일 AI 업계 핵심 소식 N건
+description: YYYY년 M월 D일 주간 AI 업계 핵심 소식 N건
 date: YYYY-MM-DD
 order: <YYYYMMDD 정수>
 category: News
-subcategory: AI Daily
-tags: [news, ai, ai-daily, daily]
+subcategory: AI Weekly
+tags: [news, ai, ai-weekly, weekly]
 ---
 ```
 
@@ -68,16 +68,16 @@ tags: [news, ai, ai-daily, daily]
 | 필드        | 출처                                                                                            |
 | ----------- | ----------------------------------------------------------------------------------------------- |
 | title       | `## 📌 헤드라인` 리스트에서 가장 주목도 높은 항목 **2~4개를 골라 압축 키워드로 조합** (아래 규칙) |
-| description | 본문 두 번째 줄의 인용구(`> 오늘의 핵심 소식 N건 ...`) 에서 N 을 읽어 위 템플릿에 주입           |
-| date        | 본문 첫 줄 H1 안의 `YYYY.MM.DD` → `YYYY-MM-DD` 로 변환                                          |
-| order       | `YYYYMMDD` 정수 (예: `20260501`) — 사이드바 정렬용                                              |
+| description | 본문 두 번째 줄의 인용구(`> 이번 주 핵심 소식 N건 ...`) 에서 N 을 읽어 위 템플릿에 주입           |
+| date        | 본문 첫 줄 H1 안의 `YYYY.MM.DD` → `YYYY-MM-DD` 로 변환 (해당 주 발행일)                          |
+| order       | `YYYYMMDD` 정수 (예: `20260504`) — 사이드바 정렬용                                              |
 | category    | 항상 `News`                                                                                     |
-| subcategory | AI 데일리면 `AI Daily`. 다른 데일리(예: 클라우드 데일리) 추가 시 사용자 확인 후 매핑             |
-| tags        | 고정 `[news, ai, ai-daily, daily]`                                                              |
+| subcategory | AI 위클리면 `AI Weekly`. 다른 위클리(예: 클라우드 위클리) 추가 시 사용자 확인 후 매핑             |
+| tags        | 고정 `[news, ai, ai-weekly, weekly]`                                                            |
 
 ### Title 생성 규칙
 
-- "AI 데일리", "오늘의 뉴스" 같은 라벨·날짜는 **title 에 넣지 않는다**. 시리즈 식별은 카테고리 배지·날짜 메타가 담당.
+- "AI 위클리", "이번 주 뉴스" 같은 라벨·날짜는 **title 에 넣지 않는다**. 시리즈 식별은 카테고리 배지·날짜 메타가 담당.
 - 헤드라인 중 **숫자·고유명사가 박힌 것** 을 우선 (`$242B`, `Gemini 3.1 Ultra`, `1,000명 감원` 등 — 클릭을 만든다).
 - 비슷한 분야 헤드라인(예: 투자 2건)은 더 큰 쪽 하나만. 분야가 겹치지 않게 **투자/모델/규제/사회** 중 2~4개 영역에서 골라 균형.
 - 각 토픽은 5~15자 한국어 키워드로 압축 (헤드라인 풀문장 X). 구분자는 ` · ` (가운뎃점 양옆 한 칸).
@@ -96,7 +96,7 @@ tags: [news, ai, ai-daily, daily]
 ## File path
 
 - `_posts/news/YYYY-MM-DD-{series-slug}.md`
-- AI 데일리: `_posts/news/2026-05-01-ai-daily.md`
+- AI 위클리: `_posts/news/2026-05-04-ai-weekly.md`
 - `news/` 폴더 없으면 생성. 같은 날짜로 이미 파일이 있으면 사용자에게 덮어쓸지 물어본다 (자동 덮어쓰기 금지).
 
 ## Workflow

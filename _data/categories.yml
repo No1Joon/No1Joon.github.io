@@ -91,5 +91,5 @@
 - name: News
   slug: news
   subcategories:
-    - name: AI Daily
-      slug: ai-daily
+    - name: AI Weekly
+      slug: ai-weekly
