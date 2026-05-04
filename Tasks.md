@@ -17,7 +17,7 @@
 
 ### 1. Microsoft–OpenAI 비독점 전환과 멀티클라우드 AI 전략 (2편)
 - [x] 1편: 파트너십 재구성의 배경과 'Post-Azure' 시대의 서막 (`Architecture`)
-- [ ] 2편: 어떤 클라우드에서도 자유로운 AI 서비스를 위한 아키텍처 설계 (`Architecture`)
+- [x] 2편: 어떤 클라우드에서도 자유로운 AI 서비스를 위한 아키텍처 설계 (`Architecture`)
 
 ### 2. NVIDIA Nemotron 3 Nano Omni: Hybrid MoE 아키텍처 딥다이브 (1편)
 - [ ] 1편: 30B 모델을 3B 수준의 가벼움으로 — MoE 최적화와 멀티모달 추론 분석 (`Development`)
