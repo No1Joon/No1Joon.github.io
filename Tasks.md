@@ -13,27 +13,32 @@
 
 ---
 
-## 진행 중 — 신규 포스트 (AI Weekly 05-04 기반)
+## 진행 중 — Network 시리즈 (기초~고급, 총 20편)
 
-### 1. Microsoft–OpenAI 비독점 전환과 멀티클라우드 AI 전략 (2편)
-- [x] 1편: 파트너십 재구성의 배경과 'Post-Azure' 시대의 서막 (`Architecture`)
-- [x] 2편: 어떤 클라우드에서도 자유로운 AI 서비스를 위한 아키텍처 설계 (`Architecture`)
+### Network / Fundamentals (10편)
+- [x] 01: OSI 7계층 모델
+- [x] 02: TCP/IP 스택 구조
+- [ ] 03: IP 주소와 라우팅
+- [ ] 04: TCP 핸드셰이크와 흐름 제어
+- [ ] 05: UDP와 비연결형 통신
+- [ ] 06: DNS 동작 원리
+- [ ] 07: HTTP/1.1과 HTTP/2
+- [ ] 08: TLS 핸드셰이크와 인증서
+- [ ] 09: 소켓 프로그래밍 기초
+- [ ] 10: NAT와 사설 네트워크
 
-### 2. NVIDIA Nemotron 3 Nano Omni: Hybrid MoE 아키텍처 딥다이브 (1편)
-- [x] 1편: 30B 모델을 3B 수준의 가벼움으로 — MoE 최적화와 멀티모달 추론 분석 (`Development`)
-
-### 3. 에이전틱 보안의 시대: Claude Security와 취약점 자동 패치 (2편)
-- [ ] 1편: 코드베이스 전체를 이해하는 Opus 4.7 기반 차세대 보안 스캐너 (`DevOps & SRE`)
-- [ ] 2편: '발견'에서 '해결'까지 — AI 보안 에이전트를 CI/CD 파이프라인에 이식하기 (`DevOps & SRE`)
+### Network / Advanced (10편)
+- [ ] 01: BGP와 인터넷 라우팅
+- [ ] 02: Anycast와 글로벌 트래픽
+- [ ] 03: 로드 밸런싱 아키텍처
+- [ ] 04: CDN 동작과 캐싱 전략
+- [ ] 05: QUIC와 HTTP/3
+- [ ] 06: SDN과 네트워크 가상화
+- [ ] 07: Service Mesh 데이터 플레인
+- [ ] 08: Zero Trust 네트워크
+- [ ] 09: 프로덕션 네트워크 트러블슈팅
+- [ ] 10: 네트워크 관측성 설계
 
 ---
 
 ## 완료된 개선
-
-- [x] 네이버 서치어드바이저 등록 및 소유 확인 (`_layouts/default.html` 에 메타 태그 삽입)
-- [x] `description` front matter — 95편 전부 존재 (`grep -L "^description:" _posts/**/*.md` 로 확인)
-- [x] `tags` front matter — 95편 전부 존재
-- [x] `robots.txt` 에 GPTBot / ChatGPT-User / OAI-SearchBot / ClaudeBot / Claude-Web / PerplexityBot / Google-Extended / CCBot 명시 허용
-- [x] Bing Webmaster Tools 등록 및 사이트맵 제출
-- [x] Google Search Console 소유 확인 (`_layouts/default.html` 의 `google-site-verification` 메타)
-- [x] `jekyll-seo-tag` / `jekyll-sitemap` / `jekyll-feed` 플러그인 활성화
