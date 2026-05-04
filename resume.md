@@ -103,7 +103,7 @@ permalink: /resume/
 
 #### Ops팀 기술 지원 & 프로세스 자동화
 
-- ConnectBrick 12만 이미지 자동 QC, Lotte 데이터 처리, Seadronix 포맷 변환 등 Python 기반 자동화 도구 개발
+- 12만 이미지 자동 QC, 대시보드 이미지 데이터 처리, 다양한 포맷 변환 등 Python 기반 자동화 도구 개발
 - 데이터 전처리 자동화 및 약 30건 이상의 CPR 카드를 통한 지속적 Ops 지원
 
 ---
