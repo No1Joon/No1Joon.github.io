@@ -12,6 +12,8 @@ tags: [macos, pdf, preview, tips]
 
 ## 방법
 
+![미리보기 앱의 권한 편집 메뉴](/assets/images/daily-dev/2026-05-08-remove-pdf-password-macos/preview-screenshot.webp)
+
 가장 직관적이고 확실한 방법은 파일의 권한 설정을 변경하여 다시 저장하는 것입니다
 
 1. **파일 열기**: 암호가 걸린 PDF 파일을 미리보기 앱으로 엽니다. 이때 기존 암호를 한 번 입력해야 합니다
