@@ -464,6 +464,14 @@ body.preload .site-body {
 
 .post-content strong { color: var(--text); font-weight: 600; }
 
+.post-content a {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.post-content a:hover { color: var(--primary); }
+
 .post-content code {
   font-family: var(--font-mono);
   font-size: 0.85em;
