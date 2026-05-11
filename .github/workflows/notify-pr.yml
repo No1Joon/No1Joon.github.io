@@ -1,0 +1,40 @@
+name: Notify on claude/* PR opened
+
+on:
+  pull_request:
+    types: [opened]
+    branches:
+      - main
+
+jobs:
+  notify:
+    if: startsWith(github.head_ref, 'claude/')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send email via Resend
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          MAIL_TO: ${{ secrets.MAIL_TO }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+          PR_HEAD: ${{ github.head_ref }}
+          PR_BASE: ${{ github.base_ref }}
+          PR_USER: ${{ github.event.pull_request.user.login }}
+        run: |
+          BODY=$(jq -n \
+            --arg from "No1Joon Blog Bot <onboarding@resend.dev>" \
+            --arg to "$MAIL_TO" \
+            --arg subject "[No1Joon Blog] PR #${PR_NUMBER} — ${PR_TITLE}" \
+            --arg text "새 PR 이 열렸습니다.
+
+제목: ${PR_TITLE}
+브랜치: ${PR_HEAD} → ${PR_BASE}
+작성자: ${PR_USER}
+
+${PR_URL}" \
+            '{from: $from, to: [$to], subject: $subject, text: $text}')
+          curl -fsS -X POST https://api.resend.com/emails \
+            -H "Authorization: Bearer $RESEND_API_KEY" \
+            -H "Content-Type: application/json" \
+            -d "$BODY"
