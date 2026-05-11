@@ -22,19 +22,14 @@ jobs:
           PR_BASE: ${{ github.base_ref }}
           PR_USER: ${{ github.event.pull_request.user.login }}
         run: |
-          BODY=$(jq -n \
+          TEXT=$(printf '새 PR 이 열렸습니다.\n\n제목: %s\n브랜치: %s → %s\n작성자: %s\n\n%s' "$PR_TITLE" "$PR_HEAD" "$PR_BASE" "$PR_USER" "$PR_URL")
+          jq -n \
             --arg from "No1Joon Blog Bot <onboarding@resend.dev>" \
             --arg to "$MAIL_TO" \
             --arg subject "[No1Joon Blog] PR #${PR_NUMBER} — ${PR_TITLE}" \
-            --arg text "새 PR 이 열렸습니다.
-
-제목: ${PR_TITLE}
-브랜치: ${PR_HEAD} → ${PR_BASE}
-작성자: ${PR_USER}
-
-${PR_URL}" \
-            '{from: $from, to: [$to], subject: $subject, text: $text}')
+            --arg text "$TEXT" \
+            '{from: $from, to: [$to], subject: $subject, text: $text}' > body.json
           curl -fsS -X POST https://api.resend.com/emails \
             -H "Authorization: Bearer $RESEND_API_KEY" \
             -H "Content-Type: application/json" \
-            -d "$BODY"
+            -d @body.json
