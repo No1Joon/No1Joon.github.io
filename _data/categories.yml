@@ -107,3 +107,9 @@
   subcategories:
     - name: AI Weekly
       slug: ai-weekly
+
+- name: Tech
+  slug: tech
+  subcategories:
+    - name: Explainer
+      slug: explainer
