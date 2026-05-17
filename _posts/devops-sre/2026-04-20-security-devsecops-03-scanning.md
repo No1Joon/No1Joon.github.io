@@ -1,6 +1,6 @@
 ---
 title: "SAST·DAST·의존성 스캔"
-description: 정적·동적·의존성 스캔이 어디에서 어떤 종류의 취약점을 잡는지 비교해요.
+description: SAST·SCA·DAST 세 가지 보안 스캔이 코드·의존성·구동 중인 앱에서 각각 어떤 취약점을 잡는지, CI/CD 파이프라인 어디에 배치해야 하는지 비교해요.
 date: 2026-04-20
 order: 3
 category: DevOps & SRE

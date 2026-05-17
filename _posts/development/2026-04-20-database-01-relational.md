@@ -1,6 +1,6 @@
 ---
 title: "관계형 DB와 인덱스"
-description: B-Tree 인덱스와 실행 계획을 읽는 감각을 기본부터 정리해요.
+description: 관계형 DB 성능 튜닝의 핵심인 B-Tree 인덱스 구조와 설계 트레이드오프, MySQL·PostgreSQL 실행 계획(EXPLAIN)을 읽는 감각을 기본부터 정리해요.
 date: 2026-04-20
 order: 1
 category: Development
