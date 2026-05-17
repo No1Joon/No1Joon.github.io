@@ -1,6 +1,6 @@
 ---
 title: "온콜과 알람 체계"
-description: 지속 가능한 온콜 로테이션과 알람 신호·소음을 구분하는 기준을 정리해요.
+description: Weekly·Primary/Secondary·Follow-the-Sun 온콜 로테이션 패턴과 알람·알림을 신호·소음으로 구분하는 기준까지 지속 가능한 SRE 운영의 기본을 정리해요.
 date: 2026-04-20
 order: 1
 category: DevOps & SRE

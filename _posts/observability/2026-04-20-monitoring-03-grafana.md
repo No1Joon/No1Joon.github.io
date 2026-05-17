@@ -1,6 +1,6 @@
 ---
 title: "Grafana 대시보드 설계"
-description: 잘 읽히는 대시보드를 만드는 레이아웃·시각화 선택 원칙을 정리해요.
+description: Grafana 대시보드의 드릴다운 계층 설계, Stat·Time Series·Bar·Heatmap 패널 선택 기준과 자주 빠지는 시각화 안티 패턴을 정리해요.
 date: 2026-04-20
 order: 3
 category: Observability

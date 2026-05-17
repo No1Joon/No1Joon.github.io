@@ -1,6 +1,6 @@
 ---
 title: "동시성과 성능"
-description: 스레드·이벤트 루프·코루틴이 동시성을 어떻게 다르게 처리하는지 정리해요.
+description: Java 멀티스레딩, Node·Python 이벤트 루프, Go·Kotlin 코루틴 세 모델이 동시성을 어떻게 다르게 처리하는지 백엔드 처리량 관점에서 비교해요.
 date: 2026-04-20
 order: 2
 category: Development
