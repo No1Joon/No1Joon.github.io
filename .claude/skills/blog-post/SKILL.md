@@ -1,133 +1,168 @@
 ---
 name: blog-post
-description: Use when writing a new post for the No1Joon blog. Creates a Jekyll post under `_posts/` while preserving this blog's tone, voice, and structure.
+description: Use when writing a new Tech / Explainer (또는 시리즈 한 편) post for the No1Joon blog. 단순 개념 나열이 아니라, 독자가 실제로 이해하고 재현할 수 있는 깊이의 글을 쓰기 위한 규칙.
 ---
 
-Write a new technical blog post for the No1Joon blog. The critical part is preserving this blog's unique tone, voice, and structure.
+No1Joon 블로그의 깊이 있는 단편 또는 시리즈 한 편을 작성한다. 가장 중요한 것은 **위키 한 페이지처럼 개념을 훑고 끝나지 않는 것**.
 
 ## When to use
 
-- When the user asks for an **individual post**, e.g., "write a blog post", "add a post", "write an article about ~".
-- Use this for **a single standalone post**. If the user is starting a whole new subcategory series, route through `post-plan` first.
+- 사용자가 한 주제를 "글로 정리해 줘", "포스팅해" 라고 요청할 때.
+- 한 편 단위로 끝나는 단편 (Tech / Explainer 가 기본 카테고리).
+- 시리즈를 시작해야 하는 경우 — 먼저 `post-plan` 으로 편수·각 편 질문을 합의한 뒤 각 편마다 이 스킬을 호출.
+
+Daily Dev 트러블슈팅·팁은 `daily-post`, AI 위클리 같은 주간 브리핑은 `news-post` 를 사용한다.
+
+## 깊이 기준 — 이 글은 통과하는가
+
+글을 다 쓴 뒤 아래 5개 질문에 **모두 yes** 가 나오지 않으면 다시 쓴다.
+
+1. **재현 가능성**: 독자가 글에 적힌 명령·코드·페이로드·설정을 그대로 따라 했을 때 동일한 결과를 얻는가? "Cosign 으로 서명한다" 가 아니라 어떤 명령, 어떤 플래그, 어떤 출력이 나오는지가 보여야 한다.
+2. **실제 데이터**: 추상화된 다이어그램만 있고 실제 JSON / JWT / 응답 본문 / 로그 라인 / 설정 파일의 핵심 필드가 한 번도 안 나왔다면 깊이 부족.
+3. **왜 이렇게 설계되었나**: 단순 구성 요소 나열 ("X 는 A, B, C 로 이루어진다") 이 아니라 그렇게 나뉜 이유, 다른 설계 대안 대비 트레이드오프가 한 곳 이상 나와야 한다.
+4. **함정·실수 케이스**: 실제로 사람들이 잘못 쓰는 패턴, 디버깅하기 어려운 실패 모드, 잘못된 가정 — 최소 1개는 들어가야 한다. 없으면 글이 "정상 흐름" 만 다룬 매뉴얼임.
+5. **검증·관찰 방법**: 독자가 자기 환경에서 "이게 제대로 동작하는지" 확인하는 명령·쿼리·로그 위치가 제시되어야 한다.
+
+5개 모두 통과해야 발행. 통과 못 하면 섹션을 늘리는 게 아니라 **이미 있는 섹션을 더 깊게 판다**.
+
+## 안티패턴 — 이렇게 쓰면 즉시 폐기
+
+- "X 의 3대 요소" → 한 줄씩 정의만 나열하고 끝남.
+- 표 하나 + 다이어그램 하나로 한 개념을 종결시키고 다음 개념으로 넘어가는 구조.
+- 코드 블록 0개, 또는 코드는 있어도 boilerplate 만 있고 본 글 주제와 관련된 핵심 필드가 안 보임.
+- "이렇게 하면 안전하게 배포할 수 있어요" 같은 결론을 근거 없이 단언.
+- 모든 섹션이 5~6 줄로 끝남 (총 분량이 위키 요약 수준).
+- 다른 글이나 외부 문서로 떠넘기는 문장 ("자세한 건 공식 문서를 참고하세요") 으로 핵심 설명을 회피.
+
+## 분량 감각
+
+- 단편 한 편 기준 **본문 250~500 줄 (front matter 제외)**. 짧은 주제라도 200 줄 아래로 내려가면 깊이 기준이 안 채워졌을 가능성 큼.
+- 섹션은 보통 **6~10 개 `##`**. 더 많아지면 단편이 아니라 시리즈로 쪼개야 한다.
+- 한 섹션은 **본문 3~6 단락 + 시각화/표 1~2 + 코드 또는 실제 데이터 0~1 + 함정/실전 노트 1**. 모든 섹션에 같은 구성을 강요하진 않지만, "한 단락 + 표 하나" 로 끝나는 섹션은 거의 항상 너무 얕다.
+- 길이는 목표가 아니라 결과. 디테일을 채워 넣으면 자연히 이 분량이 나온다. **인위적 부풀림 금지**.
 
 ## Language policy
 
-The blog is written in **Korean**. Post body, headings, callouts, and most prose must be in Korean.
+본문은 **한국어**.
 
-- Sentence endings are not flexible — **합쇼체만 허용** (해요체·혼용 금지). 톤은 한 포스트 안에서 일관 유지.
-- **모든 문장의 마지막(줄바꿈 직전) 마침표(`.`) 제거**. 문장 중간에 있는 마침표는 평소처럼 찍는다. 이 규칙은 본문, 리스트, 표 등 모든 텍스트에 적용된다.
-- 단, `v1.0`, `domain.com`, `...`(말줄임표) 등 한글 종결 어미가 아닌 경우의 마침표는 유지한다.
-- Short phrases inside tables and lists may stay in noun form or dictionary form (e.g., "빌드 결과물 전달", "설치", "확인").
-- Keep code comments in their original language (usually English).
-- The `description` field in front matter is a one-line summary — any natural ending is fine, including noun-form endings ("~를 분석", "~를 정리").
-- Technical terms may stay in the original language (often English) alongside a Korean gloss when helpful.
+- 종결어미: **합쇼체만** ("~합니다"). 해요체·혼용 금지. 한 글 안에서 일관 유지.
+- **줄바꿈 직전 마침표(`.`) 제거**. 문장 중간 마침표는 평소대로. 본문·리스트·표 모두 적용.
+- `v1.0`, `domain.com`, `...` 처럼 한글 종결어미가 아닌 마침표는 유지.
+- 표·리스트 안의 짧은 구는 명사형·사전형 가능 ("설치", "확인", "빌드 결과물 전달").
+- 코드 주석은 원문 언어 (대개 영어) 그대로.
+- front matter `description` 은 한 줄 요약 — 명사형 종결 가능.
+- 기술 용어는 원문(보통 영어) + 필요 시 한국어 풀이를 병기.
 
-## Structure rules
-
-### Front matter (required)
+## Front matter
 
 ```yaml
 ---
-title: "A title that captures the core idea"
-description: One-line summary for search and sharing
+title: "글의 핵심을 한 줄로"
+description: 검색·공유용 한 줄 요약
 date: YYYY-MM-DD
-order: 1
-category: CI/CD # one of the categories defined in _data/categories.yml
-subcategory: GitHub Actions # a subcategory under that category
+order: 1                  # 시리즈일 때만. 단편은 생략.
+category: Tech            # _data/categories.yml 의 name
+subcategory: Explainer    # 위 category 의 subcategories 중 하나
 tags: [kebab-case, tags]
 ---
 ```
 
-- `order`: sort order within the same subcategory. Start from 1 for series posts.
-- `category` / `subcategory`: always read `_data/categories.yml` first and use valid values. If missing, ask the user.
+- `category` / `subcategory` 는 항상 `_data/categories.yml` 을 먼저 읽고 valid 값 사용.
+- `image` (OG) 필드는 별도 OG 생성 워크플로가 있을 때만 추가. 일반 글은 생략.
 
-### Filename & location
+## 파일명·경로
 
-Posts live under a category-slug subfolder of `_posts/`:
+- 단편: `_posts/{category-slug}/YYYY-MM-DD-{slug}.md`
+- 시리즈: `_posts/{category-slug}/YYYY-MM-DD-{series-slug}-{nn}-{topic}.md`
+- `nn` 은 두 자리 (`01`, `02`, ...).
+- 카테고리 폴더가 아직 없으면 만든다. Jekyll 은 `_posts/` 하위를 재귀 스캔하므로 서브폴더는 URL 에 영향 없음.
 
-- Path: `_posts/{category-slug}/YYYY-MM-DD-slug.md`
-- Series: `_posts/{category-slug}/YYYY-MM-DD-{series}-{nn}-{topic}.md`
-- Example: `_posts/ci-cd/2026-04-15-github-actions-01-overview.md`
+## 본문 구조
 
-`{category-slug}` is the top-level `slug` defined in `_data/categories.yml` (e.g., `ci-cd`, `container-orchestration`, `cloud-infrastructure`, `observability`, `devops-sre`, `development`, `architecture`). If the subfolder does not yet exist (first post in that category), create it. Jekyll recursively scans `_posts/`, so the subfolder does not affect URLs — `permalink: /posts/:title/` is driven by the title.
+기본 골격은 다음과 같지만, **섹션 이름·개수는 주제에 맞게 깎는다**. 정해진 템플릿이 아니다.
 
-### Body structure
+1. **도입 (1~2 단락)**: 어떤 문제·맥락 때문에 이 글을 읽어야 하는가. "~ 팀이라면 공통적으로 겪는 문제가 있어요" 같은 일반화는 피하고, 구체적 상황을 짧게 묘사.
+2. **핵심 개념 / 동작 원리**: 추상 구조 → 실제 데이터 (페이로드·로그·응답) → 왜 이렇게 설계되었나. 다이어그램 하나로 끝내지 말 것.
+3. **세부 동작·구성 요소**: 각 구성 요소가 무슨 일을 하는지, 어떤 입력·출력을 가지는지, 다른 요소와 어떻게 맞물리는지. 표·시퀀스 다이어그램 활용.
+4. **실전 적용 / 코드**: 가장 흔한 사용 패턴을 짧고 진짜인 코드/설정 5~15 줄로. 핵심 필드만 남기고 boilerplate 는 `...` 로.
+5. **함정·실수 케이스**: 디버깅하기 어려운 실패 모드, 잘못된 가정, 자주 보는 안티패턴. 가능하면 실제 에러 메시지·로그 인용.
+6. **검증·관찰**: 독자가 "이게 동작한다" 를 확인하는 명령·쿼리·로그 위치.
+7. **마무리 (1 단락)**: 핵심 한두 줄 정리 + 시리즈라면 다음 글 티저.
 
-1. **Opening**: state the problem or context in one or two paragraphs (e.g., "~팀이라면 공통적으로 겪는 문제가 있어요.").
-2. **`##` sections**: concept → structure → real usage. Each section short and purposeful.
-3. **Explanation first, code last.** Each section follows the order: concept paragraph → table/diagram → code snippet only if needed. Never lead with code and then explain it.
-4. **Use tables aggressively.** Prefer Markdown tables for comparisons, options, and type breakdowns over long prose.
-5. **Code blocks**: always specify the language (`yaml`, `bash`, `python`, `rego`, etc.).
-6. **Diagrams**: use ` ```mermaid ` blocks for graphs and architecture. No ASCII art.
-   - Directory trees and config hierarchies may stay in plain code blocks since they are already textual structures.
-7. **Closing paragraph**: tease the next post ("다음 글에서는 ~를 다뤄요.") or summarize the key points.
+### 설명이 먼저, 코드는 마지막
 
-### Code minimization
+각 섹션 안에서 순서는 **개념 단락 → 표/다이어그램 → (필요 시) 코드/데이터**. 코드 먼저 던지고 설명을 다는 구조 금지.
 
-The reader needs to understand **what and why**, not the full YAML/code dump. Code is a **supporting aid**, not the main content.
+### 표는 적극, 코드는 절제
 
-- No full config dumps. Extract **5–15 lines** of the essential fields and replace the rest with `...` or an omission comment.
-- Do not repeat the same concept in multiple code blocks. Once shown, follow up with prose or tables.
-- Include boilerplate (`runs-on`, `steps`, standard imports, etc.) only when it matters for the point.
-- If tables and diagrams already convey the idea, skip code entirely. **Code is optional, not default.**
+비교·옵션·타입 분해는 산문보다 표. 코드는 **보조** 도구이고 기본이 아니다.
 
-### Visualization policy
+- 풀 설정 덤프 금지. 5~15 줄로 핵심 필드만, 나머지는 `...` 또는 생략 주석.
+- 같은 개념을 코드 블록 여러 개로 반복하지 말 것. 한 번 보였으면 다음은 산문/표로.
+- 표·다이어그램만으로 의미가 전달되면 코드는 빼도 된다.
 
-Choose visualization based on each section's **cognitive load**. There is no fixed count rule.
+단, **재현 가능성** 을 위해 다음은 코드/데이터로 반드시 보여준다.
 
-- Sections that are hard to grasp (multi-layer structure, ordered flows, abstract relationships) should get visualization **regardless of count**. Multiple diagrams in one section is fine if needed.
-- Plain enumeration or definition sections do not need forced visualization. Leave them as prose if prose is enough.
+- 실제 페이로드 (JWT 클레임, API 응답, 이벤트 본문) — 핵심 필드는 진짜 값으로.
+- 핵심 명령 (CLI 호출, 쿼리, kubectl/gcloud 등) — 실제로 입력했을 때 동작하는 형태로.
+- 잘못된 설정 vs 올바른 설정 비교가 필요한 곳.
 
-Choice by purpose:
+### 시각화 정책
 
-| Situation                              | Recommended visualization |
-| -------------------------------------- | ------------------------- |
-| Architecture / component relations     | mermaid `flowchart`       |
-| Time-ordered call flow                 | mermaid `sequenceDiagram` |
-| State transitions / lifecycle          | mermaid `stateDiagram-v2` |
-| Options / types / attribute comparison | Markdown table            |
-| Config hierarchy / directory tree      | Plain code block          |
-| UI screenshots                         | Image (`assets/images/`)  |
+`##` 섹션마다 **인지 부하** 에 맞춰 선택. 고정 개수 규칙 없음.
 
-For mermaid, follow the palette, node shapes, and edge style rules in `.claude/skills/mermaid/SKILL.md`.
+| 상황                              | 권장 시각화                |
+| --------------------------------- | -------------------------- |
+| 아키텍처 / 구성 요소 관계         | mermaid `flowchart`        |
+| 시간 순 호출 흐름                 | mermaid `sequenceDiagram`  |
+| 상태 전이 / 라이프사이클          | mermaid `stateDiagram-v2`  |
+| 옵션 / 타입 / 속성 비교           | Markdown 표                |
+| 설정 계층 / 디렉터리 트리         | 일반 코드 블록             |
+| UI 스크린샷                       | 이미지 (`assets/images/`)  |
+| 개념 모형이 mermaid 로 안 잡힐 때 | 직접 그린 SVG (`assets/images/{cat}/{post}/...svg`) |
 
-### Callout box (use sparingly)
+복잡하거나 다층 구조면 다이어그램을 **여러 개** 써도 된다. 단순 정의 나열 섹션은 산문만으로 충분.
+
+mermaid 작성 시 색상·노드 모양·엣지 스타일은 `.claude/skills/mermaid/SKILL.md` 를 따름.
+
+### 콜아웃 (드물게)
 
 ```html
 <div class="callout why">
   <div class="callout-title">핵심 차이</div>
-  Use one paragraph to emphasize the central claim of the post. Do not overuse.
+  글에서 한 번만 강조하고 싶은 핵심 주장. 남발하면 무게 사라짐.
 </div>
 ```
 
-### Sentence style (Korean)
+한 글에 0~1 회. 모든 섹션에 callout 박는 패턴 금지.
 
-- Keep sentences short. Technical terms may appear in the original language alongside a Korean gloss when helpful.
-- Strip unnecessary Korean intensifiers: "매우", "정말", "굉장히", "아주" 등.
-- Use `-` for bullet lists; indent sub-items by 2 spaces.
-- Use `**bold**` on one or two conceptual words only. Never bold an entire sentence.
+### 문장 스타일
 
-### Readability — line-break rules
+- 짧게. 한 문장 80자 넘으면 쉼표·접속어에서 끊는다. "~하는데, ~하고, ~해서" 식 연쇄 종결 피함.
+- 한국어 강조어 ("매우", "정말", "굉장히", "아주") 제거.
+- 리스트는 `-`, 하위 항목은 2 칸 들여쓰기.
+- `**bold**` 는 개념 키워드 한두 개에만. 문장 통째로 굵게 표시 금지.
 
-Long solid paragraphs exhaust the reader. Break text **at semantic boundaries** so the eye can rest.
+### 단락 분리
 
-- Keep a paragraph under **2–4 sentences**. If longer, insert a blank line and split into a new paragraph.
-- Force a blank line at concept shifts and at cause → effect transitions.
-- Always leave **one blank line** before and after lists, code blocks, tables, diagrams, and callouts. Do not glue them to adjacent paragraphs.
-- If a sentence exceeds 80 characters, **split it at commas or conjunctions**. Avoid chained Korean endings like "~하는데, ~하고, ~해서" that run on.
-- Callouts and emphasis blocks lose their effect when they are packed tight against surrounding text. Give them breathing room.
+- 한 단락은 2~4 문장. 더 길면 빈 줄로 새 단락.
+- 개념 전환·인과 전환에서는 반드시 빈 줄.
+- 리스트·코드·표·다이어그램·콜아웃 앞뒤로 빈 줄 1 줄. 본문과 붙이지 말 것.
 
 ## Workflow
 
-1. Read `_data/categories.yml` to confirm category/subcategory values and grab the `{category-slug}`.
-2. Read 1–2 existing posts from `_posts/{category-slug}/` as style references.
-3. If the user has not specified topic/category/order/tags, ask briefly.
-4. Write the file as `_posts/{category-slug}/YYYY-MM-DD-slug.md`. Create the subfolder if it does not exist. Use the `Today's date` value from `CLAUDE.md` for the date.
-5. After writing, report only a short summary. Do not paste the body back.
+1. `_data/categories.yml` 을 읽어 category/subcategory 와 `{category-slug}` 확정.
+2. 같은 카테고리의 최근 글 1~2 편을 빠르게 훑어 스타일 참고.
+3. 주제·핵심 질문이 모호하면 한 번만 짧게 확인. 깊이 기준에 비춰 한 편으로 끝낼지 시리즈로 가야 할지 판단 (시리즈면 `post-plan` 으로).
+4. 도입 → 본문 섹션들 → 마무리 순으로 작성. 각 섹션을 닫기 전에 **이 섹션이 깊이 기준 1~5 중 어떤 항목을 충족하는지** 자문.
+5. 글 전체를 다 쓴 뒤 **깊이 기준 5 개** 와 **안티패턴 목록** 으로 셀프 리뷰. 통과 못 하면 발행하지 말고 부족한 섹션을 더 판다.
+6. 사용자에게는 짧은 요약만 보고. 본문 다시 붙여 넣지 않는다.
 
 ## Prohibitions
 
-- No emojis unless the user explicitly asks for them.
-- No Korean marketing superlatives: "최고의", "혁신적인", "압도적인" 등.
-- No performance numbers without a source.
-- If a single post grows past 10 `##` sections, consider splitting it.
+- 이모지 — 사용자가 명시적으로 요청하지 않으면 금지.
+- 한국어 마케팅 과장 ("최고의", "혁신적인", "압도적인", "획기적인") 금지.
+- 출처 없는 성능 수치 금지.
+- "자세한 건 공식 문서 참고" 식으로 핵심을 떠넘기는 문장 금지 — 그 핵심이 글의 본문이어야 함.
+- 한 글이 `##` 10 개를 넘기면 시리즈로 분리.
+- 코드 블록 언어 태그 누락 금지 (` ```yaml `, ` ```bash ` 등 항상 명시).

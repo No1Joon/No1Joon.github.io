@@ -1,97 +1,94 @@
 ---
 name: post-plan
-description: Use when the user starts a new subcategory series on the No1Joon blog. Drafts the post count and titles up front so the whole series is planned before any post is written.
+description: Use when the user wants a multi-post series. 단편으로 충분한 주제를 시리즈로 부풀리지 않도록 먼저 "정말 시리즈가 필요한가" 를 따지고, 필요하면 편수·각 편의 핵심 질문을 확정한 뒤 `blog-post` 로 넘긴다.
 ---
 
-Plan a subcategory series before writing any individual post. The goal is to agree on **how many posts** and **what each title will be** with the user first, and only then hand off to `blog-post` for actual writing.
+시리즈를 시작하기 전에 **시리즈로 갈 가치가 있는지** 부터 판단하고, 그렇다면 각 편이 어떤 구체 질문에 답하는지를 확정한다. 단순히 한 주제를 N등분하는 게 아니라, 각 편이 **독립적으로 깊이 기준을 통과할 수 있을 만큼의 무게** 를 가지는지 본다.
 
 ## When to use
 
-Trigger when the user asks for a whole subcategory series. Typical Korean phrasings:
+다음과 같은 한국어 요청에서 트리거.
 
-- "~에 대한 포스팅해"
-- "~ 시리즈 써줘"
-- "~ 관련해서 글 써보자"
-- e.g., "Kubernetes에 대해 써줘", "AWS 포스팅 시작하자"
+- "~ 에 대한 포스팅해", "~ 시리즈 써줘", "~ 관련해서 글 써보자"
+- e.g., "Kubernetes 에 대해 써줘", "WIF 시리즈 시작하자"
 
-Also trigger when the target subcategory has no posts yet, or the user clearly opens a new series within it.
+다음은 **트리거하지 않는다**.
 
-Skip this skill when:
+- 한 가지 구체 주제 한 편 ("CSRF 공격 한 편 써줘") — `blog-post` 로 바로.
+- 기존 글 수정·개선.
 
-- The user asks for **one specific post** with a concrete topic (e.g., "CSRF 공격에 대해 한 편 써줘"). Use `blog-post` directly.
-- The user is editing or improving an existing post.
+## 시리즈로 갈지 단편으로 갈지 — 먼저 결정
 
-## Workflow
+다음 질문에 답하고 결정한다.
 
-1. **Confirm the subcategory.** Read `_data/categories.yml` and map the user's topic to a valid `category` / `subcategory`. Record the category's `slug` — it becomes the target folder under `_posts/`. If ambiguous, ask.
-2. **Check existing posts** under `_posts/{category-slug}/` for that subcategory. If some exist, the plan should extend (not duplicate) them — continue `order` numbering from the last one. If the folder does not exist yet (first post in this category), plan to create it.
-3. **Draft the plan.** Decide the post count and titles based on the topic's scope. Default to **3–5 posts** for a typical subcategory. Fewer if the topic is narrow, more only when the user explicitly signals depth.
-4. **Show the plan in the format below and wait for confirmation.** Do not create files yet.
-5. **After the user approves** (or gives edits), hand off to the `blog-post` skill for each post. Write one post at a time unless the user asks for bulk generation.
+1. **편 분리가 자연스러운가**: 한 편 안에서 다 다루면 `##` 12 개를 넘기거나 본문 500 줄을 크게 넘는가? 그렇지 않으면 단편이 맞다.
+2. **각 편이 독립적으로 가치가 있는가**: 시리즈 2 편이 1 편을 안 읽으면 의미가 없는 식이면, 그건 한 편을 강제로 둘로 나눈 것. 합쳐야 함.
+3. **각 편이 깊이 기준을 통과할 수 있는가**: 각 편이 `blog-post` 의 깊이 기준 5 개를 자체적으로 충족할 만큼의 디테일이 있는가? 한 편이 "개요" 만으로 채워질 것 같으면 그 편은 빼고 다음 편의 도입으로 통합.
 
-## Plan output format
+판단 결과에 따라:
 
-Present the plan as a compact Markdown table plus a one-line rationale. This output is shown to a Korean-speaking user, so keep user-facing labels in Korean. Keep it short — the point is fast agreement, not a document.
+- **단편이 맞으면** — 이 스킬을 종료하고 사용자에게 "한 편으로 가는 게 낫겠다" 고 짧게 설명 후 `blog-post` 로.
+- **시리즈가 맞으면** — 아래 워크플로로 진행.
+
+## Workflow (시리즈로 가기로 한 경우)
+
+1. **카테고리 확정**: `_data/categories.yml` 을 읽어 사용자의 주제를 valid `category` / `subcategory` 에 매핑. 카테고리의 `slug` 가 `_posts/` 하위 폴더가 된다. 모호하면 한 번 확인.
+2. **기존 글 확인**: `_posts/{category-slug}/` 에 같은 series-slug 가 있는지 본다. 있으면 `order` 번호를 이어서 매긴다. 없으면 새로 시작.
+3. **편수 결정**: 기본 **2~4 편**. 5 편 넘기려면 정말 그만큼의 독립 깊이가 있는지 다시 검토. 6 편 이상은 거의 항상 분리 신호.
+4. **각 편의 핵심 질문 작성**: 각 편마다 "이 편을 다 읽은 독자가 답할 수 있어야 하는 구체 질문" 을 1 개 적는다. 제목보다 이 질문이 먼저 정해져야 한다.
+5. **플랜 출력 후 사용자 승인 대기**. 파일 아직 만들지 말 것.
+6. **승인 후** 각 편마다 `blog-post` 호출. 한 번에 한 편씩이 기본. 사용자가 명시적으로 일괄 생성을 요청하면 그때만 묶어서.
+
+## 플랜 출력 포맷
+
+한국어 사용자에게 보여지는 출력. 짧고 빠른 합의가 목적.
 
 ````markdown
 ## 시리즈 계획 — {Category} / {Subcategory}
 
-| order | 경로                                                                   | 제목                                |
-| ----- | ---------------------------------------------------------------------- | ----------------------------------- |
-| 1     | `_posts/{category-slug}/YYYY-MM-DD-{sub-slug}-01-overview.md`          | "{구조와 개념을 잡는 개요 글 제목}" |
-| 2     | `_posts/{category-slug}/YYYY-MM-DD-{sub-slug}-02-{topic}.md`           | "{두 번째 글 제목}"                 |
-| 3     | `_posts/{category-slug}/YYYY-MM-DD-{sub-slug}-03-{topic}.md`           | "{세 번째 글 제목}"                 |
-| 4     | `_posts/{category-slug}/YYYY-MM-DD-{sub-slug}-04-advanced.md`          | "{고급·운영 관점 마무리 글 제목}"   |
+| order | 경로                                                                   | 제목                                | 이 편이 답할 핵심 질문            |
+| ----- | ---------------------------------------------------------------------- | ----------------------------------- | --------------------------------- |
+| 1     | `_posts/{category-slug}/YYYY-MM-DD-{series-slug}-01-{topic}.md`        | "{제목}"                            | "{한 줄 질문}"                    |
+| 2     | `_posts/{category-slug}/YYYY-MM-DD-{series-slug}-02-{topic}.md`        | "{제목}"                            | "{한 줄 질문}"                    |
+| 3     | `_posts/{category-slug}/YYYY-MM-DD-{series-slug}-03-{topic}.md`        | "{제목}"                            | "{한 줄 질문}"                    |
 
-**구성 의도**: {왜 이 순서·이 개수로 나눴는지 한 문장}
+**구성 의도**: {왜 이 분할인지 한 문장}
+
+**각 편 깊이 메모**: {각 편이 다룰 재현 가능한 디테일·함정·실제 데이터 예시. 한 편당 1~2 줄.}
 ````
 
-Always append the confirmation prompt in Korean, verbatim:
+그 다음 줄에 정확히 이 문장을 붙인다.
 
-> 이 구성으로 진행할까요? 개수·제목·순서 바꾸고 싶으면 알려주세요.
+> 이 구성으로 진행할까요? 개수·제목·핵심 질문 바꾸고 싶으면 알려주세요.
 
-## Title rules (Korean output)
+## 안티패턴 — 이런 시리즈 구성은 금지
 
-- **Keep titles concise.** One line, core keyword only. Ideal around 15 Korean characters, never over 25.
-- **No subtitle.** Do not append an em-dash description. Put details in the `description` field.
-  - ❌ "GitHub Actions 핵심 구조 — Workflow·Job·Step·Action이 맞물리는 방식"
+- **"개요 → 구조 → 적용 → 운영"** 4 편 템플릿. 거의 항상 1~2 편은 도입 / 마지막은 운영 팁 나열 수준이 되어 깊이 기준 미달. 정말 4 편 분량이 있는 게 아니면 2 편으로 합칠 것.
+- **모든 시리즈가 4 편**. 주제 크기가 다른데 편수가 매번 같으면 분할 기준이 작동 안 한 것.
+- **편 제목이 "Part 2", "계속", "심화 1"** 처럼 독립 주제가 안 보임 — 합치든가 다시 분할.
+- **편 간 의존도가 높음** — 2 편을 읽으려면 1 편을 꼭 봐야 하면 한 편으로 묶거나, 도입을 각 편에서 짧게 반복.
+
+## 제목 규칙 (한국어)
+
+- 한 줄, 핵심 키워드만. 한글 15 자 안팎이 이상적이고 25 자 넘으면 안 된다.
+- 부제(em-dash 설명) 금지. 디테일은 `description` 에.
+  - ❌ "GitHub Actions 핵심 구조 — Workflow·Job·Step·Action 이 맞물리는 방식"
   - ✅ "GitHub Actions 핵심 구조"
-- Middle-series posts must **stand alone** as topics. Avoid vague titles like "Part 2" or "계속".
+- 중간 편 제목은 그 자체로 무엇을 다루는지 보여야 한다.
 
-## Date policy
+## 날짜 정책
 
-- All posts in one series share the same `date` (e.g., all `2026-04-15`).
-- Sorting is driven by `order`, so date differences are unnecessary.
-- Use the `Today's date` value from `CLAUDE.md` as the source of truth.
+- 한 시리즈의 모든 편은 같은 `date` 를 공유.
+- 정렬은 `order` 가 결정하므로 날짜 차등 불필요.
+- `CLAUDE.md` 의 `Today's date` 값을 source of truth 로.
 
-## Slug policy
+## Slug 정책
 
-- Filename slug: `{subcategory-slug}-{nn}-{short-topic}` — use the `slug` defined in `_data/categories.yml` as-is.
-- `nn` is two-digit zero-padded (`01`, `02`, ...).
+- 파일명 slug: `{series-slug}-{nn}-{short-topic}`. `series-slug` 는 `_data/categories.yml` 의 subcategory `slug` 를 그대로 쓰거나, 시리즈가 특정 주제(예: WIF)에 한정되면 그 주제 슬러그를 쓴다.
+- `nn` 은 두 자리 zero-padded (`01`, `02`, ...).
 
 ## Prohibitions
 
-- Do not create any file before the user approves the plan. Stop after presenting the plan.
-- Do not mass-generate multiple posts automatically. Default is **one post at a time**.
-- Do not oversize a series. If it exceeds 10 posts, split into two subcategories/series.
-
-## Example
-
-User: "Kubernetes에 대한 포스팅해"
-
-Skill response:
-
-````
-## 시리즈 계획 — Container & Orchestration / Kubernetes
-
-| order | 경로 | 제목 |
-|-------|------|------|
-| 1 | `_posts/container-orchestration/2026-04-15-kubernetes-01-overview.md` | "Kubernetes 핵심 구조" |
-| 2 | `_posts/container-orchestration/2026-04-15-kubernetes-02-workloads.md` | "Pod와 Workload 오브젝트" |
-| 3 | `_posts/container-orchestration/2026-04-15-kubernetes-03-networking.md` | "Kubernetes 네트워킹" |
-| 4 | `_posts/container-orchestration/2026-04-15-kubernetes-04-operations.md` | "프로덕션 운영 패턴" |
-
-**구성 의도**: 구조 → 워크로드 → 네트워킹 → 운영 순으로 현업에서 접하는 순서대로 쌓아요.
-
-이 구성으로 진행할까요? 개수·제목·순서 바꾸고 싶으면 알려주세요.
-````
+- 사용자 승인 전에 파일 생성 금지. 플랜 출력 후 멈출 것.
+- 여러 편을 자동으로 일괄 생성 금지. 기본은 **한 편씩**.
+- 시리즈 길이가 5 편을 넘으면 두 시리즈로 분리하는 게 거의 항상 옳다.
