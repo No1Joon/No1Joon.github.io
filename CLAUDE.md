@@ -18,12 +18,12 @@ Jekyll 기반 GitHub Pages 블로그 (Claude·Gemini 공통 컨텍스트). 기�
 - `api/` — 댓글 시스템 FastAPI 서비스. 상세는 `api/CLAUDE.md`.
 - `.claude/skills/` — 작업별 가이드라인 (Skills 섹션).
 - `.gemini/` — Gemini CLI 설정 (동일 컨텍스트 공유).
-- `Tasks.md` — 진행 중 작업 트래커 (SEO·메타 개선 등).
+- `Tasks.md` — 진행 중 작업 트래커.
 
 ## Skills
 
-- `.claude/skills/post-plan/SKILL.md` — 서브카테고리 시리즈 시작 시 편수·제목 리스트 먼저 확정.
-- `.claude/skills/blog-post/SKILL.md` — 개념·아키텍처 딥다이브 포스트 작성. front matter 스펙 소스 오브 트루스. 톤·길이·시각화·Do-Not 규칙.
+- `.claude/skills/post-plan/SKILL.md` — 한 주제를 시리즈로 갈 가치가 있다고 판단했을 때만 사용 (편수·각 편 핵심 질문 확정).
+- `.claude/skills/blog-post/SKILL.md` — Tech / Explainer 등 깊이 있는 단편·시리즈 작성. front matter 스펙·깊이 기준·톤·시각화·Do-Not 규칙.
 - `.claude/skills/daily-post/SKILL.md` — Daily Dev 포스트 (Troubleshooting·Tips & Tools). 스크린샷 워크플로 포함.
 - `.claude/skills/news-post/SKILL.md` — News (AI Weekly 등) 주간 브리핑을 본문 변경 없이 그대로 포스트화. front matter 만 부착.
 - `.claude/skills/mermaid/SKILL.md` — 다이어그램 색상·구조·선 스타일.
