@@ -6,6 +6,7 @@ order: 1
 category: Daily Dev
 subcategory: Troubleshooting
 tags: [troubleshooting, ios-simulator, sign-in-with-apple, oauth, icloud, apple-developer]
+image: /assets/og/2026-05-16-simulator-apple-signin-error.png
 ---
 
 새로 만든 Apple 개발자 계정으로 앱에 Sign in with Apple OAuth 를 붙이고 iOS 시뮬레이터에서 첫 로그인을 시도하자마자 "username or password incorrect" 오류가 떴습니다. 같은 계정으로 웹 로그인은 정상으로 통과되어서 자격증명 자체가 틀린 게 아니라 계정 상태 쪽이 문제일 것으로 보고 그쪽을 건드렸습니다

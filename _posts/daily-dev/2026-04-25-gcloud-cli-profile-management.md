@@ -6,6 +6,7 @@ order: 4
 category: Daily Dev
 subcategory: Tips & Tools
 tags: [gcloud, gcp, cli, devops, tips-tools, cloud-computing]
+image: /assets/og/2026-04-25-gcloud-cli-profile-management.png
 ---
 
 Google Cloud(GCP)를 실무에서 사용하다 보면 개인 프로젝트, 사내 공용 프로젝트, 그리고 고객사별 환경까지 수십 개의 프로젝트를 오가게 됩니다. 이때 가장 위험한 상황은 '엉뚱한 프로젝트'에 명령어를 내리는 것입니다. 이를 방지하기 위한 `gcloud` CLI의 핵심 관리 기법을 상세히 정리합니다
