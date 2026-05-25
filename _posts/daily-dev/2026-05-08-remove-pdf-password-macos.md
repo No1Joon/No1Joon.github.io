@@ -6,6 +6,7 @@ order: 1
 category: Daily Dev
 subcategory: Tips & Tools
 tags: [macos, pdf, preview, tips]
+image: /assets/og/2026-05-08-remove-pdf-password-macos.png
 ---
 
 업무를 하다 보면 보안을 위해 암호가 걸린 PDF 파일을 받게 됩니다. 파일을 열 때마다 암호를 입력하는 번거로움을 줄이고 싶을 때, macOS 사용자라면 별도의 소프트웨어 설치 없이 기본 앱인 **미리보기**(Preview)만으로 암호를 제거할 수 있습니다

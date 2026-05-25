@@ -6,6 +6,7 @@ order: 1
 category: Tech
 subcategory: Explainer
 tags: [qr-code, explainer, encoding, reed-solomon, masking]
+image: /assets/og/2026-05-16-qr-explainer.png
 ---
 
 QR 코드는 매일 본다. 카페 메뉴, 택시 결제, 지하철 광고. 그런데 카메라가 그 흑백 점 격자만 보고 어떻게 URL을 읽어내는지 생각해본 적은 별로 없는 것 같다.
