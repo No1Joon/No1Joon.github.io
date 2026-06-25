@@ -14,12 +14,7 @@
 <body class="preload">
   <header class="site-header">
     <div class="inner">
-      <div class="header-left">
-        <button type="button" class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">
-          <span></span><span></span><span></span>
-        </button>
-        <a href="{{ '/' | relative_url }}" class="site-title">No1Joon<span>.dev</span></a>
-      </div>
+      <a href="{{ '/' | relative_url }}" class="site-title">No1Joon<span>.dev</span></a>
       <nav>
         <a href="{{ '/' | relative_url }}">Posts</a>
         <a href="{{ '/resume' | relative_url }}">Resume</a>
@@ -28,92 +23,15 @@
     </div>
   </header>
 
-  <div class="site-body" id="siteBody">
-    <aside class="site-sidebar" id="siteSidebar">
-      <nav class="sidebar-nav">
-        {% for cat in site.data.categories %}
-          {% assign cat_posts = site.posts | where: "category", cat.name | sort: 'order' %}
-          {% assign is_active_cat = false %}
-          {% if page.category == cat.name %}{% assign is_active_cat = true %}{% endif %}
-          <div class="sidebar-section">
-            <button type="button" class="sidebar-label" aria-expanded="{% if is_active_cat %}true{% else %}false{% endif %}">
-              <span>{{ cat.name }}</span>
-              <svg class="sidebar-chevron" width="12" height="12" viewBox="0 0 12 12"><path d="M4 2l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            </button>
-            <div class="sidebar-body{% if is_active_cat %} is-open{% endif %}">
-              {% for sub in cat.subcategories %}
-                {% assign sub_posts = cat_posts | where: "subcategory", sub.name %}
-                <div class="sidebar-subcategory{% if sub_posts.size > 0 %} has-posts{% endif %}">{{ sub.name }}</div>
-                {% for post in sub_posts %}
-                  <a href="{{ post.url | relative_url }}" class="sidebar-link{% if page.url == post.url %} active{% endif %}">
-                    {{ post.title | split: " — " | first }}
-                  </a>
-                {% endfor %}
-              {% endfor %}
-            </div>
-          </div>
-        {% endfor %}
-      </nav>
-    </aside>
-
-    <main class="site-main">
-      {{ content }}
-    </main>
-  </div>
+  <main class="site-main">
+    {{ content }}
+  </main>
 
   <footer class="site-footer">
     <p>© {{ 'now' | date: "%Y" }} No1Joon — Built with Jekyll & GitHub Pages</p>
   </footer>
 
   <script>
-    const toggle = document.getElementById('sidebarToggle');
-    const body = document.getElementById('siteBody');
-    const sidebar = document.getElementById('siteSidebar');
-    const STORAGE_KEY = 'sidebar-open';
-
-    const isOpen = localStorage.getItem(STORAGE_KEY) !== 'false';
-    if (!isOpen) collapse();
-
-    toggle.addEventListener('click', () => {
-      if (body.classList.contains('sidebar-closed')) {
-        expand();
-        localStorage.setItem(STORAGE_KEY, 'true');
-      } else {
-        collapse();
-        localStorage.setItem(STORAGE_KEY, 'false');
-      }
-    });
-
-    function expand() {
-      body.classList.remove('sidebar-closed');
-      toggle.classList.remove('collapsed');
-    }
-
-    function collapse() {
-      body.classList.add('sidebar-closed');
-      toggle.classList.add('collapsed');
-    }
-
-    document.querySelectorAll('.sidebar-label').forEach(btn => {
-      const panel = btn.nextElementSibling;
-      btn.addEventListener('click', () => {
-        const isOpen = panel.classList.contains('is-open');
-        btn.setAttribute('aria-expanded', String(!isOpen));
-        if (isOpen) {
-          panel.style.maxHeight = panel.scrollHeight + 'px';
-          panel.classList.remove('is-open');
-          requestAnimationFrame(() => { panel.style.maxHeight = '0'; });
-        } else {
-          panel.style.maxHeight = panel.scrollHeight + 'px';
-          panel.classList.add('is-open');
-        }
-      });
-      panel.addEventListener('transitionend', e => {
-        if (e.target !== panel || e.propertyName !== 'max-height') return;
-        if (panel.classList.contains('is-open')) panel.style.maxHeight = '';
-      });
-    });
-
     requestAnimationFrame(() => {
       requestAnimationFrame(() => document.body.classList.remove('preload'));
     });
