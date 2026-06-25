@@ -6,12 +6,6 @@
     - name: Tips & Tools
       slug: tips-tools
 
-- name: News
-  slug: news
-  subcategories:
-    - name: AI Weekly
-      slug: ai-weekly
-
 - name: Tech
   slug: tech
   subcategories:
