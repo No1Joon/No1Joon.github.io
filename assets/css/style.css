@@ -359,6 +359,15 @@ nav a:hover { color: var(--text); }
 
 .post-content p { margin-bottom: 1rem; }
 
+.post-content img {
+  display: block;
+  max-width: min(100%, 560px);
+  height: auto;
+  margin: 1.5rem auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
 .post-content ul, .post-content ol {
   padding-left: 1.5rem;
   margin-bottom: 1rem;
