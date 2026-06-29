@@ -1,0 +1,183 @@
+{% comment %}
+  Browsable post list: category top-menu (counts + collapsible subcategories)
+  + one-line list + 5-per-page pagination. Shared by the home page and post pages.
+  Optional param: initial_cat = category slug to pre-select on load.
+{% endcomment %}
+<nav class="cat-menu" id="catMenu" data-initial-cat="{{ include.initial_cat }}">
+  <div class="cat-row cat-row-main">
+    <button type="button" class="cat-btn active" data-filter="all">
+      전체 <span class="cat-count">{{ site.posts | size }}</span>
+    </button>
+    {% for cat in site.data.categories %}
+      {% assign cat_posts = site.posts | where: "category", cat.name %}
+      {% if cat_posts.size > 0 %}
+        {% assign sub_total = 0 %}
+        {% for sub in cat.subcategories %}
+          {% assign sp = cat_posts | where: "subcategory", sub.name %}
+          {% if sp.size > 0 %}{% assign sub_total = sub_total | plus: 1 %}{% endif %}
+        {% endfor %}
+        <button type="button" class="cat-btn" data-filter="cat" data-category="{{ cat.slug }}"
+                {% if sub_total > 0 %}data-haskids="true" aria-expanded="false"{% endif %}>
+          {{ cat.name }} <span class="cat-count">{{ cat_posts.size }}</span>
+          {% if sub_total > 0 %}
+          <svg class="cat-chevron" width="11" height="11" viewBox="0 0 12 12"><path d="M4 2l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          {% endif %}
+        </button>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  {% for cat in site.data.categories %}
+    {% assign cat_posts = site.posts | where: "category", cat.name %}
+    {% if cat_posts.size > 0 %}
+      {% assign sub_total = 0 %}
+      {% for sub in cat.subcategories %}
+        {% assign sp = cat_posts | where: "subcategory", sub.name %}
+        {% if sp.size > 0 %}{% assign sub_total = sub_total | plus: 1 %}{% endif %}
+      {% endfor %}
+      {% if sub_total > 0 %}
+      <div class="cat-row cat-subrow" data-parent="{{ cat.slug }}" hidden>
+        {% for sub in cat.subcategories %}
+          {% assign sp = cat_posts | where: "subcategory", sub.name %}
+          {% if sp.size > 0 %}
+          <button type="button" class="cat-btn cat-btn-sub" data-filter="sub"
+                  data-category="{{ cat.slug }}" data-subcategory="{{ sub.slug }}">
+            {{ sub.name }} <span class="cat-count">{{ sp.size }}</span>
+          </button>
+          {% endif %}
+        {% endfor %}
+      </div>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+</nav>
+
+<div class="post-list" id="postList">
+  {% for post in site.posts %}
+    {% assign cat_slug = "" %}
+    {% assign sub_slug = "" %}
+    {% for cat in site.data.categories %}
+      {% if cat.name == post.category %}
+        {% assign cat_slug = cat.slug %}
+        {% for sub in cat.subcategories %}
+          {% if sub.name == post.subcategory %}{% assign sub_slug = sub.slug %}{% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+    <a href="{{ post.url | relative_url }}" class="post-row" data-category="{{ cat_slug }}" data-subcategory="{{ sub_slug }}">
+      <div class="post-row-eyebrow">{{ post.category }}{% if post.subcategory %} · {{ post.subcategory }}{% endif %}</div>
+      <h2 class="post-row-title">{{ post.title }}</h2>
+      {% if post.description %}
+      <p class="post-row-desc">{{ post.description }}</p>
+      {% endif %}
+      <div class="post-row-meta">{{ post.date | date: "%Y. %m. %d" }}</div>
+    </a>
+  {% endfor %}
+</div>
+
+<div class="pager" id="pager" hidden>
+  <button type="button" class="pager-btn" id="pagerPrev">← 이전</button>
+  <span class="pager-info" id="pagerInfo">1 / 1</span>
+  <button type="button" class="pager-btn" id="pagerNext">다음 →</button>
+</div>
+
+<script>
+  (function () {
+    const PER_PAGE = 5;
+    const menu = document.getElementById('catMenu');
+    const rows = Array.from(document.querySelectorAll('.post-row'));
+    const subrows = Array.from(menu.querySelectorAll('.cat-subrow'));
+    const pager = document.getElementById('pager');
+    const pagerPrev = document.getElementById('pagerPrev');
+    const pagerNext = document.getElementById('pagerNext');
+    const pagerInfo = document.getElementById('pagerInfo');
+
+    let filtered = rows.slice();
+    let page = 0;
+
+    function setActive(btn) {
+      menu.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+
+    function openSubrow(parent) {
+      subrows.forEach(sr => { sr.hidden = sr.dataset.parent !== parent; });
+      menu.querySelectorAll('.cat-btn[data-haskids]').forEach(b => {
+        b.setAttribute('aria-expanded', String(b.dataset.category === parent));
+      });
+    }
+
+    function collapseAll() {
+      subrows.forEach(sr => { sr.hidden = true; });
+      menu.querySelectorAll('.cat-btn[data-haskids]').forEach(b => b.setAttribute('aria-expanded', 'false'));
+    }
+
+    function render() {
+      const totalPages = Math.max(1, Math.ceil(filtered.length / PER_PAGE));
+      if (page > totalPages - 1) page = totalPages - 1;
+      if (page < 0) page = 0;
+      const start = page * PER_PAGE;
+      const end = start + PER_PAGE;
+      rows.forEach(r => { r.style.display = 'none'; });
+      filtered.slice(start, end).forEach(r => { r.style.display = ''; });
+      pagerInfo.textContent = (page + 1) + ' / ' + totalPages;
+      pagerPrev.disabled = page === 0;
+      pagerNext.disabled = page >= totalPages - 1;
+      pager.hidden = totalPages <= 1;
+    }
+
+    function applyFilter(predicate) {
+      filtered = rows.filter(predicate);
+      page = 0;
+      render();
+    }
+
+    menu.addEventListener('click', function (e) {
+      const btn = e.target.closest('.cat-btn');
+      if (!btn) return;
+      const filter = btn.dataset.filter;
+      setActive(btn);
+
+      if (filter === 'all') {
+        applyFilter(() => true);
+        collapseAll();
+      } else if (filter === 'cat') {
+        const c = btn.dataset.category;
+        applyFilter(r => r.dataset.category === c);
+        if (btn.dataset.haskids) openSubrow(c); else collapseAll();
+      } else if (filter === 'sub') {
+        const c = btn.dataset.category;
+        const s = btn.dataset.subcategory;
+        applyFilter(r => r.dataset.category === c && r.dataset.subcategory === s);
+        openSubrow(c);
+      }
+    });
+
+    function goTo(p) {
+      page = p;
+      render();
+      menu.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    pagerPrev.addEventListener('click', () => goTo(page - 1));
+    pagerNext.addEventListener('click', () => goTo(page + 1));
+
+    // Initial render (default: all posts)
+    render();
+
+    // Pre-select: ?cat=&sub= query (explicit links) > initial_cat (current post's category) > all
+    const params = new URLSearchParams(location.search);
+    const qCat = params.get('cat');
+    const qSub = params.get('sub');
+    const initialCat = menu.dataset.initialCat;
+    let target = null;
+    if (qCat && qSub) {
+      target = menu.querySelector('.cat-btn[data-filter="sub"][data-category="' + qCat + '"][data-subcategory="' + qSub + '"]');
+    } else if (qCat) {
+      target = menu.querySelector('.cat-btn[data-filter="cat"][data-category="' + qCat + '"]');
+    } else if (initialCat) {
+      target = menu.querySelector('.cat-btn[data-filter="cat"][data-category="' + initialCat + '"]');
+    }
+    if (target) target.click();
+  })();
+</script>
