@@ -11,7 +11,7 @@ No1Joon 블로그의 깊이 있는 단편 또는 시리즈 한 편을 작성한�
 - 한 편 단위로 끝나는 단편 (Tech / Explainer 가 기본 카테고리).
 - 시리즈를 시작해야 하는 경우 — 먼저 `post-plan` 으로 편수·각 편 질문을 합의한 뒤 각 편마다 이 스킬을 호출.
 
-Daily Dev 트러블슈팅·팁은 `daily-post`, AI 위클리 같은 주간 브리핑은 `news-post` 를 사용한다.
+Daily Dev 트러블슈팅·팁은 `daily-post` 를 사용한다.
 
 ## 깊이 기준 — 이 글은 통과하는가
 
@@ -59,8 +59,7 @@ Daily Dev 트러블슈팅·팁은 `daily-post`, AI 위클리 같은 주간 브�
 ---
 title: "글의 핵심을 한 줄로"
 description: 검색·공유용 한 줄 요약
-date: YYYY-MM-DD
-order: 1                  # 시리즈일 때만. 단편은 생략.
+date: YYYY-MM-DD          # 목록은 date 최신순 정렬. 시리즈 순서는 date 로 (아래 post-plan 참조)
 category: Tech            # _data/categories.yml 의 name
 subcategory: Explainer    # 위 category 의 subcategories 중 하나
 tags: [kebab-case, tags]

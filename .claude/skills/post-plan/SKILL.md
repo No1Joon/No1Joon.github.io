@@ -33,7 +33,7 @@ description: Use when the user wants a multi-post series. 단편으로 충분한
 ## Workflow (시리즈로 가기로 한 경우)
 
 1. **카테고리 확정**: `_data/categories.yml` 을 읽어 사용자의 주제를 valid `category` / `subcategory` 에 매핑. 카테고리의 `slug` 가 `_posts/` 하위 폴더가 된다. 모호하면 한 번 확인.
-2. **기존 글 확인**: `_posts/{category-slug}/` 에 같은 series-slug 가 있는지 본다. 있으면 `order` 번호를 이어서 매긴다. 없으면 새로 시작.
+2. **기존 글 확인**: `_posts/{category-slug}/` 에 같은 series-slug 가 있는지 본다. 있으면 다음 편 번호(`nn`)와 날짜를 이어서 잡는다. 없으면 새로 시작.
 3. **편수 결정**: 기본 **2~4 편**. 5 편 넘기려면 정말 그만큼의 독립 깊이가 있는지 다시 검토. 6 편 이상은 거의 항상 분리 신호.
 4. **각 편의 핵심 질문 작성**: 각 편마다 "이 편을 다 읽은 독자가 답할 수 있어야 하는 구체 질문" 을 1 개 적는다. 제목보다 이 질문이 먼저 정해져야 한다.
 5. **플랜 출력 후 사용자 승인 대기**. 파일 아직 만들지 말 것.
@@ -46,11 +46,11 @@ description: Use when the user wants a multi-post series. 단편으로 충분한
 ````markdown
 ## 시리즈 계획 — {Category} / {Subcategory}
 
-| order | 경로                                                                   | 제목                                | 이 편이 답할 핵심 질문            |
-| ----- | ---------------------------------------------------------------------- | ----------------------------------- | --------------------------------- |
-| 1     | `_posts/{category-slug}/YYYY-MM-DD-{series-slug}-01-{topic}.md`        | "{제목}"                            | "{한 줄 질문}"                    |
-| 2     | `_posts/{category-slug}/YYYY-MM-DD-{series-slug}-02-{topic}.md`        | "{제목}"                            | "{한 줄 질문}"                    |
-| 3     | `_posts/{category-slug}/YYYY-MM-DD-{series-slug}-03-{topic}.md`        | "{제목}"                            | "{한 줄 질문}"                    |
+| 편 | 경로                                                                   | 제목                                | 이 편이 답할 핵심 질문            |
+| -- | ---------------------------------------------------------------------- | ----------------------------------- | --------------------------------- |
+| 1  | `_posts/{category-slug}/YYYY-MM-DD-{series-slug}-01-{topic}.md`        | "{제목}"                            | "{한 줄 질문}"                    |
+| 2  | `_posts/{category-slug}/YYYY-MM-DD-{series-slug}-02-{topic}.md`        | "{제목}"                            | "{한 줄 질문}"                    |
+| 3  | `_posts/{category-slug}/YYYY-MM-DD-{series-slug}-03-{topic}.md`        | "{제목}"                            | "{한 줄 질문}"                    |
 
 **구성 의도**: {왜 이 분할인지 한 문장}
 
@@ -78,9 +78,9 @@ description: Use when the user wants a multi-post series. 단편으로 충분한
 
 ## 날짜 정책
 
-- 한 시리즈의 모든 편은 같은 `date` 를 공유.
-- 정렬은 `order` 가 결정하므로 날짜 차등 불필요.
-- `CLAUDE.md` 의 `Today's date` 값을 source of truth 로.
+- 목록은 `date` 최신순으로 정렬된다 (`order` front matter 필드는 사이트에서 쓰지 않는다).
+- 시리즈는 각 편에 **읽는 순서대로 오름차순 `date`** 를 부여한다 (1편이 가장 이른 날짜, 마지막 편이 가장 늦은 날짜). 그래야 목록에서 편들이 나란히 묶인다. 단, 목록은 최신순이라 **마지막 편이 맨 위**에 노출된다.
+- 기준 날짜는 `CLAUDE.md` 의 `Today's date` 값을 source of truth 로.
 
 ## Slug 정책
 

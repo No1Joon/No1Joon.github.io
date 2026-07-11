@@ -40,7 +40,6 @@ Write a Daily Dev post for the No1Joon blog. 이 장르는 **짧고 정직한 �
 title: "본질이 드러나는 짧은 제목 (15자 내외)"
 description: 무엇에 대한 기록인지 한 줄 요약
 date: YYYY-MM-DD
-order: 1
 category: Daily Dev
 subcategory: Troubleshooting # 또는 "Tips & Tools"
 tags: [troubleshooting, 대상-도구, 플랫폼, 5~8개]
