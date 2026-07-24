@@ -108,6 +108,44 @@ permalink: /resume/
 
 ---
 
+## Personal Projects
+
+#### CaliMeal — AI 급식 식단 자동 생성 B2B SaaS
+Next.js 16 · Vertex AI (Gemini) · pgvector · Terraform · GCP · 풀스택 단독
+
+- LLM이 무엇을 생성하든 단가·중복·제철 규칙을 코드가 결정론적으로 보증하는 AI 생성 파이프라인 설계 (타임아웃·폴백·재검증 3중 방어)
+- Cloud SQL의 BYPASSRLS 제약을 owner-bypass 2-풀 + `SET LOCAL`로 우회한 멀티테넌트 격리, 크로스테넌트 유출 불가를 자동 테스트로 증명
+- Next.js Server Actions/SSE부터 Terraform 전 GCP 인프라 IaC까지 단독 설계·구현
+
+---
+
+#### JJTeam — 코트 스포츠 팀 구성·대기열 실시간 관리 앱
+Expo / React Native · FastAPI · MongoDB · WebSocket · GCP · CI/CD · 풀스택 단독
+
+- RN 클라이언트 + FastAPI/MongoDB 백엔드 + GCP 인프라 + CI/CD를 단독 아키텍팅, iOS/Android 스토어 제출까지 완주
+- WebSocket 기반 다중 디바이스 실시간 동기화를 낙관적 되감기·재구독·close code 처리로 견고하게 구현
+- GitHub OIDC→WIF 자격증명-zero 배포, 백엔드 pytest 221개 · ruff · mypy CI 게이트 운영
+
+---
+
+#### Oh My Algorithm — 알고리즘 인터랙티브 시각화 웹앱
+React 19 · Vite 8 · Remotion · Puppeteer SSG · 프론트엔드 단독 · [ohmyalgorithm.com](https://ohmyalgorithm.com)
+
+- 14개 카테고리 50개 알고리즘을 단계별 인터랙티브 시각화로 직접 구현, 한/영 이중언어 실서비스 운영
+- 알고리즘 정의 하나로 웹앱 + 영상(Remotion) 두 출력을 구동하는 프레젠테이션 불가지론 데이터 레이어 설계
+- Puppeteer 기반 자체 SSG로 100개 라우트 정적 프리렌더, per-page SEO(OG·JSON-LD·hreflang) 완비
+
+---
+
+#### 로키 (Law+Key) — 개인 맞춤형 법률 가이드 플랫폼
+React / Redux Toolkit · NestJS · Prisma · OpenAI · 소셜 로그인 · 풀사이클 단독
+
+- React/Redux + NestJS/Prisma 풀사이클 단독 개발, OpenAI 연동 법률 상담 플랫폼 (청년동 사이드 프로젝트)
+- 구조화 사전 질문지 + 공감 페르소나·의도 확인 프롬프트 엔지니어링으로 상담 품질 개선
+- OpenAI 직접 호출을 공식 라이브러리로 전환해 응답 안정성·스트리밍 대응 개선
+
+---
+
 ## Education
 
 **동양미래대학교** — 전기공학과
