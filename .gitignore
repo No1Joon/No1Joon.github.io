@@ -4,6 +4,7 @@ _site/
 .sass-cache/
 .DS_Store
 .gemini/
+.antigravitycli/
 .claude/settings.local.json
 
 assets/raw-images/
