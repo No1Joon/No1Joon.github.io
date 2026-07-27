@@ -80,7 +80,7 @@ description: Use when the user wants a multi-post series. 단편으로 충분한
 
 - 목록은 `date` 최신순으로 정렬된다 (`order` front matter 필드는 사이트에서 쓰지 않는다).
 - 시리즈는 각 편에 **읽는 순서대로 오름차순 `date`** 를 부여한다 (1편이 가장 이른 날짜, 마지막 편이 가장 늦은 날짜). 그래야 목록에서 편들이 나란히 묶인다. 단, 목록은 최신순이라 **마지막 편이 맨 위**에 노출된다.
-- 기준 날짜는 `CLAUDE.md` 의 `Today's date` 값을 source of truth 로.
+- 기준 날짜는 세션 컨텍스트에 주입되는 `Today's date` 값을 source of truth 로 (하네스가 넣어주는 값 — 파일에 적혀 있지 않다).
 
 ## Slug 정책
 
