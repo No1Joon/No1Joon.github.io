@@ -19,4 +19,4 @@ Jekyll 블로그 포스트 디렉터리. 카테고리 slug 기준으로 서브�
 
 ## References
 
-See @_data/categories.yml for category/subcategory definitions
+- `_data/categories.yml` — 카테고리·서브카테고리 정의 (front matter 값의 기준)

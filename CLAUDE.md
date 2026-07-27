@@ -6,18 +6,17 @@ Jekyll 기반 GitHub Pages 블로그 (Claude·Gemini 공통 컨텍스트). 기�
 
 - `bundle install` — 의존성 설치
 - `bundle exec jekyll serve` — 로컬 프리뷰 (http://localhost:4000)
+- `npm run generate-og` — 포스트 OG 이미지 생성 (`assets/og/`)
 
 ## Architecture
 
-- `_posts/` — 블로그 글 (Markdown). 카테고리 slug 하위 폴더 구조. 상세는 `_posts/CLAUDE.md`.
-- `_layouts/` — Jekyll 레이아웃 (`default.html`, `post.html`, `resume.html`).
-- `_data/categories.yml` — 카테고리·서브카테고리 정의. front matter 의 category/subcategory 값은 여기 기준.
-- `_config.yml` — Jekyll 설정.
-- `assets/` — CSS·이미지. 이미지 구조·raw 보존 규칙은 `assets/CLAUDE.md`.
-- `scripts/add-screenshot.py` — Desktop 스크린샷 → WebP 변환 및 배치.
-- `api/` — 댓글 시스템 FastAPI 서비스. 상세는 `api/CLAUDE.md`.
-- `.claude/skills/` — 작업별 가이드라인 (Skills 섹션).
-- `.gemini/` — Gemini CLI 설정 (동일 컨텍스트 공유).
+- `_posts/` — 블로그 글. Jekyll 기본과 달리 **카테고리 slug 하위 폴더**로 나뉜다 (URL 에는 영향 없음). 상세는 `_posts/CLAUDE.md`.
+- `_data/categories.yml` — 포스트 front matter 의 category/subcategory 유효값을 규정하는 단일 출처.
+- `assets/` — 최적화본 `images/` 와 원본 `raw-images/` 가 같은 구조를 미러링. 상세는 `assets/CLAUDE.md`.
+- `scripts/add-screenshot.py` — Desktop 스크린샷을 WebP 로 변환해 위 두 트리에 배치.
+- `scripts/generate-og.mjs` → `assets/og/` — OG 이미지 생성물 (원본은 포스트 front matter).
+- `api/` — 댓글 시스템 FastAPI 서비스. 사이트와 별개로 배포된다. 상세는 `api/CLAUDE.md`.
+- `.gemini/` — Gemini CLI 설정. 이 CLAUDE.md 와 같은 컨텍스트를 공유한다.
 - `Tasks.md` — 진행 중 작업 트래커.
 
 ## Skills
@@ -30,11 +29,6 @@ Jekyll 기반 GitHub Pages 블로그 (Claude·Gemini 공통 컨텍스트). 기�
 
 ## Environment
 
-- Ruby + Bundler (Jekyll).
+- Ruby + Bundler (Jekyll). Node (OG 이미지 생성). CI 는 Ruby 3.3 / Node 20.
 - `main` 브랜치 푸시 시 `.github/workflows/deploy.yml` 가 GitHub Pages 로 자동 배포.
 - `assets/raw-images/` 는 `.gitignore` 로 제외 (원본 보존용, 사이트 산출물에 포함되지 않음).
-
-## References
-
-See @Tasks.md for current work tracker
-See @_data/categories.yml for category/subcategory definitions
