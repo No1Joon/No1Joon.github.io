@@ -128,11 +128,11 @@ feat: add dark mode toggle to settings page
    b. **Verify**: Check `git diff --cached --name-only` to ensure only correct files are staged.
    c. **Commit**: Run `git commit -m "..."` using the generated message for this unit.
    d. **Repeat** until all changes are committed.
-3. **Push**: After all commits succeed, run `git push` (per project CLAUDE.md: "커밋 후 항상 바로 `git push` 실행").
+3. **Push**: After all commits succeed, run `git push` — 이 프로젝트는 커밋 후 항상 바로 푸시한다.
 
 **Important**:
 
 - If a file has multiple logical changes (e.g., a fix AND a formatting change), you can try to use `git add -p`, but usually it's safer to just commit the file for the primary change.
 - For this skill, prioritizing file-level grouping for atomic commits is usually sufficient.
 - If there are too many changes to reasonably separate, ask the user which grouping they prefer.
-- **NEVER** append `Co-Authored-By`, `Signed-off-by`, or any git trailer referencing Claude or AI. The commit must look like it was written entirely by the developer. (This matches the project CLAUDE.md rule: "커밋 메시지에 `Co-Authored-By` 라인 넣지 않기".)
+- **NEVER** append `Co-Authored-By`, `Signed-off-by`, or any git trailer referencing Claude or AI. The commit must look like it was written entirely by the developer.
