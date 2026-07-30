@@ -224,14 +224,37 @@
       const homePath = normPath(new URL(document.querySelector('.site-title').href).pathname);
       if (!view || !window.fetch || !window.DOMParser || !history.pushState) return;
 
-      // showHome() 은 홈 문서에서만 실행되므로 여기 담기는 건 홈 제목이다
+      // 부분 이동에서도 head 메타를 실제 이동과 같게 맞춘다. jekyll-seo-tag 가 내보내는 것 중
+      // DOM 을 읽는 소비자(공유 시트·확장 프로그램)가 보는 태그만 골라 교체한다.
+      // meta·link 로 한정하므로 script 가 끼어들 여지가 없다.
+      const META_SELECTOR = [
+        'meta[name="description"]',
+        'meta[property^="og:"]',
+        'meta[name^="twitter:"]',
+        'link[rel="canonical"]'
+      ].join(', ');
+
+      const serializeMeta = doc =>
+        Array.from(doc.head.querySelectorAll(META_SELECTOR)).map(el => el.outerHTML).join('\n');
+
+      function applyMeta(html) {
+        document.head.querySelectorAll(META_SELECTOR).forEach(el => el.remove());
+        if (!html) return;
+        const tpl = document.createElement('template');
+        tpl.innerHTML = html;
+        document.head.appendChild(tpl.content);
+      }
+
+      // showHome() 은 홈 문서에서만 실행되므로 여기 담기는 건 홈의 제목·메타다
       const baseTitle = document.title;
+      const baseMeta = serializeMeta(document);
       let busy = false;
 
       function showHome() {
         view.innerHTML = '';
         if (hero) hero.hidden = false;
         document.title = baseTitle;
+        applyMeta(baseMeta);
         markCurrent(' ');   // 어느 행과도 일치하지 않는 값 → 강조 해제
       }
 
@@ -244,6 +267,7 @@
 
         view.innerHTML = incoming.innerHTML;
         document.title = doc.title;
+        applyMeta(serializeMeta(doc));
         if (hero) hero.hidden = true;
         markCurrent(new URL(url, location.origin).pathname);
         if (window.enhancePostContent) await window.enhancePostContent(view);
