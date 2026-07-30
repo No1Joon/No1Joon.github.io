@@ -9,66 +9,33 @@ layout: default
   {% include post-browser.html initial_cat=cur_slug %}
 </section>
 
-<article>
-  <header class="post-header">
-    <h1>{{ page.title }}</h1>
-    <div class="post-meta">
-      <span class="badge badge-{{ page.category | slugify }}">{{ page.category }}</span>
-      {% if page.subcategory %}
-      <span class="badge badge-sub">{{ page.subcategory }}</span>
-      {% endif %}
-      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y년 %m월 %d일" }}</time>
-      {% if page.tags %}
-      <div class="tag-list">
-        {% for tag in page.tags %}
-        <span class="tag">{{ tag }}</span>
-        {% endfor %}
+{% comment %}
+  #postView = 부분 네비게이션이 교체하는 유일한 영역.
+  post-browser.html 이 다른 글의 이 블록만 가져와 갈아끼우므로 위 카테고리 섹션은 그대로 남는다.
+  본문 후처리(코드창·mermaid)는 assets/js/post-enhance.js — 교체 후에도 다시 호출된다.
+{% endcomment %}
+<div id="postView">
+  <article>
+    <header class="post-header">
+      <h1>{{ page.title }}</h1>
+      <div class="post-meta">
+        <span class="badge badge-{{ page.category | slugify }}">{{ page.category }}</span>
+        {% if page.subcategory %}
+        <span class="badge badge-sub">{{ page.subcategory }}</span>
+        {% endif %}
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y년 %m월 %d일" }}</time>
+        {% if page.tags %}
+        <div class="tag-list">
+          {% for tag in page.tags %}
+          <span class="tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+        {% endif %}
       </div>
-      {% endif %}
+    </header>
+
+    <div class="post-content">
+      {{ content }}
     </div>
-  </header>
-
-  <div class="post-content">
-    {{ content }}
-  </div>
-</article>
-
-<script type="module">
-  document.querySelectorAll('.post-content pre > code').forEach(code => {
-    if (code.classList.contains('language-mermaid')) {
-      const pre = code.parentElement;
-      const wrapper = document.createElement('div');
-      wrapper.className = 'mermaid';
-      wrapper.textContent = code.textContent;
-      pre.replaceWith(wrapper);
-      return;
-    }
-
-    // 일반 코드 블록인 경우 Mac Code window 래퍼 씌우기
-    const langClass = Array.from(code.classList).find(c => c.startsWith('language-'));
-    const lang = langClass ? langClass.replace('language-', '') : 'code';
-    const pre = code.parentElement;
-
-    const wrapper = document.createElement('div');
-    wrapper.className = 'code-window';
-    
-    const header = document.createElement('div');
-    header.className = 'code-header';
-    header.innerHTML = `
-      <div class="mac-dots">
-        <span></span><span></span><span></span>
-      </div>
-      <div class="code-lang-label">${lang}</div>
-    `;
-    
-    pre.parentNode.insertBefore(wrapper, pre);
-    wrapper.appendChild(header);
-    wrapper.appendChild(pre);
-  });
-
-  if (document.querySelector('.mermaid')) {
-    const { default: mermaid } = await import('https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs');
-    mermaid.initialize({ startOnLoad: false, theme: 'dark', securityLevel: 'loose' });
-    await mermaid.run({ querySelector: '.mermaid' });
-  }
-</script>
+  </article>
+</div>
