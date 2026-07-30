@@ -337,20 +337,14 @@ nav a:hover { color: var(--text); }
   font-weight: 600;
 }
 
-.badge-ci-cd,
-.badge-container---orchestration,
-.badge-cloud-infrastructure,
-.badge-observability,
-.badge-devops---sre,
-.badge-development,
-.badge-architecture { background: var(--panel); color: var(--text-muted); border: 1px solid var(--border); }
-.badge-sub          { background: transparent; color: var(--text-muted); border: 1px solid var(--border); }
+/* 카테고리 배지 — 클래스는 `badge-{{ category | slugify }}` (_data/categories.yml 기준) */
 .badge-tech,
 .badge-ai,
 .badge-robot,
 .badge-math,
 .badge-science,
-.badge-daily-dev    { background: var(--panel); color: var(--text-muted); border: 1px solid var(--border); }
+.badge-daily-dev { background: var(--panel); color: var(--text-muted); border: 1px solid var(--border); }
+.badge-sub       { background: transparent; color: var(--text-muted); border: 1px solid var(--border); }
 
 /* ── Post Content ── */
 .post-content { max-width: 100%; }
