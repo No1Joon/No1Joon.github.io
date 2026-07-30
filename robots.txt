@@ -29,7 +29,8 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
+# Yeti = 네이버 검색 크롤러
 User-agent: Yeti
-Allow:/
+Allow: /
 
 Sitemap: https://no1joon.github.io/sitemap.xml
