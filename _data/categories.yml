@@ -1,3 +1,41 @@
+- name: Tech
+  slug: tech
+  subcategories:
+    - name: Explainer
+      slug: explainer
+    - name: News
+      slug: news
+
+- name: AI
+  slug: ai
+  subcategories:
+    - name: Explainer
+      slug: explainer
+    - name: News
+      slug: news
+    - name: Weekly
+      slug: weekly
+
+- name: Robot
+  slug: robot
+  subcategories:
+    - name: Explainer
+      slug: explainer
+    - name: News
+      slug: news
+
+- name: Math
+  slug: math
+  subcategories:
+    - name: Explainer
+      slug: explainer
+
+- name: Science
+  slug: science
+  subcategories:
+    - name: Explainer
+      slug: explainer
+
 - name: Daily Dev
   slug: daily-dev
   subcategories:
@@ -5,9 +43,3 @@
       slug: troubleshooting
     - name: Tips & Tools
       slug: tips-tools
-
-- name: Tech
-  slug: tech
-  subcategories:
-    - name: Explainer
-      slug: explainer

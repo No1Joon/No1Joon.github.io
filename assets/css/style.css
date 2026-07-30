@@ -337,6 +337,12 @@ nav a:hover { color: var(--text); }
 .badge-development,
 .badge-architecture { background: var(--panel); color: var(--text-muted); border: 1px solid var(--border); }
 .badge-sub          { background: transparent; color: var(--text-muted); border: 1px solid var(--border); }
+.badge-tech,
+.badge-ai,
+.badge-robot,
+.badge-math,
+.badge-science,
+.badge-daily-dev    { background: var(--panel); color: var(--text-muted); border: 1px solid var(--border); }
 
 /* ── Post Content ── */
 .post-content { max-width: 100%; }
@@ -367,6 +373,38 @@ nav a:hover { color: var(--text); }
   border: 1px solid var(--border);
   border-radius: 8px;
 }
+
+/* 이미지 바로 뒤의 이탤릭 한 줄 = 캡션 (![](){newline}*캡션* 패턴) */
+.post-content p > img + em {
+  display: block;
+  margin: -1rem auto 1.5rem;
+  max-width: min(100%, 560px);
+  font-size: 0.8rem;
+  font-style: normal;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* 형광펜 강조 — 네이버 원문의 ==하이라이트== 가 <mark> 로 변환된다 */
+.post-content mark {
+  background: rgba(255, 214, 0, 0.16);
+  color: var(--text);
+  padding: 0.05em 0.2em;
+  border-radius: 3px;
+  box-decoration-break: clone;
+}
+
+.post-content blockquote {
+  margin: 1.5rem 0;
+  padding: 0.75rem 1.1rem;
+  border-left: 3px solid var(--border);
+  background: var(--panel);
+  border-radius: 0 6px 6px 0;
+  color: var(--text-muted);
+}
+
+.post-content blockquote > :last-child { margin-bottom: 0; }
 
 .post-content ul, .post-content ol {
   padding-left: 1.5rem;
