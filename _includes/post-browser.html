@@ -81,6 +81,7 @@
   <button type="button" class="pager-btn" id="pagerNext">다음 →</button>
 </div>
 
+<script src="{{ '/assets/js/post-enhance.js' | relative_url }}"></script>
 <script>
   (function () {
     const PER_PAGE = 5;
@@ -180,17 +181,106 @@
     }
     if (target) target.click();
 
-    // 지금 보고 있는 글이 목록에서 몇 번째인지 찾아 그 글이 있는 페이지를 펼친다.
+    // ── 현재 보고 있는 글 강조 ─────────────────────────────────────────────
+    const normPath = p => p.replace(/\/+$/, '') || '/';
+
+    function markCurrent(pathname) {
+      const want = normPath(pathname);
+      let hit = null;
+      rows.forEach(r => {
+        const on = normPath(r.pathname) === want;
+        r.classList.toggle('is-current', on);
+        if (on) hit = r;
+      });
+      return hit;
+    }
+
+    // 최초 로드에서만 카테고리·페이지까지 복원한다.
     // applyFilter() 가 page 를 0 으로 되돌리기 때문에, 이걸 안 하면 어떤 글을 열어도 목록이 늘 1페이지다.
-    const samePath = a => a.pathname.replace(/\/+$/, '') === location.pathname.replace(/\/+$/, '');
-    const currentRow = rows.find(samePath);
-    if (currentRow) {
-      currentRow.classList.add('is-current');
-      const idx = filtered.indexOf(currentRow);
+    const firstRow = markCurrent(location.pathname);
+    if (firstRow) {
+      const idx = filtered.indexOf(firstRow);
       if (idx >= 0) {
         page = Math.floor(idx / PER_PAGE);
         render();
       }
+    }
+
+    // ── 부분 네비게이션 ────────────────────────────────────────────────────
+    // 글을 열 때 문서를 다시 로드하지 않고 #postView 만 교체한다.
+    // 카테고리 섹션 DOM 을 건드리지 않으므로 선택한 카테고리·페이지·스크롤이 그대로 유지된다.
+    // 이때는 필터를 손대지 않는다 — '전체' 로 보던 중 AI 글을 열어도 '전체' 가 유지돼야 한다.
+    // #postView 는 이 include 보다 아래에 있어서 파싱 중인 지금은 아직 없다 — DOM 준비 후에 붙인다.
+    // (위의 필터·페이지 복원은 .post-row 가 이미 있으므로 동기로 처리해 깜빡임이 없다.)
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initPartialNav);
+    } else {
+      initPartialNav();
+    }
+
+    function initPartialNav() {
+      const view = document.getElementById('postView');
+      const hero = document.querySelector('.page-hero');
+      const homePath = normPath(new URL(document.querySelector('.site-title').href).pathname);
+      if (!view || !window.fetch || !window.DOMParser || !history.pushState) return;
+
+      // showHome() 은 홈 문서에서만 실행되므로 여기 담기는 건 홈 제목이다
+      const baseTitle = document.title;
+      let busy = false;
+
+      function showHome() {
+        view.innerHTML = '';
+        if (hero) hero.hidden = false;
+        document.title = baseTitle;
+        markCurrent(' ');   // 어느 행과도 일치하지 않는 값 → 강조 해제
+      }
+
+      async function showPost(url) {
+        const res = await fetch(url, { credentials: 'same-origin' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const doc = new DOMParser().parseFromString(await res.text(), 'text/html');
+        const incoming = doc.getElementById('postView');
+        if (!incoming) throw new Error('no #postView');
+
+        view.innerHTML = incoming.innerHTML;
+        document.title = doc.title;
+        if (hero) hero.hidden = true;
+        markCurrent(new URL(url, location.origin).pathname);
+        if (window.enhancePostContent) await window.enhancePostContent(view);
+        view.scrollIntoView({ block: 'start' });
+      }
+
+      async function navigate(url, push) {
+        if (busy) return;
+        const path = normPath(new URL(url, location.origin).pathname);
+        // 홈으로 돌아가는 건 홈 문서에서만 부분 처리할 수 있다 (포스트 문서엔 hero 가 없음)
+        if (path === homePath && !hero) { location.href = url; return; }
+        busy = true;
+        try {
+          if (path === homePath) showHome(); else await showPost(url);
+          if (push) history.pushState({ partial: true }, '', url);
+        } catch (err) {
+          location.href = url;   // 실패하면 평소처럼 전체 이동
+        } finally {
+          busy = false;
+        }
+      }
+
+      document.getElementById('postList').addEventListener('click', function (e) {
+        if (e.defaultPrevented || e.button !== 0) return;
+        if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;   // 새 탭 열기 등은 그대로
+        const a = e.target.closest('.post-row');
+        if (!a) return;
+        e.preventDefault();
+        if (normPath(a.pathname) === normPath(location.pathname)) {
+          view.scrollIntoView({ block: 'start' });   // 이미 보고 있는 글
+          return;
+        }
+        navigate(a.href, true);
+      });
+
+      history.replaceState({ partial: true }, '', location.href);
+      window.addEventListener('popstate', function () { navigate(location.href, false); });
     }
   })();
 </script>
