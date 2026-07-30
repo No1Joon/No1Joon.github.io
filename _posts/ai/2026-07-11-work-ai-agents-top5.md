@@ -5,7 +5,7 @@ date: 2026-07-11
 category: AI
 subcategory: Explainer
 tags: [ai-agent, productivity, copilot, notion-ai, automation]
-image: /assets/images/ai/work-ai-agents-top5/01-agy-yagun.webp
+image: /assets/og/2026-07-11-work-ai-agents-top5.png
 ---
 
 퇴근 시간은 벌써 지났는데, 엑셀 표 정리에 회의록 타이핑에 이메일 답장까지... 아직 절반도 못 끝내셨나요?

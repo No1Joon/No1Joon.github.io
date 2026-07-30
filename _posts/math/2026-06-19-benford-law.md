@@ -5,7 +5,7 @@ date: 2026-06-19
 category: Math
 subcategory: Explainer
 tags: [benford-law, statistics, probability, fraud-detection, logarithm]
-image: /assets/images/math/benford-law/01-agy.webp
+image: /assets/og/2026-06-19-benford-law.png
 ---
 
 영수증, 회사 장부, 도시 인구, 강의 길이… 세상의 온갖 숫자들을 모아 **첫 자리만** 본다고 해볼게요.

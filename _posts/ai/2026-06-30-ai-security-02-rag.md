@@ -5,7 +5,7 @@ date: 2026-06-30
 category: AI
 subcategory: Explainer
 tags: [rag, ai-security, llm, vector-db, embedding]
-image: /assets/images/ai/ai-security-02-rag/01-agy-concept.webp
+image: /assets/og/2026-06-30-ai-security-02-rag.png
 ---
 
 지난 글([AI 보안] 1탄)에서 **프롬프트 인젝션**을 다루며, AI가 외부에서 가져온 문서 속 숨은 지시까지 따라간다고 했죠.

@@ -5,7 +5,7 @@ date: 2026-07-18
 category: Tech
 subcategory: Explainer
 tags: [ram, dram, hbm, memory-shortage, semiconductor]
-image: /assets/images/tech/ram-03-shortage/01-agy-hero-price-surge.webp
+image: /assets/og/2026-07-18-ram-03-shortage.png
 ---
 
 컴퓨터 좀 아신다는 분들도 요즘 견적을 짜다가 손을 놓아요.

@@ -5,7 +5,7 @@ date: 2026-07-11
 category: Robot
 subcategory: News
 tags: [delivery-robot, autonomous-robot, neubility, last-mile, physical-ai]
-image: /assets/images/robot/delivery-robot-apartment/01-agy-intro.webp
+image: /assets/og/2026-07-11-delivery-robot-apartment.png
 ---
 
 "배달비가 음식값보다 비싼 것 같은데…"

@@ -5,7 +5,7 @@ date: 2026-07-11
 category: AI
 subcategory: Explainer
 tags: [korean-nlp, claude, chatgpt, gemini, benchmark]
-image: /assets/images/ai/korean-ai-claude-chatgpt-gemini/01-claude-icon-color.webp
+image: /assets/og/2026-07-11-korean-ai-claude-chatgpt-gemini.png
 ---
 
 "한국어는 결국 국산 AI가 낫지 않나?" — 이 말, 이제는 다시 생각해볼 때가 됐어요.

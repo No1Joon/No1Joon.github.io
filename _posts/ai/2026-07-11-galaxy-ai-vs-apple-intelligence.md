@@ -5,7 +5,7 @@ date: 2026-07-11
 category: AI
 subcategory: Explainer
 tags: [galaxy-ai, apple-intelligence, on-device-ai, smartphone, korean-nlp]
-image: /assets/images/ai/galaxy-ai-vs-apple-intelligence/01-agy-overview.webp
+image: /assets/og/2026-07-11-galaxy-ai-vs-apple-intelligence.png
 ---
 
 "이제 아이폰도 통화 녹음 되던데, 그래도 갤럭시가 나을까?"

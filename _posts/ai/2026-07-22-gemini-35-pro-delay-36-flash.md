@@ -5,7 +5,7 @@ date: 2026-07-22
 category: AI
 subcategory: News
 tags: [gemini, google-deepmind, llm, benchmark, model-release]
-image: /assets/images/ai/gemini-35-pro-delay-36-flash/01-agy-3-5.webp
+image: /assets/og/2026-07-22-gemini-35-pro-delay-36-flash.png
 ---
 
 인공지능(AI) 업계에서 약속된 로드맵이 한두 달 늦어지는 것은 흔한 일입니다. 하지만 업계를 대표하는 거인인 구글(Google)의 최상위 플래그십급 추론 두뇌가 출시 일정을 거듭 어기며 물밑에서 **"이미 다 만든 모델을 폐기하고 처음부터 아예 다시 학습시키고 있다"**는 소문이 돌면 이야기가 달라집니다.

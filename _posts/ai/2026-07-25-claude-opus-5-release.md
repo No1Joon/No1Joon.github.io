@@ -5,7 +5,7 @@ date: 2026-07-25
 category: AI
 subcategory: News
 tags: [claude-opus-5, anthropic, llm, agentic-coding, model-release]
-image: /assets/images/ai/claude-opus-5-release/01-hero-claude-opus5.webp
+image: /assets/og/2026-07-25-claude-opus-5-release.png
 ---
 
 Anthropic이 최신 플래그십 AI 모델 **Claude Opus 5**를 공식 블로그 및 뉴스룸을 통해 전격 발표했습니다. 이번 릴리즈는 단순히 이전 세대 모델의 파라미터 확장에 머무르지 않고, **Thoughtful and Proactive(깊이 생각하고 능동적으로 행동하는)** 차세대 enterprise 에이전틱 AI의 핵심 표준을 정립했다는 평가를 받고 있습니다.

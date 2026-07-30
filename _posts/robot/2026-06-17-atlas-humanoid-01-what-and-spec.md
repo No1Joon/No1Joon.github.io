@@ -5,7 +5,7 @@ date: 2026-06-17
 category: Robot
 subcategory: Explainer
 tags: [atlas, humanoid, boston-dynamics, hyundai, physical-ai]
-image: /assets/images/robot/atlas-humanoid-01-what-and-spec/01-hero-bostondynamics.webp
+image: /assets/og/2026-06-17-atlas-humanoid-01-what-and-spec.png
 ---
 
 요즘 뉴스에 "현대 아틀라스"라는 말이 부쩍 자주 보이시죠?
