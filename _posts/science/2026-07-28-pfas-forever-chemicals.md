@@ -5,7 +5,7 @@ date: 2026-07-28
 category: Science
 subcategory: Explainer
 tags: [pfas, teflon, environmental-health, chemistry, regulation]
-image: /assets/images/science/pfas-forever-chemicals/01-nonstick-pan.webp
+image: /assets/og/2026-07-28-pfas-forever-chemicals.png
 ---
 
 지금 이 글을 읽고 있는 여러분의 혈액 속에는 거의 확실히 **PFAS**가 들어 있습니다. 미국 질병통제예방센터(CDC)의 국민건강영양조사(NHANES)에서는 검사 대상 미국인의 <mark>97%</mark> 혈액에서 PFAS가 검출됐고, 최소 1종 이상이 검출된 표본은 <mark>99%를 넘었습니다</mark>. 한국인은 오히려 더 높습니다.

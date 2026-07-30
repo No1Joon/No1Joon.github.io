@@ -5,7 +5,7 @@ date: 2026-06-19
 category: Robot
 subcategory: Explainer
 tags: [atlas, humanoid, hyundai, metaplant, manufacturing]
-image: /assets/images/robot/atlas-humanoid-02-factory-production/01-bostondynamics.webp
+image: /assets/og/2026-06-19-atlas-humanoid-02-factory-production.png
 ---
 
 지난 1탄에서 아틀라스(Atlas)가 어떤 로봇인지 살펴봤죠.

@@ -5,7 +5,7 @@ date: 2026-07-21
 category: Tech
 subcategory: Explainer
 tags: [security, xz-utils, snowflake, polyfill, supply-chain-attack]
-image: /assets/images/tech/recent-security-incidents/01-agy.webp
+image: /assets/og/2026-07-21-recent-security-incidents.png
 ---
 
 안녕하세요! IT·테크 분야의 유익한 소식을 쉽고 자세하게 전해드리는 테크 블로거입니다.

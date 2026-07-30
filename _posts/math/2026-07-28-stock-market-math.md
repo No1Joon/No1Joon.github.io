@@ -5,7 +5,7 @@ date: 2026-07-28
 category: Math
 subcategory: Explainer
 tags: [statistics, geometric-mean, volatility, fat-tail, kelly-criterion]
-image: /assets/images/math/stock-market-math/01-chart-loss-recovery.webp
+image: /assets/og/2026-07-28-stock-market-math.png
 ---
 
 2026년 7월 28일, 코스피가 하루에 **732.09포인트(-10.84%)** 떨어져 6,023.66으로 마감했습니다. 장중 6,000선이 무너졌고, 오전 10시 13분에는 **서킷브레이커**가 발동돼 20분간 거래가 멈췄습니다. 코스닥도 -7.72%였습니다.

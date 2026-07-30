@@ -107,7 +107,6 @@ class Converter:
         self.src = NAVER_REPO / entry["source"]
         self.warnings: list[str] = []
         self.image_count = 0
-        self.first_image: str | None = None
 
         src_fm = yaml.safe_load(self.src.read_text(encoding="utf-8").split("---\n")[1])
         # image_dir 은 naver-posting 레포 기준 상대경로(assets/postings/<분기>/<키>/)
@@ -175,8 +174,6 @@ class Converter:
                 return None
 
         self.image_count += 1
-        if self.first_image is None:
-            self.first_image = ref
         return ref
 
     # ── 본문 ──────────────────────────────────────────────────────────────
@@ -331,9 +328,9 @@ class Converter:
             ("subcategory", e["subcategory"]),
             ("tags", "[" + ", ".join(e["tags"]) + "]"),
         ]
-        image = e.get("image") or self.first_image
-        if image:
-            fields.append(("image", image))
+        # OG(`image`)는 넣지 않는다 — CI 의 `npm run generate-og` 가 빌드 때
+        # /assets/og/<slug>.png 를 만들고 front matter 의 image 줄을 그 경로로 덮어쓴다
+        # (scripts/generate-og.mjs). 여기서 본문 이미지를 넣어도 배포본엔 반영되지 않는다.
         if e.get("series"):
             fields.append(("series", yaml_str(e["series"])))
             fields.append(("part", str(e["part"])))

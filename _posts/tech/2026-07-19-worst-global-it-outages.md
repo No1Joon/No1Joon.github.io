@@ -5,7 +5,7 @@ date: 2026-07-19
 category: Tech
 subcategory: Explainer
 tags: [outage, crowdstrike, ransomware, supply-chain-attack, incident-review]
-image: /assets/images/tech/worst-global-it-outages/01-agy.webp
+image: /assets/og/2026-07-19-worst-global-it-outages.png
 ---
 
 오늘은 2026년 7월 19일. 정확히 2년 전 오늘, 전 세계 공항의 전광판이 동시에 파랗게 변했습니다.

@@ -5,7 +5,7 @@ date: 2026-07-17
 category: AI
 subcategory: Explainer
 tags: [claude-code, ai-agent, subagent, coding-agent, anthropic]
-image: /assets/images/ai/claude-code-goal-memory-agent-team/01-claude-icon-color.webp
+image: /assets/og/2026-07-17-claude-code-goal-memory-agent-team.png
 ---
 
 "이 코드 좀 고쳐줘" 하고 물어보면 답이 딱 나오는 것. 대부분 AI 코딩을 이렇게 생각하시죠.

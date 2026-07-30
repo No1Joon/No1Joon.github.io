@@ -5,7 +5,7 @@ date: 2026-07-27
 category: AI
 subcategory: Explainer
 tags: [kimi-k3, moonshot-ai, moe, open-weight, llm]
-image: /assets/images/ai/kimi-k3-open-weight-moe/01-kimi-logo-color.webp
+image: /assets/og/2026-07-27-kimi-k3-open-weight-moe.png
 ---
 
 7월 16일, 중국 Moonshot AI가 **Kimi K3**를 공개했습니다. 총 파라미터 **2.8조(2.8T)** — 지금까지 공개된 오픈 웨이트 모델 중 가장 큽니다. 숫자만 보면 그저 또 하나의 대형 모델 발표처럼 보이지만, 이 릴리스가 업계에서 유독 시끄러운 이유는 크기가 아니라 **어떻게 그 크기를 감당했는가**에 있습니다.

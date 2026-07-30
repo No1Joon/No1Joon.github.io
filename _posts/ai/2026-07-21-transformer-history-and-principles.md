@@ -5,7 +5,7 @@ date: 2026-07-21
 category: AI
 subcategory: Explainer
 tags: [transformer, attention, llm, deep-learning, architecture]
-image: /assets/images/ai/transformer-history-and-principles/01-agy-transformer-hero.webp
+image: /assets/og/2026-07-21-transformer-history-and-principles.png
 ---
 
 오늘날 전 세계를 뒤흔들고 있는 ChatGPT, Claude, Gemini 같은 거대 생성형 인공지능(AI) 서비스들에게는 공통점이 하나 있습니다. 이들의 뼈대를 이루는 근본 기술이 단 하나의 이름으로 귀결된다는 점입니다. 바로 **트랜스포머(Transformer)** 아키텍처입니다.

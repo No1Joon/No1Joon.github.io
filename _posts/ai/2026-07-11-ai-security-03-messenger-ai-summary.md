@@ -5,7 +5,7 @@ date: 2026-07-11
 category: AI
 subcategory: Explainer
 tags: [prompt-injection, ai-security, messenger, privacy, echoleak]
-image: /assets/images/ai/ai-security-03-messenger-ai-summary/01-agy-messenger-ai.webp
+image: /assets/og/2026-07-11-ai-security-03-messenger-ai-summary.png
 ---
 
 혹시 요즘 카카오톡이나 메일 앱에서 "이 대화 요약해줘", "이 메일 정리해줘" 같은 AI 기능, 한 번쯤 눌러보셨나요?
