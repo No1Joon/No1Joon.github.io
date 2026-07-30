@@ -195,6 +195,14 @@ nav a:hover { color: var(--text); }
 
 .post-row:hover { background: var(--panel); }
 
+/* 지금 보고 있는 글 — 목록에서 어디에 있는지 바로 보이게 */
+.post-row.is-current {
+  background: var(--panel);
+  box-shadow: inset 2px 0 0 var(--primary);
+}
+
+.post-row.is-current .post-row-title { color: var(--primary); }
+
 .post-row-eyebrow {
   font-size: 0.68rem;
   font-weight: 600;
