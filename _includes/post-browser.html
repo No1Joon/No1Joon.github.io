@@ -179,5 +179,18 @@
       target = menu.querySelector('.cat-btn[data-filter="cat"][data-category="' + initialCat + '"]');
     }
     if (target) target.click();
+
+    // 지금 보고 있는 글이 목록에서 몇 번째인지 찾아 그 글이 있는 페이지를 펼친다.
+    // applyFilter() 가 page 를 0 으로 되돌리기 때문에, 이걸 안 하면 어떤 글을 열어도 목록이 늘 1페이지다.
+    const samePath = a => a.pathname.replace(/\/+$/, '') === location.pathname.replace(/\/+$/, '');
+    const currentRow = rows.find(samePath);
+    if (currentRow) {
+      currentRow.classList.add('is-current');
+      const idx = filtered.indexOf(currentRow);
+      if (idx >= 0) {
+        page = Math.floor(idx / PER_PAGE);
+        render();
+      }
+    }
   })();
 </script>
