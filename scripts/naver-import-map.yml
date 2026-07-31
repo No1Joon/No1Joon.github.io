@@ -305,3 +305,33 @@
   title: "PFAS 해부 — 프라이팬에서 시작해 전 인류의 혈액에 남은 물질"
   description: 1938년의 실패한 실험에서 태어난 PFAS 의 화학적 원리, 은폐의 기록, 전 지구 확산과 한국 상황, 그리고 과장과 사실의 경계를 정리합니다
   tags: [pfas, teflon, environmental-health, chemistry, regulation]
+
+- source: posts/tech/26Q3/20260730_RAM_5탄_CXMT_중국메모리.md
+  slug: ram-05-cxmt-china-memory
+  date: 2026-07-30
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "RAM에 대하여 (5) — 중국 CXMT 상장 쇼크와 흔들린 메모리 판도"
+  description: 사흘 만에 코스피를 17% 끌어내린 CXMT 상장의 파장을 증설 계획·가격 압력·기술 격차 관점에서 숫자로 따져봅니다
+  tags: [ram, dram, cxmt, china-semiconductor, memory-market]
+
+- source: posts/robot/26Q3/20260731_아틀라스_3탄_휴머노이드_양산.md
+  slug: atlas-humanoid-03-mass-production
+  date: 2026-07-31
+  category: Robot
+  category_slug: robot
+  subcategory: Explainer
+  title: "아틀라스 (3) — 양산 개시와 승부처가 된 부품 공급망"
+  description: 옵티머스와 아틀라스가 몇 주 차이로 양산에 들어가는 지점을 짚고, 로봇 원가의 절반을 차지하는 관절 부품 경제학을 정리합니다
+  tags: [atlas, humanoid, optimus, actuator, supply-chain]
+
+- source: posts/tech/26Q3/20260731_AI데이터센터_전력_열관리.md
+  slug: ai-datacenter-power-cooling
+  date: 2026-07-31
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "AI 데이터센터의 전력과 열 — 랙 한 대가 142kW를 먹는 시대"
+  description: 랙 전력이 100배로 뛴 배경과 PUE·액침냉각·800VDC 의 등장, 그리고 계통 접속에서 막힌 한국 상황을 숫자로 따라갑니다
+  tags: [datacenter, power-grid, immersion-cooling, pue, ai-infrastructure]
