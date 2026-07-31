@@ -335,3 +335,125 @@
   title: "AI 데이터센터의 전력과 열 — 랙 한 대가 142kW를 먹는 시대"
   description: 랙 전력이 100배로 뛴 배경과 PUE·액침냉각·800VDC 의 등장, 그리고 계통 접속에서 막힌 한국 상황을 숫자로 따라갑니다
   tags: [datacenter, power-grid, immersion-cooling, pue, ai-infrastructure]
+
+# --- 26Q2 구형 12편 (naver-posting `naver-blog-legacy-retrofit` 로 현행 스키마 이관 후 이식) ---
+
+- source: posts/news/26Q2/20260602_삼성전자_HBM5.md
+  slug: samsung-hbm5-mockup
+  date: 2026-06-02
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "삼성전자 HBM5 목업 첫 공개 — 발열을 먼저 잡은 이유"
+  description: 컴퓨텍스 2026 에서 공개된 7세대 HBM 의 방열 기술 Heat Path Block 과 2나노 베이스 다이 계획을 정리합니다
+  tags: [samsung, hbm5, memory, semiconductor, computex]
+
+- source: posts/breaking/26Q2/20260603_티빙_개인정보유출.md
+  slug: tving-privacy-breach-01
+  date: 2026-06-03
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "티빙 개인정보 유출 (1) — 무엇이 새어 나갔고 정부는 어떻게 움직였나"
+  description: CJ ENM 티빙의 회원 개인정보 유출 공지와 민관합동조사단 착수까지, 사건 초기 확인된 사실만 정리합니다
+  tags: [tving, data-breach, privacy, security-incident, ott]
+
+- source: posts/news/26Q2/20260604_앤트로픽_AI개발속도조절.md
+  slug: anthropic-ai-slowdown-report
+  date: 2026-06-04
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "앤트로픽이 AI 속도 조절을 말한 이유 — 재귀적 자기개선 보고서"
+  description: AI 가 AI 를 만들며 발전 속도가 스스로 빨라진다는 앤트로픽의 경고와, 함께 공개된 자사 데이터를 정리합니다
+  tags: [anthropic, ai-safety, recursive-self-improvement, ai-policy, llm]
+
+- source: posts/news/26Q2/20260605_엔비디아_젠슨황_방한.md
+  slug: jensen-huang-korea-visit-2026-06
+  date: 2026-06-05
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "젠슨 황 방한 — HBM4 3사 합격과 서울 AI 연구센터"
+  description: 7개월 만의 재방한에서 나온 HBM4 승인, 서울 AI 연구센터 설립, 삼성·SK·현대차·LG·네이버 릴레이 회동을 정리합니다
+  tags: [nvidia, jensen-huang, hbm4, semiconductor, korea]
+
+- source: posts/news/26Q2/20260605_클로드_코웍_사용량2배.md
+  slug: claude-cowork-usage-double
+  date: 2026-06-05
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "Claude Cowork 사용량 한도 한 달간 2배 — 한시 개방의 의도"
+  description: 데스크톱 AI 에이전트 Claude Cowork 의 한도 두 배 개방이 어떤 조건으로 걸렸고 무엇을 노린 조치인지 짚습니다
+  tags: [claude-cowork, anthropic, ai-agent, desktop-agent, usage-limit]
+
+- source: posts/news/26Q2/20260608_WWDC26_시리AI_제미나이.md
+  slug: wwdc-2026-siri-gemini
+  date: 2026-06-08
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "WWDC 2026 — 새 Siri AI 의 두뇌가 구글 제미나이인 이유"
+  description: 애플이 간판 AI 기능을 라이벌 모델에 맡긴 배경과 온디바이스·클라우드 분담, iOS 27 과 개발자 도구 변화를 정리합니다
+  tags: [wwdc, apple, siri, gemini, on-device-ai]
+
+- source: posts/weekly/26Q2/20260608_AI위클리_Alphabet_Anthropic.md
+  slug: ai-weekly-2026-06-08
+  date: 2026-06-08
+  category: AI
+  category_slug: ai
+  subcategory: Weekly
+  title: "AI 위클리 2026-06-08 — Alphabet 대규모 증자, Anthropic IPO, 테크 감원"
+  description: 6월 2주 AI 업계 핵심 10건 — Alphabet 의 인프라 투자, Anthropic 상장 카운트다운, Microsoft 자체 모델을 정리합니다
+  tags: [ai-weekly, alphabet, anthropic, microsoft, layoffs]
+
+- source: posts/news/26Q2/20260610_클로드_페이블5_미토스5.md
+  slug: claude-fable-5-release
+  date: 2026-06-10
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "Claude Fable 5 공개 — Mythos 5 와의 이원화와 안전장치"
+  description: 미토스급 성능을 안전장치와 함께 일반 공개한 페이블 5 의 벤치마크와, 속도 조절을 경고한 직후라는 타이밍을 짚습니다
+  tags: [claude-fable-5, anthropic, llm, ai-safety, model-release]
+
+- source: posts/breaking/26Q2/20260612_페이블5_미토스5_접근중단.md
+  slug: claude-fable5-mythos5-access-blocked
+  date: 2026-06-12
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "미 정부 수출통제로 막힌 Claude Fable 5·Mythos 5 접근"
+  description: 출시 사흘 만에 내려온 정부 지시로 외국인 접근이 전면 차단된 경위와 앤트로픽 공식 성명을 시간순으로 정리합니다
+  tags: [anthropic, export-control, claude-fable-5, ai-policy, us-government]
+
+- source: posts/news/26Q2/20260612_티빙_CIDI유출_2차피해.md
+  slug: tving-privacy-breach-02
+  date: 2026-06-12
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "티빙 개인정보 유출 (2) — CI·DI 까지 새어 나간 2차 피해"
+  description: 본인별 조회로 드러난 CI·DI 유출이 왜 아이디 유출과 무게가 다른지, 그리고 지금 할 수 있는 대응을 정리합니다
+  tags: [tving, data-breach, ci-di, privacy, identity-verification]
+
+- source: posts/weekly/26Q2/20260615_AI위클리_OpenAI_Bezos_메타.md
+  slug: ai-weekly-2026-06-15
+  date: 2026-06-15
+  category: AI
+  category_slug: ai
+  subcategory: Weekly
+  title: "AI 위클리 2026-06-15 — OpenAI IPO 신청, 베이조스 펀딩, 메타 감원"
+  description: 6월 3주 AI 업계 핵심 10건 — 상장 레이스와 거대 자금이 몰리는 동안 쌓인 정리해고와 보안 경고를 함께 정리합니다
+  tags: [ai-weekly, openai, ipo, meta, layoffs]
+
+- source: posts/news/26Q2/20260616_엔비디아_삼성_에이전틱AI.md
+  slug: nvidia-samsung-agentic-ai
+  date: 2026-06-16
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "엔비디아·삼성 AI 동맹 — 에이전틱 AI 로 다시 짜는 반도체 설계·제조"
+  description: GTC 2026 과 컴퓨텍스 2026 을 관통한 에이전틱 AI 협력이 메모리 공급을 넘어 어디까지 확장됐는지 정리합니다
+  tags: [nvidia, samsung, agentic-ai, semiconductor, foundry]
