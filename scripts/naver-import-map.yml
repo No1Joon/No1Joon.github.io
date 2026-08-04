@@ -457,3 +457,105 @@
   title: "엔비디아·삼성 AI 동맹 — 에이전틱 AI 로 다시 짜는 반도체 설계·제조"
   description: GTC 2026 과 컴퓨텍스 2026 을 관통한 에이전틱 AI 협력이 메모리 공급을 넘어 어디까지 확장됐는지 정리합니다
   tags: [nvidia, samsung, agentic-ai, semiconductor, foundry]
+
+# --- 26Q3 후반 10편 (2026-07-31 ~ 08-04) ---
+
+- source: posts/science/26Q3/20260731_미세플라스틱_인체축적.md
+  slug: microplastics-human-accumulation
+  date: 2026-07-31
+  category: Science
+  category_slug: science
+  subcategory: Explainer
+  title: "미세플라스틱은 정말 뇌에 쌓이나 — 논문 세 편과 식약처 발표를 겹쳐 읽기"
+  description: 뇌에서 플라스틱이 나왔다는 연구들이 실제로 무엇을 측정했는지 짚고, 노출 경로·검출 수치·줄이는 방법을 구분해 정리합니다
+  tags: [microplastics, nanoplastics, environmental-health, research-review, public-health]
+
+- source: posts/ai/26Q3/20260803_OpenAI_허깅페이스_AI에이전트_해킹.md
+  slug: openai-huggingface-agent-breach
+  date: 2026-08-03
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "OpenAI 모델이 스스로 Hugging Face 를 털었다 — 전말 정리"
+  description: 평가 도중 샌드박스를 탈출한 AI 에이전트가 제로데이 8건으로 침입하기까지의 3주 타임라인과 각 사 공식 공지를 정리합니다
+  tags: [ai-security, openai, hugging-face, agentic-ai, zero-day]
+
+- source: posts/news/26Q3/20260803_쿠팡_개인정보유출_배상_10만원.md
+  slug: coupang-privacy-breach-compensation
+  date: 2026-08-03
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "쿠팡 개인정보 유출 1인당 10만 원 배상 결정 — 나도 받을 수 있을까"
+  description: 4,536명에서 3,756만 건으로 불어난 8개월의 경과와 소비자원 집단분쟁조정 결정의 적용 범위를 정리합니다
+  tags: [coupang, data-breach, privacy, compensation, dispute-resolution]
+
+- source: posts/science/26Q3/20260803_페로브스카이트_탠덤_태양전지.md
+  slug: perovskite-tandem-solar
+  date: 2026-08-03
+  category: Science
+  category_slug: science
+  subcategory: Explainer
+  title: "35.5%, 단일접합의 한계를 넘은 태양전지 — 페로브스카이트 탠덤은 어디까지 왔나"
+  description: 빛을 두 층이 나눠 흡수하는 탠덤 구조의 원리와 세계 기록 갱신 흐름, 그리고 면적·수명에서 남은 거리를 정리합니다
+  tags: [perovskite, tandem-solar, photovoltaics, renewable-energy, efficiency]
+
+- source: posts/science/26Q3/20260803_지구온난화_양산42.5도_극한폭염.md
+  slug: extreme-heat-yangsan-record
+  date: 2026-08-03
+  category: Science
+  category_slug: science
+  subcategory: Explainer
+  title: "닷새 연속 40도, 왜 하필 양산이었나 — 극한 폭염의 기상학"
+  description: 푄 현상과 분지 지형이 겹친 국지적 이유를 짚고, 기상청 53년 관측이 보여주는 폭염일수 추세와 하루의 기록을 구분해 읽습니다
+  tags: [heatwave, climate-change, meteorology, foehn, korea-weather]
+
+- source: posts/weekly/26Q3/20260803_AI위클리_Nvidia데이터센터_DeepSeekV4_AI보안동맹.md
+  slug: ai-weekly-2026-08-03
+  date: 2026-08-03
+  category: AI
+  category_slug: ai
+  subcategory: Weekly
+  title: "AI 위클리 2026-08-03 — Nvidia 데이터센터 베팅, DeepSeek V4-Flash, EU AI 법 시행"
+  description: 8월 1주 AI 업계 핵심 6건 — 새 모델보다 돈·규제·보안이 크게 움직인 한 주를 정리합니다
+  tags: [ai-weekly, nvidia, deepseek, eu-ai-act, ai-security]
+
+- source: posts/tech/26Q3/20260803_AI전력_1탄_전력망병목.md
+  slug: ai-power-01-grid-bottleneck
+  date: 2026-08-03
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "AI 의 전기 (1) — 전력망이 AI 를 못 따라간다, 접속 대기열 5년의 벽"
+  description: 발전량이 아니라 절차와 설비에서 막히는 구조를 국내 공급 불가 39.3%, 미국 대기 물량 2,061GW 로 따라갑니다
+  tags: [ai-power, data-center, power-grid, interconnection-queue, energy]
+
+- source: posts/tech/26Q3/20260803_AI전력_2탄_SMR이란.md
+  slug: ai-power-02-smr-basics
+  date: 2026-08-03
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "AI 의 전기 (2) — SMR 이란 정확히 무엇인가"
+  description: 300MWe 이하·공장 제작이라는 정의에서 출발해 냉각재로 갈리는 네 갈래 설계와 피동 안전의 원리를 정리합니다
+  tags: [ai-power, smr, nuclear, reactor-design, energy]
+
+- source: posts/tech/26Q3/20260804_AI전력_3탄_빅테크원자로계약.md
+  slug: ai-power-03-bigtech-reactor-deals
+  date: 2026-08-04
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "AI 의 전기 (3) — 빅테크가 서명한 원자로 계약 9.8GW 의 실체"
+  description: 계약 13건 9.8GW 와 2027년에 실제로 켜지는 835MW 사이의 간극을, 착공 현황과 함께 짚습니다
+  tags: [ai-power, smr, nuclear, big-tech, power-purchase]
+
+- source: posts/tech/26Q3/20260804_AI전력_4탄_SMR검증.md
+  slug: ai-power-04-smr-reality-check
+  date: 2026-08-04
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "AI 의 전기 (4) — SMR 은 정말 답인가, 비용·폐기물·일정을 숫자로"
+  description: 사업비가 2.5배로 뛰어 취소된 첫 프로젝트부터 발전단가 비교와 폐기물 증가 연구까지, 옹호도 폄하도 없이 숫자만 봅니다
+  tags: [ai-power, smr, nuclear, lcoe, energy-economics]
