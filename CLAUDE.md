@@ -17,6 +17,7 @@ Jekyll 기반 GitHub Pages 블로그 (Claude·Gemini 공통 컨텍스트). 기�
 - `scripts/generate-og.mjs` → `assets/og/` — OG 이미지 생성물 (원본은 포스트 front matter).
 - `scripts/import-naver-post.py` + `scripts/naver-import-map.yml` — `naver-posting` 프로젝트의 네이버 포스팅을 Jekyll 포스트로 이식. 규칙은 `.claude/skills/naver-import/SKILL.md`.
 - `api/` — 댓글 시스템 FastAPI 서비스. 사이트와 별개로 배포된다. 상세는 `api/CLAUDE.md`.
+- `docs/design/` — UI 를 만지기 전에 읽는다. `design.md` 가 방향·제외 항목·접근성 기준, `wireframes-blog.html` 이 화면 배치와 그 근거.
 - `.gemini/` — Gemini CLI 설정. 이 CLAUDE.md 와 같은 컨텍스트를 공유한다.
 - `Tasks.md` — 진행 중 작업 트래커.
 
