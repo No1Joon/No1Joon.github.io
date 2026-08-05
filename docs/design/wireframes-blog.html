@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>No1Joon 블로그 — 레이아웃 와이어프레임</title>
+<style>
+  :root {
+    --line: #c9c9c9;
+    --line-strong: #6b6b6b;
+    --ink: #1a1a1a;
+    --ink-2: #6b6b6b;
+    --ink-3: #9a9a9a;
+    --w: 360px;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 32px;
+    background: #f4f4f2;
+    color: var(--ink);
+    font: 13px/1.45 -apple-system, "Helvetica Neue", Arial, sans-serif;
+  }
+  h1 { font-size: 18px; margin: 0 0 4px; }
+  .lede { color: var(--ink-2); margin: 0 0 28px; max-width: 76ch; }
+
+  .group { margin: 0 0 36px; }
+  .group > h2 { font-size: 15px; margin: 0 0 2px; }
+  .group > .desc { color: var(--ink-2); margin: 0 0 14px; max-width: 76ch; font-size: 12px; }
+  .rail { display: flex; gap: 24px; align-items: flex-start; overflow-x: auto; padding-bottom: 12px; }
+
+  .frame { width: var(--w); flex: 0 0 var(--w); background: #fff; border: 1px solid var(--line-strong); }
+  .frame.wide { --w: 760px; }
+  .frame > .caption { font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-2);
+    padding: 6px 10px; border-bottom: 1px solid var(--line); background: #fafafa; }
+
+  .screen { display: flex; flex-direction: column; height: 700px; }
+  .body { flex: 1; overflow: hidden; }
+
+  .appbar { display: flex; align-items: center; gap: 8px;
+    padding: 9px 12px; border-bottom: 1px solid var(--line-strong); font-weight: 600; }
+  .appbar .grow { flex: 1; min-width: 0; }
+  .appbar .side { color: var(--ink-2); font-weight: 400; font-size: 12px; }
+
+  .sec { padding: 10px 12px 6px; display: flex; align-items: baseline; justify-content: space-between;
+    border-top: 1px solid var(--line); }
+  .sec .t { font-weight: 600; }
+  .sec .c { color: var(--ink-2); font-size: 12px; }
+
+  .row { display: flex; align-items: center; gap: 8px; padding: 9px 12px; border-top: 1px solid var(--line); }
+  .row .grow { flex: 1; min-width: 0; }
+  .row .sub, .sub { color: var(--ink-2); font-size: 12px; }
+  .num { font-variant-numeric: tabular-nums; font-family: ui-monospace, Menlo, monospace; }
+
+  .chip { display: inline-block; border: 1px solid var(--line-strong); padding: 3px 9px; border-radius: 999px;
+    font-size: 12px; margin-right: 6px; }
+  .chip.on { background: #eee; font-weight: 600; }
+  .btn { border: 1px solid var(--line-strong); padding: 5px 10px; text-align: center; font-size: 12px; white-space: nowrap; }
+  .btn.block { display: block; margin: 8px 12px; padding: 9px; }
+  .field { border: 1px solid var(--line-strong); padding: 9px 10px; margin: 10px 12px; color: var(--ink-3); }
+  .box { border: 1px solid var(--line); margin: 8px 12px; padding: 10px; }
+  .note { color: var(--ink-3); font-size: 11px; padding: 2px 12px 8px; }
+  .lead { border-left: 4px solid var(--line-strong); }
+
+  /* 이 문서에서 추가한 것 — 전부 선/자리 표시일 뿐 시각 스타일이 아니다 */
+  .prog { height: 3px; border-bottom: 1px solid var(--line-strong); background:
+    repeating-linear-gradient(90deg, var(--line-strong) 0 2px, transparent 2px 4px); width: 38%; }
+  .cols { display: flex; height: 100%; }
+  .cols > .c-list { flex: 0 0 250px; border-right: 1px solid var(--line-strong); overflow: hidden; }
+  .cols > .c-main { flex: 1; min-width: 0; overflow: hidden; }
+  .cols > .c-toc { flex: 0 0 170px; border-left: 1px solid var(--line); overflow: hidden; }
+  .railmark { border-left: 4px solid var(--line-strong); padding-left: 8px; }
+  .sheet { border-top: 2px solid var(--line-strong); margin-top: auto; background: #fff; }
+  .dim { background: repeating-linear-gradient(135deg, #f0f0f0 0 6px, #fff 6px 12px); }
+  .ghost { color: var(--ink-3); font-size: 11px; padding: 10px 12px; text-align: center; }
+  .scrollx { border: 1px dashed var(--line-strong); margin: 8px 12px; padding: 8px; font-size: 11px; color: var(--ink-2); }
+
+  .legend { border-top: 1px solid var(--line-strong); padding-top: 18px; max-width: 76ch; }
+  .legend h2 { font-size: 14px; margin: 0 0 6px; }
+  .legend ul { margin: 0 0 16px; padding-left: 18px; color: var(--ink-2); }
+  .legend code { background: #fff; border: 1px solid var(--line); padding: 0 4px; }
+</style>
+</head>
+<body>
+
+<h1>No1Joon 블로그 — 레이아웃 와이어프레임</h1>
+<p class="lede">
+  선과 글자만. 색·타이포·아이콘은 뺐습니다 — 정하는 건 <strong>무엇이 어디에 어떤 위계로 놓이는가</strong>뿐입니다.
+  이번 개편의 무게중심은 <strong>읽는 경험</strong>이고, 새로 들어오는 구조는 <strong>검색</strong> 하나입니다.
+  모바일을 기준 화면으로 잡고 데스크톱은 확장형으로 둡니다 — 넓은 화면에서만 나타나는 배치는 코드 뒤에 <code>D</code> 를 붙였습니다(<code>BROWSE 1</code> ↔ <code>BROWSE 1D</code>는 같은 화면의 두 배치).
+  현재 63편 · 6갈래(Tech 21 · AI 26 · Daily Dev 6 · Robot 4 · Science 4 · Math 2) 기준입니다.
+</p>
+
+<!-- ══════════ BROWSE ══════════ -->
+<div class="group">
+  <h2>BROWSE — 글을 찾는 흐름</h2>
+  <p class="desc">목록과 검색. 여기서 고른 글이 READ 로 넘어간다.</p>
+  <div class="rail">
+
+    <div class="frame">
+      <div class="caption">BROWSE 1 · 홈 목록 (모바일)</div>
+      <div class="screen">
+        <div class="appbar"><span class="grow">No1Joon.dev</span><span class="side">검색</span><span class="side">이력서</span></div>
+        <div class="body">
+          <div style="padding:10px 12px 4px; white-space:nowrap; overflow:hidden;">
+            <span class="chip on">전체 63</span><span class="chip">AI 26</span><span class="chip">Tech 21</span><span class="chip">Daily Dev 6</span><span class="chip">Robot 4</span>
+          </div>
+          <div class="note">🔴 지금은 “Tech Stack Blog” 히어로가 첫 화면을 통째로 먹고 목록이 그 아래에서 시작한다. 모바일 유입은 글을 보러 오지 소개를 보러 오지 않는다 — 히어로를 걷어내고 첫 화면에 글이 보이게 한다. 카테고리 칩은 남긴다: 6갈래가 이 블로그의 뼈대이고 한 줄이면 끝난다.</div>
+
+          <div class="row railmark"><div class="grow"><div class="sub">Tech · Explainer</div><div style="font-weight:600">AI 의 전기 (4) — SMR 은 정말 답인가</div><div class="sub">사업비가 2.5배로 뛰어 취소된 첫 프로젝트부터…</div><div class="sub num">2026. 08. 04</div></div></div>
+          <div class="row railmark"><div class="grow"><div class="sub">Tech · Explainer</div><div style="font-weight:600">AI 의 전기 (3) — 빅테크가 서명한 원자로 계약</div><div class="sub">계약 13건 9.8GW 와 2027년에 켜지는 835MW…</div><div class="sub num">2026. 08. 04</div></div></div>
+          <div class="row railmark"><div class="grow"><div class="sub">AI · Weekly</div><div style="font-weight:600">AI 위클리 2026-08-03</div><div class="sub">8월 1주 AI 업계 핵심 6건…</div><div class="sub num">2026. 08. 03</div></div></div>
+
+          <div class="note">행 왼쪽의 굵은 세로선이 <strong>카테고리 레일</strong>이다(§design.md 시그니처). 배지를 또 얹지 않는다 — eyebrow 텍스트가 이미 갈래를 말하고, 배지까지 넣으면 한 행에 같은 정보가 세 번 나온다.</div>
+
+          <div class="row"><div class="grow" style="text-align:center"><span class="btn">← 이전</span> <span class="num">1 / 13</span> <span class="btn">다음 →</span></div></div>
+          <div class="note">페이지네이션을 유지하고 무한 스크롤로 바꾸지 않는다 — 뒤로가기로 목록에 돌아왔을 때 있던 자리가 남아야 한다. 다만 5개/쪽은 63편에서 13쪽이 되므로 <strong>쪽당 편수를 늘린다</strong>(값은 토큰·설정의 몫).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="frame wide">
+      <div class="caption">BROWSE 1D · 홈 목록 (데스크톱 확장)</div>
+      <div class="screen">
+        <div class="appbar"><span class="grow">No1Joon.dev</span><span class="side">검색</span><span class="side">이력서</span><span class="side">GitHub</span></div>
+        <div class="body">
+          <div class="cols">
+            <div class="c-list">
+              <div style="padding:8px 10px; white-space:nowrap; overflow:hidden;"><span class="chip on">전체 63</span><span class="chip">AI 26</span></div>
+              <div class="row railmark"><div class="grow"><div class="sub">Tech · Explainer</div><div style="font-weight:600">AI 의 전기 (4)</div><div class="sub num">08. 04</div></div></div>
+              <div class="row railmark"><div class="grow"><div class="sub">Tech · Explainer</div><div style="font-weight:600">AI 의 전기 (3)</div><div class="sub num">08. 04</div></div></div>
+              <div class="row railmark"><div class="grow"><div class="sub">AI · Weekly</div><div style="font-weight:600">AI 위클리 08-03</div><div class="sub num">08. 03</div></div></div>
+              <div class="row railmark"><div class="grow"><div class="sub">Science · Explainer</div><div style="font-weight:600">페로브스카이트 탠덤</div><div class="sub num">08. 03</div></div></div>
+              <div class="row"><div class="grow" style="text-align:center"><span class="num">1 / 13</span></div></div>
+            </div>
+            <div class="c-main">
+              <div class="ghost">— 글을 고르면 이 자리에 본문이 들어온다 —</div>
+              <div class="note">🔴 부분 네비게이션(#postView 교체)은 이미 구현돼 있고 <strong>목록 상태가 유지되는 것</strong>이 이 블로그의 자산이다. 데스크톱에서는 그 이점을 눈에 보이게 만든다 — 목록은 왼쪽에 남고 오른쪽만 갈린다. 지금처럼 목록 위·본문 아래로 쌓으면 글을 열 때마다 목록이 화면 밖으로 밀려나 유지되고 있다는 사실이 안 보인다.</div>
+              <div class="note">빈 상태를 “최신 글 자동 표시”로 채우지 않는다 — 사용자가 고르지 않은 글을 연 것처럼 보이고, 뒤로가기 이력이 지저분해진다.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="frame">
+      <div class="caption">BROWSE 2 · 검색</div>
+      <div class="screen">
+        <div class="appbar"><span class="grow">검색</span><span class="side">닫기</span></div>
+        <div class="body">
+          <div class="field">제목 · 요약 · 태그에서 찾기</div>
+          <div class="note">🔴 검색과 카테고리 필터를 한 화면에 겹치지 않는다. 필터는 <em>지금 보는 갈래를 좁히는</em> 도구고 검색은 <em>전체를 뒤지는</em> 도구다 — 검색을 열면 칩 행을 감춘다. 둘을 AND 로 묶으면 “AI 를 고른 채 검색해서 0건”이라는 설명하기 어려운 상태가 생긴다.</div>
+
+          <div class="sec"><span class="t">결과</span><span class="c">4</span></div>
+          <div class="row railmark"><div class="grow"><div class="sub">Tech · Explainer</div><div style="font-weight:600">RAM 에 대하여 (3) — 램값 폭등의 원인</div><div class="sub">…AI 가 부른 <strong>메모리</strong> 대란…</div></div></div>
+          <div class="row railmark"><div class="grow"><div class="sub">Tech · Explainer</div><div style="font-weight:600">RAM 에 대하여 (4) — HBM4·CXL·MRAM</div><div class="sub">…<strong>메모리</strong>의 다음 세대…</div></div></div>
+          <div class="note">본문 전문 색인을 만들지 않는다 — 63편 규모에서 제목·요약·태그만으로 충분하고, 전문 색인은 정적 사이트에서 내려받는 JSON 을 수백 KB 로 불린다. 매치된 자리를 결과 행에 한 줄 보여줘서 왜 걸렸는지 알게 한다.</div>
+          <div class="note">최근 검색어를 저장하지 않는다 — 저장할 만큼 반복 검색하는 사이트가 아니고, 남의 기기에 흔적을 남긴다.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="frame">
+      <div class="caption">BROWSE 3 · 검색 결과 없음</div>
+      <div class="screen">
+        <div class="appbar"><span class="grow">검색</span><span class="side">닫기</span></div>
+        <div class="body">
+          <div class="field">헤모그로빈</div>
+          <div class="box" style="text-align:center; padding:22px 10px;">
+            <div>찾는 글이 없습니다</div>
+            <div class="sub" style="margin-top:6px">다른 말로 찾거나, 갈래에서 훑어보세요</div>
+          </div>
+          <div style="padding:4px 12px; white-space:nowrap; overflow:hidden;">
+            <span class="chip">AI 26</span><span class="chip">Tech 21</span><span class="chip">Science 4</span>
+          </div>
+          <div class="note">🔴 “결과 없음”만 띄우고 끝내지 않는다. 63편뿐이라 오타 한 번, 사이트에 없는 주제 한 번이면 바로 0건이 된다 — 그 순간 사용자를 빈 화면에 세워두는 대신 갈래로 되돌리는 출구를 같은 화면에 둔다.</div>
+          <div class="note">“이런 글은 어떠세요” 같은 추천을 넣지 않는다 — 검색어와 무관한 글을 들이미는 것이고, 추천을 만들 신호(조회수·유사도)가 이 사이트엔 없다.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════ READ ══════════ -->
+<div class="group">
+  <h2>READ — 글을 읽는 흐름</h2>
+  <p class="desc">이번 개편의 무게중심. 한 편이 이미지 5~10장에 h2 여러 개인 긴 글이 많다는 전제로 짠다.</p>
+  <div class="rail">
+
+    <div class="frame">
+      <div class="caption">READ 1 · 포스트 본문 (모바일)</div>
+      <div class="screen">
+        <div class="appbar"><span class="side">‹ 목록</span><span class="grow"></span><span class="side">목차</span><span class="side">검색</span></div>
+        <div class="prog"></div>
+        <div class="body">
+          <div class="railmark" style="padding:10px 12px 6px">
+            <div style="font-size:15px; font-weight:700; line-height:1.35">AI 의 전기 (4) — SMR 은 정말 답인가, 비용·폐기물·일정을 숫자로</div>
+            <div class="sub" style="margin-top:6px">Tech · Explainer · <span class="num">2026. 08. 04</span></div>
+          </div>
+          <div class="note">🔴 지금은 글을 열어도 카테고리 메뉴와 목록 13행이 본문 위에 그대로 남아, 첫 문장까지 화면 두세 개를 스크롤해야 한다. 모바일에서는 목록을 접고 ‘‹ 목록’ 한 줄만 남긴다 — 부분 네비게이션이 뒤에서 선택한 갈래·쪽·스크롤을 들고 있으므로 돌아가면 있던 자리다. 상태를 <em>보여주는</em> 것과 <em>유지하는</em> 것은 다른 문제고, 모바일에선 유지만 하면 된다.</div>
+          <div class="note">진행도는 앱바에 붙인 선 하나로만 둔다(위 3px 줄). 퍼센트 숫자·원형 게이지를 쓰지 않는다 — 읽는 중에 셈을 시키는 장치이고, 필요한 정보는 “얼마나 남았나” 한 가지뿐이다.</div>
+
+          <div style="padding:0 12px"><p style="margin:8px 0">3탄까지 오면서 그림은 분명해졌습니다. 전력망은 못 따라가고, 빅테크는 9.8GW 어치 계약에 서명했고…</p></div>
+          <div class="sec"><span class="t">첫 프로젝트는 왜 취소됐나</span></div>
+          <div class="box" style="height:80px; display:flex; align-items:center; justify-content:center; color:var(--ink-3)">이미지</div>
+          <div class="note" style="padding-top:0">NuScale 첫 SMR 프로젝트의 사업비 변화 — 출처: NuScale·UAMPS</div>
+          <div style="padding:0 12px"><p style="margin:8px 0">2023년 11월, 미국에서 가장 앞서 있던 SMR 프로젝트가 취소됐습니다…</p></div>
+
+          <div class="note">태그는 제목 블록에 넣지 않고 글 끝으로 내린다 — 읽기 전에 필요한 정보가 아니고, 이번 개편에서 태그는 클릭 대상도 아니다(§design.md ②).</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="frame wide">
+      <div class="caption">READ 1D · 포스트 본문 (데스크톱 확장)</div>
+      <div class="screen">
+        <div class="appbar"><span class="grow">No1Joon.dev</span><span class="side">검색</span><span class="side">이력서</span></div>
+        <div class="prog"></div>
+        <div class="body">
+          <div class="cols">
+            <div class="c-list">
+              <div style="padding:8px 10px; white-space:nowrap; overflow:hidden;"><span class="chip on">Tech 21</span></div>
+              <div class="row railmark" style="background:#f2f2f2"><div class="grow"><div class="sub">Tech · Explainer</div><div style="font-weight:600">AI 의 전기 (4)</div></div></div>
+              <div class="row railmark"><div class="grow"><div class="sub">Tech · Explainer</div><div style="font-weight:600">AI 의 전기 (3)</div></div></div>
+              <div class="row railmark"><div class="grow"><div class="sub">Tech · Explainer</div><div style="font-weight:600">AI 의 전기 (2)</div></div></div>
+              <div class="note">읽는 중인 글을 목록에서 강조한다(현재 <code>.is-current</code> 로 이미 있음). 목록이 옆에 있는 이상 “내가 어디쯤 글을 골랐는지”가 보여야 한다.</div>
+            </div>
+            <div class="c-main">
+              <div class="railmark" style="padding:10px 12px 6px">
+                <div style="font-size:15px; font-weight:700">AI 의 전기 (4) — SMR 은 정말 답인가</div>
+                <div class="sub" style="margin-top:4px">Tech · Explainer · <span class="num">2026. 08. 04</span></div>
+              </div>
+              <div style="padding:0 12px"><p style="margin:8px 0">3탄까지 오면서 그림은 분명해졌습니다…</p></div>
+              <div class="sec"><span class="t">첫 프로젝트는 왜 취소됐나</span></div>
+              <div class="box" style="height:60px"></div>
+              <div class="note">🔴 본문 폭은 읽기 폭에 고정하고 화면이 넓어져도 늘리지 않는다. 남는 폭은 목록과 목차가 가져간다 — 한 줄이 길어질수록 다음 줄 첫 글자를 찾는 비용이 커지고, 그게 긴 글에서 이탈로 이어진다.</div>
+            </div>
+            <div class="c-toc">
+              <div class="sec"><span class="t" style="font-size:12px">목차</span></div>
+              <div style="padding:6px 10px; font-size:11px; line-height:1.9; color:var(--ink-2)">
+                <div style="color:var(--ink); font-weight:600">첫 프로젝트는 왜 취소됐나</div>
+                <div>발전단가로 비교하면</div>
+                <div style="padding-left:10px">가스복합과의 격차</div>
+                <div>폐기물은 늘어나나</div>
+                <div>그래서 언제의 답인가</div>
+              </div>
+              <div class="note">목차는 우측 고정이라 본문 흐름을 끊지 않는다. 현재 위치만 굵게 — 진행률 막대를 항목마다 붙이지 않는다.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="frame">
+      <div class="caption">READ 2 · 목차 (모바일 시트)</div>
+      <div class="screen">
+        <div class="appbar"><span class="side">‹ 목록</span><span class="grow"></span><span class="side">목차</span><span class="side">검색</span></div>
+        <div class="prog"></div>
+        <div class="body dim" style="display:flex; flex-direction:column">
+          <div class="ghost" style="padding-top:60px">— 본문이 비쳐 보인다 —</div>
+          <div class="sheet">
+            <div class="sec"><span class="t">목차</span><span class="c">닫기</span></div>
+            <div style="padding:6px 12px; line-height:2.1">
+              <div style="font-weight:600">첫 프로젝트는 왜 취소됐나</div>
+              <div>발전단가로 비교하면</div>
+              <div style="padding-left:12px" class="sub">가스복합과의 격차</div>
+              <div>폐기물은 늘어나나</div>
+              <div>그래서 언제의 답인가</div>
+            </div>
+          </div>
+        </div>
+        <div class="note">🔴 본문 상단에 인라인 목차를 두지 않는다 — 긴 글일수록 목차가 길어져 첫 문장까지의 거리가 멀어진다. 필요할 때 부르는 시트로 둔다.</div>
+        <div class="note">시트는 화면을 다 덮지 않는다(뒤 본문이 비쳐 보이는 만큼 남긴다) — 어디에서 어디로 가는지 감각이 유지돼야 하고, 바깥을 눌러 닫는 출구가 생긴다.</div>
+      </div>
+    </div>
+
+    <div class="frame">
+      <div class="caption">READ 3 · 본문 요소 규격</div>
+      <div class="screen">
+        <div class="appbar"><span class="grow">본문 안에서 반복되는 덩어리</span></div>
+        <div class="body">
+          <div class="box" style="height:64px; display:flex; align-items:center; justify-content:center; color:var(--ink-3)">이미지</div>
+          <div class="note" style="padding-top:0">캡션 — 출처: 기관명</div>
+          <div class="note">🔴 네이버 이식 글은 한 편에 이미지가 5~10장이고 전부 출처 캡션이 붙는다. 캡션이 본문 문단과 같은 무게로 보이면 글이 매 이미지마다 끊긴다 — 캡션은 한 단계 작게, 이미지에 붙여 <strong>하나의 덩어리</strong>로 묶는다.</div>
+
+          <div class="scrollx">코드 블록 — 자체 가로 스크롤 ⟷</div>
+          <div class="scrollx">표 — 자체 가로 스크롤 ⟷</div>
+          <div class="scrollx">mermaid 다이어그램 — 자체 가로 스크롤 ⟷</div>
+          <div class="note">🔴 넘치는 것은 각자 자기 컨테이너 안에서만 스크롤한다. 본문이 통째로 좌우로 밀리면 모바일에서 읽기가 무너지고, 한 번 밀린 페이지는 사용자가 되돌리지 않는다. (후처리는 이미 <code>assets/js/post-enhance.js</code> 가 맡고 있다 — 이 규격은 그 결과물에 적용된다.)</div>
+
+          <div class="box lead" style="margin-top:10px">인용 · 콜아웃 — 원문의 <span class="sub">💬 한 줄 요약 / ⚠️ 주의</span>가 여기로 변환돼 들어온다</div>
+          <div class="note">콜아웃 종류를 늘리지 않는다(정보/경고/성공/실패…). 이식 변환기가 만드는 건 인용 한 종류뿐이고, 종류를 늘리면 글마다 쓰는 기준이 갈린다.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="frame">
+      <div class="caption">READ 4 · 글 끝 — 이어 읽기</div>
+      <div class="screen">
+        <div class="appbar"><span class="side">‹ 목록</span><span class="grow"></span><span class="side">목차</span></div>
+        <div class="body">
+          <div style="padding:0 12px"><p style="margin:8px 0">…SMR 은 2030년대의 답이지, 지금 당장 데이터센터를 켜는 답은 아닙니다.</p></div>
+          <div style="padding:6px 12px"><span class="chip">ai-power</span><span class="chip">smr</span><span class="chip">nuclear</span></div>
+          <div class="note">태그는 여기 놓되 <strong>이번 개편에서는 누를 수 없다</strong> — 글의 성격 표시일 뿐이다. 누르게 만들려면 태그별 목록 화면이 필요하고 그건 이번 범위가 아니다(§design.md ②). 누를 수 없는 것을 칩 모양으로 두면 눌러보게 되므로, 실제 구현에서는 누를 수 있어 보이지 않게 한다.</div>
+
+          <div class="sec"><span class="t">같은 갈래의 다른 글</span><span class="c">Tech</span></div>
+          <div class="row railmark"><div class="grow"><div style="font-weight:600">AI 의 전기 (3) — 빅테크가 서명한 원자로 계약</div><div class="sub num">2026. 08. 04</div></div></div>
+          <div class="row railmark"><div class="grow"><div style="font-weight:600">AI 데이터센터의 전력과 열</div><div class="sub num">2026. 07. 31</div></div></div>
+          <div class="row railmark"><div class="grow"><div style="font-weight:600">RAM 에 대하여 (5) — 중국 CXMT 상장 쇼크</div><div class="sub num">2026. 07. 30</div></div></div>
+
+          <div class="note">🔴 시리즈 이전/다음 버튼을 두지 않는다 — 시리즈를 데이터로 아는 구조가 아직 없고, 제목의 <code>(n)</code> 을 파싱해 만드는 건 제목 표기가 흔들리는 순간 깨진다. 대신 같은 갈래 최신 3편만 둔다. 같은 시리즈는 대개 같은 갈래·비슷한 날짜라 여기 자연히 올라온다.</div>
+          <div class="note">다음 글을 스크롤 끝에 자동으로 이어붙이지 않는다 — 읽기를 끝낸 지점이 사라지고 뒤로가기가 망가진다. 끝은 끝으로 두고 다음 선택은 사용자가 한다.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════ SITE ══════════ -->
+<div class="group">
+  <h2>SITE — 목록·읽기에 속하지 않는 화면</h2>
+  <p class="desc">단독 문서와 예외 상태.</p>
+  <div class="rail">
+
+    <div class="frame">
+      <div class="caption">SITE 1 · 이력서</div>
+      <div class="screen">
+        <div class="appbar"><span class="grow">No1Joon.dev</span><span class="side">Posts</span><span class="side">GitHub</span></div>
+        <div class="body">
+          <div style="padding:10px 12px">
+            <div style="font-size:16px; font-weight:700">장현준</div>
+            <div class="sub" style="margin-top:4px">Senior Software Engineer · Frontend · Mobile · Backend · Data/AI</div>
+          </div>
+          <div class="sec"><span class="t">Core Skills</span></div>
+          <div class="box" style="height:44px"></div>
+          <div class="sec"><span class="t">Experience</span></div>
+          <div class="box" style="height:64px"></div>
+          <div class="note">🔴 이력서에는 카테고리 칩도 검색도 얹지 않는다 — 목록의 한 항목이 아니라 단독 문서다. 헤더 내비게이션만 공유한다.</div>
+          <div class="note">읽기 폭은 본문(READ)과 같은 값을 쓴다. 사이트 안에 읽기 폭이 두 종류면 다른 사이트를 옮겨다니는 느낌이 난다.</div>
+          <div class="note">이 화면에는 이미지가 없다 — 포트폴리오 스크린샷·상장 이미지는 공개 페이지에 올리지 않기로 한 결정을 그대로 따른다.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="frame">
+      <div class="caption">SITE 2 · 없는 주소 (404)</div>
+      <div class="screen">
+        <div class="appbar"><span class="grow">No1Joon.dev</span><span class="side">검색</span></div>
+        <div class="body">
+          <div class="box" style="text-align:center; padding:22px 10px; margin-top:40px">
+            <div>없는 주소입니다</div>
+            <div class="sub" style="margin-top:6px">글이 옮겨졌을 수 있습니다</div>
+          </div>
+          <div class="field">제목 · 요약 · 태그에서 찾기</div>
+          <div style="padding:4px 12px; white-space:nowrap; overflow:hidden;">
+            <span class="chip">AI 26</span><span class="chip">Tech 21</span><span class="chip">Daily Dev 6</span>
+          </div>
+          <div class="note">🔴 404 는 사과문이 아니라 출구다. 이 사이트는 slug 로 URL 이 정해지고(<code>/posts/&lt;slug&gt;/</code>) 이식·개편 과정에서 slug 가 바뀌면 외부 링크가 깨진다 — 그 사용자를 홈으로만 던지지 말고 검색과 갈래를 같은 화면에 준다.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="legend">
+  <h2>이 문서를 고칠 때</h2>
+  <ul>
+    <li>화면이 바뀌면 해당 <code>frame</code> 과 그 <code>note</code> 를 <strong>같이</strong> 고친다. note 를 안 고치면 근거와 배치가 어긋난 채 남는다.</li>
+    <li>번호는 재사용하지 않는다. 화면이 사라져도 그 코드는 비워 둔다 — 다른 문서가 그 코드를 가리키고 있다.</li>
+    <li>방향 자체가 바뀌면 <code>docs/design/design.md</code> 를 먼저 고친다. 여기만 고치면 다음 사람이 방향 문서를 근거로 되돌린다.</li>
+    <li>색·타이포·아이콘을 들여오지 않는다. 값의 정본은 <code>assets/css/style.css</code> 다.</li>
+  </ul>
+</div>
+
+</body>
+</html>

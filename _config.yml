@@ -38,6 +38,7 @@ plugins:
 exclude:
   - .claude/
   - .gemini/
+  - docs/
   - README.md
   - Gemfile
   - Gemfile.lock
