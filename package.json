@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "generate-og": "node scripts/generate-og.mjs",
+    "generate-brand": "node scripts/generate-brand.mjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

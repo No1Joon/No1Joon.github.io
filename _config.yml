@@ -3,15 +3,17 @@ description: 기술 스택, 아키텍처, 개발 경험을 기록하는 블로�
 baseurl: ""
 url: "https://no1joon.github.io"
 lang: ko
-logo: /assets/og-default.png
-image: /assets/og-default.png
+# publisher 로고는 정사각 로고여야 한다 (og 배너 아님). og:image 기본값은 아래 defaults 에 있다
+logo: /assets/favicon.png
 
 author:
   name: No1Joon
   url: https://github.com/No1Joon
 
+# social.name 이 jekyll-seo-tag 의 WebSite JSON-LD `name` 이 된다 — 구글이 이 값으로
+# 검색결과 사이트 이름을 정하므로 사람 이름이 아니라 사이트 이름을 넣는다
 social:
-  name: No1Joon
+  name: No1Joon's Tech Blog
   links:
     - https://github.com/No1Joon
 
@@ -29,6 +31,12 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+  # jekyll-seo-tag 의 og:image 는 page.image 만 읽는다 (site.image 는 무시) —
+  # 자체 OG 이미지가 없는 홈·이력서 등에 기본값을 깔아 준다. 포스트 front matter 가 우선한다
+  - scope:
+      path: ""
+    values:
+      image: /assets/og-default.png
 
 plugins:
   - jekyll-feed

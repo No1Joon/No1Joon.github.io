@@ -7,6 +7,7 @@ Jekyll 기반 GitHub Pages 블로그 (Claude·Gemini 공통 컨텍스트). 기�
 - `bundle install` — 의존성 설치
 - `bundle exec jekyll serve` — 로컬 프리뷰 (http://localhost:4000)
 - `npm run generate-og` — 포스트 OG 이미지 생성 (`assets/og/`)
+- `npm run generate-brand` — 파비콘·기본 OG 이미지 생성
 
 ## Architecture
 
@@ -15,6 +16,7 @@ Jekyll 기반 GitHub Pages 블로그 (Claude·Gemini 공통 컨텍스트). 기�
 - `assets/` — 최적화본 `images/` 와 원본 `raw-images/` 가 같은 구조를 미러링. 상세는 `assets/CLAUDE.md`.
 - `scripts/add-screenshot.py` — Desktop 스크린샷을 WebP 로 변환해 위 두 트리에 배치.
 - `scripts/generate-og.mjs` → `assets/og/` — OG 이미지 생성물 (원본은 포스트 front matter).
+- `scripts/generate-brand.mjs` → `favicon.ico` · `assets/favicon.png` · `assets/apple-touch-icon.png` · `assets/og-default.png` — 브랜드 자산 생성물. 색은 `assets/css/style.css` 의 `:root` 토큰과 맞춘다.
 - `scripts/import-naver-post.py` + `scripts/naver-import-map.yml` — `naver-posting` 프로젝트의 네이버 포스팅을 Jekyll 포스트로 이식. 규칙은 `.claude/skills/naver-import/SKILL.md`.
 - `api/` — 댓글 시스템 FastAPI 서비스. 사이트와 별개로 배포된다. 상세는 `api/CLAUDE.md`.
 - `docs/design/` — UI 를 만지기 전에 읽는다. `design.md` 가 방향·제외 항목·접근성 기준, `wireframes-blog.html` 이 화면 배치와 그 근거.
