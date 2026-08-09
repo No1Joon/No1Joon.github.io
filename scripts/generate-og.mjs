@@ -24,7 +24,8 @@ async function generateOG() {
   }
   const fontData = fs.readFileSync(FONT_PATH);
 
-  const posts = await glob(path.join(POSTS_DIR, '**/*.md'));
+  // CLAUDE.md 는 포스트가 아니라 디렉터리 지침 문서 — front matter 주입·OG 생성 대상에서 뺀다
+  const posts = await glob(path.join(POSTS_DIR, '**/*.md'), { ignore: '**/CLAUDE.md' });
   console.log(`Found ${posts.length} posts. Generating OG images...`);
 
   for (const postPath of posts) {
