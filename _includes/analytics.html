@@ -1,0 +1,13 @@
+{% comment %}
+  GA4. _config.yml 의 google_analytics 에 측정 ID(G-XXXXXXXXXX)가 있을 때만,
+  그리고 production 빌드에서만 나간다 — 로컬 jekyll serve 는 development 라 집계되지 않는다.
+{% endcomment %}
+{% if site.google_analytics and site.google_analytics != "" and jekyll.environment == "production" %}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ site.google_analytics }}');
+</script>
+{% endif %}
