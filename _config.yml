@@ -4,7 +4,7 @@ baseurl: ""
 url: "https://no1joon.github.io"
 lang: ko
 # GA4 측정 ID (G-XXXXXXXXXX). 비워 두면 추적 코드가 아예 나가지 않는다
-google_analytics: ""
+google_analytics: "G-M4V890LVXX"
 # publisher 로고는 정사각 로고여야 한다 (og 배너 아님). og:image 기본값은 아래 defaults 에 있다
 logo: /assets/favicon.png
 
