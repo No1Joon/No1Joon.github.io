@@ -22,6 +22,7 @@ Requirements:
 from __future__ import annotations
 
 import argparse
+import os
 import re
 import shutil
 import subprocess
@@ -32,7 +33,25 @@ import yaml
 
 REPO = Path(__file__).resolve().parent.parent
 NAVER_REPO = Path.home() / "Documents/projects/naver-posting"
-DRIVE_ROOT = Path.home() / "Library/CloudStorage/GoogleDrive-no1jhj97@gmail.com/My Drive/assets"
+
+
+def _drive_root() -> Path:
+    """Google Drive 마운트 경로. 폴더명에 계정 주소가 들어가므로 하드코딩하지 않고 찾는다."""
+    override = os.environ.get("NAVER_DRIVE_ROOT")
+    if override:
+        return Path(override)
+    base = Path.home() / "Library/CloudStorage"
+    for mount in sorted(base.glob("GoogleDrive-*")):
+        assets = mount / "My Drive/assets"
+        # 로그아웃된 계정 마운트는 stat 이 타임아웃난다. Path.is_dir() 은 그 예외를
+        # 그대로 던지지만 os.path.isdir 은 False 로 삼키므로 이쪽을 쓴다
+        if os.path.isdir(assets):
+            return assets
+    # 못 찾으면 기존과 같은 방식으로 뒤에서 실패하게 둔다
+    return base / "GoogleDrive/My Drive/assets"
+
+
+DRIVE_ROOT = _drive_root()
 DRIVE_ASSETS = DRIVE_ROOT / "postings"
 # 공유 자산(브랜드 로고 등) 원본 트리. 포스트 전용 폴더에 복사되지 않은 로고를 여기서 찾는다.
 DRIVE_RAW = DRIVE_ROOT / "raw"
