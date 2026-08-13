@@ -52,7 +52,11 @@
   {% endfor %}
 </nav>
 
-<div class="post-list" id="postList">
+{% comment %}
+  data-nosnippet — 이 목록은 모든 페이지에 똑같이 실리는 내비게이션이다.
+  없으면 구글이 여기 실린 남의 글 설명을 그 페이지의 검색 스니펫으로 뽑아 쓴다.
+{% endcomment %}
+<div class="post-list" id="postList" data-nosnippet>
   {% for post in site.posts %}
     {% assign cat_slug = "" %}
     {% assign sub_slug = "" %}
@@ -66,9 +70,18 @@
     {% endfor %}
     <a href="{{ post.url | relative_url }}" class="post-row" data-category="{{ cat_slug }}" data-subcategory="{{ sub_slug }}">
       <div class="post-row-eyebrow">{{ post.category }}{% if post.subcategory %} · {{ post.subcategory }}{% endif %}</div>
+      {% comment %}
+        compact — 포스트 페이지에서 켠다. 목록이 63편의 제목과 설명을 통째로 싣는 탓에
+        글 한 편의 페이지에서 남의 글 텍스트가 본문보다 많아지고(중앙값 68%), 본문 h1 이
+        남의 제목 h2 63개에 파묻힌다. 그래서 포스트 쪽에서는 설명을 빼고 제목도 h2 로 올리지 않는다.
+      {% endcomment %}
+      {% if include.compact %}
+      <div class="post-row-title">{{ post.title }}</div>
+      {% else %}
       <h2 class="post-row-title">{{ post.title }}</h2>
       {% if post.description %}
       <p class="post-row-desc">{{ post.description }}</p>
+      {% endif %}
       {% endif %}
       <div class="post-row-meta">{{ post.date | date: "%Y. %m. %d" }}</div>
     </a>

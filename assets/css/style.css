@@ -305,6 +305,10 @@ nav a:hover { color: var(--text); }
   margin-bottom: 2rem;
 }
 
+/* 본문이 DOM 에서 목록보다 앞에 오고(검색엔진용), 화면에서는 목록이 위로 돌아온다 */
+.post-page { display: flex; flex-direction: column; }
+.post-page > .post-browse { order: -1; }
+
 /* List browser shown at the top of a post page */
 .post-browse {
   margin-bottom: 2.5rem;

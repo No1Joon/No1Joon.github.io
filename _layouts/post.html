@@ -5,15 +5,16 @@ layout: default
 {% for cat in site.data.categories %}
   {% if cat.name == page.category %}{% assign cur_slug = cat.slug %}{% endif %}
 {% endfor %}
-<section class="post-browse">
-  {% include post-browser.html initial_cat=cur_slug %}
-</section>
-
 {% comment %}
+  .post-page = 본문을 DOM 에서 목록보다 앞에 두기 위한 래퍼.
+  검색엔진은 앞쪽 콘텐츠로 페이지 주제를 잡는데, 목록이 먼저 오면 63편의 남의 제목이
+  본문 h1 을 가린다. 보이는 순서는 CSS order 로 되돌리므로 화면은 이전과 같다.
+
   #postView = 부분 네비게이션이 교체하는 유일한 영역.
-  post-browser.html 이 다른 글의 이 블록만 가져와 갈아끼우므로 위 카테고리 섹션은 그대로 남는다.
+  post-browser.html 이 다른 글의 이 블록만 가져와 갈아끼우므로 카테고리 섹션은 그대로 남는다.
   본문 후처리(코드창·mermaid)는 assets/js/post-enhance.js — 교체 후에도 다시 호출된다.
 {% endcomment %}
+<div class="post-page">
 <div id="postView">
   <article>
     <header class="post-header">
@@ -38,4 +39,9 @@ layout: default
       {{ content }}
     </div>
   </article>
+</div>
+
+<section class="post-browse">
+  {% include post-browser.html initial_cat=cur_slug compact=true %}
+</section>
 </div>
