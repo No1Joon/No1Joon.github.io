@@ -28,11 +28,11 @@ permalink: /resume/
 
 ### Backend / Infra
 
-**Node.js / NestJS** · Python · MongoDB · PostgreSQL / pgvector · **Temporal** · Kafka · Docker / Cog · Kubernetes · GCP (Cloud Run, Vertex AI) · AWS S3 · CI/CD
+**Node.js / NestJS** · Python · MongoDB · Redis · **Temporal** · Kafka · Docker / Cog · Kubernetes · **AWS**(VPC · EC2 · Lambda · S3 · CloudFront · ElastiCache · MSK) · **GCP**(Cloud Run · GCS · Vertex AI) · nginx · CI/CD
 
 ### Data / AI
 
-LLM 통합 및 비용 최적화(Gemini · OpenAI) · RAG · 임베딩 검색 · **STT (whisper-large-v3)** · Computer Vision (Detection · Tracking · ReID · Homography) · 개인정보 비식별화 파이프라인 · 데이터 품질검사 자동화
+LLM 통합 및 비용 최적화(Gemini · OpenAI) · **STT (whisper-large-v3)** · Computer Vision (Detection · Tracking · ReID · Homography) · 개인정보 비식별화 파이프라인 · 데이터 품질검사 자동화
 
 ### Quality
 
@@ -63,7 +63,7 @@ LLM 통합 및 비용 최적화(Gemini · OpenAI) · RAG · 임베딩 검색 · 
 
 - **React Native (Expo) 앱을 입사부터 퇴사까지 4년간 개발** — 단일 코드베이스로 iOS/Android 지원, 태스크 카드 UI 전면 재설계(SectionList 전환·카테고리 바·진행바), 신규 태스크 타입 2종을 화면·제출 API·튜토리얼 전 계통에 추가, 배정 알림 및 상태바 대응
 - **배리어프리 음성인식 키오스크** 아키텍처 제안 및 PoC 수행 — **whisper-large-v3**(한국어 학습 모델) 기반, 맥미니 + 마이크 구성으로 발화 인식 → 화면 이미지 표출 실증, 음성 데이터 수집 프로세스 설계
-- 금 순도·중량 자동검증 시스템에서 **Raspberry Pi 제어 · 360도 턴테이블 · 고해상 카메라 · XRF 분석기 연동** 및 PDF 통합 리포트 산출
+- 금 순도·중량 자동검증 시스템 **전체 아키텍처 설계** — XRF 분석기·정밀 저울·360도 턴테이블·고해상 카메라를 **Raspberry Pi로 제어**하고 치수·밀도 교차검증과 PDF 통합 리포트까지 구성
 
 ---
 
@@ -78,6 +78,15 @@ LLM 통합 및 비용 최적화(Gemini · OpenAI) · RAG · 임베딩 검색 · 
 
 ---
 
+#### 인프라 운영 · 클라우드 전환
+
+- 웹·모바일·백엔드·이미지 파이프라인 전 계층이 올라간 **프로덕션 환경을 운영·배포** — 가용영역별로 Public/Private Subnet을 쌍으로 둔 **멀티 AZ** 구성에서, Redis·Kafka 등 데이터 계층을 Private Subnet에 격리해 백엔드에서만 접근하도록 설계
+- 관리자 패널·포털·모바일 정적 자원을 **전용 S3 버킷 + CloudFront 배포로 분리**하고 Origin Access Identity로 버킷을 CDN만 접근 가능하게 잠금 — 배포 절차를 해시 파일명 신규분 업로드 → 삭제분 정리 → 진입 파일 교체 → CDN 무효화 순서로 표준화하고 소스맵 업로드 금지를 운영 규칙으로 확립
+- 이미지 요청을 **CDN에서 서버리스 함수로 리사이즈**하고 결과를 캐시 버킷에 적재 — 원본 버킷과 캐시 버킷을 분리해 재요청 시 재처리 회피
+- **AWS에서 GCP로 전환** — Cloud Run·GCS 기반으로 서비스와 파이프라인을 이전하고, Kubernetes에 모델 컨테이너를 배포하며 코드·모델을 버킷에서 볼륨 마운트해 재빌드 없는 배포 구성. 두 클라우드를 모두 운영해 관리형 서비스 이전 시 무엇이 줄고 무엇이 새로 생기는지를 실측 기준으로 판단
+
+---
+
 #### 데이터 파이프라인 · 정부 지원사업
 
 - 데이터·AI 바우처 사업 **수요기업 13곳**(2021, 2023–2025)의 데이터 가공·품질검사 파이프라인 직접 구현(스크립트 50여 개) — **EgoBlur·랜드마크 기반 얼굴 비식별화**, Whisper 실시간 STT, 설문 데이터 정제·분석, 이미지–CSV 정합성 검사, 포맷·해상도 검증
@@ -85,7 +94,8 @@ LLM 통합 및 비용 최적화(Gemini · OpenAI) · RAG · 임베딩 검색 · 
 - **42억 원 규모 국책과제 주관기관 제안 총괄** — 과기정통부·NIA 인공지능 학습용 데이터 구축 지원사업, 기업 4개사 컨소시엄 구성·제안서 총괄·발표평가 발표 (서류 통과 후 발표평가 진출, 최종 미선정)
 - 국내 **Applied AI · 데이터바우처 트랙 리드** — 고객사·정부 지원사업 **15건 이상**의 요구사항 분석·솔루션 아키텍처 설계·AI 모델 선정·납품을 전 주기로 수행
 - AI 바우처 **공급기업 Pool에 자사 AI 솔루션 3종 등재**, 정부 AI 스타트업 **LLM 챌린지 서류심사 통과 및 발표** 수행
-- AI 주얼리 추천 시스템으로 **공인 시험성적서 단독 취득** — 얼굴 검출 모델(YOLOv4) 선정·학습, F1·IoU·Recall 및 응답·전송 시간을 시험 항목으로 정의, 테스트 3,000건으로 성능 5개 항목 전항목 Pass
+- 고객사가 수주한 정부사업에 **참여기업으로 투입**되어 얼굴 이미지 기반 장신구 추천 시스템 개발 — 얼굴 검출 모델(YOLOv4) 선정·학습·평가와 고객사 **레거시 PHP 코드 직접 수정**으로 모델 연동·추천 서비스 동작까지 구현
+- 사내 선례가 없던 **공인 제3자 시험 인증을 단독 수행** — F1·IoU·Recall과 DB 응답·전송 시간을 시험 항목으로 정의하고 테스트 3,000건으로 검증 절차 수립, 약 3개월의 시험 준비·시료 제출·현장 입회를 주도해 성능 5개 항목 전항목 Pass
 - 입사 첫해 법률 말뭉치 구축 과제에서 공공데이터 기반 판례문 5만 건 수집·정제(단어 추출·문장 길이 조정·맞춤법 검수·분포 시각화) 및 크라우드소싱 인력 관리 코드 작성, 기술·행정 감리 대응
 
 ---
@@ -114,20 +124,14 @@ LLM 통합 및 비용 최적화(Gemini · OpenAI) · RAG · 임베딩 검색 · 
 
 ## Personal Projects
 
-#### CaliMeal — AI 급식 식단 자동 생성 B2B SaaS
-Next.js 16 · Vertex AI (Gemini) · pgvector · Terraform · GCP · 풀스택 단독
-
-- LLM이 무엇을 생성하든 단가·중복·제철 규칙을 코드가 결정론적으로 보증하는 AI 생성 파이프라인 설계 (타임아웃·폴백·재검증 3중 방어)
-- Cloud SQL의 BYPASSRLS 제약을 owner-bypass 2-풀 + `SET LOCAL`로 우회한 멀티테넌트 격리, 크로스테넌트 유출 불가를 자동 테스트로 증명
-- Next.js Server Actions/SSE부터 Terraform 전 GCP 인프라 IaC까지 단독 설계·구현
-
----
-
 #### JJTeam — 코트 스포츠 팀 구성·대기열 실시간 관리 앱
-Expo / React Native · FastAPI · MongoDB · WebSocket · GCP · CI/CD · 풀스택 단독
+Expo / React Native · TypeScript · FastAPI · MongoDB · Redis · WebSocket · GCP · CI/CD · 풀스택 단독
 
-- RN 클라이언트 + FastAPI/MongoDB 백엔드 + GCP 인프라 + CI/CD를 단독 아키텍팅, iOS/Android 스토어 제출까지 완주
-- WebSocket 기반 다중 디바이스 실시간 동기화를 낙관적 되감기·재구독·close code 처리로 견고하게 구현
+- RN 클라이언트 + FastAPI/MongoDB 백엔드 + GCP 인프라 + CI/CD를 단독 아키텍팅, **App Store·Play 양쪽 출시**
+- 서버 없이 쓰는 로컬 모드 · 로그인 클라우드 모드 · 읽기 전용 참관 모드 **3가지를 저장 레벨 가드로 분리**해 모드가 섞이지 않도록 강제
+- 여러 운영진이 한 세션을 동시에 운영하도록 WebSocket 다중 디바이스 동기화를 되감기·재구독·close code 처리로 구현하고, N명 전송 시 **JSON 직렬화를 1회만 수행하도록 broadcast 최적화**
+- 세션 관리자가 단일 프로세스 전용임을 문서화해 수평 확장 전 필요한 조치를 선제적으로 남김
+- 비밀번호는 argon2 해시로만, 이메일 인증 코드는 해시로 10분만 보관하는 등 인증 데이터 취급 기준을 정해 처리방침에 명시
 - GitHub OIDC→WIF 자격증명-zero 배포, 백엔드 pytest 221개 · ruff · mypy CI 게이트 운영
 
 ---
@@ -135,8 +139,9 @@ Expo / React Native · FastAPI · MongoDB · WebSocket · GCP · CI/CD · 풀스
 #### Oh My Algorithm — 알고리즘 인터랙티브 시각화 웹앱
 React 19 · Vite 8 · Remotion · Puppeteer SSG · 프론트엔드 단독 · [ohmyalgorithm.com](https://ohmyalgorithm.com)
 
-- 14개 카테고리 50개 알고리즘을 단계별 인터랙티브 시각화로 직접 구현, 한/영 이중언어 실서비스 운영
-- 알고리즘 정의 하나로 웹앱 + 영상(Remotion) 두 출력을 구동하는 프레젠테이션 불가지론 데이터 레이어 설계
+- 알고리즘과 CS 개념의 동작 원리를 단계별 애니메이션으로 보여주는 실서비스 웹앱, 한/영 이중언어 운영
+- **공통 프리미티브 21개로 재사용 시각화 컴포넌트 74개를 조립**하는 프레젠테이션 불가지론 데이터 레이어 설계 — 정의 하나로 웹앱과 영상(Remotion) 두 출력을 구동
+- 정렬·탐색·그래프에 더해 **시스템·네트워크(OSI 7계층 · TCP 핸드셰이크)와 하드웨어**까지 카테고리 확장
 - Puppeteer 기반 자체 SSG로 100개 라우트 정적 프리렌더, per-page SEO(OG·JSON-LD·hreflang) 완비
 
 ---
@@ -154,7 +159,8 @@ React / Redux Toolkit · NestJS · Prisma · MongoDB · Redis · OpenAI · 소�
 Claude Max · Codex · Gemini · 커스텀 스킬 11종
 
 - 세 가지 AI 코딩 도구를 동시에 운용하며, 기획·설계·구현·배포로 이어지는 작업 흐름을 커스텀 스킬로 직접 구성
-- 기술 콘텐츠 생산·포스팅을 파이프라인화해 주 5편 이상 발행, 월평균 조회수 500회 이상
+- 반복되는 조사·작성·이미지 생성·포맷 변환·발행 단계를 스킬·스크립트·에이전트로 분해해 자동화하고, 사람은 주제 선정과 검수만 맡는 구조로 전환
+- 기술 콘텐츠를 **주 5편 이상 발행**, 주간 조회수가 3주 만에 124회에서 **296회**로 증가 (2026.08.03~08.09 기준)
 
 ---
 
