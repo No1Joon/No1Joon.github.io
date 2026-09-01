@@ -559,3 +559,533 @@
   title: "AI 의 전기 (4) — SMR 은 정말 답인가, 비용·폐기물·일정을 숫자로"
   description: 사업비가 2.5배로 뛰어 취소된 첫 프로젝트부터 발전단가 비교와 폐기물 증가 연구까지, 옹호도 폄하도 없이 숫자만 봅니다
   tags: [ai-power, smr, nuclear, lcoe, energy-economics]
+
+- source: posts/ai/26Q3/20260804_book_to_skill_스킬변환.md
+  slug: book-to-skill-token-cost
+  date: 2026-08-04
+  category: AI
+  category_slug: ai
+  subcategory: Explainer
+  title: "책 한 권을 AI 스킬로 압축하는 법 — book-to-skill 직접 써봤습니다"
+  description: 책을 통째로 붙여넣는 대신 에이전트 스킬로 컴파일하는 book-to-skill 을 설치해 돌려보고, 탐색 루프 세금과 실제 토큰 사용량을 측정합니다
+  tags: [book-to-skill, agent-skills, claude-code, token-cost, open-source]
+
+- source: posts/ai/26Q3/20260804_FinOps_AI비용최적화.md
+  slug: finops-ai-cost-management
+  date: 2026-08-04
+  category: AI
+  category_slug: ai
+  subcategory: Explainer
+  title: "AI 청구서는 왜 클라우드 청구서와 다른가 — FinOps 고도화"
+  description: 기존 클라우드 비용 공식이 AI 워크로드에서 깨지는 지점을 짚고, 귀속·캐싱·배치까지 구현 순서를 정리합니다
+  tags: [finops, ai-cost, gpu-utilization, prompt-caching, cloud-cost]
+
+- source: posts/tech/26Q3/20260805_멀티클라우드_운영표준화.md
+  slug: multicloud-operations-standardization
+  date: 2026-08-05
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "멀티클라우드는 고른 게 아니라 쌓인 겁니다 — 운영 표준화 5개 층"
+  description: 전략이 아니라 사고로 생긴 멀티클라우드를 통일하지 않고 운영하는 방법을, 표준화할 층과 두어야 할 층으로 갈라 정리합니다
+  tags: [multicloud, hybrid-cloud, cloud-operations, standardization, finops]
+
+- source: posts/tech/26Q3/20260805_Cloudflare_BYOIP_장애회고.md
+  slug: cloudflare-byoip-outage-postmortem
+  date: 2026-08-05
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "물음표 하나가 인터넷 1,100개 경로를 지웠다 — Cloudflare BYOIP 장애 회고"
+  description: 빈 문자열 하나가 BGP 경로를 지운 6시간을 포스트모템의 코드와 함께 따라가고, 스테이징이 왜 못 걸렀는지까지 짚습니다
+  tags: [cloudflare, byoip, bgp, postmortem, outage]
+
+- source: posts/tech/26Q3/20260806_AWS_GCP_서울리전비교.md
+  slug: aws-gcp-seoul-region-comparison
+  date: 2026-08-06
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "AWS와 GCP 서울 리전, 같은 사양 시간당 0.0008달러 차이"
+  description: 양쪽 공식 가격표에서 서울 리전 값만 뽑아 맞대고, 정가가 아니라 자동 할인과 이그레스에서 청구서가 갈리는 이유를 정리합니다
+  tags: [aws, gcp, cloud-pricing, seoul-region, egress]
+
+- source: posts/tech/26Q3/20260806_IPv4시세_CGNAT.md
+  slug: ipv4-price-cgnat
+  date: 2026-08-06
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "IPv4 주소값이 3분의 1 됐는데 CGNAT은 왜 안 걷히나"
+  description: 60달러에서 20달러로 내려온 IPv4 시세와, 값이 내렸는데도 주소 공유가 굳는 이유, 그 대가로 사람이 봇 취급받는 구조를 짚습니다
+  tags: [ipv4, cgnat, ip-market, isp, networking]
+
+- source: posts/tech/26Q3/20260806_IPv6_VPC_네트워크비용.md
+  slug: ipv6-vpc-network-cost
+  date: 2026-08-06
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "IPv4 주소 30개에 연 350만원 — IPv6-Only VPC 계산기"
+  description: 퍼블릭 IPv4 과금·NAT 게이트웨이·이그레스로 갈리는 클라우드 네트워크 청구서를 계산하고, IPv6-Mostly 전환의 손익을 따집니다
+  tags: [ipv6, vpc, nat-gateway, cloud-cost, networking]
+
+- source: posts/tech/26Q3/20260808_AWS_Lightsail_요금구조.md
+  slug: aws-lightsail-pricing
+  date: 2026-08-08
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "AWS Lightsail 요금 구조 — 번들에 뭐가 묶여 있나"
+  description: 월 4,800원짜리 AWS 서버가 싼 이유를 번들 구성에서 찾고, 같은 트래픽에서 EC2 와 갈리는 금액과 포기하는 선택지를 정리합니다
+  tags: [aws, lightsail, cloud-pricing, ec2, bandwidth]
+
+- source: posts/tech/26Q3/20260808_국내CSP_VM가격비교.md
+  slug: korea-csp-vm-pricing
+  date: 2026-08-08
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "국내 클라우드 VM 요금 비교 — 서버값보다 트래픽이 갈랐다"
+  description: 네이버 클라우드 플랫폼과 NHN Cloud 공식 요금표를 같은 조건으로 맞춰, 서버·디스크·IP·트래픽까지 실제 청구액을 계산합니다
+  tags: [cloud-pricing, naver-cloud, nhn-cloud, vm, egress]
+
+- source: posts/ai/26Q3/20260810_오픈소스STT_한국어실측.md
+  slug: open-source-stt-korean-benchmark
+  date: 2026-08-10
+  category: AI
+  category_slug: ai
+  subcategory: Explainer
+  title: "무료 오픈소스 STT 4종을 같은 음성으로 돌려봤습니다"
+  description: 같은 가중치를 쓰는 네 구현을 한국어·영어 같은 음성으로 재고, 영어 1위가 한국어에서 뒤집힌 이유가 성능이 아니었던 지점을 짚습니다
+  tags: [stt, whisper, faster-whisper, korean-asr, benchmark]
+
+- source: posts/weekly/26Q3/20260810_AI위클리_DeepMind개편_MuseCode_Palantir93.md
+  slug: ai-weekly-2026-08-10
+  date: 2026-08-10
+  category: AI
+  category_slug: ai
+  subcategory: Weekly
+  title: "AI 위클리 2026-08-10 — Google DeepMind 개편, Meta Muse Code, Palantir 93% 성장"
+  description: 8월 2주 AI 업계 핵심 8건 — 새 모델보다 사람이 움직인 한 주를 정리합니다
+  tags: [ai-weekly, google-deepmind, meta, palantir, ai-agents]
+
+- source: posts/tech/26Q3/20260813_계정유출_자가점검.md
+  slug: account-breach-self-check
+  date: 2026-08-13
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "내 비밀번호가 유출 목록에 있는지 5초에 확인하는 법"
+  description: 비밀번호를 어디에도 보내지 않고 유출 여부를 확인하는 원리를 풀고, 이미 털린 계정을 정해진 순서로 점검하는 5분짜리 절차를 정리합니다
+  tags: [password-security, have-i-been-pwned, k-anonymity, account-security, mfa]
+
+- source: posts/math/26Q3/20260813_Astra_수학난제_Lean증명.md
+  slug: astra-math-lean-proofs
+  date: 2026-08-13
+  category: Math
+  category_slug: math
+  subcategory: Explainer
+  title: "AI 가 27년 묵은 수학 난제를 풀었다 — 검증은 누구나 할 수 있다"
+  description: 난제 열 개라는 숫자보다 증명이 기계가 읽는 형식으로 함께 공개된 점이 중요한 이유를, Lean 저장소를 직접 열어 확인합니다
+  tags: [lean4, formal-verification, openai-astra, math-proof, mathlib]
+
+- source: posts/robot/26Q3/20260813_DARPA_VENOM_F16_자율비행.md
+  slug: darpa-venom-f16-autonomy
+  date: 2026-08-13
+  category: Robot
+  category_slug: robot
+  subcategory: News
+  title: "AI 가 진짜 F-16 을 몰았다 — 조종사는 스위치만 지켰다"
+  description: 시뮬레이터가 아닌 실제 F-16 에서 이뤄진 DARPA VENOM 자율 비행 시험의 조건과 개조 방식, KF-21 무인편대의 현재 위치를 정리합니다
+  tags: [darpa, venom, f-16, autonomous-flight, physical-ai]
+
+- source: posts/tech/26Q3/20260814_액침냉각_인화점규제.md
+  slug: immersion-cooling-flash-point
+  date: 2026-08-14
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "액침냉각이 한국에서만 더딘 이유 — 인화점 250℃ 의 벽"
+  description: 서버를 담그는 기름이 위험물로 분류되는 국내 규제를 짚고, 1상·2상 액침의 갈림길과 3M 철수가 남긴 자리를 정리합니다
+  tags: [immersion-cooling, datacenter, regulation, flash-point, thermal-management]
+
+- source: posts/tech/26Q3/20260814_PostNVIDIA_CUDA해자.md
+  slug: post-nvidia-cuda-moat
+  date: 2026-08-14
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "CUDA 해자는 어디가 뚫렸나 — 층별로 뜯어보기"
+  description: 엔비디아의 해자를 네 겹으로 갈라 이미 무너진 층과 멀쩡한 층을 구분하고, 학습이 아니라 추론에서 전선이 열리는 이유를 짚습니다
+  tags: [nvidia, cuda, ai-chip, inference, npu]
+
+- source: posts/ai/26Q3/20260815_Gemini37Flash_thinking레벨_실측.md
+  slug: gemini-37-flash-thinking-levels
+  date: 2026-08-15
+  category: AI
+  category_slug: ai
+  subcategory: Explainer
+  title: "Gemini 3.7 Flash — 생각의 양을 숫자에서 등급으로 바꿨습니다"
+  description: 두 모델을 143번 호출해 생각 토큰·속도·정확도를 재고, MINIMAL 이 사라진 변화가 대량 분류 비용에서 어떻게 드러나는지 계산합니다
+  tags: [gemini, thinking-level, llm-cost, benchmark, google]
+
+- source: posts/ai/26Q3/20260815_Gemma4_맥북_로컬실측.md
+  slug: gemma-4-macbook-local
+  date: 2026-08-15
+  category: AI
+  category_slug: ai
+  subcategory: Explainer
+  title: "맥북에서 Gemma 4 돌려봤습니다 — 크기별 속도와 함정 하나"
+  description: M3 Pro 36GB 에서 Gemma 4 를 크기별로 재고, 같은 답을 12배 느리게 받게 만든 기본값 하나를 찾아냅니다
+  tags: [gemma, local-llm, ollama, apple-silicon, on-device-ai]
+
+- source: posts/weekly/26Q3/20260816_AI위클리_Decart인수_Gemini10억_Grok46.md
+  slug: ai-weekly-2026-08-16
+  date: 2026-08-16
+  category: AI
+  category_slug: ai
+  subcategory: Weekly
+  title: "AI 위클리 2026-08-16 — Anthropic 의 Decart 인수 협상, Gemini 10억 명, Grok 4.6"
+  description: 8월 3주 AI 업계 핵심 11건 — 모델 발표보다 지갑이 먼저 열린 한 주를 정리합니다
+  tags: [ai-weekly, anthropic, google-gemini, grok, ai-agents]
+
+- source: posts/ai/26Q3/20260817_GPT56_3티어_가격인하.md
+  slug: gpt-56-tiers-pricing
+  date: 2026-08-17
+  category: AI
+  category_slug: ai
+  subcategory: Explainer
+  title: "GPT-5.6 은 모델 하나가 아닙니다 — Sol·Terra·Luna 고르는 법"
+  description: 한 이름 아래 25배 벌어진 세 티어의 단가와 모드별 배수를 정리하고, 어느 일을 어느 티어에 맡길지 기준을 세웁니다
+  tags: [gpt-56, openai, llm-pricing, model-tiers, api-cost]
+
+- source: posts/tech/26Q3/20260817_비오면_인터넷_느려지나.md
+  slug: rain-internet-slowdown
+  date: 2026-08-17
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "비가 오면 왜 인터넷이 느려질까 — 젖는 구간은 따로 있습니다"
+  description: ITU 권고 공식에 국내 호우 기준을 넣어 강우감쇠를 계산하고, 집 안 Wi-Fi 와 위성·고주파 구간이 갈리는 이유를 주파수로 설명합니다
+  tags: [rain-fade, wifi, itu-r, satellite-internet, networking]
+
+- source: posts/tech/26Q3/20260817_클로드코드_세션간_메시징.md
+  slug: claude-code-cross-session-messaging
+  date: 2026-08-17
+  category: AI
+  category_slug: ai
+  subcategory: Explainer
+  title: "클로드 코드 세션끼리 말을 걸기 시작했습니다 — 크로스세션 메시징"
+  description: 터미널을 오가며 복붙하던 일을 없애는 세션 간 메시징의 동작 방식과, 받는 쪽이 전달·보류·거부를 정하는 구조를 정리합니다
+  tags: [claude-code, cross-session, ai-agents, developer-tools, workflow]
+
+- source: posts/tech/26Q3/20260818_선크림_1탄_SPF_PA_숫자.md
+  slug: sunscreen-01-spf-pa
+  date: 2026-08-18
+  category: Science
+  category_slug: science
+  subcategory: Explainer
+  title: "선크림 (1) — SPF 와 PA 숫자는 어떻게 정해지나"
+  description: 사람 피부에 자외선을 쬐어 정하는 SPF·PA 시험 방법을 풀고, SPF 50 과 100 의 차이가 1%뿐인 이유를 계산합니다
+  tags: [sunscreen, spf, uv-radiation, skin-health, cosmetics]
+
+- source: posts/tech/26Q3/20260818_선크림_2탄_성분과_규제.md
+  slug: sunscreen-02-filters-and-regulation
+  date: 2026-08-18
+  category: Science
+  category_slug: science
+  subcategory: Explainer
+  title: "선크림 (2) — 성분이 나라마다 다른 이유, 미국 17종 한국 32종"
+  description: 무기·유기 자외선차단 필터의 차이와 나라별 허용 목록이 갈리는 규제 구조를, 같은 제품의 성분표가 달라지는 사례로 정리합니다
+  tags: [sunscreen, uv-filter, regulation, fda, cosmetics]
+
+- source: posts/tech/26Q3/20260818_선크림_3탄_바르는법_추천.md
+  slug: sunscreen-03-how-to-apply
+  date: 2026-08-18
+  category: Science
+  category_slug: science
+  subcategory: Explainer
+  title: "선크림 (3) — 표시된 SPF 를 다 받으려면 얼마나 발라야 하나"
+  description: 시험 기준량 2mg/cm² 가 실제로 어느 정도인지 재고, 워터프루프 표기와 2시간 덧바르기 권고의 근거를 짚습니다
+  tags: [sunscreen, spf, application, water-resistant, skin-health]
+
+- source: posts/tech/26Q3/20260818_하이브리드본딩_HBM4_연기.md
+  slug: hybrid-bonding-hbm4-delay
+  date: 2026-08-18
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "하이브리드 본딩은 왜 또 미뤄졌나 — HBM4 가 범프를 유지한 이유"
+  description: 규격 높이가 늘어나며 범프를 유지할 여지가 생긴 경위를 짚고, 16단에서 결국 전환이 필요해지는 지점과 삼성·SK 의 다른 베팅을 정리합니다
+  tags: [hybrid-bonding, hbm4, packaging, semiconductor, microbump]
+
+- source: posts/tech/26Q3/20260818_MCP_상태없는_프로토콜.md
+  slug: mcp-stateless-protocol
+  date: 2026-08-18
+  category: AI
+  category_slug: ai
+  subcategory: Explainer
+  title: "MCP 는 왜 세션을 버렸나 — 표준이 인프라가 되는 과정"
+  description: N×M 연동 문제를 N+M 으로 바꾼 MCP 의 발상을 풀고, 핸드셰이크를 없앤 2026-07-28 개정이 성격을 어떻게 바꿨는지 짚습니다
+  tags: [mcp, ai-agents, protocol, stateless, developer-tools]
+
+- source: posts/robot/26Q3/20260818_휴머노이드_감속기_병목.md
+  slug: humanoid-gear-reducer-bottleneck
+  date: 2026-08-18
+  category: Robot
+  category_slug: robot
+  subcategory: Explainer
+  title: "휴머노이드 값의 절반 이상은 관절입니다 — 감속기 이야기"
+  description: 관절 40개짜리 로봇의 원가를 정하는 감속기를 하모닉·사이클로이드로 갈라 보고, 특허 만료 뒤 국산 부품이 채워 가는 자리를 짚습니다
+  tags: [humanoid, gear-reducer, harmonic-drive, actuator, robot-supply-chain]
+
+- source: posts/ai/26Q3/20260819_클로드_연쇄장애_8월.md
+  slug: claude-outages-august-2026
+  date: 2026-08-19
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "Claude 새벽 장애 — 다섯 모델이 한꺼번에 흔들렸습니다"
+  description: 상태 페이지 18개월치를 내려받아 8월 장애를 세어 보고, 체감과 숫자가 어긋나는 지점과 국내 개발 조직의 의존 구조를 정리합니다
+  tags: [claude, anthropic, outage, status-page, ai-reliability]
+
+- source: posts/tech/26Q3/20260819_AI전력_5탄_변압기병목.md
+  slug: ai-power-05-transformer-bottleneck
+  date: 2026-08-19
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "AI 의 전기 (5) — 변압기 하나 받는 데 3년, 그 줄 뒤에 선 한국"
+  description: 미국 데이터센터 40%가 밀린 원인이 칩이 아니라 변압기 납기인 이유를 짚고, 공장을 늘려도 풀리지 않는 구조와 국내 전력기기 수주잔고를 정리합니다
+  tags: [ai-power, transformer, grid, datacenter, supply-chain]
+
+- source: posts/electronics/26Q3/20260820_맥북프로_M3Pro_36GB_29개월.md
+  slug: macbook-pro-m3-pro-29-months
+  date: 2026-08-20
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "MacBook Pro 14 M3 Pro 36GB — 29개월 쓰고 남은 것"
+  description: 2년 반 쓴 맥북의 배터리 열화·발열·스왑을 직접 확인한 값으로 정리하고, 메모리 36GB 와 저장 1TB 선택이 지금 어떻게 남았는지 적습니다
+  tags: [macbook-pro, m3-pro, apple-silicon, battery-health, local-llm]
+
+- source: posts/ai/26Q3/20260820_OpenAI_Astra_훈련중단.md
+  slug: openai-astra-training-pause
+  date: 2026-08-20
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "OpenAI 가 자기 훈련을 멈췄습니다 — Astra 가 넘은 선"
+  description: 2주 중단이라는 헤드라인보다 종료일 없이 보류된 쪽이 중요한 이유를 짚고, 능력 임계선이라는 개념이 국내 규제에는 없는 자리를 정리합니다
+  tags: [openai, astra, ai-safety, preparedness-framework, ai-regulation]
+
+- source: posts/tech/26Q3/20260820_AI인터커넥트_UALink_UltraEthernet.md
+  slug: ai-interconnect-ualink-ultra-ethernet
+  date: 2026-08-20
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "GPU 를 묶는 선을 누가 쥐나 — UALink 와 Ultra Ethernet"
+  description: 랙 안과 랙 밖에서 따로 벌어지는 두 전선을 갈라 보고, 표준이 NVLink 에 던진 숫자와 스펙만 나온 채 칩이 없는 현재 위치를 정리합니다
+  tags: [ualink, ultra-ethernet, nvlink, interconnect, ai-infrastructure]
+
+- source: posts/tech/26Q3/20260820_WebMCP_브라우저_에이전트표준.md
+  slug: webmcp-browser-agent-standard
+  date: 2026-08-20
+  category: AI
+  category_slug: ai
+  subcategory: Explainer
+  title: "웹사이트가 AI 에게 스스로 기능을 알려줍니다 — WebMCP"
+  description: 에이전트가 화면을 추측하던 방식을 뒤집는 WebMCP 의 동작과 document.modelContext 한 줄, 표준화 절차의 현재 위치를 정리합니다
+  tags: [webmcp, mcp, browser-agents, web-standards, ai-agents]
+
+- source: posts/ai/26Q3/20260821_구글_앤트로픽_순환금융.md
+  slug: google-anthropic-circular-financing
+  date: 2026-08-21
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "파는 쪽이 사는 쪽 돈까지 대줍니다 — 구글과 앤트로픽"
+  description: 구글이 앤트로픽의 임대료를 보증하고 지분 20%를 받은 거래 구조를 순서대로 풀고, 엔비디아·오픈AI 사례와 겹치는 순환 금융의 모양을 짚습니다
+  tags: [google, anthropic, ai-infrastructure, datacenter, circular-financing]
+
+- source: posts/ai/26Q3/20260821_Nemotron3_엔비디아_오픈모델.md
+  slug: nemotron-3-nvidia-open-model
+  date: 2026-08-21
+  category: AI
+  category_slug: ai
+  subcategory: Explainer
+  title: "GPU 파는 회사가 왜 모델을 공짜로 풀까 — Nemotron 3"
+  description: 가중치에 학습 데이터와 레시피까지 연 Nemotron 3 의 세 크기를 정리하고, 라이선스를 직접 읽어 완전 공개라는 말의 경계를 확인합니다
+  tags: [nemotron, nvidia, open-weights, license, moe]
+
+- source: posts/ai/26Q3/20260821_국산NPU_리벨리온_SKT공급.md
+  slug: rebellions-rebel-skt-supply
+  date: 2026-08-21
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "국산 NPU 가 SKT 에 들어갑니다 — 다만 상용은 내년입니다"
+  description: 리벨리온 REBEL 의 SK텔레콤 공급 일정을 헤드라인과 갈라 보고, 물량이 아직 안 정해진 이유가 성능이 아니라 총소유비용인 지점을 짚습니다
+  tags: [rebellions, npu, ai-chip, skt, tco]
+
+- source: posts/security/26Q3/20260821_패스키_PassTaKey_공격.md
+  slug: passkey-pass-ta-key-attack
+  date: 2026-08-21
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "패스키가 뚫렸다는 말, 전제를 보면 다릅니다 — Pass-ta-key"
+  description: 악성코드가 이미 돌고 있어야 성립하는 공격 3단계를 풀고, 그런데도 동기화 패스키 구조에서 이 연구가 중요한 이유를 짚습니다
+  tags: [passkey, webauthn, fido, infostealer, account-security]
+
+- source: posts/robot/26Q3/20260821_중국_휴머노이드_전시장진입.md
+  slug: china-humanoid-showroom
+  date: 2026-08-21
+  category: Robot
+  category_slug: robot
+  subcategory: News
+  title: "손님이 줄어든 매장에 BYD 가 로봇을 세웠습니다"
+  description: 내수 판매가 꺾인 BYD 가 접객 휴머노이드를 전시장에 배치한 배경과, 공장으로 간 아틀라스와 갈린 두 진입로를 정리합니다
+  tags: [humanoid, byd, china-robotics, service-robot, physical-ai]
+
+- source: posts/tech/26Q3/20260821_RAM_6탄_HBF_고대역폭플래시.md
+  slug: ram-06-hbf
+  date: 2026-08-21
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "RAM에 대하여 (6) — HBM 옆에 낸드를 쌓는 새 계층, HBF"
+  description: SK하이닉스와 샌디스크가 공개한 HBF 첫 표준을 정리하고, HBM 이 못 푸는 용량 문제를 어느 자리에서 받는지 짚습니다
+  tags: [hbf, hbm, nand, memory-hierarchy, sk-hynix]
+
+- source: posts/tech/26Q3/20260823_CPO_광인터커넥트_네이처논문.md
+  slug: ram-07-cpo-optical-interconnect
+  date: 2026-08-23
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "RAM에 대하여 (7) — 메모리를 GPU 옆에서 떼어내는 빛, CPO"
+  description: SK하이닉스 연구진이 Nature Electronics 에 낸 논문을 따라, 구리 배선의 한계와 100Tb/s·100W 라는 목표 숫자를 정리합니다
+  tags: [cpo, optical-interconnect, sk-hynix, nature-electronics, memory]
+
+- source: posts/weekly/26Q3/20260823_AI위클리_Anthropic첫흑자_Stripe오픈라우터_단백질설계.md
+  slug: ai-weekly-2026-08-23
+  date: 2026-08-23
+  category: AI
+  category_slug: ai
+  subcategory: Weekly
+  title: "AI 위클리 2026-08-23 — Anthropic 첫 흑자, Stripe 의 OpenRouter 인수, Claude 단백질 설계"
+  description: 8월 4주 AI 업계 핵심 10건 — 실적과 인수, 그리고 과학 쪽 성과가 함께 나온 한 주를 정리합니다
+  tags: [ai-weekly, anthropic, stripe, protein-design, ai-security]
+
+- source: posts/ai/26Q3/20260824_Claude_오류_다중모델.md
+  slug: claude-multi-model-errors-0824
+  date: 2026-08-24
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "Claude 오류 발생, 지금 장애인지 3분 안에 확인하는 법"
+  description: 8월 24일 다중 모델 인시던트의 경과를 정리하고, 내 화면의 오류가 서비스 장애인지 계정·브라우저 문제인지 가르는 순서를 짚습니다
+  tags: [claude, anthropic, outage, troubleshooting, status-page]
+
+- source: posts/ai/26Q3/20260825_AI법_1탄_AI기본법_고영향판별.md
+  slug: ai-law-01-framework-act
+  date: 2026-08-25
+  category: AI
+  category_slug: ai
+  subcategory: Explainer
+  title: "AI 와 법 (1) — 우리 서비스가 고영향 AI 인지 확인하는 순서"
+  description: 1월 전면시행된 AI기본법의 다섯 의무와 7월 시행령의 성격을 갈라 보고, 고영향 판별의 세 관문과 계도기간의 의미를 정리합니다
+  tags: [ai-basic-act, high-impact-ai, ai-regulation, compliance, korea-law]
+
+- source: posts/tech/26Q3/20260825_AI전력_6탄_물량표류.md
+  slug: ai-power-06-stalled-buildout
+  date: 2026-08-25
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "AI 의 전기 (6) — 16GW 중 착공은 5GW, 나머지는 어디 갔나"
+  description: 발표만 되고 삽을 뜨지 않은 물량이 도는 경로를 따라가, 데이터센터 취소설과 D램 값 상승이 어긋나 보이는 이유를 짚습니다
+  tags: [ai-power, datacenter, buildout, dram, grid-queue]
+
+- source: posts/paper/26Q3/20260826_Mamba3_상태공간모델_논문.md
+  slug: mamba-3-state-space-model
+  date: 2026-08-26
+  category: AI
+  category_slug: ai
+  subcategory: Explainer
+  title: "16,384 토큰에서 7배가 갈립니다 — Mamba-3 논문"
+  description: 어텐션의 길이 비례 비용을 다시 계산한 ICLR 2026 논문을 읽고, 상태 크기를 절반으로 줄인 구조와 길이별 지연을 직접 재봅니다
+  tags: [mamba-3, state-space-model, attention, long-context, paper-review]
+
+- source: posts/paper/26Q3/20260826_ResNet_잔차학습_논문.md
+  slug: resnet-residual-learning
+  date: 2026-08-26
+  category: AI
+  category_slug: ai
+  subcategory: Explainer
+  title: "56층이 20층보다 나빴습니다 — ResNet 논문 뜯어보기"
+  description: 깊이가 늘수록 훈련 오류부터 올라간 열화 현상과 잔차 연결이 푼 방식을 논문 그림으로 따라가고, 두 블록을 직접 돌려 확인합니다
+  tags: [resnet, residual-learning, deep-learning, computer-vision, paper-review]
+
+- source: posts/robot/26Q3/20260826_휴머노이드_전동액추에이터.md
+  slug: humanoid-electric-actuator
+  date: 2026-08-26
+  category: Robot
+  category_slug: robot
+  subcategory: Explainer
+  title: "유압이 더 센데 왜 전부 전동으로 갔을까"
+  description: 출력 밀도 100배 격차가 10배로 좁혀지는 동안 벌어진 일과, 효율·대기 손실에서 갈린 선택, 그 대가로 붙은 희토자석 의존을 정리합니다
+  tags: [humanoid, actuator, hydraulic, bldc, rare-earth-magnet]
+
+- source: posts/tech/26Q3/20260826_배터리_80퍼센트충전제한.md
+  slug: battery-80-percent-charge-limit
+  date: 2026-08-26
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "밤새 꽂아둬도 되나 — 80% 충전 제한의 실제 효과"
+  description: 리튬이온 셀이 늙는 두 경로를 갈라 보고, 충전 전압과 온도가 수명에 미치는 크기를 비교해 충전 상한 기능의 실익을 따집니다
+  tags: [battery, lithium-ion, charge-limit, battery-health, smartphone]
+
+- source: posts/tech/26Q3/20260826_커스텀ASIC_설계서비스.md
+  slug: custom-asic-design-services
+  date: 2026-08-26
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "자체 칩을 만들수록 브로드컴이 버는 구조"
+  description: 커스텀 AI 칩이 나오기까지의 세 층을 갈라, 자체 칩이라는 발표 뒤에서 도면을 실제로 그리는 설계 서비스 회사들의 자리를 정리합니다
+  tags: [custom-asic, broadcom, marvell, tpu, ai-chip]
+
+- source: posts/tech/26Q3/20260826_FOPLP_패널레벨패키징.md
+  slug: foplp-panel-level-packaging
+  date: 2026-08-26
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "원형 웨이퍼는 면적의 절반을 버립니다 — FOPLP"
+  description: 한 변 80mm 패키지에서 300mm 웨이퍼 활용률을 직접 계산하고, 사각 패널로 옮길 때의 이득과 유리·플라스틱으로 갈린 선택을 정리합니다
+  tags: [foplp, packaging, cowos, wafer-utilization, semiconductor]
+
+- source: posts/tech/26Q3/20260826_WiFi7_공유기_구매판단.md
+  slug: wifi-7-router-buying-guide
+  date: 2026-08-26
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "Wi-Fi 7 공유기, 지금 사도 되나 — 병목부터 찾기"
+  description: 공유기 사양표보다 회선·단말·주파수를 먼저 보는 순서를 세우고, 320MHz 와 6GHz 가 체감으로 오지 않는 조건을 짚습니다
+  tags: [wifi-7, router, 6ghz, mlo, home-network]
+
+- source: posts/security/26Q3/20260830_CVE폭증_패치우선순위.md
+  slug: cve-surge-patch-priority
+  date: 2026-08-30
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "한 달에 400건, 무엇부터 패치해야 하나"
+  description: 공개 취약점 중 실제 악용되는 비율을 짚고, CVSS 점수만으로 갈리지 않는 우선순위를 KEV·EPSS 기준으로 세웁니다
+  tags: [cve, patch-management, kev, epss, vulnerability]
