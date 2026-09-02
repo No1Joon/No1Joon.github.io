@@ -1089,3 +1089,33 @@
   title: "한 달에 400건, 무엇부터 패치해야 하나"
   description: 공개 취약점 중 실제 악용되는 비율을 짚고, CVSS 점수만으로 갈리지 않는 우선순위를 KEV·EPSS 기준으로 세웁니다
   tags: [cve, patch-management, kev, epss, vulnerability]
+
+- source: posts/security/26Q3/20260830_공용와이파이_실제위험.md
+  slug: public-wifi-real-risk
+  date: 2026-08-30
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "공용 와이파이는 지금도 위험한가 — 위험이 옮겨갔습니다"
+  description: HTTPS 가 대부분을 덮은 뒤 남은 위험이 트래픽 도청이 아니라 가짜 접속점과 로그인 화면으로 옮겨간 경로를 짚습니다
+  tags: [public-wifi, evil-twin, captive-portal, https, network-security]
+
+- source: posts/tech/26Q3/20260826_AI전력_7탄_소방인허가.md
+  slug: ai-power-07-fire-safety-permits
+  date: 2026-08-26
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "AI 의 전기 (7) — 삽을 떠도 못 켭니다, 다음 관문은 소방"
+  description: 착공한 데이터센터가 준공에서 다시 걸리는 세 자리를 갈라, 인허가 지연에 붙는 자본비용과 대전 화재 이후 바뀐 국내 안전기준을 정리합니다
+  tags: [ai-power, datacenter, fire-safety, permitting, bess]
+
+- source: posts/weekly/26Q3/20260830_AI위클리_Nvidia허깅페이스_OpenAI칩_Meta합의.md
+  slug: ai-weekly-2026-08-30
+  date: 2026-08-30
+  category: AI
+  category_slug: ai
+  subcategory: Weekly
+  title: "AI 위클리 2026-08-30 — Nvidia 의 Hugging Face 인수, OpenAI 자체 칩, Meta 합의"
+  description: 8월 5주 AI 업계 핵심 10건 — 칩과 오픈소스에 한꺼번에 값이 매겨진 한 주를 정리합니다
+  tags: [ai-weekly, nvidia, hugging-face, openai, meta]
