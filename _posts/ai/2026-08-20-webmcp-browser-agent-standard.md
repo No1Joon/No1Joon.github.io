@@ -15,7 +15,7 @@ image: /assets/og/2026-08-20-webmcp-browser-agent-standard.png
 ![사이트가 에이전트에게 할 수 있는 일 목록을 건네는 구조 개념 컷](/assets/images/ai/webmcp-browser-agent-standard/01-agy-hero-handover.webp)
 *사이트가 에이전트에게 할 수 있는 일 목록을 건네는 구조 개념 컷 — 출처: 개념 컷 · agy 자가 생성*
 
-🔗 링크 첨부 - [여기에 MCP 편 네이버 링크]
+[MCP 는 왜 세션을 버렸나 — 표준이 인프라가 되는 과정](/posts/mcp-stateless-protocol/)
 
 ## 지금은 에이전트가 화면을 추측합니다
 

@@ -91,6 +91,10 @@ RE_DIVIDER = re.compile(r"^[─—–\-]{5,}$")
 RE_DOT_BULLET = re.compile(r"^•\s*(?P<text>\S.*)$")
 RE_HIGHLIGHT = re.compile(r"==(?P<text>[^=\n]+)==")
 RE_BARE_URL = re.compile(r"^https?://\S+$")
+# 🔗 링크 첨부 줄. 뒤에 실제 URL 이 오기도 하고, 이전 편 자리표시자가 오기도 한다.
+RE_LINK_ATTACH = re.compile(r"^🔗\s*링크\s*첨부\s*[-–—:]\s*(?P<rest>.*)$")
+# 작성자가 네이버 링크를 나중에 붙이려고 비워 둔 자리. 이식본에서는 이 블로그의 해당 편으로 잇는다.
+RE_LINK_PLACEHOLDER = re.compile(r"\[여기에\s*(?P<label>.+?)\s*네이버\s*링크\]")
 
 
 def strip_bold(text: str) -> str:
@@ -126,6 +130,8 @@ class Converter:
         self.src = NAVER_REPO / entry["source"]
         self.warnings: list[str] = []
         self.image_count = 0
+        # 자리표시자 라벨(`6탄`·`MCP 편`) → 이 블로그 포스트 slug
+        self.links: dict[str, str] = {str(k): str(v) for k, v in (entry.get("links") or {}).items()}
 
         src_fm = yaml.safe_load(self.src.read_text(encoding="utf-8").split("---\n")[1])
         # image_dir 은 naver-posting 레포 기준 상대경로(assets/postings/<분기>/<키>/)
@@ -196,6 +202,23 @@ class Converter:
         return ref
 
     # ── 본문 ──────────────────────────────────────────────────────────────
+    def resolve_link(self, label: str) -> str | None:
+        """이전 편 자리표시자의 라벨을 이 블로그 포스트 링크로 해석.
+
+        원문은 `[여기에 6탄 네이버 링크]` 처럼 네이버 링크 자리를 비워 두는데,
+        이식본이 이을 곳은 네이버가 아니라 이 블로그의 해당 편이다.
+        대상 slug 는 매핑의 `links:` 가 주고, 링크 문구는 그 포스트의 title 을 쓴다.
+        """
+        slug = self.links.get(label)
+        if slug is None:
+            return None
+        hits = sorted((REPO / "_posts").glob(f"*/*-{slug}.md"))
+        if not hits:
+            self.warnings.append(f"링크 대상 포스트 없음: {label} → {slug}")
+            return None
+        fm = yaml.safe_load(hits[0].read_text(encoding="utf-8").split("---\n")[1])
+        return f"[{fm['title']}](/posts/{slug}/)"
+
     def convert_body(self, body: str) -> str:
         out: list[str] = []
         in_code = False
@@ -250,6 +273,34 @@ class Converter:
                         break
                     i += 1
                 continue
+
+            # 🔗 링크 첨부 — 이전 편 자리표시자면 이 블로그 링크로 바꾸고,
+            # 이을 곳이 없으면 줄째로 버린다. 실제 URL 이 적힌 줄은 원문 그대로 둔다.
+            m = RE_LINK_ATTACH.match(s)
+            if m:
+                ph = RE_LINK_PLACEHOLDER.search(m.group("rest"))
+                if not ph:
+                    out.append(self.inline(raw.rstrip()))
+                    continue
+                link = self.resolve_link(ph.group("label"))
+                if link is None:
+                    self.warnings.append(f"이전 편 자리표시자 제외: {ph.group(0)}")
+                    continue
+                push("")
+                push(link)
+                push("")
+                continue
+
+            # 문장 안에 박힌 자리표시자 — 링크만 갈아끼우고 나머지 마커 처리로 흘려보낸다.
+            # 이을 곳이 없으면 문장이 끊기므로 그 줄을 통째로 버린다.
+            ph = RE_LINK_PLACEHOLDER.search(s)
+            if ph:
+                link = self.resolve_link(ph.group("label"))
+                if link is None:
+                    self.warnings.append(f"이전 편 자리표시자 제외: {ph.group(0)}")
+                    continue
+                raw = raw.replace(ph.group(0), link)
+                s = raw.strip()
 
             # 이미지 슬롯
             m = RE_IMG.match(s)

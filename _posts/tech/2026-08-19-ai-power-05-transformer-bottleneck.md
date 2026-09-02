@@ -15,7 +15,7 @@ image: /assets/og/2026-08-19-ai-power-05-transformer-bottleneck.png
 ![전력 공급 사슬에서 변압기가 병목이 되는 구조 개념 컷](/assets/images/tech/ai-power-05-transformer-bottleneck/01-agy-hero-bottleneck.webp)
 *전력 공급 사슬에서 변압기가 병목이 되는 구조 개념 컷 — 출처: Anthropic 공식 발표 수치 기반 자가 생성*
 
-🔗 링크 첨부 - [여기에 4탄 네이버 링크]
+[AI 의 전기 (4) — SMR 은 정말 답인가, 비용·폐기물·일정을 숫자로](/posts/ai-power-04-smr-reality-check/)
 
 ## 2년 반을 기다려야 변압기가 옵니다
 

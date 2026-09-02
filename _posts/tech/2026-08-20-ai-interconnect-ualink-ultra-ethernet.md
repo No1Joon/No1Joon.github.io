@@ -15,7 +15,7 @@ image: /assets/og/2026-08-20-ai-interconnect-ualink-ultra-ethernet.png
 ![랙 안 연결과 랙 밖 연결이 서로 다른 층이라는 구조 개념 컷](/assets/images/tech/ai-interconnect-ualink-ultra-ethernet/01-agy-hero-twolayers.webp)
 *랙 안 연결과 랙 밖 연결이 서로 다른 층이라는 구조 개념 컷 — 출처: Anthropic 공식 발표 수치 기반 자가 생성*
 
-🔗 링크 첨부 - [여기에 CUDA 해자 편 네이버 링크]
+[CUDA 해자는 어디가 뚫렸나 — 층별로 뜯어보기](/posts/post-nvidia-cuda-moat/)
 
 ## 두 전선을 가르는 게 먼저입니다
 

@@ -25,6 +25,8 @@
   title: "아틀라스 (2) — 조지아 공장 첫 투입과 연 3만 대 양산 계획"
   description: 아틀라스가 현대 메타플랜트에 실제로 들어가는 일정과 연 3만 대 양산 물량의 배분, 단계별 확대 로드맵을 정리합니다
   tags: [atlas, humanoid, hyundai, metaplant, manufacturing]
+  links:
+    "1탄": atlas-humanoid-01-what-and-spec
 
 - source: posts/math/26Q2/20260619_벤포드법칙.md
   slug: benford-law
@@ -799,6 +801,8 @@
   title: "선크림 (2) — 성분이 나라마다 다른 이유, 미국 17종 한국 32종"
   description: 무기·유기 자외선차단 필터의 차이와 나라별 허용 목록이 갈리는 규제 구조를, 같은 제품의 성분표가 달라지는 사례로 정리합니다
   tags: [sunscreen, uv-filter, regulation, fda, cosmetics]
+  links:
+    "1탄": sunscreen-01-spf-pa
 
 - source: posts/tech/26Q3/20260818_선크림_3탄_바르는법_추천.md
   slug: sunscreen-03-how-to-apply
@@ -809,6 +813,9 @@
   title: "선크림 (3) — 표시된 SPF 를 다 받으려면 얼마나 발라야 하나"
   description: 시험 기준량 2mg/cm² 가 실제로 어느 정도인지 재고, 워터프루프 표기와 2시간 덧바르기 권고의 근거를 짚습니다
   tags: [sunscreen, spf, application, water-resistant, skin-health]
+  links:
+    "1탄": sunscreen-01-spf-pa
+    "2탄": sunscreen-02-filters-and-regulation
 
 - source: posts/tech/26Q3/20260818_하이브리드본딩_HBM4_연기.md
   slug: hybrid-bonding-hbm4-delay
@@ -859,6 +866,8 @@
   title: "AI 의 전기 (5) — 변압기 하나 받는 데 3년, 그 줄 뒤에 선 한국"
   description: 미국 데이터센터 40%가 밀린 원인이 칩이 아니라 변압기 납기인 이유를 짚고, 공장을 늘려도 풀리지 않는 구조와 국내 전력기기 수주잔고를 정리합니다
   tags: [ai-power, transformer, grid, datacenter, supply-chain]
+  links:
+    "4탄": ai-power-04-smr-reality-check
 
 - source: posts/electronics/26Q3/20260820_맥북프로_M3Pro_36GB_29개월.md
   slug: macbook-pro-m3-pro-29-months
@@ -869,6 +878,8 @@
   title: "MacBook Pro 14 M3 Pro 36GB — 29개월 쓰고 남은 것"
   description: 2년 반 쓴 맥북의 배터리 열화·발열·스왑을 직접 확인한 값으로 정리하고, 메모리 36GB 와 저장 1TB 선택이 지금 어떻게 남았는지 적습니다
   tags: [macbook-pro, m3-pro, apple-silicon, battery-health, local-llm]
+  links:
+    "Gemma 4 로컬 실측 편": gemma-4-macbook-local
 
 - source: posts/ai/26Q3/20260820_OpenAI_Astra_훈련중단.md
   slug: openai-astra-training-pause
@@ -889,6 +900,8 @@
   title: "GPU 를 묶는 선을 누가 쥐나 — UALink 와 Ultra Ethernet"
   description: 랙 안과 랙 밖에서 따로 벌어지는 두 전선을 갈라 보고, 표준이 NVLink 에 던진 숫자와 스펙만 나온 채 칩이 없는 현재 위치를 정리합니다
   tags: [ualink, ultra-ethernet, nvlink, interconnect, ai-infrastructure]
+  links:
+    "CUDA 해자 편": post-nvidia-cuda-moat
 
 - source: posts/tech/26Q3/20260820_WebMCP_브라우저_에이전트표준.md
   slug: webmcp-browser-agent-standard
@@ -899,6 +912,8 @@
   title: "웹사이트가 AI 에게 스스로 기능을 알려줍니다 — WebMCP"
   description: 에이전트가 화면을 추측하던 방식을 뒤집는 WebMCP 의 동작과 document.modelContext 한 줄, 표준화 절차의 현재 위치를 정리합니다
   tags: [webmcp, mcp, browser-agents, web-standards, ai-agents]
+  links:
+    "MCP 편": mcp-stateless-protocol
 
 - source: posts/ai/26Q3/20260821_구글_앤트로픽_순환금융.md
   slug: google-anthropic-circular-financing
@@ -959,6 +974,8 @@
   title: "RAM에 대하여 (6) — HBM 옆에 낸드를 쌓는 새 계층, HBF"
   description: SK하이닉스와 샌디스크가 공개한 HBF 첫 표준을 정리하고, HBM 이 못 푸는 용량 문제를 어느 자리에서 받는지 짚습니다
   tags: [hbf, hbm, nand, memory-hierarchy, sk-hynix]
+  links:
+    "5탄": ram-05-cxmt-china-memory
 
 - source: posts/tech/26Q3/20260823_CPO_광인터커넥트_네이처논문.md
   slug: ram-07-cpo-optical-interconnect
@@ -969,6 +986,8 @@
   title: "RAM에 대하여 (7) — 메모리를 GPU 옆에서 떼어내는 빛, CPO"
   description: SK하이닉스 연구진이 Nature Electronics 에 낸 논문을 따라, 구리 배선의 한계와 100Tb/s·100W 라는 목표 숫자를 정리합니다
   tags: [cpo, optical-interconnect, sk-hynix, nature-electronics, memory]
+  links:
+    "6탄": ram-06-hbf
 
 - source: posts/weekly/26Q3/20260823_AI위클리_Anthropic첫흑자_Stripe오픈라우터_단백질설계.md
   slug: ai-weekly-2026-08-23
@@ -1009,6 +1028,8 @@
   title: "AI 의 전기 (6) — 16GW 중 착공은 5GW, 나머지는 어디 갔나"
   description: 발표만 되고 삽을 뜨지 않은 물량이 도는 경로를 따라가, 데이터센터 취소설과 D램 값 상승이 어긋나 보이는 이유를 짚습니다
   tags: [ai-power, datacenter, buildout, dram, grid-queue]
+  links:
+    "5탄": ai-power-05-transformer-bottleneck
 
 - source: posts/paper/26Q3/20260826_Mamba3_상태공간모델_논문.md
   slug: mamba-3-state-space-model
@@ -1109,6 +1130,8 @@
   title: "AI 의 전기 (7) — 삽을 떠도 못 켭니다, 다음 관문은 소방"
   description: 착공한 데이터센터가 준공에서 다시 걸리는 세 자리를 갈라, 인허가 지연에 붙는 자본비용과 대전 화재 이후 바뀐 국내 안전기준을 정리합니다
   tags: [ai-power, datacenter, fire-safety, permitting, bess]
+  links:
+    "6탄": ai-power-06-stalled-buildout
 
 - source: posts/weekly/26Q3/20260830_AI위클리_Nvidia허깅페이스_OpenAI칩_Meta합의.md
   slug: ai-weekly-2026-08-30

@@ -12,7 +12,7 @@ image: /assets/og/2026-08-26-ai-power-07-fire-safety-permits.png
 
 여기에 관문이 하나 더 있습니다. 장비가 다 들어와도 소방·안전 심사를 통과하지 못하면 전원을 못 넣어요.
 
-🔗 링크 첨부 - [여기에 6탄 네이버 링크]
+[AI 의 전기 (6) — 16GW 중 착공은 5GW, 나머지는 어디 갔나](/posts/ai-power-06-stalled-buildout/)
 
 ![착공과 준공 사이를 막아선 심사 절차를 표현한 3D 에디터리얼 콘셉트 씬](/assets/images/tech/ai-power-07-fire-safety-permits/01-agy-hero.webp)
 *착공과 준공 사이를 막아선 심사 절차를 표현한 3D 에디터리얼 콘셉트 씬 — 출처: 개념 컷 · agy 자가 생성*

@@ -14,7 +14,7 @@ image: /assets/og/2026-06-19-atlas-humanoid-02-factory-production.png
 
 전시장에서 재주 부리던 로봇이 아니라, **부품을 나르고 조립하는 '일하는 로봇'**으로요. ([아틀라스 시리즈] 2탄)
 
-- 1탄(아틀라스의 정체·스펙)을 안 보셨다면: [여기에 1탄 네이버 링크]
+- 1탄(아틀라스의 정체·스펙)을 안 보셨다면: [아틀라스 (1) — 현대가 만드는 휴머노이드의 정체와 스펙](/posts/atlas-humanoid-01-what-and-spec/)
 
 ![신형 전기 아틀라스가 현장에서 일하는 모습](/assets/images/robot/atlas-humanoid-02-factory-production/01-bostondynamics.webp)
 *신형 전기 아틀라스가 현장에서 일하는 모습 — 출처: Boston Dynamics*

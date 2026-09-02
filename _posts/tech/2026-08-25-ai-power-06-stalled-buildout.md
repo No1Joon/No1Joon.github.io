@@ -12,7 +12,7 @@ image: /assets/og/2026-08-25-ai-power-06-stalled-buildout.png
 
 미국에서 2026년 가동을 목표로 잡은 데이터센터 용량이 약 16GW인데, 지금 실제로 공사가 돌아가는 건 약 5GW입니다. 나머지 11GW는 발표만 된 채 삽을 뜨지 않았어요.
 
-🔗 링크 첨부 - [여기에 5탄 네이버 링크]
+[AI 의 전기 (5) — 변압기 하나 받는 데 3년, 그 줄 뒤에 선 한국](/posts/ai-power-05-transformer-bottleneck/)
 
 ![발표된 물량과 실제 착공 사이의 간극 개념 컷](/assets/images/tech/ai-power-06-stalled-buildout/01-agy-hero-gap.webp)
 *발표된 물량과 실제 착공 사이의 간극 개념 컷 — 출처: 개념 컷 · agy 자가 생성*
