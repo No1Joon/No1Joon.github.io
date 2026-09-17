@@ -1,0 +1,849 @@
+---
+layout: null
+permalink: /portfolio/
+sitemap: false
+---
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>장현준 포트폴리오</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+  @page { size: A4; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; background: #f5f6f8; }
+  body { font-family: "Noto Sans KR","Apple SD Gothic Neo","Pretendard",sans-serif; color: #1f2733; font-size: 11.4px; letter-spacing: -0.2px; background: #f5f6f8; word-break:keep-all; overflow-wrap:break-word; }
+  b { color: #12283f; font-weight: 700; }
+
+  .page { width: 210mm; min-height: 297mm; padding: 18mm 19mm; position: relative; background: #f5f6f8; }
+  .proj { page-break-before: always; }
+
+  /* Cover */
+  .cover { display: flex; flex-direction: column; justify-content: center; padding: 18mm 22mm; }
+  .cover .name { font-family: "Gowun Batang", serif; font-size: 52px; font-weight: 700; color: #12283f; letter-spacing: -1.5px; }
+  .cover .title { font-size: 14px; font-weight: 500; color: #2b6cb0; margin-top: 12px; }
+  .cover .toc { margin-top: 30px; padding-top: 18px; border-top: 1px solid #d9dfe7; }
+  .cover .toc .h { font-size: 10.5px; font-weight: 500; color: #12283f; letter-spacing: 0.14em; margin-bottom: 8px; }
+  .cover .toc .grp { font-size: 10px; color: #7a869a; margin: 12px 0 4px; font-weight: 500; letter-spacing: 0.08em; }
+  .cover .toc ol { list-style: none; }
+  .cover .toc li { display: flex; align-items: baseline; font-size: 11.2px; color: #1f2733; padding: 4.5px 0; border-bottom: 1px solid #e6eaef; }
+  .cover .toc li::before { content: none; }
+  .cover .toc li .num { font-family: "Gowun Batang", serif; color: #2b6cb0; width: 30px; }
+  .cover .toc li .nm { font-weight: 500; }
+  .cover .toc li .tech { margin-left: auto; font-size: 9.8px; color: #7a869a; }
+
+  /* Project */
+  .proj .ttl { display: flex; align-items: baseline; gap: 10px; border-bottom: 1px solid #d9dfe7; padding-bottom: 8px; }
+  .proj .no { font-family: "Gowun Batang", serif; font-size: 22px; font-weight: 400; color: #2b6cb0; }
+  .proj h2 { font-family: "Gowun Batang", serif; font-size: 21px; font-weight: 700; color: #12283f; letter-spacing: -0.4px; }
+  .proj .kind { margin-left: auto; font-size: 10.5px; font-weight: 400; color: #7a869a; white-space: nowrap; }
+  .proj .lead { font-size: 11.4px; color: #2b3546; margin-top: 11px; line-height: 1.75; max-width: 172mm; }
+  .proj .stack { font-size: 10.4px; color: #34405a; margin-top: 12px; padding: 9px 12px; background: #eceff3; border-radius: 2px; line-height: 1.7; }
+  .proj .stack .row { display: flex; gap: 10px; }
+  .proj .stack .row + .row { margin-top: 3px; }
+  .proj .stack .k { flex: 0 0 auto; min-width: 62px; font-weight: 700; color: #12283f; }
+
+  .block { margin-top: 15px; }
+  .block .h { font-size: 10.5px; font-weight: 500; color: #12283f; letter-spacing: 0.14em; margin-bottom: 7px; }
+  ul { list-style: none; }
+  li { position: relative; padding-left: 14px; margin-bottom: 5px; color: #2b3546; font-size: 11.2px; line-height: 1.7; }
+  li::before { content: ""; position: absolute; left: 0; top: 0.85em; width: 6px; height: 1px; background: #12283f; }
+
+  /* Visuals */
+  .flow { display: flex; align-items: stretch; margin: 4px 0 2px; flex-wrap: wrap; }
+  .flow .box { flex: 1; border: 1px solid #d9dfe7; background: #fbfbfc; border-radius: 2px; padding: 9px 10px; font-size: 9.8px; color: #34405a; text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1.35; }
+  .flow .box b { display: block; color: #12283f; font-size: 10.2px; margin-bottom: 2px; }
+  .flow .box.hi { border-color: #12283f; background: #eceff3; color: #12283f; font-weight: 500; }
+  .flow .arr { display: flex; align-items: center; color: #9fb0c4; font-size: 11px; padding: 0 4px; }
+  .stats { display: flex; gap: 9px; margin: 5px 0; }
+  .stat { flex: 1; border: 1px solid #d9dfe7; border-radius: 2px; padding: 10px 8px; text-align: center; background: #fbfbfc; }
+  .stat .n { font-family: "Gowun Batang", serif; font-size: 20px; font-weight: 700; color: #12283f; letter-spacing: -0.5px; }
+  .stat .l { font-size: 9px; color: #55627a; margin-top: 4px; line-height: 1.4; }
+  table.mt { width: 100%; border-collapse: collapse; font-size: 10.2px; margin-top: 3px; }
+  table.mt th { text-align: left; font-size: 9.4px; font-weight: 500; color: #2b6cb0; padding: 5px 7px; border-bottom: 1px solid #12283f; }
+  table.mt td { padding: 5px 7px; border-bottom: 1px solid #d9dfe7; color: #2b3546; vertical-align: top; }
+  table.mt td.pass { color: #12283f; font-weight: 700; }
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; margin-top: 3px; }
+  .cards.c3 { grid-template-columns: 1fr 1fr 1fr; }
+  .card { border: 1px solid #d9dfe7; border-radius: 2px; padding: 10px 11px; background: #fbfbfc; }
+  .card .ct { font-size: 11px; font-weight: 700; color: #12283f; }
+  .card .cs { font-size: 9.4px; color: #7a869a; margin-top: 2px; }
+  .card .cb { font-size: 10.2px; color: #2b3546; line-height: 1.62; margin-top: 6px; }
+
+  .shots { margin: 12px 0 2px; }
+  .shots img { border: 1px solid #d9dfe7; border-radius: 2px; display: block; }
+  .shots.web img { width: 100%; margin-bottom: 7px; }
+  .shots.wide img { width: auto; max-width: 100%; max-height: 78mm; margin: 0 auto; }
+  .shots.wide.tall img { max-height: 98mm; }
+  .shots.cert img { width: auto; max-width: 100%; max-height: 76mm; margin: 0 auto; }
+  .shots.duo { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; align-items: start; }
+  .shots.duo img { width: 100%; }
+  .shots.pair { display: flex; gap: 14px; align-items: flex-start; }
+  .shots.pair figure { margin: 0; flex: 0 1 auto; min-width: 0; }
+  .shots.pair img { height: 54mm; width: auto; max-width: 100%; }
+  .shots.pair .cap { font-size: 10px; color: #55627a; line-height: 1.45; margin-top: 5px; }
+  .shots.phones { display: flex; gap: 10px; justify-content: center; }
+  .shots.phones img { width: 39mm; }
+  .shots.arch img { width: auto; max-width: 100%; max-height: 56mm; margin: 0 auto; }
+  .shots.arch .cap { font-size: 10.2px; color: #55627a; text-align: center; margin: 3px 0 8px; }
+  .shots.trio { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .shots.trio img { width: 100%; }
+
+/* ── 화면용 오버라이드 (원본 A4 인쇄 레이아웃은 @media print 에서 그대로 유지) ── */
+@media screen {
+  html, body { background: #e9ecf0; }
+  .page {
+    width: 100%; max-width: 210mm; min-height: 0;
+    margin: 0 auto 16px; padding: 16mm 19mm;
+    background: #f5f6f8; box-shadow: 0 1px 3px rgba(18,40,63,.10);
+  }
+  .page:first-of-type { margin-top: 16px; }
+  .cover { display: block; padding: 20mm 19mm; }
+  .proj .lead { max-width: none; }
+  img { max-width: 100%; height: auto; }
+}
+
+/* 태블릿 이하 */
+@media screen and (max-width: 820px) {
+  .page { padding: 26px 18px; }
+  .cover { padding: 30px 18px; }
+  .cover .name { font-size: 40px; letter-spacing: -1px; }
+  .cover .title { font-size: 12.6px; }
+  .cover .toc li { flex-wrap: wrap; }
+  .cover .toc li .tech { margin-left: 30px; flex-basis: 100%; margin-top: 2px; }
+  .proj .ttl { flex-wrap: wrap; gap: 6px 10px; }
+  .proj h2 { font-size: 18px; }
+  .proj .stack .row { flex-direction: column; gap: 1px; }
+  .proj .stack .k { min-width: 0; }
+
+  .cards, .cards.c3 { grid-template-columns: 1fr; }
+  .shots.duo, .shots.trio { grid-template-columns: 1fr; }
+  .shots.pair { flex-direction: column; gap: 12px; }
+  .shots.pair img { height: auto; width: 100%; }
+  .shots.wide img, .shots.wide.tall img, .shots.arch img, .shots.cert img { width: 100%; }
+  .shots img[style] { width: 100% !important; max-height: none !important; }
+  .shots.phones { flex-wrap: wrap; }
+  .shots.phones img { width: 40%; max-width: 150px; }
+
+  .flow { flex-direction: column; gap: 4px; }
+  .flow .arr { justify-content: center; padding: 0; transform: rotate(90deg); }
+  .stats { flex-wrap: wrap; gap: 7px; }
+  .stat { flex: 1 1 calc(50% - 4px); }
+
+  /* 표는 좁은 화면에서 가로 스크롤 박스로 가둔다 — 페이지가 통째로 밀리지 않게 */
+  table.mt { display: block; overflow-x: auto; }
+}
+
+@media screen and (max-width: 420px) {
+  .stat { flex: 1 1 100%; }
+  .cover .name { font-size: 34px; }
+}
+
+/* 인쇄할 때는 원본 A4 규격 그대로 */
+@media print {
+  html, body { background: #f5f6f8; }
+  .page { width: 210mm; min-height: 297mm; margin: 0; padding: 18mm 19mm; box-shadow: none; }
+  .cover { display: flex; padding: 18mm 22mm; }
+}
+</style>
+</head>
+<body>
+
+<!-- Cover -->
+<div class="page cover">
+  <div class="name">장현준</div>
+  <div class="title">Senior Software Engineer - Frontend, Mobile, Backend, Data/AI</div>
+  <div class="toc">
+    <div class="h">Contents</div>
+    <div class="grp">COMPANY - 틱택코리아</div>
+    <ol>
+      <li><span class="num">01</span><span class="nm">Tictag Insight (VAP) - 리테일 영상분석 SaaS</span><span class="tech">Vue 3, TypeScript, Vite</span></li>
+      <li><span class="num">02</span><span class="nm">AI Pipeline &amp; Computer Vision 인프라</span><span class="tech">Temporal, OpenCV, Cog</span></li>
+      <li><span class="num">03</span><span class="nm">LLM Insight Agent</span><span class="tech">Vertex AI, Gemini</span></li>
+      <li><span class="num">04</span><span class="nm">Tictag 모바일 앱</span><span class="tech">React Native, Expo</span></li>
+      <li><span class="num">05</span><span class="nm">Tictag 관리자 웹</span><span class="tech">React, Redux, Formik</span></li>
+      <li><span class="num">06</span><span class="nm">AI 주얼리 추천 &amp; 공인 시험성적서</span><span class="tech">YOLOv4, 제3자 인증</span></li>
+      <li><span class="num">07</span><span class="nm">데이터, AI 바우처 정부 지원사업</span><span class="tech">협약, 감리, 비식별화</span></li>
+      <li><span class="num">08</span><span class="nm">NIA 인공지능 학습용 데이터 구축 사업 제안</span><span class="tech">주관기관, 42억 원</span></li>
+      <li><span class="num">09</span><span class="nm">Ops 자동화, 내부 도구</span><span class="tech">Python, Gradio</span></li>
+    </ol>
+    <div class="grp">PERSONAL - 개인, 팀 프로젝트</div>
+    <ol>
+      <li><span class="num">10</span><span class="nm">CaliMeal - 급식 식단 편성 자동화 SaaS</span><span class="tech">Next.js, PostgreSQL RLS, Vertex AI</span></li>
+      <li><span class="num">11</span><span class="nm">try-ticketing - 티켓 예매, 수강신청 연습 웹 서비스</span><span class="tech">Go, React 19, Redis Lua, PostgreSQL</span></li>
+      <li><span class="num">12</span><span class="nm">teampler - 코트 스포츠 대기열 관리</span><span class="tech">Expo, FastAPI, WebSocket</span></li>
+      <li><span class="num">13</span><span class="nm">quickglot - 온디바이스 번역 Safari 확장</span><span class="tech">Swift, WebExtension, App Store</span></li>
+      <li><span class="num">14</span><span class="nm">archdraw - 아키텍처 다이어그램 렌더러</span><span class="tech">TypeScript, npm 공개</span></li>
+      <li><span class="num">15</span><span class="nm">Oh My Algorithm</span><span class="tech">React 19, 실서비스</span></li>
+      <li><span class="num">16</span><span class="nm">naver-posting - 기술 콘텐츠 생산 파이프라인</span><span class="tech">LLM 에이전트, Python</span></li>
+      <li><span class="num">17</span><span class="nm">네이버 카페 정보 자동 수집 데스크톱 앱</span><span class="tech">Playwright, Windows exe</span></li>
+      <li><span class="num">18</span><span class="nm">로키 (Law+Key)</span><span class="tech">React, NestJS, OpenAI</span></li>
+      <li><span class="num">19</span><span class="nm">공공데이터 기반 지역사회 현안 해결</span><span class="tech">공공데이터, K-means</span></li>
+    </ol>
+  </div>
+</div>
+
+<!-- 01 VAP -->
+<div class="page proj">
+  <div class="ttl"><span class="no">01</span><h2>Tictag Insight (VAP)</h2><span class="kind">Company</span></div>
+  <div class="lead">CCTV 영상에서 방문객 유동, 체류, 데모그래픽을 추출하는 <b>리테일 영상분석 SaaS</b></div>
+  <div class="stack"><div class="row"><span class="k">Stack</span><span>Vue 3.5, TypeScript 5.6, Vuetify 3.7, Vite 6, ECharts, MathJS, NestJS(NX monorepo), MongoDB, GCS 서명 URL</span></div></div>
+
+  <div class="block">
+    <div class="h">주요 기여</div>
+    <ul>
+      <li><b>저장소 초기 스캐폴딩</b> - Vite, tsconfig, ESLint, 라우터, 스토어, Vuetify 테마, i18n, dayjs까지 구성하고 import 순서 규칙까지 팀 표준으로 정립</li>
+      <li><b>Video Feed Player</b> - 최신 영상 엔드포인트 연동, 타임라인 기반 재생과 자동 재생 처리</li>
+      <li><b>Config-driven 대시보드</b> - 백엔드 JSON config(그리드, 컴포넌트, MathJS 바인딩)를 프론트엔드가 동적 렌더링해, 비개발자가 코드 개입 없이 매장별 화면 구성, <b>신규 매장 대시보드 제작 1주일에서 하루로 단축</b></li>
+    </ul>
+  </div>
+
+  <div class="shots duo">
+    <img src="/assets/portfolio/vap_dash.webp">
+    <img src="/assets/portfolio/vap_video.webp">
+  </div>
+
+  <div class="block">
+    <div class="h">성과</div>
+    <ul>
+      <li>패션 리테일 고객 PoC로 <b>플랫폼 첫 한국 상용 도입</b> 성사</li>
+      <li>영어, 한국어, 일본어, 바하사 <b>4개 언어 i18n</b> 시스템 설계 및 레거시 하드코딩 리팩토링, 언어 스위처, 날짜 로케일 처리 (번역은 영어, 한국어 담당)</li>
+      <li>분석 데이터 <b>export API</b>로 수작업 추출을 대체해 외부 AI 모델 자동화 워크플로 기반 마련</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 02 AI Pipeline -->
+<div class="page proj">
+  <div class="ttl"><span class="no">02</span><h2>AI Pipeline &amp; Computer Vision 인프라</h2><span class="kind">Company</span></div>
+  <div class="lead">사람 검출, 추적, ReID, 호모그래피로 이어지는 <b>영상 AI 파이프라인</b> - Kafka에서 Temporal로 전환</div>
+  <div class="stack"><div class="row"><span class="k">Stack</span><span>Temporal, Apache Kafka, Cog(Python 컨테이너), OpenCV, Weaviate, RTDETR/RFDETR, SAM2MOT, NestJS, Docker/Kubernetes, GCS</span></div></div>
+
+  <div class="block">
+    <div class="h">주요 기여</div>
+    <ul>
+      <li><b>Kafka에서 Temporal로 마이그레이션 설계</b> - 마이크로서비스를 병렬 실행 워크플로로 재구성하고 기능 플래그 라우팅으로 무중단 점진 전환 - 수동 offset, heartbeat 관리와 데이지체인 consumer의 디버깅 난제를 워크플로 히스토리로 대체</li>
+      <li><b>검출, 추적 모델을 Cog 컨테이너로 패키징</b> - 단일 비디오 입력 처리, 파일 경로를 문자열 입력 + 수동 URL 파싱으로 전환, SAM2MOT 프로세서를 별도 파일로 분리해 가독성 확보</li>
+      <li><b>처리 비용 튜닝</b> - 입력 max side를 1024에서 512로 축소하고 score threshold, skip frame을 조정해 정확도를 유지하며 연산량 절감</li>
+      <li><b>Homography 시스템</b> - OpenCV RANSAC 기반 3x3 행렬로 CCTV 시점을 평면도에 사영, 15% 패딩 그리드로 광각 왜곡 보정, 역행렬 back-projection으로 검증</li>
+    </ul>
+  </div>
+
+  <div class="shots wide tall">
+    <img src="/assets/portfolio/vap_homography.webp">
+  </div>
+
+  <div class="block">
+    <div class="h">성과</div>
+    <ul>
+      <li>워크플로 히스토리로 처리 경로가 가시화되어 <b>관측성 확보 및 장시간 AI 추론 재시도 안정화</b></li>
+      <li>Homography <b>reprojection error 10px 이하</b> 목표로 정확도 검증</li>
+      <li>요구사항부터 DB, 백엔드, 프론트엔드, AI 통합까지 설계 근거를 <b>기술 문서로 단독 작성</b></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 03 LLM Insight Agent -->
+<div class="page proj">
+  <div class="ttl"><span class="no">03</span><h2>LLM Insight Agent</h2><span class="kind">Company</span></div>
+  <div class="lead">대시보드 차트, 지표를 근거로 매장 개선 액션을 생성하는 <b>LLM 기능</b> - Vertex AI Gemini 통합</div>
+  <div class="stack"><div class="row"><span class="k">Stack</span><span>Google Cloud Vertex AI, Gemini 2.5 Flash, Prompt Engineering</span></div><div class="row"><span class="k">파이프라인</span><span>uiData(JSON) 수집, LLM 친화 텍스트 변환(차트 설명, 표 포맷), Business Context, 매장주 목표 결합 프롬프트, 추론 순으로 처리</span></div></div>
+
+  <div class="block">
+    <div class="h">주요 기여</div>
+    <ul>
+      <li>대시보드 <b>차트별로 매장 개선 액션을 생성</b>하도록 통합, LLM에 넘길 context, data 구조 설계</li>
+      <li>원시 대시보드 데이터를 <b>차트 설명문과 표 형식 텍스트로 전처리</b>해 모델의 수치 의미 해석 지원</li>
+      <li>비즈니스 컨텍스트와 <b>매장주가 설정한 목표</b>를 프롬프트에 주입해 일반론이 아닌 매장별 권고가 나오도록 설계</li>
+      <li><b>thinking budget</b> 도입 후 결과 품질 대비 최소 토큰, 비용을 탐색, 인사이트 에이전트 한국어 지원</li>
+    </ul>
+  </div>
+
+  <div class="shots wide">
+    <img src="/assets/portfolio/vap_agent.webp">
+  </div>
+
+  <div class="block">
+    <div class="h">성과</div>
+    <ul>
+      <li><b>LLM을 실제 제품 기능으로 통합</b> - 데이터 기반 액션 자동 생성</li>
+      <li>thinking mode 비용 폭증 이슈를 <b>품질, 비용, 레이턴시 트레이드오프로 정량화</b>해 운영 가능한 수준으로 조정</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 04 Tagger 모바일 -->
+<div class="page proj">
+  <div class="ttl"><span class="no">04</span><h2>Tictag 모바일 앱</h2><span class="kind">Company</span></div>
+  <div class="lead">크라우드 Tagger가 이미지, 영상, 음성 데이터를 수집, 라벨링하는 <b>모바일 앱</b> - 4년간 개발</div>
+  <div class="stack"><div class="row"><span class="k">Stack</span><span>React Native 0.79, Expo 53, React 19, Redux, TypeScript, ONNX/SAM(온디바이스 AI-assist), Amplitude</span></div></div>
+
+  <div class="block">
+    <div class="h">주요 기여</div>
+    <ul>
+      <li><b>신규 태스크 타입 전반 구현</b> - Attribute QC, Text Choice QC를 화면, TaskMethods, TaskBoard, 제출 API, 스와이프 튜토리얼까지 연결하고, 선택 라벨 컬러링과 라벨 바 애니메이션 속도를 조정</li>
+      <li><b>태스크 카드 UI 전면 재설계</b> - FlatList를 SectionList로 전환하고 CategoryBar, AvailableTask를 신설, 태스크 타입별 아이콘, 진행바, 만료 태스크 배경을 구분</li>
+      <li><b>배정 흐름 연결</b> - Available Task와 Task Information을 이어 시작 버튼에서 태스크를 배정하고 알림을 발송</li>
+    </ul>
+  </div>
+
+  <div class="shots phones">
+    <img src="/assets/portfolio/app_audio_task.webp">
+    <img src="/assets/portfolio/app_record.webp">
+  </div>
+
+  <div class="block">
+    <div class="h">성과</div>
+    <ul>
+      <li>단일 코드베이스로 <b>iOS, Android 동시 지원</b>, 4년간 꾸준히 기능 확장</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 05 Tagger 관리자 웹 -->
+<div class="page proj">
+  <div class="ttl"><span class="no">05</span><h2>Tictag 관리자 웹</h2><span class="kind">Company</span></div>
+  <div class="lead">운영자가 Job을 생성, 관리하고 제출 결과를 검수하는 <b>React 기반 관리자 웹</b></div>
+  <div class="stack"><div class="row"><span class="k">Stack</span><span>React, Redux, React Router, Tailwind, Formik, react-hook-form, styled-components</span></div><div class="row"><span class="k">백엔드</span><span>TypeScript, MongoDB</span></div></div>
+
+  <div class="block">
+    <div class="h">주요 기여</div>
+    <ul>
+      <li><b>Task Questionnaire 기능</b> - API 연동, 다이얼로그 구현, 응답 보기 버튼, Task Level Review 링크 네비게이션, 응답에 줄바꿈을 허용하고 자동 대문자화를 해제해 원문 그대로 읽히도록 조정</li>
+      <li><b>Min Items per Task</b> - Job Board 속성 추가와 <b>입력값 실시간 감지 검증</b>, yup 스키마 정리, Image Collection 잡타입일 때만 노출되는 조건부 UI 구현, 서버 측에도 태스크 아이템 수 초과 불가 검증 추가</li>
+      <li><b>Task Level Review 테이블 재구성</b> - 만료일, 액션 셀 레이아웃, 데이터 없음 영역 높이, 탭 사라짐 버그 수정</li>
+    </ul>
+  </div>
+
+  <div class="shots web">
+    <img src="/assets/portfolio/admin_jobs.webp">
+    <img src="/assets/portfolio/admin_review.webp" style="width:74%;margin:0 auto">
+  </div>
+
+  <div class="block">
+    <div class="h">성과</div>
+    <ul>
+      <li>바운딩 박스, 폴리곤 검수 화면에서 <b>운영자가 항목별로 승인, 반려</b>하는 흐름을 안정화</li>
+      <li>코인 카운트, 완료율 계산 오류를 서버에서 바로잡아 <b>보상 정합성</b> 확보</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 06 주얼리 -->
+<div class="page proj">
+  <div class="ttl"><span class="no">06</span><h2>AI 주얼리 추천 &amp; 공인 시험성적서</h2><span class="kind">Company</span></div>
+  <div class="lead">얼굴 이미지를 분석해 장신구를 추천하는 서비스 - <b>공인 시험성적서 취득 전 과정 단독 수행</b></div>
+  <div class="stack"><div class="row"><span class="k">Stack</span><span>Python, YOLOv4(얼굴 검출), dlib, OpenCV, AI Hub Face Parsing 데이터, Gradio, Cloud Run</span></div><div class="row"><span class="k">인증</span><span>슈어소프트테크 SST-25-091-C01 (2025.09.22 ~ 2025.12.19)</span></div></div>
+
+  <div class="block">
+    <div class="h">주요 기여</div>
+    <ul>
+      <li>요구사항 정의, 모델 선정, 성능평가 기준 설계, <b>공수 산정과 R&amp;D 인계</b>까지 과제 전 주기 담당</li>
+      <li>얼굴 검출 모델로 <b>YOLOv4</b> 채택 - 저작권 부담, 학습 난이도, 요구 성능 수준을 함께 고려, AI Hub 데이터로 학습, 평가</li>
+      <li>얼굴 <b>랜드마크 검출 결과를 입력 이미지에 표시</b>하고 캐시 로직 강화, 착용 상황(occasion) 카테고리와 추천 규칙 설계, 가격 입력을 슬라이더로 개선</li>
+      <li>시험기관과 협의해 <b>기능 정확도와 시스템 성능을 함께 검증</b>하도록 항목을 구성하고, 합격기준을 자체 사전 측정치에 근거해 설정한 뒤 <b>시험 입회까지 직접 참여</b></li>
+    </ul>
+  </div>
+
+  <div class="shots"><img src="/assets/portfolio/applied_product.webp" style="width:100%"></div>
+
+  <div class="block">
+    <div class="h">공인 시험 결과 - 전 항목 합격 (테스트 데이터 3,000건 / 응답/전송 5회 반복 측정)</div>
+    <table class="mt">
+      <tr><th>구분</th><th>시험 항목</th><th>결과</th></tr>
+      <tr><td>기능 정확도</td><td>얼굴 디텍션 F1 Score, Average IoU, Recall</td><td class="pass">합격</td></tr>
+      <tr><td>시스템 성능</td><td>DB 응답시간, 데이터 전송시간</td><td class="pass">합격</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- 07 데이터바우처 -->
+<div class="page proj">
+  <div class="ttl"><span class="no">07</span><h2>데이터, AI 바우처 정부 지원사업</h2><span class="kind">Company</span></div>
+  <div class="lead">데이터바우처, AI 바우처 공급기업으로 <b>수요기업 13곳</b>의 협약, 데이터 가공, 감리, 정산 증빙 수행</div>
+  <div class="stack"><div class="row"><span class="k">담당 수요기업</span><span>2021 법률 말뭉치 구축 과제 1곳 &nbsp;/&nbsp; 2023 ~ 2025 12곳</span></div></div>
+
+  <div class="stats" style="margin-top:14px">
+    <div class="stat"><div class="n">13곳</div><div class="l">담당 수요기업<br>(2021, 2023-2025 누적)</div></div>
+    <div class="stat"><div class="n">15종</div><div class="l">수요기업 1곳당<br>작성 규격 산출물</div></div>
+    <div class="stat"><div class="n">3종</div><div class="l">AI 바우처 Pool에 등재한<br>자사 AI 솔루션</div></div>
+  </div>
+
+  <div class="block">
+    <div class="h">사업 전 주기 담당</div>
+    <div class="flow">
+      <div class="box"><b>협약</b>협약 체결, 변경<br>참여인력 신청</div>
+      <div class="arr">→</div>
+      <div class="box hi"><b>데이터 가공</b>비식별화, 품질검사<br>파이프라인 구현</div>
+      <div class="arr">→</div>
+      <div class="box hi"><b>감리</b>중간, 최종<br>품질점검</div>
+      <div class="arr">→</div>
+      <div class="box"><b>인수, 이관</b>인수기준서<br>데이터이관확약서</div>
+      <div class="arr">→</div>
+      <div class="box"><b>정산 증빙</b>인건비, SW 사용료<br>크라우드소싱 비용</div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="h">수요기업별 데이터 가공 파이프라인 직접 구현</div>
+    <div class="cards">
+      <div class="card">
+        <div class="ct">개인정보 비식별화</div>
+        <div class="cs">F&amp;B 매장 - client-6, client-7</div>
+        <div class="cb">카페 영상, 이미지에 <b>EgoBlur 기반 얼굴 블러링</b>, 영상은 <b>랜드마크 기반 블러링</b>(tflite detector)과 시작, 종료 구간 유효성 검사 적용</div>
+      </div>
+      <div class="card">
+        <div class="ct">음성 데이터 처리</div>
+        <div class="cs">음성 서비스 - client-8</div>
+        <div class="cb"><b>Korean Streaming ASR, Whisper 실시간 STT</b>를 적용해 음성 데이터를 전사, 분류</div>
+      </div>
+      <div class="card">
+        <div class="ct">정형, 설문 데이터</div>
+        <div class="cs">헬스케어, 임상 - client-9, client-10</div>
+        <div class="cb">설문 데이터를 <b>GPT로 분석, 정제, 병합</b>하고 한/영 항목명을 매핑, 임상형 데이터는 건강군, 환자군 subject와 QST, PDS, VAS 지표를 통합</div>
+      </div>
+      <div class="card">
+        <div class="ct">품질, 정합성 검사</div>
+        <div class="cs">섬유, 제조 - client-11, client-12</div>
+        <div class="cb">입력 필터링과 JSON에서 CSV로의 변환, 원단 메타정보 템플릿 설계, <b>이미지-CSV 정합성 검사</b>로 누락 이미지 탐지</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="h">성과</div>
+    <ul>
+      <li>담당 수요기업 <b>중간, 최종 감리 통과</b>, 반복 문서 작업을 판단 기준과 예시가 담긴 가이드라인으로 표준화해 <b>Ops팀에 이관</b></li>
+      <li><b>AI 바우처 공급기업 Pool 등록</b> - 자사 AI 솔루션 3종(T-IOD 객체검출, T-NLPT 자연어, T-ASR 음성인식)을 정의, 문서화해 등재, 2023 등록 후 2024, 2025, 2026 갱신</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 08 NIA 국책과제 -->
+<div class="page proj">
+  <div class="ttl"><span class="no">08</span><h2>NIA 인공지능 학습용 데이터 구축 사업 제안</h2><span class="kind">Company</span></div>
+  <div class="lead">NIA 2023년 인공지능 학습용 데이터 구축 사업에 <b>주관기관으로 지원</b> - 4개사 컨소시엄 제안 총괄</div>
+  <div class="stack"><div class="row"><span class="k">사업</span><span>과기정통부, NIA 2023년도 인공지능 학습용 데이터 구축 지원사업</span></div><div class="row"><span class="k">분야</span><span>지정공모 한국어, 라이브 스트리밍 영상 통번역 데이터</span></div></div>
+
+  <div class="stats" style="margin-top:14px">
+    <div class="stat"><div class="n">42억 원</div><div class="l">과제 예산 규모</div></div>
+    <div class="stat"><div class="n">4개사</div><div class="l">구성한 컨소시엄<br>(주관 1 + 참여 3)</div></div>
+    <div class="stat"><div class="n">3종</div><div class="l">구축 대상 데이터<br>(영어, 중국어, 일본어)</div></div>
+    <div class="stat"><div class="n">2천 시간</div><div class="l">원천 콘텐츠 구축량<br>(한국어 1천h + 영어 1천h)</div></div>
+  </div>
+
+  <div class="block">
+    <div class="h">주요 기여</div>
+    <ul>
+      <li><b>주관기관 제안 총괄</b> - 제안서 작성 전체와 발표평가를 직접 수행</li>
+      <li><b>기업 컨소시엄 4개사 구성</b> - 참여기관 3곳을 확보하고 역할, 예산 분담 설계</li>
+      <li>데이터 3종 구축 계획 수립 - 음성에서 전사 텍스트, 번역 텍스트로 이어지는 페어 구조와 메타데이터(분야, 전문용어, 발화자 정보 등) 명세 설계</li>
+      <li>데이터 구축 예상 비용 및 <b>비용산출 근거자료</b> 작성 (공고 필수 제출 항목)</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <div class="h">제안서에서 풀어야 했던 공고 조건</div>
+    <ul>
+      <li><b>저작권 해결 방안 제시 필수</b> - 라이브 스트리밍 콘텐츠의 지식재산권, 비용을 포함한 구체적 획득 방안 마련</li>
+      <li><b>기구축 데이터(AI허브 등) 사용 불가</b> - 원천데이터 전량을 신규 수집, 구축하는 방안 수립</li>
+      <li><b>편향 방지 설계</b> - 대분류 5개 이상 카테고리 제시, 단일 카테고리 20% 상한, 외국어 발화자 출신지역별 균형 분포</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <div class="h">결과</div>
+    <ul>
+      <li>서류 통과 후 <b>발표평가까지 진출</b></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 09 Ops 자동화 -->
+<div class="page proj">
+  <div class="ttl"><span class="no">09</span><h2>Ops 자동화, 내부 도구</h2><span class="kind">Company</span></div>
+  <div class="lead">운영팀의 수작업 검수, 데이터 처리, 대시보드 배포를 <b>비개발자가 직접 실행하는 도구</b>로 대체</div>
+  <div class="stack"><div class="row"><span class="k">Stack</span><span>Python, Gradio, Pandas, MongoDB, Node.js, CVAT/COCO/PASCAL VOC 포맷 변환</span></div></div>
+
+  <div class="block">
+    <div class="h">주요 도구</div>
+    <div class="cards">
+      <div class="card">
+        <div class="ct">자동 어노테이션 QC 툴</div>
+        <div class="cs">Gradio 웹앱, 단독 개발</div>
+        <div class="cb">이미지 수집 QC를 위한 자동 어노테이션 도구<br>로그인 정보를 전역 변수에서 <b>세션 상태로 전환해 다중 사용자 지원</b>, AI 모델 시작, 적용 버튼 분리, 전체 이미지 일괄 실행, <b>score threshold 조건 검사</b>와 reject 임계값 조정, 갤러리, 페이지네이션, QC 제출 API 연동</div>
+      </div>
+      <div class="card">
+        <div class="ct">Coin Decision Robot</div>
+        <div class="cs">판정 자동화</div>
+        <div class="cb">Tagger 보상 판정을 자동화<br>판정 기준 타입별 계산과 반올림 처리, 문자열 ground truth의 정수 변환, 잘못된 계산 로직 수정<br>에러 타입 enum, 설정 파일, 실행 예시를 도입해 <b>운영자가 원인을 파악할 수 있는 에러 메시지</b>로 정리</div>
+      </div>
+      <div class="card">
+        <div class="ct">Source-of-truth, Training QC 로봇</div>
+        <div class="cs">CLI, 판정 자동 검수</div>
+        <div class="cb">정답지(CSV)를 기준으로 Tagger 판정을 자동 대조, 제출하는 검수 로봇<br><b>dev/uat/prod 환경 분리</b>와 dry-run 지원, config 파일로 <b>여러 job 일괄 처리</b>, 오류를 타입별로 분류해 CSV 로그로 남김</div>
+      </div>
+      <div class="card">
+        <div class="ct">대시보드 배포 자동화</div>
+        <div class="cs">insight-manual-chart</div>
+        <div class="cb">대상 환경에 대시보드를 생성, 배포하고, 생성된 차트의 <b>chartId, seriesId를 조회해 매핑</b>한 뒤 데이터를 삽입하는 3단계 스크립트 체계<br>config 파일 기반이라 신규 환경에도 동일 절차로 적용</div>
+      </div>
+      <div class="card">
+        <div class="ct">데이터 처리, 부하 테스트</div>
+        <div class="cs">Ops 지원 스크립트</div>
+        <div class="cb">광고 이미지 <b>12만 장 자동 QC</b>로 검수 소요를 <b>1~2일에서 1시간으로</b> 단축, CVAT에서 PASCAL VOC로, COCO에서 LabelMe로 포맷 변환, 국적 기반 유저 매칭, 할당, 대량 업로드 분할과 <b>실패 건 재시도</b>, MongoDB 기반 부하 테스트 도구</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="h">성과</div>
+    <ul>
+      <li>반복 수작업 검수를 <b>QC 자동화 로봇 4종</b>으로 대체 (Image Choice, Coin Decision, Training, Source-of-truth)</li>
+      <li>비개발 조직이 직접 실행 가능한 형태로 구현해 <b>엔지니어 병목 제거</b></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 10 CaliMeal -->
+<div class="page proj">
+  <div class="ttl"><span class="no">10</span><h2>CaliMeal - 급식 식단 편성 자동화 SaaS</h2><span class="kind">Personal / 운영 중 / 가입 개방</span></div>
+  <div class="lead">급식소 영양사의 한 달 치 식단 편성을 자동화하는 <b>멀티테넌트 B2B SaaS</b></div>
+  <div class="stack"><div class="row"><span class="k">Stack</span><span>Next.js 16(App Router, Server Actions), React 19, Tailwind v4, Kysely + postgres.js, PostgreSQL 16 + pgvector(VM 자체 설치), pg-boss, Vertex AI Gemini, GCP Identity Platform, PortOne, Resend, AWS Lightsail, Caddy</span></div><div class="row"><span class="k">상태</span><span>운영 서버 배포, 가동 중, 가입 개방(2026.08)</span></div></div>
+
+  <div class="block">
+    <div class="h">주요 기여</div>
+    <ul>
+      <li><b>PostgreSQL RLS 멀티테넌시</b> - 요청 풀(RLS 적용)과 소유자 풀(RLS 우회)로 분리해 테넌트 경계를 DB 레벨에서 강제, 마이그레이션 전량 적용 후 격리, 권한을 매 PR CI에서 검증</li>
+      <li><b>공공데이터 ETL로 후보 카탈로그 36,137행을 구축하고 전량 임베딩</b> - 2단 수집에 페이지네이션, 중단, 재개를 넣고 호출 속도를 스스로 제한, 런타임에는 외부 API를 호출하지 않도록 함. 달걀찜과 계란찜처럼 어휘 유사도 0.118로 문턱을 못 넘던 동의 요리가 의미 유사도 0.956으로 후보에 오름</li>
+      <li>월 단위 생성을 <b>주차별 잡으로 fan-out</b> 하고 작업 성격별로 추론 등급을 나눔</li>
+      <li>과금을 <b>행위 정액 크레딧</b>으로 설계 - 편집, 게시, PDF, 업로드는 무과금</li>
+    </ul>
+  </div>
+
+  <div class="shots arch">
+    <img src="/assets/portfolio/calimeal-now.webp">
+    <div class="cap">현재 구성 - 단일 VM에 앱, 워커, DB, PDF 렌더가 모두 올라가 있음</div>
+    <img src="/assets/portfolio/cm_generate.webp" style="max-height:60mm">
+    <div class="cap">생성 시트 - 우리 스타일과 새로움 비율, 제철 재료 우선, 쉬는 날 제외를 지정하면 소모 크레딧이 즉시 계산됨</div>
+  </div>
+
+  <div class="block">
+    <div class="h">성과 / 지표</div>
+    <ul>
+      <li>LLM 비용을 실측해 생성 <b>월 약 400원</b>으로 확인 - 요금제 단가를 잡는 근거로 사용</li>
+      <li>배포 실행부터 빌드, 마이그레이션, 재시작, 헬스체크까지 <b>약 1분 22초</b>(실측)</li>
+      <li>확장 병목을 코드 위치와 수치로 특정 - 요청 풀 상한 10, 서버 빌드가 메모리 최대 소비 지점이라 <b>VM 사양을 빌드 메모리가 결정함</b>을 근거로 빌드 분리를 1순위 과제로 정립</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 11 try-ticketing -->
+<div class="page proj">
+  <div class="ttl"><span class="no">11</span><h2>try-ticketing - 티켓 예매, 수강신청 연습 웹 서비스</h2><span class="kind">Personal / 웹 공개 운영</span></div>
+  <div class="lead">티켓 예매, 수강신청의 <b>좌석 선점과 과목 신청을 연습</b>하는 웹 서비스 (tryticketing.com)</div>
+  <div class="stack"><div class="row"><span class="k">Stack</span><span>Go 1.27, chi, pgx, sqlc, go-redis / React 19, TypeScript, Vite, Tailwind 4, TanStack Query, Redux Toolkit, Jotai / PostgreSQL 18, Redis 8, Caddy, Docker Compose, AWS Lightsail 서울 단일 VM, Cloudflare DNS, GA4, Prometheus</span></div><div class="row"><span class="k">상태</span><span>2026.09 웹 공개, S3 자동 백업, Lightsail + Better Stack 운영 감시</span></div></div>
+
+  <div class="block">
+    <div class="h">주요 기여</div>
+    <ul>
+      <li><b>경합 판정을 Redis Lua 한 실행에 집중</b> - 좌석 선점, 10초 보류, 정원, 마감, 대기열 진입을 서버가 원자적으로 결정하고 클라이언트는 폴링만 함. Redis 장애 시 SQL로 대체하지 않고 503을 내 저장 원본이 갈라지는 상황을 피함</li>
+      <li><b>영구 데이터와 단기 상태 분리</b> - 커뮤니티, 참여자, 세션은 PostgreSQL, 진행 중 연습, 당일 최고 기록, 24시간 공유 링크는 Redis. 세션 캐시에 닉네임 대신 참여자 ID와 최초 만료만 넣어 이름 변경, 만료 연장 문제를 피하면서 연습 폴링의 SQL 접근을 없앰</li>
+      <li><b>혼잡 제어를 명시적으로 설계</b> - 공통 FIFO 대기열, 활성 참여 250개 한도, 3초 상태 조회, 30초 heartbeat 만료로 입장 순서와 이탈자 정리를 관리. 티켓, 수강 참여를 분리하되 두 참여가 공통 한도 두 자리를 쓰게 해 우회를 막음</li>
+      <li><b>검색 가능한 공개 HTML과 개인 상태 분리</b> - 공개 소개는 빌드 시 프리렌더, 게시글은 Go에서 이스케이프해 HTML과 초기 JSON으로 렌더, 개인 진행과 공유 화면은 noindex</li>
+    </ul>
+  </div>
+
+  <div class="shots arch">
+    <img src="/assets/portfolio/tt_arch.webp" style="max-height:68mm">
+    <div class="cap">현재 구성 - Lightsail 단일 VM에 Caddy, React, Go API, Redis, PostgreSQL을 Docker Compose로 배치, S3 백업과 외부 감시는 밖</div>
+    <img src="/assets/portfolio/tt_home.webp" style="max-height:38mm">
+    <div class="cap">홈 - 서버 시각과 마감 카운트다운을 보여 주고 닉네임만 입력하면 연습이 시작됨</div>
+  </div>
+
+  <div class="block">
+    <div class="h">성과 / 지표</div>
+    <ul>
+      <li><b>2026.09 웹 공개 운영 시작</b> - 단일 VM에서 GA4 동의 기반 방문 통계, S3 자동 백업, 외부 감시까지 갖춘 상태로 공개</li>
+      <li><b>k6 격리 부하 실험 250 VU에서 조회 p95 티켓 330ms, 수강 171ms, 4회 실행 요청 42,255건에 HTTP 오류 0</b> (2026.09.14, 운영 VM 안 자원 제한 컨테이너 기준)</li>
+      <li>응답 시간 히스토그램과 요청, 거부 카운터를 Prometheus로 계측해 부하 실험 결과를 수치로 판단</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 12 teampler -->
+<div class="page proj">
+  <div class="ttl"><span class="no">12</span><h2>teampler - 코트 스포츠 대기열 관리</h2><span class="kind">Personal / iOS App Store 출시</span></div>
+  <div class="lead">운동 모임의 <b>코트와 대기열을 실시간으로 관리</b>하는 앱 - 배드민턴, 테니스, 탁구</div>
+  <div class="stack"><div class="row"><span class="k">Stack</span><span>Expo 54(React Native 0.81, React 19), expo-router, Zustand, EAS Build/Submit/Update, Python 3.11 FastAPI, MongoDB Atlas, Redis, Docker Compose, AWS Lightsail, ECR</span></div><div class="row"><span class="k">상태</span><span>iOS App Store 출시(2026.09), Android 비공개 테스트, 백엔드 prod 가동</span></div></div>
+
+  <div class="block">
+    <div class="h">주요 기여</div>
+    <ul>
+      <li><b>장기 자격증명을 0개로 운영</b> - AWS는 GitHub OIDC, SSH는 수 분짜리 단명 키와 인증서, 포트 22는 평소 닫고 배포 러너 IP만 /32로 개방</li>
+      <li>OAuth 3종(Google, Apple, Kakao) <b>id_token을 서버가 JWKS로 검증</b>하고 자체 JWT를 발급, 블록리스트, OTP, 레이트리밋은 Redis로 처리</li>
+      <li>메일 발송을 SES 프로덕션 액세스 반려 이후 Resend로 이관, <b>반송 웹훅의 서명검증, 영구판정, 억제 기록까지 실동작 확인</b></li>
+      <li>테마 도입과 함께 <b>WCAG AA 명암비 검사를 검사 스크립트에 편입</b>해 대비 결함 시 빌드 차단</li>
+    </ul>
+  </div>
+
+  <div class="shots arch">
+    <img src="/assets/portfolio/teampler-now.webp">
+    <div class="cap">현재 구성 - 단일 VM, FastAPI 워커 1개, WebSocket 방 상태가 프로세스 메모리에만 존재</div>
+    <img src="/assets/portfolio/teampler-session.webp" style="max-height:56mm">
+    <div class="cap">모임 화면 - 코트별 진행 시간과 대기열을 한 화면에 두고, 운영진 조작이 WebSocket으로 참가자 화면에 즉시 반영됨</div>
+  </div>
+
+  <div class="block">
+    <div class="h">성과 / 지표</div>
+    <ul>
+      <li>수평 확장이 막힌 지점을 <b>에러 없이 실시간만 조용히 누락되는 현상</b>으로 규정하고, 확장 조건(CPU 한 코어 포화, 오토스케일, 무중단 배포 중 하나가 실제로 걸릴 때)을 미리 항목으로 문서화함</li>
+      <li>서버 없이 쓰는 로컬, 로그인 클라우드, 읽기 전용 참관 <b>3모드를 저장 레벨 가드로 분리</b>해 모드가 섞이지 않도록 강제</li>
+      <li>커넥션 상한을 산술로 특정 - 드라이버 기본 풀 100이 프로세스마다 적용되므로 <b>Atlas 연결 500에서 워커 5개가 상한</b>임을 확인하고 증설 전 선결 과제로 둠</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 13 quickglot -->
+<div class="page proj">
+  <div class="ttl"><span class="no">13</span><h2>quickglot - 온디바이스 번역 Safari 확장</h2><span class="kind">Personal / App Store 출시</span></div>
+  <div class="lead">선택한 문장을 그 자리에서 번역하는 Safari 확장 - <b>기기 안에서만 처리</b>, 서버와 API 키 없음</div>
+  <div class="stack">
+    <div class="row"><span class="k">확장</span><span>TypeScript 5.9, WebExtension Manifest V3, esbuild, Node 22</span></div>
+    <div class="row"><span class="k">네이티브</span><span>Swift, Apple Translation 프레임워크, NaturalLanguage 언어 판별, Safari Web Extension 컨테이너 앱(AppKit, UIKit 공용 ViewController)</span></div>
+    <div class="row"><span class="k">배포</span><span>iOS, macOS 양쪽 App Store 출시, universal purchase 단일 앱 레코드, GitHub Actions 3잡 CI, 정책 페이지 GitHub Pages</span></div>
+  </div>
+
+  <div class="shots wide">
+    <img src="/assets/portfolio/qg_hero.webp">
+  </div>
+
+  <div class="block">
+    <div class="h">설계 결정</div>
+    <ul>
+      <li><b>번역 엔진을 온디바이스로 한정</b> - 번역 API는 키, 과금, 서버, 프라이버시 비용이 함께 따라오므로, OS가 제공하는 비 UI 번역 세션만 쓰고 최소 지원 버전을 올리는 쪽을 택함. 네트워크 호출 0건, 확장 권한 1개, host_permissions 없음으로 끝나 처리방침과 심사 프라이버시 라벨이 수집 항목 없음으로 정리됨</li>
+      <li><b>진행률을 추정하지 않고 재조회로 판정</b> - 언어팩 설치 호출이 다운로드 완료가 아니라 시스템 시트가 닫힐 때도 반환하고 취소를 알리지 않으며 진행률을 주지 않음. 추정 진행 막대를 결함으로 규정하고, 시트가 닫힌 뒤 설치 여부를 다시 조회하는 방식으로 바꿔 멈춘 다운로드가 진행 중으로 보이는 화면을 없앰</li>
+      <li><b>플랫폼별 트리거를 나눠 시스템 UI와 충돌하지 않도록 분리</b> - iOS는 선택 제스처를 시스템 콜아웃이 먼저 가져가고 그 위치를 페이지가 알 수 없으므로, macOS는 선택 직후 번역하고 iOS는 선택 끝에 정렬된 칩을 눌러 번역하도록 분리함</li>
+      <li><b>대상 언어를 단일 값으로 공유하고 요청마다 재조회</b> - 앱이 받은 언어팩과 확장이 번역하는 언어가 어긋나면 지원하지만 동작하지 않는 상태가 되며, 앱에서 확장 워커로 변경을 알릴 경로가 없음. 대상 언어 하나만 App Group에 두고 번역 요청마다 다시 읽으며, 캐시 키에 대상 언어를 포함하고 성공 응답만 캐시함</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <div class="h">성과 / 지표</div>
+    <ul>
+      <li><b>iOS, macOS 양쪽 App Store 정식 출시</b> - 하나의 앱 레코드를 두 플랫폼에 내고 <b>1.0~1.2 세 버전 모두 첫 제출에 반려 없이 승인</b></li>
+      <li><b>릴리스, 위생을 스크립트로 강제</b> - 아카이브부터 플랫폼, 버전, 번들, 수출규정 대조와 업로드까지 CLI로 처리하고 워킹 트리가 정리되지 않으면 중단, 팀 ID, 홈 경로가 공개 저장소로 새는지 테스트 단계에서 차단</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 14 archdraw -->
+<div class="page proj">
+  <div class="ttl"><span class="no">14</span><h2>archdraw - 아키텍처 다이어그램 렌더러</h2><span class="kind">Personal / npm 공개</span></div>
+  <div class="lead">YAML로 쓴 클라우드 아키텍처를 <b>SVG, PNG, 애니메이션 HTML로 렌더</b>하는 CLI, 라이브러리</div>
+  <div class="stack"><div class="row"><span class="k">Stack</span><span>TypeScript 7, Node 22 이상, pnpm workspaces 모노레포, elkjs(레이아웃), zod 4, React 19 renderToStaticMarkup(SVG), resvg(PNG), vitest, Biome, changesets</span></div><div class="row"><span class="k">배포</span><span>공개 npm 패키지 6종(CLI, core, 아이콘 팩 3종, React 바인딩), GitHub Actions로 발행, provenance 첨부</span></div></div>
+
+  <div class="block">
+    <div class="h">설계 결정</div>
+    <ul>
+      <li><b>레이아웃은 ELK에 위임하고 좌표계 문제를 직접 해결</b> - ELK가 간선 좌표를 간선이 선언된 노드 기준 상대좌표로 반환해, 그룹을 넘나드는 간선을 양 끝점의 <b>최소공통조상 컨테이너</b>에 매달지 않으면 의도하지 않은 위치에 그려짐. 조상 체인을 구성해 LCA를 계산해 연결함</li>
+      <li><b>해석 안 되는 아이콘은 대체하지 않고 실패하도록 처리</b> - 해석 안 되는 타입은 비슷한 후보를 제시하며 종료. 에이전트가 오류 메시지를 읽고 스스로 고치는 것을 전제로 설계</li>
+      <li><b>입력 두 형태를 하나의 IR로 정규화</b> - 사람이 쓰는 중첩형과 생성기가 쓰는 평면형을 함께 받음. 평면형은 재귀가 없어 LLM이 한 번에 생성하기 쉬움. 스키마를 zod 정의에서 JSON Schema로 파생해 문서와 스키마가 어긋나지 않도록 함</li>
+      <li><b>에이전트 왕복을 줄이려고 CLI 표면을 넷으로 고정</b> - render, types, schema, --check만 두고, types가 그 다이어그램에 필요한 아이콘 슬러그를 한 번에 반환해 아이콘마다 조회를 반복하지 않도록 함. 렌더 없이 검증만 하는 --check와 stdin 입력으로 에이전트가 제출 전에 스스로 확인하도록 함</li>
+    </ul>
+  </div>
+
+  <div class="shots wide">
+    <img src="/assets/portfolio/archdraw_render.webp">
+  </div>
+
+  <div class="block">
+    <div class="h">성과 / 지표</div>
+    <ul>
+      <li>아이콘 <b>AWS 793, GCP 216, 브랜드/OSS 3,453</b>을 프로바이더 팩 3개로 제공</li>
+      <li>SVG 생성이 DOM에 의존하지 않아 <b>브라우저와 Node가 같은 코드로 같은 결과</b>를 냄 - 스냅샷 검사로 회귀 방지</li>
+      <li>이 포트폴리오의 <b>CaliMeal, teampler 인프라 다이어그램을 archdraw로 직접 렌더</b>함</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 15 Oh My Algorithm -->
+<div class="page proj">
+  <div class="ttl"><span class="no">15</span><h2>Oh My Algorithm</h2><span class="kind">Personal / 실서비스</span></div>
+  <div class="lead">알고리즘과 CS 개념을 <b>단계별 애니메이션과 코드 패널</b>로 학습하는 웹 서비스</div>
+  <div class="stack"><div class="row"><span class="k">Stack</span><span>React 19.2, Vite 8, Tailwind 4, React Router 7, Remotion, puppeteer-core(자체 SSG), oh-my-animation(직접 발행한 npm 패키지를 이 앱이 소비), GA4</span></div></div>
+
+  <div class="block">
+    <div class="h">주요 기여</div>
+    <ul>
+      <li>정렬, 탐색, 그래프, 트리, DP에 더해 <b>시스템, 네트워크, 하드웨어</b>까지 넓혀 <b>수록 항목 80개</b>(알고리즘 45, CS 개념 35), 카테고리 17개</li>
+      <li><b>프레젠테이션 비종속 데이터 레이어</b> - 카테고리마다 메타와 스텝 데이터를 분리해 레지스트리가 메타만 가져오도록 함. 전 항목 스텝 데이터가 메인 번들에 딸려오지 않고, 같은 정의를 웹앱과 영상 렌더가 함께 소비. <b>공용 프리미티브 29개를 80항목이 공유</b></li>
+      <li><b>번역이 화면을 다시 그리지 않는 오버레이 i18n</b> - 국문 정본 위에 사전을 얹어 같은 라우터 하위 트리를 두 번 마운트하는 구조로 80개 항목을 영문으로 전환하고, 빌드 산출물에서 한글이 새는지 검사하는 루프를 상시화</li>
+      <li>puppeteer-core 기반 <b>자체 SSG로 198개 라우트를 프리렌더</b>하고 OG 카드를 로컬에서 생성</li>
+    </ul>
+  </div>
+
+  <div class="shots trio">
+    <img src="/assets/portfolio/oma_quick.webp">
+    <img src="/assets/portfolio/oma_k8s.webp">
+  </div>
+
+  <div class="block">
+    <div class="h">운영 현황</div>
+    <ul>
+      <li><b>자체 SSG가 검색 색인까지 실제로 달성</b> - naver, google, bing 세 엔진에서 자연 검색 유입이 잡히고 Search Console이 연동돼 있음</li>
+      <li><b>영어 오버레이가 국내 밖 유입으로 이어짐</b> - 접속이 한국에 그치지 않고 싱가포르, 인도, 중국, 미국, 호주, 캐나다 등에서 발생</li>
+      <li>가장 많이 읽히는 페이지가 <b>개념 챕터</b>(쿠버네티스 목록, 파드, 원하는 상태, 도커 아키텍처, 롤링 업데이트) - 장면 단위로 전환한 자리가 실제로 소비되고 있음</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 16 naver-posting -->
+<div class="page proj">
+  <div class="ttl"><span class="no">16</span><h2>naver-posting - 기술 콘텐츠 생산 파이프라인</h2><span class="kind">Personal / 운영 중</span></div>
+  <div class="lead">IT, AI 기술 동향의 조사, 집필, 시각화, 발행을 처리하는 <b>개인 콘텐츠 파이프라인</b></div>
+  <div class="stack"><div class="row"><span class="k">Stack</span><span>Claude Code Skills 11종, Python, WebSearch 교차검증, Google Drive 연동, Git</span></div><div class="row"><span class="k">발행</span><span>blog.naver.com/rottensweetpotato</span></div></div>
+
+  <div class="block">
+    <div class="h">파이프라인 - 3개 주체가 파일로 비동기 인계</div>
+    <div class="flow">
+      <div class="box"><b>클라우드 루틴</b>매주 월 11:00<br>리서치, 초안 PR</div>
+      <div class="arr">→</div>
+      <div class="box hi"><b>로컬 세션</b>PR 머지, 자산 처리<br>HTML 변환</div>
+      <div class="arr">→</div>
+      <div class="box"><b>이미지 에이전트</b>대기열 소비<br>생성, INDEX 갱신</div>
+      <div class="arr">→</div>
+      <div class="box"><b>발행</b>네이버 SmartEditor</div>
+    </div>
+  </div>
+
+  <div class="shots duo" style="margin-top:12px">
+    <img src="/assets/portfolio/blog_categories.webp">
+    <img src="/assets/portfolio/blog_stats.webp">
+  </div>
+
+  <div class="block">
+    <div class="h">주요 기여</div>
+    <ul>
+      <li><b>환각 방지를 파이프라인 규칙으로 강제</b> - 작성 전 WebSearch 교차검증 최소 1회 필수, 논문, 공식 자료는 원문 인용 후 출처를 프론트매터에 구조화, 과학 주제는 과장 여부를 짚는 균형 섹션을 필수 항목으로 지정</li>
+      <li><b>포맷 변환 자동화</b> - 네이버 SmartEditor가 평문 붙여넣기로 서식을 받지 못하는 제약을, md를 리치 HTML로 렌더해 클립보드로 옮기는 방식으로 우회(굵게, 줄바꿈, 구분선, 표 유지)</li>
+      <li><b>스킬 상속 구조 설계</b> - 공통 문체, 표기 규칙을 상위 스킬에 두고 포스팅 스킬 전체가 상속, 주제 버티컬은 형식 규칙을 빌려 쓰되 폴더, 이미지 정책만 덮어씀</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <div class="h">성과</div>
+    <ul>
+      <li><b>주 5편 이상 발행을 유지</b>하며 AI, Tech, Robot, Math, Science, News 카테고리로 확장, 주간 AI 다이제스트를 <b>연속 발행</b> 중</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 17 네이버 카페 수집 앱 -->
+<div class="page proj">
+  <div class="ttl"><span class="no">17</span><h2>네이버 카페 정보 자동 수집 데스크톱 앱</h2><span class="kind">Personal / 실사용자 보유</span></div>
+  <div class="lead">네이버 카페 게시판에서 정보를 수집해 Excel로 정리하는 데스크톱 앱 - <b>Windows 실행 파일</b></div>
+  <div class="stack"><div class="row"><span class="k">Stack</span><span>Python, Playwright(Chromium 번들), 데스크톱 GUI, CLI, GitHub Actions로 빌드해 Release로 배포, pytest, ruff, mypy</span></div></div>
+
+  <div class="block">
+    <div class="h">사용자 관점 동작</div>
+    <div class="flow">
+      <div class="box"><b>실행</b>exe 더블클릭<br>설치 불필요</div>
+      <div class="arr">→</div>
+      <div class="box"><b>입력</b>카페, 게시판 ID<br>기간, 출력 경로</div>
+      <div class="arr">→</div>
+      <div class="box hi"><b>수집</b>진행 로그, 휴식 구간<br>표시</div>
+      <div class="arr">→</div>
+      <div class="box hi"><b>결과</b>Excel(.xlsx)<br>클릭 가능 링크 포함</div>
+    </div>
+    <div class="shots wide"><img src="/assets/portfolio/cafe_app.webp" alt="네이버 카페 정보 자동 수집 앱 화면"></div>
+  </div>
+
+  <div class="block">
+    <div class="h">엔지니어링 하이라이트</div>
+    <ul>
+      <li><b>레이아웃 프리셋</b> - 여러 카페를 다루는 사용자를 위해 게시판 ID, 기간, 출력 설정을 묶어 저장/불러오기/삭제 - 실행이 끝나면 활성 프리셋이 자동 갱신되어 다음 실행으로 이어짐</li>
+      <li><b>전역 중복 제거</b> - 수집 항목이 모든 카페를 통틀어 한 번만 남도록 단일 전역 파일로 관리하고, 최초 발견 게시글에 귀속</li>
+      <li>비개발자 배포를 위해 <b>Chromium을 번들</b>하고 GitHub Actions로 exe를 빌드해 Release로 제공</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <div class="h">성과</div>
+    <ul>
+      <li>게시글을 하나씩 열어 옮겨 적던 작업을 <b>실행 한 번으로 대체</b>하고, 비개발자 사용자에게 배포해 실제 운영에 사용 중</li>
+      <li>여러 카페를 프리셋 전환만으로 운영할 수 있게 해 <b>반복 설정 입력 제거</b></li>
+    </ul>
+  </div>
+</div>
+
+<!-- 18 로키 -->
+<div class="page proj">
+  <div class="ttl"><span class="no">18</span><h2>로키 (Law+Key)</h2><span class="kind">Team / 청년동 사이드 프로젝트</span></div>
+  <div class="lead">사전 질문지로 상황을 진단하고 LLM이 상담하는 <b>AI 법률 상담 플랫폼</b> - 팀 프로젝트 (2025.11 ~ 2026.01)</div>
+  <div class="stack"><div class="row"><span class="k">Stack</span><span>React, Redux Toolkit, Vite, Tailwind, NestJS, Prisma, MongoDB, Redis, OpenAI</span></div></div>
+
+  <div class="shots web">
+    <img src="/assets/portfolio/lk2.webp">
+    <img src="/assets/portfolio/lk1.webp" style="width:66%;margin:0 auto">
+  </div>
+
+  <div class="block">
+    <div class="h">주요 기여 / 성과</div>
+    <ul>
+      <li>자유 입력 대신 <b>구조화된 사전 질문지</b>(사건 유형, 상황 체크, 텍스트 순)로 문제의 핵심 맥락을 먼저 확보하도록 서비스 구조 설계</li>
+      <li><b>고소장 자동 작성 템플릿, 관할기관 안내</b> 등 즉시 실행 도구를 제공하고, 상담 이력, 서류 통합 대시보드 구현</li>
+      <li>LLM 응답 지연과 환각, 맥락 이해 부족 문제를 <b>프롬프트 개선과 상태 관리</b>로 해결, 소셜 로그인 3종 연동</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 19 공공데이터 -->
+<div class="page proj">
+  <div class="ttl"><span class="no">19</span><h2>공공데이터 기반 지역사회 현안 해결</h2><span class="kind">Team / NIA 우수과제</span></div>
+  <div class="lead">공공데이터로 <b>서울시 흡연부스 약 500개소 입지를 도출</b>한 과제 - NIA 2023 우수과제 선정</div>
+  <div class="stack"><div class="row"><span class="k">방법</span><span>공공데이터 CSV 전처리, K-means 클러스터링, 귀무가설 검정, 설치 불가 지점 대체 알고리즘</span></div><div class="row"><span class="k">주관</span><span>한국지능정보사회진흥원 (2023.12)</span></div></div>
+
+  <div class="block">
+    <div class="h">접근</div>
+    <div class="flow">
+      <div class="box"><b>현안 정의</b>민원 3배 증가<br>건강추구권, 갈등</div>
+      <div class="arr">→</div>
+      <div class="box"><b>데이터 확보</b>금연구역, 민원<br>과태료 좌표</div>
+      <div class="arr">→</div>
+      <div class="box"><b>전처리, 결합</b>구역 밀집도<br>민원 다발지 선별</div>
+      <div class="arr">→</div>
+      <div class="box hi"><b>분석</b>K-means 중심 좌표<br>귀무가설 검정</div>
+      <div class="arr">→</div>
+      <div class="box hi"><b>입지 도출</b>흡연부스 약 500개소</div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="h">활용 공공데이터</div>
+    <table class="mt">
+      <tr><th>데이터</th><th>활용</th></tr>
+      <tr><td><b>은평구 흡연민원 근황</b></td><td>흡연 민원이 집중된 지역을 우선 분석 대상으로 선별</td></tr>
+      <tr><td><b>광진구 금연구역</b></td><td>구역 내 금연구역 <b>밀집도</b>를 계산해 흡연부스 수요 지역 선정</td></tr>
+      <tr><td><b>서울시 금연구역 표준데이터</b></td><td>금연구역 좌표를 기준점으로 삼아 입지 산출</td></tr>
+      <tr><td><b>전국금연구역표준데이터, 흡연 민원</b></td><td>금연구역, 흡연단속 위치 좌표 확보</td></tr>
+    </table>
+  </div>
+
+  <div class="block">
+    <div class="h">주요 기여 / 성과</div>
+    <ul>
+      <li>금연구역 좌표에 <b>K-means로 중심 좌표를 산출</b>해 그 인근에 부스를 배치하고, 프로젝트에서 설정한 <b>귀무가설</b>로 입지 타당성을 함께 판단, <b>서울시 약 500개소의 흡연부스 입지를 도출</b>함</li>
+      <li>산출 좌표가 <b>설치 불가 지점(산, 특수시설 등)</b>일 때를 대비해 자체 정의 알고리즘으로 대체 입지를 선정하도록 설계</li>
+      <li>한국지능정보사회진흥원(NIA) <b>우수과제 선정</b> (제2023-4237호, 2023.12.05)</li>
+    </ul>
+  </div>
+
+  <div class="shots cert" style="margin-top:10px"><img src="/assets/portfolio/nia_award.webp" style="max-height:74mm"></div>
+</div>
+
+</body>
+</html>
