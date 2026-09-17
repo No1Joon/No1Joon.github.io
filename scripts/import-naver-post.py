@@ -278,8 +278,13 @@ class Converter:
             # 이을 곳이 없으면 줄째로 버린다. 실제 URL 이 적힌 줄은 원문 그대로 둔다.
             m = RE_LINK_ATTACH.match(s)
             if m:
-                ph = RE_LINK_PLACEHOLDER.search(m.group("rest"))
+                rest = m.group("rest").strip()
+                ph = RE_LINK_PLACEHOLDER.search(rest)
                 if not ph:
+                    # URL 이 아직 안 적힌 `[…]` 자리표시자·작성자 메모는 발행물에서 뺀다.
+                    if rest.startswith("[") and "http" not in rest:
+                        self.warnings.append(f"링크 자리표시자 제외: {rest}")
+                        continue
                     out.append(self.inline(raw.rstrip()))
                     continue
                 link = self.resolve_link(ph.group("label"))

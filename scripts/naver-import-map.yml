@@ -6,7 +6,7 @@
 # date 는 네이버 front matter 의 date(파일명 날짜와 다를 수 있음 — date 를 따른다).
 # 규칙은 .claude/skills/naver-import/SKILL.md 참조.
 
-- source: posts/robot/26Q2/20260617_아틀라스_휴머노이드_1탄.md
+- source: naver-posting-it/posts/robot/26Q2/20260617_아틀라스_휴머노이드_1탄.md
   slug: atlas-humanoid-01-what-and-spec
   date: 2026-06-17
   category: Robot
@@ -16,7 +16,7 @@
   description: 보스턴 다이내믹스 아틀라스가 어떤 로봇인지, 유압에서 완전 전기구동으로 넘어온 세대 교체와 56 자유도 스펙을 정리합니다
   tags: [atlas, humanoid, boston-dynamics, hyundai, physical-ai]
 
-- source: posts/robot/26Q2/20260619_아틀라스_공장양산_2탄.md
+- source: naver-posting-it/posts/robot/26Q2/20260619_아틀라스_공장양산_2탄.md
   slug: atlas-humanoid-02-factory-production
   date: 2026-06-19
   category: Robot
@@ -28,7 +28,7 @@
   links:
     "1탄": atlas-humanoid-01-what-and-spec
 
-- source: posts/math/26Q2/20260619_벤포드법칙.md
+- source: naver-posting-it/posts/math/26Q2/20260619_벤포드법칙.md
   slug: benford-law
   date: 2026-06-19
   category: Math
@@ -38,7 +38,7 @@
   description: 자연스러운 데이터의 첫자리가 1에 쏠리는 이유를 로그 스케일로 설명하고, 부정 탐지에 쓰이는 방식과 통하지 않는 경우까지 정리합니다
   tags: [benford-law, statistics, probability, fraud-detection, logarithm]
 
-- source: posts/weekly/26Q2/20260622_AI위클리_Cursor_DeepSeek_수출통제.md
+- source: naver-posting-it/posts/weekly/26Q2/20260622_AI위클리_Cursor_DeepSeek_수출통제.md
   slug: ai-weekly-2026-06-22
   date: 2026-06-22
   category: AI
@@ -48,7 +48,7 @@
   description: 6월 3주 AI 업계 핵심 10건 — SpaceX의 Cursor 인수, DeepSeek 대형 펀딩, 한국을 겨냥한 모델 수출통제를 정리합니다
   tags: [ai-weekly, spacex, cursor, deepseek, export-control]
 
-- source: posts/weekly/26Q2/20260629_AI위클리_OpenAI칩_Mythos_Oracle감원.md
+- source: naver-posting-it/posts/weekly/26Q2/20260629_AI위클리_OpenAI칩_Mythos_Oracle감원.md
   slug: ai-weekly-2026-06-29
   date: 2026-06-29
   category: AI
@@ -58,7 +58,7 @@
   description: 6월 5주 AI 업계 핵심 8건 — OpenAI 자체 추론칩, 미국의 Mythos 수출통제 일부 해제, 빅테크 인재 쟁탈전을 정리합니다
   tags: [ai-weekly, openai, broadcom, export-control, layoffs]
 
-- source: posts/tech/26Q2/20260630_프롬프트인젝션.md
+- source: naver-posting-it/posts/security/26Q2/20260630_프롬프트인젝션.md
   slug: ai-security-01-prompt-injection
   date: 2026-06-30
   category: AI
@@ -68,7 +68,7 @@
   description: OWASP LLM Top 10 1위 위협인 프롬프트 인젝션의 원리와 직접·간접 유형, EchoLeak 사례, 그리고 현실적인 방어선을 정리합니다
   tags: [prompt-injection, ai-security, llm, owasp, agentic-ai]
 
-- source: posts/tech/26Q2/20260630_RAG_검색증강생성.md
+- source: naver-posting-it/posts/security/26Q2/20260630_RAG_검색증강생성.md
   slug: ai-security-02-rag
   date: 2026-06-30
   category: AI
@@ -78,7 +78,7 @@
   description: RAG 가 외부 지식을 참조하는 파이프라인을 단계별로 짚고, 왜 프롬프트 인젝션에 특히 취약한지와 포이즈닝 방어를 정리합니다
   tags: [rag, ai-security, llm, vector-db, embedding]
 
-- source: posts/weekly/26Q3/20260706_AI위클리_Sonnet5_MetaCompute_수출통제해제.md
+- source: naver-posting-it/posts/weekly/26Q3/20260706_AI위클리_Sonnet5_MetaCompute_수출통제해제.md
   slug: ai-weekly-2026-07-06
   date: 2026-07-06
   category: AI
@@ -88,7 +88,7 @@
   description: 7월 1주 AI 업계 핵심 9건 — Claude Sonnet 5 출시와 가격 인하, Meta 의 컴퓨팅 판매, 미국의 Fable 5 수출통제 해제를 정리합니다
   tags: [ai-weekly, anthropic, claude-sonnet-5, meta, export-control]
 
-- source: posts/robot/26Q3/20260711_배달로봇_아파트.md
+- source: naver-posting-it/posts/robot/26Q3/20260711_배달로봇_아파트.md
   slug: delivery-robot-apartment
   date: 2026-07-11
   category: Robot
@@ -98,7 +98,7 @@
   description: 엘리베이터를 타고 세대 앞까지 오는 배달 로봇의 2026년 국내 실증 현황과, 배달비 인하로 이어지기까지 남은 장벽을 정리합니다
   tags: [delivery-robot, autonomous-robot, neubility, last-mile, physical-ai]
 
-- source: posts/tech/26Q3/20260711_카톡_프롬프트인젝션.md
+- source: naver-posting-it/posts/security/26Q3/20260711_카톡_프롬프트인젝션.md
   slug: ai-security-03-messenger-ai-summary
   date: 2026-07-11
   category: AI
@@ -108,7 +108,7 @@
   description: 카톡·메일 AI 요약 기능이 간접 프롬프트 인젝션에 노출되는 경로를 따라가고, 일반 사용자가 지킬 수 있는 방어 체크리스트를 정리합니다
   tags: [prompt-injection, ai-security, messenger, privacy, echoleak]
 
-- source: posts/tech/26Q3/20260711_직장인_AI에이전트_베스트5.md
+- source: naver-posting-it/posts/tech/26Q3/20260711_직장인_AI에이전트_베스트5.md
   slug: work-ai-agents-top5
   date: 2026-07-11
   category: AI
@@ -118,7 +118,7 @@
   description: Microsoft 365 Copilot·ChatGPT·클로바노트·Notion AI·Gamma 를 실제 업무 흐름 기준으로 비교하고 바로 쓰는 방법을 정리합니다
   tags: [ai-agent, productivity, copilot, notion-ai, automation]
 
-- source: posts/tech/26Q3/20260711_한국어AI_클로드_챗GPT_제미나이.md
+- source: naver-posting-it/posts/tech/26Q3/20260711_한국어AI_클로드_챗GPT_제미나이.md
   slug: korean-ai-claude-chatgpt-gemini
   date: 2026-07-11
   category: AI
@@ -128,7 +128,7 @@
   description: 한국어 특화 모델이 사라진 상황에서 글로벌 3대 모델의 존댓말·사자성어·신조어·문서 처리 능력을 직접 붙여 비교합니다
   tags: [korean-nlp, claude, chatgpt, gemini, benchmark]
 
-- source: posts/tech/26Q3/20260711_갤럭시AI_vs_애플인텔리전스.md
+- source: naver-posting-it/posts/tech/26Q3/20260711_갤럭시AI_vs_애플인텔리전스.md
   slug: galaxy-ai-vs-apple-intelligence
   date: 2026-07-11
   category: AI
@@ -138,7 +138,7 @@
   description: 통화 녹음·실시간 통역·한국어 인식·사진 편집 네 가지 일상 기능을 기준으로 두 온디바이스 AI 진영을 나란히 비교합니다
   tags: [galaxy-ai, apple-intelligence, on-device-ai, smartphone, korean-nlp]
 
-- source: posts/weekly/26Q3/20260713_AI위클리_GPT5.6_Grok4.5_MuseSpark.md
+- source: naver-posting-it/posts/weekly/26Q3/20260713_AI위클리_GPT5.6_Grok4.5_MuseSpark.md
   slug: ai-weekly-2026-07-13
   date: 2026-07-13
   category: AI
@@ -148,7 +148,7 @@
   description: 7월 2주 AI 업계 핵심 8건 — OpenAI·xAI 의 연속 모델 공개, Meta 첫 유료 모델, EU 규제와 랜섬웨어 동향을 정리합니다
   tags: [ai-weekly, openai, xai, meta, eu-ai-act]
 
-- source: posts/news/26Q3/20260717_줌_취약점_계정탈취.md
+- source: naver-posting-it/posts/news/26Q3/20260717_줌_취약점_계정탈취.md
   slug: zoom-cve-2026-53412
   date: 2026-07-17
   category: Tech
@@ -158,7 +158,7 @@
   description: CVE-2026-53412 는 인증도 사용자 상호작용도 없이 계정 탈취로 이어집니다. 영향 범위와 지금 해야 할 업데이트를 정리합니다
   tags: [zoom, cve, vulnerability, security, patch]
 
-- source: posts/tech/26Q3/20260717_클로드코드_goal_메모리_에이전트팀.md
+- source: naver-posting-it/posts/tech/26Q3/20260717_클로드코드_goal_메모리_에이전트팀.md
   slug: claude-code-goal-memory-agent-team
   date: 2026-07-17
   category: AI
@@ -168,7 +168,7 @@
   description: 챗봇식 질의응답을 넘어 목표를 맡기는 세 가지 기능을 실제 동작 기준으로 정리하고, 잘못 알려진 기능명도 함께 바로잡습니다
   tags: [claude-code, ai-agent, subagent, coding-agent, anthropic]
 
-- source: posts/tech/26Q3/20260718_RAM_1탄_개념원리.md
+- source: naver-posting-it/posts/tech/26Q3/20260718_RAM_1탄_개념원리.md
   slug: ram-01-basics
   date: 2026-07-18
   category: Tech
@@ -178,7 +178,7 @@
   description: RAM 이 무엇이고 SSD 와 어떻게 다른지, 휘발성의 의미와 용량이 부족할 때 컴퓨터가 느려지는 이유를 정리합니다
   tags: [ram, memory, dram, hardware, computer-basics]
 
-- source: posts/tech/26Q3/20260718_RAM_2탄_DRAM_DDR.md
+- source: naver-posting-it/posts/tech/26Q3/20260718_RAM_2탄_DRAM_DDR.md
   slug: ram-02-dram-ddr
   date: 2026-07-18
   category: Tech
@@ -188,7 +188,7 @@
   description: 커패시터와 리프레시로 DRAM 원리를 설명하고, SRAM 캐시와의 역할 분담, DDR 세대별 대역폭 차이와 듀얼 채널을 정리합니다
   tags: [ram, dram, sram, ddr5, memory]
 
-- source: posts/tech/26Q3/20260718_RAM_3탄_부족사태.md
+- source: naver-posting-it/posts/tech/26Q3/20260718_RAM_3탄_부족사태.md
   slug: ram-03-shortage
   date: 2026-07-18
   category: Tech
@@ -198,7 +198,7 @@
   description: 32GB DDR5 가 70만 원대를 넘본 2026년 메모리 대란을 HBM 전환·생산 캐파 재배치 관점에서 짚고 PC 값에 미친 영향을 정리합니다
   tags: [ram, dram, hbm, memory-shortage, semiconductor]
 
-- source: posts/tech/26Q3/20260718_RAM_4탄_차세대.md
+- source: naver-posting-it/posts/tech/26Q3/20260718_RAM_4탄_차세대.md
   slug: ram-04-next-gen
   date: 2026-07-18
   category: Tech
@@ -208,7 +208,7 @@
   description: HBM4 의 로직 다이, CXL 메모리 풀링, 전원을 꺼도 남는 비휘발성 램까지 AI 가 촉발한 메모리 로드맵을 정리합니다
   tags: [ram, hbm4, cxl, mram, next-gen-memory]
 
-- source: posts/tech/26Q3/20260719_글로벌IT마비_역대최악사태.md
+- source: naver-posting-it/posts/tech/26Q3/20260719_글로벌IT마비_역대최악사태.md
   slug: worst-global-it-outages
   date: 2026-07-19
   category: Tech
@@ -218,7 +218,7 @@
   description: 크라우드스트라이크·워너크라이·낫페트야·솔라윈즈·Log4Shell 등 11건을 침입 경로, 기술적 파손 지점, 피해 규모 기준으로 해부합니다
   tags: [outage, crowdstrike, ransomware, supply-chain-attack, incident-review]
 
-- source: posts/tech/26Q3/20260721_최근_보안_사고_리뷰.md
+- source: naver-posting-it/posts/tech/26Q3/20260721_최근_보안_사고_리뷰.md
   slug: recent-security-incidents
   date: 2026-07-21
   category: Tech
@@ -228,7 +228,7 @@
   description: 오픈소스 신뢰와 클라우드 인증의 빈틈을 파고든 세 사고의 구체적 침투 경로와 기술적 원인을 단계별로 분석합니다
   tags: [security, xz-utils, snowflake, polyfill, supply-chain-attack]
 
-- source: posts/ai/26Q3/20260721_트랜스포머_역사_원리.md
+- source: naver-posting-it/posts/ai/26Q3/20260721_트랜스포머_역사_원리.md
   slug: transformer-history-and-principles
   date: 2026-07-21
   category: AI
@@ -238,7 +238,7 @@
   description: 2017년 Attention Is All You Need 가 무엇을 바꿨는지, 셀프 어텐션의 Q·K·V 구조와 논문 원문의 복잡도·벤치마크 표까지 짚습니다
   tags: [transformer, attention, llm, deep-learning, architecture]
 
-- source: posts/tech/26Q3/20260721_제미나이_3.5_프로_지연_출시.md
+- source: naver-posting-it/posts/tech/26Q3/20260721_제미나이_3.5_프로_지연_출시.md
   slug: gemini-35-pro-delay-36-flash
   date: 2026-07-22
   category: AI
@@ -248,7 +248,7 @@
   description: 재학습 소문까지 돈 3.5 Pro 지연 상황을 정리하고, 대신 공개된 3.6 Flash·3.5 Flash-Lite·Flash Cyber 의 성능 지표를 짚습니다
   tags: [gemini, google-deepmind, llm, benchmark, model-release]
 
-- source: posts/tech/26Q3/20260721_최근_AI_동향.md
+- source: naver-posting-it/posts/tech/26Q3/20260721_최근_AI_동향.md
   slug: ai-trends-2026-h2
   date: 2026-07-22
   category: AI
@@ -258,7 +258,7 @@
   description: 프런티어 모델 경쟁부터 에이전틱 워크플로, 피지컬 AI, 온디바이스 SLM, 데이터센터 전력 확보까지 하반기 8대 흐름을 정리합니다
   tags: [ai-trends, agentic-ai, physical-ai, on-device-ai, datacenter]
 
-- source: posts/ai/26Q3/20260725_claude_opus_5_release.md
+- source: naver-posting-it/posts/ai/26Q3/20260725_claude_opus_5_release.md
   slug: claude-opus-5-release
   date: 2026-07-25
   category: AI
@@ -268,7 +268,7 @@
   description: Opus 5 의 발표 내용과 아키텍처 변화, 가격 정책, 에이전틱 코딩 벤치마크 결과를 공식 자료 기준으로 정리합니다
   tags: [claude-opus-5, anthropic, llm, agentic-coding, model-release]
 
-- source: posts/weekly/26Q3/20260727_AI위클리_ClaudeOpus5_KimiK3_허깅페이스해킹.md
+- source: naver-posting-it/posts/weekly/26Q3/20260727_AI위클리_ClaudeOpus5_KimiK3_허깅페이스해킹.md
   slug: ai-weekly-2026-07-27
   date: 2026-07-27
   category: AI
@@ -278,7 +278,7 @@
   description: 7월 4주 AI 업계 핵심 7건 — Anthropic IPO 추진, Opus 5 와 Kimi K3 공개, AI 가 실험 도중 자율 해킹한 사건을 정리합니다
   tags: [ai-weekly, anthropic, kimi-k3, hugging-face, ai-security]
 
-- source: posts/ai/26Q3/20260727_KimiK3_오픈웨이트_MoE.md
+- source: naver-posting-it/posts/ai/26Q3/20260727_KimiK3_오픈웨이트_MoE.md
   slug: kimi-k3-open-weight-moe
   date: 2026-07-27
   category: AI
@@ -288,7 +288,7 @@
   description: 컴퓨트 제약 속에서 MoE·메모리 전략으로 프런티어에 접근한 Kimi K3 의 스펙, 벤치마크, 아키텍처 3대 알고리즘과 한계를 정리합니다
   tags: [kimi-k3, moonshot-ai, moe, open-weight, llm]
 
-- source: posts/math/26Q3/20260728_주식하락장_수학.md
+- source: naver-posting-it/posts/math/26Q3/20260728_주식하락장_수학.md
   slug: stock-market-math
   date: 2026-07-28
   category: Math
@@ -298,7 +298,7 @@
   description: -10%와 +10%가 같은 크기가 아닌 이유, 기하평균과 산술평균의 간극, 분할매수의 조화평균, 팻테일과 켈리 공식을 정리합니다
   tags: [statistics, geometric-mean, volatility, fat-tail, kelly-criterion]
 
-- source: posts/science/26Q3/20260728_PFAS_테플론_영원한화학물질.md
+- source: naver-posting-it/posts/science/26Q3/20260728_PFAS_테플론_영원한화학물질.md
   slug: pfas-forever-chemicals
   date: 2026-07-28
   category: Science
@@ -308,7 +308,7 @@
   description: 1938년의 실패한 실험에서 태어난 PFAS 의 화학적 원리, 은폐의 기록, 전 지구 확산과 한국 상황, 그리고 과장과 사실의 경계를 정리합니다
   tags: [pfas, teflon, environmental-health, chemistry, regulation]
 
-- source: posts/tech/26Q3/20260730_RAM_5탄_CXMT_중국메모리.md
+- source: naver-posting-it/posts/tech/26Q3/20260730_RAM_5탄_CXMT_중국메모리.md
   slug: ram-05-cxmt-china-memory
   date: 2026-07-30
   category: Tech
@@ -318,7 +318,7 @@
   description: 사흘 만에 코스피를 17% 끌어내린 CXMT 상장의 파장을 증설 계획·가격 압력·기술 격차 관점에서 숫자로 따져봅니다
   tags: [ram, dram, cxmt, china-semiconductor, memory-market]
 
-- source: posts/robot/26Q3/20260731_아틀라스_3탄_휴머노이드_양산.md
+- source: naver-posting-it/posts/robot/26Q3/20260731_아틀라스_3탄_휴머노이드_양산.md
   slug: atlas-humanoid-03-mass-production
   date: 2026-07-31
   category: Robot
@@ -328,7 +328,7 @@
   description: 옵티머스와 아틀라스가 몇 주 차이로 양산에 들어가는 지점을 짚고, 로봇 원가의 절반을 차지하는 관절 부품 경제학을 정리합니다
   tags: [atlas, humanoid, optimus, actuator, supply-chain]
 
-- source: posts/tech/26Q3/20260731_AI데이터센터_전력_열관리.md
+- source: naver-posting-it/posts/tech/26Q3/20260731_AI데이터센터_전력_열관리.md
   slug: ai-datacenter-power-cooling
   date: 2026-07-31
   category: Tech
@@ -340,7 +340,7 @@
 
 # --- 26Q2 구형 12편 (naver-posting `naver-blog-legacy-retrofit` 로 현행 스키마 이관 후 이식) ---
 
-- source: posts/news/26Q2/20260602_삼성전자_HBM5.md
+- source: naver-posting-it/posts/news/26Q2/20260602_삼성전자_HBM5.md
   slug: samsung-hbm5-mockup
   date: 2026-06-02
   category: Tech
@@ -350,7 +350,7 @@
   description: 컴퓨텍스 2026 에서 공개된 7세대 HBM 의 방열 기술 Heat Path Block 과 2나노 베이스 다이 계획을 정리합니다
   tags: [samsung, hbm5, memory, semiconductor, computex]
 
-- source: posts/breaking/26Q2/20260603_티빙_개인정보유출.md
+- source: naver-posting-it/posts/breaking/26Q2/20260603_티빙_개인정보유출.md
   slug: tving-privacy-breach-01
   date: 2026-06-03
   category: Tech
@@ -360,7 +360,7 @@
   description: CJ ENM 티빙의 회원 개인정보 유출 공지와 민관합동조사단 착수까지, 사건 초기 확인된 사실만 정리합니다
   tags: [tving, data-breach, privacy, security-incident, ott]
 
-- source: posts/news/26Q2/20260604_앤트로픽_AI개발속도조절.md
+- source: naver-posting-it/posts/news/26Q2/20260604_앤트로픽_AI개발속도조절.md
   slug: anthropic-ai-slowdown-report
   date: 2026-06-04
   category: AI
@@ -370,7 +370,7 @@
   description: AI 가 AI 를 만들며 발전 속도가 스스로 빨라진다는 앤트로픽의 경고와, 함께 공개된 자사 데이터를 정리합니다
   tags: [anthropic, ai-safety, recursive-self-improvement, ai-policy, llm]
 
-- source: posts/news/26Q2/20260605_엔비디아_젠슨황_방한.md
+- source: naver-posting-it/posts/news/26Q2/20260605_엔비디아_젠슨황_방한.md
   slug: jensen-huang-korea-visit-2026-06
   date: 2026-06-05
   category: Tech
@@ -380,7 +380,7 @@
   description: 7개월 만의 재방한에서 나온 HBM4 승인, 서울 AI 연구센터 설립, 삼성·SK·현대차·LG·네이버 릴레이 회동을 정리합니다
   tags: [nvidia, jensen-huang, hbm4, semiconductor, korea]
 
-- source: posts/news/26Q2/20260605_클로드_코웍_사용량2배.md
+- source: naver-posting-it/posts/news/26Q2/20260605_클로드_코웍_사용량2배.md
   slug: claude-cowork-usage-double
   date: 2026-06-05
   category: AI
@@ -390,7 +390,7 @@
   description: 데스크톱 AI 에이전트 Claude Cowork 의 한도 두 배 개방이 어떤 조건으로 걸렸고 무엇을 노린 조치인지 짚습니다
   tags: [claude-cowork, anthropic, ai-agent, desktop-agent, usage-limit]
 
-- source: posts/news/26Q2/20260608_WWDC26_시리AI_제미나이.md
+- source: naver-posting-it/posts/news/26Q2/20260608_WWDC26_시리AI_제미나이.md
   slug: wwdc-2026-siri-gemini
   date: 2026-06-08
   category: AI
@@ -400,7 +400,7 @@
   description: 애플이 간판 AI 기능을 라이벌 모델에 맡긴 배경과 온디바이스·클라우드 분담, iOS 27 과 개발자 도구 변화를 정리합니다
   tags: [wwdc, apple, siri, gemini, on-device-ai]
 
-- source: posts/weekly/26Q2/20260608_AI위클리_Alphabet_Anthropic.md
+- source: naver-posting-it/posts/weekly/26Q2/20260608_AI위클리_Alphabet_Anthropic.md
   slug: ai-weekly-2026-06-08
   date: 2026-06-08
   category: AI
@@ -410,7 +410,7 @@
   description: 6월 2주 AI 업계 핵심 10건 — Alphabet 의 인프라 투자, Anthropic 상장 카운트다운, Microsoft 자체 모델을 정리합니다
   tags: [ai-weekly, alphabet, anthropic, microsoft, layoffs]
 
-- source: posts/news/26Q2/20260610_클로드_페이블5_미토스5.md
+- source: naver-posting-it/posts/news/26Q2/20260610_클로드_페이블5_미토스5.md
   slug: claude-fable-5-release
   date: 2026-06-10
   category: AI
@@ -420,7 +420,7 @@
   description: 미토스급 성능을 안전장치와 함께 일반 공개한 페이블 5 의 벤치마크와, 속도 조절을 경고한 직후라는 타이밍을 짚습니다
   tags: [claude-fable-5, anthropic, llm, ai-safety, model-release]
 
-- source: posts/breaking/26Q2/20260612_페이블5_미토스5_접근중단.md
+- source: naver-posting-it/posts/breaking/26Q2/20260612_페이블5_미토스5_접근중단.md
   slug: claude-fable5-mythos5-access-blocked
   date: 2026-06-12
   category: AI
@@ -430,7 +430,7 @@
   description: 출시 사흘 만에 내려온 정부 지시로 외국인 접근이 전면 차단된 경위와 앤트로픽 공식 성명을 시간순으로 정리합니다
   tags: [anthropic, export-control, claude-fable-5, ai-policy, us-government]
 
-- source: posts/news/26Q2/20260612_티빙_CIDI유출_2차피해.md
+- source: naver-posting-it/posts/news/26Q2/20260612_티빙_CIDI유출_2차피해.md
   slug: tving-privacy-breach-02
   date: 2026-06-12
   category: Tech
@@ -440,7 +440,7 @@
   description: 본인별 조회로 드러난 CI·DI 유출이 왜 아이디 유출과 무게가 다른지, 그리고 지금 할 수 있는 대응을 정리합니다
   tags: [tving, data-breach, ci-di, privacy, identity-verification]
 
-- source: posts/weekly/26Q2/20260615_AI위클리_OpenAI_Bezos_메타.md
+- source: naver-posting-it/posts/weekly/26Q2/20260615_AI위클리_OpenAI_Bezos_메타.md
   slug: ai-weekly-2026-06-15
   date: 2026-06-15
   category: AI
@@ -450,7 +450,7 @@
   description: 6월 3주 AI 업계 핵심 10건 — 상장 레이스와 거대 자금이 몰리는 동안 쌓인 정리해고와 보안 경고를 함께 정리합니다
   tags: [ai-weekly, openai, ipo, meta, layoffs]
 
-- source: posts/news/26Q2/20260616_엔비디아_삼성_에이전틱AI.md
+- source: naver-posting-it/posts/news/26Q2/20260616_엔비디아_삼성_에이전틱AI.md
   slug: nvidia-samsung-agentic-ai
   date: 2026-06-16
   category: Tech
@@ -462,7 +462,7 @@
 
 # --- 26Q3 후반 10편 (2026-07-31 ~ 08-04) ---
 
-- source: posts/science/26Q3/20260731_미세플라스틱_인체축적.md
+- source: naver-posting-it/posts/science/26Q3/20260731_미세플라스틱_인체축적.md
   slug: microplastics-human-accumulation
   date: 2026-07-31
   category: Science
@@ -472,7 +472,7 @@
   description: 뇌에서 플라스틱이 나왔다는 연구들이 실제로 무엇을 측정했는지 짚고, 노출 경로·검출 수치·줄이는 방법을 구분해 정리합니다
   tags: [microplastics, nanoplastics, environmental-health, research-review, public-health]
 
-- source: posts/ai/26Q3/20260803_OpenAI_허깅페이스_AI에이전트_해킹.md
+- source: naver-posting-it/posts/ai/26Q3/20260803_OpenAI_허깅페이스_AI에이전트_해킹.md
   slug: openai-huggingface-agent-breach
   date: 2026-08-03
   category: AI
@@ -482,7 +482,7 @@
   description: 평가 도중 샌드박스를 탈출한 AI 에이전트가 제로데이 8건으로 침입하기까지의 3주 타임라인과 각 사 공식 공지를 정리합니다
   tags: [ai-security, openai, hugging-face, agentic-ai, zero-day]
 
-- source: posts/news/26Q3/20260803_쿠팡_개인정보유출_배상_10만원.md
+- source: naver-posting-it/posts/news/26Q3/20260803_쿠팡_개인정보유출_배상_10만원.md
   slug: coupang-privacy-breach-compensation
   date: 2026-08-03
   category: Tech
@@ -492,7 +492,7 @@
   description: 4,536명에서 3,756만 건으로 불어난 8개월의 경과와 소비자원 집단분쟁조정 결정의 적용 범위를 정리합니다
   tags: [coupang, data-breach, privacy, compensation, dispute-resolution]
 
-- source: posts/science/26Q3/20260803_페로브스카이트_탠덤_태양전지.md
+- source: naver-posting-it/posts/science/26Q3/20260803_페로브스카이트_탠덤_태양전지.md
   slug: perovskite-tandem-solar
   date: 2026-08-03
   category: Science
@@ -502,7 +502,7 @@
   description: 빛을 두 층이 나눠 흡수하는 탠덤 구조의 원리와 세계 기록 갱신 흐름, 그리고 면적·수명에서 남은 거리를 정리합니다
   tags: [perovskite, tandem-solar, photovoltaics, renewable-energy, efficiency]
 
-- source: posts/science/26Q3/20260803_지구온난화_양산42.5도_극한폭염.md
+- source: naver-posting-it/posts/science/26Q3/20260803_지구온난화_양산42.5도_극한폭염.md
   slug: extreme-heat-yangsan-record
   date: 2026-08-03
   category: Science
@@ -512,7 +512,7 @@
   description: 푄 현상과 분지 지형이 겹친 국지적 이유를 짚고, 기상청 53년 관측이 보여주는 폭염일수 추세와 하루의 기록을 구분해 읽습니다
   tags: [heatwave, climate-change, meteorology, foehn, korea-weather]
 
-- source: posts/weekly/26Q3/20260803_AI위클리_Nvidia데이터센터_DeepSeekV4_AI보안동맹.md
+- source: naver-posting-it/posts/weekly/26Q3/20260803_AI위클리_Nvidia데이터센터_DeepSeekV4_AI보안동맹.md
   slug: ai-weekly-2026-08-03
   date: 2026-08-03
   category: AI
@@ -522,7 +522,7 @@
   description: 8월 1주 AI 업계 핵심 6건 — 새 모델보다 돈·규제·보안이 크게 움직인 한 주를 정리합니다
   tags: [ai-weekly, nvidia, deepseek, eu-ai-act, ai-security]
 
-- source: posts/tech/26Q3/20260803_AI전력_1탄_전력망병목.md
+- source: naver-posting-it/posts/tech/26Q3/20260803_AI전력_1탄_전력망병목.md
   slug: ai-power-01-grid-bottleneck
   date: 2026-08-03
   category: Tech
@@ -532,7 +532,7 @@
   description: 발전량이 아니라 절차와 설비에서 막히는 구조를 국내 공급 불가 39.3%, 미국 대기 물량 2,061GW 로 따라갑니다
   tags: [ai-power, data-center, power-grid, interconnection-queue, energy]
 
-- source: posts/tech/26Q3/20260803_AI전력_2탄_SMR이란.md
+- source: naver-posting-it/posts/tech/26Q3/20260803_AI전력_2탄_SMR이란.md
   slug: ai-power-02-smr-basics
   date: 2026-08-03
   category: Tech
@@ -542,7 +542,7 @@
   description: 300MWe 이하·공장 제작이라는 정의에서 출발해 냉각재로 갈리는 네 갈래 설계와 피동 안전의 원리를 정리합니다
   tags: [ai-power, smr, nuclear, reactor-design, energy]
 
-- source: posts/tech/26Q3/20260804_AI전력_3탄_빅테크원자로계약.md
+- source: naver-posting-it/posts/tech/26Q3/20260804_AI전력_3탄_빅테크원자로계약.md
   slug: ai-power-03-bigtech-reactor-deals
   date: 2026-08-04
   category: Tech
@@ -552,7 +552,7 @@
   description: 계약 13건 9.8GW 와 2027년에 실제로 켜지는 835MW 사이의 간극을, 착공 현황과 함께 짚습니다
   tags: [ai-power, smr, nuclear, big-tech, power-purchase]
 
-- source: posts/tech/26Q3/20260804_AI전력_4탄_SMR검증.md
+- source: naver-posting-it/posts/tech/26Q3/20260804_AI전력_4탄_SMR검증.md
   slug: ai-power-04-smr-reality-check
   date: 2026-08-04
   category: Tech
@@ -562,7 +562,7 @@
   description: 사업비가 2.5배로 뛰어 취소된 첫 프로젝트부터 발전단가 비교와 폐기물 증가 연구까지, 옹호도 폄하도 없이 숫자만 봅니다
   tags: [ai-power, smr, nuclear, lcoe, energy-economics]
 
-- source: posts/ai/26Q3/20260804_book_to_skill_스킬변환.md
+- source: naver-posting-it/posts/ai/26Q3/20260804_book_to_skill_스킬변환.md
   slug: book-to-skill-token-cost
   date: 2026-08-04
   category: AI
@@ -572,7 +572,7 @@
   description: 책을 통째로 붙여넣는 대신 에이전트 스킬로 컴파일하는 book-to-skill 을 설치해 돌려보고, 탐색 루프 세금과 실제 토큰 사용량을 측정합니다
   tags: [book-to-skill, agent-skills, claude-code, token-cost, open-source]
 
-- source: posts/ai/26Q3/20260804_FinOps_AI비용최적화.md
+- source: naver-posting-it/posts/ai/26Q3/20260804_FinOps_AI비용최적화.md
   slug: finops-ai-cost-management
   date: 2026-08-04
   category: AI
@@ -582,7 +582,7 @@
   description: 기존 클라우드 비용 공식이 AI 워크로드에서 깨지는 지점을 짚고, 귀속·캐싱·배치까지 구현 순서를 정리합니다
   tags: [finops, ai-cost, gpu-utilization, prompt-caching, cloud-cost]
 
-- source: posts/tech/26Q3/20260805_멀티클라우드_운영표준화.md
+- source: naver-posting-it/posts/tech/26Q3/20260805_멀티클라우드_운영표준화.md
   slug: multicloud-operations-standardization
   date: 2026-08-05
   category: Tech
@@ -592,7 +592,7 @@
   description: 전략이 아니라 사고로 생긴 멀티클라우드를 통일하지 않고 운영하는 방법을, 표준화할 층과 두어야 할 층으로 갈라 정리합니다
   tags: [multicloud, hybrid-cloud, cloud-operations, standardization, finops]
 
-- source: posts/tech/26Q3/20260805_Cloudflare_BYOIP_장애회고.md
+- source: naver-posting-it/posts/tech/26Q3/20260805_Cloudflare_BYOIP_장애회고.md
   slug: cloudflare-byoip-outage-postmortem
   date: 2026-08-05
   category: Tech
@@ -602,7 +602,7 @@
   description: 빈 문자열 하나가 BGP 경로를 지운 6시간을 포스트모템의 코드와 함께 따라가고, 스테이징이 왜 못 걸렀는지까지 짚습니다
   tags: [cloudflare, byoip, bgp, postmortem, outage]
 
-- source: posts/tech/26Q3/20260806_AWS_GCP_서울리전비교.md
+- source: naver-posting-it/posts/tech/26Q3/20260806_AWS_GCP_서울리전비교.md
   slug: aws-gcp-seoul-region-comparison
   date: 2026-08-06
   category: Tech
@@ -612,7 +612,7 @@
   description: 양쪽 공식 가격표에서 서울 리전 값만 뽑아 맞대고, 정가가 아니라 자동 할인과 이그레스에서 청구서가 갈리는 이유를 정리합니다
   tags: [aws, gcp, cloud-pricing, seoul-region, egress]
 
-- source: posts/tech/26Q3/20260806_IPv4시세_CGNAT.md
+- source: naver-posting-it/posts/tech/26Q3/20260806_IPv4시세_CGNAT.md
   slug: ipv4-price-cgnat
   date: 2026-08-06
   category: Tech
@@ -622,7 +622,7 @@
   description: 60달러에서 20달러로 내려온 IPv4 시세와, 값이 내렸는데도 주소 공유가 굳는 이유, 그 대가로 사람이 봇 취급받는 구조를 짚습니다
   tags: [ipv4, cgnat, ip-market, isp, networking]
 
-- source: posts/tech/26Q3/20260806_IPv6_VPC_네트워크비용.md
+- source: naver-posting-it/posts/tech/26Q3/20260806_IPv6_VPC_네트워크비용.md
   slug: ipv6-vpc-network-cost
   date: 2026-08-06
   category: Tech
@@ -632,7 +632,7 @@
   description: 퍼블릭 IPv4 과금·NAT 게이트웨이·이그레스로 갈리는 클라우드 네트워크 청구서를 계산하고, IPv6-Mostly 전환의 손익을 따집니다
   tags: [ipv6, vpc, nat-gateway, cloud-cost, networking]
 
-- source: posts/tech/26Q3/20260808_AWS_Lightsail_요금구조.md
+- source: naver-posting-it/posts/tech/26Q3/20260808_AWS_Lightsail_요금구조.md
   slug: aws-lightsail-pricing
   date: 2026-08-08
   category: Tech
@@ -642,7 +642,7 @@
   description: 월 4,800원짜리 AWS 서버가 싼 이유를 번들 구성에서 찾고, 같은 트래픽에서 EC2 와 갈리는 금액과 포기하는 선택지를 정리합니다
   tags: [aws, lightsail, cloud-pricing, ec2, bandwidth]
 
-- source: posts/tech/26Q3/20260808_국내CSP_VM가격비교.md
+- source: naver-posting-it/posts/tech/26Q3/20260808_국내CSP_VM가격비교.md
   slug: korea-csp-vm-pricing
   date: 2026-08-08
   category: Tech
@@ -652,7 +652,7 @@
   description: 네이버 클라우드 플랫폼과 NHN Cloud 공식 요금표를 같은 조건으로 맞춰, 서버·디스크·IP·트래픽까지 실제 청구액을 계산합니다
   tags: [cloud-pricing, naver-cloud, nhn-cloud, vm, egress]
 
-- source: posts/ai/26Q3/20260810_오픈소스STT_한국어실측.md
+- source: naver-posting-it/posts/ai/26Q3/20260810_오픈소스STT_한국어실측.md
   slug: open-source-stt-korean-benchmark
   date: 2026-08-10
   category: AI
@@ -662,7 +662,7 @@
   description: 같은 가중치를 쓰는 네 구현을 한국어·영어 같은 음성으로 재고, 영어 1위가 한국어에서 뒤집힌 이유가 성능이 아니었던 지점을 짚습니다
   tags: [stt, whisper, faster-whisper, korean-asr, benchmark]
 
-- source: posts/weekly/26Q3/20260810_AI위클리_DeepMind개편_MuseCode_Palantir93.md
+- source: naver-posting-it/posts/weekly/26Q3/20260810_AI위클리_DeepMind개편_MuseCode_Palantir93.md
   slug: ai-weekly-2026-08-10
   date: 2026-08-10
   category: AI
@@ -672,7 +672,7 @@
   description: 8월 2주 AI 업계 핵심 8건 — 새 모델보다 사람이 움직인 한 주를 정리합니다
   tags: [ai-weekly, google-deepmind, meta, palantir, ai-agents]
 
-- source: posts/tech/26Q3/20260813_계정유출_자가점검.md
+- source: naver-posting-it/posts/tech/26Q3/20260813_계정유출_자가점검.md
   slug: account-breach-self-check
   date: 2026-08-13
   category: Tech
@@ -682,7 +682,7 @@
   description: 비밀번호를 어디에도 보내지 않고 유출 여부를 확인하는 원리를 풀고, 이미 털린 계정을 정해진 순서로 점검하는 5분짜리 절차를 정리합니다
   tags: [password-security, have-i-been-pwned, k-anonymity, account-security, mfa]
 
-- source: posts/math/26Q3/20260813_Astra_수학난제_Lean증명.md
+- source: naver-posting-it/posts/math/26Q3/20260813_Astra_수학난제_Lean증명.md
   slug: astra-math-lean-proofs
   date: 2026-08-13
   category: Math
@@ -692,7 +692,7 @@
   description: 난제 열 개라는 숫자보다 증명이 기계가 읽는 형식으로 함께 공개된 점이 중요한 이유를, Lean 저장소를 직접 열어 확인합니다
   tags: [lean4, formal-verification, openai-astra, math-proof, mathlib]
 
-- source: posts/robot/26Q3/20260813_DARPA_VENOM_F16_자율비행.md
+- source: naver-posting-it/posts/robot/26Q3/20260813_DARPA_VENOM_F16_자율비행.md
   slug: darpa-venom-f16-autonomy
   date: 2026-08-13
   category: Robot
@@ -702,7 +702,7 @@
   description: 시뮬레이터가 아닌 실제 F-16 에서 이뤄진 DARPA VENOM 자율 비행 시험의 조건과 개조 방식, KF-21 무인편대의 현재 위치를 정리합니다
   tags: [darpa, venom, f-16, autonomous-flight, physical-ai]
 
-- source: posts/tech/26Q3/20260814_액침냉각_인화점규제.md
+- source: naver-posting-it/posts/tech/26Q3/20260814_액침냉각_인화점규제.md
   slug: immersion-cooling-flash-point
   date: 2026-08-14
   category: Tech
@@ -712,7 +712,7 @@
   description: 서버를 담그는 기름이 위험물로 분류되는 국내 규제를 짚고, 1상·2상 액침의 갈림길과 3M 철수가 남긴 자리를 정리합니다
   tags: [immersion-cooling, datacenter, regulation, flash-point, thermal-management]
 
-- source: posts/tech/26Q3/20260814_PostNVIDIA_CUDA해자.md
+- source: naver-posting-it/posts/tech/26Q3/20260814_PostNVIDIA_CUDA해자.md
   slug: post-nvidia-cuda-moat
   date: 2026-08-14
   category: Tech
@@ -722,7 +722,7 @@
   description: 엔비디아의 해자를 네 겹으로 갈라 이미 무너진 층과 멀쩡한 층을 구분하고, 학습이 아니라 추론에서 전선이 열리는 이유를 짚습니다
   tags: [nvidia, cuda, ai-chip, inference, npu]
 
-- source: posts/ai/26Q3/20260815_Gemini37Flash_thinking레벨_실측.md
+- source: naver-posting-it/posts/ai/26Q3/20260815_Gemini37Flash_thinking레벨_실측.md
   slug: gemini-37-flash-thinking-levels
   date: 2026-08-15
   category: AI
@@ -732,7 +732,7 @@
   description: 두 모델을 143번 호출해 생각 토큰·속도·정확도를 재고, MINIMAL 이 사라진 변화가 대량 분류 비용에서 어떻게 드러나는지 계산합니다
   tags: [gemini, thinking-level, llm-cost, benchmark, google]
 
-- source: posts/ai/26Q3/20260815_Gemma4_맥북_로컬실측.md
+- source: naver-posting-it/posts/ai/26Q3/20260815_Gemma4_맥북_로컬실측.md
   slug: gemma-4-macbook-local
   date: 2026-08-15
   category: AI
@@ -742,7 +742,7 @@
   description: M3 Pro 36GB 에서 Gemma 4 를 크기별로 재고, 같은 답을 12배 느리게 받게 만든 기본값 하나를 찾아냅니다
   tags: [gemma, local-llm, ollama, apple-silicon, on-device-ai]
 
-- source: posts/weekly/26Q3/20260816_AI위클리_Decart인수_Gemini10억_Grok46.md
+- source: naver-posting-it/posts/weekly/26Q3/20260816_AI위클리_Decart인수_Gemini10억_Grok46.md
   slug: ai-weekly-2026-08-16
   date: 2026-08-16
   category: AI
@@ -752,7 +752,7 @@
   description: 8월 3주 AI 업계 핵심 11건 — 모델 발표보다 지갑이 먼저 열린 한 주를 정리합니다
   tags: [ai-weekly, anthropic, google-gemini, grok, ai-agents]
 
-- source: posts/ai/26Q3/20260817_GPT56_3티어_가격인하.md
+- source: naver-posting-it/posts/ai/26Q3/20260817_GPT56_3티어_가격인하.md
   slug: gpt-56-tiers-pricing
   date: 2026-08-17
   category: AI
@@ -762,7 +762,7 @@
   description: 한 이름 아래 25배 벌어진 세 티어의 단가와 모드별 배수를 정리하고, 어느 일을 어느 티어에 맡길지 기준을 세웁니다
   tags: [gpt-56, openai, llm-pricing, model-tiers, api-cost]
 
-- source: posts/tech/26Q3/20260817_비오면_인터넷_느려지나.md
+- source: naver-posting-it/posts/tech/26Q3/20260817_비오면_인터넷_느려지나.md
   slug: rain-internet-slowdown
   date: 2026-08-17
   category: Tech
@@ -772,7 +772,7 @@
   description: ITU 권고 공식에 국내 호우 기준을 넣어 강우감쇠를 계산하고, 집 안 Wi-Fi 와 위성·고주파 구간이 갈리는 이유를 주파수로 설명합니다
   tags: [rain-fade, wifi, itu-r, satellite-internet, networking]
 
-- source: posts/tech/26Q3/20260817_클로드코드_세션간_메시징.md
+- source: naver-posting-it/posts/tech/26Q3/20260817_클로드코드_세션간_메시징.md
   slug: claude-code-cross-session-messaging
   date: 2026-08-17
   category: AI
@@ -782,7 +782,7 @@
   description: 터미널을 오가며 복붙하던 일을 없애는 세션 간 메시징의 동작 방식과, 받는 쪽이 전달·보류·거부를 정하는 구조를 정리합니다
   tags: [claude-code, cross-session, ai-agents, developer-tools, workflow]
 
-- source: posts/tech/26Q3/20260818_선크림_1탄_SPF_PA_숫자.md
+- source: naver-posting-it/posts/tech/26Q3/20260818_선크림_1탄_SPF_PA_숫자.md
   slug: sunscreen-01-spf-pa
   date: 2026-08-18
   category: Science
@@ -792,7 +792,7 @@
   description: 사람 피부에 자외선을 쬐어 정하는 SPF·PA 시험 방법을 풀고, SPF 50 과 100 의 차이가 1%뿐인 이유를 계산합니다
   tags: [sunscreen, spf, uv-radiation, skin-health, cosmetics]
 
-- source: posts/tech/26Q3/20260818_선크림_2탄_성분과_규제.md
+- source: naver-posting-it/posts/tech/26Q3/20260818_선크림_2탄_성분과_규제.md
   slug: sunscreen-02-filters-and-regulation
   date: 2026-08-18
   category: Science
@@ -804,7 +804,7 @@
   links:
     "1탄": sunscreen-01-spf-pa
 
-- source: posts/tech/26Q3/20260818_선크림_3탄_바르는법_추천.md
+- source: naver-posting-it/posts/tech/26Q3/20260818_선크림_3탄_바르는법_추천.md
   slug: sunscreen-03-how-to-apply
   date: 2026-08-18
   category: Science
@@ -817,7 +817,7 @@
     "1탄": sunscreen-01-spf-pa
     "2탄": sunscreen-02-filters-and-regulation
 
-- source: posts/tech/26Q3/20260818_하이브리드본딩_HBM4_연기.md
+- source: naver-posting-it/posts/tech/26Q3/20260818_하이브리드본딩_HBM4_연기.md
   slug: hybrid-bonding-hbm4-delay
   date: 2026-08-18
   category: Tech
@@ -827,7 +827,7 @@
   description: 규격 높이가 늘어나며 범프를 유지할 여지가 생긴 경위를 짚고, 16단에서 결국 전환이 필요해지는 지점과 삼성·SK 의 다른 베팅을 정리합니다
   tags: [hybrid-bonding, hbm4, packaging, semiconductor, microbump]
 
-- source: posts/tech/26Q3/20260818_MCP_상태없는_프로토콜.md
+- source: naver-posting-it/posts/tech/26Q3/20260818_MCP_상태없는_프로토콜.md
   slug: mcp-stateless-protocol
   date: 2026-08-18
   category: AI
@@ -837,7 +837,7 @@
   description: N×M 연동 문제를 N+M 으로 바꾼 MCP 의 발상을 풀고, 핸드셰이크를 없앤 2026-07-28 개정이 성격을 어떻게 바꿨는지 짚습니다
   tags: [mcp, ai-agents, protocol, stateless, developer-tools]
 
-- source: posts/robot/26Q3/20260818_휴머노이드_감속기_병목.md
+- source: naver-posting-it/posts/robot/26Q3/20260818_휴머노이드_감속기_병목.md
   slug: humanoid-gear-reducer-bottleneck
   date: 2026-08-18
   category: Robot
@@ -847,7 +847,7 @@
   description: 관절 40개짜리 로봇의 원가를 정하는 감속기를 하모닉·사이클로이드로 갈라 보고, 특허 만료 뒤 국산 부품이 채워 가는 자리를 짚습니다
   tags: [humanoid, gear-reducer, harmonic-drive, actuator, robot-supply-chain]
 
-- source: posts/ai/26Q3/20260819_클로드_연쇄장애_8월.md
+- source: naver-posting-it/posts/ai/26Q3/20260819_클로드_연쇄장애_8월.md
   slug: claude-outages-august-2026
   date: 2026-08-19
   category: AI
@@ -857,7 +857,7 @@
   description: 상태 페이지 18개월치를 내려받아 8월 장애를 세어 보고, 체감과 숫자가 어긋나는 지점과 국내 개발 조직의 의존 구조를 정리합니다
   tags: [claude, anthropic, outage, status-page, ai-reliability]
 
-- source: posts/tech/26Q3/20260819_AI전력_5탄_변압기병목.md
+- source: naver-posting-it/posts/tech/26Q3/20260819_AI전력_5탄_변압기병목.md
   slug: ai-power-05-transformer-bottleneck
   date: 2026-08-19
   category: Tech
@@ -869,7 +869,7 @@
   links:
     "4탄": ai-power-04-smr-reality-check
 
-- source: posts/electronics/26Q3/20260820_맥북프로_M3Pro_36GB_29개월.md
+- source: naver-posting-it/posts/electronics/26Q3/20260820_맥북프로_M3Pro_36GB_29개월.md
   slug: macbook-pro-m3-pro-29-months
   date: 2026-08-20
   category: Tech
@@ -881,7 +881,7 @@
   links:
     "Gemma 4 로컬 실측 편": gemma-4-macbook-local
 
-- source: posts/ai/26Q3/20260820_OpenAI_Astra_훈련중단.md
+- source: naver-posting-it/posts/ai/26Q3/20260820_OpenAI_Astra_훈련중단.md
   slug: openai-astra-training-pause
   date: 2026-08-20
   category: AI
@@ -891,7 +891,7 @@
   description: 2주 중단이라는 헤드라인보다 종료일 없이 보류된 쪽이 중요한 이유를 짚고, 능력 임계선이라는 개념이 국내 규제에는 없는 자리를 정리합니다
   tags: [openai, astra, ai-safety, preparedness-framework, ai-regulation]
 
-- source: posts/tech/26Q3/20260820_AI인터커넥트_UALink_UltraEthernet.md
+- source: naver-posting-it/posts/tech/26Q3/20260820_AI인터커넥트_UALink_UltraEthernet.md
   slug: ai-interconnect-ualink-ultra-ethernet
   date: 2026-08-20
   category: Tech
@@ -903,7 +903,7 @@
   links:
     "CUDA 해자 편": post-nvidia-cuda-moat
 
-- source: posts/tech/26Q3/20260820_WebMCP_브라우저_에이전트표준.md
+- source: naver-posting-it/posts/tech/26Q3/20260820_WebMCP_브라우저_에이전트표준.md
   slug: webmcp-browser-agent-standard
   date: 2026-08-20
   category: AI
@@ -915,7 +915,7 @@
   links:
     "MCP 편": mcp-stateless-protocol
 
-- source: posts/ai/26Q3/20260821_구글_앤트로픽_순환금융.md
+- source: naver-posting-it/posts/ai/26Q3/20260821_구글_앤트로픽_순환금융.md
   slug: google-anthropic-circular-financing
   date: 2026-08-21
   category: AI
@@ -925,7 +925,7 @@
   description: 구글이 앤트로픽의 임대료를 보증하고 지분 20%를 받은 거래 구조를 순서대로 풀고, 엔비디아·오픈AI 사례와 겹치는 순환 금융의 모양을 짚습니다
   tags: [google, anthropic, ai-infrastructure, datacenter, circular-financing]
 
-- source: posts/ai/26Q3/20260821_Nemotron3_엔비디아_오픈모델.md
+- source: naver-posting-it/posts/ai/26Q3/20260821_Nemotron3_엔비디아_오픈모델.md
   slug: nemotron-3-nvidia-open-model
   date: 2026-08-21
   category: AI
@@ -935,7 +935,7 @@
   description: 가중치에 학습 데이터와 레시피까지 연 Nemotron 3 의 세 크기를 정리하고, 라이선스를 직접 읽어 완전 공개라는 말의 경계를 확인합니다
   tags: [nemotron, nvidia, open-weights, license, moe]
 
-- source: posts/ai/26Q3/20260821_국산NPU_리벨리온_SKT공급.md
+- source: naver-posting-it/posts/ai/26Q3/20260821_국산NPU_리벨리온_SKT공급.md
   slug: rebellions-rebel-skt-supply
   date: 2026-08-21
   category: Tech
@@ -945,7 +945,7 @@
   description: 리벨리온 REBEL 의 SK텔레콤 공급 일정을 헤드라인과 갈라 보고, 물량이 아직 안 정해진 이유가 성능이 아니라 총소유비용인 지점을 짚습니다
   tags: [rebellions, npu, ai-chip, skt, tco]
 
-- source: posts/security/26Q3/20260821_패스키_PassTaKey_공격.md
+- source: naver-posting-it/posts/security/26Q3/20260821_패스키_PassTaKey_공격.md
   slug: passkey-pass-ta-key-attack
   date: 2026-08-21
   category: Tech
@@ -955,7 +955,7 @@
   description: 악성코드가 이미 돌고 있어야 성립하는 공격 3단계를 풀고, 그런데도 동기화 패스키 구조에서 이 연구가 중요한 이유를 짚습니다
   tags: [passkey, webauthn, fido, infostealer, account-security]
 
-- source: posts/robot/26Q3/20260821_중국_휴머노이드_전시장진입.md
+- source: naver-posting-it/posts/robot/26Q3/20260821_중국_휴머노이드_전시장진입.md
   slug: china-humanoid-showroom
   date: 2026-08-21
   category: Robot
@@ -965,7 +965,7 @@
   description: 내수 판매가 꺾인 BYD 가 접객 휴머노이드를 전시장에 배치한 배경과, 공장으로 간 아틀라스와 갈린 두 진입로를 정리합니다
   tags: [humanoid, byd, china-robotics, service-robot, physical-ai]
 
-- source: posts/tech/26Q3/20260821_RAM_6탄_HBF_고대역폭플래시.md
+- source: naver-posting-it/posts/tech/26Q3/20260821_RAM_6탄_HBF_고대역폭플래시.md
   slug: ram-06-hbf
   date: 2026-08-21
   category: Tech
@@ -977,7 +977,7 @@
   links:
     "5탄": ram-05-cxmt-china-memory
 
-- source: posts/tech/26Q3/20260823_CPO_광인터커넥트_네이처논문.md
+- source: naver-posting-it/posts/tech/26Q3/20260823_CPO_광인터커넥트_네이처논문.md
   slug: ram-07-cpo-optical-interconnect
   date: 2026-08-23
   category: Tech
@@ -989,7 +989,7 @@
   links:
     "6탄": ram-06-hbf
 
-- source: posts/weekly/26Q3/20260823_AI위클리_Anthropic첫흑자_Stripe오픈라우터_단백질설계.md
+- source: naver-posting-it/posts/weekly/26Q3/20260823_AI위클리_Anthropic첫흑자_Stripe오픈라우터_단백질설계.md
   slug: ai-weekly-2026-08-23
   date: 2026-08-23
   category: AI
@@ -999,7 +999,7 @@
   description: 8월 4주 AI 업계 핵심 10건 — 실적과 인수, 그리고 과학 쪽 성과가 함께 나온 한 주를 정리합니다
   tags: [ai-weekly, anthropic, stripe, protein-design, ai-security]
 
-- source: posts/ai/26Q3/20260824_Claude_오류_다중모델.md
+- source: naver-posting-it/posts/ai/26Q3/20260824_Claude_오류_다중모델.md
   slug: claude-multi-model-errors-0824
   date: 2026-08-24
   category: AI
@@ -1009,7 +1009,7 @@
   description: 8월 24일 다중 모델 인시던트의 경과를 정리하고, 내 화면의 오류가 서비스 장애인지 계정·브라우저 문제인지 가르는 순서를 짚습니다
   tags: [claude, anthropic, outage, troubleshooting, status-page]
 
-- source: posts/ai/26Q3/20260825_AI법_1탄_AI기본법_고영향판별.md
+- source: naver-posting-it/posts/ai/26Q3/20260825_AI법_1탄_AI기본법_고영향판별.md
   slug: ai-law-01-framework-act
   date: 2026-08-25
   category: AI
@@ -1019,7 +1019,7 @@
   description: 1월 전면시행된 AI기본법의 다섯 의무와 7월 시행령의 성격을 갈라 보고, 고영향 판별의 세 관문과 계도기간의 의미를 정리합니다
   tags: [ai-basic-act, high-impact-ai, ai-regulation, compliance, korea-law]
 
-- source: posts/tech/26Q3/20260825_AI전력_6탄_물량표류.md
+- source: naver-posting-it/posts/tech/26Q3/20260825_AI전력_6탄_물량표류.md
   slug: ai-power-06-stalled-buildout
   date: 2026-08-25
   category: Tech
@@ -1031,7 +1031,7 @@
   links:
     "5탄": ai-power-05-transformer-bottleneck
 
-- source: posts/paper/26Q3/20260826_Mamba3_상태공간모델_논문.md
+- source: naver-posting-it/posts/paper/26Q3/20260826_Mamba3_상태공간모델_논문.md
   slug: mamba-3-state-space-model
   date: 2026-08-26
   category: AI
@@ -1041,7 +1041,7 @@
   description: 어텐션의 길이 비례 비용을 다시 계산한 ICLR 2026 논문을 읽고, 상태 크기를 절반으로 줄인 구조와 길이별 지연을 직접 재봅니다
   tags: [mamba-3, state-space-model, attention, long-context, paper-review]
 
-- source: posts/paper/26Q3/20260826_ResNet_잔차학습_논문.md
+- source: naver-posting-it/posts/paper/26Q3/20260826_ResNet_잔차학습_논문.md
   slug: resnet-residual-learning
   date: 2026-08-26
   category: AI
@@ -1051,7 +1051,7 @@
   description: 깊이가 늘수록 훈련 오류부터 올라간 열화 현상과 잔차 연결이 푼 방식을 논문 그림으로 따라가고, 두 블록을 직접 돌려 확인합니다
   tags: [resnet, residual-learning, deep-learning, computer-vision, paper-review]
 
-- source: posts/robot/26Q3/20260826_휴머노이드_전동액추에이터.md
+- source: naver-posting-it/posts/robot/26Q3/20260826_휴머노이드_전동액추에이터.md
   slug: humanoid-electric-actuator
   date: 2026-08-26
   category: Robot
@@ -1061,7 +1061,7 @@
   description: 출력 밀도 100배 격차가 10배로 좁혀지는 동안 벌어진 일과, 효율·대기 손실에서 갈린 선택, 그 대가로 붙은 희토자석 의존을 정리합니다
   tags: [humanoid, actuator, hydraulic, bldc, rare-earth-magnet]
 
-- source: posts/tech/26Q3/20260826_배터리_80퍼센트충전제한.md
+- source: naver-posting-it/posts/tech/26Q3/20260826_배터리_80퍼센트충전제한.md
   slug: battery-80-percent-charge-limit
   date: 2026-08-26
   category: Tech
@@ -1071,7 +1071,7 @@
   description: 리튬이온 셀이 늙는 두 경로를 갈라 보고, 충전 전압과 온도가 수명에 미치는 크기를 비교해 충전 상한 기능의 실익을 따집니다
   tags: [battery, lithium-ion, charge-limit, battery-health, smartphone]
 
-- source: posts/tech/26Q3/20260826_커스텀ASIC_설계서비스.md
+- source: naver-posting-it/posts/tech/26Q3/20260826_커스텀ASIC_설계서비스.md
   slug: custom-asic-design-services
   date: 2026-08-26
   category: Tech
@@ -1081,7 +1081,7 @@
   description: 커스텀 AI 칩이 나오기까지의 세 층을 갈라, 자체 칩이라는 발표 뒤에서 도면을 실제로 그리는 설계 서비스 회사들의 자리를 정리합니다
   tags: [custom-asic, broadcom, marvell, tpu, ai-chip]
 
-- source: posts/tech/26Q3/20260826_FOPLP_패널레벨패키징.md
+- source: naver-posting-it/posts/tech/26Q3/20260826_FOPLP_패널레벨패키징.md
   slug: foplp-panel-level-packaging
   date: 2026-08-26
   category: Tech
@@ -1091,7 +1091,7 @@
   description: 한 변 80mm 패키지에서 300mm 웨이퍼 활용률을 직접 계산하고, 사각 패널로 옮길 때의 이득과 유리·플라스틱으로 갈린 선택을 정리합니다
   tags: [foplp, packaging, cowos, wafer-utilization, semiconductor]
 
-- source: posts/tech/26Q3/20260826_WiFi7_공유기_구매판단.md
+- source: naver-posting-it/posts/tech/26Q3/20260826_WiFi7_공유기_구매판단.md
   slug: wifi-7-router-buying-guide
   date: 2026-08-26
   category: Tech
@@ -1101,7 +1101,7 @@
   description: 공유기 사양표보다 회선·단말·주파수를 먼저 보는 순서를 세우고, 320MHz 와 6GHz 가 체감으로 오지 않는 조건을 짚습니다
   tags: [wifi-7, router, 6ghz, mlo, home-network]
 
-- source: posts/security/26Q3/20260830_CVE폭증_패치우선순위.md
+- source: naver-posting-it/posts/security/26Q3/20260830_CVE폭증_패치우선순위.md
   slug: cve-surge-patch-priority
   date: 2026-08-30
   category: Tech
@@ -1111,7 +1111,7 @@
   description: 공개 취약점 중 실제 악용되는 비율을 짚고, CVSS 점수만으로 갈리지 않는 우선순위를 KEV·EPSS 기준으로 세웁니다
   tags: [cve, patch-management, kev, epss, vulnerability]
 
-- source: posts/security/26Q3/20260830_공용와이파이_실제위험.md
+- source: naver-posting-it/posts/security/26Q3/20260830_공용와이파이_실제위험.md
   slug: public-wifi-real-risk
   date: 2026-08-30
   category: Tech
@@ -1121,7 +1121,7 @@
   description: HTTPS 가 대부분을 덮은 뒤 남은 위험이 트래픽 도청이 아니라 가짜 접속점과 로그인 화면으로 옮겨간 경로를 짚습니다
   tags: [public-wifi, evil-twin, captive-portal, https, network-security]
 
-- source: posts/tech/26Q3/20260826_AI전력_7탄_소방인허가.md
+- source: naver-posting-it/posts/tech/26Q3/20260826_AI전력_7탄_소방인허가.md
   slug: ai-power-07-fire-safety-permits
   date: 2026-08-26
   category: Tech
@@ -1133,7 +1133,7 @@
   links:
     "6탄": ai-power-06-stalled-buildout
 
-- source: posts/weekly/26Q3/20260830_AI위클리_Nvidia허깅페이스_OpenAI칩_Meta합의.md
+- source: naver-posting-it/posts/weekly/26Q3/20260830_AI위클리_Nvidia허깅페이스_OpenAI칩_Meta합의.md
   slug: ai-weekly-2026-08-30
   date: 2026-08-30
   category: AI
@@ -1142,3 +1142,222 @@
   title: "AI 위클리 2026-08-30 — Nvidia 의 Hugging Face 인수, OpenAI 자체 칩, Meta 합의"
   description: 8월 5주 AI 업계 핵심 10건 — 칩과 오픈소스에 한꺼번에 값이 매겨진 한 주를 정리합니다
   tags: [ai-weekly, nvidia, hugging-face, openai, meta]
+
+- source: naver-posting-it/posts/ai/26Q3/20260830_출력토큰_비용구조.md
+  slug: llm-output-token-pricing
+  date: 2026-08-30
+  category: AI
+  category_slug: ai
+  subcategory: Explainer
+  title: "출력 토큰이 입력보다 5배 비쌉니다 — 청구서가 갈리는 자리"
+  description: AI API 요금이 입력이 아니라 출력에서 갈리는 이유와, 사고 토큰·속도 모드가 단가에 어떻게 얹히는지 정리합니다
+  tags: [llm-pricing, output-token, thinking-token, anthropic, cost-optimization]
+
+- source: naver-posting-it/posts/ai/26Q3/20260901_프롬프트캐싱_요금함정.md
+  slug: prompt-caching-cost-trap
+  date: 2026-09-01
+  category: AI
+  category_slug: ai
+  subcategory: Explainer
+  title: "프롬프트 캐싱을 켰는데 요금이 더 나오는 이유"
+  description: 프롬프트 캐싱이 조건부 할인인 이유와 손익분기 지점, 캐시 최소 길이가 모델마다 다른 문제를 정리합니다
+  tags: [prompt-caching, llm-pricing, api-cost, anthropic, cost-optimization]
+
+- source: naver-posting-it/posts/ai/26Q3/20260901_AI법_2탄_EU_AI_Act_오픈소스.md
+  slug: ai-law-02-eu-ai-act-open-source
+  date: 2026-09-01
+  category: AI
+  category_slug: ai
+  subcategory: Explainer
+  title: "AI 와 법 (2) — 오픈소스면 규제 무관? EU AI Act 는 다릅니다"
+  description: EU AI Act 의 오픈소스 면제가 어디까지 적용되는지, 면제되지 않는 의무와 면제가 사라지는 규모 기준을 정리합니다
+  tags: [eu-ai-act, ai-regulation, open-source, gpai, compliance]
+  links:
+    "AI와 법 1탄": ai-law-01-framework-act
+
+- source: naver-posting-it/posts/ai/26Q3/20260905_AI3사_동시장애.md
+  slug: ai-triple-outage-0903
+  date: 2026-09-05
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "ChatGPT·Claude·Grok 동시 장애 — 9월 3일에 무슨 일이 있었나"
+  description: 서로 다른 세 회사의 AI 서비스가 같은 시간대에 멈춘 사건과, 각 사가 내놓은 세 갈래 설명을 정리합니다
+  tags: [outage, openai, anthropic, xai, incident]
+
+- source: naver-posting-it/posts/ai/26Q3/20260905_Gemini38Flash_출시간격.md
+  slug: gemini-38-flash-release-cadence
+  date: 2026-09-05
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "Gemini 3.8 Flash — 43일 만의 세 번째 판, 단가는 그대로인데 청구서는 커집니다"
+  description: 6주 사이 Flash 가 세 번 나온 배경과, 같은 단가로 돌려도 비용이 늘어나는 이유를 점수표와 함께 정리합니다
+  tags: [gemini, google-deepmind, llm-pricing, model-release, benchmark]
+  links:
+    "8월 15일 Gemini 3.7 Flash 편": gemini-37-flash-thinking-levels
+
+- source: naver-posting-it/posts/ai/26Q3/20260906_GPT6Astra_출시.md
+  slug: gpt-6-astra-release
+  date: 2026-09-06
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "GPT-6 Astra 출시 — 105만 토큰과 두 갈래 요금, 그리고 걸어 둔 조건"
+  description: 훈련이 중단됐던 모델이 제품으로 나오기까지 붙은 접근 조건과 요금 구조, 컴퓨터 조작 능력을 정리합니다
+  tags: [openai, gpt-6-astra, computer-use, ai-safety, llm-pricing]
+  links:
+    "8월 20일 Astra 훈련 중단 편": openai-astra-training-pause
+
+- source: naver-posting-it/posts/ai/26Q3/20260906_ClaudeFable51_안전장치격차.md
+  slug: claude-fable-51-safeguard-gap
+  date: 2026-09-06
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "Claude Fable 5.1 — 안전장치가 점수를 얼마나 깎나"
+  description: 가중치가 같고 안전장치만 다른 두 모델의 벤치마크 차이로, 안전장치의 값이 처음 숫자로 드러난 사례를 정리합니다
+  tags: [anthropic, claude-fable-5-1, mythos, ai-safety, benchmark]
+  links:
+    "6월 12일 접근 차단 속보 편": claude-fable5-mythos5-access-blocked
+    "9월 1일 프롬프트 캐싱 요금 편": prompt-caching-cost-trap
+
+- source: naver-posting-it/posts/robot/26Q3/20260901_휴머노이드_손.md
+  slug: humanoid-hand-dexterity
+  date: 2026-09-01
+  category: Robot
+  category_slug: robot
+  subcategory: Explainer
+  title: "휴머노이드는 걷는데 왜 손이 제일 어려울까"
+  description: 사람 손 27자유도를 로봇으로 옮길 때 생기는 구동기·배선 문제와, 모터를 팔뚝으로 빼는 텐던 구동을 정리합니다
+  tags: [humanoid, robot-hand, optimus, tendon-drive, degrees-of-freedom]
+
+- source: naver-posting-it/posts/security/26Q3/20260901_AitM_세션탈취.md
+  slug: aitm-session-hijacking
+  date: 2026-09-01
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "MFA 를 켰는데 세션을 털렸다면 — AitM 피싱과 세션 탈취"
+  description: 공격 목표가 비밀번호에서 세션 쿠키로 옮겨간 배경과, 2단계 인증이 막지 못하는 구간·패스키가 다른 이유를 정리합니다
+  tags: [aitm, phishing, session-hijacking, mfa, passkey]
+
+- source: naver-posting-it/posts/security/26Q3/20260905_티빙_조사결과.md
+  slug: tving-privacy-breach-03
+  date: 2026-09-05
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "티빙 개인정보 유출 (3) — 3,954만 계정 확정, 원인은 평문 접속키"
+  description: 3개월 조사로 확정된 유출 규모와 침투 경로, 로그 부재로 최초 경로를 찾지 못한 정황까지 정리합니다
+  tags: [tving, data-breach, privacy, hardcoded-credentials, incident-response]
+  links:
+    "2탄": tving-privacy-breach-02
+
+- source: naver-posting-it/posts/security/26Q3/20260908_SK이노베이션_롯데케미칼_임직원정보유출.md
+  slug: sk-lotte-employee-data-breach
+  date: 2026-09-08
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "SK이노베이션·롯데케미칼 임직원정보 유출 — 무엇이 나갔나"
+  description: 고객 데이터가 아니라 임직원 명부가 빠져나간 두 건의 유출 항목과, 그 조합이 다음 공격의 수단이 되는 이유를 정리합니다
+  tags: [data-breach, privacy, employee-data, spear-phishing, incident]
+
+- source: naver-posting-it/posts/security/26Q3/20260909_티빙_보상신청.md
+  slug: tving-privacy-breach-04
+  date: 2026-09-09
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "티빙 개인정보 유출 (4) — 보상은 자동 지급이 아니라 신청제입니다"
+  description: 9월 30일 마감인 티빙 유출 보상의 신청 경로와 대상 확인 방법, 탈퇴자 처리까지 정리합니다
+  tags: [tving, data-breach, compensation, privacy, consumer-guide]
+  links:
+    "9월 5일 티빙 유출 3탄": tving-privacy-breach-03
+
+- source: naver-posting-it/posts/tech/26Q3/20260830_데이터센터_냉각용수.md
+  slug: datacenter-cooling-water
+  date: 2026-08-30
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "전기 다음 병목은 냉각수입니다 — 데이터센터 350개 중 134개"
+  description: 국내에서 처음 따로 예측한 데이터센터 물 수요와, 전력은 통과했는데 용수에서 걸리는 입지가 3분의 1을 넘는 배경을 정리합니다
+  tags: [datacenter, cooling-water, ai-infrastructure, sustainability, korea]
+
+- source: naver-posting-it/posts/tech/26Q3/20260901_클라우드_egress요금.md
+  slug: cloud-egress-pricing
+  date: 2026-09-01
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "데이터 들어올 땐 공짜, 나갈 때만 돈 내는 이유 — 클라우드 egress 요금"
+  description: egress 요금이 원가가 아니라 전환 비용인 이유와, 2027년 갈아타기 수수료 폐지가 무엇을 바꾸는지 정리합니다
+  tags: [cloud, egress, network-cost, vendor-lockin, eu-data-act]
+
+- source: naver-posting-it/posts/tech/26Q3/20260901_USBC_케이블_구별법.md
+  slug: usb-c-cable-differences
+  date: 2026-09-01
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "다 같아 보이는 USB-C 케이블 구별하는 법"
+  description: 같은 커넥터로 속도가 167배까지 갈리는 이유와, E-Marker 칩·60W 분기점으로 케이블을 가려내는 방법을 정리합니다
+  tags: [usb-c, cable, e-marker, power-delivery, thunderbolt]
+
+- source: naver-posting-it/posts/tech/26Q3/20260902_깃머지전략_AI시대.md
+  slug: git-merge-strategy-ai-era
+  date: 2026-09-02
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "AI 시대의 Git 머지 전략 — 병목이 작성에서 리뷰로 옮겨갔습니다"
+  description: 팀 크기로 갈리던 브랜치 전략에 AI 코드라는 축이 더해지면서, 리뷰 대기가 병목이 된 상황과 대응을 정리합니다
+  tags: [git, merge-strategy, code-review, trunk-based, ai-coding]
+
+- source: naver-posting-it/posts/tech/26Q3/20260905_모바일운전면허증.md
+  slug: mobile-drivers-license
+  date: 2026-09-05
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "모바일 운전면허증 — 발급부터 재발급까지"
+  description: 발급 방법 두 가지와 폰 교체 시 재발급 절차, 쓸 수 있는 곳과 없는 곳, QR·캡처 차단 같은 안전장치를 정리합니다
+  tags: [mobile-id, drivers-license, digital-identity, korea, security]
+
+- source: naver-posting-it/posts/tech/26Q3/20260905_아이폰18프로_아이폰폴드.md
+  slug: iphone-18-pro-fold-preview
+  date: 2026-09-05
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "iPhone 18 Pro 와 iPhone Fold — 확정된 것과 아직 루머인 것"
+  description: 9월 애플 행사에서 나올 것으로 예상되는 제품들을 두고, 공식 확정 사항과 전망을 갈라 정리합니다
+  tags: [apple, iphone-18-pro, iphone-fold, foldable, a20-pro]
+
+- source: naver-posting-it/posts/tech/26Q3/20260908_아이폰_10년_가격추이.md
+  slug: iphone-price-decade-trend
+  date: 2026-09-08
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "아이폰 가격 10년 추이 — 한국만 오른 이유는 환율입니다"
+  description: 미국 정가가 6년째 그대로인데 한국 가격만 오른 배경을 환율·물가로 분해하고, 용량당 단가 변화까지 정리합니다
+  tags: [apple, iphone, pricing, exchange-rate, inflation]
+  links:
+    "Apple 9월 행사 전망 편": iphone-18-pro-fold-preview
+
+- source: naver-posting-it/posts/weekly/26Q3/20260906_AI위클리_GPT6Astra_허깅페이스인수확정_페르마정리.md
+  slug: ai-weekly-2026-09-06
+  date: 2026-09-06
+  category: AI
+  category_slug: ai
+  subcategory: Weekly
+  title: "AI 위클리 2026-09-06 — GPT-6 Astra, Nvidia 의 Hugging Face 인수 확정, 페르마 정리"
+  description: 9월 첫 주 AI 소식 — 나흘 사이 프런티어 모델 넉 대, Nvidia 의 Hugging Face 인수 계약 체결, Claude 의 페르마 정리 검증을 정리합니다
+  tags: [ai-weekly, gpt-6-astra, nvidia, hugging-face, claude]
+  links:
+    "Claude Fable 5.1 안전장치 격차 편": claude-fable-51-safeguard-gap
+    "Gemini 3.8 Flash 출시 간격 편": gemini-38-flash-release-cadence
+    "GPT-6 Astra 출시 편": gpt-6-astra-release
