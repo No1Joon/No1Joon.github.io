@@ -2,6 +2,8 @@
 
 Jekyll 기반 GitHub Pages 블로그 (Claude·Gemini 공통 컨텍스트). 기술 스택·아키텍처·개발 경험 기록용.
 
+> 재개 노트: `temp-memory.md`(gitignore) — 있으면 **세션 시작 때 읽고, 수행한 뒤 지운다.**
+
 ## Commands
 
 - `bundle install` — 의존성 설치
