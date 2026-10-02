@@ -178,7 +178,7 @@ sitemap: false
       <li><span class="num">13</span><span class="nm">quickglot - 온디바이스 번역 Safari 확장</span><span class="tech">Swift, WebExtension, App Store</span></li>
       <li><span class="num">14</span><span class="nm">archdraw - 아키텍처 다이어그램 렌더러</span><span class="tech">TypeScript, npm 공개</span></li>
       <li><span class="num">15</span><span class="nm">Oh My Algorithm</span><span class="tech">React 19, 실서비스</span></li>
-      <li><span class="num">16</span><span class="nm">naver-posting - 기술 콘텐츠 생산 파이프라인</span><span class="tech">LLM 에이전트, Python</span></li>
+      <li><span class="num">16</span><span class="nm">naver-posting - 기술 콘텐츠 생산 파이프라인</span><span class="tech">LLM 에이전트, MCP, Python</span></li>
       <li><span class="num">17</span><span class="nm">네이버 카페 정보 자동 수집 데스크톱 앱</span><span class="tech">Playwright, Windows exe</span></li>
       <li><span class="num">18</span><span class="nm">로키 (Law+Key)</span><span class="tech">React, NestJS, OpenAI</span></li>
       <li><span class="num">19</span><span class="nm">공공데이터 기반 지역사회 현안 해결</span><span class="tech">공공데이터, K-means</span></li>
@@ -210,7 +210,7 @@ sitemap: false
     <div class="h">성과</div>
     <ul>
       <li>패션 리테일 고객 PoC로 <b>플랫폼 첫 한국 상용 도입</b> 성사</li>
-      <li>영어, 한국어, 일본어, 바하사 <b>4개 언어 i18n</b> 시스템 설계 및 레거시 하드코딩 리팩토링, 언어 스위처, 날짜 로케일 처리 (번역은 영어, 한국어 담당)</li>
+      <li>영어, 한국어, 일본어, 인도네시아어 <b>4개 언어 i18n</b> 시스템 설계 및 레거시 하드코딩 리팩토링, 언어 스위처, 날짜 로케일 처리 (번역은 영어, 한국어 담당)</li>
       <li>분석 데이터 <b>export API</b>로 수작업 추출을 대체해 외부 AI 모델 자동화 워크플로 기반 마련</li>
     </ul>
   </div>
@@ -219,13 +219,13 @@ sitemap: false
 <!-- 02 AI Pipeline -->
 <div class="page proj">
   <div class="ttl"><span class="no">02</span><h2>AI Pipeline &amp; Computer Vision 인프라</h2><span class="kind">Company</span></div>
-  <div class="lead">사람 검출, 추적, ReID, 호모그래피로 이어지는 <b>영상 AI 파이프라인</b> - Kafka에서 Temporal로 전환</div>
+  <div class="lead">사람 검출, 추적, ReID, Homography로 이어지는 <b>영상 AI 파이프라인</b> - Kafka에서 Temporal로 전환</div>
   <div class="stack"><div class="row"><span class="k">Stack</span><span>Temporal, Apache Kafka, Cog(Python 컨테이너), OpenCV, Weaviate, RTDETR/RFDETR, SAM2MOT, NestJS, Docker/Kubernetes, GCS</span></div></div>
 
   <div class="block">
     <div class="h">주요 기여</div>
     <ul>
-      <li><b>Kafka에서 Temporal로 마이그레이션 설계</b> - 마이크로서비스를 병렬 실행 워크플로로 재구성하고 기능 플래그 라우팅으로 무중단 점진 전환 - 수동 offset, heartbeat 관리와 데이지체인 consumer의 디버깅 난제를 워크플로 히스토리로 대체</li>
+      <li><b>Kafka에서 Temporal로 마이그레이션 설계</b> - 마이크로서비스를 병렬 실행 워크플로로 재구성하고 기능 플래그 라우팅으로 무중단 점진 전환 - 수동 offset, heartbeat 관리를 없애고 데이지체인 consumer 디버깅은 워크플로 히스토리 조회로 대체</li>
       <li><b>검출, 추적 모델을 Cog 컨테이너로 패키징</b> - 단일 비디오 입력 처리, 파일 경로를 문자열 입력 + 수동 URL 파싱으로 전환, SAM2MOT 프로세서를 별도 파일로 분리해 가독성 확보</li>
       <li><b>처리 비용 튜닝</b> - 입력 max side를 1024에서 512로 축소하고 score threshold, skip frame을 조정해 정확도를 유지하며 연산량 절감</li>
       <li><b>Homography 시스템</b> - OpenCV RANSAC 기반 3x3 행렬로 CCTV 시점을 평면도에 사영, 15% 패딩 그리드로 광각 왜곡 보정, 역행렬 back-projection으로 검증</li>
@@ -250,15 +250,16 @@ sitemap: false
 <div class="page proj">
   <div class="ttl"><span class="no">03</span><h2>LLM Insight Agent</h2><span class="kind">Company</span></div>
   <div class="lead">대시보드 차트, 지표를 근거로 매장 개선 액션을 생성하는 <b>LLM 기능</b> - Vertex AI Gemini 통합</div>
-  <div class="stack"><div class="row"><span class="k">Stack</span><span>Google Cloud Vertex AI, Gemini 2.5 Flash, Prompt Engineering</span></div><div class="row"><span class="k">파이프라인</span><span>uiData(JSON) 수집, LLM 친화 텍스트 변환(차트 설명, 표 포맷), Business Context, 매장주 목표 결합 프롬프트, 추론 순으로 처리</span></div></div>
+  <div class="stack"><div class="row"><span class="k">Stack</span><span>Google Cloud Vertex AI, Gemini 2.5 Flash, Prompt Engineering</span></div><div class="row"><span class="k">파이프라인</span><span>uiData(JSON) 수집, LLM 친화 텍스트 변환(차트 설명, 표 포맷), 비즈니스 컨텍스트, 매장주 목표 결합 프롬프트, 추론 순으로 처리</span></div></div>
 
   <div class="block">
     <div class="h">주요 기여</div>
     <ul>
       <li>대시보드 <b>차트별로 매장 개선 액션을 생성</b>하도록 통합, LLM에 넘길 context, data 구조 설계</li>
       <li>원시 대시보드 데이터를 <b>차트 설명문과 표 형식 텍스트로 전처리</b>해 모델의 수치 의미 해석 지원</li>
-      <li>비즈니스 컨텍스트와 <b>매장주가 설정한 목표</b>를 프롬프트에 주입해 일반론이 아닌 매장별 권고가 나오도록 설계</li>
-      <li><b>thinking budget</b> 도입 후 결과 품질 대비 최소 토큰, 비용을 탐색, 인사이트 에이전트 한국어 지원</li>
+      <li>비즈니스 컨텍스트와 <b>매장주가 설정한 목표</b>를 프롬프트에 주입해 매장별 권고가 나오도록 설계</li>
+      <li><b>thinking budget</b> 도입 후 결과 품질 대비 최소 토큰 수와 비용을 탐색</li>
+      <li>인사이트 에이전트 한국어 지원</li>
     </ul>
   </div>
 
@@ -270,7 +271,7 @@ sitemap: false
     <div class="h">성과</div>
     <ul>
       <li><b>LLM을 실제 제품 기능으로 통합</b> - 데이터 기반 액션 자동 생성</li>
-      <li>thinking mode 비용 폭증 이슈를 <b>품질, 비용, 레이턴시 트레이드오프로 정량화</b>해 운영 가능한 수준으로 조정</li>
+      <li>thinking mode의 <b>품질, 비용, 레이턴시 트레이드오프를 정량화</b>해 운영 가능한 수준으로 조정</li>
     </ul>
   </div>
 </div>
@@ -313,7 +314,7 @@ sitemap: false
     <div class="h">주요 기여</div>
     <ul>
       <li><b>Task Questionnaire 기능</b> - API 연동, 다이얼로그 구현, 응답 보기 버튼, Task Level Review 링크 네비게이션, 응답에 줄바꿈을 허용하고 자동 대문자화를 해제해 원문 그대로 읽히도록 조정</li>
-      <li><b>Min Items per Task</b> - Job Board 속성 추가와 <b>입력값 실시간 감지 검증</b>, yup 스키마 정리, Image Collection 잡타입일 때만 노출되는 조건부 UI 구현, 서버 측에도 태스크 아이템 수 초과 불가 검증 추가</li>
+      <li><b>Min Items per Task</b> - Job Board 속성 추가와 <b>입력값 실시간 감지 검증</b>, yup 스키마 정리, Image Collection Job 타입일 때만 노출되는 조건부 UI 구현, 서버 측에도 태스크 아이템 수 초과 불가 검증 추가</li>
       <li><b>Task Level Review 테이블 재구성</b> - 만료일, 액션 셀 레이아웃, 데이터 없음 영역 높이, 탭 사라짐 버그 수정</li>
     </ul>
   </div>
@@ -343,8 +344,10 @@ sitemap: false
     <ul>
       <li>요구사항 정의, 모델 선정, 성능평가 기준 설계, <b>공수 산정과 R&amp;D 인계</b>까지 과제 전 주기 담당</li>
       <li>얼굴 검출 모델로 <b>YOLOv4</b> 채택 - 저작권 부담, 학습 난이도, 요구 성능 수준을 함께 고려, AI Hub 데이터로 학습, 평가</li>
-      <li>얼굴 <b>랜드마크 검출 결과를 입력 이미지에 표시</b>하고 캐시 로직 강화, 착용 상황(occasion) 카테고리와 추천 규칙 설계, 가격 입력을 슬라이더로 개선</li>
-      <li>시험기관과 협의해 <b>기능 정확도와 시스템 성능을 함께 검증</b>하도록 항목을 구성하고, 합격기준을 자체 사전 측정치에 근거해 설정한 뒤 <b>시험 입회까지 직접 참여</b></li>
+      <li>얼굴 <b>랜드마크 검출 결과를 입력 이미지에 표시</b>하고 캐시 로직 강화</li>
+      <li>착용 상황(occasion) 카테고리와 추천 규칙 설계</li>
+      <li>가격 입력을 슬라이더로 개선</li>
+      <li>시험기관과 협의해 <b>기능 정확도와 시스템 성능을 함께 검증</b>하도록 항목을 구성하고, 합격 기준을 자체 사전 측정치에 근거해 설정한 뒤 <b>시험 입회까지 직접 참여</b></li>
     </ul>
   </div>
 
@@ -354,7 +357,7 @@ sitemap: false
     <div class="h">공인 시험 결과 - 전 항목 합격 (테스트 데이터 3,000건 / 응답/전송 5회 반복 측정)</div>
     <table class="mt">
       <tr><th>구분</th><th>시험 항목</th><th>결과</th></tr>
-      <tr><td>기능 정확도</td><td>얼굴 디텍션 F1 Score, Average IoU, Recall</td><td class="pass">합격</td></tr>
+      <tr><td>기능 정확도</td><td>얼굴 검출 F1 Score, Average IoU, Recall</td><td class="pass">합격</td></tr>
       <tr><td>시스템 성능</td><td>DB 응답시간, 데이터 전송시간</td><td class="pass">합격</td></tr>
     </table>
   </div>
@@ -364,7 +367,7 @@ sitemap: false
 <div class="page proj">
   <div class="ttl"><span class="no">07</span><h2>데이터, AI 바우처 정부 지원사업</h2><span class="kind">Company</span></div>
   <div class="lead">데이터바우처, AI 바우처 공급기업으로 <b>수요기업 13곳</b>의 협약, 데이터 가공, 감리, 정산 증빙 수행</div>
-  <div class="stack"><div class="row"><span class="k">담당 수요기업</span><span>2021 법률 말뭉치 구축 과제 1곳 &nbsp;/&nbsp; 2023 ~ 2025 12곳</span></div></div>
+  <div class="stack"><div class="row"><span class="k">담당 수요기업</span><span>2021 법률 말뭉치 구축 과제 1곳 / 2023 ~ 2025 12곳</span></div></div>
 
   <div class="stats" style="margin-top:14px">
     <div class="stat"><div class="n">13곳</div><div class="l">담당 수요기업<br>(2021, 2023-2025 누적)</div></div>
@@ -441,7 +444,7 @@ sitemap: false
       <li><b>주관기관 제안 총괄</b> - 제안서 작성 전체와 발표평가를 직접 수행</li>
       <li><b>기업 컨소시엄 4개사 구성</b> - 참여기관 3곳을 확보하고 역할, 예산 분담 설계</li>
       <li>데이터 3종 구축 계획 수립 - 음성에서 전사 텍스트, 번역 텍스트로 이어지는 페어 구조와 메타데이터(분야, 전문용어, 발화자 정보 등) 명세 설계</li>
-      <li>데이터 구축 예상 비용 및 <b>비용산출 근거자료</b> 작성 (공고 필수 제출 항목)</li>
+      <li>공고 필수 제출 항목인 데이터 구축 예상 비용 및 <b>비용산출 근거자료</b> 작성</li>
     </ul>
   </div>
 
@@ -484,7 +487,7 @@ sitemap: false
       <div class="card">
         <div class="ct">Source-of-truth, Training QC 로봇</div>
         <div class="cs">CLI, 판정 자동 검수</div>
-        <div class="cb">정답지(CSV)를 기준으로 Tagger 판정을 자동 대조, 제출하는 검수 로봇<br><b>dev/uat/prod 환경 분리</b>와 dry-run 지원, config 파일로 <b>여러 job 일괄 처리</b>, 오류를 타입별로 분류해 CSV 로그로 남김</div>
+        <div class="cb">정답지(CSV)를 기준으로 Tagger 판정을 자동 대조, 제출하는 검수 로봇<br><b>dev/uat/prod 환경 분리</b>와 dry-run 지원, config 파일로 <b>여러 Job 일괄 처리</b>, 오류를 타입별로 분류해 CSV 로그로 남김</div>
       </div>
       <div class="card">
         <div class="ct">대시보드 배포 자동화</div>
@@ -494,7 +497,7 @@ sitemap: false
       <div class="card">
         <div class="ct">데이터 처리, 부하 테스트</div>
         <div class="cs">Ops 지원 스크립트</div>
-        <div class="cb">광고 이미지 <b>12만 장 자동 QC</b>로 검수 소요를 <b>1~2일에서 1시간으로</b> 단축, CVAT에서 PASCAL VOC로, COCO에서 LabelMe로 포맷 변환, 국적 기반 유저 매칭, 할당, 대량 업로드 분할과 <b>실패 건 재시도</b>, MongoDB 기반 부하 테스트 도구</div>
+        <div class="cb">광고 이미지 <b>12만 장 자동 QC</b>로 검수 소요를 <b>1~2일에서 1시간으로</b> 단축<br>CVAT에서 PASCAL VOC로, COCO에서 LabelMe로 포맷 변환<br>국적 기반 사용자 매칭, 할당<br>대량 업로드 분할과 <b>실패 건 재시도</b><br>MongoDB 기반 부하 테스트 도구</div>
       </div>
     </div>
   </div>
@@ -502,7 +505,7 @@ sitemap: false
   <div class="block">
     <div class="h">성과</div>
     <ul>
-      <li>반복 수작업 검수를 <b>QC 자동화 로봇 4종</b>으로 대체 (Image Choice, Coin Decision, Training, Source-of-truth)</li>
+      <li>반복 수작업 검수를 <b>QC 자동화 로봇 4종</b>(Image Choice, Coin Decision, Training, Source-of-truth)으로 대체</li>
       <li>비개발 조직이 직접 실행 가능한 형태로 구현해 <b>엔지니어 병목 제거</b></li>
     </ul>
   </div>
@@ -512,13 +515,13 @@ sitemap: false
 <div class="page proj">
   <div class="ttl"><span class="no">10</span><h2>CaliMeal - 급식 식단 편성 자동화 SaaS</h2><span class="kind">Personal / 운영 중 / 가입 개방</span></div>
   <div class="lead">급식소 영양사의 한 달 치 식단 편성을 자동화하는 <b>멀티테넌트 B2B SaaS</b></div>
-  <div class="stack"><div class="row"><span class="k">Stack</span><span>Next.js 16(App Router, Server Actions), React 19, Tailwind v4, Kysely + postgres.js, PostgreSQL 16 + pgvector(VM 자체 설치), pg-boss, Vertex AI Gemini, GCP Identity Platform, PortOne, Resend, AWS Lightsail, Caddy</span></div><div class="row"><span class="k">상태</span><span>운영 서버 배포, 가동 중, 가입 개방(2026.08)</span></div></div>
+  <div class="stack"><div class="row"><span class="k">Stack</span><span>Next.js 16(App Router, Server Actions), React 19, Tailwind v4, Kysely + postgres.js, PostgreSQL 16 + pgvector(VM 자체 설치), pg-boss, Vertex AI Gemini, GCP Identity Platform, PortOne, Resend, AWS Lightsail, Caddy</span></div><div class="row"><span class="k">상태</span><span>운영 서버 배포, 운영 중, 가입 개방(2026.08)</span></div></div>
 
   <div class="block">
     <div class="h">주요 기여</div>
     <ul>
       <li><b>PostgreSQL RLS 멀티테넌시</b> - 요청 풀(RLS 적용)과 소유자 풀(RLS 우회)로 분리해 테넌트 경계를 DB 레벨에서 강제, 마이그레이션 전량 적용 후 격리, 권한을 매 PR CI에서 검증</li>
-      <li><b>공공데이터 ETL로 후보 카탈로그 36,137행을 구축하고 전량 임베딩</b> - 2단 수집에 페이지네이션, 중단, 재개를 넣고 호출 속도를 스스로 제한, 런타임에는 외부 API를 호출하지 않도록 함. 달걀찜과 계란찜처럼 어휘 유사도 0.118로 문턱을 못 넘던 동의 요리가 의미 유사도 0.956으로 후보에 오름</li>
+      <li><b>공공데이터 ETL로 후보 카탈로그 36,137행을 구축하고 전량 임베딩</b> - 2단 수집에 페이지네이션, 중단, 재개를 넣고 호출 속도를 스스로 제한, 런타임에는 외부 API를 호출하지 않도록 함 - 달걀찜과 계란찜처럼 어휘 유사도 0.118로 문턱을 못 넘던 동의 요리가 의미 유사도 0.956으로 후보에 오름</li>
       <li>월 단위 생성을 <b>주차별 잡으로 fan-out</b> 하고 작업 성격별로 추론 등급을 나눔</li>
       <li>과금을 <b>행위 정액 크레딧</b>으로 설계 - 편집, 게시, PDF, 업로드는 무과금</li>
     </ul>
@@ -534,7 +537,7 @@ sitemap: false
   <div class="block">
     <div class="h">성과 / 지표</div>
     <ul>
-      <li>LLM 비용을 실측해 생성 <b>월 약 400원</b>으로 확인 - 요금제 단가를 잡는 근거로 사용</li>
+      <li>LLM 비용을 실측해 생성 <b>월 약 400원</b>으로 확인 - 요금제 단가 산정 근거로 사용</li>
       <li>배포 실행부터 빌드, 마이그레이션, 재시작, 헬스체크까지 <b>약 1분 22초</b>(실측)</li>
       <li>확장 병목을 코드 위치와 수치로 특정 - 요청 풀 상한 10, 서버 빌드가 메모리 최대 소비 지점이라 <b>VM 사양을 빌드 메모리가 결정함</b>을 근거로 빌드 분리를 1순위 과제로 정립</li>
     </ul>
@@ -550,10 +553,10 @@ sitemap: false
   <div class="block">
     <div class="h">주요 기여</div>
     <ul>
-      <li><b>경합 판정을 Redis Lua 한 실행에 집중</b> - 좌석 선점, 10초 보류, 정원, 마감, 대기열 진입을 서버가 원자적으로 결정하고 클라이언트는 폴링만 함. Redis 장애 시 SQL로 대체하지 않고 503을 내 저장 원본이 갈라지는 상황을 피함</li>
-      <li><b>영구 데이터와 단기 상태 분리</b> - 커뮤니티, 참여자, 세션은 PostgreSQL, 진행 중 연습, 당일 최고 기록, 24시간 공유 링크는 Redis. 세션 캐시에 닉네임 대신 참여자 ID와 최초 만료만 넣어 이름 변경, 만료 연장 문제를 피하면서 연습 폴링의 SQL 접근을 없앰</li>
-      <li><b>혼잡 제어를 명시적으로 설계</b> - 공통 FIFO 대기열, 활성 참여 250개 한도, 3초 상태 조회, 30초 heartbeat 만료로 입장 순서와 이탈자 정리를 관리. 티켓, 수강 참여를 분리하되 두 참여가 공통 한도 두 자리를 쓰게 해 우회를 막음</li>
-      <li><b>검색 가능한 공개 HTML과 개인 상태 분리</b> - 공개 소개는 빌드 시 프리렌더, 게시글은 Go에서 이스케이프해 HTML과 초기 JSON으로 렌더, 개인 진행과 공유 화면은 noindex</li>
+      <li><b>경합 판정을 Redis Lua 한 실행에 집중</b> - 좌석 선점, 10초 보류, 정원, 마감, 대기열 진입을 서버가 원자적으로 결정하고 클라이언트는 폴링만 함 - Redis 장애 시 SQL로 대체하지 않고 503을 내 저장 원본이 갈라지는 상황을 피함</li>
+      <li><b>영구 데이터와 단기 상태 분리</b> - 커뮤니티, 참여자, 세션은 PostgreSQL, 진행 중 연습, 당일 최고 기록, 24시간 공유 링크는 Redis - 세션 캐시에 닉네임 대신 참여자 ID와 최초 만료만 넣어 이름 변경, 만료 연장 문제를 피하면서 연습 폴링의 SQL 접근을 없앰</li>
+      <li><b>혼잡 제어를 명시적으로 설계</b> - 공통 FIFO 대기열, 활성 참여 250개 한도, 3초 상태 조회, 30초 heartbeat 만료로 입장 순서와 이탈자 정리를 관리 - 티켓, 수강 참여를 분리하되 두 참여가 공통 한도 두 자리를 쓰게 해 우회를 막음</li>
+      <li><b>검색 가능한 공개 HTML과 개인 상태 분리</b> - 공개 소개는 빌드 시 프리렌더, 게시글은 Go에서 이스케이프해 HTML과 초기 JSON으로 렌더, 개인 진행과 공유 화면에는 noindex를 적용함</li>
     </ul>
   </div>
 
@@ -600,8 +603,8 @@ sitemap: false
   <div class="block">
     <div class="h">성과 / 지표</div>
     <ul>
-      <li>수평 확장이 막힌 지점을 <b>에러 없이 실시간만 조용히 누락되는 현상</b>으로 규정하고, 확장 조건(CPU 한 코어 포화, 오토스케일, 무중단 배포 중 하나가 실제로 걸릴 때)을 미리 항목으로 문서화함</li>
-      <li>서버 없이 쓰는 로컬, 로그인 클라우드, 읽기 전용 참관 <b>3모드를 저장 레벨 가드로 분리</b>해 모드가 섞이지 않도록 강제</li>
+      <li>수평 확장의 한계를 <b>에러 없이 실시간만 조용히 누락되는 현상</b>으로 규정하고, 확장 조건(CPU 한 코어 포화, 오토스케일, 무중단 배포 중 하나가 실제로 걸릴 때)을 미리 항목으로 문서화함</li>
+      <li>서버 없이 쓰는 로컬, 로그인 클라우드, 읽기 전용 참관 <b>3모드를 저장 레벨 가드로 분리</b>해 모드가 섞이지 않도록 강제함</li>
       <li>커넥션 상한을 산술로 특정 - 드라이버 기본 풀 100이 프로세스마다 적용되므로 <b>Atlas 연결 500에서 워커 5개가 상한</b>임을 확인하고 증설 전 선결 과제로 둠</li>
     </ul>
   </div>
@@ -624,10 +627,10 @@ sitemap: false
   <div class="block">
     <div class="h">설계 결정</div>
     <ul>
-      <li><b>번역 엔진을 온디바이스로 한정</b> - 번역 API는 키, 과금, 서버, 프라이버시 비용이 함께 따라오므로, OS가 제공하는 비 UI 번역 세션만 쓰고 최소 지원 버전을 올리는 쪽을 택함. 네트워크 호출 0건, 확장 권한 1개, host_permissions 없음으로 끝나 처리방침과 심사 프라이버시 라벨이 수집 항목 없음으로 정리됨</li>
-      <li><b>진행률을 추정하지 않고 재조회로 판정</b> - 언어팩 설치 호출이 다운로드 완료가 아니라 시스템 시트가 닫힐 때도 반환하고 취소를 알리지 않으며 진행률을 주지 않음. 추정 진행 막대를 결함으로 규정하고, 시트가 닫힌 뒤 설치 여부를 다시 조회하는 방식으로 바꿔 멈춘 다운로드가 진행 중으로 보이는 화면을 없앰</li>
+      <li><b>번역 엔진을 온디바이스로 한정</b> - 번역 API는 키, 과금, 서버, 프라이버시 비용이 함께 따라오므로, OS가 제공하는 비 UI 번역 세션만 쓰고 최소 지원 버전을 올리는 쪽을 택함 - 네트워크 호출 0건, 확장 권한 1개, host_permissions 없음으로 끝나 처리방침과 심사 프라이버시 라벨이 수집 항목 없음으로 정리됨</li>
+      <li><b>진행률을 추정하지 않고 재조회로 판정</b> - 언어팩 설치 호출이 다운로드 완료가 아니라 시스템 시트가 닫힐 때도 반환하고 취소를 알리지 않으며 진행률을 주지 않음 - 추정 진행 막대를 결함으로 규정하고, 시트가 닫힌 뒤 설치 여부를 다시 조회하는 방식으로 바꿔 멈춘 다운로드가 진행 중으로 보이는 화면을 없앰</li>
       <li><b>플랫폼별 트리거를 나눠 시스템 UI와 충돌하지 않도록 분리</b> - iOS는 선택 제스처를 시스템 콜아웃이 먼저 가져가고 그 위치를 페이지가 알 수 없으므로, macOS는 선택 직후 번역하고 iOS는 선택 끝에 정렬된 칩을 눌러 번역하도록 분리함</li>
-      <li><b>대상 언어를 단일 값으로 공유하고 요청마다 재조회</b> - 앱이 받은 언어팩과 확장이 번역하는 언어가 어긋나면 지원하지만 동작하지 않는 상태가 되며, 앱에서 확장 워커로 변경을 알릴 경로가 없음. 대상 언어 하나만 App Group에 두고 번역 요청마다 다시 읽으며, 캐시 키에 대상 언어를 포함하고 성공 응답만 캐시함</li>
+      <li><b>대상 언어를 단일 값으로 공유하고 요청마다 재조회</b> - 앱이 받은 언어팩과 확장이 번역하는 언어가 어긋나면 지원하지만 동작하지 않는 상태가 되며, 앱에서 확장 워커로 변경을 알릴 경로가 없음 - 대상 언어 하나만 App Group에 두고 번역 요청마다 다시 읽으며, 캐시 키에 대상 언어를 포함하고 성공 응답만 캐시함</li>
     </ul>
   </div>
 
@@ -635,7 +638,7 @@ sitemap: false
     <div class="h">성과 / 지표</div>
     <ul>
       <li><b>iOS, macOS 양쪽 App Store 정식 출시</b> - 하나의 앱 레코드를 두 플랫폼에 내고 <b>1.0~1.2 세 버전 모두 첫 제출에 반려 없이 승인</b></li>
-      <li><b>릴리스, 위생을 스크립트로 강제</b> - 아카이브부터 플랫폼, 버전, 번들, 수출규정 대조와 업로드까지 CLI로 처리하고 워킹 트리가 정리되지 않으면 중단, 팀 ID, 홈 경로가 공개 저장소로 새는지 테스트 단계에서 차단</li>
+      <li><b>릴리스 절차와 저장소 점검을 스크립트로 강제</b> - 아카이브부터 플랫폼, 버전, 번들, 수출규정 대조와 업로드까지 CLI로 처리하고 워킹 트리가 정리되지 않으면 중단, 팀 ID, 홈 경로가 공개 저장소로 새는지 테스트 단계에서 차단</li>
     </ul>
   </div>
 </div>
@@ -649,10 +652,10 @@ sitemap: false
   <div class="block">
     <div class="h">설계 결정</div>
     <ul>
-      <li><b>레이아웃은 ELK에 위임하고 좌표계 문제를 직접 해결</b> - ELK가 간선 좌표를 간선이 선언된 노드 기준 상대좌표로 반환해, 그룹을 넘나드는 간선을 양 끝점의 <b>최소공통조상 컨테이너</b>에 매달지 않으면 의도하지 않은 위치에 그려짐. 조상 체인을 구성해 LCA를 계산해 연결함</li>
-      <li><b>해석 안 되는 아이콘은 대체하지 않고 실패하도록 처리</b> - 해석 안 되는 타입은 비슷한 후보를 제시하며 종료. 에이전트가 오류 메시지를 읽고 스스로 고치는 것을 전제로 설계</li>
-      <li><b>입력 두 형태를 하나의 IR로 정규화</b> - 사람이 쓰는 중첩형과 생성기가 쓰는 평면형을 함께 받음. 평면형은 재귀가 없어 LLM이 한 번에 생성하기 쉬움. 스키마를 zod 정의에서 JSON Schema로 파생해 문서와 스키마가 어긋나지 않도록 함</li>
-      <li><b>에이전트 왕복을 줄이려고 CLI 표면을 넷으로 고정</b> - render, types, schema, --check만 두고, types가 그 다이어그램에 필요한 아이콘 슬러그를 한 번에 반환해 아이콘마다 조회를 반복하지 않도록 함. 렌더 없이 검증만 하는 --check와 stdin 입력으로 에이전트가 제출 전에 스스로 확인하도록 함</li>
+      <li><b>레이아웃은 ELK에 위임하고 좌표계 문제를 직접 해결</b> - ELK가 간선 좌표를 간선이 선언된 노드 기준 상대좌표로 반환해, 그룹을 넘나드는 간선을 양 끝점의 <b>최소공통조상 컨테이너</b>에 매달지 않으면 의도하지 않은 위치에 그려짐 - 조상 체인을 구성해 LCA를 계산해 연결함</li>
+      <li><b>해석 안 되는 아이콘은 대체하지 않고 실패하도록 처리</b> - 해석 안 되는 타입은 비슷한 후보를 제시하며 종료 - 에이전트가 오류 메시지를 읽고 스스로 고치는 것을 전제로 설계함</li>
+      <li><b>입력 두 형태를 하나의 IR로 정규화</b> - 사람이 쓰는 중첩형과 생성기가 쓰는 평면형을 함께 받음 - 평면형은 재귀가 없어 LLM이 한 번에 생성하기 쉬움 - 스키마를 zod 정의에서 JSON Schema로 파생해 문서와 스키마가 어긋나지 않도록 함</li>
+      <li><b>에이전트 왕복을 줄이려고 CLI 표면을 넷으로 고정</b> - render, types, schema, --check만 두고, types가 그 다이어그램에 필요한 아이콘 슬러그를 한 번에 반환해 아이콘마다 조회를 반복하지 않도록 함 - 렌더 없이 검증만 하는 --check와 stdin 입력으로 에이전트가 제출 전에 스스로 확인하도록 함</li>
     </ul>
   </div>
 
@@ -665,7 +668,7 @@ sitemap: false
     <ul>
       <li>아이콘 <b>AWS 793, GCP 216, 브랜드/OSS 3,453</b>을 프로바이더 팩 3개로 제공</li>
       <li>SVG 생성이 DOM에 의존하지 않아 <b>브라우저와 Node가 같은 코드로 같은 결과</b>를 냄 - 스냅샷 검사로 회귀 방지</li>
-      <li>이 포트폴리오의 <b>CaliMeal, teampler 인프라 다이어그램을 archdraw로 직접 렌더</b>함</li>
+      <li>이 포트폴리오의 <b>CaliMeal, teampler 인프라 다이어그램을 archdraw로 직접 렌더링</b></li>
     </ul>
   </div>
 </div>
@@ -680,7 +683,7 @@ sitemap: false
     <div class="h">주요 기여</div>
     <ul>
       <li>정렬, 탐색, 그래프, 트리, DP에 더해 <b>시스템, 네트워크, 하드웨어</b>까지 넓혀 <b>수록 항목 80개</b>(알고리즘 45, CS 개념 35), 카테고리 17개</li>
-      <li><b>프레젠테이션 비종속 데이터 레이어</b> - 카테고리마다 메타와 스텝 데이터를 분리해 레지스트리가 메타만 가져오도록 함. 전 항목 스텝 데이터가 메인 번들에 딸려오지 않고, 같은 정의를 웹앱과 영상 렌더가 함께 소비. <b>공용 프리미티브 29개를 80항목이 공유</b></li>
+      <li><b>프레젠테이션과 분리한 데이터 레이어</b> - 카테고리마다 메타와 스텝 데이터를 분리해 레지스트리가 메타만 가져오도록 함 - 전 항목 스텝 데이터가 메인 번들에 딸려오지 않고, 같은 정의를 웹앱과 영상 렌더가 함께 소비 - <b>공용 프리미티브 29개를 80항목이 공유</b></li>
       <li><b>번역이 화면을 다시 그리지 않는 오버레이 i18n</b> - 국문 정본 위에 사전을 얹어 같은 라우터 하위 트리를 두 번 마운트하는 구조로 80개 항목을 영문으로 전환하고, 빌드 산출물에서 한글이 새는지 검사하는 루프를 상시화</li>
       <li>puppeteer-core 기반 <b>자체 SSG로 198개 라우트를 프리렌더</b>하고 OG 카드를 로컬에서 생성</li>
     </ul>
@@ -694,9 +697,9 @@ sitemap: false
   <div class="block">
     <div class="h">운영 현황</div>
     <ul>
-      <li><b>자체 SSG가 검색 색인까지 실제로 달성</b> - naver, google, bing 세 엔진에서 자연 검색 유입이 잡히고 Search Console이 연동돼 있음</li>
-      <li><b>영어 오버레이가 국내 밖 유입으로 이어짐</b> - 접속이 한국에 그치지 않고 싱가포르, 인도, 중국, 미국, 호주, 캐나다 등에서 발생</li>
-      <li>가장 많이 읽히는 페이지가 <b>개념 챕터</b>(쿠버네티스 목록, 파드, 원하는 상태, 도커 아키텍처, 롤링 업데이트) - 장면 단위로 전환한 자리가 실제로 소비되고 있음</li>
+      <li><b>자체 SSG 페이지가 검색 엔진에 색인됨</b> - naver, google, bing 세 엔진에서 자연 검색 유입이 잡히고 Search Console이 연동돼 있음</li>
+      <li><b>영어 오버레이가 해외 유입으로 이어짐</b> - 접속이 한국에 그치지 않고 싱가포르, 인도, 중국, 미국, 호주, 캐나다 등에서 발생함</li>
+      <li>가장 많이 읽히는 페이지가 <b>개념 챕터</b>(쿠버네티스 목록, 파드, 원하는 상태, 도커 아키텍처, 롤링 업데이트) - 장면 단위로 전환한 챕터가 실제로 읽히고 있음</li>
     </ul>
   </div>
 </div>
@@ -705,7 +708,7 @@ sitemap: false
 <div class="page proj">
   <div class="ttl"><span class="no">16</span><h2>naver-posting - 기술 콘텐츠 생산 파이프라인</h2><span class="kind">Personal / 운영 중</span></div>
   <div class="lead">IT, AI 기술 동향의 조사, 집필, 시각화, 발행을 처리하는 <b>개인 콘텐츠 파이프라인</b></div>
-  <div class="stack"><div class="row"><span class="k">Stack</span><span>Claude Code Skills 11종, Python, WebSearch 교차검증, Google Drive 연동, Git</span></div><div class="row"><span class="k">발행</span><span>blog.naver.com/rottensweetpotato</span></div></div>
+  <div class="stack"><div class="row"><span class="k">Stack</span><span>Claude Code Skills 11종, Python, WebSearch 교차검증, Google Drive 연동, Git</span></div><div class="row"><span class="k">MCP 서버</span><span>Node.js, MCP SDK, OAuth 2.1, Cloud Run, Pub/Sub</span></div><div class="row"><span class="k">발행</span><span>blog.naver.com/rottensweetpotato</span></div></div>
 
   <div class="block">
     <div class="h">파이프라인 - 3개 주체가 파일로 비동기 인계</div>
@@ -728,9 +731,10 @@ sitemap: false
   <div class="block">
     <div class="h">주요 기여</div>
     <ul>
-      <li><b>환각 방지를 파이프라인 규칙으로 강제</b> - 작성 전 WebSearch 교차검증 최소 1회 필수, 논문, 공식 자료는 원문 인용 후 출처를 프론트매터에 구조화, 과학 주제는 과장 여부를 짚는 균형 섹션을 필수 항목으로 지정</li>
-      <li><b>포맷 변환 자동화</b> - 네이버 SmartEditor가 평문 붙여넣기로 서식을 받지 못하는 제약을, md를 리치 HTML로 렌더해 클립보드로 옮기는 방식으로 우회(굵게, 줄바꿈, 구분선, 표 유지)</li>
-      <li><b>스킬 상속 구조 설계</b> - 공통 문체, 표기 규칙을 상위 스킬에 두고 포스팅 스킬 전체가 상속, 주제 버티컬은 형식 규칙을 빌려 쓰되 폴더, 이미지 정책만 덮어씀</li>
+      <li><b>환각 방지 절차를 파이프라인 규칙으로 강제</b> - 작성 전 WebSearch 교차검증 최소 1회 필수, 논문, 공식 자료는 원문 인용 후 출처를 프론트매터에 구조화, 과학 주제는 과장 여부를 짚는 균형 섹션을 필수 항목으로 지정</li>
+      <li><b>포맷 변환 자동화</b> - 네이버 SmartEditor가 평문 붙여넣기로 서식을 받지 못하는 제약을, md를 리치 HTML로 렌더해 클립보드로 옮기는 방식으로 우회 - 굵게, 줄바꿈, 구분선, 표 유지</li>
+      <li><b>MCP 서버 개발, 운영</b> - 글 검토와 아이디어 탐색을 ChatGPT, Gemini 웹 채팅에 위임하는 원격 MCP 서버를 Cloud Run에 배포, 도구 6종(읽기 4, 쓰기 2)과 OAuth 2.1 인가 서버(동적 클라이언트 등록, PKCE, Google 로그인 허용 계정)를 직접 구현, 작업 완료는 Pub/Sub로 알림</li>
+      <li><b>스킬 상속 구조 설계</b> - 공통 문체, 표기 규칙을 상위 스킬에 두고 포스팅 스킬 전체가 상속, 주제 버티컬은 형식 규칙을 빌려 쓰되 폴더, 이미지 정책만 재정의</li>
     </ul>
   </div>
 
@@ -765,7 +769,7 @@ sitemap: false
   <div class="block">
     <div class="h">엔지니어링 하이라이트</div>
     <ul>
-      <li><b>레이아웃 프리셋</b> - 여러 카페를 다루는 사용자를 위해 게시판 ID, 기간, 출력 설정을 묶어 저장/불러오기/삭제 - 실행이 끝나면 활성 프리셋이 자동 갱신되어 다음 실행으로 이어짐</li>
+      <li><b>레이아웃 프리셋</b> - 여러 카페를 다루는 사용자를 위해 게시판 ID, 기간, 출력 설정을 묶어 저장/불러오기/삭제 - 실행이 끝나면 활성 프리셋이 자동 갱신되어 다음 실행에 반영</li>
       <li><b>전역 중복 제거</b> - 수집 항목이 모든 카페를 통틀어 한 번만 남도록 단일 전역 파일로 관리하고, 최초 발견 게시글에 귀속</li>
       <li>비개발자 배포를 위해 <b>Chromium을 번들</b>하고 GitHub Actions로 exe를 빌드해 Release로 제공</li>
     </ul>
@@ -775,7 +779,7 @@ sitemap: false
     <div class="h">성과</div>
     <ul>
       <li>게시글을 하나씩 열어 옮겨 적던 작업을 <b>실행 한 번으로 대체</b>하고, 비개발자 사용자에게 배포해 실제 운영에 사용 중</li>
-      <li>여러 카페를 프리셋 전환만으로 운영할 수 있게 해 <b>반복 설정 입력 제거</b></li>
+      <li>여러 카페를 프리셋 전환만으로 운영할 수 있도록 해 <b>반복 설정 입력 제거</b></li>
     </ul>
   </div>
 </div>
@@ -795,8 +799,10 @@ sitemap: false
     <div class="h">주요 기여 / 성과</div>
     <ul>
       <li>자유 입력 대신 <b>구조화된 사전 질문지</b>(사건 유형, 상황 체크, 텍스트 순)로 문제의 핵심 맥락을 먼저 확보하도록 서비스 구조 설계</li>
-      <li><b>고소장 자동 작성 템플릿, 관할기관 안내</b> 등 즉시 실행 도구를 제공하고, 상담 이력, 서류 통합 대시보드 구현</li>
-      <li>LLM 응답 지연과 환각, 맥락 이해 부족 문제를 <b>프롬프트 개선과 상태 관리</b>로 해결, 소셜 로그인 3종 연동</li>
+      <li><b>고소장 자동 작성 템플릿, 관할기관 안내</b> 등 즉시 실행 도구 제공</li>
+      <li>상담 이력, 서류 통합 대시보드 구현</li>
+      <li>LLM 응답 지연과 환각, 맥락 이해 부족 문제를 <b>프롬프트 개선과 상태 관리</b>로 완화</li>
+      <li>소셜 로그인 3종 연동</li>
     </ul>
   </div>
 </div>
@@ -836,7 +842,7 @@ sitemap: false
   <div class="block">
     <div class="h">주요 기여 / 성과</div>
     <ul>
-      <li>금연구역 좌표에 <b>K-means로 중심 좌표를 산출</b>해 그 인근에 부스를 배치하고, 프로젝트에서 설정한 <b>귀무가설</b>로 입지 타당성을 함께 판단, <b>서울시 약 500개소의 흡연부스 입지를 도출</b>함</li>
+      <li>금연구역 좌표에 <b>K-means로 중심 좌표를 산출</b>해 그 인근에 부스를 배치하고, 프로젝트에서 설정한 <b>귀무가설</b>로 입지 타당성을 함께 판단, <b>서울시 약 500개소의 흡연부스 입지 도출</b></li>
       <li>산출 좌표가 <b>설치 불가 지점(산, 특수시설 등)</b>일 때를 대비해 자체 정의 알고리즘으로 대체 입지를 선정하도록 설계</li>
       <li>한국지능정보사회진흥원(NIA) <b>우수과제 선정</b> (제2023-4237호, 2023.12.05)</li>
     </ul>
