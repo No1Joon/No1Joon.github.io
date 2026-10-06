@@ -1,0 +1,20 @@
+---
+layout: default
+title: No1Joon's Tech Blog
+description: Notes on tech stacks, architecture, and building things
+permalink: /en/
+---
+{% assign t = site.data.i18n.en %}
+{% assign en_list = site.en_posts | sort: "date" | reverse %}
+<div class="page-hero">
+  <h1>{{ t.hero_title }}</h1>
+  <p>{{ t.hero_desc }}</p>
+</div>
+
+{% if en_list.size == 0 %}
+<p class="post-list-empty">{{ t.empty }}</p>
+{% endif %}
+
+{% include post-browser.html posts=en_list %}
+
+<div id="postView"></div>

@@ -14,6 +14,7 @@ Jekyll 기반 GitHub Pages 블로그 (Claude·Gemini 공통 컨텍스트). 기�
 ## Architecture
 
 - `_posts/` — 블로그 글. Jekyll 기본과 달리 **카테고리 slug 하위 폴더**로 나뉜다 (URL 에는 영향 없음). 상세는 `_posts/CLAUDE.md`.
+- `_en_posts/` — 영문판 컬렉션 (`/en/posts/<slug>/`). 한국어 글과 같은 파일명이면 짝으로 묶여 언어 전환·hreflang 이 걸린다. 화면 문구는 `_data/i18n.yml`.
 - `_data/categories.yml` — 포스트 front matter 의 category/subcategory 유효값을 규정하는 단일 출처.
 - `assets/` — 최적화본 `images/` 와 원본 `raw-images/` 가 같은 구조를 미러링. 상세는 `assets/CLAUDE.md`.
 - `scripts/add-screenshot.py` — Desktop 스크린샷을 WebP 로 변환해 위 두 트리에 배치.

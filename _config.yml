@@ -19,6 +19,12 @@ social:
   links:
     - https://github.com/No1Joon
 
+# 영문판 — 한국어 글과 같은 파일명(slug)이면 짝으로 묶여 언어 전환·hreflang 이 걸린다
+collections:
+  en_posts:
+    output: true
+    permalink: /en/posts/:title/
+
 markdown: kramdown
 highlighter: rouge
 permalink: /posts/:title/
@@ -33,6 +39,16 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+  - scope:
+      path: ""
+      type: "en_posts"
+    values:
+      layout: "post"
+      lang: en
+  - scope:
+      path: "en"
+    values:
+      lang: en
   # jekyll-seo-tag 의 og:image 는 page.image 만 읽는다 (site.image 는 무시) —
   # 자체 OG 이미지가 없는 홈·이력서 등에 기본값을 깔아 준다. 포스트 front matter 가 우선한다
   - scope:

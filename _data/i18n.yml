@@ -1,0 +1,23 @@
+# 화면 문구 — 레이아웃이 page.lang(기본 site.lang)으로 고른다
+ko:
+  home: /
+  hero_title: Tech Stack Blog
+  hero_desc: 기술 스택과 아키텍처 선택에 대한 기록
+  all: 전체
+  prev: ← 이전
+  next: 다음 →
+  date_long: "%Y년 %m월 %d일"
+  date_short: "%Y. %m. %d"
+  switch: English
+  empty: ""
+en:
+  home: /en/
+  hero_title: Tech Stack Blog
+  hero_desc: Notes on tech stacks and architecture decisions
+  all: All
+  prev: ← Prev
+  next: Next →
+  date_long: "%B %-d, %Y"
+  date_short: "%b %-d, %Y"
+  switch: 한국어
+  empty: English posts are on the way.

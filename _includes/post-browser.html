@@ -2,14 +2,19 @@
   Browsable post list: category top-menu (counts + collapsible subcategories)
   + one-line list + 5-per-page pagination. Shared by the home page and post pages.
   Optional param: initial_cat = category slug to pre-select on load.
+  Optional param: posts = 목록에 실을 글 (기본 site.posts, 영문판은 site.en_posts).
 {% endcomment %}
+{% comment %} default 필터는 빈 배열도 비었다고 보고 site.posts 로 바꿔 버리므로 nil 만 따로 거른다 {% endcomment %}
+{% if include.posts %}{% assign list = include.posts %}{% else %}{% assign list = site.posts %}{% endif %}
+{% assign ui_lang = page.lang | default: site.lang %}
+{% assign t = site.data.i18n[ui_lang] %}
 <nav class="cat-menu" id="catMenu" data-initial-cat="{{ include.initial_cat }}">
   <div class="cat-row cat-row-main">
     <button type="button" class="cat-btn active" data-filter="all">
-      전체 <span class="cat-count">{{ site.posts | size }}</span>
+      {{ t.all }} <span class="cat-count">{{ list | size }}</span>
     </button>
     {% for cat in site.data.categories %}
-      {% assign cat_posts = site.posts | where: "category", cat.name %}
+      {% assign cat_posts = list | where: "category", cat.name %}
       {% if cat_posts.size > 0 %}
         {% assign sub_total = 0 %}
         {% for sub in cat.subcategories %}
@@ -28,7 +33,7 @@
   </div>
 
   {% for cat in site.data.categories %}
-    {% assign cat_posts = site.posts | where: "category", cat.name %}
+    {% assign cat_posts = list | where: "category", cat.name %}
     {% if cat_posts.size > 0 %}
       {% assign sub_total = 0 %}
       {% for sub in cat.subcategories %}
@@ -57,7 +62,7 @@
   없으면 구글이 여기 실린 남의 글 설명을 그 페이지의 검색 스니펫으로 뽑아 쓴다.
 {% endcomment %}
 <div class="post-list" id="postList" data-nosnippet>
-  {% for post in site.posts %}
+  {% for post in list %}
     {% assign cat_slug = "" %}
     {% assign sub_slug = "" %}
     {% for cat in site.data.categories %}
@@ -83,15 +88,15 @@
       <p class="post-row-desc">{{ post.description }}</p>
       {% endif %}
       {% endif %}
-      <div class="post-row-meta">{{ post.date | date: "%Y. %m. %d" }}</div>
+      <div class="post-row-meta">{{ post.date | date: t.date_short }}</div>
     </a>
   {% endfor %}
 </div>
 
 <div class="pager" id="pager" hidden>
-  <button type="button" class="pager-btn" id="pagerPrev">← 이전</button>
+  <button type="button" class="pager-btn" id="pagerPrev">{{ t.prev }}</button>
   <span class="pager-info" id="pagerInfo">1 / 1</span>
-  <button type="button" class="pager-btn" id="pagerNext">다음 →</button>
+  <button type="button" class="pager-btn" id="pagerNext">{{ t.next }}</button>
 </div>
 
 <script src="{{ '/assets/js/post-enhance.js' | relative_url }}"></script>

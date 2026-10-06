@@ -1,6 +1,13 @@
 ---
 layout: default
 ---
+{% assign lang = page.lang | default: site.lang %}
+{% assign t = site.data.i18n[lang] %}
+{% if page.collection == "en_posts" %}
+  {% assign browse_posts = site.en_posts | sort: "date" | reverse %}
+{% else %}
+  {% assign browse_posts = site.posts %}
+{% endif %}
 {% assign cur_slug = "" %}
 {% for cat in site.data.categories %}
   {% if cat.name == page.category %}{% assign cur_slug = cat.slug %}{% endif %}
@@ -24,7 +31,7 @@ layout: default
         {% if page.subcategory %}
         <span class="badge badge-sub">{{ page.subcategory }}</span>
         {% endif %}
-        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y년 %m월 %d일" }}</time>
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: t.date_long }}</time>
         {% if page.tags %}
         <div class="tag-list">
           {% for tag in page.tags %}
@@ -42,6 +49,6 @@ layout: default
 </div>
 
 <section class="post-browse">
-  {% include post-browser.html initial_cat=cur_slug compact=true %}
+  {% include post-browser.html posts=browse_posts initial_cat=cur_slug compact=true %}
 </section>
 </div>

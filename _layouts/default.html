@@ -1,5 +1,25 @@
+{% assign lang = page.lang | default: site.lang %}
+{% assign t = site.data.i18n[lang] %}
+{% comment %}
+  언어 짝 — 한국어 글(posts)과 영문 글(en_posts)은 같은 파일명(slug)이면 짝이다.
+  짝이 있으면 헤더 전환 링크와 hreflang 을 그 글로 건다. 없으면 상대 언어 홈으로 보내되,
+  영문 글이 하나도 없을 때는 한국어 쪽에서 전환 링크를 띄우지 않는다.
+{% endcomment %}
+{% assign alt = nil %}
+{% if page.collection == "posts" %}
+  {% assign alt = site.en_posts | where: "slug", page.slug | first %}
+{% elsif page.collection == "en_posts" %}
+  {% assign alt = site.posts | where: "slug", page.slug | first %}
+{% endif %}
+{% if alt %}
+  {% assign switch_url = alt.url %}
+{% elsif lang == "en" %}
+  {% assign switch_url = site.data.i18n.ko.home %}
+{% elsif site.en_posts.size > 0 %}
+  {% assign switch_url = site.data.i18n.en.home %}
+{% endif %}
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="{{ lang }}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +29,15 @@
   <link rel="icon" type="image/png" href="{{ '/assets/favicon.png' | relative_url }}" sizes="512x512">
   <link rel="apple-touch-icon" href="{{ '/assets/apple-touch-icon.png' | relative_url }}">
   {% seo %}
+  {% if alt %}
+  {% if lang == "en" %}{% assign ko_url = alt.url %}{% assign en_url = page.url %}{% else %}{% assign ko_url = page.url %}{% assign en_url = alt.url %}{% endif %}
+  <link rel="alternate" hreflang="ko" href="{{ ko_url | absolute_url }}">
+  <link rel="alternate" hreflang="en" href="{{ en_url | absolute_url }}">
+  <link rel="alternate" hreflang="x-default" href="{{ ko_url | absolute_url }}">
+  {% endif %}
+  {% if lang == "en" and site.en_posts.size == 0 %}
+  <meta name="robots" content="noindex">
+  {% endif %}
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&display=swap" rel="stylesheet">
@@ -17,11 +46,14 @@
 <body class="preload">
   <header class="site-header">
     <div class="inner">
-      <a href="{{ '/' | relative_url }}" class="site-title">No1Joon<span>.dev</span></a>
+      <a href="{{ t.home | relative_url }}" class="site-title">No1Joon<span>.dev</span></a>
       <nav>
-        <a href="{{ '/' | relative_url }}">Posts</a>
+        <a href="{{ t.home | relative_url }}">Posts</a>
         <a href="{{ '/resume' | relative_url }}">Resume</a>
         <a href="https://github.com/No1Joon" target="_blank">GitHub</a>
+        {% if switch_url %}
+        <a href="{{ switch_url | relative_url }}" lang="{% if lang == 'en' %}ko{% else %}en{% endif %}" hreflang="{% if lang == 'en' %}ko{% else %}en{% endif %}">{{ t.switch }}</a>
+        {% endif %}
       </nav>
     </div>
   </header>

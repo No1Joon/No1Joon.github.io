@@ -107,6 +107,13 @@ nav a:hover { color: var(--text); }
   font-size: 0.95rem;
 }
 
+/* 영문판처럼 아직 글이 없는 목록 */
+.post-list-empty {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  padding: 1rem 0;
+}
+
 /* ── Category Top Menu ── */
 .cat-menu {
   border-bottom: 1px solid var(--border);
@@ -784,6 +791,9 @@ nav a:hover { color: var(--text); }
 }
 
 @media (max-width: 640px) {
+  /* 영문판 전환 링크까지 4개가 360px 한 줄에 들어가도록 */
+  .site-header .inner { padding: 0 1.25rem; }
+  nav a { margin-left: 1rem; }
   .post-row-title { font-size: 0.98rem; }
   .post-header h1 { font-size: 1.4rem; }
   .page-hero h1 { font-size: 1.5rem; }
