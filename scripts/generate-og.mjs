@@ -8,6 +8,8 @@ import { glob } from 'glob';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const POSTS_DIR = path.join(__dirname, '../_posts');
+// 영문판은 한국어 글과 파일명이 같으므로 OG 파일명에 en- 를 붙여 구분한다
+const EN_POSTS_DIR = path.join(__dirname, '../_en_posts');
 const OUTPUT_DIR = path.join(__dirname, '../assets/og');
 const FONT_PATH = path.join(__dirname, '../assets/fonts/Pretendard-Bold.ttf');
 
@@ -25,13 +27,17 @@ async function generateOG() {
   const fontData = fs.readFileSync(FONT_PATH);
 
   // CLAUDE.md 는 포스트가 아니라 디렉터리 지침 문서 — front matter 주입·OG 생성 대상에서 뺀다
-  const posts = await glob(path.join(POSTS_DIR, '**/*.md'), { ignore: '**/CLAUDE.md' });
+  const posts = [
+    ...(await glob(path.join(POSTS_DIR, '**/*.md'), { ignore: '**/CLAUDE.md' })),
+    ...(await glob(path.join(EN_POSTS_DIR, '**/*.md'), { ignore: '**/CLAUDE.md' })),
+  ];
   console.log(`Found ${posts.length} posts. Generating OG images...`);
 
   for (const postPath of posts) {
     const fileContent = fs.readFileSync(postPath, 'utf-8');
     const { data } = matter(fileContent);
-    const slug = path.basename(postPath, '.md');
+    const isEn = postPath.startsWith(EN_POSTS_DIR + path.sep);
+    const slug = (isEn ? 'en-' : '') + path.basename(postPath, '.md');
     const outputPath = path.join(OUTPUT_DIR, `${slug}.png`);
 
     const title = data.title || 'No1Joon Tech Blog';
