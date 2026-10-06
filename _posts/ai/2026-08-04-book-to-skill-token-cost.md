@@ -1,5 +1,5 @@
 ---
-title: "책 한 권을 AI 스킬로 압축하는 법 — book-to-skill 직접 써봤습니다"
+title: "스킬 실사용 (1) — 책 한 권을 AI 스킬로 압축하는 법, book-to-skill 직접 써봤습니다"
 description: "책을 통째로 붙여넣는 대신 에이전트 스킬로 컴파일하는 book-to-skill 을 설치해 돌려보고, 탐색 루프 세금과 실제 토큰 사용량을 측정합니다"
 date: 2026-08-04
 category: AI

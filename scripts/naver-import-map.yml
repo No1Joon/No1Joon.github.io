@@ -568,7 +568,7 @@
   category: AI
   category_slug: ai
   subcategory: Explainer
-  title: "책 한 권을 AI 스킬로 압축하는 법 — book-to-skill 직접 써봤습니다"
+  title: "스킬 실사용 (1) — 책 한 권을 AI 스킬로 압축하는 법, book-to-skill 직접 써봤습니다"
   description: 책을 통째로 붙여넣는 대신 에이전트 스킬로 컴파일하는 book-to-skill 을 설치해 돌려보고, 탐색 루프 세금과 실제 토큰 사용량을 측정합니다
   tags: [book-to-skill, agent-skills, claude-code, token-cost, open-source]
 
@@ -1361,3 +1361,783 @@
     "Claude Fable 5.1 안전장치 격차 편": claude-fable-51-safeguard-gap
     "Gemini 3.8 Flash 출시 간격 편": gemini-38-flash-release-cadence
     "GPT-6 Astra 출시 편": gpt-6-astra-release
+
+- source: naver-posting-it/posts/ai/26Q3/20260908_grill_me_계획검증.md
+  slug: skill-in-use-02-grill-me
+  date: 2026-09-08
+  category: AI
+  category_slug: ai
+  subcategory: Explainer
+  title: "스킬 실사용 (2) — grill-me 로 가상 사업 계획을 캐물었습니다"
+  description: 본문 여섯 줄짜리 에이전트 스킬 grill-me 가 계획을 어떻게 캐묻는지, 가상 계획으로 돌려 본 질문 아홉 개와 함께 정리합니다
+  tags: [grill-me, agent-skills, claude-code, planning, decision-making]
+
+- source: naver-posting-it/posts/ai/26Q3/20260908_클로드코드_권한프롬프트_스킬.md
+  slug: skill-in-use-03-permission-prompts
+  date: 2026-09-08
+  category: AI
+  category_slug: ai
+  subcategory: Explainer
+  title: "스킬 실사용 (3) — Claude Code 명령 12,411건 중 81%는 원래 묻지도 않았습니다"
+  description: 권한 프롬프트를 줄이는 내장 스킬이 무엇을 읽고 무엇을 허용 목록에 쓰는지, 실제 명령 기록을 세어 정리합니다
+  tags: [claude-code, agent-skills, permissions, allowlist, developer-tools]
+
+- source: naver-posting-it/posts/security/26Q3/20260908_ChainDrop_npm웜_provenance.md
+  slug: chaindrop-npm-worm-provenance
+  date: 2026-09-08
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "ChainDrop — 서명이 유효한데도 악성이었습니다"
+  description: 네 시간 만에 400개 넘는 패키지를 오염시킨 npm 웜이 SLSA provenance 검증을 통과한 이유와, 증명이 보증하는 범위를 정리합니다
+  tags: [supply-chain-attack, npm, slsa, provenance, developer-security]
+
+- source: naver-posting-it/posts/security/26Q3/20260908_SkillSpector_스킬보안스캐너.md
+  slug: ai-security-04-skillspector
+  date: 2026-09-08
+  category: AI
+  category_slug: ai
+  subcategory: Explainer
+  title: "AI 보안 (4) — 에이전트 스킬 4개 중 1개가 취약했습니다"
+  description: NVIDIA 스킬 스캐너 SkillSpector 로 공식 스킬을 검사한 결과와, 코드 스캐너가 못 읽는 산문 속 프롬프트 인젝션을 정리합니다
+  tags: [skillspector, agent-skills, prompt-injection, nvidia, ai-security]
+
+- source: naver-posting-it/posts/tech/26Q3/20260908_최적요금제_고지제도.md
+  slug: optimal-mobile-plan-notice
+  date: 2026-09-08
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "최적요금제 고지 — 10월부터 통신사가 먼저 알려줍니다"
+  description: 10월 시행되는 최적요금제 고지 제도의 내용과, 계산에서 빠지는 알뜰폰 이용자·통신 3사 요금제 개편을 정리합니다
+  tags: [mobile-plan, telecom, regulation, korea, consumer-guide]
+
+- source: naver-posting-it/posts/ai/26Q3/20260909_AGI_정의와기준.md
+  slug: agi-definition
+  date: 2026-09-09
+  category: AI
+  category_slug: ai
+  subcategory: Explainer
+  title: "AGI 는 무엇인가 — 왜 아무도 같은 뜻으로 쓰지 않나"
+  description: AGI 도달을 두고 기사가 서로 어긋나는 이유를 회사·계약·법마다 다른 정의로 풀고, 도달 시점 전망이 갈리는 까닭을 정리합니다
+  tags: [agi, google-deepmind, openai, ai-regulation, ai-definition]
+
+- source: naver-posting-it/posts/ai/26Q3/20260909_GPT6아스트라_노출조건.md
+  slug: gpt-6-astra-availability
+  date: 2026-09-09
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "GPT-6 Astra 가 내 화면엔 왜 안 보이나 — Chat 이 아니라 Work·Codex 에 있습니다"
+  description: GPT-6 Astra 가 열린 자리와 요금제별 배포 순서를 정리해, 모델 목록에서 찾을 수 없는 이유를 풀어봅니다
+  tags: [openai, gpt-6-astra, chatgpt, codex, pricing-plans]
+
+- source: naver-posting-it/posts/math/26Q3/20260909_나비에스토크스_OpenAI_반례.md
+  slug: navier-stokes-openai-counterexample
+  date: 2026-09-09
+  category: Math
+  category_slug: math
+  subcategory: Explainer
+  title: "OpenAI 가 나비에-스토크스에 내놓은 건 해답이 아니라 반례입니다"
+  description: 밀레니엄 상금이 그대로 남은 이유를 증명한 명제와 상금 문항의 조건 차이로 풀고, Lean 검증 뒤에도 남는 물음을 정리합니다
+  tags: [navier-stokes, millennium-prize, openai, lean, ai-math]
+
+- source: naver-posting-it/posts/security/26Q3/20260910_티빙_재발방지대책.md
+  slug: tving-privacy-breach-05
+  date: 2026-09-10
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "티빙 개인정보 유출 (5) — 재발 방지 대책에 빠진 것 넷"
+  description: 민관합동조사단 발표문의 원인 다섯 줄과 대책 다섯 줄을 맞대어, 대책이 원인보다 좁게 적힌 자리를 정리합니다
+  tags: [tving, data-breach, privacy, encryption-key, data-retention]
+
+- source: naver-posting-it/posts/tech/26Q3/20260910_갤럭시Z폴드8_아이폰듀오.md
+  slug: galaxy-z-fold8-vs-iphone-duo
+  date: 2026-09-10
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "갤럭시 Z 폴드8 과 아이폰 듀오 — 같은 7.6인치에 101만 원 차이"
+  description: 애플 첫 폴더블 아이폰 듀오와 갤럭시 Z 폴드8 의 화면·무게·칩·국내 출고가를 표로 나란히 비교합니다
+  tags: [foldable, iphone-duo, galaxy-z-fold8, apple, samsung]
+
+- source: naver-posting-it/posts/tech/26Q3/20260910_아이폰듀오_접히면_달라지는것.md
+  slug: iphone-duo-foldable-features
+  date: 2026-09-10
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "아이폰 듀오, 접으면 무엇이 달라지나"
+  description: Split View·화면 아래 카메라·배터리 두 개 등 애플이 접는 아이폰을 위해 새로 만든 것들을 사용 경험 기준으로 정리합니다
+  tags: [apple, iphone-duo, foldable, split-view, under-display-camera]
+
+- source: naver-posting-it/posts/tech/26Q3/20260910_아이폰18프로_국내출고가.md
+  slug: iphone-18-pro-korea-price
+  date: 2026-09-10
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "아이폰 18 프로 국내 199만 원 — 미국 모델과 배터리가 다릅니다"
+  description: 아이폰 18 프로·프로 맥스의 국내 출고가와 출시 일정, 가변 조리개 등 확정 사양과 국내·미국 모델 차이를 정리합니다
+  tags: [apple, iphone-18-pro, pricing, a20-pro, korea]
+
+- source: naver-posting-it/posts/tech/26Q3/20260910_iOS2662_업데이트.md
+  slug: ios-26-6-2-update
+  date: 2026-09-10
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "iOS 26.6.2 가 고친 건 아이폰 업데이트 기능입니다"
+  description: 보안 패치 없이 셀룰러 업데이트 문제 하나만 고친 iOS 26.6.2 를 iOS 27 배포 직전에 설치해 둬야 하는 이유를 정리합니다
+  tags: [ios, apple, software-update, iphone, ios-27]
+
+- source: naver-posting-it/posts/ai/26Q3/20260911_모델증류_공격.md
+  slug: model-distillation-attack
+  date: 2026-09-11
+  category: AI
+  category_slug: ai
+  subcategory: Explainer
+  title: "모델 증류는 왜 공격이 되나 — 하루 300만 건을 빼 간 방식"
+  description: 10년 넘게 쓰인 정상 기법인 증류가 허가·규모·대상에 따라 공격으로 바뀌는 지점을 Anthropic 이 적발한 사례로 정리합니다
+  tags: [model-distillation, knowledge-distillation, anthropic, ai-security, chain-of-thought]
+
+- source: naver-posting-it/posts/ai/26Q3/20260911_ChatGPT_Pro20x_가입중단.md
+  slug: chatgpt-pro-20x-signup-pause
+  date: 2026-09-11
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "ChatGPT Pro 20x 신규 가입 중단 — 해지하면 다시 못 삽니다"
+  description: GPT-6 Astra 수요로 최상위 등급 판매가 멈춘 경위와 기존 구독자에게 남는 제약, 대안 요금제를 정리합니다
+  tags: [openai, chatgpt-pro, gpt-6-astra, subscription, pricing]
+
+- source: naver-posting-it/posts/ai/26Q3/20260911_네이버LG_보안특화AI.md
+  slug: naver-lg-security-ai-model
+  date: 2026-09-11
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "보안 특화 국산 AI, 네이버클라우드 컨소시엄 선정 — 700B 모델을 방어용·공격용 둘로"
+  description: HyperCLOVA X 기반 방어 모델과 EXAONE 기반 공격 모델을 나란히 만드는 정부 사업의 구성과 GPU 지원 규모를 정리합니다
+  tags: [naver-cloud, hyperclova-x, exaone, cybersecurity-ai, sovereign-ai]
+
+- source: naver-posting-it/posts/math/26Q3/20260911_페르마_Lean형식화.md
+  slug: fermat-last-theorem-lean
+  date: 2026-09-11
+  category: Math
+  category_slug: math
+  subcategory: Explainer
+  title: "페르마의 마지막 정리, Claude 가 11일 만에 Lean 으로 검산했다"
+  description: 와일즈의 증명을 Lean 코드 1,300만 줄로 옮긴 형식화가 무엇을 확인했고 무엇은 새로 알려 주지 않았는지 정리합니다
+  tags: [fermats-last-theorem, lean, formal-verification, anthropic, ai-math]
+
+- source: naver-posting-it/posts/paper/26Q3/20260911_Claude_SynthID_워터마크.md
+  slug: claude-watermark-synthid
+  date: 2026-09-11
+  category: AI
+  category_slug: ai
+  subcategory: Explainer
+  title: "Claude 워터마크의 바탕 — Google SynthID 논문 분석"
+  description: Claude 텍스트 워터마크의 원형인 SynthID-Text 논문을 따라 토너먼트 샘플링 원리와 품질·탐지 성능, 한계를 정리합니다
+  tags: [synthid, ai-watermark, anthropic, google-deepmind, paper-review]
+
+- source: naver-posting-it/posts/robot/26Q3/20260911_삼성_LG_휴머노이드.md
+  slug: samsung-lg-humanoid-2027
+  date: 2026-09-11
+  category: Robot
+  category_slug: robot
+  subcategory: News
+  title: "삼성·LG 휴머노이드 2027년 공개 — 조직과 부품을 이렇게 모았다"
+  description: AI 와 몸체를 한 조직에 모은 삼성과 NVIDIA 플랫폼에 계열사 부품을 붙이는 LG 의 휴머노이드 개발 방식을 비교합니다
+  tags: [humanoid, samsung, lg, nvidia, physical-ai]
+
+- source: naver-posting-it/posts/security/26Q3/20260911_개인정보보호법_유출가능성통지.md
+  slug: privacy-act-breach-possibility-notice
+  date: 2026-09-11
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "개정 개인정보 보호법 시행 — 유출 가능성만 있어도 72시간 안에 통지"
+  description: 9월 11일 시행된 개정 개인정보 보호법의 통지 의무·과징금 상한 변화와, 통지 문자를 받았을 때 할 일을 정리합니다
+  tags: [privacy-law, data-breach, breach-notification, pipc, compliance]
+
+- source: naver-posting-it/posts/security/26Q3/20260911_Anthropic_위협보고서_연애앱사기.md
+  slug: anthropic-threat-report-romance-scam
+  date: 2026-09-11
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "Anthropic 위협 보고서 — 연애앱 상대 4분의 3이 AI 였다"
+  description: Anthropic 9월 위협 보고서 가운데 AI 페르소나 연애앱 사기와 34시간 만의 기업 토큰 탈취 사례를 정리합니다
+  tags: [anthropic, threat-intelligence, romance-scam, ai-misuse, ai-security]
+
+- source: naver-posting-it/posts/security/26Q3/20260911_LiteLLM_MCP인증우회.md
+  slug: litellm-mcp-auth-bypass
+  date: 2026-09-11
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "LiteLLM MCP 인증 우회 실제 악용 — 1.84.0 미만은 지금 올려야"
+  description: CISA KEV 에 오른 LiteLLM MCP 인증 우회 결함의 경위와 영향 버전, 사내 AI 게이트웨이 점검 순서를 정리합니다
+  tags: [litellm, mcp, vulnerability, cisa-kev, ai-security]
+
+- source: naver-posting-it/posts/weekly/26Q3/20260913_AI위클리_Mistral조달_Qualcomm칩계약_증류차단.md
+  slug: ai-weekly-2026-09-13
+  date: 2026-09-13
+  category: AI
+  category_slug: ai
+  subcategory: Weekly
+  title: "AI 위클리 2026-09-13 — Mistral 대형 조달, Qualcomm·Amazon 칩 계약, 증류 차단"
+  description: 9월 둘째 주 AI 소식 — 유럽 역대 최대 조달, 미국 주 정부의 AI 법 서명, Anthropic 위협 보고서를 정리합니다
+  tags: [ai-weekly, mistral, qualcomm, anthropic, model-distillation]
+
+- source: naver-posting-it/posts/ai/26Q3/20260915_아모데이_속도조절_에세이.md
+  slug: amodei-pace-the-frontier
+  date: 2026-09-15
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "아모데이의 AI 속도 조절 제안 — 이번엔 경쟁사도 동의했습니다"
+  description: We Must Pace the Frontier 에세이의 3단계 계획과 6월 제안에서 달라진 점, 경쟁사·정부·증시의 반응을 정리합니다
+  tags: [anthropic, dario-amodei, ai-safety, ai-governance, frontier-ai]
+
+- source: naver-posting-it/posts/paper/26Q3/20260916_DeepMind_에이전트_보상해킹.md
+  slug: deepmind-agent-reward-hacking
+  date: 2026-09-16
+  category: AI
+  category_slug: ai
+  subcategory: Explainer
+  title: "AI 에이전트 100개에 수학을 시켰더니 9%가 채점기를 속였습니다"
+  description: 에이전트 집단에서 보상 해킹이 퍼진 과정과, 4분의 1이 동료를 고발했는데도 막지 못한 이유를 DeepMind 논문으로 정리합니다
+  tags: [reward-hacking, ai-agent, multi-agent, google-deepmind, ai-alignment]
+
+- source: naver-posting-it/posts/security/26Q3/20260916_위버스_결제API_유출.md
+  slug: weverse-payment-api-breach
+  date: 2026-09-16
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "위버스 42만 건 유출 — 결제 API 가 침해됐습니다"
+  description: 이름·연락처 없이도 문제가 되는 유출 항목과, 외부 제보로 한 달 넘게 지나서야 알게 된 경위를 정리합니다
+  tags: [weverse, data-breach, api-security, privacy, incident]
+
+- source: naver-posting-it/posts/security/26Q3/20260916_인포스틸러_Claude세션탈취.md
+  slug: infostealer-claude-session-theft
+  date: 2026-09-16
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "Claude 세션 탈취로 사용량이 소진됩니다 — 로그아웃만으로는 안 끝납니다"
+  description: 인포스틸러에 감염된 PC 에서 Claude 로그인 세션이 빠져나간 경위와, MFA 로 막히지 않는 이유·조치 순서를 정리합니다
+  tags: [infostealer, session-hijacking, claude, malware, account-security]
+
+- source: naver-posting-it/posts/tech/26Q3/20260916_8월ICT수출_반도체쏠림.md
+  slug: korea-ict-exports-august-2026
+  date: 2026-09-16
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "8월 ICT 수출, 한국 수출의 61% 가 됐습니다 — 반도체 쏠림은 어디까지"
+  description: 처음 60% 를 넘은 8월 ICT 수출 비중의 세부 수치를 따라, 사실상 메모리 한 품목이 끌어올린 구조를 정리합니다
+  tags: [ict-exports, semiconductor, memory, korea, trade]
+
+- source: naver-posting-it/posts/tech/26Q3/20260916_AI전력_8탄_Loviisa_PPA.md
+  slug: ai-power-08-loviisa-ppa
+  date: 2026-09-16
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "AI 의 전기 (8) — Google 이 핀란드 원전 절반을 22년 사들였습니다"
+  description: 새 원자로 대신 기존 원전의 수명 연장에 돈을 댄 Google·Fortum 계약의 구조와, 빅테크 원전 계약이 옮겨가는 방향을 정리합니다
+  tags: [nuclear, ppa, google, datacenter, life-extension]
+
+- source: naver-posting-it/posts/tech/26Q3/20260918_수시원서접수_먹통.md
+  slug: university-application-outage
+  date: 2026-09-18
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "수시 원서접수 먹통 — 마감 10분 전 멈춘 유웨이어플라이"
+  description: 수시 원서접수 마지막 날 접수 시스템이 멈춘 경과와 마감 연장, 구제 신청과 경쟁률 공개를 둘러싼 형평성 논란을 정리합니다
+  tags: [outage, server-down, college-admissions, korea, incident]
+
+- source: naver-posting-it/posts/tech/26Q3/20260918_서버다운_원리.md
+  slug: server-down-explained
+  date: 2026-09-18
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "서버 다운이란 — 접속이 몰리면 서버가 멈추는 원리"
+  description: 서버 다운의 실제 뜻을 대기 시간 계산과 연쇄 장애로 풀고, 대기열·재시도 간격·점진 배포 같은 방어 수단을 정리합니다
+  tags: [server-outage, cascading-failure, sre, load-shedding, queueing-theory]
+
+- source: naver-posting-it/posts/tech/26Q3/20260918_요금25퍼센트할인_거짓정보.md
+  slug: mobile-25-percent-discount-fact-check
+  date: 2026-09-18
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "휴대폰 요금 25% 추가 할인은 거짓 정보 — 실제 제도는 선택약정"
+  description: 단톡방에 퍼진 요금 할인 메시지의 주장을 실제 선택약정 제도와 맞대고, 할인을 못 받는 사람과 대상 확인법을 정리합니다
+  tags: [mobile-plan, fact-check, telecom, misinformation, korea]
+
+- source: naver-posting-it/posts/tech/26Q3/20260918_갤럭시핏4_출시예정.md
+  slug: galaxy-fit4-preview
+  date: 2026-09-18
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "갤럭시 핏4 출시 예정 — FCC 인증으로 확인된 것과 아직 모르는 것"
+  description: FCC 인증 문서로 확인된 갤럭시 핏4 사양과 출시 일정 신호, 비교 대상 스마트밴드를 정리합니다
+  tags: [samsung, galaxy-fit4, wearable, smart-band, fcc]
+
+- source: naver-posting-it/posts/tech/26Q3/20260918_에어팟5_출시.md
+  slug: airpods-5-release
+  date: 2026-09-18
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "에어팟 5 출시 — 노이즈 캔슬링 기본에 19만 9,000원"
+  description: 기본형에 노이즈 캔슬링이 들어간 에어팟 5 두 모델의 차이와 가격, 에어팟 프로 3 와의 간격을 정리합니다
+  tags: [apple, airpods-5, noise-cancelling, wireless-earbuds, pricing]
+
+- source: naver-posting-it/posts/tech/26Q3/20260918_iOS27_업데이트_선택.md
+  slug: ios-27-vs-ios-26-7
+  date: 2026-09-18
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "iOS 27 업데이트 — 지금 올릴까, iOS 26.7 에 남을까"
+  description: 업데이트 화면에 함께 뜬 iOS 27 과 iOS 26.7 의 보안 수정 건수와 Siri AI 지원 기기·한국어 시기를 비교합니다
+  tags: [ios-27, apple, software-update, siri-ai, security-update]
+
+- source: naver-posting-it/posts/tech/26Q3/20260918_OneUI9_정식배포.md
+  slug: one-ui-9-rollout
+  date: 2026-09-18
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "One UI 9 정식 배포 시작 — 내 갤럭시는 언제 받나"
+  description: One UI 9 의 기기별 배포 일정과 지원 목록, 새 기능과 그 이용 조건을 정리합니다
+  tags: [samsung, one-ui-9, android-17, galaxy, software-update]
+
+- source: naver-posting-it/posts/weekly/26Q3/20260920_AI위클리_감속논쟁여파_RUM컴퓨팅계약_UN데이터커먼즈.md
+  slug: ai-weekly-2026-09-20
+  date: 2026-09-20
+  category: AI
+  category_slug: ai
+  subcategory: Weekly
+  title: "AI 위클리 2026-09-20 — 감속 제안의 여파, Anthropic 컴퓨팅 계약, UN 데이터 커먼즈"
+  description: 9월 셋째 주 AI 소식 — 감속 제안 뒤 증시·정부 반응, 대형 컴퓨팅 계약, 모델 이상행동 자체 공개를 정리합니다
+  tags: [ai-weekly, anthropic, openai, ai-safety, un]
+
+- source: naver-posting-it/posts/math/26Q3/20260920_로또_확률.md
+  slug: randomness-01-lotto-probability
+  date: 2026-09-20
+  category: Math
+  category_slug: math
+  subcategory: Explainer
+  title: "무작위 (1) — 로또 1등 확률 815만분의 1, 운은 어디까지일까"
+  description: 로또 1등 확률이 나오는 조합 계산과 1,000원의 평균 반환액, 번호 선택으로 바꿀 수 있는 것과 없는 것을 정리합니다
+  tags: [lottery, probability, expected-value, combinatorics, randomness]
+
+- source: naver-posting-it/posts/math/26Q3/20260920_난수_무작위.md
+  slug: randomness-02-random-numbers
+  date: 2026-09-20
+  category: Math
+  category_slug: math
+  subcategory: Explainer
+  title: "무작위 (2) — 난수는 정말 무작위일까, 컴퓨터가 숫자를 생성하는 법"
+  description: 의사난수의 계산 구조와 시드 문제, 암호용 난수가 따로 필요한 이유와 양자 난수까지 정리합니다
+  tags: [prng, csprng, randomness, security, quantum-random]
+
+- source: naver-posting-it/posts/security/26Q3/20260920_티빙_보상_마감임박.md
+  slug: tving-privacy-breach-06
+  date: 2026-09-20
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "티빙 개인정보 유출 (6) — 보상 신청 마감이 열흘 남았습니다"
+  description: 9월 30일 마감인 티빙 유출 보상의 남은 일정과 신청 경로, 탈퇴 회원 처리와 신청 전 확인할 것을 정리합니다
+  tags: [tving, data-breach, compensation, privacy, consumer-guide]
+
+- source: naver-posting-it/posts/tech/26Q3/20260920_아이폰_데이터_옮기기.md
+  slug: iphone-data-transfer
+  date: 2026-09-20
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "아이폰 데이터 옮기기 방법 세 가지 — 기기변경 때 안 넘어가는 항목까지"
+  description: 퀵 스타트·iCloud 복원·컴퓨터 복원의 조건 차이와, 카카오톡·인증서·모바일 신분증·eSIM 처럼 따로 옮겨야 하는 항목을 정리합니다
+  tags: [iphone, data-transfer, icloud, quick-start, consumer-guide]
+
+- source: naver-posting-it/posts/tech/26Q3/20260920_아이폰_초기화.md
+  slug: iphone-factory-reset
+  date: 2026-09-20
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "아이폰 초기화 — 판매 전에 지켜야 할 순서"
+  description: 활성화 잠금이 남지 않도록 계정 연결 해제부터 지우기까지의 순서와, 암호를 잊었을 때의 초기화 방법을 정리합니다
+  tags: [iphone, factory-reset, activation-lock, find-my, consumer-guide]
+
+- source: naver-posting-it/posts/tech/26Q3/20260920_아이폰18프로_패닉풀.md
+  slug: iphone-18-pro-panic-full-reports
+  date: 2026-09-20
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "아이폰 18 프로 재부팅 — 패닉풀 제보가 이어집니다"
+  description: 출시 이틀 만에 이어진 iPhone 18 Pro 갑작스러운 재부팅 제보의 경과와 증상, 분석 데이터로 확인하는 법을 정리합니다
+  tags: [iphone-18-pro, panic-full, ios-27, apple, troubleshooting]
+
+- source: naver-posting-it/posts/ai/26Q3/20260921_Gemini_평가환경_실제침입.md
+  slug: gemini-eval-real-intrusion
+  date: 2026-09-21
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "Gemini, 해킹 평가 중 실제 회사 3곳 시스템에 접근 — 인터넷이 열린 평가 환경이 문제였다"
+  description: 사이버보안 평가 도중 Gemini 가 실제 회사 시스템에 접근한 경위와, Google 이 7주 동안 공개하지 않은 과정을 정리합니다
+  tags: [gemini, google, ai-safety, ai-evaluation, incident]
+
+- source: naver-posting-it/posts/science/26Q3/20260921_식품보존료_고혈압.md
+  slug: food-preservatives-hypertension
+  date: 2026-09-21
+  category: Science
+  category_slug: science
+  subcategory: Explainer
+  title: "식품 보존료 8종과 고혈압 — 11만 명을 8년 추적한 연구"
+  description: European Heart Journal 에 실린 코호트 연구의 측정 방식과 결과 수치를 해석하고, 이 연구가 증명하지 못한 것을 정리합니다
+  tags: [food-additives, preservatives, hypertension, cohort-study, nutrition]
+
+- source: naver-posting-it/posts/security/26Q3/20260921_팬심_실명노출.md
+  slug: fancim-real-name-exposure
+  date: 2026-09-21
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "팬심 후기 작성자 실명 노출 — 약 2,000명 명단이 유포됐습니다"
+  description: 업데이트 오류로 화면에 없던 실명이 브라우저 응답에 실린 경위와, 활동명으로 방송하는 크리에이터에게 피해가 큰 이유를 정리합니다
+  tags: [fancim, data-breach, privacy, api-security, incident]
+
+- source: naver-posting-it/posts/ai/26Q3/20260922_Jev_결정모델.md
+  slug: jev-decision-model
+  date: 2026-09-22
+  category: AI
+  category_slug: ai
+  subcategory: Explainer
+  title: "Jev — 문장 대신 확률을 출력하는 AI 결정 모델"
+  description: 선택지별 확률과 신뢰도 점수를 반환하는 Jev 의 구조와 벤치마크, 속도·비용 대신 포기한 것을 정리합니다
+  tags: [jev, typesafe-ai, decision-model, classification, llm]
+
+- source: naver-posting-it/posts/ai/26Q3/20260923_ClaudeOpus55_출시.md
+  slug: claude-opus-55-release
+  date: 2026-09-23
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "Claude Opus 5.5 출시 — 요금 20% 인하, 바꾸면 400 오류가 나는 요청 네 가지"
+  description: Fable 5.1 에 가까운 성능과 내린 요금, Opus 5 에서 넘어갈 때 400 오류를 내는 요청 네 가지를 정리합니다
+  tags: [anthropic, claude-opus-5-5, model-release, llm-pricing, api-migration]
+
+- source: naver-posting-it/posts/ai/26Q3/20260923_챗GPT광고_SponsoredAgents.md
+  slug: chatgpt-ads-sponsored-agents
+  date: 2026-09-23
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "ChatGPT 광고, 누르면 광고주 에이전트와 대화하는 Sponsored Agents 시험"
+  description: ChatGPT 광고의 경과와 Sponsored Agents 의 동작 방식, HubSpot·Shopify 연동과 국내 무료 사용자에게 보이는 광고를 정리합니다
+  tags: [openai, chatgpt-ads, sponsored-agents, shopify, advertising]
+
+- source: naver-posting-it/posts/ai/26Q3/20260923_GPT6_Sol_Luna.md
+  slug: gpt-6-sol-luna-release
+  date: 2026-09-23
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "GPT-6 Sol·Luna 출시 — API 요금 절반, 두 모델 고르는 법"
+  description: GPT-6 Astra 의 하위 등급 Sol·Luna 의 역할 차이와 요금, Claude Opus 5.5 와의 가격 비교를 정리합니다
+  tags: [openai, gpt-6-sol, gpt-6-luna, llm-pricing, model-release]
+
+- source: naver-posting-it/posts/ai/26Q3/20260923_Meta_Muse_에이전트.md
+  slug: meta-muse-agent
+  date: 2026-09-23
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "Meta Muse — 일을 대신 처리하는 개인 AI 에이전트"
+  description: 이메일 발송·예약·결제까지 맡는 Meta 의 개인 에이전트 Muse 의 요금제와 개인정보 구조, 기반 모델 Muse Spark 1.3 을 정리합니다
+  tags: [meta, muse, ai-agent, muse-spark, privacy]
+
+- source: naver-posting-it/posts/ai/26Q3/20260923_OpenAI_모델일탈공개.md
+  slug: openai-model-misbehavior-disclosure
+  date: 2026-09-23
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "OpenAI 모델 일탈 공개 규칙 — 첫 보고서 6건 정리"
+  description: 모델의 예상 밖 행동을 추적·공개하는 OpenAI 의 세 트랙 규칙과, 요약문에 탈옥 지시를 넣은 사례 등 첫 보고서 6건을 정리합니다
+  tags: [openai, ai-alignment, ai-safety, misalignment, transparency]
+
+- source: naver-posting-it/posts/security/26Q3/20260923_크롬154_보안업데이트.md
+  slug: chrome-154-security-update
+  date: 2026-09-23
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "Chrome 154 보안 업데이트 — 취약점 108건 중 Critical 11건"
+  description: 그래픽 계층에 몰린 Critical 취약점 구성과 실제 공격 여부, Edge·Whale 등 Chromium 기반 브라우저의 반영 시점을 정리합니다
+  tags: [chrome, browser-security, chromium, security-update, cve]
+
+- source: naver-posting-it/posts/security/26Q3/20260923_시스코FMC_인증우회.md
+  slug: cisco-fmc-auth-bypass
+  date: 2026-09-23
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "Cisco 방화벽 관리 서버 CVSS 10.0 취약점 — 실제 공격 확인"
+  description: 3월에 고친 Cisco FMC 인증 우회 결함이 9월에 다시 긴급해진 경위와, 확인된 공격 도구·수정 버전·점검할 로그를 정리합니다
+  tags: [cisco, firewall, vulnerability, authentication-bypass, ransomware]
+
+- source: naver-posting-it/posts/tech/26Q3/20260923_삼키는배터리_MIT.md
+  slug: ingestible-dissolvable-battery
+  date: 2026-09-23
+  category: Science
+  category_slug: science
+  subcategory: Explainer
+  title: "삼키는 배터리 — MIT 1.84V 종이 배터리는 몸속에서 분해된다"
+  description: 삼키는 캡슐 기기의 전원 문제를 녹는 마그네슘 종이 배터리로 풀려는 연구의 구조와 성능, 한계를 정리합니다
+  tags: [ingestible-electronics, biodegradable-battery, mit, medical-device, bioelectronics]
+
+- source: naver-posting-it/posts/tech/26Q3/20260923_ChatGPT저장소_Rust재작성.md
+  slug: openai-habitat-rust-rewrite
+  date: 2026-09-23
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "ChatGPT 저장소를 Python 에서 Rust 로 — CPU 6배·메모리 15배 효율"
+  description: OpenAI 가 저장소 계층 Habitat 을 Rust 로 다시 쓴 과정과, Python 이 처리량이 아니라 요청 간 조율에서 한계에 닿은 이유를 정리합니다
+  tags: [rust, python, openai, backend, performance]
+
+- source: naver-posting-it/posts/robot/26Q3/20260924_휴머노이드서밋_서울.md
+  slug: humanoids-summit-seoul-2026
+  date: 2026-09-24
+  category: Robot
+  category_slug: robot
+  subcategory: News
+  title: "휴머노이드 서밋 서울 2026 — 참가사로 본 국내 산업 구조"
+  description: 코엑스에 모인 30여 곳을 완성체·손과 학습 데이터·부품과 연산으로 나눠, 휴머노이드 공급망에서 한국 회사가 맡는 역할을 정리합니다
+  tags: [humanoid, humanoids-summit, robotis, supply-chain, physical-ai]
+
+- source: naver-posting-it/posts/ai/26Q3/20260925_앤스로픽_액센츄어_내장평가.md
+  slug: anthropic-accenture-embedded-evaluator
+  date: 2026-09-25
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "Anthropic 내장 평가자 1호는 Accenture — 정해진 것과 남은 것"
+  description: 직원급 접근 권한을 받는 내장 평가자 제도의 첫 계약 내용과, 독립성 논란·아직 정하지 않은 운영 방식을 정리합니다
+  tags: [anthropic, accenture, embedded-evaluation, ai-safety, ai-governance]
+
+- source: naver-posting-it/posts/ai/26Q3/20260925_OpenAI_AgentsAPI.md
+  slug: openai-agents-api
+  date: 2026-09-25
+  category: AI
+  category_slug: ai
+  subcategory: Explainer
+  title: "OpenAI Agents API — 며칠짜리 실행 전체를 맡기는 관리형 harness"
+  description: Codex harness 를 API 로 내놓은 Agents API 가 대신해 주는 일과 직접 구현한 루프와의 차이, 요금·제약을 정리합니다
+  tags: [openai, agents-api, ai-agent, codex, developer-tools]
+
+- source: naver-posting-it/posts/math/26Q3/20260925_그래프_샌드위치추측.md
+  slug: graph-sandwich-conjecture
+  date: 2026-09-25
+  category: Math
+  category_slug: math
+  subcategory: Explainer
+  title: "22년 걸린 그래프 샌드위치 추측, 마침내 증명됐습니다"
+  description: 정규 그래프를 두 이항 랜덤 그래프 사이에 끼울 수 있다는 김정한·부 추측의 내용과 증명의 의미를 정리합니다
+  tags: [graph-theory, random-graph, sandwich-conjecture, probability, combinatorics]
+
+- source: naver-posting-it/posts/science/26Q3/20260925_B형간염_후성유전편집.md
+  slug: hepatitis-b-epigenetic-editing
+  date: 2026-09-25
+  category: Science
+  category_slug: science
+  subcategory: Explainer
+  title: "B형간염 바이러스 전사를 DNA 절단 없이 억제했습니다 — 후성유전 편집 전임상"
+  description: 바이러스 DNA 에 메틸 표지를 붙여 전사를 끄는 CRMA-1001 의 원리와 생쥐 실험 결과, 임상까지 남은 과제를 정리합니다
+  tags: [hepatitis-b, epigenetic-editing, gene-therapy, dna-methylation, preclinical]
+
+- source: naver-posting-it/posts/tech/26Q3/20260925_아이폰18프로_패닉풀_업데이트.md
+  slug: iphone-18-pro-panic-full-cause
+  date: 2026-09-25
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "아이폰 18 프로 재부팅, Apple 이 원인을 밝혔습니다 — Face ID 소프트웨어 문제"
+  description: Apple 이 공식 확인한 패닉풀의 원인과 수정 업데이트 일정, 교환보다 업데이트를 기다려야 하는 이유를 정리합니다
+  tags: [iphone-18-pro, panic-full, face-id, apple, software-update]
+
+- source: naver-posting-it/posts/ai/26Q3/20260928_Laya_결정모델.md
+  slug: laya-decision-model
+  date: 2026-09-28
+  category: AI
+  category_slug: ai
+  subcategory: Explainer
+  title: "Laya — 무료로 실행하는 오픈소스 AI 결정 모델"
+  description: Jev 와 같은 종류이면서 가중치를 공개한 Laya 의 구조와 실제 성능, 미세조정 전 정확도의 한계를 정리합니다
+  tags: [laya, decision-model, open-source, modernbert, classification]
+
+- source: naver-posting-it/posts/ai/26Q3/20260928_MiMoV26.md
+  slug: xiaomi-mimo-v26
+  date: 2026-09-28
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "Xiaomi MiMo V2.6 — 1조 파라미터 모델을 MIT 라이선스로"
+  description: 오픈 가중치 최고 점수를 받은 MiMo-V2.6 Pro·Flash 의 구성과 가격, 함께 공개된 강화학습 코드와 학습 환경을 정리합니다
+  tags: [xiaomi, mimo, open-weights, moe, llm]
+
+- source: naver-posting-it/posts/ai/26Q3/20260928_QwenImage21.md
+  slug: qwen-image-21
+  date: 2026-09-28
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "Qwen-Image 2.1 — 7B 로 줄였지만 상업 이용은 불가"
+  description: 생성기를 7B 로 줄이고 투명 배경 생성을 더한 Qwen-Image 2.1 의 성능과, 연구용으로 바뀐 라이선스를 정리합니다
+  tags: [qwen, alibaba, image-generation, open-weights, ai-license]
+
+- source: naver-posting-it/posts/tech/26Q3/20260929_iOS2701_패닉풀_수정.md
+  slug: ios-27-0-1-panic-full-fix
+  date: 2026-09-29
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "iOS 27.0.1 배포 — 아이폰 18 프로 패닉풀 수정"
+  description: 패닉풀과 카메라·터치 오류를 고친 iOS 27.0.1 의 수정 항목과, 함께 배포된 iOS 26.7.1 을 정리합니다
+  tags: [ios-27, iphone-18-pro, panic-full, apple, software-update]
+
+- source: naver-posting-it/posts/ai/26Q3/20260930_GPT61_Sol.md
+  slug: gpt-61-sol-release
+  date: 2026-09-30
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "GPT-6.1 Sol 출시 — Astra 의 5분의 1 요금, 코딩 점수는 더 높았습니다"
+  description: DevDay 2026 에서 공개된 GPT-6.1 Sol 의 향상 폭과 요금, 추론 강도마다 달라지는 Claude Opus 5.5 와의 순위를 정리합니다
+  tags: [openai, gpt-6-1-sol, devday-2026, llm-pricing, model-release]
+
+- source: naver-posting-it/posts/ai/26Q3/20260930_초간단RAG_판결서.md
+  slug: simple-rag-01-court-rulings
+  date: 2026-09-30
+  category: AI
+  category_slug: ai
+  subcategory: Explainer
+  title: "초간단 RAG (1) — 판결서 익명처리 데이터로 만든 로컬 RAG, 조문 적중 18%→32%"
+  description: AI Hub 판결서 익명처리 데이터로 가명 코퍼스를 만들고, 로컬 LLM 이 비슷한 판결을 근거로 판결문 초안을 쓰게 한 과정을 정리합니다
+  tags: [rag, legal-tech, local-llm, embedding, ai-hub]
+
+- source: naver-posting-it/posts/ai/26Q4/20261002_Gemini4_Argon.md
+  slug: gemini-4-argon
+  date: 2026-10-02
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "Gemini 4 Argon 공개 — 출력 한도 100만 토큰, 사이버 방어 기관에 먼저"
+  description: Gemini 4 계열 첫 모델 Argon 의 출력 한도·벤치마크·도입가와, 사이버 방어 기관부터 여는 단계적 제공 방식을 정리합니다
+  tags: [gemini, google-deepmind, gemini-4-argon, model-release, cybersecurity]
+
+- source: naver-posting-it/posts/ai/26Q4/20261002_OpenAI_Dots.md
+  slug: openai-dots-agent
+  date: 2026-10-02
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "OpenAI dots — 자기 클라우드 컴퓨터로 24시간 작업하는 에이전트"
+  description: 대화가 끝난 뒤에도 일하는 상시 에이전트 dots 의 구성과 국내 제공 범위, 맡길 수 있는 일과 제한되는 일을 정리합니다
+  tags: [openai, dots, ai-agent, chatgpt-pro, devday-2026]
+
+- source: naver-posting-it/posts/ai/26Q4/20261002_초간단RAG_파인튜닝.md
+  slug: simple-rag-02-lora-finetuning
+  date: 2026-10-02
+  category: AI
+  category_slug: ai
+  subcategory: Explainer
+  title: "초간단 RAG (2) — 판결문 LoRA 파인튜닝, 조문 적중은 RAG 의 절반"
+  description: 같은 판결문 코퍼스로 LoRA 파인튜닝한 모델이 형식만 학습하고 조문 적중은 RAG 에 못 미친 결과를 정리합니다
+  tags: [lora, fine-tuning, rag, legal-tech, local-llm]
+
+- source: naver-posting-it/posts/security/26Q4/20261002_Citrix_NetScaler_제로데이.md
+  slug: citrix-netscaler-zero-day
+  date: 2026-10-02
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "Citrix NetScaler 제로데이 2건 — 업데이트해도 웹셸은 삭제되지 않습니다"
+  description: 공지 전부터 악용된 NetScaler 원격 코드 실행 취약점 두 건의 경과와, 업데이트 전에 침해 흔적부터 확인해야 하는 이유를 정리합니다
+  tags: [citrix, netscaler, zero-day, rce, webshell]
+
+- source: naver-posting-it/posts/tech/26Q4/20261002_갤럭시버즈온.md
+  slug: galaxy-buds-on
+  date: 2026-10-02
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "갤럭시 버즈 온 — 갤럭시 첫 클립형 이어폰 29만 9,000원"
+  description: 귀를 막지 않는 클립형 갤럭시 버즈 온의 사양과 출시 일정, 누음 문제와 경쟁 제품 가격을 정리합니다
+  tags: [samsung, galaxy-buds-on, open-ear, wireless-earbuds, wearable]
+
+- source: naver-posting-it/posts/ai/26Q4/20261005_ClaudeSonnet55.md
+  slug: claude-sonnet-55-release
+  date: 2026-10-05
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "Claude Sonnet 5.5 출시 — Opus 5.5 절반 요금에 비슷한 점수"
+  description: Opus 5.5 와 1~2점 차이인 벤치마크와 그대로인 요금, 작업별로 두 모델을 고르는 기준을 정리합니다
+  tags: [anthropic, claude-sonnet-5-5, model-release, llm-pricing, benchmark]
+
+- source: naver-posting-it/posts/ai/26Q4/20261005_Kolibri_소버린AI.md
+  slug: aleph-alpha-kolibri
+  date: 2026-10-05
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "Aleph Alpha Kolibri — 독일 소버린 AI 를 Apache 2.0 으로"
+  description: 독일에서 만들어 공개한 78B MoE 모델 Kolibri 의 구성과 성능, 한국 독자 AI 파운데이션 모델 사업과 다른 방향을 정리합니다
+  tags: [aleph-alpha, kolibri, sovereign-ai, open-weights, moe]
+
+- source: naver-posting-it/posts/security/26Q4/20261005_금융권_연쇄해킹.md
+  slug: korea-financial-sector-breaches
+  date: 2026-10-05
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "금융사 7곳 연쇄 해킹 — 침해된 곳은 직원용 시스템"
+  description: 신한은행부터 닷새 사이 이어진 금융권 침해 사고의 경과와 공통 침입 경로, 고객이 할 수 있는 조치를 정리합니다
+  tags: [data-breach, banking, financial-security, privacy, incident]
+
+- source: naver-posting-it/posts/tech/26Q4/20261005_macOS27_애플인텔리전스_용량.md
+  slug: macos-27-apple-intelligence-storage
+  date: 2026-10-05
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "macOS 27 Apple Intelligence 용량 — M3 Pro 에서 19.33GB"
+  description: 저장 공간 목록에 따로 표시되지 않는 Apple Intelligence 모델 파일의 실제 용량과 확인 방법, 삭제해도 다시 받는 이유를 정리합니다
+  tags: [macos-27, apple-intelligence, storage, on-device-ai, mac]
+
+- source: naver-posting-it/posts/tech/26Q4/20261005_RAM_7탄_마이크론_공급부족.md
+  slug: ram-08-micron-supply-shortage
+  date: 2026-10-05
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "RAM에 대하여 (8) — Micron, 메모리 공급 제약은 2028년까지 더 심해진다"
+  description: Micron 실적 발표의 공급 전망과 이미 계약된 2027년 물량, 고객 예치금이 보여 주는 여러 해짜리 램값 상승 구조를 정리합니다
+  tags: [micron, dram, memory-shortage, hbm, semiconductor]
