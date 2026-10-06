@@ -69,9 +69,10 @@ AMBIGUOUS_EMOJI = "💰🔬📊✅⚖🌐🚨🛠💡📌🏁📈🧪🔎🗂"
 # 헤더로 볼 최대 길이. 이보다 길거나 종결부호로 끝나면 본문 문장으로 본다.
 HEADER_MAX_LEN = 30
 
+# 파일명 뒤나 출처 뒤에 붙는 `| 캡션 넣기` 는 네이버 편집용 작성자 메모라 버린다.
 RE_IMG = re.compile(
-    r"^📷\s*\[이미지\s*삽입:\s*(?P<alt>[^|\]]*?)\s*(?:\|\s*(?P<file>[^\]]*?)\s*)?\]"
-    r"\s*(?:->)?\s*(?:출처\s*[-–—:]\s*(?P<credit>.*))?$"
+    r"^📷\s*\[이미지\s*삽입:\s*(?P<alt>[^|\]]*?)\s*(?:\|\s*(?P<file>[^|\]]*?)\s*(?:\|[^\]]*)?)?\]"
+    r"\s*(?:->)?\s*(?:출처\s*[-–—:]\s*(?P<credit>.*?))?\s*(?:\|\s*캡션\s*넣기\s*)?$"
 )
 RE_SECTION = re.compile(
     rf"^(?P<emoji>[{HEADER_EMOJI}{CALLOUT_EMOJI}{AMBIGUOUS_EMOJI}])️?\s*(?P<text>\S.*)$"
@@ -94,7 +95,10 @@ RE_BARE_URL = re.compile(r"^https?://\S+$")
 # 🔗 링크 첨부 줄. 뒤에 실제 URL 이 오기도 하고, 이전 편 자리표시자가 오기도 한다.
 RE_LINK_ATTACH = re.compile(r"^🔗\s*링크\s*첨부\s*[-–—:]\s*(?P<rest>.*)$")
 # 작성자가 네이버 링크를 나중에 붙이려고 비워 둔 자리. 이식본에서는 이 블로그의 해당 편으로 잇는다.
-RE_LINK_PLACEHOLDER = re.compile(r"\[여기에\s*(?P<label>.+?)\s*네이버\s*링크\]")
+# 뒤에 대상 원문 파일명과 작성자 메모가 붙기도 한다 — `[여기에 6탄 네이버 링크 (20260821_RAM_6탄.md), 메모]`
+RE_LINK_PLACEHOLDER = re.compile(
+    r"\[여기에\s*(?P<label>.+?)\s*네이버\s*링크(?:\s*\((?P<file>[^)]*?\.md)\))?[^\]]*\]"
+)
 
 
 def strip_bold(text: str) -> str:
@@ -121,8 +125,13 @@ def classify_emoji_line(emoji: str, text: str) -> str:
 
 
 class Converter:
-    def __init__(self, entry: dict, dry_run: bool = False, verbose: bool = False):
+    def __init__(self, entry: dict, dry_run: bool = False, verbose: bool = False,
+                 by_source: dict[str, dict] | None = None, batch: set[str] | None = None):
         self.entry = entry
+        # 원문 파일명 → 매핑 항목. 자리표시자에 적힌 파일명으로 대상 편을 찾는다.
+        self.by_source = by_source or {}
+        # 이번 실행에서 함께 쓰는 slug — 아직 _posts 에 없어도 링크를 걸 수 있다.
+        self.batch = batch or set()
         self.dry_run = dry_run
         self.verbose = verbose
         self.slug: str = entry["slug"]
@@ -134,10 +143,15 @@ class Converter:
         self.links: dict[str, str] = {str(k): str(v) for k, v in (entry.get("links") or {}).items()}
 
         src_fm = yaml.safe_load(self.src.read_text(encoding="utf-8").split("---\n")[1])
-        # image_dir 은 naver-posting 레포 기준 상대경로(assets/postings/<분기>/<키>/)
+        # image_dir 은 블로그 폴더(naver-posting-it 등) 기준 상대경로(assets/postings/<분기>/<키>/).
+        # 블로그 폴더의 assets/postings 는 Drive 의 postings-<블로그> 를 가리키는 심볼릭 링크다.
         rel = str(src_fm.get("image_dir", "")).strip().rstrip("/")
-        rel = re.sub(r"^assets/postings/", "", rel)
-        self.drive_dir = DRIVE_ASSETS / rel if rel else None
+        blog_dir = NAVER_REPO / Path(entry["source"]).parts[0]
+        if rel and os.path.isdir(blog_dir / rel):
+            self.drive_dir = blog_dir / rel
+        else:
+            rel = re.sub(r"^assets/postings/", "", rel)
+            self.drive_dir = DRIVE_ASSETS / rel if rel else None
 
     # ── 이미지 ────────────────────────────────────────────────────────────
     def resolve_source(self, filename: str) -> Path | None:
@@ -189,11 +203,13 @@ class Converter:
             shutil.copy2(src, raw)
             webp.parent.mkdir(parents=True, exist_ok=True)
             try:
-                subprocess.run(
-                    ["cwebp", "-q", str(WEBP_QUALITY), "-resize", str(WEBP_WIDTH), "0",
-                     str(raw), "-o", str(webp)],
-                    check=True, capture_output=True,
-                )
+                # cwebp 는 GIF 를 못 읽는다 — 애니메이션은 gif2webp 로 (리사이즈 옵션이 없어 원본 크기 유지)
+                if src.suffix.lower() == ".gif":
+                    cmd = ["gif2webp", "-q", str(WEBP_QUALITY), str(raw), "-o", str(webp)]
+                else:
+                    cmd = ["cwebp", "-q", str(WEBP_QUALITY), "-resize", str(WEBP_WIDTH), "0",
+                           str(raw), "-o", str(webp)]
+                subprocess.run(cmd, check=True, capture_output=True)
             except subprocess.CalledProcessError as exc:
                 self.warnings.append(f"cwebp 실패({filename}): {exc.stderr.decode()[:120]}")
                 return None
@@ -202,22 +218,29 @@ class Converter:
         return ref
 
     # ── 본문 ──────────────────────────────────────────────────────────────
-    def resolve_link(self, label: str) -> str | None:
-        """이전 편 자리표시자의 라벨을 이 블로그 포스트 링크로 해석.
+    def resolve_link(self, ph: re.Match) -> str | None:
+        """이전 편 자리표시자를 이 블로그 포스트 링크로 해석.
 
         원문은 `[여기에 6탄 네이버 링크]` 처럼 네이버 링크 자리를 비워 두는데,
         이식본이 이을 곳은 네이버가 아니라 이 블로그의 해당 편이다.
-        대상 slug 는 매핑의 `links:` 가 주고, 링크 문구는 그 포스트의 title 을 쓴다.
+        대상 slug 는 매핑의 `links:` 라벨이 우선이고, 없으면 자리표시자에 적힌 원문 파일명을
+        매핑의 source 와 맞춰 찾는다. 링크 문구는 그 포스트의 title 을 쓴다.
         """
+        label, fname = ph.group("label"), ph.group("file")
         slug = self.links.get(label)
+        target = self.by_source.get(fname) if fname else None
+        if slug is None and target is not None:
+            slug = target["slug"]
         if slug is None:
             return None
         hits = sorted((REPO / "_posts").glob(f"*/*-{slug}.md"))
-        if not hits:
-            self.warnings.append(f"링크 대상 포스트 없음: {label} → {slug}")
-            return None
-        fm = yaml.safe_load(hits[0].read_text(encoding="utf-8").split("---\n")[1])
-        return f"[{fm['title']}](/posts/{slug}/)"
+        if hits:
+            fm = yaml.safe_load(hits[0].read_text(encoding="utf-8").split("---\n")[1])
+            return f"[{fm['title']}](/posts/{slug}/)"
+        if slug in self.batch and target is not None and target["slug"] == slug:
+            return f"[{target['title']}](/posts/{slug}/)"
+        self.warnings.append(f"링크 대상 포스트 없음: {label} → {slug}")
+        return None
 
     def convert_body(self, body: str) -> str:
         out: list[str] = []
@@ -287,7 +310,7 @@ class Converter:
                         continue
                     out.append(self.inline(raw.rstrip()))
                     continue
-                link = self.resolve_link(ph.group("label"))
+                link = self.resolve_link(ph)
                 if link is None:
                     self.warnings.append(f"이전 편 자리표시자 제외: {ph.group(0)}")
                     continue
@@ -300,7 +323,7 @@ class Converter:
             # 이을 곳이 없으면 문장이 끊기므로 그 줄을 통째로 버린다.
             ph = RE_LINK_PLACEHOLDER.search(s)
             if ph:
-                link = self.resolve_link(ph.group("label"))
+                link = self.resolve_link(ph)
                 if link is None:
                     self.warnings.append(f"이전 편 자리표시자 제외: {ph.group(0)}")
                     continue
@@ -439,14 +462,16 @@ def main() -> None:
     args = ap.parse_args()
 
     entries = yaml.safe_load(Path(args.map).read_text(encoding="utf-8"))
+    by_source = {Path(e["source"]).name: e for e in entries}
     if args.only:
         entries = [e for e in entries if e["slug"] in args.only]
         if not entries:
             sys.exit("--only 에 매칭되는 slug 가 없습니다.")
 
     total_warn = 0
+    batch = {e["slug"] for e in entries}
     for e in entries:
-        conv = Converter(e, dry_run=args.dry_run, verbose=args.verbose)
+        conv = Converter(e, dry_run=args.dry_run, verbose=args.verbose, by_source=by_source, batch=batch)
         dest = conv.run()
         flag = "" if not conv.warnings else f"  ⚠ {len(conv.warnings)}"
         print(f"{dest.relative_to(REPO)}  (이미지 {conv.image_count}){flag}")
