@@ -12,7 +12,7 @@ Using the pseudonymized court-ruling corpus built in Part 1, I **LoRA fine-tuned
 
 What it did pick up was the format of the training data. It wrote in the style of a judgment summary, appended a "legal basis" list of provisions at the end, and even included empty tags that existed only in the training data.
 
-[Dead-Simple RAG (1) — A Local RAG Built on Anonymized Court Rulings, Statute Hits 18%→32% (in Korean)](/posts/simple-rag-01-court-rulings/)
+[Dead-Simple RAG (1) — A Local RAG Built on Anonymized Court Rulings, Statute Hits 18%→32%](/en/posts/simple-rag-01-court-rulings/)
 
 ![Concept image of fine-tuning on court rulings](/assets/images/ai/simple-rag-02-lora-finetuning/01-hero-agy.webp)
 *Concept image of fine-tuning on court rulings — Source: concept image · self-generated with agy*
@@ -162,7 +162,7 @@ In Korea, the Supreme Court began a pilot of **trial-support AI** running on the
 - Part 3: statute hits and generation time for a setup combining RAG and LoRA
 - Changed training conditions: **--mask-prompt** to exclude the question from the loss, answers in the same format as the instruction, and a template with the empty tag removed
 
-[Dead-Simple RAG (1) — A Local RAG Built on Anonymized Court Rulings, Statute Hits 18%→32% (in Korean)](/posts/simple-rag-01-court-rulings/)
+[Dead-Simple RAG (1) — A Local RAG Built on Anonymized Court Rulings, Statute Hits 18%→32%](/en/posts/simple-rag-01-court-rulings/)
 
 ## Sources
 
