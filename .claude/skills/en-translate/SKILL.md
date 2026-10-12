@@ -28,6 +28,9 @@ description: 이 블로그의 한국어 포스트를 영문판(`_en_posts/`)으�
 - 해요체 어조는 평이한 영어 서술로 옮기고 원문에 없는 설명·결론을 붙이지 않는다.
 - `## 참고 출처` → `## Sources`, `## 앞으로 주목할 점` → `## What to watch next`; 출처 링크 URL 은 그대로, 링크 문구만 번역한다.
 - `🔗 링크 첨부 - URL` 줄은 `🔗 Link - URL` 로 옮긴다.
+- `💻 [소스코드: 설명]` 은 `💻 [Source code: Description]` 으로 옮기고 아래 코드 블록은 손대지 않는다.
+- 대괄호만 있는 줄(`[항목명]`)은 라벨이라 번역하고, 뒤에 이어지는 설명 줄도 번역한다.
+- 국내 매체·기관명은 영문 표기로 옮긴다 (전자신문 → Electronic Times, 아주경제 → Aju Business Daily, 한국인터넷진흥원 → Korea Internet & Security Agency).
 
 ## 내부 링크
 
