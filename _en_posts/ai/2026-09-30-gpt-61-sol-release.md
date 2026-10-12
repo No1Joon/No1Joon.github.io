@@ -15,7 +15,7 @@ Standard API pricing is $2 (₩2,800) per million input tokens and $10 (₩14,00
 ![Model cards for GPT-6 Astra, GPT-6.1 Sol, and GPT-6 Luna](/assets/images/ai/gpt-61-sol-release/01-hero-gpt61-sol.webp)
 *Model cards for GPT-6 Astra, GPT-6.1 Sol, and GPT-6 Luna — Source: OpenAI*
 
-[GPT-6 Sol and Luna Released — Half the API Price, and How to Choose Between the Two (in Korean)](/posts/gpt-6-sol-luna-release/)
+[GPT-6 Sol and Luna Released — Half the API Price, and How to Choose Between the Two](/en/posts/gpt-6-sol-luna-release/)
 
 ## Key points of the announcement
 
