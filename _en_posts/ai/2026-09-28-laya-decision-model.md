@@ -12,7 +12,7 @@ On September 18, 2026, Convai Innovations released the weights of its decision m
 
 I covered how Jev arrives at its decisions in the post below.
 
-[Jev — An AI Decision Model That Outputs Probabilities Instead of Sentences (in Korean)](/posts/jev-decision-model/)
+[Jev — A Decision Model That Outputs Probabilities Instead of Sentences](/en/posts/jev-decision-model/)
 
 ![Laya logo](/assets/images/ai/laya-decision-model/01-logo-laya.webp)
 *Laya logo — Source: Convai Innovations*

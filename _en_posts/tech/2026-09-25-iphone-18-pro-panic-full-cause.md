@@ -15,7 +15,7 @@ The fix update is expected early in the week of September 28. It is Apple's firs
 ![iPhone 18 Pro](/assets/images/tech/iphone-18-pro-panic-full-cause/01-hero-iphone18pro.webp)
 *iPhone 18 Pro — Source: Apple*
 
-[iPhone 18 Pro Reboots — Panic-Full Reports Keep Coming (in Korean)](/posts/iphone-18-pro-panic-full-reports/)
+[iPhone 18 Pro Reboots — Panic-Full Reports Keep Coming](/en/posts/iphone-18-pro-panic-full-reports/)
 
 ## What Apple said
 
