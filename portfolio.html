@@ -45,6 +45,7 @@ sitemap: false
   .proj .stack .row { display: flex; gap: 10px; }
   .proj .stack .row + .row { margin-top: 3px; }
   .proj .stack .k { flex: 0 0 auto; min-width: 62px; font-weight: 700; color: #12283f; }
+  .proj .stack a { color: #2b6cb0; text-decoration: none; }
 
   .block { margin-top: 15px; }
   .block .h { font-size: 10.5px; font-weight: 500; color: #12283f; letter-spacing: 0.14em; margin-bottom: 7px; }
@@ -174,14 +175,16 @@ sitemap: false
     <ol>
       <li><span class="num">10</span><span class="nm">CaliMeal - 급식 식단 편성 자동화 SaaS</span><span class="tech">Next.js, PostgreSQL RLS, Vertex AI</span></li>
       <li><span class="num">11</span><span class="nm">try-ticketing - 티켓 예매, 수강신청 연습 웹 서비스</span><span class="tech">Go, React 19, Redis Lua, PostgreSQL</span></li>
-      <li><span class="num">12</span><span class="nm">teampler - 코트 스포츠 대기열 관리</span><span class="tech">Expo, FastAPI, WebSocket</span></li>
-      <li><span class="num">13</span><span class="nm">quickglot - 온디바이스 번역 Safari 확장</span><span class="tech">Swift, WebExtension, App Store</span></li>
-      <li><span class="num">14</span><span class="nm">archdraw - 아키텍처 다이어그램 렌더러</span><span class="tech">TypeScript, npm 공개</span></li>
-      <li><span class="num">15</span><span class="nm">Oh My Algorithm</span><span class="tech">React 19, 실서비스</span></li>
-      <li><span class="num">16</span><span class="nm">naver-posting - 기술 콘텐츠 생산 파이프라인</span><span class="tech">LLM 에이전트, MCP, Python</span></li>
-      <li><span class="num">17</span><span class="nm">네이버 카페 정보 자동 수집 데스크톱 앱</span><span class="tech">Playwright, Windows exe</span></li>
-      <li><span class="num">18</span><span class="nm">로키 (Law+Key)</span><span class="tech">React, NestJS, OpenAI</span></li>
-      <li><span class="num">19</span><span class="nm">공공데이터 기반 지역사회 현안 해결</span><span class="tech">공공데이터, K-means</span></li>
+      <li><span class="num">12</span><span class="nm">teampler - 코트 스포츠 대기열 관리</span><span class="tech">Expo, Go, WebSocket</span></li>
+      <li><span class="num">13</span><span class="nm">내깜냥 - 취업 적성검사 연습 앱</span><span class="tech">Expo, Go, AWS Lambda</span></li>
+      <li><span class="num">14</span><span class="nm">quickglot - 온디바이스 번역 Safari 확장</span><span class="tech">Swift, WebExtension, App Store</span></li>
+      <li><span class="num">15</span><span class="nm">Oh My Quota - AI 코딩 도구 사용 한도 메뉴바 앱</span><span class="tech">Swift, XPC, Mac App Store</span></li>
+      <li><span class="num">16</span><span class="nm">archdraw - 아키텍처 다이어그램 렌더러</span><span class="tech">TypeScript, npm 공개</span></li>
+      <li><span class="num">17</span><span class="nm">Oh My Algorithm</span><span class="tech">React 19, 실서비스</span></li>
+      <li><span class="num">18</span><span class="nm">naver-posting - 기술 콘텐츠 생산 파이프라인</span><span class="tech">LLM 에이전트, MCP, Python</span></li>
+      <li><span class="num">19</span><span class="nm">네이버 카페 정보 자동 수집 데스크톱 앱</span><span class="tech">Playwright, Windows exe</span></li>
+      <li><span class="num">20</span><span class="nm">로키 (Law+Key)</span><span class="tech">React, NestJS, OpenAI</span></li>
+      <li><span class="num">21</span><span class="nm">공공데이터 기반 지역사회 현안 해결</span><span class="tech">공공데이터, K-means</span></li>
     </ol>
   </div>
 </div>
@@ -195,7 +198,7 @@ sitemap: false
   <div class="block">
     <div class="h">주요 기여</div>
     <ul>
-      <li><b>저장소 초기 스캐폴딩</b> - Vite, tsconfig, ESLint, 라우터, 스토어, Vuetify 테마, i18n, dayjs까지 구성하고 import 순서 규칙까지 팀 표준으로 정립</li>
+      <li><b>초기 개발 환경 구성</b> - Vite, tsconfig, ESLint, 라우터, 스토어, Vuetify 테마, i18n, dayjs까지 설정하고 import 순서 규칙까지 팀 표준으로 정립</li>
       <li><b>Video Feed Player</b> - 최신 영상 엔드포인트 연동, 타임라인 기반 재생과 자동 재생 처리</li>
       <li><b>Config-driven 대시보드</b> - 백엔드 JSON config(그리드, 컴포넌트, MathJS 바인딩)를 프론트엔드가 동적 렌더링해, 비개발자가 코드 개입 없이 매장별 화면 구성, <b>신규 매장 대시보드 제작 1주일에서 하루로 단축</b></li>
     </ul>
@@ -209,7 +212,7 @@ sitemap: false
   <div class="block">
     <div class="h">성과</div>
     <ul>
-      <li>패션 리테일 고객 PoC로 <b>플랫폼 첫 한국 상용 도입</b> 성사</li>
+      <li>패션 리테일 매장 <b>PoC 도입</b> 성사</li>
       <li>영어, 한국어, 일본어, 인도네시아어 <b>4개 언어 i18n</b> 시스템 설계 및 레거시 하드코딩 리팩토링, 언어 스위처, 날짜 로케일 처리 (번역은 영어, 한국어 담당)</li>
       <li>분석 데이터 <b>export API</b>로 수작업 추출을 대체해 외부 AI 모델 자동화 워크플로 기반 마련</li>
     </ul>
@@ -227,7 +230,7 @@ sitemap: false
     <ul>
       <li><b>Kafka에서 Temporal로 마이그레이션 설계</b> - 마이크로서비스를 병렬 실행 워크플로로 재구성하고 기능 플래그 라우팅으로 무중단 점진 전환 - 수동 offset, heartbeat 관리를 없애고 데이지체인 consumer 디버깅은 워크플로 히스토리 조회로 대체</li>
       <li><b>검출, 추적 모델을 Cog 컨테이너로 패키징</b> - 단일 비디오 입력 처리, 파일 경로를 문자열 입력 + 수동 URL 파싱으로 전환, SAM2MOT 프로세서를 별도 파일로 분리해 가독성 확보</li>
-      <li><b>처리 비용 튜닝</b> - 입력 max side를 1024에서 512로 축소하고 score threshold, skip frame을 조정해 정확도를 유지하며 연산량 절감</li>
+      <li><b>처리 비용 튜닝</b> - 입력 max side를 1024에서 512로 축소하고 score threshold, skip frame을 조정해 처리 비용 절감</li>
       <li><b>Homography 시스템</b> - OpenCV RANSAC 기반 3x3 행렬로 CCTV 시점을 평면도에 사영, 15% 패딩 그리드로 광각 왜곡 보정, 역행렬 back-projection으로 검증</li>
     </ul>
   </div>
@@ -255,7 +258,7 @@ sitemap: false
   <div class="block">
     <div class="h">주요 기여</div>
     <ul>
-      <li>대시보드 <b>차트별로 매장 개선 액션을 생성</b>하도록 통합, LLM에 넘길 context, data 구조 설계</li>
+      <li>대시보드 <b>차트별로 매장 개선 액션을 생성</b>하도록 통합, LLM에 넘길 컨텍스트, 데이터 구조 설계</li>
       <li>원시 대시보드 데이터를 <b>차트 설명문과 표 형식 텍스트로 전처리</b>해 모델의 수치 의미 해석 지원</li>
       <li>비즈니스 컨텍스트와 <b>매장주가 설정한 목표</b>를 프롬프트에 주입해 매장별 권고가 나오도록 설계</li>
       <li><b>thinking budget</b> 도입 후 결과 품질 대비 최소 토큰 수와 비용을 탐색</li>
@@ -271,7 +274,6 @@ sitemap: false
     <div class="h">성과</div>
     <ul>
       <li><b>LLM을 실제 제품 기능으로 통합</b> - 데이터 기반 액션 자동 생성</li>
-      <li>thinking mode의 <b>품질, 비용, 레이턴시 트레이드오프를 정량화</b>해 운영 가능한 수준으로 조정</li>
     </ul>
   </div>
 </div>
@@ -313,7 +315,7 @@ sitemap: false
   <div class="block">
     <div class="h">주요 기여</div>
     <ul>
-      <li><b>Task Questionnaire 기능</b> - API 연동, 다이얼로그 구현, 응답 보기 버튼, Task Level Review 링크 네비게이션, 응답에 줄바꿈을 허용하고 자동 대문자화를 해제해 원문 그대로 읽히도록 조정</li>
+      <li><b>Task Questionnaire 기능</b> - API 연동, 다이얼로그 구현, 응답 보기 버튼, Task Level Review 링크 내비게이션, 응답에 줄바꿈을 허용하고 자동 대문자화를 해제해 원문 그대로 읽히도록 조정</li>
       <li><b>Min Items per Task</b> - Job Board 속성 추가와 <b>입력값 실시간 감지 검증</b>, yup 스키마 정리, Image Collection Job 타입일 때만 노출되는 조건부 UI 구현, 서버 측에도 태스크 아이템 수 초과 불가 검증 추가</li>
       <li><b>Task Level Review 테이블 재구성</b> - 만료일, 액션 셀 레이아웃, 데이터 없음 영역 높이, 탭 사라짐 버그 수정</li>
     </ul>
@@ -342,7 +344,7 @@ sitemap: false
   <div class="block">
     <div class="h">주요 기여</div>
     <ul>
-      <li>요구사항 정의, 모델 선정, 성능평가 기준 설계, <b>공수 산정과 R&amp;D 인계</b>까지 과제 전 주기 담당</li>
+      <li>요구사항 정의, 모델 선정, 성능 평가 기준 설계, <b>공수 산정과 R&amp;D 인계</b>까지 과제 전 주기 담당</li>
       <li>얼굴 검출 모델로 <b>YOLOv4</b> 채택 - 저작권 부담, 학습 난이도, 요구 성능 수준을 함께 고려, AI Hub 데이터로 학습, 평가</li>
       <li>얼굴 <b>랜드마크 검출 결과를 입력 이미지에 표시</b>하고 캐시 로직 강화</li>
       <li>착용 상황(occasion) 카테고리와 추천 규칙 설계</li>
@@ -366,7 +368,7 @@ sitemap: false
 <!-- 07 데이터바우처 -->
 <div class="page proj">
   <div class="ttl"><span class="no">07</span><h2>데이터, AI 바우처 정부 지원사업</h2><span class="kind">Company</span></div>
-  <div class="lead">데이터바우처, AI 바우처 공급기업으로 <b>수요기업 13곳</b>의 협약, 데이터 가공, 감리, 정산 증빙 수행</div>
+  <div class="lead">데이터바우처, AI 바우처 사업에서 <b>수요기업 13곳</b>의 협약, 데이터 가공, 감리, 정산 증빙 담당</div>
   <div class="stack"><div class="row"><span class="k">담당 수요기업</span><span>2021 법률 말뭉치 구축 과제 1곳 / 2023 ~ 2025 12곳</span></div></div>
 
   <div class="stats" style="margin-top:14px">
@@ -382,7 +384,7 @@ sitemap: false
       <div class="arr">→</div>
       <div class="box hi"><b>데이터 가공</b>비식별화, 품질검사<br>파이프라인 구현</div>
       <div class="arr">→</div>
-      <div class="box hi"><b>감리</b>중간, 최종<br>품질점검</div>
+      <div class="box hi"><b>감리</b>중간, 최종<br>품질 점검</div>
       <div class="arr">→</div>
       <div class="box"><b>인수, 이관</b>인수기준서<br>데이터이관확약서</div>
       <div class="arr">→</div>
@@ -428,14 +430,14 @@ sitemap: false
 <!-- 08 NIA 국책과제 -->
 <div class="page proj">
   <div class="ttl"><span class="no">08</span><h2>NIA 인공지능 학습용 데이터 구축 사업 제안</h2><span class="kind">Company</span></div>
-  <div class="lead">NIA 2023년 인공지능 학습용 데이터 구축 사업에 <b>주관기관으로 지원</b> - 4개사 컨소시엄 제안 총괄</div>
+  <div class="lead">NIA 2023년 인공지능 학습용 데이터 구축 사업에 4개사 컨소시엄으로 낸 <b>주관기관 제안</b></div>
   <div class="stack"><div class="row"><span class="k">사업</span><span>과기정통부, NIA 2023년도 인공지능 학습용 데이터 구축 지원사업</span></div><div class="row"><span class="k">분야</span><span>지정공모 한국어, 라이브 스트리밍 영상 통번역 데이터</span></div></div>
 
   <div class="stats" style="margin-top:14px">
     <div class="stat"><div class="n">42억 원</div><div class="l">과제 예산 규모</div></div>
     <div class="stat"><div class="n">4개사</div><div class="l">구성한 컨소시엄<br>(주관 1 + 참여 3)</div></div>
     <div class="stat"><div class="n">3종</div><div class="l">구축 대상 데이터<br>(영어, 중국어, 일본어)</div></div>
-    <div class="stat"><div class="n">2천 시간</div><div class="l">원천 콘텐츠 구축량<br>(한국어 1천h + 영어 1천h)</div></div>
+    <div class="stat"><div class="n">2천 시간</div><div class="l">원천 콘텐츠 구축 계획량<br>(한국어 1천h + 영어 1천h)</div></div>
   </div>
 
   <div class="block">
@@ -444,7 +446,7 @@ sitemap: false
       <li><b>주관기관 제안 총괄</b> - 제안서 작성 전체와 발표평가를 직접 수행</li>
       <li><b>기업 컨소시엄 4개사 구성</b> - 참여기관 3곳을 확보하고 역할, 예산 분담 설계</li>
       <li>데이터 3종 구축 계획 수립 - 음성에서 전사 텍스트, 번역 텍스트로 이어지는 페어 구조와 메타데이터(분야, 전문용어, 발화자 정보 등) 명세 설계</li>
-      <li>공고 필수 제출 항목인 데이터 구축 예상 비용 및 <b>비용산출 근거자료</b> 작성</li>
+      <li>공고 필수 제출 항목인 데이터 구축 예상 비용 및 <b>비용 산출 근거 자료</b> 작성</li>
     </ul>
   </div>
 
@@ -452,8 +454,8 @@ sitemap: false
     <div class="h">제안서에서 풀어야 했던 공고 조건</div>
     <ul>
       <li><b>저작권 해결 방안 제시 필수</b> - 라이브 스트리밍 콘텐츠의 지식재산권, 비용을 포함한 구체적 획득 방안 마련</li>
-      <li><b>기구축 데이터(AI허브 등) 사용 불가</b> - 원천데이터 전량을 신규 수집, 구축하는 방안 수립</li>
-      <li><b>편향 방지 설계</b> - 대분류 5개 이상 카테고리 제시, 단일 카테고리 20% 상한, 외국어 발화자 출신지역별 균형 분포</li>
+      <li><b>기구축 데이터(AI허브 등) 사용 불가</b> - 원천 데이터 전량을 신규 수집, 구축하는 방안 수립</li>
+      <li><b>편향 방지 설계</b> - 대분류 5개 이상 카테고리 제시, 단일 카테고리 20% 상한, 외국어 발화자 출신 지역별 균형 분포</li>
     </ul>
   </div>
 
@@ -482,7 +484,7 @@ sitemap: false
       <div class="card">
         <div class="ct">Coin Decision Robot</div>
         <div class="cs">판정 자동화</div>
-        <div class="cb">Tagger 보상 판정을 자동화<br>판정 기준 타입별 계산과 반올림 처리, 문자열 ground truth의 정수 변환, 잘못된 계산 로직 수정<br>에러 타입 enum, 설정 파일, 실행 예시를 도입해 <b>운영자가 원인을 파악할 수 있는 에러 메시지</b>로 정리</div>
+        <div class="cb">Tagger 보상 판정을 자동화<br>판정 기준 타입별 계산과 반올림 처리, 문자열 ground truth의 정수 변환, 잘못된 계산 로직 수정<br>에러 타입 enum, config 파일, 실행 예시를 도입해 <b>운영자가 원인을 파악할 수 있는 에러 메시지</b>로 정리</div>
       </div>
       <div class="card">
         <div class="ct">Source-of-truth, Training QC 로봇</div>
@@ -515,14 +517,14 @@ sitemap: false
 <div class="page proj">
   <div class="ttl"><span class="no">10</span><h2>CaliMeal - 급식 식단 편성 자동화 SaaS</h2><span class="kind">Personal / 운영 중 / 가입 개방</span></div>
   <div class="lead">급식소 영양사의 한 달 치 식단 편성을 자동화하는 <b>멀티테넌트 B2B SaaS</b></div>
-  <div class="stack"><div class="row"><span class="k">Stack</span><span>Next.js 16(App Router, Server Actions), React 19, Tailwind v4, Kysely + postgres.js, PostgreSQL 16 + pgvector(VM 자체 설치), pg-boss, Vertex AI Gemini, GCP Identity Platform, PortOne, Resend, AWS Lightsail, Caddy</span></div><div class="row"><span class="k">상태</span><span>운영 서버 배포, 운영 중, 가입 개방(2026.08)</span></div></div>
+  <div class="stack"><div class="row"><span class="k">Stack</span><span>Next.js 16(App Router, Server Actions), React 19, Tailwind v4, Kysely + postgres.js, PostgreSQL 16 + pgvector(VM 자체 설치), pg-boss, Vertex AI Gemini, GCP Identity Platform, PortOne, Resend, AWS Lightsail, Caddy</span></div><div class="row"><span class="k">상태</span><span>운영 서버 배포, 운영 중, 가입 개방(2026.08) - <a href="https://calimeal.com">calimeal.com</a></span></div></div>
 
   <div class="block">
     <div class="h">주요 기여</div>
     <ul>
       <li><b>PostgreSQL RLS 멀티테넌시</b> - 요청 풀(RLS 적용)과 소유자 풀(RLS 우회)로 분리해 테넌트 경계를 DB 레벨에서 강제, 마이그레이션 전량 적용 후 격리, 권한을 매 PR CI에서 검증</li>
-      <li><b>공공데이터 ETL로 후보 카탈로그 36,137행을 구축하고 전량 임베딩</b> - 2단 수집에 페이지네이션, 중단, 재개를 넣고 호출 속도를 스스로 제한, 런타임에는 외부 API를 호출하지 않도록 함 - 달걀찜과 계란찜처럼 어휘 유사도 0.118로 문턱을 못 넘던 동의 요리가 의미 유사도 0.956으로 후보에 오름</li>
-      <li>월 단위 생성을 <b>주차별 잡으로 fan-out</b> 하고 작업 성격별로 추론 등급을 나눔</li>
+      <li><b>공공데이터 ETL로 후보 카탈로그 약 3만 건을 구축하고 전량 임베딩</b> - 2단 수집에 페이지네이션, 중단, 재개를 넣고 호출 속도를 스스로 제한, 런타임에는 외부 API를 호출하지 않도록 함 - 달걀찜과 계란찜처럼 어휘 유사도 0.118로 문턱을 못 넘던 동의 요리가 의미 유사도 0.956으로 후보에 오름</li>
+      <li>월 단위 생성을 <b>주차별 잡으로 fan-out</b></li>
       <li>과금을 <b>행위 정액 크레딧</b>으로 설계 - 편집, 게시, PDF, 업로드는 무과금</li>
     </ul>
   </div>
@@ -537,7 +539,7 @@ sitemap: false
   <div class="block">
     <div class="h">성과 / 지표</div>
     <ul>
-      <li>LLM 비용을 실측해 생성 <b>월 약 400원</b>으로 확인 - 요금제 단가 산정 근거로 사용</li>
+      <li><b>LLM 비용 최적화</b> - 작업 성격별로 추론 등급을 나누고, 하루 비용 상한을 모든 호출이 지나는 한 지점에 걸어 새 기능에도 자동 적용, 상한에 걸린 생성은 크레딧을 차감하지 않음</li>
       <li>배포 실행부터 빌드, 마이그레이션, 재시작, 헬스체크까지 <b>약 1분 22초</b>(실측)</li>
       <li>확장 병목을 코드 위치와 수치로 특정 - 요청 풀 상한 10, 서버 빌드가 메모리 최대 소비 지점이라 <b>VM 사양을 빌드 메모리가 결정함</b>을 근거로 빌드 분리를 1순위 과제로 정립</li>
     </ul>
@@ -548,7 +550,7 @@ sitemap: false
 <div class="page proj">
   <div class="ttl"><span class="no">11</span><h2>try-ticketing - 티켓 예매, 수강신청 연습 웹 서비스</h2><span class="kind">Personal / 웹 공개 운영</span></div>
   <div class="lead">티켓 예매, 수강신청의 <b>좌석 선점과 과목 신청을 연습</b>하는 웹 서비스 (tryticketing.com)</div>
-  <div class="stack"><div class="row"><span class="k">Stack</span><span>Go 1.27, chi, pgx, sqlc, go-redis / React 19, TypeScript, Vite, Tailwind 4, TanStack Query, Redux Toolkit, Jotai / PostgreSQL 18, Redis 8, Caddy, Docker Compose, AWS Lightsail 서울 단일 VM, Cloudflare DNS, GA4, Prometheus</span></div><div class="row"><span class="k">상태</span><span>2026.09 웹 공개, S3 자동 백업, Lightsail + Better Stack 운영 감시</span></div></div>
+  <div class="stack"><div class="row"><span class="k">Stack</span><span>Go 1.27, chi, pgx, sqlc, go-redis / React 19, TypeScript, Vite, Tailwind 4, TanStack Query, Redux Toolkit, Jotai / PostgreSQL 18, Redis 8, Caddy, Docker Compose, AWS Lightsail 서울 단일 VM, Cloudflare DNS, GA4, Prometheus</span></div><div class="row"><span class="k">상태</span><span>2026.09 웹 공개, S3 자동 백업, Lightsail + Better Stack 운영 감시</span></div><div class="row"><span class="k">링크</span><span><a href="https://tryticketing.com">tryticketing.com</a></span></div></div>
 
   <div class="block">
     <div class="h">주요 기여</div>
@@ -562,7 +564,7 @@ sitemap: false
 
   <div class="shots arch">
     <img src="/assets/portfolio/tt_arch.webp" style="max-height:68mm">
-    <div class="cap">현재 구성 - Lightsail 단일 VM에 Caddy, React, Go API, Redis, PostgreSQL을 Docker Compose로 배치, S3 백업과 외부 감시는 밖</div>
+    <div class="cap">현재 구성 - Lightsail 단일 VM에 Caddy, React, Go API, Redis, PostgreSQL을 Docker Compose로 배치, S3 백업과 외부 감시는 VM 밖에 구성</div>
     <img src="/assets/portfolio/tt_home.webp" style="max-height:38mm">
     <div class="cap">홈 - 서버 시각과 마감 카운트다운을 보여 주고 닉네임만 입력하면 연습이 시작됨</div>
   </div>
@@ -570,7 +572,7 @@ sitemap: false
   <div class="block">
     <div class="h">성과 / 지표</div>
     <ul>
-      <li><b>2026.09 웹 공개 운영 시작</b> - 단일 VM에서 GA4 동의 기반 방문 통계, S3 자동 백업, 외부 감시까지 갖춘 상태로 공개</li>
+      <li><b>2026.09 웹 공개 운영 시작</b> - GA4 동의 기반 방문 통계, S3 자동 백업, 외부 감시 구성</li>
       <li><b>k6 격리 부하 실험 250 VU에서 조회 p95 티켓 330ms, 수강 171ms, 4회 실행 요청 42,255건에 HTTP 오류 0</b> (2026.09.14, 운영 VM 안 자원 제한 컨테이너 기준)</li>
       <li>응답 시간 히스토그램과 요청, 거부 카운터를 Prometheus로 계측해 부하 실험 결과를 수치로 판단</li>
     </ul>
@@ -579,23 +581,23 @@ sitemap: false
 
 <!-- 12 teampler -->
 <div class="page proj">
-  <div class="ttl"><span class="no">12</span><h2>teampler - 코트 스포츠 대기열 관리</h2><span class="kind">Personal / iOS App Store 출시</span></div>
+  <div class="ttl"><span class="no">12</span><h2>teampler - 코트 스포츠 대기열 관리</h2><span class="kind">Personal / App Store, Google Play 출시</span></div>
   <div class="lead">운동 모임의 <b>코트와 대기열을 실시간으로 관리</b>하는 앱 - 배드민턴, 테니스, 탁구</div>
-  <div class="stack"><div class="row"><span class="k">Stack</span><span>Expo 54(React Native 0.81, React 19), expo-router, Zustand, EAS Build/Submit/Update, Python 3.11 FastAPI, MongoDB Atlas, Redis, Docker Compose, AWS Lightsail, ECR</span></div><div class="row"><span class="k">상태</span><span>iOS App Store 출시(2026.09), Android 비공개 테스트, 백엔드 prod 가동</span></div></div>
+  <div class="stack"><div class="row"><span class="k">Stack</span><span>Expo(React Native, React 19), expo-router, Zustand, EAS Build/Submit/Update, Go, MongoDB Atlas, Redis, Docker Compose, AWS Lightsail</span></div><div class="row"><span class="k">상태</span><span>iOS App Store 출시(2026.09), Google Play 출시(2026.10), 백엔드 prod 가동</span></div><div class="row"><span class="k">링크</span><span><a href="https://apps.apple.com/kr/app/id6802947104">App Store</a>, <a href="https://play.google.com/store/apps/details?id=com.teampler.app">Google Play</a></span></div></div>
 
   <div class="block">
     <div class="h">주요 기여</div>
     <ul>
-      <li><b>장기 자격증명을 0개로 운영</b> - AWS는 GitHub OIDC, SSH는 수 분짜리 단명 키와 인증서, 포트 22는 평소 닫고 배포 러너 IP만 /32로 개방</li>
+      <li><b>배포, 접속용 장기 자격증명을 0개로 운영</b> - AWS는 GitHub OIDC, SSH는 수 분짜리 단명 키와 인증서, 포트 22는 평소 닫고 배포 러너 IP만 /32로 개방</li>
       <li>OAuth 3종(Google, Apple, Kakao) <b>id_token을 서버가 JWKS로 검증</b>하고 자체 JWT를 발급, 블록리스트, OTP, 레이트리밋은 Redis로 처리</li>
-      <li>메일 발송을 SES 프로덕션 액세스 반려 이후 Resend로 이관, <b>반송 웹훅의 서명검증, 영구판정, 억제 기록까지 실동작 확인</b></li>
+      <li>메일 발송을 SES 프로덕션 액세스 반려 이후 Resend로 이관, <b>반송 웹훅의 서명 검증, 영구 판정, 억제 기록까지 실동작 확인</b></li>
       <li>테마 도입과 함께 <b>WCAG AA 명암비 검사를 검사 스크립트에 편입</b>해 대비 결함 시 빌드 차단</li>
     </ul>
   </div>
 
   <div class="shots arch">
     <img src="/assets/portfolio/teampler-now.webp">
-    <div class="cap">현재 구성 - 단일 VM, FastAPI 워커 1개, WebSocket 방 상태가 프로세스 메모리에만 존재</div>
+    <div class="cap">현재 구성 - 단일 VM, Go API 단일 프로세스, WebSocket 방 상태가 프로세스 메모리에만 존재</div>
     <img src="/assets/portfolio/teampler-session.webp" style="max-height:56mm">
     <div class="cap">모임 화면 - 코트별 진행 시간과 대기열을 한 화면에 두고, 운영진 조작이 WebSocket으로 참가자 화면에 즉시 반영됨</div>
   </div>
@@ -603,21 +605,58 @@ sitemap: false
   <div class="block">
     <div class="h">성과 / 지표</div>
     <ul>
-      <li>수평 확장의 한계를 <b>에러 없이 실시간만 조용히 누락되는 현상</b>으로 규정하고, 확장 조건(CPU 한 코어 포화, 오토스케일, 무중단 배포 중 하나가 실제로 걸릴 때)을 미리 항목으로 문서화함</li>
+      <li>수평 확장 시 <b>에러 없이 실시간 메시지만 누락될 수 있는 문제</b>를 특정하고, 확장 조건(CPU 한 코어 포화, 오토스케일, 무중단 배포 중 하나가 실제로 걸릴 때)을 미리 항목으로 문서화함</li>
       <li>서버 없이 쓰는 로컬, 로그인 클라우드, 읽기 전용 참관 <b>3모드를 저장 레벨 가드로 분리</b>해 모드가 섞이지 않도록 강제함</li>
-      <li>커넥션 상한을 산술로 특정 - 드라이버 기본 풀 100이 프로세스마다 적용되므로 <b>Atlas 연결 500에서 워커 5개가 상한</b>임을 확인하고 증설 전 선결 과제로 둠</li>
+      <li><b>백엔드를 Python에서 Go로 이식</b>하면서 앱 변경 없이 API, WebSocket 계약을 유지 - 배포 이미지 크기와 콜드스타트 감소를 로컬 벤치로 확인함</li>
     </ul>
   </div>
 </div>
 
-<!-- 13 quickglot -->
+<!-- 13 내깜냥 -->
 <div class="page proj">
-  <div class="ttl"><span class="no">13</span><h2>quickglot - 온디바이스 번역 Safari 확장</h2><span class="kind">Personal / App Store 출시</span></div>
+  <div class="ttl"><span class="no">13</span><h2>내깜냥 - 취업 적성검사 연습 앱</h2><span class="kind">Personal / App Store 출시</span></div>
+  <div class="lead">취업 적성, 인성 검사 유형을 <b>게임형 연습과 자기 점검</b>으로 풀어 보는 모바일 앱</div>
+  <div class="stack">
+    <div class="row"><span class="k">앱</span><span>Expo 58(React Native), TypeScript, Firebase 인증(게스트, Apple, Google), AsyncStorage</span></div>
+    <div class="row"><span class="k">서버</span><span>Go, AWS Lambda(서울, ARM64), DynamoDB, S3, AWS SAM</span></div>
+    <div class="row"><span class="k">상태</span><span>iOS App Store 출시(2026.10), 대한민국 무료</span></div>
+    <div class="row"><span class="k">링크</span><span><a href="https://apps.apple.com/kr/app/id6819194143">App Store</a></span></div>
+  </div>
+
+  <div class="block">
+    <div class="h">설계 결정</div>
+    <ul>
+      <li><b>게스트로 시작하고 계정 연결 시 같은 UID 유지</b> - 가입 없이 바로 연습하고, Apple, Google 계정을 연결하면 기록을 그대로 이어받음 - 이미 다른 계정에 연결된 자격증명은 임의로 병합하지 않음</li>
+      <li><b>소유자 판단을 서버의 토큰 검증으로 한정</b> - 인증 제공자 ID 토큰의 서명, 발급자, 프로젝트, 만료를 서버가 검증한 뒤 자체 세션을 발급하고, 클라이언트가 보낸 사용자 ID는 소유자 근거로 쓰지 않음</li>
+      <li><b>결과 저장을 재시도해도 안전하도록 설계</b> - 상세 원본은 S3 조건부 생성 뒤 DynamoDB에 요약을 기록, 실패 시 같은 ID와 내용으로 다시 보내고, 서버 수신 확인 전에는 기기의 대기 기록을 지우지 않음</li>
+      <li><b>Lambda와 VM이 같은 HTTP 핸들러를 공유</b> - 응답 지연이 커지면 데이터 이관 없이 실행 환경만 교체하도록 구성, 상시 워밍 호출은 쓰지 않음</li>
+    </ul>
+  </div>
+
+  <div class="shots phones">
+    <img src="/assets/portfolio/mkn1.webp">
+    <img src="/assets/portfolio/mkn2.webp">
+    <img src="/assets/portfolio/mkn3.webp">
+  </div>
+
+  <div class="block">
+    <div class="h">성과 / 지표</div>
+    <ul>
+      <li><b>첫 버전은 무료 기능만 제공</b> - 구독 상품까지 준비했으나 구매, 복원, 유료 진입을 숨긴 채 결제 코드는 휴면 상태로 보존</li>
+      <li>운영 서버에서 <b>저장, 복원, 소유자 확인, 삭제, 영구 삭제 흐름을 실검증</b>하고, 계정과 기록 삭제를 앱 안에서 제공</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 14 quickglot -->
+<div class="page proj">
+  <div class="ttl"><span class="no">14</span><h2>quickglot - 온디바이스 번역 Safari 확장</h2><span class="kind">Personal / App Store 출시</span></div>
   <div class="lead">선택한 문장을 그 자리에서 번역하는 Safari 확장 - <b>기기 안에서만 처리</b>, 서버와 API 키 없음</div>
   <div class="stack">
     <div class="row"><span class="k">확장</span><span>TypeScript 5.9, WebExtension Manifest V3, esbuild, Node 22</span></div>
     <div class="row"><span class="k">네이티브</span><span>Swift, Apple Translation 프레임워크, NaturalLanguage 언어 판별, Safari Web Extension 컨테이너 앱(AppKit, UIKit 공용 ViewController)</span></div>
     <div class="row"><span class="k">배포</span><span>iOS, macOS 양쪽 App Store 출시, universal purchase 단일 앱 레코드, GitHub Actions 3잡 CI, 정책 페이지 GitHub Pages</span></div>
+    <div class="row"><span class="k">링크</span><span><a href="https://apps.apple.com/kr/app/id6807894387">App Store (iOS, macOS)</a></span></div>
   </div>
 
   <div class="shots wide">
@@ -637,17 +676,52 @@ sitemap: false
   <div class="block">
     <div class="h">성과 / 지표</div>
     <ul>
-      <li><b>iOS, macOS 양쪽 App Store 정식 출시</b> - 하나의 앱 레코드를 두 플랫폼에 내고 <b>1.0~1.2 세 버전 모두 첫 제출에 반려 없이 승인</b></li>
+      <li><b>iOS, macOS 양쪽 App Store 정식 출시</b> - 하나의 앱 레코드를 두 플랫폼에 내고 iOS 1.3, macOS 1.2까지 업데이트 출시 - <b>1.0~1.2는 모두 첫 제출에 반려 없이 승인</b></li>
       <li><b>릴리스 절차와 저장소 점검을 스크립트로 강제</b> - 아카이브부터 플랫폼, 버전, 번들, 수출규정 대조와 업로드까지 CLI로 처리하고 워킹 트리가 정리되지 않으면 중단, 팀 ID, 홈 경로가 공개 저장소로 새는지 테스트 단계에서 차단</li>
     </ul>
   </div>
 </div>
 
-<!-- 14 archdraw -->
+<!-- 15 Oh My Quota -->
 <div class="page proj">
-  <div class="ttl"><span class="no">14</span><h2>archdraw - 아키텍처 다이어그램 렌더러</h2><span class="kind">Personal / npm 공개</span></div>
+  <div class="ttl"><span class="no">15</span><h2>Oh My Quota - AI 코딩 도구 사용 한도 메뉴바 앱</h2><span class="kind">Personal / Mac App Store 출시</span></div>
+  <div class="lead">Claude Code와 Codex의 남은 사용 한도와 리셋 시각을 메뉴바에 보여 주는 macOS 앱 - <b>권한을 나눈 실행 단위</b>로 구성</div>
+  <div class="stack">
+    <div class="row"><span class="k">앱</span><span>Swift 6, SwiftUI, AppKit, Observation, UserNotifications, SMAppService</span></div>
+    <div class="row"><span class="k">구성</span><span>메뉴바 앱(네트워크 권한 없음), Codex 한도 조회 XPC 서비스(network.client), Claude Code 상태줄 수신 helper(App Group), 번들 공식 Codex 런타임</span></div>
+    <div class="row"><span class="k">배포</span><span>Mac App Store 출시(2026.10), App Sandbox, macOS 14 이상, 한국어와 영어</span></div>
+    <div class="row"><span class="k">링크</span><span><a href="https://apps.apple.com/kr/app/id6814418583">Mac App Store</a></span></div>
+  </div>
+
+  <div class="shots duo">
+    <img src="/assets/portfolio/omq_overview.webp">
+    <img src="/assets/portfolio/omq_settings.webp">
+  </div>
+
+  <div class="block">
+    <div class="h">설계 결정</div>
+    <ul>
+      <li><b>네트워크 권한을 조회 XPC 서비스에만 부여</b> - 메뉴바 앱은 사용자가 허용한 폴더 접근만 갖고 폴더 접근 권한(security-scoped bookmark)을 XPC 서비스로 넘김 - XPC 서비스가 앱 번들 안의 공식 Codex 런타임을 stdio JSON-RPC로 실행해 기존 로그인으로 공식 한도를 조회</li>
+      <li><b>응답은 한도 필드만 허용 목록으로 반환</b> - 런타임 응답에서 사용 비율, 기간, 리셋 시각만 골라 앱으로 넘기고 계정 식별자와 원문 오류는 싣지 않음 - 분석, 텔레메트리, 플러그인은 조회 프로세스에서만 끄고 사용자의 설정 파일은 고치지 않음</li>
+      <li><b>기존 Claude Code 상태줄을 보존하는 연결과 해제</b> - 설치 때 settings를 백업하고 수신 helper가 입력을 원래 상태줄 명령에 그대로 넘기며 한도 값만 App Group에 잠금과 원자적 쓰기로 저장 - 해제 때는 관리 대상인지 확인한 뒤 statusLine만 되돌려 이후의 다른 설정 변경을 보존</li>
+      <li><b>실패와 오래된 데이터를 구분</b> - 기본 60초 간격으로 조회를 시도하고 실패하면 재시도 간격을 2분에서 15분까지 늘리며, 마지막 성공값을 유지한 채 실패, 대기, 오래됨, 만료 상태를 나눠 표시</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <div class="h">성과 / 지표</div>
+    <ul>
+      <li><b>Mac App Store 출시(2026.10)</b> - Codex는 별도 설치 없이 앱 안에서 조회하고, Claude Code는 앱 설정에서 상태줄을 연결 - 공식 런타임은 고정 버전을 빌드 전에 SHA-256으로 검증해 번들에 넣고 실행 중 코드를 내려받지 않음</li>
+      <li><b>알림 중복 억제</b> - 제공자, 한도 창, 리셋 시각을 키로 보낸 단계를 기록해 같은 주기의 같은 경고는 다시 보내지 않고 경고 뒤 위험 단계만 허용</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 16 archdraw -->
+<div class="page proj">
+  <div class="ttl"><span class="no">16</span><h2>archdraw - 아키텍처 다이어그램 렌더러</h2><span class="kind">Personal / npm 공개</span></div>
   <div class="lead">YAML로 쓴 클라우드 아키텍처를 <b>SVG, PNG, 애니메이션 HTML로 렌더</b>하는 CLI, 라이브러리</div>
-  <div class="stack"><div class="row"><span class="k">Stack</span><span>TypeScript 7, Node 22 이상, pnpm workspaces 모노레포, elkjs(레이아웃), zod 4, React 19 renderToStaticMarkup(SVG), resvg(PNG), vitest, Biome, changesets</span></div><div class="row"><span class="k">배포</span><span>공개 npm 패키지 6종(CLI, core, 아이콘 팩 3종, React 바인딩), GitHub Actions로 발행, provenance 첨부</span></div></div>
+  <div class="stack"><div class="row"><span class="k">Stack</span><span>TypeScript 7, Node 22 이상, pnpm workspaces 모노레포, elkjs(레이아웃), zod 4, React 19 renderToStaticMarkup(SVG), resvg(PNG), vitest, Biome, changesets</span></div><div class="row"><span class="k">배포</span><span>공개 npm 패키지 6종(CLI, core, 아이콘 팩 3종, React 바인딩), GitHub Actions로 발행, provenance 첨부</span></div><div class="row"><span class="k">링크</span><span><a href="https://www.npmjs.com/package/archdraw">npmjs.com/package/archdraw</a>, <a href="https://github.com/No1Joon/archdraw">github.com/No1Joon/archdraw</a></span></div></div>
 
   <div class="block">
     <div class="h">설계 결정</div>
@@ -673,19 +747,19 @@ sitemap: false
   </div>
 </div>
 
-<!-- 15 Oh My Algorithm -->
+<!-- 17 Oh My Algorithm -->
 <div class="page proj">
-  <div class="ttl"><span class="no">15</span><h2>Oh My Algorithm</h2><span class="kind">Personal / 실서비스</span></div>
+  <div class="ttl"><span class="no">17</span><h2>Oh My Algorithm</h2><span class="kind">Personal / 실서비스</span></div>
   <div class="lead">알고리즘과 CS 개념을 <b>단계별 애니메이션과 코드 패널</b>로 학습하는 웹 서비스</div>
-  <div class="stack"><div class="row"><span class="k">Stack</span><span>React 19.2, Vite 8, Tailwind 4, React Router 7, Remotion, puppeteer-core(자체 SSG), oh-my-animation(직접 발행한 npm 패키지를 이 앱이 소비), GA4</span></div></div>
+  <div class="stack"><div class="row"><span class="k">Stack</span><span>React 19.2, Vite 8, Tailwind 4, React Router 7, Remotion, puppeteer-core(자체 SSG), oh-my-animation(직접 발행한 npm 패키지를 이 앱이 소비), GA4</span></div><div class="row"><span class="k">링크</span><span><a href="https://ohmyalgorithm.com">ohmyalgorithm.com</a></span></div></div>
 
   <div class="block">
     <div class="h">주요 기여</div>
     <ul>
-      <li>정렬, 탐색, 그래프, 트리, DP에 더해 <b>시스템, 네트워크, 하드웨어</b>까지 넓혀 <b>수록 항목 80개</b>(알고리즘 45, CS 개념 35), 카테고리 17개</li>
-      <li><b>프레젠테이션과 분리한 데이터 레이어</b> - 카테고리마다 메타와 스텝 데이터를 분리해 레지스트리가 메타만 가져오도록 함 - 전 항목 스텝 데이터가 메인 번들에 딸려오지 않고, 같은 정의를 웹앱과 영상 렌더가 함께 소비 - <b>공용 프리미티브 29개를 80항목이 공유</b></li>
-      <li><b>번역이 화면을 다시 그리지 않는 오버레이 i18n</b> - 국문 정본 위에 사전을 얹어 같은 라우터 하위 트리를 두 번 마운트하는 구조로 80개 항목을 영문으로 전환하고, 빌드 산출물에서 한글이 새는지 검사하는 루프를 상시화</li>
-      <li>puppeteer-core 기반 <b>자체 SSG로 198개 라우트를 프리렌더</b>하고 OG 카드를 로컬에서 생성</li>
+      <li>정렬, 탐색, 그래프, 트리, DP에 더해 <b>시스템, 네트워크, 하드웨어</b>와 Docker, Kafka, LLM 추론까지 넓혀 <b>인터랙티브 챕터 페이지</b>로 구성</li>
+      <li><b>프레젠테이션과 분리한 데이터 레이어</b> - 카테고리마다 메타와 스텝 데이터를 분리해 레지스트리가 메타만 가져오도록 함 - 전 항목 스텝 데이터가 메인 번들에 딸려오지 않고, 같은 정의를 웹앱과 영상 렌더가 함께 소비</li>
+      <li><b>번역이 화면을 다시 그리지 않는 오버레이 i18n</b> - 국문 정본 위에 사전을 얹어 같은 라우터 하위 트리를 두 번 마운트하는 구조로 전 항목을 영문으로 전환하고, 빌드 산출물에서 한글이 새는지 검사하는 루프를 상시화</li>
+      <li>puppeteer-core 기반 <b>자체 SSG로 전 라우트를 프리렌더</b>하고 OG 카드를 로컬에서 생성</li>
     </ul>
   </div>
 
@@ -698,24 +772,24 @@ sitemap: false
     <div class="h">운영 현황</div>
     <ul>
       <li><b>자체 SSG 페이지가 검색 엔진에 색인됨</b> - naver, google, bing 세 엔진에서 자연 검색 유입이 잡히고 Search Console이 연동돼 있음</li>
-      <li><b>영어 오버레이가 해외 유입으로 이어짐</b> - 접속이 한국에 그치지 않고 싱가포르, 인도, 중국, 미국, 호주, 캐나다 등에서 발생함</li>
+      <li><b>해외 유입 확인</b> - 접속이 한국에 그치지 않고 싱가포르, 인도, 중국, 미국, 호주, 캐나다 등에서 발생함</li>
       <li>가장 많이 읽히는 페이지가 <b>개념 챕터</b>(쿠버네티스 목록, 파드, 원하는 상태, 도커 아키텍처, 롤링 업데이트) - 장면 단위로 전환한 챕터가 실제로 읽히고 있음</li>
     </ul>
   </div>
 </div>
 
-<!-- 16 naver-posting -->
+<!-- 18 naver-posting -->
 <div class="page proj">
-  <div class="ttl"><span class="no">16</span><h2>naver-posting - 기술 콘텐츠 생산 파이프라인</h2><span class="kind">Personal / 운영 중</span></div>
+  <div class="ttl"><span class="no">18</span><h2>naver-posting - 기술 콘텐츠 생산 파이프라인</h2><span class="kind">Personal / 운영 중</span></div>
   <div class="lead">IT, AI 기술 동향의 조사, 집필, 시각화, 발행을 처리하는 <b>개인 콘텐츠 파이프라인</b></div>
-  <div class="stack"><div class="row"><span class="k">Stack</span><span>Claude Code Skills 11종, Python, WebSearch 교차검증, Google Drive 연동, Git</span></div><div class="row"><span class="k">MCP 서버</span><span>Node.js, MCP SDK, OAuth 2.1, Cloud Run, Pub/Sub</span></div><div class="row"><span class="k">발행</span><span>blog.naver.com/rottensweetpotato</span></div></div>
+  <div class="stack"><div class="row"><span class="k">Stack</span><span>Claude Code Skills, Python, WebSearch 교차 검증, Google Drive 연동, Git</span></div><div class="row"><span class="k">MCP 서버</span><span>Node.js, MCP SDK, OAuth 2.1, Cloud Run, Pub/Sub</span></div><div class="row"><span class="k">발행</span><span><a href="https://blog.naver.com/rottensweetpotato">blog.naver.com/rottensweetpotato</a></span></div></div>
 
   <div class="block">
     <div class="h">파이프라인 - 3개 주체가 파일로 비동기 인계</div>
     <div class="flow">
-      <div class="box"><b>클라우드 루틴</b>매주 월 11:00<br>리서치, 초안 PR</div>
+      <div class="box"><b>클라우드 루틴</b>주간<br>아이디어 후보 수집</div>
       <div class="arr">→</div>
-      <div class="box hi"><b>로컬 세션</b>PR 머지, 자산 처리<br>HTML 변환</div>
+      <div class="box hi"><b>로컬 세션</b>작성, 검수<br>HTML 변환</div>
       <div class="arr">→</div>
       <div class="box"><b>이미지 에이전트</b>대기열 소비<br>생성, INDEX 갱신</div>
       <div class="arr">→</div>
@@ -731,7 +805,7 @@ sitemap: false
   <div class="block">
     <div class="h">주요 기여</div>
     <ul>
-      <li><b>환각 방지 절차를 파이프라인 규칙으로 강제</b> - 작성 전 WebSearch 교차검증 최소 1회 필수, 논문, 공식 자료는 원문 인용 후 출처를 프론트매터에 구조화, 과학 주제는 과장 여부를 짚는 균형 섹션을 필수 항목으로 지정</li>
+      <li><b>환각 방지 절차를 파이프라인 규칙으로 강제</b> - 작성 전 WebSearch 교차 검증 최소 1회 필수, 논문, 공식 자료는 원문 인용 후 출처를 프론트매터에 구조화, 과학 주제는 과장 여부를 짚는 균형 섹션을 필수 항목으로 지정</li>
       <li><b>포맷 변환 자동화</b> - 네이버 SmartEditor가 평문 붙여넣기로 서식을 받지 못하는 제약을, md를 리치 HTML로 렌더해 클립보드로 옮기는 방식으로 우회 - 굵게, 줄바꿈, 구분선, 표 유지</li>
       <li><b>MCP 서버 개발, 운영</b> - 글 검토와 아이디어 탐색을 ChatGPT, Gemini 웹 채팅에 위임하는 원격 MCP 서버를 Cloud Run에 배포, 도구 6종(읽기 4, 쓰기 2)과 OAuth 2.1 인가 서버(동적 클라이언트 등록, PKCE, Google 로그인 허용 계정)를 직접 구현, 작업 완료는 Pub/Sub로 알림</li>
       <li><b>스킬 상속 구조 설계</b> - 공통 문체, 표기 규칙을 상위 스킬에 두고 포스팅 스킬 전체가 상속, 주제 버티컬은 형식 규칙을 빌려 쓰되 폴더, 이미지 정책만 재정의</li>
@@ -741,14 +815,14 @@ sitemap: false
   <div class="block">
     <div class="h">성과</div>
     <ul>
-      <li><b>주 5편 이상 발행을 유지</b>하며 AI, Tech, Robot, Math, Science, News 카테고리로 확장, 주간 AI 다이제스트를 <b>연속 발행</b> 중</li>
+      <li>2026.06부터 <b>IT 블로그 상시 발행을 유지</b>하며 Tech, AI, Security 중심에 Robot, Math, Science 카테고리까지 확장</li>
     </ul>
   </div>
 </div>
 
-<!-- 17 네이버 카페 수집 앱 -->
+<!-- 19 네이버 카페 수집 앱 -->
 <div class="page proj">
-  <div class="ttl"><span class="no">17</span><h2>네이버 카페 정보 자동 수집 데스크톱 앱</h2><span class="kind">Personal / 실사용자 보유</span></div>
+  <div class="ttl"><span class="no">19</span><h2>네이버 카페 정보 자동 수집 데스크톱 앱</h2><span class="kind">Personal / 실사용자 보유</span></div>
   <div class="lead">네이버 카페 게시판에서 정보를 수집해 Excel로 정리하는 데스크톱 앱 - <b>Windows 실행 파일</b></div>
   <div class="stack"><div class="row"><span class="k">Stack</span><span>Python, Playwright(Chromium 번들), 데스크톱 GUI, CLI, GitHub Actions로 빌드해 Release로 배포, pytest, ruff, mypy</span></div></div>
 
@@ -784,9 +858,9 @@ sitemap: false
   </div>
 </div>
 
-<!-- 18 로키 -->
+<!-- 20 로키 -->
 <div class="page proj">
-  <div class="ttl"><span class="no">18</span><h2>로키 (Law+Key)</h2><span class="kind">Team / 청년동 사이드 프로젝트</span></div>
+  <div class="ttl"><span class="no">20</span><h2>로키 (Law+Key)</h2><span class="kind">Team / 청년동 사이드 프로젝트</span></div>
   <div class="lead">사전 질문지로 상황을 진단하고 LLM이 상담하는 <b>AI 법률 상담 플랫폼</b> - 팀 프로젝트 (2025.11 ~ 2026.01)</div>
   <div class="stack"><div class="row"><span class="k">Stack</span><span>React, Redux Toolkit, Vite, Tailwind, NestJS, Prisma, MongoDB, Redis, OpenAI</span></div></div>
 
@@ -807,9 +881,9 @@ sitemap: false
   </div>
 </div>
 
-<!-- 19 공공데이터 -->
+<!-- 21 공공데이터 -->
 <div class="page proj">
-  <div class="ttl"><span class="no">19</span><h2>공공데이터 기반 지역사회 현안 해결</h2><span class="kind">Team / NIA 우수과제</span></div>
+  <div class="ttl"><span class="no">21</span><h2>공공데이터 기반 지역사회 현안 해결</h2><span class="kind">Team / NIA 우수과제</span></div>
   <div class="lead">공공데이터로 <b>서울시 흡연부스 약 500개소 입지를 도출</b>한 과제 - NIA 2023 우수과제 선정</div>
   <div class="stack"><div class="row"><span class="k">방법</span><span>공공데이터 CSV 전처리, K-means 클러스터링, 귀무가설 검정, 설치 불가 지점 대체 알고리즘</span></div><div class="row"><span class="k">주관</span><span>한국지능정보사회진흥원 (2023.12)</span></div></div>
 
@@ -842,7 +916,7 @@ sitemap: false
   <div class="block">
     <div class="h">주요 기여 / 성과</div>
     <ul>
-      <li>금연구역 좌표에 <b>K-means로 중심 좌표를 산출</b>해 그 인근에 부스를 배치하고, 프로젝트에서 설정한 <b>귀무가설</b>로 입지 타당성을 함께 판단, <b>서울시 약 500개소의 흡연부스 입지 도출</b></li>
+      <li>금연구역 좌표에 <b>K-means로 중심 좌표를 산출</b>해 그 인근의 부스 설치 후보지를 선정하고, 프로젝트에서 설정한 <b>귀무가설</b>로 입지 타당성을 함께 판단, <b>서울시 약 500개소의 흡연부스 입지 도출</b></li>
       <li>산출 좌표가 <b>설치 불가 지점(산, 특수시설 등)</b>일 때를 대비해 자체 정의 알고리즘으로 대체 입지를 선정하도록 설계</li>
       <li>한국지능정보사회진흥원(NIA) <b>우수과제 선정</b> (제2023-4237호, 2023.12.05)</li>
     </ul>
