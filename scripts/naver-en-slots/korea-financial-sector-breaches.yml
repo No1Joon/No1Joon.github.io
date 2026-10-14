@@ -1,0 +1,26 @@
+- file: 1_chart_경과.png
+  en:
+    title: Timeline of the serial financial-sector breaches
+    source: 'Source: FSC press briefing (10.2) · company announcements · press reports'
+    labels:
+      - [Sep 30, "Shinhan Bank\nnotices leak"]
+      - [Sep 30, "KB Kookmin Bank\nexternal access"]
+      - [Oct 2, "Hana, Busan confirmed;\nemergency meeting"]
+      - [Oct 3, "Yegaram, Hyundai Capital;\nKISA advisory"]
+      - [Oct 4, "CEOs of 7 firms\nsummoned"]
+      - [Oct 6 & 8, "Sector emergency\ncheck deadlines"]
+- file: 2_chart_유출인원.png
+  en:
+    title: People whose personal information leaked, by financial firm
+    x_label: People (log scale)
+    unit: ''
+    source: 'Source: company announcements and press reports (as of 2026-10-05) · Welcome Savings Bank corporate records excluded'
+    labels: [Yegaram Savings Bank, Shinhan Bank, Hyundai Capital, KB Kookmin Bank, Hana Bank, BNK Busan Bank]
+- file: 5_items_고객조치.png
+  en:
+    items:
+      - [Check leak notices, "Shinhan Bank via the SOL app and website lookup; others notify individually"]
+      - [Credit transaction block, "Block new loans, card loans, and card issuance you don't know about"]
+      - [Identity theft prevention service, Limit new phone activations in your name via M-Safer]
+      - [Register as exposed, Registering on the FSS's FINE strengthens financial firms' ID checks]
+      - [Report damage, "FSS 1332, KISA 118"]

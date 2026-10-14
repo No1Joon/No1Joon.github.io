@@ -1,0 +1,16 @@
+- file: 2_chart_기기별용량.png
+  en:
+    title: Apple Intelligence storage by Mac
+    source: 'Source: Apple support doc · MacRumors · Ars Technica · Reddit user reports (2026-09) · M3 Pro 36GB measured by me'
+    labels: [Apple doc upper bound, M1 Air, M3 Pro 36GB, M4 Pro mini, M3 Air, M3 Pro (Reddit)]
+- file: 3_term_du.png
+  text: |
+    # size of the generative model folder and the Siri and translation asset folders
+    $ du -sh /System/Library/AssetsV2/*UAF_FM_GenerativeModels \
+        /System/Library/AssetsV2/*UAF_Siri_Understanding \
+        /System/Library/AssetsV2/*UAF_Translation_Assets \
+        /System/Library/AssetsV2/*UAF_Siri_TextToSpeech
+    du: /System/Library/AssetsV2/com_apple_MobileAsset_UAF_FM_GenerativeModels: Operation not permitted
+    2.4G	/System/Library/AssetsV2/com_apple_MobileAsset_UAF_Siri_Understanding
+    1.8G	/System/Library/AssetsV2/com_apple_MobileAsset_UAF_Translation_Assets
+    1.6G	/System/Library/AssetsV2/com_apple_MobileAsset_UAF_Siri_TextToSpeech

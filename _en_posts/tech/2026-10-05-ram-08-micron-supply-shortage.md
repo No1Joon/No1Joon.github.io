@@ -19,7 +19,7 @@ In the same call, Micron said more than 75% of its 2027 output is already under 
 
 ## What the earnings report said
 
-![Chart of Micron quarterly revenue](/assets/images/tech/ram-08-micron-supply-shortage/02-chart.webp)
+![Chart of Micron quarterly revenue](/assets/images/tech/ram-08-micron-supply-shortage/en/02-chart.webp)
 *Chart of Micron quarterly revenue — Source: self-rendered from Micron earnings releases*
 
 Micron's revenue for fiscal Q4 2026 (June–August 2026) was $54.23 billion (₩75.9 trillion), 4.8 times the $11.32 billion (₩15.8 trillion) of the same quarter a year earlier. Full fiscal-year revenue was $133.19 billion (₩186.5 trillion), 3.6 times fiscal 2025's $37.38 billion (₩52.3 trillion).
@@ -73,7 +73,7 @@ The $32 billion (₩44.8 trillion) in customer funding commitments is mostly cas
 
 ## Fab expansion schedule
 
-![Timeline of first shipments from Micron's new fabs](/assets/images/tech/ram-08-micron-supply-shortage/05-chart.webp)
+![Timeline of first shipments from Micron's new fabs](/assets/images/tech/ram-08-micron-supply-shortage/en/05-chart.webp)
 *Timeline of first shipments from Micron's new fabs — Source: self-rendered from Micron's prepared remarks*
 
 Since the way to add supply is cleanrooms, fab completion dates ultimately set the supply picture. The ID1 fab in Idaho produces its first wafers in mid-2027 and ID2 in late 2028; New York fab 1 is targeted for 2030. The Japan DRAM expansion starts operating in late 2028, and the Singapore HBM packaging facility in early 2027.

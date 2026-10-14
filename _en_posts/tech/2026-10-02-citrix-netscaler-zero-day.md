@@ -19,7 +19,7 @@ Updating alone doesn't finish the job. Web shells installed by attackers who are
 
 ## Timeline
 
-![Timeline of the NetScaler zero-day attacks and response](/assets/images/tech/citrix-netscaler-zero-day/02-chart.webp)
+![Timeline of the NetScaler zero-day attacks and response](/assets/images/tech/citrix-netscaler-zero-day/en/02-chart.webp)
 *Timeline of the NetScaler zero-day attacks and response — Source: self-rendered from Unit 42, GTIG, Rapid7, Citrix, CISA, and KISA publications*
 
 According to Unit 42, Palo Alto Networks' threat research team, attempts to fingerprint the versions of more than 100 appliances began around August 21–22. Google Threat Intelligence Group (GTIG) and Mandiant said in an analysis published September 30 that actual attacks had been ongoing since at least early September.
@@ -66,7 +66,7 @@ Exploitation has been confirmed only for 88771 and 88772; the other six had no r
 
 ### Checking whether DTLS is in use
 
-![The DTLS configuration line cited in the Citrix advisory](/assets/images/tech/citrix-netscaler-zero-day/04-term-dtls.webp)
+![The DTLS configuration line cited in the Citrix advisory](/assets/images/tech/citrix-netscaler-zero-day/en/04-term-dtls.webp)
 *The DTLS configuration line cited in the Citrix advisory — Source: self-rendered from Citrix advisory CTX697096*
 
 Citrix's advisory considers a VPN virtual server affected if the config file doesn't explicitly turn DTLS off. Turning DTLS off avoids only 88772; 88771, which has no precondition, remains.
@@ -97,7 +97,7 @@ Separately from updating, GTIG called for terminating sessions and rotating cred
 
 ### Hunting for signs of compromise
 
-![Signs of compromise to check from the NetScaler shell](/assets/images/tech/citrix-netscaler-zero-day/05-term-hunt.webp)
+![Signs of compromise to check from the NetScaler shell](/assets/images/tech/citrix-netscaler-zero-day/en/05-term-hunt.webp)
 *Signs of compromise to check from the NetScaler shell — Source: self-rendered from GTIG and Rapid7 analyses*
 
 These are the artifact locations GTIG and Rapid7 published. The common recommendation from the analysts is that if you find even one, don't stop at updating — rebuild the appliance from a trusted backup.
@@ -115,7 +115,7 @@ If you suspect a compromise, you can report it to KISA's Internet Incident Respo
 
 ## What operators should do
 
-![Summary of operator actions](/assets/images/tech/citrix-netscaler-zero-day/07-items.webp)
+![Summary of operator actions](/assets/images/tech/citrix-netscaler-zero-day/en/07-items.webp)
 *Summary of operator actions — Source: summary of Citrix, CISA, and GTIG guidance · self-rendered*
 
 If you can't update right away, GTIG advises turning DTLS off where operationally possible, blocking inbound UDP port 443 at the perimeter firewall, and restricting allowed source IPs. These measures, too, reduce only the 88772 risk and don't block 88771.

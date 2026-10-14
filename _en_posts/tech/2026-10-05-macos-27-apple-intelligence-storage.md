@@ -32,7 +32,7 @@ On a 256GB Mac, 19.33GB is 7.6% of total capacity. On 512GB it is 3.8% and less 
 
 ## Official figures vs. measured
 
-![Chart comparing Apple Intelligence size across Macs](/assets/images/tech/macos-27-apple-intelligence-storage/03-chart.webp)
+![Chart comparing Apple Intelligence size across Macs](/assets/images/tech/macos-27-apple-intelligence-storage/en/03-chart.webp)
 *Chart comparing Apple Intelligence size across Macs — Source: self-rendered from Apple, MacRumors, and Ars Technica reports plus own measurement*
 
 Apple's support document says Macs with M3 or later and 12GB or more of unified memory need up to 14GB, and other Apple Intelligence–capable Macs need up to 8GB.
@@ -50,7 +50,7 @@ Even two M3 Pro MacBook Pros differed by 5GB, at 19.33GB and 24.35GB. The set of
 
 ## Where the model files live
 
-![Terminal measuring model folder sizes with du](/assets/images/tech/macos-27-apple-intelligence-storage/04-term-du.webp)
+![Terminal measuring model folder sizes with du](/assets/images/tech/macos-27-apple-intelligence-storage/en/04-term-du.webp)
 *Terminal measuring model folder sizes with du — Source: own run (macOS 27.0.1)*
 
 Apple Intelligence models and its speech and translation assets live in folders starting with com_apple_MobileAsset_UAF under **/System/Library/AssetsV2**. I measured these folders from Terminal on the same Mac.

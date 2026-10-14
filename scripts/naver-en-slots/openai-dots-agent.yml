@@ -1,0 +1,8 @@
+- file: 3_chart_Pro요금.png
+  en:
+    title: Monthly price of ChatGPT Pro tiers in Korea
+    subtitle: Including VAT
+    unit: ''
+    y_label: KRW
+    source: 'Source: ChatGPT plans screen (checked 2026-10-02)'
+    labels: [Pro 100, Pro 200, Pro 500]

@@ -1,0 +1,8 @@
+- file: 2_chart_출력요금.png
+  en:
+    title: API price per million output tokens
+    subtitle: KRW at $1 = ₩1,400
+    unit: ''
+    y_label: KRW
+    source: 'Source: official Google, OpenAI, and Anthropic pricing · converted at $1 = ₩1,400'
+    labels: [Argon intro price, Argon list price, GPT-6.1 Sol, Opus 5.5, GPT-6 Astra]

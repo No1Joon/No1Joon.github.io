@@ -93,7 +93,7 @@ Google said it is taking part in the US government's voluntary pre-release model
 
 ## Pricing
 
-![API output price per 1M tokens compared](/assets/images/ai/gemini-4-argon/05-chart.webp)
+![API output price per 1M tokens compared](/assets/images/ai/gemini-4-argon/en/05-chart.webp)
 *API output price per 1M tokens compared — Source: self-rendered from official Google, OpenAI, and Anthropic pricing*
 
 | | Input | Output |

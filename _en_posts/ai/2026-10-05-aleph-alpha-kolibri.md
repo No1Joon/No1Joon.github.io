@@ -17,7 +17,7 @@ Aleph Alpha introduced Kolibri as a sovereign model built in Germany and trained
 
 ## What was released
 
-![Chart of Kolibri's pretraining data mix](/assets/images/ai/aleph-alpha-kolibri/02-chart.webp)
+![Chart of Kolibri's pretraining data mix](/assets/images/ai/aleph-alpha-kolibri/en/02-chart.webp)
 *Chart of Kolibri's pretraining data mix — Source: self-rendered from Aleph Alpha's announcement*
 
 Kolibri handles two languages, English and German, and targets heavily regulated fields such as public administration, manufacturing, and aerospace. It is the follow-up to Kolibri Origin (30.6B total), which finished pretraining on June 11, released three months later.
@@ -37,7 +37,7 @@ German makes up 21.3% of pretraining tokens, about 4.3 trillion. Aleph Alpha sai
 
 ## Performance
 
-![Chart comparing AA-Omniscience non-hallucination rates](/assets/images/ai/aleph-alpha-kolibri/03-chart.webp)
+![Chart comparing AA-Omniscience non-hallucination rates](/assets/images/ai/aleph-alpha-kolibri/en/03-chart.webp)
 *Chart comparing AA-Omniscience non-hallucination rates — Source: self-rendered from Aleph Alpha's announcement*
 
 The models Aleph Alpha chose to compare against are open-weight models of similar size: NVIDIA Nemotron 3 Super (12B active, about four times Kolibri's active parameters), Alibaba Qwen3.6-35B, and Mistral Small 4.
@@ -69,7 +69,7 @@ With 3.46B active parameters, the same quality can be served on fewer GPUs, whic
 
 ## Compared with Korea's sovereign AI models
 
-![Chart comparing parameter counts of Kolibri and Korea's sovereign AI models](/assets/images/ai/aleph-alpha-kolibri/05-chart.webp)
+![Chart comparing parameter counts of Kolibri and Korea's sovereign AI models](/assets/images/ai/aleph-alpha-kolibri/en/05-chart.webp)
 *Chart comparing parameter counts of Kolibri and Korea's sovereign AI models — Source: self-rendered from company announcements*
 
 On August 19, 2026, Korea's Ministry of Science and ICT selected SK Telecom (70.6 points), Upstage (69.9), and LG AI Research (69.0) for the next stage in the second-stage evaluation of its sovereign AI foundation model project, and will provide the three teams about ₩120 billion in GPU rental costs over six months. Motif Technologies was eliminated.

@@ -1,0 +1,14 @@
+- file: 1_chart_터미널벤치.png
+  en:
+    title: Terminal-Bench 4.0 scores
+    subtitle: Higher is better
+    source: 'Source: Anthropic Claude Sonnet 5.5 announcement page (2026-09-28)'
+    labels: [Sonnet 5, Opus 5.5, Sonnet 5.5]
+- file: 3_chart_출력요금.png
+  en:
+    title: Output price per million tokens
+    subtitle: Standard API price · KRW at $1 = ₩1,400
+    unit: ''
+    y_label: KRW
+    source: 'Source: Anthropic pricing docs · OpenAI announcement (checked 2026-10-05)'
+    labels: [Haiku 4.5, Sonnet 5.5, GPT-6.1 Sol, Opus 5.5, Fable 5.1]

@@ -17,7 +17,7 @@ Pricing is the same as Sonnet 5, and output speed is more than 30% faster. Anthr
 
 ## What was released
 
-![Chart comparing Terminal-Bench 4.0 scores](/assets/images/ai/claude-sonnet-55-release/02-chart.webp)
+![Chart comparing Terminal-Bench 4.0 scores](/assets/images/ai/claude-sonnet-55-release/en/02-chart.webp)
 *Chart comparing Terminal-Bench 4.0 scores — Source: self-rendered from Anthropic's announcement*
 
 Sonnet 5.5 is the second model in the Claude 5.5 family, offered as a faster, cheaper option than Opus 5.5. It is available right away in the Claude apps, the Claude API, and on Amazon Web Services, Google Cloud, and Microsoft Azure.
@@ -52,7 +52,7 @@ Hedge fund Balyasny Asset Management said tokens per answer dropped from 497,000
 
 ## Pricing
 
-![Chart of output price per 1M tokens by model](/assets/images/ai/claude-sonnet-55-release/04-chart.webp)
+![Chart of output price per 1M tokens by model](/assets/images/ai/claude-sonnet-55-release/en/04-chart.webp)
 *Chart of output price per 1M tokens by model — Source: self-rendered from Anthropic pricing docs and OpenAI's announcement*
 
 Standard API pricing is $2 (₩2,800) input and $10 (₩14,000) output per 1M tokens. That is half of Opus 5.5's $4 (₩5,600) input and $20 (₩28,000) output, and the same price tier as GPT-6.1 Sol, released September 30.

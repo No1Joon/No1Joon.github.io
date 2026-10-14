@@ -59,7 +59,7 @@ OpenAI said it will later launch options to add more dots, or to raise each dot'
 
 ## Pricing in Korea
 
-![Monthly prices of ChatGPT Pro tiers in Korea](/assets/images/ai/openai-dots-agent/04-chart-pro.webp)
+![Monthly prices of ChatGPT Pro tiers in Korea](/assets/images/ai/openai-dots-agent/en/04-chart-pro.webp)
 *Monthly prices of ChatGPT Pro tiers in Korea — Source: self-rendered from the ChatGPT pricing page*
 
 On the Korean ChatGPT pricing page, Pro comes in three tiers, all shown in won including VAT. Each tier has different usage, and OpenAI said the first dot is included in Pro. The benefit lists for the ₩159,000 and ₩299,000 tiers also include "Dots, your own always-on agent."

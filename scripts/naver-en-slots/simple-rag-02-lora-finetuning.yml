@@ -1,0 +1,33 @@
+- file: 2_term_train.png
+  title: zsh — mlx_lm LoRA training
+  text: |
+    # run via a low-load wrapper pausing each step; same args, output
+    # save and eval interval options omitted; … omits fields mid-output
+    $ mlx_lm.lora --model mlx-community/Qwen3-4B-Instruct-2507-4bit \
+        --train --data sft_2400 --fine-tune-type lora \
+        --num-layers 16 --batch-size 1 --grad-accumulation-steps 4 \
+        --iters 2400 --learning-rate 1e-4 --max-seq-length 1024 \
+        --grad-checkpoint --adapter-path out/lora_2400
+    Trainable parameters: 0.182% (7.340M/4022.468M)
+    Iter 1: Val loss 2.401, Val took 182.823s
+    Iter 40: Train loss 1.672, … Peak mem 3.938 GB
+    Iter 2400: Val loss 1.072, Val took 905.838s
+    Iter 2400: Train loss 1.039, … Peak mem 3.991 GB
+- file: 3_chart_학습손실.png
+  en:
+    title: Training loss, average per 400-step interval
+    source: 'Source: 60 values reported every 40 steps in the mlx_lm training log, averaged per 400 steps · own measurement'
+    labels: [Training loss]
+- file: 7_chart_조문적중.png
+  en:
+    title: Share of draft reasons that cited the correct reference provisions
+    source: 'Source: 50 Supreme Court rulings in the validation set · Qwen3-4B 4-bit · no-grounding and RAG from Part 1 · own measurement'
+    labels: [No grounding, LoRA, LoRA + repetition penalty, RAG]
+- file: 10_items_정리.png
+  en:
+    items:
+      - [Training, "2,400 rulings · 7.34M parameters · 5h 52m"]
+      - [Loss, Validation loss 2.401 → 1.072]
+      - [Provision hit rate, "LoRA 12–18% · no grounding 18% · RAG 32%"]
+      - [What it learned, "Ruling-summary sentence pattern · citing provisions · empty think tags"]
+      - [What it didn't, "Laws that fit the issue · ending sentences"]

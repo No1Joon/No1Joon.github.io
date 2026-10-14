@@ -1,0 +1,18 @@
+- file: 1_chart_분기매출.png
+  en:
+    title: Micron quarterly revenue
+    subtitle: Fiscal quarters shown as calendar months; last bar is company guidance
+    unit: ''
+    y_label: ₩ trillion
+    source: 'Source: Micron earnings releases (2026-03-18, 2026-09-30) · Sep–Nov 2026 is guidance midpoint · $1 = ₩1,400'
+    labels: [Jun–Aug 2025, Sep–Nov 2025, Dec 2025–Feb 2026, Mar–May 2026, Jun–Aug 2026, Sep–Nov 2026]
+- file: 4_chart_공장일정.png
+  en:
+    title: Planned first output from Micron's new fabs
+    source: 'Source: Micron FY2026 Q4 earnings call script (2026-09-30)'
+    labels:
+      - [Early 2027, Singapore HBM packaging]
+      - [Mid-2027, "Idaho ID1, Taiwan Tongluo"]
+      - [H2 2028, Singapore NAND fab]
+      - [Late 2028, "Idaho ID2, Japan DRAM expansion"]
+      - ['2030', New York fab 1]

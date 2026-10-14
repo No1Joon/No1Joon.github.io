@@ -17,7 +17,7 @@ What they have in common is that the compromised systems were not the internet b
 
 ## Timeline
 
-![Timeline of the chain of breaches in the financial sector](/assets/images/tech/korea-financial-sector-breaches/02-chart.webp)
+![Timeline of the chain of breaches in the financial sector](/assets/images/tech/korea-financial-sector-breaches/en/02-chart.webp)
 *Timeline of the chain of breaches in the financial sector — Source: self-rendered from FSC and company announcements*
 
 Shinhan Bank detected the leak on September 30 and issued an apology under CEO Jung Sang-hyuk's name on October 1. The attacker bypassed authentication on a mobile web page for loan brokers, then used the customer numbers obtained there to access a service that looks up contact details and dates of birth. Shinhan blocked the IP, shut down the service, and said it would fully compensate any losses.
@@ -30,7 +30,7 @@ According to October 5 reports, signs of intrusion were also found at one or two
 
 ## What was leaked
 
-![Chart of people affected by each financial firm](/assets/images/tech/korea-financial-sector-breaches/03-chart.webp)
+![Chart of people affected by each financial firm](/assets/images/tech/korea-financial-sector-breaches/en/03-chart.webp)
 *Chart of people affected by each financial firm — Source: self-rendered from company announcements and press reports*
 
 Who was affected and what leaked differs by company.
@@ -104,7 +104,7 @@ On October 3, KISA issued a security advisory for companies, noting that breache
 
 This was not the kind of breach customers could have prevented by changing passwords or deleting apps. Nor is there a way for customers to check everything that leaked on their own, so the practical steps are to check notices from your financial institution and guard against secondary damage using the leaked data.
 
-![Card summarizing five steps for customers](/assets/images/tech/korea-financial-sector-breaches/06-items.webp)
+![Card summarizing five steps for customers](/assets/images/tech/korea-financial-sector-breaches/en/06-items.webp)
 *Card summarizing five steps for customers — Source: self-rendered from FSC and company guidance*
 
 When it launched in August 2024, the credit transaction safety block had to be requested in person at a branch of your bank with ID, and whether it can be requested remotely varies by institution. The identity theft prevention service and the personal-information-exposure accident prevention system can be applied for below.

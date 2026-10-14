@@ -1,0 +1,18 @@
+- file: 1_chart_학습데이터.png
+  en:
+    title: Kolibri pretraining data mix
+    source: 'Source: Aleph Alpha announcement (2026-10-03) · approximate, based on about 20 trillion tokens'
+    labels: [English, German, Code, Other]
+- file: 2_chart_비환각률.png
+  en:
+    title: AA-Omniscience non-hallucination rate
+    subtitle: Higher means less making things up on questions it doesn't know
+    source: 'Source: Aleph Alpha announcement (2026-10-03)'
+    labels: [Nemotron 3 Super, Kolibri Origin, Kolibri]
+- file: 4_chart_파라미터.png
+  en:
+    title: Parameter counts of Kolibri and Korean sovereign AI models
+    x_label: Parameters (log scale)
+    unit: ''
+    source: 'Source: Aleph Alpha · SK Telecom · LG AI Research announcements (2026-07 to 10)'
+    labels: [Kolibri active, Kolibri total, A.X K2, K-EXAONE 2.0]

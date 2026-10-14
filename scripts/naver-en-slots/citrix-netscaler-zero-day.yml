@@ -1,0 +1,54 @@
+- file: 2_chart_경과.png
+  en:
+    title: NetScaler zero-day attacks and responses
+    subtitle: '2026 · dates evenly spaced'
+    source: 'Source: Unit 42 · Google Threat Intelligence Group · Rapid7 · Citrix · CISA · KISA'
+    labels:
+      - [Aug 21, "Device fingerprinting\nbegins"]
+      - [Early Sep, "Real attacks\nbegin"]
+      - [Sep 20, "Config file compression\ncommand observed"]
+      - [Sep 27, "Citrix advisory,\nCISA KEV listing"]
+      - [Sep 29, "KISA update\nadvisory"]
+      - [Sep 30, "CISA deadline,\nGTIG analysis"]
+- file: 3_term_dtls.png
+  title: ns.conf — checking the DTLS precondition
+  text: |
+    # config lines given in Citrix advisory CTX697096
+    # VPN virtual server without DTLS turned off (on by default) → affected
+    add vpn vserver vpn1 SSL 10.0.0.0 443 -Listenpolicy NONE
+
+    # DTLS explicitly turned off → CVE-2026-88772 precondition not met
+    add vpn vserver vpn1 SSL 10.0.0.0 443 -dtls OFF -Listenpolicy NONE
+
+    # virtual server of type DTLS → affected
+    add vpn vserver vs1 DTLS 10.11.1.1 443
+    add lb vserver vd_dtls DTLS 10.146.111.74 443 -persistenceType NONE
+- file: 5_term_hunt.png
+  title: NetScaler shell — checking for signs of compromise
+  text: |
+    # trace locations disclosed by Google GTIG and Rapid7
+    # before updating, take a VM snapshot, then check
+
+    # traces of a PHP handler appended to httpd.conf
+    $ grep -n -i -E "AddType|AddHandler" /etc/httpd.conf
+
+    # PHP files disguised with non-script extensions
+    $ file /var/netscaler/gui/vpn/scripts/linux/*
+
+    # web shell path Rapid7 found
+    $ ls -la /var/netscaler/logon/LogonPoint/custom/
+
+    # files SLAPSHOT leaves behind
+    $ ls -la /tmp/.uxdport /tmp/.uxdlock
+
+    # /bin/sh permissions; -rwsr-xr-x means SUID is set
+    $ ls -l /bin/sh
+- file: 6_items_조치.png
+  en:
+    items:
+      - [Check the version, Affected if below 14.1-73.37 · 13.1-64.23]
+      - [Traces first, Preserve snapshots and logs before updating and check]
+      - [Update, "To a fixed version; both nodes of an HA pair"]
+      - [End sessions, "Force-terminate admin, Gateway, and VPN sessions"]
+      - [Rotate credentials, "Admin passwords, SSH keys, LDAP, RADIUS, certificates"]
+      - [If traces are found, "Don't stop at patching; rebuild the device"]

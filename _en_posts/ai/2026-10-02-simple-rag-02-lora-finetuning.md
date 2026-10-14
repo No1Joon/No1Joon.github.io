@@ -48,7 +48,7 @@ LoRA is a method published by Microsoft researchers in 2021 that freezes the ori
 | Steps | 2,400 (one pass over the data) |
 | Max length | 1,024 tokens |
 
-![Running mlx_lm LoRA training](/assets/images/ai/simple-rag-02-lora-finetuning/03-term-train.webp)
+![Running mlx_lm LoRA training](/assets/images/ai/simple-rag-02-lora-finetuning/en/03-term-train.webp)
 *Running mlx_lm LoRA training — Source: actual mlx_lm output · self-rendered*
 
 I trained with MLX on the same Apple M3 Pro 36GB as Part 1. To keep the machine usable for other work, I made it sleep for as long as each step took to compute; with that setting, one training pass took 5 hours 52 minutes.
@@ -57,7 +57,7 @@ Peak memory was 3.99GB, and 1.72 million tokens were trained. The resulting adap
 
 ### Loss curve
 
-![Training loss averaged over 400-step windows](/assets/images/ai/simple-rag-02-lora-finetuning/04-chart.webp)
+![Training loss averaged over 400-step windows](/assets/images/ai/simple-rag-02-lora-finetuning/en/04-chart.webp)
 *Training loss averaged over 400-step windows — Source: own measurement · self-rendered*
 
 Validation loss fell from 2.401 to 1.072. Training loss went from an average of 1.264 over the first 400 steps to 1.033 over the last 400, with most of the drop concentrated in the first 400 steps.
@@ -87,7 +87,7 @@ Hits on the limit dropped to 26. The 24 that finished had a median length of 341
 
 ## Statute hits
 
-![Share of drafts citing the correct referenced provisions](/assets/images/ai/simple-rag-02-lora-finetuning/06-chart.webp)
+![Share of drafts citing the correct referenced provisions](/assets/images/ai/simple-rag-02-lora-finetuning/en/06-chart.webp)
 *Share of drafts citing the correct referenced provisions — Source: own measurement · self-rendered*
 
 | Condition | Drafts with no provision | Generation time |
@@ -154,7 +154,7 @@ In Korea, the Supreme Court began a pilot of **trial-support AI** running on the
 
 ## Summary so far
 
-![Part 2 summary](/assets/images/ai/simple-rag-02-lora-finetuning/11-items.webp)
+![Part 2 summary](/assets/images/ai/simple-rag-02-lora-finetuning/en/11-items.webp)
 *Part 2 summary — Source: summary of this post · self-rendered*
 
 ## Next
