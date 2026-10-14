@@ -22,3 +22,5 @@ assets/fonts/
 assets/og/*.png
 Tasks.md
 temp-memory.md
+.lastmod-prev.json
+.indexnow-urls.txt
