@@ -286,6 +286,10 @@ class Converter:
                 continue  # 헤더가 구획을 대신한다
             if RE_HASHTAGS.match(s):
                 continue  # 해시태그는 front matter tags 로 이관
+            # 원문에 섞여 든 날 마크다운 이미지(`![alt](0_thumb.png)`) — 상대경로라 발행물에서 깨진다
+            if re.fullmatch(r"!\[[^\]]*\]\((?!https?://|/)[^)]+\)", s):
+                self.warnings.append(f"원문의 상대경로 마크다운 이미지 제외: {s[:60]}")
+                continue
 
             # 작성자용 이미지 수집 체크리스트 — 다음 구획/헤더/해시태그까지 통째로 버린다
             if RE_DROP_BLOCK.match(s):

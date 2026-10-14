@@ -139,6 +139,14 @@ Drive assets/postings-<블로그>/<분기>/<포스트키>/  (원문 블로그 �
 
   PNG 자체는 `.gitignore` 대상(CI 가 매 배포마다 재생성)이고, **`image:` 줄은 커밋한다** — 기존 포스트도 그렇게 되어 있다. 결과 OG 는 1200×630 PNG 인데, WebP OG 는 카카오톡·네이버 공유 미리보기에서 렌더가 안 되는 경우가 많으므로 이쪽이 맞다.
 
+## 영문판 동반
+
+- 이식한 편은 같은 작업에서 `en-translate` 규칙대로 `_en_posts/` 영문판까지 만든다.
+- 자가 렌더 이미지(chart·items·한글 주석 terminal)는 `python3 scripts/render-en-images.py <slug>` 로 영문 렌더해 `assets/images/<cat>/<slug>/en/` 에 두고 영문판 경로를 자동 교체한다.
+- 원문 슬롯에 `en:` 블록이 있으면 그대로 쓰고, 없으면 `scripts/naver-en-slots/<slug>.yml` 에 번역 슬롯(chart·items 는 `en:`, terminal 은 `text`·`title` 덮어쓰기)을 적는다.
+- 실측 입출력 자체가 한글인 terminal 은 다시 렌더하지 않는다. 캡처·로고·agy 이미지는 한국어판 것을 쓴다.
+- 렌더한 PNG 는 몽타주로 열어 라벨 겹침·잘림을 확인한다 — 긴 단위는 `unit: ''` 와 축 라벨로, 긴 라벨은 줄바꿈·약어로 줄인다.
+
 ## Workflow
 
 1. 대상 편을 확정한다. 이미 옮긴 글이 있는지 `_posts/` 를 먼저 확인 (같은 slug 재실행은 덮어쓴다).
@@ -147,9 +155,10 @@ Drive assets/postings-<블로그>/<분기>/<포스트키>/  (원문 블로그 �
 4. `scripts/naver-import-map.yml` 에 항목을 추가한다.
 5. `--dry-run` → 배치 이미지 수와 누락 목록 확인.
 6. 실제 실행 → 잔존 마커 검사 (`🔹 ▸ ▶︎ 📷 ==` 와 `/Users/joon`, `받는 곳:`, `여기에 … 네이버 링크` 가 결과물에 없어야 한다).
-7. `npm run generate-og` → OG 카드 생성 + `image:` 줄 기입 (위 이미지 파이프라인 절 참조).
-8. `bundle exec jekyll build` 로 렌더 확인. 이미지 참조가 전부 `_site` 에 실재하는지 본다.
-9. 사용자에게는 편수·카테고리 분포·누락 이미지 건수만 보고. 본문을 다시 붙여 넣지 않는다.
+7. 영문판 작성 + `render-en-images.py` (위 영문판 동반 절).
+8. `npm run generate-og` → OG 카드 생성 + `image:` 줄 기입 (위 이미지 파이프라인 절 참조).
+9. `bundle exec jekyll build` 로 렌더 확인. 이미지 참조가 전부 `_site` 에 실재하는지, 영문판에 `hreflang="ko"` 가 있는지 본다.
+10. 사용자에게는 편수·카테고리 분포·누락 이미지 건수만 보고. 본문을 다시 붙여 넣지 않는다.
 
 ## Prohibitions
 
