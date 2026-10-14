@@ -22,6 +22,7 @@ Jekyll 기반 GitHub Pages 블로그 (Claude·Gemini 공통 컨텍스트). 기�
 - `scripts/generate-brand.mjs` → `favicon.ico` · `assets/favicon.png` · `assets/apple-touch-icon.png` · `assets/og-default.png` — 브랜드 자산 생성물. 색은 `assets/css/style.css` 의 `:root` 토큰과 맞춘다.
 - `scripts/import-naver-post.py` + `scripts/naver-import-map.yml` — `naver-posting` 프로젝트의 네이버 포스팅을 Jekyll 포스트로 이식. 규칙은 `.claude/skills/naver-import/SKILL.md`.
 - `scripts/render-en-images.py` + `scripts/naver-en-slots/` — 이식 글의 자가 렌더 이미지를 영문으로 다시 그려 `assets/images/<cat>/<slug>/en/` 에 배치.
+- `_plugins/content_lastmod.rb` — 본문 지문을 직전 배포본(`/lastmod.json`)과 비교해 바뀐 글에만 수정 시각(sitemap `lastmod`·`dateModified`)을 주고, 배포 워크플로가 그 URL 만 IndexNow 로 통지한다. 키 파일은 루트 `<key>.txt`.
 - `api/` — 댓글 시스템 FastAPI 서비스. 사이트와 별개로 배포된다. 상세는 `api/CLAUDE.md`.
 - `docs/design/` — UI 를 만지기 전에 읽는다. `design.md` 가 방향·제외 항목·접근성 기준, `wireframes-blog.html` 이 화면 배치와 그 근거.
 - `.gemini/` — Gemini CLI 설정. 이 CLAUDE.md 와 같은 컨텍스트를 공유한다.

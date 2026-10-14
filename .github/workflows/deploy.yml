@@ -36,11 +36,22 @@ jobs:
 
       - uses: actions/configure-pages@v6
 
+      # 직전 배포본의 본문 지문 — _plugins/content_lastmod.rb 가 비교해 바뀐 글에만 수정 시각을 준다
+      - name: Fetch previous content fingerprints
+        run: curl -fsSL https://no1joon.github.io/lastmod.json -o .lastmod-prev.json || echo "no previous manifest"
+
       - run: bundle exec jekyll build --baseurl ""
         env:
           JEKYLL_ENV: production
 
       - uses: actions/upload-pages-artifact@v5
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: indexnow-urls
+          path: .indexnow-urls.txt
+          include-hidden-files: true
+          if-no-files-found: ignore
 
   deploy:
     environment:
@@ -51,3 +62,32 @@ jobs:
     steps:
       - uses: actions/deploy-pages@v5
         id: deployment
+
+  # 본문이 바뀐 URL 만 IndexNow 로 통지한다 (Bing·네이버·Yandex 등이 공유받음, Google 은 미지원 — Google 은 sitemap lastmod 로 판단)
+  indexnow:
+    runs-on: ubuntu-latest
+    needs: deploy
+    continue-on-error: true
+    env:
+      INDEXNOW_KEY: 06b5574a68e4933546881fa33ceae910
+      SITE: https://no1joon.github.io
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: indexnow-urls
+      - name: Submit changed URLs
+        run: |
+          if [ ! -s .indexnow-urls.txt ]; then echo "no changed URLs"; exit 0; fi
+          cat .indexnow-urls.txt
+          # 배포 반영 확인 — 키 파일이 라이브에서 읽혀야 검색엔진이 소유를 검증한다
+          for i in $(seq 1 10); do
+            [ "$(curl -fsS "$SITE/$INDEXNOW_KEY.txt" || true)" = "$INDEXNOW_KEY" ] && break
+            sleep 15
+          done
+          jq -R -s -c --arg key "$INDEXNOW_KEY" --arg host "${SITE#https://}" --arg loc "$SITE/$INDEXNOW_KEY.txt" \
+            '{host: $host, key: $key, keyLocation: $loc, urlList: (split("\n") | map(select(length > 0)))}' \
+            .indexnow-urls.txt > payload.json
+          code=$(curl -sS -o response.txt -w '%{http_code}' -X POST https://api.indexnow.org/indexnow \
+            -H 'Content-Type: application/json; charset=utf-8' --data @payload.json)
+          echo "IndexNow HTTP $code"; cat response.txt
+          case "$code" in 200|202) ;; *) exit 1 ;; esac
