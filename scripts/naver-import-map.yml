@@ -2141,3 +2141,423 @@
   title: "RAM에 대하여 (8) — Micron, 메모리 공급 제약은 2028년까지 더 심해진다"
   description: Micron 실적 발표의 공급 전망과 이미 계약된 2027년 물량, 고객 예치금이 보여 주는 여러 해짜리 램값 상승 구조를 정리합니다
   tags: [micron, dram, memory-shortage, hbm, semiconductor]
+
+- source: naver-posting-it/posts/tech/26Q4/20261002_에어팟_버즈_가격비교.md
+  slug: airpods-galaxy-buds-price-comparison
+  date: 2026-10-02
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "AirPods·갤럭시 버즈 가격 비교 — 현행 7종 공식 정가"
+  description: Apple AirPods 와 삼성 갤럭시 버즈 현행 라인업 7종을 공식 스토어 정가로 나란히 놓고 급별 가격 차이를 정리합니다
+  tags: [airpods, galaxy-buds, earbuds, price-comparison, noise-cancelling]
+
+- source: naver-posting-it/posts/ai/26Q4/20261007_클로드코드_mods.md
+  slug: claude-code-mods
+  date: 2026-10-07
+  category: AI
+  category_slug: ai
+  subcategory: Explainer
+  title: "Claude Code mods — 직접 만들어 본 모드와 샌드박스 없는 권한"
+  description: 이벤트마다 호출되는 함수로 Claude Code 동작을 바꾸는 mods 의 구조와 직접 만든 가드, 설치 전 확인할 권한을 정리합니다
+  tags: [claude-code, mods, plugins, hooks, agent-security]
+
+- source: naver-posting-it/posts/ai/26Q4/20261007_GPT6Astra_AISI_공급망공격.md
+  slug: gpt-6-astra-aisi-supply-chain-attack
+  date: 2026-10-07
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "GPT-6 Astra, 영국 AISI 시험에서 공급망 공격 29.2% — 6.1 Astra 출시 취소"
+  description: 시뮬레이션에서 지시받지 않은 공급망 공격을 수행한 AISI 평가 결과와 OpenAI 가 GPT-6.1 Astra 출시를 취소한 경위를 정리합니다
+  tags: [openai, gpt-6-astra, ai-safety, aisi, supply-chain-attack]
+
+- source: naver-posting-it/posts/ai/26Q4/20261007_KT_모두의AI.md
+  slug: kt-moduui-ai
+  date: 2026-10-07
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "KT 모두의 AI — 국산 모델 5개를 한 서비스에 통합해 10월 베타"
+  description: 업스테이지·리벨리온 등과 만든 KT 컨소시엄의 생활 서비스형 AI 「모두의 AI」 구성과 베타·정식 출시 일정을 정리합니다
+  tags: [kt, korean-ai, upstage, rebellions, ai-service]
+
+- source: naver-posting-it/posts/ai/26Q4/20261007_Reflection_Beam_오픈가중치.md
+  slug: reflection-ai-beam-open-weights
+  date: 2026-10-07
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "Reflection AI Beam — 5,010억 파라미터 오픈 가중치 모델 공개"
+  description: 미국 회사가 Apache 2.0 으로 내놓는 MoE 오픈 가중치 모델 Beam 의 구조와 성능 주장, 공개 일정을 정리합니다
+  tags: [reflection-ai, beam, open-weights, moe, llm]
+
+- source: naver-posting-it/posts/ai/26Q4/20261007_StrandsDecider_결정모델.md
+  slug: strands-decider-decision-model
+  date: 2026-10-07
+  category: AI
+  category_slug: ai
+  subcategory: Explainer
+  title: "Strands Decider 2B — 노트북에서 돌아가는 Amazon 결정 모델"
+  description: 선택지 하나와 그 확률을 내놓는 AWS 결정 모델 Strands Decider 의 동작과 한국어 12문항 실측 결과를 정리합니다
+  tags: [aws, strands-decider, decision-model, small-model, local-llm]
+
+- source: naver-posting-it/posts/paper/26Q4/20261007_희소최소제곱_AI증명.md
+  slug: sparse-least-squares-ai-proof
+  date: 2026-10-07
+  category: Math
+  category_slug: math
+  subcategory: Explainer
+  title: "희소 최소제곱의 조건수 장벽 — 증명은 Gemini 에이전트가 먼저 도출했다"
+  description: Google 논문이 다룬 희소 회귀 추측과 그 증명을 Gemini 기반 에이전트가 먼저 찾고 사람이 검증한 과정을 정리합니다
+  tags: [sparse-regression, least-squares, ai-math, gemini, theorem-proving]
+
+- source: naver-posting-it/posts/robot/26Q4/20261007_아틀라스_4탄_보스턴다이내믹스_CEO.md
+  slug: atlas-humanoid-04-new-ceo
+  date: 2026-10-07
+  category: Robot
+  category_slug: robot
+  subcategory: News
+  title: "아틀라스 (4) — Boston Dynamics 새 CEO 에 Amazon Alexa 총괄"
+  description: 로히트 프라사드 선임 배경과 그가 책임지게 된 Atlas 양산 목표, 현재 생산 속도의 간극을 정리합니다
+  tags: [atlas, boston-dynamics, humanoid, hyundai, leadership]
+
+- source: naver-posting-it/posts/science/26Q4/20261007_노벨생리의학상_광유전학.md
+  slug: nobel-medicine-2026-optogenetics
+  date: 2026-10-07
+  category: Science
+  category_slug: science
+  subcategory: Explainer
+  title: "2026 노벨 생리의학상 — 빛으로 뇌세포를 켜고 끄는 광유전학"
+  description: 녹조류 단백질이 신경과학 도구가 되기까지 세 수상자의 발견과 광유전학의 임상 적용 현황을 정리합니다
+  tags: [nobel-prize, optogenetics, neuroscience, channelrhodopsin, medicine]
+
+- source: naver-posting-it/posts/science/26Q4/20261007_노벨물리학상_아이스큐브.md
+  slug: nobel-physics-2026-icecube
+  date: 2026-10-07
+  category: Science
+  category_slug: science
+  subcategory: Explainer
+  title: "2026 노벨 물리학상 — 남극 얼음 1㎦로 고에너지 중성미자를 잡은 IceCube"
+  description: 프랜시스 할젠의 단독 수상 이유와 남극 얼음 속 광센서로 우주 중성미자를 검출하는 IceCube 의 원리를 정리합니다
+  tags: [nobel-prize, icecube, neutrino, astrophysics, physics]
+
+- source: naver-posting-it/posts/science/26Q4/20261007_노벨화학상_비대칭자가촉매.md
+  slug: nobel-chemistry-2026-asymmetric-autocatalysis
+  date: 2026-10-07
+  category: Science
+  category_slug: science
+  subcategory: Explainer
+  title: "2026 노벨 화학상 — 거울상 분자 한쪽만 만드는 비대칭 자가촉매"
+  description: 카강의 비선형 효과와 소아이의 비대칭 자가촉매가 무엇이고 생명체의 호모키랄성 질문과 어떻게 이어지는지 정리합니다
+  tags: [nobel-prize, chemistry, chirality, autocatalysis, asymmetric-synthesis]
+
+- source: naver-posting-it/posts/security/26Q4/20261007_티빙_보상_연장.md
+  slug: tving-privacy-breach-07
+  date: 2026-10-07
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "티빙 개인정보 유출 (7) — 보상 신청 10월 30일까지 연장"
+  description: 미신청자 대상 추가 신청 기간과 지급일, 연장 기간에 빠진 보상 항목을 정리합니다
+  tags: [tving, data-breach, compensation, privacy, streaming]
+
+- source: naver-posting-it/posts/security/26Q4/20261007_교회_해킹.md
+  slug: church-data-breach
+  date: 2026-10-07
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "여의도순복음·사랑의교회 해킹 — 교인정보 약 105만 건 유출 정황"
+  description: 해외 공격자 서버에서 발견된 두 교회의 교인정보·헌금 기록 규모와 침입 경로, 교인이 할 조치를 정리합니다
+  tags: [data-breach, web-shell, privacy, erp, incident]
+
+- source: naver-posting-it/posts/security/26Q4/20261007_웹셸_해설.md
+  slug: web-shell-explained
+  date: 2026-10-07
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "웹셸이란 — 웹 서버에 심어지는 악성 스크립트와 막는 법"
+  description: 국내 침해 사고 보도에 반복해 나오는 웹셸의 정의와 설치 조건, 서버 운영자가 점검할 항목을 정리합니다
+  tags: [web-shell, web-security, server-security, incident-response, malware]
+
+- source: naver-posting-it/posts/security/26Q4/20261007_아르텍스_AI_침투테스트.md
+  slug: artex-ai-pentest-tool
+  date: 2026-10-07
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "ARTEX AI — 은행 연쇄 해킹에 흔적 남긴 자율 침투테스트 도구"
+  description: 금융사 침해 공격 IP 에서 확인된 오픈소스 자율 침투테스트 도구의 구조와, 확인된 사실과 추정을 구분해 정리합니다
+  tags: [penetration-testing, ai-security, banking, open-source, incident]
+
+- source: naver-posting-it/posts/security/26Q4/20261007_Citrix_NetScaler_SAML_제로데이.md
+  slug: citrix-netscaler-saml-zero-day
+  date: 2026-10-07
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "Citrix NetScaler 세 번째 제로데이 — 9월에 업데이트한 장비도 해당"
+  description: SAML 로그인을 쓰는 NetScaler 장비를 노리는 CVE-2026-88779 의 영향 범위와 수정 빌드, 점검 순서를 정리합니다
+  tags: [citrix, netscaler, zero-day, saml, vulnerability]
+
+- source: naver-posting-it/posts/tech/26Q4/20261007_구글북_출시.md
+  slug: googlebook-launch
+  date: 2026-10-07
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "Googlebook 출시 — Chromebook 다음 노트북은 Android 기반"
+  description: Googlebook 5종의 가격과 Googlebook OS 의 정체, ChromeOS 업데이트 종료 일정을 정리합니다
+  tags: [google, googlebook, chromebook, android, laptop]
+
+- source: naver-posting-it/posts/tech/26Q4/20261007_누리호_5차발사.md
+  slug: nuri-rocket-5th-launch
+  date: 2026-10-07
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "누리호 5차 발사 성공 — 초소형군집위성 5기를 처음으로 한 번에"
+  description: 누리호 5차 발사의 경과와 위성 궤도 투입 결과, 누적 성공률과 다음 발사 계획을 정리합니다
+  tags: [nuri, rocket-launch, kasa, satellite, space]
+
+- source: naver-posting-it/posts/tech/26Q4/20261007_AI전력_9탄_선캐처.md
+  slug: ai-power-09-suncatcher
+  date: 2026-10-07
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "AI의 전기 (9) — Google 선캐처, 궤도에 오른 TPU 4개"
+  description: 궤도 위에서 AI 칩의 전력과 냉각을 해결하려는 Google 선캐처 시제 위성의 구성과 논문이 제시한 비용 전제를 정리합니다
+  tags: [google, suncatcher, space-data-center, tpu, ai-power]
+
+- source: naver-posting-it/posts/tech/26Q4/20261007_갤럭시탭S12_포토샵.md
+  slug: galaxy-tab-s12-photoshop
+  date: 2026-10-07
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "갤럭시 탭 S12 국내 출시 — Photoshop 기본 탑재에 189만 9,700원부터"
+  description: 갤럭시 탭 S12 울트라·S12+ 의 국내 출고가와 전작 대비 변화, 안드로이드 태블릿 첫 Photoshop 탑재 조건을 정리합니다
+  tags: [samsung, galaxy-tab, tablet, photoshop, android]
+
+- source: naver-posting-it/posts/tech/26Q4/20261009_쿠팡_로그인_오류.md
+  slug: coupang-login-outage
+  date: 2026-10-09
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "쿠팡 로그인 오류 — 10월 9일 새벽 앱 접속 장애"
+  description: 쿠팡·쿠팡이츠 앱이 열리지 않은 새벽 장애의 증상과 회사 설명을 정리합니다
+  tags: [coupang, outage, app, e-commerce, incident]
+
+- source: naver-posting-it/posts/ai/26Q4/20261010_메타_MS_클로드사용축소.md
+  slug: meta-microsoft-cut-internal-claude
+  date: 2026-10-10
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "Meta·Microsoft, 사내 Claude 사용 축소 — 자체 도구로 전환"
+  description: 두 회사가 직원용 Claude 사용을 줄이는 규모와 이유, 고객 제공은 유지하는 구분을 정리합니다
+  tags: [anthropic, claude-code, meta, microsoft, enterprise-ai]
+
+- source: naver-posting-it/posts/ai/26Q4/20261010_ChatGPT_IntelligentUI.md
+  slug: chatgpt-intelligent-ui
+  date: 2026-10-10
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "ChatGPT Intelligent UI — 답변에 차트·버튼·입력 폼이 들어온다"
+  description: GPT-6 와 함께 배포된 Intelligent UI 의 형식과 요금제별 제공 범위, 끄는 방법을 정리합니다
+  tags: [openai, chatgpt, gpt-6, generative-ui, ux]
+
+- source: naver-posting-it/posts/ai/26Q4/20261010_ClaudeHaiku55.md
+  slug: claude-haiku-5-5
+  date: 2026-10-10
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "Claude Haiku 5.5 출시 — Haiku 4.5 의 10분의 1 요금"
+  description: Claude 5.5 계열 마지막 모델 Haiku 5.5 의 요금과 컴퓨터 조작 벤치마크, 전환할 때 바꿀 설정을 정리합니다
+  tags: [anthropic, claude-haiku, llm, pricing, computer-use]
+
+- source: naver-posting-it/posts/ai/26Q4/20261010_Gemini_agent.md
+  slug: google-gemini-agent
+  date: 2026-10-10
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "Google Gemini agent — Claude 모델도 호출하는 업무용 범용 에이전트"
+  description: Gemini at Work 2026 에서 공개된 Gemini agent 의 기능과 모델 배정 방식, 에이전트 계정 구조를 정리합니다
+  tags: [google, gemini-agent, ai-agent, enterprise-ai, claude]
+
+- source: naver-posting-it/posts/security/26Q4/20261010_한국은행_해킹시도.md
+  slug: bank-of-korea-hacking-attempts
+  date: 2026-10-10
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "한국은행 해킹 시도 4.5배 — 수탁업체 경유로 직원 186명 정보 유출"
+  description: 늘어난 한국은행 해킹 시도 추이와 이러닝 위탁업체 침해로 일어난 직원 개인정보 유출을 구분해 정리합니다
+  tags: [bank-of-korea, cyberattack, data-breach, third-party-risk, financial-security]
+
+- source: naver-posting-it/posts/security/26Q4/20261010_골프예약앱_개인정보유출.md
+  slug: golf-booking-app-data-breach
+  date: 2026-10-10
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "카카오골프예약·골프몬 개인정보 유출 — 예약·결제 내역까지"
+  description: 사흘 사이 이어진 골프 예약 앱 두 곳의 유출 경과와 항목 차이, 이용자가 경계할 연락을 정리합니다
+  tags: [data-breach, kakao, privacy, phishing, incident]
+
+- source: naver-posting-it/posts/security/26Q4/20261010_정부24_어린이포털_해킹.md
+  slug: gov24-kids-portal-breach
+  date: 2026-10-10
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "정부24 어린이포털 해킹 — 주민등록번호·계정 유출 추정"
+  description: 메모리 덤프 유출로 시작된 정부24 어린이포털 침해의 경과와 유출 추정 항목, 공지 처리 방식을 정리합니다
+  tags: [gov24, data-breach, public-sector, privacy, incident]
+
+- source: naver-posting-it/posts/security/26Q4/20261010_ccTLD_인증서_무단발급.md
+  slug: cctld-certificate-misissuance
+  date: 2026-10-10
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "국가 도메인 운영사 침해로 Google 인증서 무단 발급"
+  description: 세 나라 ccTLD 운영 업체 침해로 Google·YouTube 인증서가 발급된 경위와 Chrome 의 차단, 자물쇠 표시의 한계를 정리합니다
+  tags: [tls-certificate, cctld, dns, chrome, web-pki]
+
+- source: naver-posting-it/posts/tech/26Q4/20261010_SpaceX_800MHz.md
+  slug: spacex-800mhz-spectrum
+  date: 2026-10-10
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "SpaceX 800MHz 주파수 인수 — Starlink 를 휴대폰 직결 통신사로"
+  description: Grain Management 의 800MHz 주파수 인수 내용과 Starlink Mobile 의 실내 커버리지 계획, 통신사 주가 반응을 정리합니다
+  tags: [spacex, starlink, spectrum, direct-to-cell, telecom]
+
+- source: naver-posting-it/posts/ai/26Q4/20261013_BC카드_ChatGPT_쇼핑적립.md
+  slug: bc-card-chatgpt-shopping
+  date: 2026-10-13
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "BC카드, ChatGPT 에서 페이북 쇼핑적립 비교 — 연결 전에 알 것"
+  description: ChatGPT 대화 안에서 적립률을 비교하는 BC카드 퍼스널 쇼퍼의 동작과 연결할 때 전달되는 정보를 정리합니다
+  tags: [chatgpt, bc-card, chatgpt-apps, shopping, privacy]
+
+- source: naver-posting-it/posts/ai/26Q4/20261013_OpenAI_textGrain_워터마크.md
+  slug: openai-textgrain-watermark
+  date: 2026-10-13
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "OpenAI textGrain — ChatGPT 글에 보이지 않는 워터마크, EU 부터"
+  description: EU AI법 대응으로 도입된 텍스트 워터마크 textGrain 의 적용 범위와 우회 내성, 한국 적용 여부를 정리합니다
+  tags: [openai, watermark, ai-act, ai-detection, chatgpt]
+
+- source: naver-posting-it/posts/math/26Q4/20261013_OpenAI_고유게임추측.md
+  slug: openai-unique-games-conjecture
+  date: 2026-10-13
+  category: Math
+  category_slug: math
+  subcategory: Explainer
+  title: "OpenAI 내부 모델의 고유 게임 추측 증명 — Lean 은 통과, 사람 검증은 아직"
+  description: OpenAI 가 공개한 수학 원고 가운데 고유 게임 추측 증명이 무엇을 주장하고 어디까지 검증됐는지 정리합니다
+  tags: [unique-games-conjecture, ai-math, lean, complexity-theory, openai]
+
+- source: naver-posting-it/posts/security/26Q4/20261013_은행_모의해킹_취약점.md
+  slug: bank-pentest-unpatched-vulnerabilities
+  date: 2026-10-13
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "은행 모의해킹 취약점 4,777건 — 109건은 아직 미보완"
+  description: 20개 은행 모의해킹 결과의 미보완 취약점과 줄어든 정보보호 투자, 국정감사 쟁점을 정리합니다
+  tags: [banking, penetration-testing, vulnerability, financial-security, fss]
+
+- source: naver-posting-it/posts/security/26Q4/20261013_Anthropic_사이버미션.md
+  slug: anthropic-cyber-mission
+  date: 2026-10-13
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "Anthropic Cyber Mission — 전력·수도 보안에 Claude 지원"
+  description: 기반시설·오픈소스 방어자를 지원하는 Anthropic Cyber Mission 과 개편된 사이버 검증 프로그램의 접근 단계를 정리합니다
+  tags: [anthropic, cybersecurity, critical-infrastructure, open-source, claude]
+
+- source: naver-posting-it/posts/security/26Q4/20261013_PoeLLM_봇넷.md
+  slug: poellm-botnet
+  date: 2026-10-13
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "PoeLLM 봇넷 — 노출된 AI 서버 3,400대를 채굴에 악용"
+  description: LiteLLM·Ollama 등 노출 서버를 감염시킨 PoeLLM 봇넷의 경과와 명령 서버 은닉 방식, 서버 운영자 점검 항목을 정리합니다
+  tags: [botnet, cryptomining, ollama, litellm, ai-security]
+
+- source: naver-posting-it/posts/tech/26Q4/20261013_마거릿해밀턴_아폴로1202.md
+  slug: margaret-hamilton-apollo-1202
+  date: 2026-10-13
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "마거릿 해밀턴 별세 — 아폴로 11호 1202 경보와 소프트웨어 공학"
+  description: 착륙 직전 과부하 경보에도 필수 계산이 멈추지 않은 설계와, 해밀턴이 소프트웨어 공학을 분야로 세운 과정을 정리합니다
+  tags: [margaret-hamilton, apollo, software-engineering, nasa, history]
+
+- source: naver-posting-it/posts/ai/26Q4/20261014_Gemini4_Argon_정식제공.md
+  slug: gemini-4-argon-general-availability
+  date: 2026-10-14
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "Gemini 4 Argon 정식 출시 — 12월부터 API 요금 2배"
+  description: Gemini 4 Argon 의 제공 범위와 확정된 도입가 종료일, 12월 이후 API 요금을 정리합니다
+  tags: [google, gemini-4-argon, llm, pricing, api]
+
+- source: naver-posting-it/posts/ai/26Q4/20261014_NanoBanana21_출시.md
+  slug: nano-banana-2-1
+  date: 2026-10-14
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "Nano Banana 2.1 출시 — 1K 이미지 한 장 47원으로 절반"
+  description: Google 이미지 생성·편집 모델 Nano Banana 2.1 의 가격과 자체 평가 결과, 이전 모델과 달라진 점을 정리합니다
+  tags: [google, nano-banana, image-generation, gemini, pricing]
+
+- source: naver-posting-it/posts/security/26Q4/20261014_금융권_해킹_16곳.md
+  slug: korea-financial-sector-breaches-16
+  date: 2026-10-14
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "금융사 해킹 16곳으로 증가 — 개인정보 약 10만 건 유출"
+  description: 아흐레 만에 두 배 넘게 늘어난 금융권 침해 범위와 금융위원회 점검 결과, 고객이 할 조치를 정리합니다
+  tags: [data-breach, banking, financial-security, fsc, incident]
+
+- source: naver-posting-it/posts/security/26Q4/20261014_맑은소프트_유출.md
+  slug: malgeunsoft-lms-breach
+  date: 2026-10-14
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "맑은소프트 해킹 — 교육 사이트 22곳 개인정보 237만 건 유출"
+  description: 위탁 학습관리시스템 업체 침해로 기관 교육 사이트 22곳 회원 정보가 함께 유출된 경위와 확인 방법을 정리합니다
+  tags: [data-breach, lms, third-party-risk, public-sector, privacy]
+
+- source: naver-posting-it/posts/security/26Q4/20261014_윈도우_10월_보안업데이트.md
+  slug: windows-october-2026-patch
+  date: 2026-10-14
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "Windows 10월 보안 업데이트 1,413건 — 24H2 는 지원 종료"
+  description: 역대 최대 규모인 10월 정기 업데이트의 제로데이와 Windows 11 24H2 Home·Pro 지원 종료 대응을 정리합니다
+  tags: [windows, patch-tuesday, zero-day, microsoft, windows-11]
