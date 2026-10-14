@@ -1,0 +1,22 @@
+- file: 1_chart_OSWorld.png
+  en:
+    title: OSWorld 2.1 scores
+    subtitle: Offline subset · higher is better
+    source: 'Source: Anthropic Claude Haiku 5.5 announcement page (2026-10-07)'
+    labels: [Haiku 4.5, GPT-6 Luna, Haiku 5.5, Sonnet 5.5]
+- file: 2_chart_출력요금.png
+  en:
+    title: Output price per million tokens
+    subtitle: Standard API price · prompts up to 100K tokens · KRW at $1 = ₩1,400
+    unit: ''
+    y_label: KRW
+    source: 'Source: Anthropic model docs and announcement page (checked 2026-10-10)'
+    labels: [Haiku 5.5, Haiku 4.5, Sonnet 5.5, Opus 5.5]
+- file: 5_items_전환.png
+  en:
+    items:
+      - [Model ID, "claude-haiku-5-5, a fixed ID without a date suffix"]
+      - [Thinking settings, "budget_tokens returns a 400 error; switch to adaptive and effort"]
+      - [Remove sampling values, "Setting temperature, top_p, or top_k mostly returns 400"]
+      - [Remove prefill, Requests ending with an assistant turn return 400]
+      - [Recount tokens, "Same text is about 30% more tokens; large images about 2.5x"]

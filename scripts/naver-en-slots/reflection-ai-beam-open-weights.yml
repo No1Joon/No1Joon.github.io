@@ -1,0 +1,6 @@
+- file: 4_chart_메모리.png
+  en:
+    title: Memory needed to hold Beam's weights
+    subtitle: Weights only, excluding runtime cache
+    source: 'Source: calculated from Reflection AI parameter count (501B)'
+    labels: [BF16, FP8, 4-bit]

@@ -1,0 +1,10 @@
+- file: 1_chart_연혁.png
+  en:
+    title: Research on the number of variables in sparse least squares
+    source: 'Source: arXiv 2608.02588 related-work section · arXiv 2609.15983'
+    labels:
+      - ['1995', "Natarajan\nNP-hardness proof"]
+      - ['2010', "kκ²-size\nupper bound"]
+      - ['2021', "Axiotis–Sviridenko\nkκ upper bound, conjecture"]
+      - [Aug 2026, "Conditional\nlower bound proof"]
+      - [Sep 2026, "Colosseum\npaper published"]

@@ -1,0 +1,10 @@
+- file: 1_chart_경과.png
+  en:
+    title: IceCube, from conception to the Nobel Prize
+    source: 'Source: Nobel Committee press release · IceCube facts · IceCube papers (2013, 2018)'
+    labels:
+      - ['1988', "Halzen presents idea of\nobserving in Antarctic ice"]
+      - [2004–2010, Detector construction]
+      - ['2013', "28 events of evidence for\ncosmic neutrinos"]
+      - ['2017', "Neutrino direction\nmatches a blazar"]
+      - [Oct 6 2026, Nobel Prize in Physics announced]

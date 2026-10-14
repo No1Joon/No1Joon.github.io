@@ -1,0 +1,16 @@
+- file: 1_chart_공식정가.png
+  en:
+    title: Official list prices of 7 current AirPods and Galaxy Buds models
+    subtitle: Official stores as of October 2, 2026
+    unit: ''
+    y_label: KRW
+    source: 'Source: Apple Store · Samsung.com · Samsung Newsroom (Buds On launch price, Oct 27)'
+    labels: [Buds3 FE, AirPods 5, AirPods 5 wireless, Buds4, Buds On, Buds4 Pro, AirPods Pro 3]
+- file: 7_items_정리.png
+  en:
+    items:
+      - [Around ₩150,000, "Buds3 FE, in-ear noise cancelling"]
+      - [Around ₩200,000, "AirPods 5, open-fit noise cancelling"]
+      - [₩200,000s with wireless charging, AirPods 5 wireless ₩229,000 · Buds4 ₩259,000]
+      - [Clip-on, "Buds On ₩299,000, a form AirPods doesn't have"]
+      - [Pro models in the ₩300,000s, Buds4 Pro ₩359,000 · AirPods Pro 3 ₩369,000]

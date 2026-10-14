@@ -1,0 +1,8 @@
+- file: 4_items_정리.png
+  en:
+    items:
+      - [How to turn it off, Web settings Personalization → Layout and Visuals → Simple]
+      - [Where it works, "Chat tab, from Instant to Extra High reasoning"]
+      - [Where it doesn't, "Work tab, voice mode, Pro reasoning (GPT-6 Astra)"]
+      - [Saved inputs, "Kept after refresh in the same chat; not carried to other chats"]
+      - [Setting the format, Write answer format preferences in custom instructions]

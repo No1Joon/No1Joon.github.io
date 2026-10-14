@@ -1,0 +1,22 @@
+- file: 1_chart_연혁.png
+  en:
+    title: The history of homochirality research
+    source: 'Source: Nobel Committee popular science background (2026-10-07)'
+    labels:
+      - ['1848', "Pasteur\nmirror-image crystals"]
+      - [Around 1904, "Marckwald\nfirst asymmetric reaction"]
+      - ['1953', "Frank\nautocatalysis model"]
+      - ['1986', "Kagan\nnon-linear effect"]
+      - ['1995', "Soai\nasymmetric autocatalysis"]
+      - ['2003', "Soai\nsuccess from achiral start"]
+- file: 2_chart_비선형.png
+  en:
+    title: Right-handed share, catalyst vs. product
+    source: 'Source: Nobel Committee popular science background, Figure 4 (illustrative values)'
+    labels: [Right-handed in catalyst, Right-handed in product]
+- file: 4_chart_증폭.png
+  en:
+    title: Amplification of enantiomeric excess in the Soai reaction
+    x_label: Excess of one mirror image (%, log scale)
+    source: 'Source: Nobel Committee popular science background, Figure 6'
+    labels: [Start, After round 1, After round 2, After round 3]

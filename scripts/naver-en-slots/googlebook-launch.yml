@@ -1,0 +1,17 @@
+- file: 1_chart_가격.png
+  en:
+    title: US starting prices of the five Googlebooks
+    subtitle: In ₩10,000 units, converted at $1 = ₩1,400
+    unit: ''
+    source: 'Source: Google · Android Authority (2026-09-21)'
+    labels: [Acer 14, Dell XPS, HP 14, ASUS 14, Lenovo 15]
+- file: 3_chart_일정.png
+  en:
+    title: Googlebook launch and ChromeOS support schedule
+    source: 'Source: Google blog · Google ChromeOS support page'
+    labels:
+      - [May 2026, "Googlebook\nannounced"]
+      - [Sep 21, "Pre-orders\nbegin"]
+      - [Oct 4–5, "Launch in\nUS, UK, etc."]
+      - [H2 2027, "Enterprise management\ntools"]
+      - [Mid-2034, "ChromeOS\nupdates end"]

@@ -1,0 +1,32 @@
+- file: 1_chart_경과.png
+  en:
+    title: Timeline of serial financial-sector breaches (2026)
+    source: 'Source: FSC · company notices · press reports'
+    labels:
+      - [Sep 27, "PFCT\nexternal breach"]
+      - [Sep 30, "Shinhan Bank\nnotices leak"]
+      - [Oct 5, "7 firms\naffected"]
+      - [Oct 8, "Inspection of 555\ndue"]
+      - [Oct 10, "Community Credit\nCooperatives"]
+      - [Oct 12, "KDB Capital,\nOK Savings Bank"]
+      - [Oct 14, "16 firms\naffected"]
+- file: 3_chart_업권별.png
+  en:
+    title: Financial firms with confirmed breaches by sector
+    unit: ''
+    source: 'Source: FSC press briefing (2026-10-14)'
+    labels: [Banks, "Savings\nbanks", "Credit-\nspecialized", "P2P\nlending", "Virtual\nassets", "Electronic\nfinance", "Mutual\nfinance"]
+- file: 4_chart_점검결과.png
+  en:
+    title: Firms reporting shortcomings in the checklist inspection
+    unit: ''
+    caption: Of 555 firms inspected
+    source: 'Source: FSC press briefing (2026-10-14)'
+- file: 6_items_고객조치.png
+  en:
+    items:
+      - [Check your firm's notice, "See leaked items in texts, emails, and app notices"]
+      - [Identity theft prevention service, Block phone activations in your name via M-Safer]
+      - [Register as exposed, Registering on FINE strengthens ID checks for new accounts and loans]
+      - [Credit transaction block, Apply at your financial firms to block new loans in your name]
+      - [Change resident registration number, "If a leak raises concern of harm, apply to the change committee"]

@@ -1,0 +1,11 @@
+- file: 3_chart_일정.png
+  en:
+    title: TVING breach compensation claim and payment schedule
+    source: 'Source: TVING compensation page · notices'
+    labels:
+      - [Sep 7, "First round\nopens"]
+      - [Sep 29, "Extension\nannounced"]
+      - [Sep 30, "First round\ncloses"]
+      - [Oct 6, "First payouts,\nadditional round opens"]
+      - [Oct 30, "Additional round\ncloses"]
+      - [Nov 4, "Additional\npayouts"]

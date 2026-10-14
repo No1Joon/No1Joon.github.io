@@ -1,0 +1,21 @@
+- file: 1_chart_유형별.png
+  en:
+    title: October 2026 Microsoft CVEs by impact type
+    unit: ''
+    subtitle: 'EoP: elevation of privilege · RCE: remote code execution · DoS: denial of service'
+    source: 'Source: tallied from Microsoft Security Update Guide CVRF (2026-10)'
+    labels: [EoP, RCE, Info leak, DoS, Bypass, Tampering, Spoofing]
+- file: 2_chart_월별.png
+  en:
+    title: Microsoft CVEs in monthly security updates (2026)
+    unit: ''
+    source: 'Source: Microsoft Security Update Guide monthly release notes'
+    labels: [Apr, May, Jun, Jul, Aug, Sep, Oct]
+- file: 4_items_PC점검.png
+  en:
+    items:
+      - [Install the October update, Install KB5127648 in Settings > Windows Update and restart]
+      - [Check your version, "Type winver in the Run box; 24H2 is out of support"]
+      - [Update to 25H2 or 26H2, Install from the feature update entry in Windows Update]
+      - [Windows 10 users enroll in ESU, Enrolling on 22H2 gives security updates until October 12 2027]
+      - [Heed downloaded-file warnings, Don't open attachments or downloads from unknown sources]

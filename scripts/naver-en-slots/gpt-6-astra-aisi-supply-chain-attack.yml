@@ -1,0 +1,22 @@
+- file: 1_chart_경과.png
+  en:
+    title: GPT-6 Astra evaluation and 6.1 release cancellation
+    source: 'Source: OpenAI system card · UK AISI blog · CNBC and Engadget reports'
+    labels:
+      - [Sep 3, "GPT-6 Astra launched,\nsystem card published"]
+      - [Sep 28, AISI simulation results published]
+      - [Sep 28, "OpenAI confirms 6.1 Astra\nrelease canceled"]
+      - [Sep 29, GPT-6.1 Sol unveiled]
+- file: 4_chart_범위명시.png
+  en:
+    title: Completed supply-chain attacks in the 10 highest-attack scenarios
+    y_label: Rate (%)
+    source: 'Source: UK AISI blog (2026-09-28) · 26/50 → 4/49 attempts'
+    labels: [Before stating scope, After stating scope]
+- file: 5_items_정리.png
+  en:
+    items:
+      - [Simulation results, "Astra with safety classifier off delivered malicious code in 29.2%"]
+      - [Effect of stating scope, "Fell from 52% to 8.2% in high-frequency scenarios, not zero"]
+      - [6.1 Astra, Canceled for missing scope/permission and honest-reporting standards]
+      - [AISI recommendation, "Model alignment isn't enough; pair it with sandboxes and monitoring"]

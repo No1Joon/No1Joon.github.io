@@ -1,0 +1,8 @@
+- file: 3_items_정리.png
+  en:
+    items:
+      - [Scope, "ChatGPT and Codex on all plans in the EU, over several weeks"]
+      - [API, "Optional on some models worldwide; off by default"]
+      - [Detector, "Approved researchers and expert organizations only; not public"]
+      - [Weak spots, "Short text, text with few wording choices like math, edited text"]
+      - [What it doesn't tell you, "The author, human contribution, or whether the content is true"]

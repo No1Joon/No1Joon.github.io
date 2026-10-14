@@ -1,0 +1,15 @@
+- file: 1_chart_고객사례.png
+  en:
+    title: Task times in customer examples presented by Google Cloud
+    subtitle: Before → after adoption, in minutes
+    unit: min
+    source: 'Source: Google Cloud blog, Gemini at Work 2026 (2026-10-09)'
+    labels: ["Bradesco review\nbefore", "Bradesco review\nafter", "Snap diagnostics\nbefore", "Snap diagnostics\nafter"]
+- file: 4_items_정리.png
+  en:
+    items:
+      - [Availability, "Private preview; GA date and pricing not set"]
+      - [Who gets it, Starting with Workspace customers on some Business and Enterprise plans]
+      - [Using Claude, "Admin must accept terms and enable it; off by default"]
+      - [Spending cap, "Per-project limits in Cloud Billing; pauses when reached"]
+      - [Code Assist subscribers, "Existing subscriptions auto-renew in 2026; renewals end in 2027"]

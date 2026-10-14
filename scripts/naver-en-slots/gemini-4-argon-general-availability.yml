@@ -1,0 +1,16 @@
+- file: 3_chart_요금변화.png
+  en:
+    title: Gemini 4 Argon API price per million tokens
+    unit: ''
+    y_label: KRW
+    x: [Through Nov 30, From Dec 1]
+    source: 'Source: Gemini API price list (checked 2026-10-14) · converted at $1 = ₩1,400'
+    labels: [Priority output, Standard output, Batch output, Standard input]
+- file: 5_items_API정리.png
+  en:
+    items:
+      - [Model ID, "gemini-4-argon; can't be called on the free tier"]
+      - [Price increase date, "Input, output, and cache all double from December 1, 2026"]
+      - [Output limit, "Set max_output_tokens to 32,768 or more; over 65,536 runs in background"]
+      - [Timeout, Hard requests take minutes; an HTTP timeout of 15+ minutes is recommended]
+      - [Ignored values, "temperature, top_p, and top_k are not applied even if set"]

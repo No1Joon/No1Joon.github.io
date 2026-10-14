@@ -1,0 +1,34 @@
+- file: 1_chart_경과.png
+  en:
+    title: Timeline of ccTLD hijacking and unauthorized certificate issuance
+    subtitle: '2026'
+    source: 'Source: Google Chrome team · Cert Spotter CT log lookup (2026-10-10) · Boan News'
+    labels:
+      - [Sep 22, "youtube.com.gh\ncertificate issued"]
+      - [Sep 25, "google.sl, youtube.sl\ncertificates issued"]
+      - [Sep 27, "youtube.as\ncertificate issued"]
+      - [Oct 6, "Google discloses\nwhat happened"]
+      - [Oct 8, "Reported in\nKorea"]
+- file: 2_term_ct로그.png
+  title: zsh — Cert Spotter CT log lookup
+  text: |
+    # look up certificates issued for youtube.sl in CT logs
+    $ curl -s "https://api.certspotter.com/v1/issuances\
+    ?domain=youtube.sl&expand=dns_names&expand=issuer"
+    [
+      {"dns_names": ["*.youtube.sl", "youtube.sl"],
+       "not_before": "2026-09-25T05:08:30Z",
+       "not_after": "2026-12-24T05:08:29Z",
+       "issuer": "Let's Encrypt"},
+      {"dns_names": ["www.youtube.sl", "youtube.sl"],
+       "not_before": "2026-09-25T05:08:31Z",
+       "not_after": "2026-12-24T05:08:30Z",
+       "issuer": "Let's Encrypt"}
+    ]
+- file: 5_items_조치.png
+  en:
+    items:
+      - [Monitor CT logs, Regularly check issuances including unused and regional domains]
+      - [Restrict CAA records, "Specify allowed CAs, ACME accounts, and validation methods (RFC 8657)"]
+      - [Block reissuance after DNS recovery, "Restore CAA after regaining control; block reuse of stored validations"]
+      - [Revoke unauthorized certificates, Ask the issuing CA to revoke immediately]

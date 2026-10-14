@@ -1,0 +1,14 @@
+- file: 2_chart_발견패치.png
+  en:
+    title: Project Glasswing vulnerabilities by handling stage
+    unit: ''
+    source: 'Source: Anthropic (2026-10-06) · survey of 33 partners + Anthropic scans; patch count undercounted'
+    labels: [Candidates found, Triaged, Real vulnerabilities, High or critical, Patched]
+- file: 5_items_신청경로.png
+  en:
+    items:
+      - [CIDP, "Security product and service companies for critical infrastructure; interest form"]
+      - [OSS Scanner, "Core maintainers of major open-source projects; free enrollment"]
+      - [CVP Defense Access, "Security teams, infrastructure operators, individual researchers; reviewed in days"]
+      - [CVP Red Team Access, "Pentest firms and in-house red teams; organizations only, weeks of review"]
+      - [Claude for Open Source, Free Claude Max subscription application for maintainers]

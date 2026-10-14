@@ -1,0 +1,14 @@
+- file: 1_chart_탐지건수.png
+  en:
+    title: Web shells Microsoft detected on servers, monthly average
+    unit: ''
+    source: 'Source: Microsoft security blog (2021-02-11)'
+    labels: [Monthly average a year earlier, Aug 2020 – Jan 2021]
+- file: 5_items_정리.png
+  en:
+    items:
+      - [Limit installation paths, "Allowlist upload extensions, no execution in upload folders"]
+      - [Patch vulnerabilities quickly, "Security updates for web servers, CMS, and plugins"]
+      - [Restrict permissions, Keep the web server account from writing to web folders]
+      - [Monitor file changes, Known-good comparison and file integrity monitoring]
+      - [Watch for signs of intrusion, Logs of requests to new files and outbound connections from the server]

@@ -1,0 +1,7 @@
+- file: 1_chart_구축비용.png
+  en:
+    title: Estimated cost to build a nationwide US mobile network
+    subtitle: Analyst estimates · in ₩ trillion
+    unit: ''
+    source: 'Source: Bernstein Research · BNP Paribas (RCR Wireless, 2026-10-09) · converted at $1 = ₩1,400'
+    labels: [Bernstein low, BNP Paribas, Bernstein high]

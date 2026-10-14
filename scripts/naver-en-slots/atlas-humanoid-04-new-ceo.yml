@@ -1,0 +1,14 @@
+- file: 2_chart_생산격차.png
+  en:
+    title: Atlas annual production, current rate vs. 2028 target
+    x_label: Units (log scale)
+    unit: ''
+    source: 'Source: Semafor (May 2026 report, 4/month annualized) · Hyundai Motor Group (2028 target)'
+    labels: [Current rate, 2028 target]
+- file: 4_chart_원가.png
+  en:
+    title: Estimated manufacturing cost per Atlas unit
+    subtitle: Early production is the top of the estimated range · KRW, $1 = ₩1,400
+    unit: ''
+    source: 'Source: industry estimates cited by The Korea Herald (2026-05-20)'
+    labels: [Early production, "After 50,000 cumulative"]

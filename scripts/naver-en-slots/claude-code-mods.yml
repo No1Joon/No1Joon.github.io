@@ -1,0 +1,50 @@
+- file: 1_term_가드코드.png
+  font: d2
+  title: rm-guard/hooks/register.ts
+  width: 72
+  line_height: 1.3
+  pad: 1.7
+  text: "import type { Register } from 'claude-code'\n\n// pattern that catches rm -rf and git push --force\nconst RISKY = /\\brm\\s+-[a-z]*r[a-z]*f|\\bgit\\s+push\\b.*(--force|-f\\b)/\n\nlet blocked =\
+    \ 0\n\nexport const register: Register = on => {\n  // runs right before Claude calls the Bash tool\n  on('tool.call', { tool: 'Bash' }, ($, e, next) => {\n    if (!RISKY.test(e.command)) return next(e)\
+    \  // pass\n    blocked += 1\n    $.ui.status(`rm-guard: blocked ${blocked}`)\n    return { deny: `rm-guard: \"${e.command.slice(0, 40)}\" is blocked` }\n  }).catch(($, e, next) =>\n    // if the check\
+    \ crashes, fail closed\n    next.called ? next(e) : { deny: 'rm-guard: its check failed' },\n  )\n}\n"
+- file: 2_term_가드검사.png
+  title: zsh — tmp-claude-mods
+  width: 72
+  line_height: 1.3
+  pad: 1.7
+  highlight_style: color
+  highlight_color: '#b4afff'
+  highlight:
+  - gating hook without .catch
+  - gating hook with .catch
+  text: "$ claude plugin validate rm-guard   # before adding .catch\n  ❯ ./register.ts hooks: tool.call{tool=Bash}\n  ❯ ./register.ts gating hook without .catch: tool.call{tool=Bash}\n  ❯ ./register.ts\
+    \ calls: $.ui.status\n\n$ claude plugin validate rm-guard   # after adding .catch\n  ❯ ./register.ts hooks: tool.call{tool=Bash}\n  ❯ ./register.ts gating hook with .catch: tool.call{tool=Bash}\n  ❯\
+    \ ./register.ts calls: $.ui.status\n"
+- file: 4_term_샘플검사.png
+  title: zsh — tmp-claude-mods
+  width: 72
+  line_height: 1.3
+  pad: 1.7
+  highlight_style: color
+  highlight_color: '#b4afff'
+  highlight:
+  - $.fs.write
+  - 'env reads: HOME'
+  - $.process.run
+  text: "$ claude plugin validate memo   # my own /memo command\n  ❯ ./register.ts hooks: session.start, command.run{command=memo}\n  ❯ ./register.ts calls: $.command.register, $.env.get, $.fs.write\n \
+    \ ❯ ./register.ts env reads: HOME\n\n$ claude plugin validate blast-radius   # Anthropic sample\n  ❯ ./blast-radius.mjs hooks: tool.call{tool=Bash},\n    ui.render{component=Pane}, ui.render{component=AbovePrompt}\n\
+    \  ❯ ./blast-radius.mjs gating hook without .catch: tool.call{tool=Bash}\n  ❯ ./blast-radius.mjs calls: $.clock.now, $.process.run,\n    $.session.cwd, $.ui.close, $.ui.invalidate, $.ui.open, ...\n"
+- file: 5_items_정리.png
+  en:
+    items:
+    - - Before installing
+      - Check the hooks and calls lines with claude plugin validate
+    - - The calls line
+      - If $.fs, $.process, $.http, or $.env appears, read the code too
+    - - The hooks line
+      - tool.call and tool.check can change or approve tool calls
+    - - Using it as a guard
+      - String checks miss variant commands; pair with deny rules
+    - - If something goes wrong
+      - Disable installed mods with claude --safe-mode and check

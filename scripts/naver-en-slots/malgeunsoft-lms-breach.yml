@@ -1,0 +1,25 @@
+- file: 1_chart_경과.png
+  en:
+    title: Timeline of the Malgeunsoft breach (2026)
+    source: 'Source: material submitted to PIPC (Rep. Han Chang-min) · ACRC · press reports'
+    labels:
+      - [Sep 19, "Training site\nserver breached"]
+      - [Sep 20, "Personal data\ntaken out"]
+      - [Sep 22, "Noticed via spam\ntexts, reported"]
+      - [Sep 30, "PIPC opens\ninvestigation"]
+      - [Oct 6, "ACRC announces,\napology posted"]
+      - [Oct 13, "2.37M reported\nfigure made public"]
+- file: 2_chart_기관별.png
+  en:
+    title: Known number of people leaked by client
+    unit: ''
+    source: 'Source: Anti-Corruption and Civil Rights Commission announcement · press reports (2026-10-06 to 13)'
+    labels: [Integrity Learning Center, Educational Facility Safety Institute, Kia Gwangmyeong union]
+- file: 5_items_이용자조치.png
+  en:
+    items:
+      - [Check if you're affected, Verify by email or phone on Malgeunsoft's lookup page to see items]
+      - [Change passwords, Also change it on other sites using the same password]
+      - [Ignore impersonation, Don't open links or attachments in training completion or compensation texts]
+      - [Where to report, "Smishing to 118, financial loss to 112"]
+      - [Damages and mediation, "If actual harm occurs, you can apply for personal information dispute mediation"]

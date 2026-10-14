@@ -1,0 +1,25 @@
+- file: 1_chart_경과.png
+  en:
+    title: Timeline of signs of breaches at two megachurches
+    source: 'Source: Oasis Security analysis · Yoido Full Gospel Church statement · press reports (as of 2026-10-07)'
+    labels:
+      - [August, Data stolen from church systems (estimated)]
+      - [September, "Security firm reports\nsigns to authorities"]
+      - [Early October, "KISA notifies both churches\nof suspected leak"]
+      - [Oct 6, "Press reports,\nchurch statement"]
+- file: 2_chart_규모.png
+  en:
+    title: Church data found on the attacker's server
+    x_label: Records (log scale)
+    unit: ''
+    source: 'Source: Oasis Security analysis (as reported 2026-10-06) · churches have not confirmed the scale'
+    labels: [Full Gospel member records, Full Gospel offering records, SaRang member records, Full Gospel e-approval documents, Full Gospel messenger chats, SaRang staff records]
+- file: 5_items_교인조치.png
+  en:
+    items:
+      - [Check church notices, "Only church notices can confirm if you're affected; no lookup for individuals"]
+      - [Beware impersonation, Call back on the church's official number even if offerings or roles are mentioned]
+      - [Identity theft prevention, Block new phone activations in your name via M-Safer]
+      - [Credit transaction block, Block new loans and cards you don't know about across all financial firms]
+      - [Change passwords, Every account that shares a password with the church website or groupware]
+      - [Report damage, Personal Information Infringement Report Center · KISA 118]

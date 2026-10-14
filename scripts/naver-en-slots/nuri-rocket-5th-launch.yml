@@ -1,0 +1,22 @@
+- file: 2_chart_시퀀스.png
+  en:
+    title: Nuri fifth flight sequence
+    subtitle: Time after launch, per the pre-announced plan
+    source: 'Source: KASA and KARI launch scenario (reported by Money Today, 2026-09-15)'
+    labels:
+      - [About 2m 3s, "Stage 1\nseparation"]
+      - [About 3m 53s, "Fairing\nseparation"]
+      - [About 4m 28s, "Stage 2\nseparation"]
+      - [About 13m 30s, "First microsatellite\nejected"]
+      - [About 16m, "All 5 microsatellites\nejected"]
+      - [About 19m 45s, "Flight\nends"]
+- file: 3_chart_이력.png
+  en:
+    title: Nuri launch history
+    source: 'Source: KASA · KARI'
+    labels:
+      - [Oct 2021, "1st\ndummy satellite missed orbit"]
+      - [Jun 2022, "2nd\nsuccess"]
+      - [May 2023, "3rd\nsuccess"]
+      - [Nov 2025, "4th\nsuccess"]
+      - [Oct 2026, "5th\nsuccess"]

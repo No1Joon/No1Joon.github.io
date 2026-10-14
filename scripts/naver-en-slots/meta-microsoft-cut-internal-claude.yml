@@ -1,0 +1,7 @@
+- file: 2_chart_메타도구.png
+  en:
+    title: Users by internal coding tool at Meta
+    subtitle: As reported in October 2026
+    unit: ''
+    source: 'Source: The Information (cited by Digital Today and Channel Insider). MetaCode is 30,000+'
+    labels: ["Claude Code\nearly 2026", "Claude Code\nOctober", MetaCode, Muse Code]

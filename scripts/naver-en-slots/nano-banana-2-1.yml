@@ -1,0 +1,15 @@
+- file: 3_chart_장당가격.png
+  en:
+    title: Gemini API price per image by resolution (Standard)
+    unit: ''
+    y_label: KRW
+    source: 'Source: Gemini API price list (checked 2026-10-14) · converted at $1 = ₩1,400'
+    labels: [Nano Banana 2, Nano Banana 2.1]
+- file: 5_items_이용경로.png
+  en:
+    items:
+      - [Gemini app, "Rolling out for image generation and editing; timing by country undisclosed"]
+      - [Gemini API and AI Studio, "Model ID gemini-nano-banana-2.1; no free tier"]
+      - [Search AI Mode and Ads, Built into image features within Google services]
+      - [Flow and Stitch, Used in video production and UI design tools]
+      - [Previous model, "gemini-3.1-flash-image slated for deprecation; end date not set"]

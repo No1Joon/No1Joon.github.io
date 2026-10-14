@@ -1,0 +1,10 @@
+- file: 1_chart_경과.png
+  en:
+    title: Optogenetics, from discovery to the Nobel Prize
+    source: 'Source: Nobel Assembly press release · Nature Neuroscience (2005) · Nature Medicine (2021)'
+    labels:
+      - [Early 2000s, "Channelrhodopsin discovered\n(Hegemann, Nagel)"]
+      - ['2005', "Mouse neurons fired\nwith light (Deisseroth)"]
+      - ['2007', Works in living mouse brains]
+      - ['2021', "Partial sight recovery\nin one blind patient"]
+      - [Oct 5 2026, Nobel Prize announced]

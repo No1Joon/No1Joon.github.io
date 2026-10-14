@@ -1,0 +1,19 @@
+- file: 3_chart_하강경보.png
+  en:
+    title: Program alarms during Apollo 11's powered descent
+    source: 'Source: Don Eyles, Tales from the Lunar Module Guidance Computer · times are mission elapsed time (MET)'
+    labels:
+      - ['102:33:05', Powered descent ignition]
+      - [About 102:38, First 1202 alarm]
+      - [About 102:39, Second 1202]
+      - ['102:42:17', 1201 alarm]
+      - [Late 102:42, Two more 1202s]
+      - ['102:45:40', Landing]
+- file: 4_items_정리.png
+  en:
+    items:
+      - [What the alarms meant, "1202: out of job slots (core sets); 1201: out of computation space (VAC)"]
+      - [Cause, Rendezvous radar signals consumed about 13% of processing time]
+      - [Response, "Restart, restore only the latest navigation job, drop less important jobs"]
+      - [Result, "Guidance and control kept running through five alarms; landed at 102:45:40"]
+      - [Principle still in use, "Design that assumes failure and sets priorities; software engineering"]

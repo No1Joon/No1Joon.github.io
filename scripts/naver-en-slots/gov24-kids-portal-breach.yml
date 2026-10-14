@@ -1,0 +1,27 @@
+- file: 1_chart_유출추정.png
+  en:
+    title: Estimated counts leaked in the Gov24 Kids Portal hack
+    subtitle: As reported on August 18, 2026
+    unit: ''
+    source: 'Source: Ministry of the Interior and Safety leak report (released by Rep. Jung Choon-saeng; Digital Daily, Dailysecu)'
+    labels: [Resident registration numbers, Phone numbers, IDs and passwords]
+- file: 2_chart_경과.png
+  en:
+    title: Timeline of Gov24 and ministry personal information incidents
+    subtitle: 2024–2026
+    source: 'Source: PIPC decision (Byline Network report) · ministry leak report (released by the National Assembly)'
+    labels:
+      - [Apr 2024, "Gov24 documents\nmisissued to 1,233"]
+      - [May 2025, "ID card issuance\nlookup flaw"]
+      - [May 27 2026, "PIPC decides\non penalty"]
+      - [Aug 17, "External attack on\nKids Portal"]
+      - [Aug 18, "Leak reported\nto PIPC"]
+      - [Sep 29, "Made public via\nNational Assembly"]
+- file: 6_items_조치.png
+  en:
+    items:
+      - [Change your Gov24 password, Right away if you log in with an ID and password]
+      - [Change it wherever reused, "Every portal, shopping site, or other site using the same combination"]
+      - [Switch to simple authentication, Log in with a certificate or simple authentication instead of a password]
+      - [Identity theft prevention service, Credit bureau identity theft blocking and change alerts]
+      - [Register as exposed, Register on FINE if you're worried your resident registration number leaked]

@@ -1,0 +1,7 @@
+- file: 3_chart_한국어.png
+  en:
+    title: Correct answers on 12 support-inquiry classification questions
+    y_label: Correct answers (of 12)
+    unit: ''
+    source: 'Source: own measurement (M3 Pro, MPS, 2026-10-07) · same 12 questions, only the language changed'
+    labels: ["English inquiry\nEnglish choices", "Korean inquiry\nEnglish choices", "Korean inquiry\nKorean choices"]

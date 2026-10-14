@@ -1,0 +1,33 @@
+- file: 1_chart_경과.png
+  en:
+    title: NetScaler vulnerability advisories and responses
+    subtitle: '2026'
+    source: 'Source: Citrix · CISA · KISA · NVD'
+    labels:
+      - [Sep 27, "Citrix advisory\n8 CVEs"]
+      - [Sep 29, "KISA\n1st advisory"]
+      - [Sep 30, "CISA\n1st deadline"]
+      - [Oct 3, "Citrix advisory\nCVE-2026-88779"]
+      - [Oct 4, "CISA\nKEV listing"]
+      - [Oct 6, "KISA\n2nd advisory"]
+      - [Oct 7, "CISA\n2nd deadline"]
+- file: 2_term_saml.png
+  title: NetScaler shell — checking SAML configuration
+  text: |
+    # check installed build; affected if below 14.1-73.41 · 13.1-64.28
+    > show ns version
+
+    # affected if there is an auth action used as SAML SP
+    $ grep -i "add authentication samlAction" /nsconfig/ns.conf
+
+    # affected if there is a SAML IdP profile
+    $ grep -i "add authentication samlIdPProfile" /nsconfig/ns.conf
+- file: 4_items_조치.png
+  en:
+    items:
+      - [Check for SAML, Affected if samlAction or samlIdPProfile lines exist]
+      - [Check the version, Affected if below 14.1-73.41 · 13.1-64.28]
+      - [Preserve logs, Keep ns.log and core dumps before updating]
+      - [Update, "Again even if updated in September; both nodes of an HA pair"]
+      - [Check reboot records, Any unexplained restarts in early October]
+      - [Keep September checks, Check for 88771 and 88772 compromise separately]

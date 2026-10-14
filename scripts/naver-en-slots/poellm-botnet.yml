@@ -1,0 +1,15 @@
+- file: 4_chart_Ollama노출.png
+  en:
+    title: Top 6 countries for Ollama servers exposed without authentication
+    subtitle: LeakIX scan, February 2026
+    unit: ''
+    source: 'Source: LeakIX blog (2026-02-23) · exposed servers, not PoeLLM infections'
+    labels: [US, China, France, Germany, South Korea, India]
+- file: 5_items_조치.png
+  en:
+    items:
+      - [LiteLLM 1.83.7 or later, "Fix for CVE-2026-42271; also Starlette 1.0.1 or later"]
+      - [Keep Ollama local, Set OLLAMA_HOST to 127.0.0.1 instead of 0.0.0.0]
+      - [Check port exposure, "Check whether ports 11434, 4000, and 3000 are exposed externally"]
+      - [Add auth at a reverse proxy, "If remote access is needed, require token auth at a reverse proxy"]
+      - [Check for signs of compromise, Compare access logs with Black Lotus Labs' published IoCs]

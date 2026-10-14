@@ -1,0 +1,20 @@
+- file: 1_chart_경과.png
+  en:
+    title: Timeline of the leaks at two golf booking apps
+    subtitle: 2024–2026
+    source: 'Source: Golfmon and Kakao VX notices (Boan News, Chosun Biz, MTN reports) · PIPC'
+    labels:
+      - [Oct 2024, "Golfmon 1st leak\nincl. passwords"]
+      - [Sep 11 2026, "Amended privacy\nact in force"]
+      - [Oct 4–5, "Golfmon\ndata leaked"]
+      - [Oct 6, "Golfmon notices\nexternal access"]
+      - [Oct 7, "Kakao Golf Booking\nleak confirmed"]
+      - [Oct 8, "Both companies\npost notices"]
+- file: 6_items_조치.png
+  en:
+    items:
+      - [Check if you're affected, "Lookup menu on the Kakao Golf Booking site; Golfmon via notice email"]
+      - [Re-verify booking and refund contacts, Check again directly through the app or official customer center]
+      - [Don't click links in texts, Don't tap booking change or refund notice links]
+      - [Change passwords, "2024 Golfmon members, plus any site using the same password"]
+      - [Refuse virtual account deposit requests, Make extra payments only on the app's payment screen]

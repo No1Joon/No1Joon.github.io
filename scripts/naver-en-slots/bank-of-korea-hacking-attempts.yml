@@ -1,0 +1,21 @@
+- file: 1_chart_연도별.png
+  en:
+    title: Hacking attempts detected by the Bank of Korea by year
+    subtitle: 2026 through October 2
+    unit: ''
+    source: 'Source: Bank of Korea submission to the National Assembly (released by Rep. Lee Jong-wook; iNews24, Hankook Ilbo)'
+    labels: ['2021', '2022', '2023', '2024', '2025', '2026']
+- file: 3_chart_수은국가.png
+  en:
+    title: Export-Import Bank hacking attempts by origin
+    subtitle: January – October 5, 2026
+    unit: ''
+    source: 'Source: Export-Import Bank submission to the National Assembly (released by Rep. Lee Jong-wook; Economic Review)'
+    labels: [US, Singapore, China, Netherlands, Germany, Hong Kong, Korea]
+- file: 5_items_점검.png
+  en:
+    items:
+      - [External training and e-learning accounts, Change passwords for outside sites you joined with your work email]
+      - [Stop reusing passwords, "If an outside site and your work account share a password, change the work one too"]
+      - [Impersonation emails using rank and job, Check links and attachments in work emails that get your name and rank exactly right]
+      - [Check the outsourcing list, Contractor and task entries in your company's privacy policy]
