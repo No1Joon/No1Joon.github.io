@@ -1,0 +1,28 @@
+---
+layout: null
+sitemap: false
+---
+<?xml version="1.0" encoding="UTF-8"?>
+{%- comment -%} 네이버 서치어드바이저 제출용 RSS 2.0 — jekyll-feed 의 /feed.xml 은 Atom 이라 네이버가 형식 오류로 거부한다 {%- endcomment -%}
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>{{ site.title | xml_escape }}</title>
+    <link>{{ "/" | absolute_url }}</link>
+    <description>{{ site.description | xml_escape }}</description>
+    <language>ko</language>
+    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+    <atom:link href="{{ page.url | absolute_url }}" rel="self" type="application/rss+xml" />
+    {%- for post in site.posts limit: 30 %}
+    <item>
+      <title>{{ post.title | xml_escape }}</title>
+      <link>{{ post.url | absolute_url }}</link>
+      <guid isPermaLink="true">{{ post.url | absolute_url }}</guid>
+      <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
+      <description>{{ post.description | default: post.excerpt | strip_html | xml_escape }}</description>
+      {%- if post.category %}
+      <category>{{ post.category | xml_escape }}</category>
+      {%- endif %}
+    </item>
+    {%- endfor %}
+  </channel>
+</rss>
