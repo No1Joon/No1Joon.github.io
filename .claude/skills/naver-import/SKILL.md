@@ -3,7 +3,9 @@ name: naver-import
 description: Use when importing an already-written Naver blog post from the `naver-posting` project into this Jekyll blog. 네이버 SmartEditor 마커(🔹 ▸ ▶︎ 📷 ==형광펜==)를 마크다운으로 옮기고 Drive 이미지를 배치한다. 새 글을 쓰는 게 아니라 **기존 글을 이식**하는 작업 — 본문 문장은 고치지 않는다.
 ---
 
-`~/Documents/projects/naver-posting/posts/` 에 이미 완성된 네이버 포스팅을 이 블로그의 Jekyll 포스트로 이식한다.
+`~/Documents/projects/naver-posting/naver-posting-it/posts/` 에 이미 완성된 네이버 포스팅을 이 블로그의 Jekyll 포스트로 이식한다.
+
+`drafts/` 아래 글은 미완성이라 이식 대상이 아니다.
 
 핵심 원칙 하나: **본문 문장을 고치지 않는다.** 이건 새 글을 쓰는 작업이 아니라 이미 발행된 글을 옮기는 작업이다. 해요체·강조·수치·비유를 그대로 두고 **구조와 자산 경로만** 바꾼다.
 
