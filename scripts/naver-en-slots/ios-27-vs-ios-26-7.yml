@@ -1,0 +1,20 @@
+- file: 1_chart_보안수정.png
+  en:
+    title: Number of CVE IDs in the security documents
+    unit: ''
+    source: 'Source: Apple Support security documents 149034 (iOS 27) and 149041 (iOS 26.7), CVE IDs counted directly on 2026-09-18'
+    labels: [iOS 27, iOS 26.7, In both documents]
+- file: 4_chart_속도.png
+  en:
+    title: iOS 27 speed improvements (Apple's announced maximums)
+    source: 'Source: Apple Newsroom (2026-09-14). All figures are maximums'
+    labels: [App launch, Loading new photos, AirDrop transfer]
+- file: 6_items_정리.png
+  en:
+    items:
+      - [If you only care about security, "iOS 26.7 also fixes **82** CVEs"]
+      - [Fixes only in iOS 27, "**51** of the 126 appear only in the iOS 27 document"]
+      - [iPhone 11–14 and 15/15 Plus, "iOS 27 works, but no Siri AI"]
+      - [Korean Siri AI, "Expected in **October**; English beta in September"]
+      - [Storage, "Apple Intelligence up to **8GB**, **14GB** on 17 Pro and Air"]
+      - [Right after installing, Higher battery drain for several days from re-indexing]

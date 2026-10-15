@@ -1,0 +1,23 @@
+- file: 1_chart_대기시간.png
+  en:
+    title: Average response time by server utilization (M/M/1 model)
+    subtitle: One server that can handle 100 requests per second
+    x_label: Utilization
+    y_label: Average response time (ms)
+    source: 'Source: calculated with the M/M/1 mean response time formula at 100 requests/s. Real servers vary'
+- file: 3_chart_변경비율.png
+  en:
+    title: Share of outages caused by changes to live systems
+    caption: Google SRE estimate, approximate
+    source: "Source: Google, Site Reliability Engineering (O'Reilly, 2016), Chapter 1"
+    labels: [Caused by changes]
+- file: 4_items_정리.png
+  en:
+    items:
+      - [Virtual waiting room, Admit only up to capacity and queue the rest]
+      - [Load shedding, "**Reject early** requests beyond the limit"]
+      - [Short queues, Keep at 50% or less of the thread count]
+      - [Deadline propagation, Downstream servers also give up on requests already too late]
+      - [Retry backoff, Randomized growing intervals with a retry cap]
+      - [Gradual rollout, Apply to some servers first and roll back if problems arise]
+      - [Load testing, Measure limits and surge scenarios in advance]

@@ -1,0 +1,30 @@
+- file: 1_chart_경과.png
+  en:
+    title: Timeline of the UwayApply outage (September 10–11)
+    source: 'Source: Korea University Newspaper (Uway and KCUE explanation on the 14th), reports on KCUE announcements (Financial News, Herald Economy)'
+    labels:
+      - ['10th 23:40', "Server unstable\nthe night before"]
+      - ['11th 17:48', "Abnormal session\nincrease detected"]
+      - ['17:50', "Application system\noutage"]
+      - ['18:05–18:10', "Uway reports\nto KCUE"]
+      - ['18:20', Service restored]
+      - ['19:00', "Deadline after\n1-hour extension"]
+- file: 3_chart_구제.png
+  en:
+    title: Relief requests, approvals, and final applications
+    unit: ''
+    source: 'Source: Ministry of Education and KCUE announcement (2026-09-17)'
+    labels: [Relief requests, Approved for relief, Final applications]
+- file: 4_chart_대학별.png
+  en:
+    title: Top 7 universities by applications submitted through relief
+    unit: ''
+    source: 'Source: Ministry of Education and KCUE announcement (2026-09-17), top 7 of 354 applications at 40 universities'
+    labels: [Kyungpook, Kyung Hee, Chung-Ang, Chonnam, Kookmin, Inha, SeoulTech]
+- file: 5_items_정리.png
+  en:
+    items:
+      - [Special investigation on site, "UwayApply, through September 23"]
+      - [3 cancellations recommended, Applications submitted after viewing ratios during the extension]
+      - [Improvements from regular admission, "Shore up system stability, management, and oversight"]
+      - [Public application system considered, Direct management by the Ministry of Education and KCUE floated]

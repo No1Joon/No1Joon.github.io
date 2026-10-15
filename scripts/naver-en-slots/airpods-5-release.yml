@@ -1,0 +1,14 @@
+- file: 1_chart_가격.png
+  en:
+    title: Korean list prices of noise-cancelling AirPods (KRW)
+    unit: ''
+    source: 'Source: Apple Korea Newsroom and online store (checked 2026-09-18); AirPods 4 ANC at its 2024 Korean launch price (Edaily)'
+    labels: [AirPods 4 ANC, AirPods 5, AirPods 5 wireless, AirPods Pro 3]
+- file: 6_items_정리.png
+  en:
+    items:
+      - [Noise cancelling as standard, "Noise cancelling from the ₩199,000 model"]
+      - ["Wireless charging case model costs ₩30,000 more", "Wireless charging, stem volume control, 1 extra hour of battery"]
+      - [Water resistance, "Raised from AirPods 4's IP54 to **IP57**"]
+      - [Korean Live Translation, Available from launch when paired with iPhone 15 Pro or later]
+      - [Korean Siri AI, "Expected in **October**"]

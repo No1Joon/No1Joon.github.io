@@ -1,0 +1,26 @@
+- file: 1_chart_경과.png
+  en:
+    title: Timeline from the leaks to the notice
+    source: "Source: Boan News, Edaily, and Dealsite reports relaying Weverse Company's notice (2026.09.07) · dates drawn at equal intervals"
+    labels:
+      - ['07.27–28', First leak]
+      - ['08.27–31', Second leak]
+      - ['09.03', KISA relays outside tip]
+      - ['09.04', Breach reported to KISA]
+      - ['09.06', Notice to users]
+- file: 3_chart_이력.png
+  en:
+    title: Weverse Company's three privacy incidents
+    source: 'Source: Personal Information Protection Commission dispositions, Ilgan Sports report (2026.09.07) · dates drawn at equal intervals'
+    labels:
+      - ['2021.11', 137 logins into other accounts]
+      - ['2026.06', 30 applicants' data leaked]
+      - ['2026.09', 420K payment records]
+- file: 4_items_정리.png
+  en:
+    items:
+      - [What was leaked, "Internal identifiers and purchase history such as payment method, amount, and time"]
+      - [What wasn't leaked, "Name, contact details, card number, account number"]
+      - [Period nobody knew, From the first leak on July 27 until the tip on September 3]
+      - [What to do now, Check payment method statements and watch for messages impersonating Weverse]
+      - [Hard to expect, A way to check directly whether your account is among the 420K]

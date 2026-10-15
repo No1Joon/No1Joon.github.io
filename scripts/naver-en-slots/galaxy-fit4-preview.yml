@@ -1,0 +1,30 @@
+- file: 1_chart_일정.png
+  en:
+    title: Galaxy Fit3 launch path and Fit4 certification timeline
+    source: 'Source: Electronic Times and Namuwiki (Fit3 dates), Gadgets & Wearables FCC document analysis (Fit4), TheElec (S26 FE)'
+    labels:
+      - ['2024.02.22', "Fit3 unveiled\noverseas"]
+      - ['2024.03.06', "Fit3 Korean radio\ncertification"]
+      - ['2024.04.03', "Fit3 launches\nin Korea"]
+      - ['2026.07.15', "Fit4 sample\nreceived by lab"]
+      - ['2026.08.04', "Fit4 FCC\napproval"]
+      - ['2026.08.27', "S26 FE unveiled\n(no Fit4)"]
+- file: 3_chart_배터리.png
+  en:
+    title: Maximum battery life of budget bands
+    unit: days
+    source: 'Source: Electronic Times (Galaxy Fit3), Xiaomi Korea (Smart Band 10), 9to5Google (Fitbit Air). Manufacturer maximums'
+    labels: [Fitbit Air, Galaxy Fit3, Xiaomi Band 10]
+- file: 4_chart_가격.png
+  en:
+    title: Budget band prices (KRW)
+    unit: ''
+    source: 'Source: Electronic Times (Fit3 Korean price), Xiaomi Korea (Band 10 base), 9to5Google (Fitbit Air, US price at ₩1,400 per dollar)'
+    labels: [Xiaomi Band 10, Galaxy Fit3, Fitbit Air]
+- file: 5_items_정리.png
+  en:
+    items:
+      - [Confirmed specs, "Model SM-R391, Bluetooth 5.4, FCC approval on August 4"]
+      - [Design, "Same rectangular screen as the Fit3, side button, 2 charging contacts"]
+      - [Unconfirmed, "Battery capacity, built-in GPS, new sensors, price"]
+      - [Korean launch signal, Registration for Korean radio certification]

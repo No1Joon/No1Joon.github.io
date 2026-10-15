@@ -1,0 +1,31 @@
+- file: 1_chart_반복유포.png
+  en:
+    title: When the phone bill discount message spread again
+    source: 'Source: Media Today (2016, 2017), Money Today · Korea Economic Daily (2017, 2020), Asia Times (2023), KMCC (2026)'
+    labels:
+      - ['2016', "Discount started thanks\nto a lawmaker"]
+      - ['2017', "20% discount as a\npresidential pledge"]
+      - ['2020', "Spread again with only\nthe number changed to 25%"]
+      - ['2023.06.01', "Carrier discount centers\nflooded with calls"]
+      - ['2026.09', "KMCC warning ahead\nof iPhone 18 launch"]
+- file: 2_chart_할인율.png
+  en:
+    title: Changes in the selective contract discount rate
+    source: 'Source: Media Today fact check (2014, 2015 notices), MSIT policy briefing (25% from Sep 2017)'
+    labels: [Introduced Oct 2014, '2015', Sep 2017]
+- file: 3_chart_미가입자.png
+  en:
+    title: Subscribers without the selective contract discount (Aug 2024)
+    unit: M people
+    source: "Source: Rep. Noh Jong-myun's office, data from MSIT and the 3 carriers (Sisa Journal, 2024-09-24)"
+    data:
+      - [Not on selective contract, 12.3]
+      - [No contract for over 1 year, 6.73]
+- file: 4_items_정리.png
+  en:
+    items:
+      - [Extra 25% discount, None. The selective contract discount can't be doubled]
+      - [Check eligibility, "Enter your IMEI on Smart Choice; dial *#06# to see the IMEI"]
+      - [Eligible, "Unlocked phones, devices bought overseas, used phones, devices whose contract has ended"]
+      - [Not eligible, "MVNO plans, devices with a subsidy contract still running"]
+      - [Apply, "Dealers, customer centers, and websites of the three carriers"]

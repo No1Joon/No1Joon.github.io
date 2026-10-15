@@ -1,0 +1,32 @@
+- file: 1_chart_timeline.png
+  en:
+    title: Order of major announcements in the third week of September
+    source: 'Source: CNBC · TechCrunch reports (2026.09.14–09.18) · dates drawn at equal intervals'
+    labels:
+      - ['09.14', RUM Group compute deal reported]
+      - ['09.14', AI infrastructure stocks plunge]
+      - ['09.15', Inter-lab safety talks disclosed]
+      - ['09.16', Claude interfaces unified]
+      - ['09.17', UN System Data Commons released]
+      - ['09.18', Push for small data center deals]
+- file: 3_chart_compute.png
+  en:
+    title: Size of compute procurement deals Anthropic announced in 2026
+    unit: ₩ trillion
+    y_label: Deal size (₩ trillion)
+    source: 'Source: CNBC reports on each deal (2026.07–09) · converted at $1 ≈ ₩1,400'
+    labels: [Nscale, RUM Group, Riot Platforms, AMD]
+- file: 8_chart_revenue.png
+  en:
+    title: Annual revenue of US and Chinese AI models compared
+    unit: ₩ trillion
+    source: 'Source: Rhodium Group analysis, CNBC report (2026.09.17) · converted at $1 ≈ ₩1,400'
+    labels: [Anthropic, OpenAI, ByteDance, Alibaba]
+- file: 9_chart_gyazo.png
+  en:
+    title: Scale of records revealed in the Gyazo breach
+    unit: M
+    source: 'Source: Helpfeel notice (2026.09.16), The Hacker News report'
+    data:
+      - [Image metadata, 490]
+      - [User accounts, 23.62]
