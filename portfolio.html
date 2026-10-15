@@ -175,16 +175,18 @@ sitemap: false
     <ol>
       <li><span class="num">10</span><span class="nm">CaliMeal - 급식 식단 편성 자동화 SaaS</span><span class="tech">Next.js, PostgreSQL RLS, Vertex AI</span></li>
       <li><span class="num">11</span><span class="nm">try-ticketing - 티켓 예매, 수강신청 연습 웹 서비스</span><span class="tech">Go, React 19, Redis Lua, PostgreSQL</span></li>
-      <li><span class="num">12</span><span class="nm">teampler - 코트 스포츠 대기열 관리</span><span class="tech">Expo, Go, WebSocket</span></li>
-      <li><span class="num">13</span><span class="nm">내깜냥 - 취업 적성검사 연습 앱</span><span class="tech">Expo, Go, AWS Lambda</span></li>
-      <li><span class="num">14</span><span class="nm">quickglot - 온디바이스 번역 Safari 확장</span><span class="tech">Swift, WebExtension, App Store</span></li>
-      <li><span class="num">15</span><span class="nm">Oh My Quota - AI 코딩 도구 사용 한도 메뉴바 앱</span><span class="tech">Swift, XPC, Mac App Store</span></li>
-      <li><span class="num">16</span><span class="nm">archdraw - 아키텍처 다이어그램 렌더러</span><span class="tech">TypeScript, npm 공개</span></li>
-      <li><span class="num">17</span><span class="nm">Oh My Algorithm</span><span class="tech">React 19, 실서비스</span></li>
-      <li><span class="num">18</span><span class="nm">naver-posting - 기술 콘텐츠 생산 파이프라인</span><span class="tech">LLM 에이전트, MCP, Python</span></li>
-      <li><span class="num">19</span><span class="nm">네이버 카페 정보 자동 수집 데스크톱 앱</span><span class="tech">Playwright, Windows exe</span></li>
-      <li><span class="num">20</span><span class="nm">로키 (Law+Key)</span><span class="tech">React, NestJS, OpenAI</span></li>
-      <li><span class="num">21</span><span class="nm">공공데이터 기반 지역사회 현안 해결</span><span class="tech">공공데이터, K-means</span></li>
+      <li><span class="num">12</span><span class="nm">All My Projects - 개인 서비스 운영 대시보드</span><span class="tech">Python, Go SDK, Lightsail, SQLite</span></li>
+      <li><span class="num">13</span><span class="nm">teampler - 코트 스포츠 대기열 관리</span><span class="tech">Expo, Go, WebSocket</span></li>
+      <li><span class="num">14</span><span class="nm">내깜냥 - 취업 적성검사 연습 앱</span><span class="tech">Expo, Go, AWS Lambda</span></li>
+      <li><span class="num">15</span><span class="nm">quickglot - 온디바이스 번역 Safari 확장</span><span class="tech">Swift, WebExtension, App Store</span></li>
+      <li><span class="num">16</span><span class="nm">Oh My Quota - AI 코딩 도구 사용 한도 메뉴바 앱</span><span class="tech">Swift, XPC, Mac App Store</span></li>
+      <li><span class="num">17</span><span class="nm">archdraw - 아키텍처 다이어그램 렌더러</span><span class="tech">TypeScript, npm 공개</span></li>
+      <li><span class="num">18</span><span class="nm">Oh My Algorithm</span><span class="tech">React 19, 실서비스</span></li>
+      <li><span class="num">19</span><span class="nm">Oh My Universe (ORBIT) - 3D 우주 탐험 웹앱</span><span class="tech">React 19, Three.js, Firebase</span></li>
+      <li><span class="num">20</span><span class="nm">naver-posting - 기술 콘텐츠 생산 파이프라인</span><span class="tech">LLM 에이전트, MCP, Python</span></li>
+      <li><span class="num">21</span><span class="nm">네이버 카페 정보 자동 수집 데스크톱 앱</span><span class="tech">Playwright, Windows exe</span></li>
+      <li><span class="num">22</span><span class="nm">로키 (Law+Key)</span><span class="tech">React, NestJS, OpenAI</span></li>
+      <li><span class="num">23</span><span class="nm">공공데이터 기반 지역사회 현안 해결</span><span class="tech">공공데이터, K-means</span></li>
     </ol>
   </div>
 </div>
@@ -579,9 +581,42 @@ sitemap: false
   </div>
 </div>
 
-<!-- 12 teampler -->
+<!-- 12 All My Projects -->
 <div class="page proj">
-  <div class="ttl"><span class="no">12</span><h2>teampler - 코트 스포츠 대기열 관리</h2><span class="kind">Personal / App Store, Google Play 출시</span></div>
+  <div class="ttl"><span class="no">12</span><h2>All My Projects - 개인 서비스 운영 대시보드</h2><span class="kind">Personal / 개인 운영 도구</span></div>
+  <div class="lead">직접 운영하는 서비스들의 트래픽, 회원, 다운로드와 <b>운영 오류, 응답 감시를 한곳에 모은</b> 개인 운영 도구</div>
+  <div class="stack">
+    <div class="row"><span class="k">대시보드</span><span>Python, GA4 Data API, App Store 통계, 데이터 내장 HTML 리포트, Mac 로그인 서비스(LaunchAgent)</span></div>
+    <div class="row"><span class="k">중앙 감시</span><span>AWS Lightsail VM 1대, Docker, SQLite, 비공개 S3 백업, HTTPS 응답 감시</span></div>
+    <div class="row"><span class="k">SDK</span><span>공통 Go 오류 수집 SDK - 비공개 모듈로 버전을 발행하고 각 서비스 서버가 고정 버전으로 vendor 적용</span></div>
+  </div>
+
+  <div class="shots wide">
+    <img src="/assets/portfolio/amp_arch.webp">
+  </div>
+
+  <div class="block">
+    <div class="h">설계 결정</div>
+    <ul>
+      <li><b>관리형 DB와 로드밸런서 없이 VM 한 대와 SQLite로 중앙 수집</b> - 수집, 조회와 응답 감시 프로세스를 나누고 DB마다 쓰기 프로세스를 하나로 둬, 개인 서비스 규모에 맞는 고정 비용으로 운영</li>
+      <li><b>서비스 DB를 직접 읽지 않는 회원 집계</b> - 서비스마다 전용 생산자가 회원 스냅샷 JSON을 중앙으로 보내고, 대시보드는 방문자와 가입 회원을 별도 지표로 표시</li>
+      <li><b>오류 수집을 공통 SDK로 한 번만 구현</b> - 서비스 서버는 SDK를 고정 버전으로 vendor 해 인증 없이 오프라인 빌드되도록 하고, 설정이 잘못되면 수집만 꺼지고 서비스 응답은 그대로 유지</li>
+      <li><b>다운로드를 사용자 수로 표시하지 않음</b> - 앱 다운로드, 웹 방문자, 가입 회원을 서로 다른 지표로 나눠 집계</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <div class="h">성과 / 지표</div>
+    <ul>
+      <li><b>운영 서버 4곳 연결</b> - CaliMeal, teampler, try-ticketing, 내깜냥의 오류 전송 또는 응답 감시를 중앙 서버에 연결</li>
+      <li><b>백업 복원 검증</b> - 실행 중인 SQLite를 Online Backup API로 일관되게 복사해 비공개 S3에 7일 보관하고, 초기 스냅샷으로 만든 임시 VM에 실제로 복원한 뒤 회수</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 13 teampler -->
+<div class="page proj">
+  <div class="ttl"><span class="no">13</span><h2>teampler - 코트 스포츠 대기열 관리</h2><span class="kind">Personal / App Store, Google Play 출시</span></div>
   <div class="lead">운동 모임의 <b>코트와 대기열을 실시간으로 관리</b>하는 앱 - 배드민턴, 테니스, 탁구</div>
   <div class="stack"><div class="row"><span class="k">Stack</span><span>Expo(React Native, React 19), expo-router, Zustand, EAS Build/Submit/Update, Go, MongoDB Atlas, Redis, Docker Compose, AWS Lightsail</span></div><div class="row"><span class="k">상태</span><span>iOS App Store 출시(2026.09), Google Play 출시(2026.10), 백엔드 prod 가동</span></div><div class="row"><span class="k">링크</span><span><a href="https://apps.apple.com/kr/app/id6802947104">App Store</a>, <a href="https://play.google.com/store/apps/details?id=com.teampler.app">Google Play</a></span></div></div>
 
@@ -612,9 +647,9 @@ sitemap: false
   </div>
 </div>
 
-<!-- 13 내깜냥 -->
+<!-- 14 내깜냥 -->
 <div class="page proj">
-  <div class="ttl"><span class="no">13</span><h2>내깜냥 - 취업 적성검사 연습 앱</h2><span class="kind">Personal / App Store 출시</span></div>
+  <div class="ttl"><span class="no">14</span><h2>내깜냥 - 취업 적성검사 연습 앱</h2><span class="kind">Personal / App Store 출시</span></div>
   <div class="lead">취업 적성, 인성 검사 유형을 <b>게임형 연습과 자기 점검</b>으로 풀어 보는 모바일 앱</div>
   <div class="stack">
     <div class="row"><span class="k">앱</span><span>Expo 58(React Native), TypeScript, Firebase 인증(게스트, Apple, Google), AsyncStorage</span></div>
@@ -648,9 +683,9 @@ sitemap: false
   </div>
 </div>
 
-<!-- 14 quickglot -->
+<!-- 15 quickglot -->
 <div class="page proj">
-  <div class="ttl"><span class="no">14</span><h2>quickglot - 온디바이스 번역 Safari 확장</h2><span class="kind">Personal / App Store 출시</span></div>
+  <div class="ttl"><span class="no">15</span><h2>quickglot - 온디바이스 번역 Safari 확장</h2><span class="kind">Personal / App Store 출시</span></div>
   <div class="lead">선택한 문장을 그 자리에서 번역하는 Safari 확장 - <b>기기 안에서만 처리</b>, 서버와 API 키 없음</div>
   <div class="stack">
     <div class="row"><span class="k">확장</span><span>TypeScript 5.9, WebExtension Manifest V3, esbuild, Node 22</span></div>
@@ -682,9 +717,9 @@ sitemap: false
   </div>
 </div>
 
-<!-- 15 Oh My Quota -->
+<!-- 16 Oh My Quota -->
 <div class="page proj">
-  <div class="ttl"><span class="no">15</span><h2>Oh My Quota - AI 코딩 도구 사용 한도 메뉴바 앱</h2><span class="kind">Personal / Mac App Store 출시</span></div>
+  <div class="ttl"><span class="no">16</span><h2>Oh My Quota - AI 코딩 도구 사용 한도 메뉴바 앱</h2><span class="kind">Personal / Mac App Store 출시</span></div>
   <div class="lead">Claude Code와 Codex의 남은 사용 한도와 리셋 시각을 메뉴바에 보여 주는 macOS 앱 - <b>권한을 나눈 실행 단위</b>로 구성</div>
   <div class="stack">
     <div class="row"><span class="k">앱</span><span>Swift 6, SwiftUI, AppKit, Observation, UserNotifications, SMAppService</span></div>
@@ -717,9 +752,9 @@ sitemap: false
   </div>
 </div>
 
-<!-- 16 archdraw -->
+<!-- 17 archdraw -->
 <div class="page proj">
-  <div class="ttl"><span class="no">16</span><h2>archdraw - 아키텍처 다이어그램 렌더러</h2><span class="kind">Personal / npm 공개</span></div>
+  <div class="ttl"><span class="no">17</span><h2>archdraw - 아키텍처 다이어그램 렌더러</h2><span class="kind">Personal / npm 공개</span></div>
   <div class="lead">YAML로 쓴 클라우드 아키텍처를 <b>SVG, PNG, 애니메이션 HTML로 렌더</b>하는 CLI, 라이브러리</div>
   <div class="stack"><div class="row"><span class="k">Stack</span><span>TypeScript 7, Node 22 이상, pnpm workspaces 모노레포, elkjs(레이아웃), zod 4, React 19 renderToStaticMarkup(SVG), resvg(PNG), vitest, Biome, changesets</span></div><div class="row"><span class="k">배포</span><span>공개 npm 패키지 6종(CLI, core, 아이콘 팩 3종, React 바인딩), GitHub Actions로 발행, provenance 첨부</span></div><div class="row"><span class="k">링크</span><span><a href="https://www.npmjs.com/package/archdraw">npmjs.com/package/archdraw</a>, <a href="https://github.com/No1Joon/archdraw">github.com/No1Joon/archdraw</a></span></div></div>
 
@@ -747,9 +782,9 @@ sitemap: false
   </div>
 </div>
 
-<!-- 17 Oh My Algorithm -->
+<!-- 18 Oh My Algorithm -->
 <div class="page proj">
-  <div class="ttl"><span class="no">17</span><h2>Oh My Algorithm</h2><span class="kind">Personal / 실서비스</span></div>
+  <div class="ttl"><span class="no">18</span><h2>Oh My Algorithm</h2><span class="kind">Personal / 실서비스</span></div>
   <div class="lead">알고리즘과 CS 개념을 <b>단계별 애니메이션과 코드 패널</b>로 학습하는 웹 서비스</div>
   <div class="stack"><div class="row"><span class="k">Stack</span><span>React 19.2, Vite 8, Tailwind 4, React Router 7, Remotion, puppeteer-core(자체 SSG), oh-my-animation(직접 발행한 npm 패키지를 이 앱이 소비), GA4</span></div><div class="row"><span class="k">링크</span><span><a href="https://ohmyalgorithm.com">ohmyalgorithm.com</a></span></div></div>
 
@@ -778,9 +813,43 @@ sitemap: false
   </div>
 </div>
 
-<!-- 18 naver-posting -->
+<!-- 19 Oh My Universe -->
 <div class="page proj">
-  <div class="ttl"><span class="no">18</span><h2>naver-posting - 기술 콘텐츠 생산 파이프라인</h2><span class="kind">Personal / 운영 중</span></div>
+  <div class="ttl"><span class="no">19</span><h2>Oh My Universe (ORBIT) - 3D 우주 탐험 웹앱</h2><span class="kind">Personal / 웹 공개</span></div>
+  <div class="lead">태양계, 외계 행성계, 성운, 은하를 <b>하나의 3D 장면 안에서 날아다니며</b> 탐험하는 웹앱</div>
+  <div class="stack">
+    <div class="row"><span class="k">Stack</span><span>React 19, TypeScript 5.8, Vite 6, Three.js 0.180, React Router 7, Firebase Hosting</span></div>
+    <div class="row"><span class="k">자료</span><span>NASA Exoplanet Archive 스냅샷, JPL 궤도 요소, NASA, Cassini 표면 지도 - 파일별 출처 기록</span></div>
+    <div class="row"><span class="k">링크</span><span><a href="https://oh-my-universe.web.app">oh-my-universe.web.app</a></span></div>
+  </div>
+
+  <div class="shots duo">
+    <img src="/assets/portfolio/omu_solar.webp">
+    <img src="/assets/portfolio/omu_atlas.webp">
+  </div>
+
+  <div class="block">
+    <div class="h">설계 결정</div>
+    <ul>
+      <li><b>렌더러를 바꾸지 않는 단일 3D 장면</b> - 행성계, 성운, 은하 사이 이동을 같은 장면 안의 카메라 비행으로 처리해 화면 전환 때 시뮬레이션이 다시 시작되지 않음</li>
+      <li><b>텍스처 단계 로딩</b> - 처음에는 512px 미리보기 지도만 받고 화면에 확대된 천체 최대 3개만 상세 지도를 받으며, 멀어지면 GPU 텍스처를 해제하고 다른 천체로 이동한 뒤 도착한 상세 응답은 버림</li>
+      <li><b>축척 압축과 궤도 겹침 검사</b> - 행성과 위성에 서로 다른 축척을 쓰고, 행성마다 위성 범위가 겹치지 않는지 검사 스크립트로 확인</li>
+      <li><b>이름표 충돌 회피</b> - 이름표가 3D 투영을 따라 움직이다 서로 겹치면 빈 자리로 옮기고, 자리가 없으면 숨김</li>
+    </ul>
+  </div>
+
+  <div class="block">
+    <div class="h">성과 / 지표</div>
+    <ul>
+      <li><b>웹 공개(2026.10)</b> - Firebase Hosting에 정적 SPA로 배포, 직접 링크와 새로고침을 위한 라우트 재작성 설정</li>
+      <li><b>초기 장면 로딩 45초 이상에서 3.5초로 단축</b> - 텍스처 단계 로딩 적용 전후 비교, Chrome 콜드 캐시, 5 Mbps, 100 ms 조건 - 외계 행성계 추가 전 측정</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 20 naver-posting -->
+<div class="page proj">
+  <div class="ttl"><span class="no">20</span><h2>naver-posting - 기술 콘텐츠 생산 파이프라인</h2><span class="kind">Personal / 운영 중</span></div>
   <div class="lead">IT, AI 기술 동향의 조사, 집필, 시각화, 발행을 처리하는 <b>개인 콘텐츠 파이프라인</b></div>
   <div class="stack"><div class="row"><span class="k">Stack</span><span>Claude Code Skills, Python, WebSearch 교차 검증, Google Drive 연동, Git</span></div><div class="row"><span class="k">MCP 서버</span><span>Node.js, MCP SDK, OAuth 2.1, Cloud Run, Pub/Sub</span></div><div class="row"><span class="k">발행</span><span><a href="https://blog.naver.com/rottensweetpotato">blog.naver.com/rottensweetpotato</a></span></div></div>
 
@@ -820,9 +889,9 @@ sitemap: false
   </div>
 </div>
 
-<!-- 19 네이버 카페 수집 앱 -->
+<!-- 21 네이버 카페 수집 앱 -->
 <div class="page proj">
-  <div class="ttl"><span class="no">19</span><h2>네이버 카페 정보 자동 수집 데스크톱 앱</h2><span class="kind">Personal / 실사용자 보유</span></div>
+  <div class="ttl"><span class="no">21</span><h2>네이버 카페 정보 자동 수집 데스크톱 앱</h2><span class="kind">Personal / 실사용자 보유</span></div>
   <div class="lead">네이버 카페 게시판에서 정보를 수집해 Excel로 정리하는 데스크톱 앱 - <b>Windows 실행 파일</b></div>
   <div class="stack"><div class="row"><span class="k">Stack</span><span>Python, Playwright(Chromium 번들), 데스크톱 GUI, CLI, GitHub Actions로 빌드해 Release로 배포, pytest, ruff, mypy</span></div></div>
 
@@ -858,9 +927,9 @@ sitemap: false
   </div>
 </div>
 
-<!-- 20 로키 -->
+<!-- 22 로키 -->
 <div class="page proj">
-  <div class="ttl"><span class="no">20</span><h2>로키 (Law+Key)</h2><span class="kind">Team / 청년동 사이드 프로젝트</span></div>
+  <div class="ttl"><span class="no">22</span><h2>로키 (Law+Key)</h2><span class="kind">Team / 청년동 사이드 프로젝트</span></div>
   <div class="lead">사전 질문지로 상황을 진단하고 LLM이 상담하는 <b>AI 법률 상담 플랫폼</b> - 팀 프로젝트 (2025.11 ~ 2026.01)</div>
   <div class="stack"><div class="row"><span class="k">Stack</span><span>React, Redux Toolkit, Vite, Tailwind, NestJS, Prisma, MongoDB, Redis, OpenAI</span></div></div>
 
@@ -881,9 +950,9 @@ sitemap: false
   </div>
 </div>
 
-<!-- 21 공공데이터 -->
+<!-- 23 공공데이터 -->
 <div class="page proj">
-  <div class="ttl"><span class="no">21</span><h2>공공데이터 기반 지역사회 현안 해결</h2><span class="kind">Team / NIA 우수과제</span></div>
+  <div class="ttl"><span class="no">23</span><h2>공공데이터 기반 지역사회 현안 해결</h2><span class="kind">Team / NIA 우수과제</span></div>
   <div class="lead">공공데이터로 <b>서울시 흡연부스 약 500개소 입지를 도출</b>한 과제 - NIA 2023 우수과제 선정</div>
   <div class="stack"><div class="row"><span class="k">방법</span><span>공공데이터 CSV 전처리, K-means 클러스터링, 귀무가설 검정, 설치 불가 지점 대체 알고리즘</span></div><div class="row"><span class="k">주관</span><span>한국지능정보사회진흥원 (2023.12)</span></div></div>
 
