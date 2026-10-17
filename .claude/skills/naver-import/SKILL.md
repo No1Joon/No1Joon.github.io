@@ -33,9 +33,9 @@ front matter 형식·파일명 규칙·카테고리 정합은 `blog-post` 를 �
 변환은 손으로 하지 않는다. `scripts/import-naver-post.py` 가 마커 변환과 이미지 파이프라인을 담당하고, **사람(에이전트)이 판단할 것만** `scripts/naver-import-map.yml` 에 적는다.
 
 ```bash
-python scripts/import-naver-post.py --map scripts/naver-import-map.yml --dry-run   # 먼저 확인
-python scripts/import-naver-post.py --map scripts/naver-import-map.yml             # 실행
-python scripts/import-naver-post.py --map ... --only benford-law                   # 한 편만
+/usr/local/bin/python3.12 scripts/import-naver-post.py --map scripts/naver-import-map.yml --dry-run   # 먼저 확인
+/usr/local/bin/python3.12 scripts/import-naver-post.py --map scripts/naver-import-map.yml             # 실행
+/usr/local/bin/python3.12 scripts/import-naver-post.py --map ... --only benford-law                   # 한 편만
 ```
 
 `--dry-run` 은 포스트·이미지를 쓰지 않고 배치 결과와 누락 이미지만 출력한다. **항상 먼저 돌린다.**
@@ -85,7 +85,8 @@ python scripts/import-naver-post.py --map ... --only benford-law                
 | `▸ 소제목`                                   | `### 소제목`                           |
 | `▶︎ 항목` · `👉 항목` · `• 항목`              | `- 항목` (tight list)                  |
 | `📷 [이미지 삽입: alt \| file] 출처 - credit` | `![alt](경로)` + `*alt — 출처: credit*` |
-| `==하이라이트==`                             | `<mark>하이라이트</mark>`              |
+| `==하이라이트==` · `++형광펜++`              | `<mark>하이라이트</mark>`              |
+| `__밑줄__`                                   | `<u>밑줄</u>`                          |
 | `💬 한 줄 요약: …` · `❝ 인용`                 | `> …`                                  |
 | `⚠️`·`🎯` + 긴 문장                           | `> …` (주의·핵심 정리 콜아웃)          |
 | `─────────────`                              | 삭제 (헤더가 구획을 대신함)            |
@@ -144,7 +145,8 @@ Drive assets/postings-<블로그>/<분기>/<포스트키>/  (원문 블로그 �
 ## 영문판 동반
 
 - 이식한 편은 같은 작업에서 `en-translate` 규칙대로 `_en_posts/` 영문판까지 만든다.
-- 자가 렌더 이미지(chart·items·한글 주석 terminal)는 `python3 scripts/render-en-images.py <slug>` 로 영문 렌더해 `assets/images/<cat>/<slug>/en/` 에 두고 영문판 경로를 자동 교체한다.
+- 자가 렌더 이미지(chart·items·한글 주석 terminal)는 `/usr/local/bin/python3.12 scripts/render-en-images.py <slug>` 로 영문 렌더해 `assets/images/<cat>/<slug>/en/` 에 두고 영문판 경로를 자동 교체한다.
+- 원문 `en:` 블록에 `unit` 이 없으면 한글 단위(`점` 등)가 그대로 렌더돼 □ 로 깨진다 — `scripts/naver-en-slots/<slug>.yml` 에 `unit: ''` 를 넣어 덮는다.
 - 원문 슬롯에 `en:` 블록이 있으면 그대로 쓰고, 없으면 `scripts/naver-en-slots/<slug>.yml` 에 번역 슬롯(chart·items 는 `en:`, terminal 은 `text`·`title` 덮어쓰기)을 적는다.
 - 실측 입출력 자체가 한글인 terminal 은 다시 렌더하지 않는다. 캡처·로고·agy 이미지는 한국어판 것을 쓴다.
 - 렌더한 PNG 는 몽타주로 열어 라벨 겹침·잘림을 확인한다 — 긴 단위는 `unit: ''` 와 축 라벨로, 긴 라벨은 줄바꿈·약어로 줄인다.
@@ -156,7 +158,7 @@ Drive assets/postings-<블로그>/<분기>/<포스트키>/  (원문 블로그 �
 3. `_data/categories.yml` 을 읽어 category/subcategory/category_slug 가 실제 값인지 확인. 없는 카테고리가 필요하면 **먼저 categories.yml 에 추가**한다 (nav 는 이 파일로 렌더된다).
 4. `scripts/naver-import-map.yml` 에 항목을 추가한다.
 5. `--dry-run` → 배치 이미지 수와 누락 목록 확인.
-6. 실제 실행 → 잔존 마커 검사 (`🔹 ▸ ▶︎ 📷 ==` 와 `/Users/joon`, `받는 곳:`, `여기에 … 네이버 링크` 가 결과물에 없어야 한다).
+6. 실제 실행 → 잔존 마커 검사 (`🔹 ▸ ▶︎ 📷 == ++ __` 와 `/Users/joon`, `받는 곳:`, `여기에 … 네이버 링크` 가 결과물에 없어야 한다).
 7. 영문판 작성 + `render-en-images.py` (위 영문판 동반 절).
 8. `npm run generate-og` → OG 카드 생성 + `image:` 줄 기입 (위 이미지 파이프라인 절 참조).
 9. `bundle exec jekyll build` 로 렌더 확인. 이미지 참조가 전부 `_site` 에 실재하는지, 영문판에 `hreflang="ko"` 가 있는지 본다.

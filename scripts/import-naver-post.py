@@ -90,7 +90,10 @@ RE_QUOTE = re.compile(r"^❝\s*(?P<text>\S.*)$")
 RE_HASHTAGS = re.compile(r"^🏷️")
 RE_DIVIDER = re.compile(r"^[─—–\-]{5,}$")
 RE_DOT_BULLET = re.compile(r"^•\s*(?P<text>\S.*)$")
-RE_HIGHLIGHT = re.compile(r"==(?P<text>[^=\n]+)==")
+RE_HIGHLIGHT = re.compile(r"==(?P<text>(?:[^=\n]|=(?!=))+)==")
+# 밑줄 `__…__`·형광펜 `++…++` — 원문 렌더러(md_to_naver_html.py)와 같은 경계: 앞에 영숫자가 붙으면(`C++`·파일명) 무시
+RE_UNDERLINE = re.compile(r"(?<![A-Za-z0-9_])__(?=\S)(?P<text>.+?)(?<=\S)__(?!_)")
+RE_HIGHLIGHT_PLUS = re.compile(r"(?<![A-Za-z0-9+])\+\+(?=\S)(?P<text>.+?)(?<=\S)\+\+(?!\+)")
 RE_BARE_URL = re.compile(r"^https?://\S+$")
 # 🔗 링크 첨부 줄. 뒤에 실제 URL 이 오기도 하고, 이전 편 자리표시자가 오기도 한다.
 RE_LINK_ATTACH = re.compile(r"^🔗\s*링크\s*첨부\s*[-–—:]\s*(?P<rest>.*)$")
@@ -416,8 +419,12 @@ class Converter:
 
     @staticmethod
     def inline(text: str) -> str:
-        """인라인 표기 변환. ==형광펜== → <mark>."""
-        return RE_HIGHLIGHT.sub(lambda m: f"<mark>{m.group('text')}</mark>", text)
+        """인라인 표기 변환. ==색 강조==·++형광펜++ → <mark>, __밑줄__ → <u>."""
+        text = RE_HIGHLIGHT.sub(lambda m: f"<mark>{m.group('text')}</mark>", text)
+        if text.lstrip().startswith(("🔗", "http")):
+            return text
+        text = RE_HIGHLIGHT_PLUS.sub(lambda m: f"<mark>{m.group('text')}</mark>", text)
+        return RE_UNDERLINE.sub(lambda m: f"<u>{m.group('text')}</u>", text)
 
     # ── front matter ──────────────────────────────────────────────────────
     def front_matter(self) -> str:
