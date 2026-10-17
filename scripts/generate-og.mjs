@@ -113,7 +113,7 @@ async function generateOG() {
             },
             {
               type: 'div',
-              props: { style: { textAlign: 'center', lineHeight: 1.2, wordBreak: 'keep-all' }, children: title },
+              props: { style: { textAlign: 'center', lineHeight: 1.2, wordBreak: 'keep-all' }, children: title.replace(/ —/g, '\u00a0—') },
             },
             {
               type: 'div',
