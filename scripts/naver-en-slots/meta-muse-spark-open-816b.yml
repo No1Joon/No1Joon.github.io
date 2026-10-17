@@ -1,0 +1,7 @@
+- file: 3_chart_AA지수.png
+  en:
+    title: Artificial Analysis Intelligence Index, open-weight models
+    subtitle: Higher is better
+    unit: ''
+    source: 'Source: Meta Muse Spark Open model card (2026-10-15)'
+    labels: [GLM 5.3, Kimi K3, Qwen3.8, Muse Open, Mistral L4, Inkling, Nemotron 3U]
