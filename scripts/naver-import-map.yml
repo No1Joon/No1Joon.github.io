@@ -2561,3 +2561,103 @@
   title: "Windows 10월 보안 업데이트 1,413건 — 24H2 는 지원 종료"
   description: 역대 최대 규모인 10월 정기 업데이트의 제로데이와 Windows 11 24H2 Home·Pro 지원 종료 대응을 정리합니다
   tags: [windows, patch-tuesday, zero-day, microsoft, windows-11]
+
+- source: naver-posting-it/posts/ai/26Q4/20261015_GPT4o_API_종료.md
+  slug: gpt-4o-api-shutdown
+  date: 2026-10-15
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "GPT-4o·GPT-4.1 API 2027년 1월 14일 종료 — GPT-6 Luna 로 바꾸면 요금은"
+  description: OpenAI API 주요 모델의 단계별 종료 일정과 GPT-6 Luna 로 옮길 때 같은 작업량의 월 요금 차이를 정리합니다
+  tags: [openai, gpt-4o, api-deprecation, gpt-6-luna, pricing]
+
+- source: naver-posting-it/posts/tech/26Q4/20261015_아이폰듀오_18프로_비교.md
+  slug: iphone-duo-vs-iphone-18-pro
+  date: 2026-10-15
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "아이폰 듀오 사전 주문 전 — 18 프로와 차이점 6가지"
+  description: 국내 사전 주문을 앞둔 iPhone Duo 와 iPhone 18 Pro·Pro Max 의 가격·카메라·인증·SIM·무게 차이를 Apple 기술 사양으로 비교합니다
+  tags: [apple, iphone-duo, iphone-18-pro, foldable, esim]
+
+- source: naver-posting-it/posts/tech/26Q4/20261015_애플홈뷰_한국출시.md
+  slug: apple-homeview-korea-launch
+  date: 2026-10-15
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "Apple HomeView 공개 — 한국은 1차 출시국에서 제외"
+  description: 7인치 홈 허브 HomeView 의 1차 출시국과 가격, Siri AI 언어 지원 각주로 본 한국 출시 시점을 정리합니다
+  tags: [apple, homeview, smart-home, siri-ai, matter]
+
+- source: naver-posting-it/posts/ai/26Q4/20261016_816B_GPU_메모리계산.md
+  slug: llm-gpu-memory-816b
+  date: 2026-10-16
+  category: AI
+  category_slug: ai
+  subcategory: Explainer
+  title: "LLM GPU 메모리 계산법 — 816B 모델은 VRAM 몇 GB가 필요할까"
+  description: 파라미터 수와 정밀도로 가중치 용량을 계산하고 KV 캐시까지 더해 Muse Spark Open 816B 에 필요한 GPU 메모리를 따져 봅니다
+  tags: [llm, gpu-memory, vram, quantization, kv-cache]
+
+- source: naver-posting-it/posts/ai/26Q4/20261016_Meta_MuseSparkOpen_816B.md
+  slug: meta-muse-spark-open-816b
+  date: 2026-10-16
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "Meta Muse Spark Open — 816B 오픈 가중치 공개와 Muse Wonder"
+  description: Meta 첫 프런티어 모델 Muse Wonder 와 사흘 뒤 가중치를 푼 Muse Spark Open 의 구조·성능·라이선스를 정리합니다
+  tags: [meta, muse-spark, open-weights, moe, llm]
+
+- source: naver-posting-it/posts/security/26Q4/20261016_광고_제로클릭_스파이웨어.md
+  slug: adfection-zero-click-ad-spyware
+  date: 2026-10-16
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "Citizen Lab — 광고만 봐도 감염되는 제로클릭 스파이웨어 첫 확인"
+  description: 표적 광고 경매를 거쳐 클릭 없이 스파이웨어를 심은 AdFection 공격의 경위와 광고 ID 를 줄이는 대응을 정리합니다
+  tags: [spyware, zero-click, malvertising, citizen-lab, ad-tech]
+
+- source: naver-posting-it/posts/tech/26Q4/20261016_업데이트후_배터리소모.md
+  slug: battery-drain-after-update
+  date: 2026-10-16
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "업데이트 후 배터리가 빨리 닳는 이유 — 며칠 기다리면 되나"
+  description: iPhone·갤럭시가 업데이트 직후 처리하는 정리 작업과 배터리 소모가 정상으로 돌아오는 기간, 확인할 설정을 정리합니다
+  tags: [battery, software-update, ios-27, one-ui-9, smartphone]
+
+- source: naver-posting-it/posts/tech/26Q4/20261016_카카오멤버십_이모티콘플러스.md
+  slug: kakao-membership-emoticon-plus
+  date: 2026-10-16
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "이모티콘 플러스 해지하고 카카오멤버십으로 전환할까 — 월 4,900원 계산"
+  description: 카카오멤버십 구성과 기존 이모티콘 플러스 결제처별로 전환했을 때 월 구독료가 줄거나 느는 경우를 계산합니다
+  tags: [kakao, kakao-membership, emoticon-plus, subscription, kakaotalk]
+
+- source: naver-posting-it/posts/ai/26Q4/20261017_Gemini4_Argon_외부평가.md
+  slug: gemini-4-argon-independent-evals
+  date: 2026-10-17
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "Gemini 4 Argon 외부 평가 — Vals 1위·지능 지수 53점"
+  description: 정식 출시 뒤 나온 Vals AI 와 Artificial Analysis 의 독립 평가 결과와 과제당 비용을 경쟁 모델과 비교합니다
+  tags: [google, gemini-4-argon, benchmark, vals-ai, artificial-analysis]
+
+- source: naver-posting-it/posts/ai/26Q4/20261017_OpenAI_테스트넷_지갑.md
+  slug: openai-model-testnet-wallet
+  date: 2026-10-17
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "OpenAI 연구 모델, 남의 테스트넷 지갑 무단 사용"
+  description: 코딩 과제 중 허락 없이 남의 테스트넷 지갑 잔액을 쓰고 최종 보고에서 누락한 OpenAI 내부 모델의 일탈 사례를 정리합니다
+  tags: [openai, ai-safety, misalignment, ai-agent, ethereum]
