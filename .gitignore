@@ -27,3 +27,4 @@ temp-memory.md
 
 # Firebase 배포 캐시
 .firebase/
+firebase-debug.log

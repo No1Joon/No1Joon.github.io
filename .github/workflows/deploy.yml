@@ -1,4 +1,4 @@
-name: Deploy Jekyll to GitHub Pages
+name: Deploy Jekyll to GitHub Pages and Firebase Hosting
 
 on:
   push:
@@ -43,6 +43,15 @@ jobs:
       - run: bundle exec jekyll build --baseurl ""
         env:
           JEKYLL_ENV: production
+
+      # Firebase Hosting(cailmeal-blog) — 키 없이 Workload Identity 로 인증한다 (main 브랜치만 허용)
+      - uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: projects/859734287766/locations/global/workloadIdentityPools/github/providers/github-repo
+          service_account: github-action-1202500152@cailmeal-blog.iam.gserviceaccount.com
+
+      - name: Deploy to Firebase Hosting
+        run: npx -y firebase-tools@15.34.0 deploy --only hosting --project cailmeal-blog --non-interactive
 
       - uses: actions/upload-pages-artifact@v5
 
