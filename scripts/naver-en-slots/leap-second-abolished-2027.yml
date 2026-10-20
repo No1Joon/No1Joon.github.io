@@ -1,0 +1,46 @@
+- file: 1_chart_연대별윤초.png
+  en:
+    title: Leap seconds added per decade
+    subtitle: 27 in total since 1972
+    unit: ''
+    source: 'Source: IANA tz database leapseconds (from IERS bulletins)'
+    labels:
+    - 1970s
+    - 1980s
+    - 1990s
+    - 2000s
+    - 2010s
+    - 2020s
+- file: 2_term_leapseconds.png
+  title: zsh · macOS tz data
+  text: '# number of leap seconds added since 1972
+
+    $ grep -c ''^Leap'' /usr/share/zoneinfo/leapseconds
+
+    27
+
+
+    # the three most recent
+
+    $ grep ''^Leap'' /usr/share/zoneinfo/leapseconds | tail -3
+
+    Leap    2012    Jun    30    23:59:60    +    S
+
+    Leap    2015    Jun    30    23:59:60    +    S
+
+    Leap    2016    Dec    31    23:59:60    +    S
+
+    '
+- file: 5_items_정리.png
+  en:
+    items:
+    - - Effective
+      - No leap seconds in UTC from May 20, 2027
+    - - Tolerance
+      - UT1-UTC gap from 1 s to up to 3,600 s
+    - - Korea time
+      - Stays UTC+9
+    - - Phones and PCs
+      - Nothing for users to change
+    - - Servers
+      - Leap second handling can be retired

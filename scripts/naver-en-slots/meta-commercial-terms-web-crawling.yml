@@ -1,0 +1,28 @@
+- file: 5_term_robots.png
+  text: '# block only the crawler used for AI training
+
+    User-agent: meta-externalagent
+
+    Disallow: /
+
+
+    # leave the link-preview crawler as is
+
+    User-agent: facebookexternalhit
+
+    Allow: /
+
+    '
+- file: 6_items_정리.png
+  en:
+    items:
+    - - Effective
+      - Oct 30, 2026, same clause in the Korean terms
+    - - Opt-out
+      - Only by stopping business use
+    - - Scope
+      - Domains, pages and URLs tied to the business account
+    - - robots.txt
+      - Block meta-externalagent, applied within 24h
+    - - Open question
+      - Does the contract override robots.txt

@@ -1,0 +1,44 @@
+- file: 1_chart_처분원인.png
+  en:
+    title: Public-sector breach sanctions by cause
+    subtitle: 2022 to Aug 2026, 144 sanctions
+    source: 'Source: PIPC data via Rep. Park Seong-hoon (2026-10-14)'
+    labels:
+    - Work error
+    - Hacking
+    - System error
+    - Intentional
+    - Other
+    unit: ''
+- file: 2_chart_유출원인.png
+  en:
+    title: Records leaked from public agencies by cause
+    subtitle: Two causes reported out of 9,019,433 records
+    source: 'Source: PIPC data via Rep. Park Seong-hoon, DailySecu (2026-10-14)'
+    labels:
+    - Hacking
+    - Work error
+    unit: ''
+- file: 3_chart_연도별.png
+  en:
+    title: Public-sector breach sanctions by year
+    subtitle: 2026 through August
+    source: 'Source: PIPC data via Rep. Park Seong-hoon, DailySecu (2026-10-14)'
+    labels:
+    - '2022'
+    - '2023'
+    - '2024'
+    - '2025'
+    - '2026'
+    unit: ''
+- file: 4_items_조치.png
+  en:
+    items:
+    - - Doubt compensation texts
+      - Agencies never take **compensation** claims via messenger
+    - - Refuse links and apps
+      - Ignore unknown links and remote-control app requests
+    - - Check notices
+      - Agency breach notices stay posted for 30+ days
+    - - Get help
+      - KISA privacy center 118

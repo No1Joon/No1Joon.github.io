@@ -1,0 +1,3 @@
+- file: 1_term_저장소.png
+  title: zsh — perplexityai/SPACE repository info
+  text: "# check license, language, and creation date in that order\n$ gh api repos/perplexityai/SPACE \\\n    --jq '.license.spdx_id, .language, .created_at'\nApache-2.0\nRust\n2026-10-01T18:43:46Z\n"

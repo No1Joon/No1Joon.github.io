@@ -1,0 +1,15 @@
+- file: 1_term_커널공유.png
+  title: zsh — kernels of containers from different distros
+  text: "# print OS name and kernel version in two distro containers\n$ docker run --rm alpine:3.20 \\\n    sh -c 'grep PRETTY /etc/os-release; uname -r'\nPRETTY_NAME=\"Alpine Linux v3.20\"\
+    \n6.12.76-linuxkit\n$ docker run --rm debian:12-slim \\\n    sh -c 'grep PRETTY /etc/os-release; uname -r'\nPRETTY_NAME=\"Debian GNU/Linux 12 (bookworm)\"\n6.12.76-linuxkit\n"
+- file: 3_items_기준.png
+  en:
+    items:
+    - - Only my own code
+      - Containers are enough, minimize privileges and network
+    - - Running others' code
+      - gVisor or stronger, shrink host kernel exposure
+    - - Agent runs as root
+      - MicroVM with a separate guest kernel
+    - - At every tier
+      - Pair with a **network allowlist** and separated credentials

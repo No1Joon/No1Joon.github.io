@@ -1,0 +1,35 @@
+- file: 1_chart_일정.png
+  en:
+    title: Modu AI project schedule
+    source: 'Source: Ministry of Science and ICT releases (2026-08-28, 09-04), press (10-14~16)'
+    labels:
+    - - Aug 28
+      - '3 consortia
+
+        selected'
+    - - Sep 4
+      - 'Kick-off,
+
+        plans presented'
+    - - Sep
+      - 'Agreements
+
+        signed'
+    - - Oct 16
+      - 'Closed beta
+
+        starts'
+    - - Dec
+      - 'Official launch
+
+        target'
+- file: 3_chart_참여기관.png
+  en:
+    title: Participating organizations per consortium
+    subtitle: Excluding lead company
+    source: 'Source: Ministry of Science and ICT selection release (2026-08-28)'
+    labels:
+    - SKT
+    - Kakao
+    - KT
+    unit: ''

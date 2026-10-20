@@ -1,0 +1,15 @@
+- file: 3_term_설정.png
+  title: zsh — connecting DeepSeek to Claude Code
+  text: '# send requests to DeepSeek''s Anthropic-format endpoint
+
+    $ export ANTHROPIC_BASE_URL=https://api.deepseek.com/anthropic
+
+    # key issued on the DeepSeek platform
+
+    $ export ANTHROPIC_API_KEY=$DEEPSEEK_API_KEY
+
+    # sonnet·haiku names map to deepseek-flash, opus to v4-pro
+
+    $ claude
+
+    '

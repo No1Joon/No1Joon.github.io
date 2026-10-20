@@ -1,0 +1,43 @@
+- file: 1_chart_변천.png
+  en:
+    title: History of Korea's personal data validity period rule
+    source: 'Source: Personal Information Protection Act No. 19234 revision note, industry commentary'
+    labels:
+    - - '2012'
+      - 'Network Act
+
+        3 years unused'
+    - - '2015'
+      - 'Shortened
+
+        to 1 year'
+    - - Aug 2020
+      - 'Moved to
+
+        PIPA special rule'
+    - - Sep 15, 2023
+      - 'Special rule
+
+        repealed'
+- file: 2_chart_통지기준.png
+  en:
+    title: Thresholds for annual usage notice duty
+    y_label: Data subjects
+    source: 'Source: PIPA Enforcement Decree Art. 15-3'
+    labels:
+    - Sensitive / unique ID data
+    - General personal data
+    unit: ''
+- file: 5_items_정리.png
+  en:
+    items:
+    - - Check ID verification history
+      - See sign-up traces by method on the privacy portal
+    - - Leave unused sites
+      - Request **withdrawal** from the portal
+    - - Old accounts by hand
+      - Out-of-range or ID/PW-only sites need direct withdrawal
+    - - Check for leaks
+      - Match IDs and passwords on the leak lookup service
+    - - Read usage notices
+      - Use the yearly notice email to review accounts

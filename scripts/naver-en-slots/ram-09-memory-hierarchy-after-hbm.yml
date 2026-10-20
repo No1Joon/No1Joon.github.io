@@ -1,0 +1,9 @@
+- file: 2_chart_HBF목표.png
+  en:
+    title: HBF targets versus same-generation HBM
+    subtitle: Multiple of HBM (HBM = 1)
+    source: 'Source: SK hynix SEDEX 2026 keynote coverage (2026-10-14)'
+    labels:
+    - Bandwidth
+    - Capacity
+    unit: x

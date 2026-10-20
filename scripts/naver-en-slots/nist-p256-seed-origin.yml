@@ -1,0 +1,33 @@
+- file: 2_chart_후보순번.png
+  en:
+    title: Candidate index of each published NIST prime-curve seed
+    subtitle: Which 20-byte candidate in its run
+    source: 'Source: Anthropic (2026-10-16) reproduction code output'
+    labels:
+    - P-192
+    - P-521
+    - P-256
+    - P-384
+    - P-224
+    unit: ''
+- file: 3_term_재현.png
+  title: zsh — running Anthropic's reproduction code
+  text: '# save the code Anthropic released under CC0 as seeds.py and run it
+
+    $ python3 seeds.py | grep "^P-"
+
+    P-192      1997-05-18 14:45:34   139 3045AE6FC8422F64ED579528D38120EAE12196D5
+
+    P-521      1997-08-08 01:12:04  1136 D09E8800291CB85396CC6717393284AAA0DA64BA
+
+    P-256      1997-08-16 01:52:34  1842 C49D360886E704936A6678E1139D26B7819F7E90
+
+    P-384      1997-08-30 14:50:08  2688 A335926AA319A27A1D00896A6773A4827ACDAC73
+
+    P-224      1998-04-03 12:52:07  7026 BD71344799D5C7FCDC45B59FA3B9AB8F6A948BC5
+
+    '
+- file: 4_term_네이버.png
+  title: zsh — checking the www.naver.com certificate
+  text: "# pick out only the public key type and signature scheme\n$ echo | openssl s_client -connect www.naver.com:443 \\\n    -servername www.naver.com 2>/dev/null \\\n    | grep -E \"a:PKEY|Peer signature\
+    \ type\" | sed -n '1p;$p'\n   a:PKEY: EC, (prime256v1); sigalg: sha256WithRSAEncryption\nPeer signature type: ecdsa_secp256r1_sha256\n"
