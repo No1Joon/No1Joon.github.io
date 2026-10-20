@@ -1,6 +1,6 @@
 # No1Joon's Tech Blog
 
-Jekyll 기반 GitHub Pages 블로그 (Claude·Gemini 공통 컨텍스트). 기술 스택·아키텍처·개발 경험 기록용.
+Jekyll 기반 블로그, cailmeal.com 서빙 (Claude·Gemini 공통 컨텍스트). 기술 스택·아키텍처·개발 경험 기록용.
 
 > 재개 노트: `temp-memory.md`(gitignore) — 있으면 **세션 시작 때 읽고, 수행한 뒤 지운다.**
 
@@ -16,6 +16,7 @@ Jekyll 기반 GitHub Pages 블로그 (Claude·Gemini 공통 컨텍스트). 기�
 - `_posts/` — 블로그 글. Jekyll 기본과 달리 **카테고리 slug 하위 폴더**로 나뉜다 (URL 에는 영향 없음). 상세는 `_posts/CLAUDE.md`.
 - `_en_posts/` — 영문판 컬렉션 (`/en/posts/<slug>/`). 한국어 글과 같은 파일명이면 짝으로 묶여 언어 전환·hreflang 이 걸린다. 화면 문구는 `_data/i18n.yml`.
 - `_data/categories.yml` — 포스트 front matter 의 category/subcategory 유효값을 규정하는 단일 출처.
+- `resources.html` · `en/resources.html` — 자료실. front matter 에 `resource: true` 를 단 글을 모은다.
 - `assets/` — 최적화본 `images/` 와 원본 `raw-images/` 가 같은 구조를 미러링. 상세는 `assets/CLAUDE.md`.
 - `scripts/add-screenshot.py` — Desktop 스크린샷을 WebP 로 변환해 위 두 트리에 배치.
 - `scripts/generate-og.mjs` → `assets/og/` — OG 이미지 생성물 (원본은 포스트 front matter).
@@ -41,5 +42,5 @@ Jekyll 기반 GitHub Pages 블로그 (Claude·Gemini 공통 컨텍스트). 기�
 ## Environment
 
 - Ruby + Bundler (Jekyll). Node (OG 이미지 생성). CI 는 Ruby 3.3 / Node 20.
-- `main` 브랜치 푸시 시 `.github/workflows/deploy.yml` 가 GitHub Pages 로 자동 배포.
+- `main` 브랜치 푸시 시 `.github/workflows/deploy.yml` 가 cailmeal.com 에 배포하고, GitHub Pages(no1joon.github.io)에는 `scripts/make-redirect-site.py` 가 만든 같은 경로 리다이렉트만 올린다.
 - `assets/raw-images/` 는 `.gitignore` 로 제외 (원본 보존용, 사이트 산출물에 포함되지 않음).
