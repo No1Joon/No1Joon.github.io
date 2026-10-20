@@ -75,6 +75,8 @@ front matter 형식·파일명 규칙·카테고리 정합은 `blog-post` 를 �
 | IT 밖 과학·환경·보건                            | Science   | Explainer   |
 | 하드웨어·반도체·보안·장애 등 그 외 기술         | Tech      | Explainer / News |
 
+직접 실험·학습시킨 결과물(노트북·데이터·실측)이 있는 글은 갈래와 별개로 매핑에 `resource: true` 를 적어 자료실(`/resources/`)에 싣는다 (예: 초간단 RAG).
+
 `Explainer` 와 `News` 의 갈림: 시간이 지나도 읽을 값이 있으면 Explainer, 특정 시점 사건 보도면 News.
 
 ## 마커 변환 규칙 (스크립트 구현 근거)

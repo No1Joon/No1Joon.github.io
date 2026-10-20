@@ -1,0 +1,25 @@
+{% comment %}
+  자료실 목록 — front matter 에 resource: true 를 단 글만 모은다 (직접 실험·학습한 결과물이 있는 글).
+  param: posts = 대상 컬렉션 (site.posts 또는 site.en_posts)
+{% endcomment %}
+{% assign ui_lang = page.lang | default: site.lang %}
+{% assign t = site.data.i18n[ui_lang] %}
+{% assign items = include.posts | where: "resource", true | sort: "date" | reverse %}
+<div class="page-hero">
+  <h1>{{ t.resources_title }}</h1>
+  <p>{{ t.resources_desc }}</p>
+</div>
+{% if items.size == 0 %}
+<p class="post-list-empty">{{ t.resources_empty }}</p>
+{% else %}
+<div class="post-list">
+  {% for post in items %}
+    <a href="{{ post.url | relative_url }}" class="post-row">
+      <div class="post-row-eyebrow">{{ post.category }}{% if post.subcategory %} · {{ post.subcategory }}{% endif %}</div>
+      <h2 class="post-row-title">{{ post.title }}</h2>
+      {% if post.description %}<p class="post-row-desc">{{ post.description }}</p>{% endif %}
+      <div class="post-row-meta">{{ post.date | date: t.date_short }}</div>
+    </a>
+  {% endfor %}
+</div>
+{% endif %}

@@ -2041,6 +2041,7 @@
   title: "초간단 RAG (1) — 판결서 익명처리 데이터로 만든 로컬 RAG, 조문 적중 18%→32%"
   description: AI Hub 판결서 익명처리 데이터로 가명 코퍼스를 만들고, 로컬 LLM 이 비슷한 판결을 근거로 판결문 초안을 쓰게 한 과정을 정리합니다
   tags: [rag, legal-tech, local-llm, embedding, ai-hub]
+  resource: true
 
 - source: naver-posting-it/posts/ai/26Q4/20261002_Gemini4_Argon.md
   slug: gemini-4-argon
@@ -2071,6 +2072,7 @@
   title: "초간단 RAG (2) — 판결문 LoRA 파인튜닝, 조문 적중은 RAG 의 절반"
   description: 같은 판결문 코퍼스로 LoRA 파인튜닝한 모델이 형식만 학습하고 조문 적중은 RAG 에 못 미친 결과를 정리합니다
   tags: [lora, fine-tuning, rag, legal-tech, local-llm]
+  resource: true
 
 - source: naver-posting-it/posts/security/26Q4/20261002_Citrix_NetScaler_제로데이.md
   slug: citrix-netscaler-zero-day

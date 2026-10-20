@@ -5,6 +5,7 @@ date: 2026-10-02
 category: AI
 subcategory: Explainer
 tags: [lora, fine-tuning, rag, legal-tech, local-llm]
+resource: true
 image: /assets/og/2026-10-02-simple-rag-02-lora-finetuning.png
 ---
 

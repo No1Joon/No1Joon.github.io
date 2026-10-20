@@ -5,6 +5,7 @@ date: 2026-09-30
 category: AI
 subcategory: Explainer
 tags: [rag, legal-tech, local-llm, embedding, ai-hub]
+resource: true
 image: /assets/og/2026-09-30-simple-rag-01-court-rulings.png
 ---
 

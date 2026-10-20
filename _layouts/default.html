@@ -11,7 +11,9 @@
 {% elsif page.collection == "en_posts" %}
   {% assign alt = site.posts | where: "slug", page.slug | first %}
 {% endif %}
-{% if alt %}
+{% if page.alt_url %}
+  {% assign switch_url = page.alt_url %}
+{% elsif alt %}
   {% assign switch_url = alt.url %}
 {% elsif lang == "en" %}
   {% assign switch_url = site.data.i18n.ko.home %}
@@ -49,6 +51,7 @@
       <a href="{{ t.home | relative_url }}" class="site-title">No1Joon<span>.dev</span></a>
       <nav>
         <a href="{{ t.home | relative_url }}">Posts</a>
+        <a href="{{ t.resources | relative_url }}">{{ t.resources_label }}</a>
         <a href="{{ '/resume' | relative_url }}">Resume</a>
         <a href="https://github.com/No1Joon" target="_blank">GitHub</a>
         {% if switch_url %}

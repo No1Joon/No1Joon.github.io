@@ -437,6 +437,9 @@ class Converter:
             ("subcategory", e["subcategory"]),
             ("tags", "[" + ", ".join(e["tags"]) + "]"),
         ]
+        # 자료실(/resources/) 목록에 싣는 글 — 직접 실험·학습한 결과물이 있는 편
+        if e.get("resource"):
+            fields.append(("resource", "true"))
         # OG(`image`)는 넣지 않는다 — CI 의 `npm run generate-og` 가 빌드 때
         # /assets/og/<slug>.png 를 만들고 front matter 의 image 줄을 그 경로로 덮어쓴다
         # (scripts/generate-og.mjs). 여기서 본문 이미지를 넣어도 배포본엔 반영되지 않는다.

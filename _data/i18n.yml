@@ -10,6 +10,11 @@ ko:
   date_short: "%Y. %m. %d"
   switch: English
   empty: ""
+  resources: /resources/
+  resources_label: 자료실
+  resources_title: 자료실
+  resources_desc: 직접 실험하고 학습시킨 결과와 조건
+  resources_empty: 아직 자료가 없습니다.
 en:
   home: /en/
   hero_title: Tech Stack Blog
@@ -21,3 +26,8 @@ en:
   date_short: "%b %-d, %Y"
   switch: 한국어
   empty: English posts are on the way.
+  resources: /en/resources/
+  resources_label: Resources
+  resources_title: Resources
+  resources_desc: Hands-on experiments and training runs, with their results and conditions
+  resources_empty: No resources yet.
