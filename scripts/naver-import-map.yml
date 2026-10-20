@@ -2661,3 +2661,193 @@
   title: "OpenAI 연구 모델, 남의 테스트넷 지갑 무단 사용"
   description: 코딩 과제 중 허락 없이 남의 테스트넷 지갑 잔액을 쓰고 최종 보고에서 누락한 OpenAI 내부 모델의 일탈 사례를 정리합니다
   tags: [openai, ai-safety, misalignment, ai-agent, ethereum]
+
+- source: naver-posting-it/posts/ai/26Q4/20261018_Meta_커머스약관_크롤링.md
+  slug: meta-commercial-terms-web-crawling
+  date: 2026-10-18
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "Meta 커머스 약관 개정 — 10월 30일부터 연결 웹사이트 크롤링 허용"
+  description: Instagram·Facebook 비즈니스 계정에 연결된 웹사이트를 자동 수집해 Meta 제품 학습에 쓸 수 있게 한 커머스 약관 개정 내용을 정리합니다
+  tags: [meta, commercial-terms, web-crawling, ai-training-data, instagram]
+
+- source: naver-posting-it/posts/ai/26Q4/20261019_모두의AI_3사베타.md
+  slug: modu-ai-closed-beta
+  date: 2026-10-19
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "모두의 AI 비공개 베타 시작 — SKT·카카오·KT 3사 서비스 차이"
+  description: 10월 16일 시작한 정부 사업 모두의 AI 비공개 베타의 일정과 SKT·카카오·KT 세 컨소시엄 서비스의 차이를 정리합니다
+  tags: [modu-ai, sovereign-ai, skt, kakao, kt]
+
+- source: naver-posting-it/posts/ai/26Q4/20261019_DeepSeek_V41Flash1017.md
+  slug: deepseek-v4-1-flash-1017
+  date: 2026-10-19
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "DeepSeek V4.1-Flash-1017 공개 — 검색 API 는 10월 말까지 무료"
+  description: API·웹·앱이 함께 교체된 V4.1-Flash-1017 업데이트와 Claude Code·Codex 경유 호출을 무료로 연 Search·Fetch API 를 정리합니다
+  tags: [deepseek, open-weights, coding-agent, search-api, llm]
+
+- source: naver-posting-it/posts/ai/26Q4/20261019_Perplexity_SPACE.md
+  slug: perplexity-space-agent-sandbox
+  date: 2026-10-19
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "Perplexity SPACE 오픈소스 공개 — 에이전트 샌드박스 탈출 시험 108회 0건"
+  description: 에이전트 코드를 작업마다 마이크로VM 에서 실행하는 Perplexity SPACE 의 구조와 자체 탈출 시험 결과를 정리합니다
+  tags: [perplexity, agent-sandbox, firecracker, microvm, ai-security]
+
+- source: naver-posting-it/posts/ai/26Q4/20261020_Anthropic_고용보고서.md
+  slug: anthropic-employment-report
+  date: 2026-10-20
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "Anthropic 고용 보고서 — 기술직 신입 채용 비중 27%에서 9%로"
+  description: Anthropic 이 자기 회사의 채용 변화를 분석한 보고서에서 신입 비중 감소와 에이전트 활용이 바꾼 업무 구성을 정리합니다
+  tags: [anthropic, ai-jobs, entry-level-hiring, labor-market, coding-agent]
+
+- source: naver-posting-it/posts/ai/26Q4/20261020_맞춤형GPT_종료.md
+  slug: chatgpt-custom-gpts-shutdown
+  date: 2026-10-20
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "ChatGPT 맞춤형 GPT 12월 11일 종료 — 플러그인으로 옮겨지는 것과 빠지는 것"
+  description: 맞춤형 GPT 를 대체하는 ChatGPT 플러그인 이전 기능에서 지침·지식 파일은 넘어가고 커스텀 액션·공유 설정은 빠지는 범위를 정리합니다
+  tags: [openai, chatgpt, custom-gpt, chatgpt-plugins, migration]
+
+- source: naver-posting-it/posts/math/26Q4/20261019_야우_수학AI연합.md
+  slug: yau-math-ai-alliance
+  date: 2026-10-19
+  category: Math
+  category_slug: math
+  subcategory: Explainer
+  title: "야우 수학 AI 연합 출범 — 1,000명 목표와 라이덴 선언의 검증 요구"
+  description: 야우싱퉁이 이끄는 중국 수학 AI 연합의 구성과, AI 증명 검증·도구 공개를 요구한 라이덴 선언이 AI 수학 연구를 대하는 방식의 차이를 정리합니다
+  tags: [shing-tung-yau, math-ai, leiden-declaration, formal-proof, lean]
+
+- source: naver-posting-it/posts/math/26Q4/20261019_NIST_P256_시드.md
+  slug: nist-p256-seed-origin
+  date: 2026-10-19
+  category: Math
+  category_slug: math
+  subcategory: Explainer
+  title: "NIST P-256 시드의 출처 — Claude 가 밝힌 1997년 시각 초기화 난수"
+  description: 출처를 알 수 없어 백도어 의심을 받던 P-256 시드가 1997년 시각으로 초기화한 난수였다는 Anthropic 의 분석과 재현 과정을 정리합니다
+  tags: [p-256, elliptic-curve, nist, random-number-generator, cryptography]
+
+- source: naver-posting-it/posts/security/26Q4/20261019_개인정보_유효기간제_폐지.md
+  slug: personal-data-validity-period-abolished
+  date: 2026-10-19
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "개인정보 유효기간제 폐지 3년 — 안 쓰는 계정 정보는 언제 파기되나"
+  description: 2023년 폐지된 개인정보 유효기간제의 내용과 폐지 뒤 장기 미이용 계정 정보가 남는 구조, 직접 정리하는 방법을 짚습니다
+  tags: [privacy, personal-information, dormant-account, pipc, account-hygiene]
+
+- source: naver-posting-it/posts/security/26Q4/20261019_공공기관_유출_901만.md
+  slug: public-agency-data-breach-9m
+  date: 2026-10-19
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "공공기관 개인정보 유출 901만 건 — 처분은 업무과실, 유출 규모는 해킹"
+  description: 2022년부터 2026년 8월까지 공공기관 개인정보 유출 처분 144건을 원인별 처분 건수와 유출 규모로 나눠 정리합니다
+  tags: [data-breach, public-sector, pipc, personal-information, hacking]
+
+- source: naver-posting-it/posts/security/26Q4/20261019_할리스_유출.md
+  slug: hollys-membership-breach
+  date: 2026-10-19
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "할리스 해킹 — 2020년 이전 가입자 비밀번호·주소 유출"
+  description: 할리스 멤버십 시스템 무단 접근으로 2020년 2월 이전 가입자의 아이디·비밀번호·주소·DI 가 유출된 사건 경과와 대응을 정리합니다
+  tags: [hollys, data-breach, password-reuse, personal-information, security]
+
+- source: naver-posting-it/posts/security/26Q4/20261019_에이전트_격리3단.md
+  slug: agent-isolation-three-tiers
+  date: 2026-10-19
+  category: AI
+  category_slug: ai
+  subcategory: Explainer
+  title: "AI 에이전트 코드 격리 — 컨테이너·gVisor·마이크로VM 은 어디까지 막나"
+  description: 코딩 에이전트 실행 격리의 세 단계인 컨테이너·gVisor·마이크로VM 을 호스트 커널 접근 정도로 비교합니다
+  tags: [ai-agent, sandbox, container, gvisor, microvm]
+
+- source: naver-posting-it/posts/security/26Q4/20261020_학교구글계정_11만.md
+  slug: school-google-accounts-hijacked
+  date: 2026-10-20
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "학교 Google 계정 11만 개 탈취 — 학생 이름·학교명 노출 가능성"
+  description: 원격수업용 학교 Google 계정 11만여 개의 비정상 로그인·비밀번호 무단 변경 피해와 노출됐을 수 있는 정보, 확인 방법을 정리합니다
+  tags: [google-workspace, account-takeover, education, data-breach, password]
+
+- source: naver-posting-it/posts/security/26Q4/20261020_Anthropic_IoT_자기복제.md
+  slug: anthropic-iot-self-replication
+  date: 2026-10-20
+  category: AI
+  category_slug: ai
+  subcategory: News
+  title: "Anthropic AI 자기복제 실험 — TV 박스 15대로 모델 구동"
+  description: Anthropic 프런티어 레드팀이 저가 Android TV 박스 15대에 오픈 모델을 분산 배치해 데이터센터 없는 자기복제 가능성을 평가한 연구를 정리합니다
+  tags: [anthropic, self-replication, ai-safety, red-team, iot]
+
+- source: naver-posting-it/posts/tech/26Q4/20261018_윤초폐지_UTC.md
+  slug: leap-second-abolished-2027
+  date: 2026-10-18
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "윤초 2027년 폐지 확정 — 서버 장애 원인이던 1초 추가가 멈춘다"
+  description: 국제도량형총회의 윤초 폐지 결의 내용과 윤초가 생긴 이유, 윤초 때문에 서버 장애가 났던 사례를 정리합니다
+  tags: [leap-second, utc, timekeeping, ntp, outage]
+
+- source: naver-posting-it/posts/tech/26Q4/20261018_RTX스파크_국내출시.md
+  slug: nvidia-rtx-spark-korea-launch
+  date: 2026-10-18
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "NVIDIA RTX Spark 노트북 국내 출시 — 500만 원대부터"
+  description: CPU·GPU 를 한 칩에 묶고 최대 128GB 메모리를 공유하는 RTX Spark 노트북의 구조와 국내 출시 가격을 정리합니다
+  tags: [nvidia, rtx-spark, laptop, unified-memory, windows-on-arm]
+
+- source: naver-posting-it/posts/tech/26Q4/20261019_AI전력_10탄_오사카.md
+  slug: ai-power-10-osaka-onsite-generation
+  date: 2026-10-19
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "AI의 전기 (10) — Anthropic 오사카 500MW 데이터센터, 전력망 대신 현장 발전"
+  description: NTT DATA 가 오사카에 짓는 Anthropic 전용 데이터센터 협상을 따라, 전력망 연결을 기다리지 않고 부지 안에서 전기를 만드는 방식을 정리합니다
+  tags: [anthropic, ntt-data, data-center, onsite-generation, ai-power]
+
+- source: naver-posting-it/posts/tech/26Q4/20261019_RAM_8탄_메모리계층.md
+  slug: ram-09-memory-hierarchy-after-hbm
+  date: 2026-10-19
+  category: Tech
+  category_slug: tech
+  subcategory: Explainer
+  title: "RAM에 대하여 (9) — SK하이닉스가 그린 HBM 이후, S램과 HBM 사이 새 계층과 3D D램"
+  description: SEDEX 2026 에서 SK하이닉스가 발표한 HBM 이후 메모리 구상을 따라, S램과 HBM 사이에 들어갈 새 계층과 3D 스택 D램을 정리합니다
+  tags: [sk-hynix, hbm, memory-hierarchy, 3d-dram, sram]
+
+- source: naver-posting-it/posts/tech/26Q4/20261020_PostgreSQL19_출시지연.md
+  slug: postgresql-19-features-reverted
+  date: 2026-10-20
+  category: Tech
+  category_slug: tech
+  subcategory: News
+  title: "PostgreSQL 19 기능 철회 — AI 코드 리뷰 뒤 11월 정식 출시"
+  description: 베타 기간에 주요 기능 8~10개가 철회된 PostgreSQL 19 의 출시 일정과, 핵심 커미터가 배경으로 꼽은 LLM 보조 코드 리뷰를 정리합니다
+  tags: [postgresql, database, code-review, llm, open-source]
