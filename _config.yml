@@ -1,7 +1,7 @@
 title: No1Joon's Tech Blog
 description: 기술 스택, 아키텍처, 개발 경험을 기록하는 블로그
 baseurl: ""
-url: "https://no1joon.github.io"
+url: "https://cailmeal.com"
 lang: ko
 # GA4 측정 ID (G-XXXXXXXXXX). 비워 두면 추적 코드가 아예 나가지 않는다
 google_analytics: "G-M4V890LVXX"
@@ -69,6 +69,12 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - Tasks.md
+  - temp-memory.md
+  - CLAUDE.md
+  - assets/CLAUDE.md
+  - package.json
+  - package-lock.json
+  - firebase.json
   - api/
   - scripts/
   - node_modules/

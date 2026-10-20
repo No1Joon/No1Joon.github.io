@@ -1,4 +1,4 @@
-name: Deploy Jekyll to GitHub Pages and Firebase Hosting
+name: Deploy Jekyll to Firebase Hosting (github.io redirects)
 
 on:
   push:
@@ -38,7 +38,7 @@ jobs:
 
       # 직전 배포본의 본문 지문 — _plugins/content_lastmod.rb 가 비교해 바뀐 글에만 수정 시각을 준다
       - name: Fetch previous content fingerprints
-        run: curl -fsSL https://no1joon.github.io/lastmod.json -o .lastmod-prev.json || echo "no previous manifest"
+        run: curl -fsSL https://cailmeal.com/lastmod.json -o .lastmod-prev.json || echo "no previous manifest"
 
       - run: bundle exec jekyll build --baseurl ""
         env:
@@ -53,7 +53,13 @@ jobs:
       - name: Deploy to Firebase Hosting
         run: npx -y firebase-tools@15.34.0 deploy --only hosting --project cailmeal-blog --non-interactive
 
+      # github.io 에는 같은 경로의 cailmeal.com 으로 넘기는 페이지만 올린다
+      - name: Build github.io redirect site
+        run: python3 scripts/make-redirect-site.py _site _redirect
+
       - uses: actions/upload-pages-artifact@v5
+        with:
+          path: _redirect
 
       - uses: actions/upload-artifact@v4
         with:
@@ -79,7 +85,7 @@ jobs:
     continue-on-error: true
     env:
       INDEXNOW_KEY: 06b5574a68e4933546881fa33ceae910
-      SITE: https://no1joon.github.io
+      SITE: https://cailmeal.com
     steps:
       - uses: actions/download-artifact@v4
         with:

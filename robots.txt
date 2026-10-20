@@ -32,4 +32,4 @@ Allow: /
 User-agent: Yeti
 Allow: /
 
-Sitemap: https://no1joon.github.io/sitemap.xml
+Sitemap: https://cailmeal.com/sitemap.xml
