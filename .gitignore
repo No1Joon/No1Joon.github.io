@@ -24,3 +24,6 @@ Tasks.md
 temp-memory.md
 .lastmod-prev.json
 .indexnow-urls.txt
+
+# Firebase 배포 캐시
+.firebase/
