@@ -22,7 +22,9 @@ description: 이 블로그의 한국어 포스트를 영문판(`_en_posts/`)으�
 ## 본문
 
 - 헤더 구조·표·목록·`<mark>`·인용·이미지 순서를 원문과 1:1 로 맞춘다.
-- 이미지 경로는 한국어 글 것을 그대로 쓰고, alt 와 캡션만 번역한다 (`출처:` → `Source:`, `자가 렌더` → `self-rendered`, `agy 자가 생성` → `self-generated with agy`).
+- alt 와 캡션을 번역한다 (`출처:` → `Source:`, `자가 렌더` → `self-rendered`, `agy 자가 생성` → `self-generated with agy`).
+- 한글이 박힌 이미지는 영문판을 `assets/images/<cat>/<slug>/en/` 에 만들어 그 경로를 쓴다 — 자가 렌더 차트·카드는 `scripts/naver-en-slots/<slug>.yml` + `scripts/render-en-images.py`, `form: custom` 은 `scripts/render-en-custom.py`, 해외 회사 페이지 캡처는 영어 페이지에서 다시 캡처(Apple 지원 문서 이미지는 URL 의 `/locale/ko-kr` 를 뺀 원본).
+- 영문 원본이 없는 국내 기관·서비스 화면과 한국어 실측 출력(터미널)은 한국어 이미지를 그대로 쓴다.
 - 금액은 달러가 원 수치면 `$10 (₩14,000)`, 원화만 있으면 `₩299,000` — 원문의 환산 기준 줄은 `Exchange rate: converted at $1 ≈ ₩1,400` 로 옮긴다.
 - 한국 고유 용어는 영어로 풀되 오해 소지가 있으면 원어를 괄호로 남긴다 (예: `holdings summary (판시사항)`).
 - 해요체 어조는 평이한 영어 서술로 옮기고 원문에 없는 설명·결론을 붙이지 않는다.
@@ -41,7 +43,7 @@ description: 이 블로그의 한국어 포스트를 영문판(`_en_posts/`)으�
 ## 순서
 
 1. 대상 선정 — 따로 지정이 없으면 영문판이 없는 글 중 최신순.
-2. 원문을 끝까지 읽고 번역 파일을 쓴다.
+2. 원문을 끝까지 읽고 번역 파일을 쓴다. 이어서 위 규칙대로 한글이 박힌 이미지의 영문판을 만든다.
 3. `npm run generate-og` → 영문 글마다 `image: /assets/og/en-…` 가 들어갔는지, 한국어 글이 바뀌지 않았는지 `git status` 로 확인.
 4. `bundle exec jekyll build` 후 확인 — 이미지·내부 링크가 `_site` 에 실재하는지, `/en/posts/<slug>/` 에 `hreflang="ko"`, 한국어 글에 `/en/posts/<slug>/` 링크가 생겼는지.
 5. 커밋은 `smart-commit` 규칙(커밋 후 자동 푸시 → 배포)을 따른다.
