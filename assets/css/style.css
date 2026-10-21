@@ -320,16 +320,32 @@ nav a:hover { color: var(--text); }
   margin-bottom: 2rem;
 }
 
-/* 본문이 DOM 에서 목록보다 앞에 오고(검색엔진용), 화면에서는 목록이 위로 돌아온다 */
+/* 본문이 DOM 에서 목록보다 앞에 오고(검색엔진용), 화면에서는 접힌 목록 한 줄이 위로 돌아온다 */
 .post-page { display: flex; flex-direction: column; }
 .post-page > .post-browse { order: -1; }
+/* 목록에서 다른 글을 고르면 #postView 로 스크롤한다 — 고정 헤더(모바일에선 두 줄)에 제목이 가리지 않게 띄운다 */
+#postView { scroll-margin-top: 6.5rem; }
 
-/* List browser shown at the top of a post page */
+/* 포스트 위의 접힌 목록 — 펼쳤을 때만 아래 여백을 크게 준다 */
 .post-browse {
-  margin-bottom: 2.5rem;
-  padding-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
   border-bottom: 1px solid var(--border);
 }
+.post-browse[open] { margin-bottom: 2.5rem; padding-bottom: 1.5rem; }
+
+.post-browse-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 44px;
+  cursor: pointer;
+  list-style: none;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+.post-browse-toggle::-webkit-details-marker { display: none; }
+.post-browse-toggle:hover { color: var(--text); }
+.post-browse[open] .post-browse-toggle .cat-chevron { transform: rotate(90deg); }
 
 .post-header h1 {
   font-size: 1.75rem;

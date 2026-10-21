@@ -14,8 +14,8 @@ layout: default
 {% endfor %}
 {% comment %}
   .post-page = 본문을 DOM 에서 목록보다 앞에 두기 위한 래퍼.
-  검색엔진은 앞쪽 콘텐츠로 페이지 주제를 잡는데, 목록이 먼저 오면 63편의 남의 제목이
-  본문 h1 을 가린다. 보이는 순서는 CSS order 로 되돌리므로 화면은 이전과 같다.
+  검색엔진은 앞쪽 콘텐츠로 페이지 주제를 잡는데, 목록이 먼저 오면 남의 제목들이
+  본문 h1 을 가린다. 화면에서는 CSS order 로 접힌 목록 한 줄이 본문 위에 온다.
 
   #postView = 부분 네비게이션이 교체하는 유일한 영역.
   post-browser.html 이 다른 글의 이 블록만 가져와 갈아끼우므로 카테고리 섹션은 그대로 남는다.
@@ -48,7 +48,12 @@ layout: default
   </article>
 </div>
 
-<section class="post-browse">
+{% comment %}
+  목록은 접어 둔다 — 검색으로 글에 바로 들어온 독자가 카테고리 메뉴와 목록을 지나야 제목을 보게 되지 않도록.
+  펼친 채로 다른 글을 고르면 부분 네비게이션이 본문만 갈아끼우므로 열림 상태도 그대로 남는다.
+{% endcomment %}
+<details class="post-browse">
+  <summary class="post-browse-toggle">{{ t.browse }}<svg class="cat-chevron" width="11" height="11" viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></summary>
   {% include post-browser.html posts=browse_posts initial_cat=cur_slug compact=true %}
-</section>
+</details>
 </div>
