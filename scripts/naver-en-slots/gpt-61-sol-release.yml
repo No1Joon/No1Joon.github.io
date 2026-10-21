@@ -1,0 +1,19 @@
+- file: 2_chart_캐시요금.png
+  en:
+    title: Cached input price per million tokens
+    x_label: KRW (log scale)
+    unit: ''
+    source: "Source: OpenAI announcement and API docs (2026-09-22, 09-29) · converted at $1 ≈ ₩1,400"
+- file: 5_chart_안전평가.png
+  en:
+    title: Rate of not reporting a broken search tool
+    subtitle: Lower is better
+    source: "Source: OpenAI announcement (2026-09-29) · reasoning effort max · evaluation tasks designed to induce failure"
+- file: 6_items_정리.png
+  en:
+    items:
+      - [Same price, "Input ₩2,800, output ₩14,000; only cached input halved to ₩140"]
+      - [Astra-level coding, "DeepSWE 75.2%, ₩910 per task"]
+      - [Rankings depend on settings, Opus 5.5 tops AutomationBench at maximum settings]
+      - [Not in Chat yet, "Only in ChatGPT Work, Codex, and the API"]
+      - [The hardest tasks, GPT-6 Astra is still recommended]

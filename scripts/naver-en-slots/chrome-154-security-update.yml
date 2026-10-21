@@ -1,0 +1,19 @@
+- file: 1_chart_등급별.png
+  en:
+    title: Chrome 154 security fixes by severity
+    unit: ''
+    source: 'Source: Google Chrome Releases (2026-09-22) · 108 fixes in total'
+- file: 3_chart_국내점유율.png
+  en:
+    title: Desktop browser market share in Korea
+    subtitle: August 2026
+    source: 'Source: Statcounter Global Stats (Aug 2026, South Korea desktop) · all but Safari and Firefox are Chromium-based'
+    labels: [Chrome, Edge, Samsung Internet, Whale, Safari, Firefox]
+- file: 5_items_정리.png
+  en:
+    items:
+      - [Version to check, "154.0.8037.57 or later (up to .58 on Windows and Mac)"]
+      - [How to apply, Update from the About Chrome screen and relaunch]
+      - [11 Critical fixes, "7 in the graphics layer, 4 use-after-free"]
+      - [Active exploitation, No exploited-in-the-wild flag among the 154 fixes]
+      - [Edge and Whale, Each vendor has to ship its own update]

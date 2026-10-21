@@ -39,7 +39,7 @@ Each item is a JSON file in three parts: **info** (case information), **sections
 
 One label records which original text at which position (**span**) in the body should be replaced with which pseudonym (**replacement_text**), along with the rule behind it and the reason for the decision. Every label used a single treatment, **GENERALIZE**.
 
-![Label counts by rule in the general-ruling training split](/assets/images/ai/simple-rag-01-court-rulings/04-chart.webp)
+![Label counts by rule in the general-ruling training split](/assets/images/ai/simple-rag-01-court-rulings/en/04-chart.webp)
 *Label counts by rule in the general-ruling training split — Source: my own count of AI Hub data · self-rendered*
 
 Of the 211,400 labels across the 12,000 general rulings in the training split, 88.5% are organization names (R7). Not only company names but also institutions such as the Supreme Court and the Intellectual Property Trial and Appeal Board are treated as organizations and become pseudonyms like **Organization-4**. Personal names (R1) become role-aware pseudonyms such as **Person-1**, **Plaintiff-1**, and **Victim-1**, and detailed addresses (R3) are reduced to the city/county/district level, like **Eunpyeong-gu, Seoul A**.
@@ -84,7 +84,7 @@ Embedding the 16,800 training rulings took 5,041 seconds (84 minutes). That is a
 
 ## Comparing retrieval methods
 
-![Referenced-provision hit rate by retrieval method](/assets/images/ai/simple-rag-01-court-rulings/06-chart.webp)
+![Referenced-provision hit rate by retrieval method](/assets/images/ai/simple-rag-01-court-rulings/en/06-chart.webp)
 *Referenced-provision hit rate by retrieval method — Source: my own measurement · self-rendered*
 
 I used the holdings summaries of the 826 validation rulings that had both a holdings summary and referenced provisions as queries, and counted whether the top 5 results from the training split cited the same statutory provisions. The baseline was character 2–3-gram TF-IDF, and the third condition was a hybrid (RRF) combining the two rankings.
@@ -101,7 +101,7 @@ Only 6,579 (39%) of the training rulings list referenced provisions, so whenever
 
 ### How referenced provisions are distributed in embedding space
 
-![Rotating 3D map of bge-m3 embeddings](/assets/images/ai/simple-rag-01-court-rulings/07-b-chart.webp)
+![Rotating 3D map of bge-m3 embeddings](/assets/images/ai/simple-rag-01-court-rulings/en/07-b-chart.webp)
 *Rotating 3D map of bge-m3 embeddings — Source: AI Hub data · UMAP 3D · self-rendered*
 
 For each of the 6,579 rulings with referenced provisions, I took its 10 nearest neighbors in the original space and counted the share sharing at least one provision. It was 21.5% for bge-m3 and 24.8% for TF-IDF, against 0.72% for two randomly chosen rulings.
@@ -124,7 +124,7 @@ The ungrounded draft invented a provision that does not exist and even fabricate
 
 With reference rulings in the input, it pointed to the actual referenced provisions: Article 2 of the former River Act and Article 2 of the Act on Special Measures for Compensation for Land Incorporated into Rivers. This issue was an easy retrieval case, because the training split contained a ruling (2011두4336) with an almost identical holdings summary.
 
-![Correct referenced-provision hit rate](/assets/images/ai/simple-rag-01-court-rulings/10-chart.webp)
+![Correct referenced-provision hit rate](/assets/images/ai/simple-rag-01-court-rulings/en/10-chart.webp)
 *Correct referenced-provision hit rate — Source: my own measurement · self-rendered*
 
 | Condition | Provision hits | Drafts with no provisions | Generation time |
@@ -150,7 +150,7 @@ With the notebook defaults (fp16, batch 16), one run on the same M3 Pro took 55.
 
 ## Summary so far
 
-![Part 1 summary](/assets/images/ai/simple-rag-01-court-rulings/11-items.webp)
+![Part 1 summary](/assets/images/ai/simple-rag-01-court-rulings/en/11-items.webp)
 *Part 1 summary — Source: summary of this post · self-rendered*
 
 ## Next

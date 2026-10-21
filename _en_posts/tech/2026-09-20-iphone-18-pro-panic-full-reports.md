@@ -17,7 +17,7 @@ Posts appeared in Korean communities from September 19, and the same symptom has
 
 ## How the reports spread
 
-![How the iPhone 18 Pro panic-full reports unfolded](/assets/images/tech/iphone-18-pro-panic-full-reports/02-chart.webp)
+![How the iPhone 18 Pro panic-full reports unfolded](/assets/images/tech/iphone-18-pro-panic-full-reports/en/02-chart.webp)
 *How the iPhone 18 Pro panic-full reports unfolded — Source: self-rendered from combined reporting*
 
 iOS 27 was released on September 14 and comes preinstalled on these devices. The devices launched on September 18.
@@ -85,7 +85,7 @@ Apple had made no official statement as of September 20. Nothing has been announ
 
 ## Summary
 
-![Summary of how to respond to panic-full](/assets/images/tech/iphone-18-pro-panic-full-reports/04-items.webp)
+![Summary of how to respond to panic-full](/assets/images/tech/iphone-18-pro-panic-full-reports/en/04-items.webp)
 *Summary of how to respond to panic-full — Source: compiled from this post · self-rendered*
 
 ## Sources

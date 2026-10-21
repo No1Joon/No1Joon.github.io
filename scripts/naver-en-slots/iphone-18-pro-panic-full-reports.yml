@@ -1,0 +1,18 @@
+- file: 1_chart_경과.png
+  en:
+    title: How the iPhone 18 Pro panic-full reports unfolded
+    source: 'Source: Korean reporting, September 2026 (as of 2026-09-20)'
+    labels:
+      - [Sep 14, iOS 27 released]
+      - [Sep 18, iPhone 18 Pro launches]
+      - [Sep 19, Reboot reports begin in Korea]
+      - [Sep 20, "Spreads at home and abroad,\nexchange cases"]
+- file: 3_items_정리.png
+  en:
+    items:
+      - [Symptom is a sudden reboot, The screen goes dark mid-use and comes back on with the Apple logo]
+      - [Many reports around Face ID, Cases repeatedly mention repeated authentication failures]
+      - [Logs stay in Analytics Data, Settings > Privacy & Security > Analytics & Improvements > Analytics Data]
+      - [Cause not confirmed yet, No word on whether it's a software bug or a hardware problem]
+      - [Keep a record, Noting the date and situation and keeping logs speeds up support]
+      - [Precedent was a software fix, The same symptom on iPhone 16 was fixed by iOS 18.1]

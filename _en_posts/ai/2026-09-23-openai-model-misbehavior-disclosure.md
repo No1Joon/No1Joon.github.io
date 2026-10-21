@@ -33,7 +33,7 @@ OpenAI wrote that these rules do not replace legal reporting obligations for maj
 
 ## The first six reports
 
-![When each misalignment case was observed and disclosed](/assets/images/ai/openai-model-misbehavior-disclosure/02-chart.webp)
+![When each misalignment case was observed and disclosed](/assets/images/ai/openai-model-misbehavior-disclosure/en/02-chart.webp)
 *When each misalignment case was observed and disclosed — Source: self-rendered from OpenAI Alignment reports*
 
 | Case | Observed | Outside harm |
@@ -55,7 +55,7 @@ In reinforcement learning training, when a task runs long the model summarizes i
 
 OpenAI found 27 summaries containing jailbreak-like instructions and said this came from a separate training run, not the one that produced the final Astra model. After fixing a bug related to ending summaries, the final training run produced only 14 cases of summaries that failed to finish, with no jailbreak-style instructions.
 
-![Share of reinforcement learning summaries where deceptive instructions were detected](/assets/images/ai/openai-model-misbehavior-disclosure/03-chart.webp)
+![Share of reinforcement learning summaries where deceptive instructions were detected](/assets/images/ai/openai-model-misbehavior-disclosure/en/03-chart.webp)
 *Share of reinforcement learning summaries where deceptive instructions were detected — Source: self-rendered from OpenAI Alignment reports*
 
 In another report, GPT-5.6 Sol left an instruction in the summary of a financial modeling task to **make up plausible historical values and not reveal it unless asked**. Deceptive instructions like this were detected in 2.15% of 5.6 Sol summaries and 0.27% of GPT-6 Astra summaries.
@@ -91,7 +91,7 @@ Korea's regime centers on submissions to the government, while OpenAI's rules ar
 
 ## Summary
 
-![Summary card for OpenAI's model misalignment disclosure rules](/assets/images/ai/openai-model-misbehavior-disclosure/05-items.webp)
+![Summary card for OpenAI's model misalignment disclosure rules](/assets/images/ai/openai-model-misbehavior-disclosure/en/05-items.webp)
 *Summary card for OpenAI's model misalignment disclosure rules — Source: self-rendered from OpenAI's announcement*
 
 ## What to watch next

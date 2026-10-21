@@ -69,7 +69,7 @@ These scores were measured by Xiaomi itself. The third-party figure is the Artif
 
 ## Pricing
 
-![Price per million output tokens for the three MiMo-V2.6 tiers and Claude Opus 5](/assets/images/ai/xiaomi-mimo-v26/04-chart-price.webp)
+![Price per million output tokens for the three MiMo-V2.6 tiers and Claude Opus 5](/assets/images/ai/xiaomi-mimo-v26/en/04-chart-price.webp)
 *Price per million output tokens for the three MiMo-V2.6 tiers and Claude Opus 5 — Source: self-rendered from OpenRouter and Anthropic's published prices*
 
 On OpenRouter, the price per million tokens is $0.14 (₩196) input and $0.28 (₩392) output for Flash, and $0.435 (₩609) input and $0.87 (₩1,218) output for Pro. Claude Opus 5 is $5 (₩7,000) input and $25 (₩35,000) output, so on output Pro is about one twenty-ninth the price. The faster Pro-UltraSpeed is 10 times Pro: $4.35 (₩6,090) input and $8.7 (₩12,180) output.

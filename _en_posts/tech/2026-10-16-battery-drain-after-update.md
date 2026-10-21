@@ -15,7 +15,7 @@ The day after you update an iPhone or Galaxy, the battery may drop faster than u
 
 ## Why drain increases right after an update
 
-![The performance and battery impact section of Apple's software update guide](/assets/images/tech/battery-drain-after-update/02-capture.webp)
+![The performance and battery impact section of Apple's software update guide](/assets/images/tech/battery-drain-after-update/en/02-capture.webp)
 *The performance and battery impact section of Apple's software update guide — Source: Apple*
 
 Apple explains this directly in its support document "About Apple software updates." It says that right after an update, especially a major version update, battery life and heat may be temporarily affected, and that this is normal. The reasons it gives are indexing data and files for search, downloading new assets, and updating apps.
@@ -49,7 +49,7 @@ On a Galaxy, app recompilation runs when idle and charging, per Android's docume
 
 ## Normal signs vs signs to check
 
-![The battery usage screen from Apple's battery guide](/assets/images/tech/battery-drain-after-update/05-capture.webp)
+![The battery usage screen from Apple's battery guide](/assets/images/tech/battery-drain-after-update/en/05-capture.webp)
 *The battery usage screen from Apple's battery guide — Source: Apple*
 
 | Sign | Normal range | Needs checking |

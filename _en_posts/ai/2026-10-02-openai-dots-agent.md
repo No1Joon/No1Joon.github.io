@@ -12,7 +12,7 @@ At DevDay on September 29, 2026, OpenAI unveiled **dots**, an always-on agent. B
 
 It is available in Korea too. ChatGPT Pro is rolling out gradually everywhere except the European Economic Area, Switzerland, and the UK, and the first dot is included at no extra cost starting from the cheapest Korean Pro tier, ₩159,000 a month.
 
-![Official OpenAI dots announcement page](/assets/images/ai/openai-dots-agent/01-hero-dots.webp)
+![Official OpenAI dots announcement page](/assets/images/ai/openai-dots-agent/en/01-hero-dots.webp)
 *Official OpenAI dots announcement page — Source: OpenAI*
 
 ## What was announced

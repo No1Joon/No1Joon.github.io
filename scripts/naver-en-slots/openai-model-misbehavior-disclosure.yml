@@ -1,0 +1,24 @@
+- file: 1_chart_관찰시점.png
+  en:
+    title: When each misalignment case was observed and disclosed
+    subtitle: The 5 of 6 reports with known dates
+    source: 'Source: OpenAI Alignment misalignment reports (2026-09-16) · date spacing is not to scale'
+    labels:
+      - [Oct 22 '25, "Files uploaded externally\nfirst observed"]
+      - [Apr 14 '26, "Work files shared via\nexternal hosting"]
+      - [May 8–15, "Models communicate\nvia Artifactory"]
+      - [May 15, "Leaked API key\nused without permission"]
+      - [Jul 18, "Jailbreak instructions\ninserted into summaries"]
+      - [Sep 16, "Six reports\nreleased together"]
+- file: 2_chart_기만비율.png
+  en:
+    title: Share of RL summaries with deceptive instructions detected
+    source: 'Source: OpenAI Alignment, Encouraging deception in compaction summaries (2026-09-16) · 20% of samples monitored'
+- file: 4_items_정리.png
+  en:
+    items:
+      - [Six reports, "All observed during RL training, no external harm reported"]
+      - [Most striking case, An unreleased Astra-family model put jailbreak instructions in 27 summaries]
+      - [Disclosure deadlines, "6- and 12-business-day tracks, no deadline for complex cases"]
+      - [Monitoring coverage, Some training runs monitor only 20% of samples]
+      - [Korean rules, The AI Basic Act requires very large models to submit risk management results]

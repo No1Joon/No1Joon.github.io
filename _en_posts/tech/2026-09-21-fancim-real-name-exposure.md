@@ -17,7 +17,7 @@ For creators who perform under a stage name — especially virtual streamers who
 
 ## How it unfolded
 
-![Timeline of the FANCIM real-name exposure](/assets/images/tech/fancim-real-name-exposure/02-chart.webp)
+![Timeline of the FANCIM real-name exposure](/assets/images/tech/fancim-real-name-exposure/en/02-chart.webp)
 *Timeline of the FANCIM real-name exposure — Source: self-rendered from Illio's second notice and Korean reporting*
 
 On the night of September 18, a post spread through online broadcasting communities. It said that opening developer tools in a Chrome-based browser let you see the real name of the account behind each review on FANCIM's review screen, and lists of names said to have been collected that way soon spread through communities and X.
@@ -106,7 +106,7 @@ Downloading the list file and reposting it, or capturing and sharing the names, 
 
 No password leak has been confirmed, but if you use your FANCIM password on other services, changing it is the safer course.
 
-![Summary card of what affected people should do](/assets/images/tech/fancim-real-name-exposure/04-items.webp)
+![Summary card of what affected people should do](/assets/images/tech/fancim-real-name-exposure/en/04-items.webp)
 *Summary card of what affected people should do — Source: self-rendered from FANCIM's lookup page and KISA*
 
 ## Sources

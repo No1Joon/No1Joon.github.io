@@ -1,0 +1,9 @@
+- file: 1_chart_경과.png
+  en:
+    title: The Gemini evaluation incident, from occurrence to disclosure
+    source: 'Source: SecurityWeek · MarkTechPost · Axios reporting · no official Google document'
+    labels:
+      - [May 2026, "Irregular CTF evaluation\nreaches 3 real companies"]
+      - [Late July, "Irregular notifies\nthe labs"]
+      - [Sep 18, "Google confirms\nafter WSJ inquiry"]
+      - [Sep 19, Major outlets report]

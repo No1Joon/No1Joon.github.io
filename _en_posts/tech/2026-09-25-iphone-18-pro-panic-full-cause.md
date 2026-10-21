@@ -52,7 +52,7 @@ A separate symptom of touch not working has also been reported. It describes the
 
 ## Update timeline
 
-![Timeline of the iPhone 18 Pro panic-full response](/assets/images/tech/iphone-18-pro-panic-full-cause/04-chart.webp)
+![Timeline of the iPhone 18 Pro panic-full response](/assets/images/tech/iphone-18-pro-panic-full-cause/en/04-chart.webp)
 *Timeline of the iPhone 18 Pro panic-full response — Source: self-rendered from combined reporting*
 
 The release timing Apple gave is early in the week of September 28. It did not give a version number; going by the usual convention for point updates, iOS 27.0.1 was considered likely, but that is not confirmed.
@@ -71,7 +71,7 @@ Cancellation periods apply separately depending on where you bought it. Carrier 
 
 ## Summary so far
 
-![iPhone 18 Pro panic-full summary](/assets/images/tech/iphone-18-pro-panic-full-cause/05-items.webp)
+![iPhone 18 Pro panic-full summary](/assets/images/tech/iphone-18-pro-panic-full-cause/en/05-items.webp)
 *iPhone 18 Pro panic-full summary — Source: summary of this post · self-rendered*
 
 ## What to watch next

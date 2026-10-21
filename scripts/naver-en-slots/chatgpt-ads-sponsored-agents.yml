@@ -1,0 +1,20 @@
+- file: 1_chart_경과.png
+  en:
+    title: From the introduction of ChatGPT ads to Sponsored Agents
+    subtitle: '2026'
+    source: 'Source: OpenAI · CNBC · Korean reporting · PPC Land (2026) · date spacing is not to scale'
+    labels:
+      - [Feb 9, "Ad test starts for\nUS Free and Go"]
+      - [Jun 19, "Korea ad\npilot starts"]
+      - [Aug 29, "Running in\n40+ markets"]
+      - [Sep 3, "Shopify app\nlaunches in US"]
+      - [Sep 16, "Sponsored Agents\nHubSpot integration"]
+      - [Sep 23, "Shopify app\nexpands abroad"]
+- file: 5_items_정리.png
+  en:
+    items:
+      - [Sponsored Agents, Clicking an ad opens a separate chat with the advertiser's agent]
+      - [Test scope, Some US advertisers; no Korean launch date]
+      - [HubSpot, "Build ads, track results, and manage leads inside the CRM"]
+      - [Shopify, "Product catalog sync app, expanded abroad Sep 23"]
+      - [Users in Korea, Ads shown only to adults on Free and Go plans]

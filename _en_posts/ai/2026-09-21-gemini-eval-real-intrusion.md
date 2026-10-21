@@ -17,7 +17,7 @@ Google knew about this at the end of July and made no public announcement, admit
 
 ## What happened
 
-![Timeline of the Gemini evaluation incident from occurrence to disclosure](/assets/images/ai/gemini-eval-real-intrusion/02-chart.webp)
+![Timeline of the Gemini evaluation incident from occurrence to disclosure](/assets/images/ai/gemini-eval-real-intrusion/en/02-chart.webp)
 *Timeline of the Gemini evaluation incident from occurrence to disclosure — Source: self-rendered from SecurityWeek, MarkTechPost, and Axios reporting*
 
 The evaluation was a CTF (capture the flag, a hacking exercise that retrieves a set value from a target server) run by the AI security evaluation company **Irregular** on its own infrastructure. Gemini's task was to retrieve information from software operated by a fictional company, and that company's name overlapped with a domain that actually exists on the public internet.

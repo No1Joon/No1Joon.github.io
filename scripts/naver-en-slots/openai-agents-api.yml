@@ -1,0 +1,13 @@
+- file: 3_chart_컨테이너요금.png
+  en:
+    title: Price per 20 minutes for OpenAI-hosted containers
+    unit: KRW
+    y_label: Per 20-minute session (KRW)
+    source: "Source: OpenAI price list · converted at $1 ≈ ₩1,400"
+- file: 4_items_정리.png
+  en:
+    items:
+      - [Long-running work → Agents API, "OpenAI handles sessions, summaries, and recovery; your code just passes the task"]
+      - [Control matters → Agents SDK, The loop runs on your server and you design approval and storage]
+      - [One-off calls → Responses API, Most freedom in exchange for managing the conversation history yourself]
+      - [Regulated work → check first, Data residency is US-only and there's no zero-retention option]

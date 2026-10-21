@@ -1,0 +1,14 @@
+- file: 1_chart_위험비.png
+  en:
+    title: Hypertension hazard ratio by preservative, 95% CI
+    x_label: "Hazard ratio (highest vs. lowest intake group, 1 = no difference)"
+    source: 'Source: Hasenböhler et al., European Heart Journal (2026), results section · the 8 significant after multiple-testing correction'
+    labels: [Potassium sorbate, Citric acid, Potassium metabisulfite, Sodium nitrite, L-ascorbic acid, Sodium erythorbate, Sodium ascorbate, Rosemary extract]
+- file: 4_items_정리.png
+  en:
+    items:
+      - [What the study showed, "**1.29×** hypertension incidence in the highest preservative intake group; observational"]
+      - [Causation not yet shown, The authors say experimental studies are needed]
+      - [Exceeding limits is rare, "**0** people above the acceptable daily intake for sorbic or erythorbic acid"]
+      - [Vitamin C additives, Should be considered separately from natural vitamin C in fruit and vegetables]
+      - [Read the label, "Preservatives, antioxidants, and color fixatives are listed with their **purpose**"]

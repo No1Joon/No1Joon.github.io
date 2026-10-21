@@ -81,7 +81,7 @@ But that is not a confirmed cause
 This method succeeds when passwords have already leaked outside
 and <mark>two-step verification is turned off</mark>
 
-![Google Workspace documentation on enforcing two-step verification for administrators](/assets/images/tech/school-google-accounts-hijacked/04-photo-2.webp)
+![Google Workspace documentation on enforcing two-step verification for administrators](/assets/images/tech/school-google-accounts-hijacked/en/04-photo-2.webp)
 *Google Workspace documentation on enforcing two-step verification for administrators — Source: Google*
 
 Google makes two-step verification mandatory for **administrator accounts** in Workspace for Education

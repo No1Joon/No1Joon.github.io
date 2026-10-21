@@ -49,7 +49,7 @@ According to OpenAI, at high reasoning effort Luna matches GPT-5.6 Sol on factua
 
 ## Pricing
 
-![Output price per million tokens by model](/assets/images/ai/gpt-6-sol-luna-release/03-chart.webp)
+![Output price per million tokens by model](/assets/images/ai/gpt-6-sol-luna-release/en/03-chart.webp)
 *Output price per million tokens by model — Source: self-rendered from OpenAI's and Anthropic's price lists*
 
 By output price, GPT-6 Astra is 5 times Sol, and Sol is 20 times Luna. Sol's input and output prices ($2 and $10) are exactly half those of Claude Opus 5.5 ($4 and $20), released the same day.
@@ -67,7 +67,7 @@ API usage is billed in dollars, so the cost in won for users in Korea depends on
 
 ## Benchmark figures
 
-![AutomationBench cost-per-task multiples](/assets/images/ai/gpt-6-sol-luna-release/04-chart.webp)
+![AutomationBench cost-per-task multiples](/assets/images/ai/gpt-6-sol-luna-release/en/04-chart.webp)
 *AutomationBench cost-per-task multiples — Source: self-rendered from figures in OpenAI's announcement*
 
 AutomationBench is a workflow benchmark covering sales, marketing, operations, customer support, finance, and HR work across 47 tools. GPT-6 Sol at xhigh scored 33.2% at $0.27 (₩378) per task.
@@ -81,7 +81,7 @@ AutomationBench is a workflow benchmark covering sales, marketing, operations, c
 
 Sol beat Astra at low for one 3.9th of the cost, and beat Claude Opus 5 at max for about 9% of the cost. About 40% of Fable 5.1's tasks were routed to Opus 5 and that cost is excluded, so the real cost multiple is larger than 8.9x.
 
-![Best DeepSWE v1.1 scores compared](/assets/images/ai/gpt-6-sol-luna-release/05-chart-deepswe.webp)
+![Best DeepSWE v1.1 scores compared](/assets/images/ai/gpt-6-sol-luna-release/en/05-chart-deepswe.webp)
 *Best DeepSWE v1.1 scores compared — Source: self-rendered from figures in OpenAI's announcement*
 
 On DeepSWE v1.1, which solves long software tasks in real codebases, Sol at max scored 68.8%, 1.1 percentage points from Claude Fable 5 at xhigh (69.9%). Cost per task was about 80% lower.
@@ -124,7 +124,7 @@ OpenAI stated that its factual accuracy evaluation is built from conversations w
 
 ## How to choose
 
-![Summary card of what each model is for](/assets/images/ai/gpt-6-sol-luna-release/08-items.webp)
+![Summary card of what each model is for](/assets/images/ai/gpt-6-sol-luna-release/en/08-items.webp)
 *Summary card of what each model is for — Source: self-rendered from OpenAI's announcement*
 
 ## What to watch next

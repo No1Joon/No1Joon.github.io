@@ -17,7 +17,7 @@ The CVSS score is a maximum 10.0, and a crafted HTTP request alone, with no auth
 
 ## How it unfolded
 
-![Timeline from the disclosure of CVE-2026-20079 to confirmed exploitation](/assets/images/tech/cisco-fmc-auth-bypass/02-chart.webp)
+![Timeline from the disclosure of CVE-2026-20079 to confirmed exploitation](/assets/images/tech/cisco-fmc-auth-bypass/en/02-chart.webp)
 *Timeline from the disclosure of CVE-2026-20079 to confirmed exploitation — Source: self-rendered from Cisco, Cisco Talos, and CISA announcements*
 
 Cisco disclosed the flaw, found in its own security testing, on March 4, saying at the time that there were no cases of exploitation. According to BleepingComputer, it updated the advisory on July 29 to add indicators of compromise, and the earliest log entry matching those indicators was July 23.
@@ -113,7 +113,7 @@ Incident reports and consultations are handled by KISA at 118.
 
 ## Summary
 
-![Summary card for the Cisco FMC vulnerability](/assets/images/tech/cisco-fmc-auth-bypass/05-items.webp)
+![Summary card for the Cisco FMC vulnerability](/assets/images/tech/cisco-fmc-auth-bypass/en/05-items.webp)
 *Summary card for the Cisco FMC vulnerability — Source: self-rendered from Cisco's security advisory*
 
 ## What to watch next

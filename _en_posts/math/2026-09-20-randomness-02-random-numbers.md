@@ -33,7 +33,7 @@ But a long period and hardness to predict are different things. Collecting **624
 
 ## Incidents caused by predictable random numbers
 
-![Moments where random numbers separated an incident from a technology](/assets/images/math/randomness-02-random-numbers/02-chart.webp)
+![Moments where random numbers separated an incident from a technology](/assets/images/math/randomness-02-random-numbers/en/02-chart.webp)
 *Moments where random numbers separated an incident from a technology — Source: self-rendered from reporting and presentations*
 
 ### Debian OpenSSL, with only 30,000 seeds
@@ -102,7 +102,7 @@ Picking lotto numbers, from part 1, is exactly this case. Numbers people choose 
 
 ## Summary
 
-![Summary of random numbers](/assets/images/math/randomness-02-random-numbers/03-items.webp)
+![Summary of random numbers](/assets/images/math/randomness-02-random-numbers/en/03-items.webp)
 *Summary of random numbers — Source: compiled from this post · self-rendered*
 
 When you need randomness there is one question to ask: would it be a problem if someone could work this number out backwards? If so, take it from the operating system or a physical device; if not, the fast and reproducible option is better.

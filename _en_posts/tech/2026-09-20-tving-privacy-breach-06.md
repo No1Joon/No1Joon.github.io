@@ -19,7 +19,7 @@ Quite a few people put it off when applications opened on September 7, but this 
 
 The application deadline and the payout start date are different. Even if you apply by September 30, the benefits are delivered in sequence from October 6.
 
-![The schedule remaining for TVING compensation applications](/assets/images/tech/tving-privacy-breach-06/02-chart.webp)
+![The schedule remaining for TVING compensation applications](/assets/images/tech/tving-privacy-breach-06/en/02-chart.webp)
 *The schedule remaining for TVING compensation applications — Source: self-rendered from TVING notices and reporting*
 
 - September 7, 10 a.m.: applications open
@@ -90,7 +90,7 @@ Inquiries about joining rose after the compensation plan was published, and repo
 
 The Personal Information Protection Commission has not issued its decision. Against average revenue of ₩389.3 billion over the last three years, the current 3% ceiling would be about ₩11.7 billion, while the punitive 10% ceiling under the amended act in force since September has been discussed as reaching about ₩40 billion.
 
-![Projected fine ceilings that could apply to TVING](/assets/images/tech/tving-privacy-breach-06/04-chart.webp)
+![Projected fine ceilings that could apply to TVING](/assets/images/tech/tving-privacy-breach-06/en/04-chart.webp)
 *Projected fine ceilings that could apply to TVING — Source: self-rendered from reported figures*
 
 Compensation applications go through the TVING app; joining the suit goes through the law firm handling it, separately.
@@ -111,7 +111,7 @@ Because the leaked data includes names, dates of birth, and mobile numbers, the 
 
 ## What to check before the deadline
 
-![Summary of what to check before the deadline](/assets/images/tech/tving-privacy-breach-06/05-items.webp)
+![Summary of what to check before the deadline](/assets/images/tech/tving-privacy-breach-06/en/05-items.webp)
 *Summary of what to check before the deadline — Source: compiled from this post · self-rendered*
 
 Applying takes five minutes, and once the deadline passes the application screen is no longer reachable.

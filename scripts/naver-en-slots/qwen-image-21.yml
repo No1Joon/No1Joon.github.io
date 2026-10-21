@@ -1,0 +1,5 @@
+- file: 3_chart_lineage.png
+  en:
+    title: Qwen-Image-Bench scores by model generation
+    y_label: Score
+    source: "Source: Qwen's published benchmark chart (2026.09.20) · Qwen's own evaluation"

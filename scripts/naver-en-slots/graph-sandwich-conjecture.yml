@@ -1,0 +1,16 @@
+- file: 3_chart_타임라인.png
+  en:
+    title: 22 years of the sandwich conjecture
+    source: 'Source: arXiv · Quanta Magazine · evenly spaced dates'
+    labels:
+      - ['2004', "Kim and Vu\npose the conjecture"]
+      - ['2020', "Gao, Isaev, McKay\npartial result"]
+      - [Oct 2025, "Proof for the full\nrange posted"]
+      - [Sep 2026, "Quanta\nrevisits it"]
+- file: 4_items_정리.png
+  en:
+    items:
+      - [The two models, Regular graphs with fixed degree vs. binomial graphs that draw each edge]
+      - [What the sandwich does, Carries properties of the easy model over to the hard one]
+      - [Proven range, The whole range where d grows faster than log n]
+      - [Proof method, A coupling that keeps containment while adding edges one by one]

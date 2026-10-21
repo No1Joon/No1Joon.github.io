@@ -1,0 +1,21 @@
+- file: 1_chart_경과.png
+  en:
+    title: From the disclosure of CVE-2026-20079 to confirmed exploitation
+    subtitle: '2026'
+    source: 'Source: Cisco security advisory v2.6 · Cisco Talos · CISA · BleepingComputer (2026-09) · date spacing is not to scale'
+    labels:
+      - [Mar 4, "Flaw disclosed\nfix released"]
+      - [Jul 23, "First suspicious\nlog entry"]
+      - [Jul 29, "IoCs published\n20316 disclosed"]
+      - [August, "Exploitation\nnoticed"]
+      - [Sep 9, "Exploitation confirmed\nadded to CISA KEV"]
+      - [Sep 16, "Hardening\nrelease shipped"]
+- file: 4_items_정리.png
+  en:
+    items:
+      - [Affected product, All on-premises Cisco Secure FMC deployments]
+      - [Not affected, "Firewall software FTD, ASA, and FDM"]
+      - [Cloud version, Security Cloud Control already fixed by Cisco]
+      - [Workaround, "None, only updating to a fixed release"]
+      - [Compromise check, Contact Cisco TAC if license.tmp traces are present]
+      - [Interim step, Block internet exposure of the management interface]

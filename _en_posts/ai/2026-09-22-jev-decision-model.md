@@ -76,7 +76,7 @@ Confidence is computed from whether the probability is concentrated on one optio
 
 ## Speed and cost
 
-![Average time for one pass across four workflows, Jev and seven LLMs](/assets/images/ai/jev-decision-model/04-chart.webp)
+![Average time for one pass across four workflows, Jev and seven LLMs](/assets/images/ai/jev-decision-model/en/04-chart.webp)
 *Average time for one pass across four workflows, Jev and seven LLMs — Source: self-rendered from TypeSafe AI Workflow Evals*
 
 TypeSafe says a round trip takes **70–500 milliseconds**, while the LLMs it compared took 3 to 329 seconds on the same workflows. The model architecture is not published, but the company explained that instead of generating tokens one at a time (autoregressive), it uses a parallel sampler that produces all output at once. The output is only option names and a few probabilities, so there are no sentences to generate.
@@ -112,7 +112,7 @@ On average accuracy Jev is level with GPT-5.6 Terra, 0.1 percentage points apart
 
 ### Variation by task
 
-![Jev's accuracy gap against the leading LLM by task](/assets/images/ai/jev-decision-model/06-chart.webp)
+![Jev's accuracy gap against the leading LLM by task](/assets/images/ai/jev-decision-model/en/06-chart.webp)
 *Jev's accuracy gap against the leading LLM by task — Source: self-rendered from TypeSafe AI Workflow Evals*
 
 On customer support, Jev scored 76.0% against the leader GPT-5.6 Sol's 78.3%, a 2.3-point gap, but on invoice processing Jev scored 61.8% against Sol's 79.1% — a **17.3-point** gap. Security incident classification was 4.5 points behind Claude Opus 5 (66.2%), and agent log review 5.0 points behind Sol (76.6%).
@@ -176,7 +176,7 @@ Since the weights are closed, the fact that the data to be judged must be sent t
 
 ## Summary
 
-![Five key points about Jev](/assets/images/ai/jev-decision-model/09-items.webp)
+![Five key points about Jev](/assets/images/ai/jev-decision-model/en/09-items.webp)
 *Five key points about Jev — Source: self-rendered from TypeSafe AI and Vercel materials*
 
 ## Sources

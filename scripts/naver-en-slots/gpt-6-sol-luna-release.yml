@@ -1,0 +1,26 @@
+- file: 2_chart_출력요금.png
+  en:
+    title: Output price per million tokens
+    x_label: KRW (log scale)
+    unit: ''
+    source: "Source: OpenAI and Anthropic price lists (2026-09-22) · converted at $1 ≈ ₩1,400"
+- file: 3_chart_과제당비용.png
+  en:
+    title: AutomationBench cost-per-task multiples
+    subtitle: GPT-6 Sol = 1, lower is cheaper
+    unit: ''
+    y_label: Multiple (×)
+    source: "Source: OpenAI announcement (2026-09-22) · Fable 5.1 is a minimum excluding Opus 5 fallback calls"
+- file: 4_chart_deepswe.png
+  en:
+    title: Best DeepSWE v1.1 scores
+    gap_label: 1.1 points
+    source: "Source: OpenAI announcement (2026-09-22) · Sol at max, Fable 5 at xhigh"
+- file: 7_items_정리.png
+  en:
+    items:
+      - [GPT-6 Sol, "Coding agents, work automation, long tasks"]
+      - [GPT-6 Luna, "Summaries, extraction, high volumes of short questions"]
+      - [GPT-6 Astra, "The hardest tasks, at 5× Sol's price"]
+      - [Free and Go users, Only Luna in the desktop app]
+      - [Settings that cut cost, "90% off cached input, 50% off Batch and Flex"]

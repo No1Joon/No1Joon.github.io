@@ -85,7 +85,7 @@ The older Assistants API was shut down on August 26, 2026. The Responses API and
 
 ## Pricing and constraints
 
-![Price per 20 minutes for OpenAI-hosted containers](/assets/images/ai/openai-agents-api/04-chart.webp)
+![Price per 20 minutes for OpenAI-hosted containers](/assets/images/ai/openai-agents-api/en/04-chart.webp)
 *Price per 20 minutes for OpenAI-hosted containers — Source: self-rendered from OpenAI's price list*
 
 There is no extra charge for the Agents API itself. Three items are billed by usage.
@@ -102,7 +102,7 @@ On April 20, 2026, Korea's Financial Services Commission amended the enforcement
 
 ## Summary
 
-![Summary of criteria for choosing the Agents API](/assets/images/ai/openai-agents-api/05-items.webp)
+![Summary of criteria for choosing the Agents API](/assets/images/ai/openai-agents-api/en/05-items.webp)
 *Summary of criteria for choosing the Agents API — Source: summary of this post · self-rendered*
 
 ## Sources

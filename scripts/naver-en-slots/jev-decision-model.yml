@@ -1,0 +1,22 @@
+- file: 3_chart_처리시간.png
+  en:
+    title: Average time per pass across four workflows
+    subtitle: Shorter is faster
+    x_label: Seconds (log scale)
+    unit: s
+    source: 'Source: TypeSafe AI Workflow Evals (2026-09-15), LLMs in workflow configuration'
+- file: 5_chart_업무별격차.png
+  en:
+    title: Jev's accuracy gap against the leading LLM by task
+    subtitle: Lower is closer to the LLM
+    y_label: Percentage points
+    source: 'Source: TypeSafe AI Workflow Evals (2026-09-15)'
+    labels: [Customer support, Security incident triage, Agent log review, Invoice processing]
+- file: 8_items_정리.png
+  en:
+    items:
+      - [Probabilities instead of sentences, "Answers by choice, score, or true/false with a **confidence** attached"]
+      - [25× faster than Terra, "Same level of average accuracy at 67.8%, at **1/76** the cost"]
+      - [Varies by task, "2.3%p gap on customer support, **17.3%p** on invoice processing"]
+      - [What 0% hallucination means, "No format errors, not no wrong answers"]
+      - [Check before adopting in Korea, "Re-measure Korean accuracy; **human review** for high-impact decisions"]

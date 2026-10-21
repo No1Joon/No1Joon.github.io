@@ -1,0 +1,22 @@
+- file: 1_chart_처리량.png
+  en:
+    title: Habitat requests per second
+    unit: ''
+    source: 'Source: OpenAI Engineering, Habitat part 1 (2026-09) · Python version peak and the current platform as a whole'
+    labels: [Python peak, Current total]
+- file: 3_chart_효율.png
+  en:
+    title: Resource efficiency after the Rust rewrite
+    subtitle: Python version = 1×
+    unit: ''
+    y_label: Efficiency (×)
+    source: 'Source: OpenAI Engineering, Habitat part 1 (2026-09) · OpenAI''s own figures, not independently verified'
+    labels: [CPU efficiency, Memory efficiency]
+- file: 4_items_정리.png
+  en:
+    items:
+      - [Habitat, The online storage layer for ChatGPT and the API]
+      - [Python's limits, "Coordinating the event loop and connection pools, more than raw throughput"]
+      - [The rewrite, "Q2 2026, two engineers and Codex"]
+      - [Results, "Handles 95% of requests, 6× CPU and 15× memory efficiency"]
+      - [Still to check, Part 1 has no latency figures or validation method]

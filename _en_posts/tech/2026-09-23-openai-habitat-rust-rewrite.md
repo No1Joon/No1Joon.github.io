@@ -19,7 +19,7 @@ The interesting part is that Python hit its limit not because of throughput but 
 
 Habitat is a layer that sits between ChatGPT products and the actual storage (Azure Cosmos DB, caches, blob storage). Requests that read user settings or fetch conversation history pass through it, and it handles routing, permission checks, encryption, caching, data residency (storing data within a specific country), and rate limiting.
 
-![Habitat requests per second](/assets/images/tech/openai-habitat-rust-rewrite/02-chart.webp)
+![Habitat requests per second](/assets/images/tech/openai-habitat-rust-rewrite/en/02-chart.webp)
 *Habitat requests per second — Source: self-rendered from figures in OpenAI Engineering's announcement*
 
 - Scale: more than 500PB (petabytes), about 40 regions
@@ -59,7 +59,7 @@ Because Python keeps a separate connection pool per process, handling 6 concurre
 
 ## The rewrite and its results
 
-![Resource efficiency after the Rust rewrite](/assets/images/tech/openai-habitat-rust-rewrite/04-chart.webp)
+![Resource efficiency after the Rust rewrite](/assets/images/tech/openai-habitat-rust-rewrite/en/04-chart.webp)
 *Resource efficiency after the Rust rewrite — Source: self-rendered from figures in OpenAI Engineering's announcement*
 
 OpenAI said it deliberately stayed on Python for a while, even knowing that Python's inefficiency would be unacceptable at 100x scale and that a rewrite would eventually be necessary. It explained that it took on the technical debt strategically, expecting the cost of a rewrite to fall as its in-house coding models improved.
@@ -89,7 +89,7 @@ No Korean service has been confirmed to have published a full rewrite of a Pytho
 
 ## Summary
 
-![Summary card for the Habitat Rust rewrite](/assets/images/tech/openai-habitat-rust-rewrite/05-items.webp)
+![Summary card for the Habitat Rust rewrite](/assets/images/tech/openai-habitat-rust-rewrite/en/05-items.webp)
 *Summary card for the Habitat Rust rewrite — Source: self-rendered from OpenAI Engineering's announcement*
 
 OpenAI said a follow-up Part 2 will cover the storage layer that holds more than 500PB of data.

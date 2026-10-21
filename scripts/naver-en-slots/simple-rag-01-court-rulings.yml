@@ -1,0 +1,25 @@
+- file: 3_chart_규칙별라벨.png
+  en:
+    title: Anonymization labels in the general-ruling training split
+    x_label: Label count (log scale)
+    unit: ''
+    source: 'Source: my own count of AI Hub anonymized court-ruling data, TL_01 general rulings, 12,000 files'
+    labels: [R7 organization name, R1 personal name, R3 detailed address]
+- file: 5_chart_검색비교.png
+  en:
+    title: Share of queries with at least one same-provision ruling in the top 5
+    source: 'Source: 826 holdings from the validation split searched against 16,800 training rulings · own measurement'
+    labels: [TF-IDF, bge-m3, Hybrid]
+- file: 8_chart_생성비교.png
+  en:
+    title: Share of draft reasons citing the correct referenced provision
+    source: 'Source: 50 Supreme Court rulings (validation split) · Qwen3-4B 4-bit · ceiling = correct provision among 3 retrieved'
+    labels: [No grounding, RAG, Retrieval ceiling]
+- file: 9_items_정리.png
+  en:
+    items:
+      - [Pseudonymized corpus, "0 original names, organizations, or addresses left after applying labels"]
+      - [Tracking the same entity, "All 5,150 people and organizations appearing in both 1st and 2nd instance got the same pseudonym"]
+      - [Retrieval, Keyword and hybrid slightly beat embeddings on provision hits]
+      - [Generation, "Provision hits 18%→32%, drafts without a provision 23→13"]
+      - [Still to do, "50% retrieval ceiling; fine-tuning in part 2"]

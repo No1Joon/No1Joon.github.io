@@ -1,0 +1,27 @@
+- file: 1_chart_일정.png
+  en:
+    title: The schedule remaining for TVING compensation applications
+    source: 'Source: TVING notices and September 2026 reporting'
+    labels:
+      - [Sep 7, "Applications open (10 AM)"]
+      - [Sep 20, Ten days to the deadline]
+      - [Sep 30, "Applications close (11:59 PM)"]
+      - [Oct 6, Compensation paid out in turn]
+- file: 3_chart_과징금.png
+  en:
+    title: Projected fine ceilings that could apply to TVING
+    unit: ''
+    y_label: Fine ceiling (₩ billion)
+    source: 'Source: Digital Post (2026.06.12) · 3-year avg. revenue ₩389.3 billion · actual fine set by the PIPC'
+    data:
+      - [Current cap 3%, 11.7]
+      - [Amended cap 10%, 40]
+- file: 4_items_정리.png
+  en:
+    items:
+      - [Deadline is Sep 30 at 11:59 PM, No separate remedy has been announced after it closes]
+      - [Not paid automatically, Log in to the app or web and apply yourself from the MY menu]
+      - [No applications by phone, The customer center only takes error inquiries]
+      - [Former members qualify too, Re-join for free and apply the same way]
+      - [Pick one entertainment perk, Either a 1-month Wavve pass or a CGV discount coupon]
+      - [Don't tap links in texts, Compensation phishing tends to rise now; check in the app]

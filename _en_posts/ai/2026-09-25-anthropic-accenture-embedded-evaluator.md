@@ -79,7 +79,7 @@ OpenAI has signaled it will take part as well. CEO Sam Altman wrote on X on Sept
 
 ## Compared with AI safety evaluation in Korea
 
-![Models evaluated by the Korea AI Safety Institute vs. frontier models released per month](/assets/images/ai/anthropic-accenture-embedded-evaluator/06-chart.webp)
+![Models evaluated by the Korea AI Safety Institute vs. frontier models released per month](/assets/images/ai/anthropic-accenture-embedded-evaluator/en/06-chart.webp)
 *Models evaluated by the Korea AI Safety Institute vs. frontier models released per month — Source: self-rendered from figures reported by Aju Business Daily*
 
 As of May 2026, a year and a half after its launch, the Korea AI Safety Institute had published 7 reports, but none publicly evaluating an overseas frontier model on its own. It also has no agreements with major AI developers, leaving no route to early access to unreleased models.

@@ -23,7 +23,7 @@ There are 108 security fixes, graded 11 Critical, 25 High, 47 Medium, and 25 Low
 
 ## Figures by severity
 
-![Chrome 154 security fixes by severity](/assets/images/tech/chrome-154-security-update/02-chart.webp)
+![Chrome 154 security fixes by severity](/assets/images/tech/chrome-154-security-update/en/02-chart.webp)
 *Chrome 154 security fixes by severity — Source: self-rendered from Google Chrome Releases*
 
 Under Chromium's severity guidelines, Critical means a flaw that lets an attacker **read or write files, the registry, or the network on the device with the user's own privileges**. Flaws where code runs only inside the sandbox (the space that isolates web page execution) are graded High.
@@ -71,7 +71,7 @@ CVE-2026-87491 was reported on August 6 by researcher Jihyeon Jeong of Seoul Nat
 
 ## The usage picture in Korea
 
-![Desktop browser market share in Korea](/assets/images/tech/chrome-154-security-update/04-chart.webp)
+![Desktop browser market share in Korea](/assets/images/tech/chrome-154-security-update/en/04-chart.webp)
 *Desktop browser market share in Korea — Source: self-rendered from Statcounter Global Stats*
 
 By Statcounter's August 2026 figures, desktop browser share in Korea is Chrome 67.84%, Edge 14.88%, Samsung Internet 8.14%, and Whale 4.16%. All four run on the Chromium engine, so together **95.02%** use the same engine.
@@ -106,7 +106,7 @@ Security notices and incident reports are handled by KISA's Boho Nara, with phon
 
 ## Summary
 
-![Summary card for the Chrome 154 security update](/assets/images/tech/chrome-154-security-update/06-items.webp)
+![Summary card for the Chrome 154 security update](/assets/images/tech/chrome-154-security-update/en/06-items.webp)
 *Summary card for the Chrome 154 security update — Source: self-rendered from Google Chrome Releases*
 
 ## What to watch next

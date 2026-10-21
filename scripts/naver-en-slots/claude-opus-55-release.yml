@@ -1,0 +1,17 @@
+- file: 1_chart_terminalbench.png
+  en:
+    title: Terminal-Bench 4.0 scores by model
+    source: "Source: Anthropic announcement (2026-09-22) · Opus 5.5 at xhigh, GPT-6 Astra as reported by OpenAI"
+- file: 2_chart_캐시읽기.png
+  en:
+    title: Cache read price per million tokens
+    unit: KRW
+    source: "Source: Anthropic price list (2026-09-22) · converted at $1 ≈ ₩1,400"
+- file: 6_items_정리.png
+  en:
+    items:
+      - [Switch now, "Agentic coding, code audits, long-running automation"]
+      - [Test first, "Legal, medical coding, and tax agents"]
+      - [Code changes needed, "Disabling thinking, forced tool_choice, legacy computer use"]
+      - [Security research use, Mostly routed to Opus 4.8; requires the verification program]
+      - [Retune effort, Default changed from high to medium]

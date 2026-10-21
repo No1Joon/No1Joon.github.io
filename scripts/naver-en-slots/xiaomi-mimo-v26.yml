@@ -1,0 +1,6 @@
+- file: 3_chart_price.png
+  en:
+    title: Price per million output tokens, three MiMo-V2.6 tiers and Claude Opus 5
+    unit: ''
+    x_label: KRW (log scale)
+    source: "Source: OpenRouter · Anthropic published prices (2026.09) · converted at $1 ≈ ₩1,400"

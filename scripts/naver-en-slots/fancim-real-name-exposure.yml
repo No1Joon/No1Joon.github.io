@@ -1,0 +1,20 @@
+- file: 1_chart_경과.png
+  en:
+    title: Timeline of the FANCIM real-name exposure
+    source: "Source: Illio's second notice (Sep 20) · EconomyScience and Top Celeb News reporting · times in KST"
+    labels:
+      - ["Sep 18, 9 AM", Traffic starts rising]
+      - ["Sep 18, night", "Posts about viewing real\nnames spread in communities"]
+      - ["Sep 19, 2 AM", Company gets first report]
+      - ["Sep 19, 3 AM", Exposure path blocked]
+      - ["Sep 19, 9 AM", "Notice email sent\nreported to KISA"]
+      - ["Sep 19, 2 PM", Site put into maintenance]
+      - [Sep 20, "Second notice\nlookup page opened"]
+- file: 4_items_할일.png
+  en:
+    items:
+      - [Check if you were exposed, "FANCIM lookup page, open until **November 19**"]
+      - [Don't share leaked files, Re-sharing the list is itself a further leak]
+      - [Request post removal, Use each platform's report feature for posts with real names]
+      - [Report the harm, "KISA Personal Information Infringement Report Center, **118**"]
+      - [Mediation or lawsuit, "Personal Information Dispute Mediation Committee; class action sign-ups closed **September 30**"]

@@ -17,7 +17,7 @@ The same day, it announced HubSpot as its first customer relationship management
 
 ## How ChatGPT ads got here
 
-![From the introduction of ChatGPT ads to Sponsored Agents](/assets/images/ai/chatgpt-ads-sponsored-agents/02-chart.webp)
+![From the introduction of ChatGPT ads to Sponsored Agents](/assets/images/ai/chatgpt-ads-sponsored-agents/en/02-chart.webp)
 *From the introduction of ChatGPT ads to Sponsored Agents — Source: self-rendered from OpenAI announcements and reporting*
 
 OpenAI announced its advertising plans on January 16 and began testing ads with adult users on the Free and Go plans in the US on February 9. Ads appear as labeled cards below the answer and are not shown on Plus or higher paid plans.
@@ -79,7 +79,7 @@ The list of countries in the Shopify app's international expansion was not publi
 
 ## Summary
 
-![Summary card for ChatGPT ads Sponsored Agents](/assets/images/ai/chatgpt-ads-sponsored-agents/06-items.webp)
+![Summary card for ChatGPT ads Sponsored Agents](/assets/images/ai/chatgpt-ads-sponsored-agents/en/06-items.webp)
 *Summary card for ChatGPT ads Sponsored Agents — Source: self-rendered from OpenAI announcements and reporting*
 
 ## What to watch next

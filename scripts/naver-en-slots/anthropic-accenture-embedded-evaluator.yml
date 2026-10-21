@@ -1,0 +1,7 @@
+- file: 5_chart_국내평가.png
+  en:
+    title: Korea AISI evaluations vs. monthly frontier model releases
+    subtitle: 10+ released per month
+    unit: ''
+    source: 'Source: Aju Business Daily (2026-09-16)'
+    labels: [Evaluated in March, Evaluated in August, Released per month]

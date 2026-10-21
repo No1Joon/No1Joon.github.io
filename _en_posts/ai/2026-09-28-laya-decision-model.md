@@ -64,7 +64,7 @@ Jev charges about $0.042 (₩59) per million input tokens, while Laya costs noth
 
 On AG News, a 4-class news topic task, Laya scored 0.947, higher than Jev (0.910), and on DAIR Emotion, a 6-class emotion task, it scored 0.573, also above Jev (0.480). On typed-decisions, the business-style benchmark Jev published (400 items, 2,000 decisions), it was 0.766 vs. 0.727.
 
-![typed-decisions benchmark accuracy, baselines and checkpoints](/assets/images/ai/laya-decision-model/04-chart-typed.webp)
+![typed-decisions benchmark accuracy, baselines and checkpoints](/assets/images/ai/laya-decision-model/en/04-chart-typed.webp)
 *typed-decisions benchmark accuracy, baselines and checkpoints — Source: self-rendered from figures in the Laya model card*
 
 The 0.766 on typed-decisions is the score of laya-typed-decisions, fine-tuned on that benchmark's training data. The base laya without fine-tuning scored 0.362 — above random (0.318) but below the majority-class baseline (0.461), which keeps picking the single most common answer. The model card itself describes Laya not as a zero-shot decision engine but as a starting point to be fine-tuned.

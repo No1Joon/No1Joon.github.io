@@ -43,14 +43,14 @@ MIT explained that stimulating ghrelin secretion could be used to treat cachexia
 
 ## Voltage and run time
 
-![Open-circuit voltage by cathode material for magnesium-anode batteries](/assets/images/science/ingestible-dissolvable-battery/03-chart.webp)
+![Open-circuit voltage by cathode material for magnesium-anode batteries](/assets/images/science/ingestible-dissolvable-battery/en/03-chart.webp)
 *Open-circuit voltage by cathode material for magnesium-anode batteries — Source: self-rendered from figures in the Nature Chemical Engineering paper*
 
 Magnesium dissolves in the body at 1.2–12㎛ (micrometers) a day, which is why it has been studied as an anode for biodegradable batteries. In prior work cited by the paper, pairing magnesium with molybdenum, iron, or tungsten gave 0.15–0.75V, while the molybdenum trioxide cathode combination raised it to **1.84V**.
 
 At an operating voltage of 1.84V, areal capacity was 2.43mAh/㎠, and the researchers wrote that including energy and power density, it is comparable to other biodegradable batteries. Connected in series, it supplied more than 3V for over 24 hours, which they judged usable even for capsules carrying a microcontroller or a wireless communication module.
 
-![Change in open-circuit voltage for batteries placed in a pig's stomach](/assets/images/science/ingestible-dissolvable-battery/04-chart.webp)
+![Change in open-circuit voltage for batteries placed in a pig's stomach](/assets/images/science/ingestible-dissolvable-battery/en/04-chart.webp)
 *Change in open-circuit voltage for batteries placed in a pig's stomach — Source: self-rendered from Fig. 2 of the Nature Chemical Engineering paper*
 
 The researchers put the batteries in capsules, fixed them in pigs' stomachs endoscopically, then retrieved and measured them on days 1 and 3. Voltage declined gradually over three days in both shapes, and the larger battery's energy density fell from 1.32mWh/㎠ to 0.22mWh/㎠.
@@ -96,7 +96,7 @@ Funding came from Novo Nordisk and others.
 
 ## Summary
 
-![Summary card for the dissolving paper battery](/assets/images/science/ingestible-dissolvable-battery/07-items.webp)
+![Summary card for the dissolving paper battery](/assets/images/science/ingestible-dissolvable-battery/en/07-items.webp)
 *Summary card for the dissolving paper battery — Source: self-rendered from the Nature Chemical Engineering paper*
 
 ## What to watch next

@@ -1,0 +1,19 @@
+- file: 1_chart_연표.png
+  en:
+    title: Moments where random numbers separated an incident from a technology
+    source: 'Source: CERT/CC advisories · fail0verflow talk · SK Telecom announcements'
+    labels:
+      - [Sep 2006, Debian seed shrinks]
+      - [May 2008, Predictable keys disclosed]
+      - [Dec 2010, PS3 signing nonce reused]
+      - [May 2020, Galaxy Quantum ships QRNG]
+      - [Jul 2026, 10Gbps QRNG chip unveiled]
+- file: 2_items_정리.png
+  en:
+    items:
+      - [random is a computation, A pseudorandom sequence fixed by a single seed]
+      - [Same seed gives the same sequence, In simulations and tests this reproducibility is a feature]
+      - [Enough outputs reveal the internal state, Mersenne Twister's next value follows from 624 outputs]
+      - [Use OS randomness for keys and tokens, "secrets rather than random in Python, getrandom in C"]
+      - [Physical noise is the source of randomness, Thermal noise and photon splitting can't be reversed by computation]
+      - [People can't make randomness, Hand-picked numbers are more likely to overlap with others']

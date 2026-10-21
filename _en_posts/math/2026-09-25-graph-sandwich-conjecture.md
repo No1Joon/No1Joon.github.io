@@ -17,7 +17,7 @@ The proof was posted to arXiv on October 23, 2025, and became known outside math
 
 ## Two kinds of random graph
 
-![Comparison of the two random graph models](/assets/images/math/graph-sandwich-conjecture/02-chart.webp)
+![Comparison of the two random graph models](/assets/images/math/graph-sandwich-conjecture/en/02-chart.webp)
 *Comparison of the two random graph models — Source: illustrative example · self-rendered*
 
 A graph is a structure of points (vertices) and the lines joining them (edges). Treat people as points and friendships as lines, and a social network becomes a graph.
@@ -34,7 +34,7 @@ A regular graph, by contrast, does not choose its edges independently. Placing o
 
 ## What the sandwich means
 
-![The sandwich structure](/assets/images/math/graph-sandwich-conjecture/03-chart.webp)
+![The sandwich structure](/assets/images/math/graph-sandwich-conjecture/en/03-chart.webp)
 *The sandwich structure — Source: illustrative example · self-rendered*
 
 The conjecture Kim and Vu put forward in 2004 goes like this. Choose one binomial graph with slightly fewer edges and one with slightly more, and a random d-regular graph satisfies the containment relation between them.
@@ -61,7 +61,7 @@ In a regular graph every point has exactly d. Even with the same average, the di
 
 ## 22 years of progress
 
-![22 years of the sandwich conjecture](/assets/images/math/graph-sandwich-conjecture/04-chart.webp)
+![22 years of the sandwich conjecture](/assets/images/math/graph-sandwich-conjecture/en/04-chart.webp)
 *22 years of the sandwich conjecture — Source: self-rendered from arXiv and Quanta materials*
 
 After the conjecture appeared, a line of work gradually relaxed its conditions. Gao, Isaev, and McKay showed it holds when d is much larger than the fourth power of log n, and the coupling procedure they introduced had been analyzed only up to d larger than n divided by √(log n).
@@ -80,7 +80,7 @@ The sandwich conjecture serves less as a result in itself than as a tool used in
 
 Only properties with a fixed direction under adding or removing edges can be carried across; problems that count exact numbers aren't solved directly this way. What holds below the condition d = ω(log n) is also outside what this paper covers.
 
-![Sandwich conjecture summary](/assets/images/math/graph-sandwich-conjecture/05-items.webp)
+![Sandwich conjecture summary](/assets/images/math/graph-sandwich-conjecture/en/05-items.webp)
 *Sandwich conjecture summary — Source: summary of this post · self-rendered*
 
 ## Sources

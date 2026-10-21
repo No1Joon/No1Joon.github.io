@@ -21,7 +21,7 @@ If you don't agree, the only option is to stop using it for business purposes!!
 
 ## What changes in the terms
 
-![Notice at the top of the Korean version of Meta's Commercial Terms saying they apply from October 30, 2026](/assets/images/ai/meta-commercial-terms-web-crawling/02-terms-notice.webp)
+![Notice at the top of the Korean version of Meta's Commercial Terms saying they apply from October 30, 2026](/assets/images/ai/meta-commercial-terms-web-crawling/en/02-terms-notice.webp)
 *Notice at the top of the Korean version of Meta's Commercial Terms saying they apply from October 30, 2026 — Source: Meta*
 
 The document being changed is the **Meta Commercial Terms**
@@ -40,7 +40,7 @@ There is no separate setting to opt out
 
 ## The new clause, explained
 
-![Clause on automated software and test credentials in the Commercial Terms (highlighted)](/assets/images/ai/meta-commercial-terms-web-crawling/03-terms-crawling.webp)
+![Clause on automated software and test credentials in the Commercial Terms (highlighted)](/assets/images/ai/meta-commercial-terms-web-crawling/en/03-terms-crawling.webp)
 *Clause on automated software and test credentials in the Commercial Terms (highlighted) — Source: Meta*
 
 The new paragraph went into the second paragraph of the section "License and rights you give to Meta"
@@ -95,7 +95,7 @@ Meta did not answer whether test credentials could be used to access content onl
 
 ## What robots.txt can block
 
-![Meta developer documentation describing Meta-ExternalAgent and Meta-ExternalFetcher, with a robots.txt example](/assets/images/ai/meta-commercial-terms-web-crawling/05-crawler-doc.webp)
+![Meta developer documentation describing Meta-ExternalAgent and Meta-ExternalFetcher, with a robots.txt example](/assets/images/ai/meta-commercial-terms-web-crawling/en/05-crawler-doc.webp)
 *Meta developer documentation describing Meta-ExternalAgent and Meta-ExternalFetcher, with a robots.txt example — Source: Meta*
 
 The alternative Meta points to is **robots.txt**

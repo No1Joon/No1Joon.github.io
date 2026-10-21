@@ -32,7 +32,7 @@ OpenAI said GPT-6.1 Sol is substantially better than GPT-6 Sol at writing and de
 
 ## Pricing and availability
 
-![Cached input price per million tokens by model](/assets/images/ai/gpt-61-sol-release/03-chart.webp)
+![Cached input price per million tokens by model](/assets/images/ai/gpt-61-sol-release/en/03-chart.webp)
 *Cached input price per million tokens by model — Source: self-rendered from OpenAI's announcement and API docs*
 
 Input and output prices are the same as GPT-6 Sol; what changed is cached input. The cached input price, charged when repeated requests reuse the same prefix, dropped from $0.20 (₩280) to $0.10 (₩140) per million tokens.
@@ -55,7 +55,7 @@ API usage is billed in dollars, so the cost in won for developers in Korea depen
 
 ## Coding performance
 
-![Official chart of DeepSWE scores and cost per task](/assets/images/ai/gpt-61-sol-release/04-photo-deepswe.webp)
+![Official chart of DeepSWE scores and cost per task](/assets/images/ai/gpt-61-sol-release/en/04-photo-deepswe.webp)
 *Official chart of DeepSWE scores and cost per task — Source: OpenAI*
 
 DeepSWE v1.1 is a benchmark of long software tasks solved in real codebases.
@@ -99,7 +99,7 @@ On Terminal-Bench Science 0.1, which covers scientific workflows, it scored more
 
 ## Factual accuracy and safety evaluations
 
-![Rate of not reporting a broken search tool](/assets/images/ai/gpt-61-sol-release/06-chart.webp)
+![Rate of not reporting a broken search tool](/assets/images/ai/gpt-61-sol-release/en/06-chart.webp)
 *Rate of not reporting a broken search tool — Source: self-rendered from OpenAI's announcement*
 
 In an internal OpenAI evaluation built from conversations where users reported errors, the factual error rate at xhigh was 4.1% for GPT-6.1 Sol, 4.5% for GPT-6 Sol, and 4.0% for Astra. The evaluation deliberately collects hard questions, so these are not error rates in everyday use.
@@ -110,7 +110,7 @@ OpenAI said GPT-6.1 Sol also had lower failure rates than GPT-6 Sol on evaluatio
 
 ## Summary so far
 
-![GPT-6.1 Sol summary](/assets/images/ai/gpt-61-sol-release/07-items.webp)
+![GPT-6.1 Sol summary](/assets/images/ai/gpt-61-sol-release/en/07-items.webp)
 *GPT-6.1 Sol summary — Source: summary of this post · self-rendered*
 
 ## What to watch next

@@ -45,7 +45,7 @@ Non-antioxidant preservatives are additives such as sorbates, sulfites, and nitr
 
 ## The eight with a remaining link to high blood pressure
 
-![95% confidence intervals of the hazard ratio for high blood pressure by preservative](/assets/images/science/food-preservatives-hypertension/02-chart.webp)
+![95% confidence intervals of the hazard ratio for high blood pressure by preservative](/assets/images/science/food-preservatives-hypertension/en/02-chart.webp)
 *95% confidence intervals of the hazard ratio for high blood pressure by preservative — Source: self-rendered from the results section of Hasenböhler et al. (2026)*
 
 Analyzing one by one the 17 preservatives consumed by more than 10% of participants, eight still showed an association with high blood pressure and one with cardiovascular disease after correcting for the chance of error from multiple testing. A 95% confidence interval that does not include 1 means the association is statistically present.
@@ -101,7 +101,7 @@ The labeling standard for foods requires additives such as preservatives, antiox
 
 In the study the main dietary sources of preservatives were processed meat, alcoholic drinks, and processed fruit and vegetable products. The authors recommended eating less processed foods; nothing in the study supports recommending particular preservative-free products or health supplements.
 
-![Summary card for the food preservatives study](/assets/images/science/food-preservatives-hypertension/04-items.webp)
+![Summary card for the food preservatives study](/assets/images/science/food-preservatives-hypertension/en/04-items.webp)
 *Summary card for the food preservatives study — Source: self-rendered from Hasenböhler et al. (2026) and the Food Additives Code*
 
 ## Sources

@@ -1,0 +1,6 @@
+- file: 5_chart_typed.png
+  en:
+    title: typed-decisions benchmark accuracy, baselines and checkpoints
+    y_label: Accuracy
+    source: 'Source: Laya model card (2026.09) · Jev figures are published third-party values'
+    labels: [Random, Base laya, Majority class, Jev, Fine-tuned]

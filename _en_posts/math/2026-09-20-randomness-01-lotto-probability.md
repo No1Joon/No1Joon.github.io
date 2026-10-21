@@ -35,7 +35,7 @@ One of those 8,145,060 combinations is drawn. The first-prize probability of 1/8
 | 4th | 4 matches | 1/733 | 165,377 | **₩50,000 fixed** |
 | 5th | 3 matches | 1/45 | 2,729,145 | **₩5,000 fixed** |
 
-![Number of games needed for a win at each tier](/assets/images/math/randomness-01-lotto-probability/02-chart.webp)
+![Number of games needed for a win at each tier](/assets/images/math/randomness-01-lotto-probability/en/02-chart.webp)
 *Number of games needed for a win at each tier — Source: self-rendered from Donghaeng Lottery probabilities*
 
 The fourth and fifth tiers pay fixed amounts; the first through third do not. The fourth- and fifth-tier shares come out of the total prize pool first, and what remains is split 75% to first, 12.5% to second, and 12.5% to third, then divided again by the number of winners in each tier.
@@ -60,7 +60,7 @@ A low probability and a rare event are not the same thing. The probability is un
 
 The proportions sales are split into are published.
 
-![How ₩1,000 of lotto spending is divided](/assets/images/math/randomness-01-lotto-probability/03-chart.webp)
+![How ₩1,000 of lotto spending is divided](/assets/images/math/randomness-01-lotto-probability/en/03-chart.webp)
 *How ₩1,000 of lotto spending is divided — Source: self-rendered from Donghaeng Lottery's allocation ratios*
 
 - Prizes 50%
@@ -104,7 +104,7 @@ The law says that as trials increase the **proportion** approaches the theoretic
 
 ## Summary
 
-![Summary of lotto probability](/assets/images/math/randomness-01-lotto-probability/04-items.webp)
+![Summary of lotto probability](/assets/images/math/randomness-01-lotto-probability/en/04-items.webp)
 *Summary of lotto probability — Source: compiled from this post · self-rendered*
 
 The next post covers how this draw's randomness is produced, and how random the random numbers a computer makes really are.

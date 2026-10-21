@@ -69,7 +69,7 @@ TechCrunch noted that Meta settled with the US Federal Trade Commission (FTC) ov
 
 ## The underlying model, Muse Spark 1.3
 
-![Artificial Analysis Intelligence Index comparison](/assets/images/ai/meta-muse-agent/04-chart.webp)
+![Artificial Analysis Intelligence Index comparison](/assets/images/ai/meta-muse-agent/en/04-chart.webp)
 *Artificial Analysis Intelligence Index comparison — Source: self-rendered from the Artificial Analysis index*
 
 Meta released Muse Spark 1.3 on September 2, and Mark Zuckerberg said coding ability improved the most. The Artificial Analysis Intelligence Index cited by VentureBeat puts it at 61 on the xhigh setting — the same as Claude Opus 5 and one point below GPT-5.6 Sol (max, 62).
@@ -88,7 +88,7 @@ Since Stripe Link and Shop Pay, used for payment integration, are not widely use
 
 ## Summary
 
-![Meta Muse summary card](/assets/images/ai/meta-muse-agent/05-items.webp)
+![Meta Muse summary card](/assets/images/ai/meta-muse-agent/en/05-items.webp)
 *Meta Muse summary card — Source: self-rendered from Meta's announcement*
 
 ## What to watch next

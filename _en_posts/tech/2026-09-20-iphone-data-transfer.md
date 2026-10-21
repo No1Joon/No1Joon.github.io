@@ -17,7 +17,7 @@ On top of that, moving data on a phone used in Korea is not finished by Apple's 
 
 ## The three methods
 
-![The first setup screen on a new iPhone](/assets/images/tech/iphone-data-transfer/02-photo-setup-start.webp)
+![The first setup screen on a new iPhone](/assets/images/tech/iphone-data-transfer/en/02-photo-setup-start.webp)
 *The first setup screen on a new iPhone — Source: Apple*
 
 Apple officially describes three routes: **Quick Start**, in which the devices pass data directly to each other; **iCloud restore**, in which the new device downloads a backup kept in iCloud; and **computer restore**, which restores a backup made on a Mac or PC.
@@ -34,7 +34,7 @@ Computer restore uses Finder on a Mac and the Apple Devices app or iTunes on Win
 
 ## Four things to check before you start
 
-![Chart of the retention periods attached to data transfer](/assets/images/tech/iphone-data-transfer/03-chart.webp)
+![Chart of the retention periods attached to data transfer](/assets/images/tech/iphone-data-transfer/en/03-chart.webp)
 *Chart of the retention periods attached to data transfer — Source: self-rendered from Apple Support documents and Kakao's help center*
 
 First, **update both devices to the latest iOS**. A large version gap can stall a restore midway.
@@ -53,7 +53,7 @@ This temporary backup is kept for **21 days**. If the new device's delivery is d
 
 ## Moving with Quick Start
 
-![The Quick Start screen on a new device](/assets/images/tech/iphone-data-transfer/04-photo-quickstart.webp)
+![The Quick Start screen on a new device](/assets/images/tech/iphone-data-transfer/en/04-photo-quickstart.webp)
 *The Quick Start screen on a new device — Source: Apple*
 
 ① Connect both devices to power and turn on Wi-Fi and Bluetooth on the existing device
@@ -83,7 +83,7 @@ The last pairing also needs a 12W or higher power adapter plugged into the adapt
 
 ## When you no longer have the old device: iCloud restore
 
-![Choosing "Restore from iCloud Backup" during setup](/assets/images/tech/iphone-data-transfer/05-photo-icloud-restore.webp)
+![Choosing "Restore from iCloud Backup" during setup](/assets/images/tech/iphone-data-transfer/en/05-photo-icloud-restore.webp)
 *Choosing "Restore from iCloud Backup" during setup — Source: Apple*
 
 If you have already returned or lost the existing device, an iCloud backup is the only way to restore.
@@ -94,7 +94,7 @@ Reaching the Home Screen at the end of setup does not mean the restore is comple
 
 ## From Android to iPhone
 
-![The code screen shown when transferring from Android](/assets/images/tech/iphone-data-transfer/06-photo-move-to-ios.webp)
+![The code screen shown when transferring from Android](/assets/images/tech/iphone-data-transfer/en/06-photo-move-to-ios.webp)
 *The code screen shown when transferring from Android — Source: Apple*
 
 Moving from a Galaxy to an iPhone means installing Apple's **Move to iOS** app on the Android side. Choose "Move Data from Android" on the new iPhone's setup screen, and a code appears; entering that code on the Android device starts the transfer.
@@ -149,7 +149,7 @@ Mobile IDs must be re-registered manually when the device changes, as a matter o
 
 ## The order for moving data
 
-![Summary card of the iPhone data transfer order](/assets/images/tech/iphone-data-transfer/08-items.webp)
+![Summary card of the iPhone data transfer order](/assets/images/tech/iphone-data-transfer/en/08-items.webp)
 *Summary card of the iPhone data transfer order — Source: compiled from this post · self-rendered*
 
 Finish the KakaoTalk backup and certificate housekeeping the day before, move the data with Quick Start on the day, then move the eSIM line and re-register the financial apps last — that keeps the steps from tangling. Erasing the old device comes after you have confirmed everything works on the new one.

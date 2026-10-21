@@ -1,0 +1,22 @@
+- file: 1_chart_등위확률.png
+  en:
+    title: Games needed for one win at each tier
+    unit: games
+    source: 'Source: Donghaeng Lottery, Lotto 6/45 overview (odds by tier)'
+    labels: [1st (6 numbers), 2nd (5 + bonus), 3rd (5 numbers), 4th (4 numbers), 5th (3 numbers)]
+- file: 2_chart_배분.png
+  en:
+    title: How ₩1,000 of lotto spending is divided
+    unit: KRW
+    y_label: Share of ₩1,000 (KRW)
+    source: 'Source: Donghaeng Lottery, Lotto 6/45 overview (sales allocation ratios)'
+    labels: [Prize money, Lottery fund, Retailer commission, Operating costs]
+- file: 3_items_정리.png
+  en:
+    items:
+      - ["1st prize odds: 1 in 8,145,060", The number of ways to choose 6 from 45]
+      - [Picking numbers can't change the odds, "Auto or manual, any combination has the same odds"]
+      - [It can change what you receive, "1st to 3rd prizes are split, so popular combinations pay less"]
+      - ["Expected value is ₩500 per ₩1,000", "Before tax; 33% applies above ₩300 million"]
+      - [Why there's a winner every week, "Not the odds, but the 120 million games sold per draw"]
+      - [Past numbers don't affect the next draw, "Draws are independent, so long-absent numbers have the same odds"]

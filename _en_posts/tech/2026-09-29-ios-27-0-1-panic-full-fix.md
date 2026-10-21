@@ -33,7 +33,7 @@ Apple's security document states that iOS 27.0.1 has **no published CVE entries*
 
 ## The Face ID reboot fix
 
-![Timeline of the iPhone 18 Pro panic-full response](/assets/images/tech/ios-27-0-1-panic-full-fix/02-chart.webp)
+![Timeline of the iPhone 18 Pro panic-full response](/assets/images/tech/ios-27-0-1-panic-full-fix/en/02-chart.webp)
 *Timeline of the iPhone 18 Pro panic-full response — Source: self-rendered from Apple's release notes and combined reporting*
 
 The first item in the release notes is **an issue where iPhone 18 Pro and iPhone 18 Pro Max could restart unexpectedly after failing Face ID authentication**. This covers the symptom where failing authentication while opening a locked app would freeze the screen for a few seconds and then restart the device.
@@ -86,7 +86,7 @@ In Korea, Apple Korea told the office of lawmaker Kim Jang-kyum on September 23 
 
 ## Summary so far
 
-![iOS 27.0.1 panic-full fix summary](/assets/images/tech/ios-27-0-1-panic-full-fix/05-items.webp)
+![iOS 27.0.1 panic-full fix summary](/assets/images/tech/ios-27-0-1-panic-full-fix/en/05-items.webp)
 *iOS 27.0.1 panic-full fix summary — Source: summary of this post · self-rendered*
 
 ## What to watch next

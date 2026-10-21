@@ -17,7 +17,7 @@ The person receiving it is then asked for the previous owner's Apple Account pas
 
 ## What to finish before erasing
 
-![Unpairing an Apple Watch in the Watch app](/assets/images/tech/iphone-factory-reset/02-photo-unpair-watch.webp)
+![Unpairing an Apple Watch in the Watch app](/assets/images/tech/iphone-factory-reset/en/02-photo-unpair-watch.webp)
 *Unpairing an Apple Watch in the Watch app — Source: Apple*
 
 In Apple's order, **erasing comes last**. Skip the preparation and there is no good way back once it is erased.
@@ -44,7 +44,7 @@ If you are moving to a phone that is not an iPhone, you also have to deregister 
 
 ## The erase procedure
 
-![The "Erase All Content and Settings" menu in Settings](/assets/images/tech/iphone-factory-reset/03-photo-erase.webp)
+![The "Erase All Content and Settings" menu in Settings](/assets/images/tech/iphone-factory-reset/en/03-photo-erase.webp)
 *The "Erase All Content and Settings" menu in Settings — Source: Apple*
 
 Once the preparation is done, the erase itself takes a few minutes.
@@ -74,7 +74,7 @@ These four **do not delete photos, apps, or messages.** Resetting network settin
 
 ## Find My and Activation Lock
 
-![Confirming the erase by entering the Apple Account password](/assets/images/tech/iphone-factory-reset/04-photo-erase-confirm.webp)
+![Confirming the erase by entering the Apple Account password](/assets/images/tech/iphone-factory-reset/en/04-photo-erase-confirm.webp)
 *Confirming the erase by entering the Apple Account password — Source: Apple*
 
 Activation Lock is an anti-theft measure that is set the moment you turn on Find My. Even after the device is erased, if it is still tied to an Apple Account it asks for that account's ID and password when turned back on.
@@ -106,7 +106,7 @@ So there is no need to go to a recovery firm — and equally, **there is no way 
 
 ## When you have forgotten the passcode or do not have the device
 
-![The device reset screen shown when you have forgotten the passcode](/assets/images/tech/iphone-factory-reset/06-photo-reset-lockscreen.webp)
+![The device reset screen shown when you have forgotten the passcode](/assets/images/tech/iphone-factory-reset/en/06-photo-reset-lockscreen.webp)
 *The device reset screen shown when you have forgotten the passcode — Source: Apple*
 
 Even if a forgotten passcode keeps you out of Settings, you can erase without a computer.
@@ -119,7 +119,7 @@ If you do not have the device at all, turn on Lost Mode in Find Devices in iClou
 
 ## Extra items for Korea
 
-![Choosing whether to keep or delete the eSIM during the erase](/assets/images/tech/iphone-factory-reset/07-photo-esim-choice.webp)
+![Choosing whether to keep or delete the eSIM during the erase](/assets/images/tech/iphone-factory-reset/en/07-photo-esim-choice.webp)
 *Choosing whether to keep or delete the eSIM during the erase — Source: Apple*
 
 | Item | Before erasing |
@@ -135,7 +135,7 @@ Mobile payment apps and mobile IDs are registered to and run on the device, so i
 
 ## The order, by situation
 
-![Summary card of the iPhone erase order by situation](/assets/images/tech/iphone-factory-reset/08-items.webp)
+![Summary card of the iPhone erase order by situation](/assets/images/tech/iphone-factory-reset/en/08-items.webp)
 *Summary card of the iPhone erase order by situation — Source: compiled from this post · self-rendered*
 
 Unlink the account before erasing the data, and after erasing, check that the lock really came off. For a used sale, do that check together, at the handover.

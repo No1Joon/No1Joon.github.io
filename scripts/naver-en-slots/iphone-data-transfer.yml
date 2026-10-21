@@ -1,0 +1,16 @@
+- file: 2_chart_기한.png
+  en:
+    title: Retention periods attached to data transfer
+    y_label: Retention period (days)
+    unit: days
+    source: "Source: Apple Support documents · Kakao help center (as of September 2026)"
+    labels: [iCloud temp backup, Extension, Kept after restore, KakaoTalk backup]
+- file: 7_items_정리.png
+  en:
+    items:
+      - [Quick Start is the default, Keep the two devices close and follow the on-screen steps]
+      - ["Short on storage? Use temporary storage", Settings > General > Transfer or Reset iPhone > Get Started]
+      - [Cable is faster than wireless, A single USB-C charging cable between iPhone 15 or later models]
+      - [Back up KakaoTalk separately, Only text is saved and the restore window is 14 days]
+      - [Issue the eSIM on the new device first, Deleting it on the old device first leaves you without service]
+      - [Re-register banking and ID apps, Joint certificates and mobile IDs need re-verification on a new device]

@@ -1,0 +1,18 @@
+- file: 2_chart_전압.png
+  en:
+    title: Open-circuit voltage by cathode, Mg-anode batteries
+    source: 'Source: Say et al., Nature Chemical Engineering (2026) · Mg–MoO3 is the maximum; others from cited prior studies'
+- file: 3_chart_위속전압.png
+  en:
+    title: Open-circuit voltage of batteries placed in a pig's stomach
+    x: [Day 0, Day 1, Day 3]
+    source: 'Source: Say et al., Nature Chemical Engineering (2026) Fig. 2 · approximate means'
+    labels: [Large, Round (size 000)]
+- file: 6_items_정리.png
+  en:
+    items:
+      - [Materials, "Magnesium alloy anode, molybdenum trioxide paper cathode"]
+      - [Performance, "Up to 1.84V, ran for 3 days in a pig's stomach"]
+      - [Uses, "Medication-tracking RFID, appetite-hormone stimulation capsule"]
+      - [Degradation, "Breaks into pieces within weeks in gastric conditions, degrades within months"]
+      - [Limits, "Circuit board doesn't dissolve; not yet tested in humans"]

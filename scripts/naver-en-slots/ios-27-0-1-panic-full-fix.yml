@@ -1,0 +1,17 @@
+- file: 1_chart_대응경과.png
+  en:
+    title: Timeline of the iPhone 18 Pro panic-full response
+    source: "Source: Apple release notes · 9to5Mac · Electronic Times reporting · Korea time · evenly spaced dates"
+    labels:
+      - [Sep 14, "iOS 27\nreleased"]
+      - [Sep 18, "Device launches\nin Korea"]
+      - [Sep 19, "Reboot reports\nbegin"]
+      - [Sep 24, "Apple\nconfirms"]
+      - [Sep 29, "iOS 27.0.1\nreleased"]
+- file: 4_items_정리.png
+  en:
+    items:
+      - [On iOS 27, "Install iOS 27.0.1, which fixes the Face ID reboot"]
+      - [On iOS 26, "Install iOS 26.7.1, which fixes an actively exploited flaw"]
+      - [Still rebooting after the update, Reboots while charging or launching apps aren't covered by this fix]
+      - [Individual damage, Report cases in Korea through AppleCare]

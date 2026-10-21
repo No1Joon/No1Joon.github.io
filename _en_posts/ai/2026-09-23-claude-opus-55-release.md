@@ -32,7 +32,7 @@ Anthropic explained that Opus 5.5 takes less compute to serve than Opus 5, and t
 
 ## Benchmark figures
 
-![Terminal-Bench 4.0 scores by model](/assets/images/ai/claude-opus-55-release/02-chart-terminalbench.webp)
+![Terminal-Bench 4.0 scores by model](/assets/images/ai/claude-opus-55-release/en/02-chart-terminalbench.webp)
 *Terminal-Bench 4.0 scores by model — Source: self-rendered from figures in Anthropic's announcement*
 
 Terminal-Bench 4.0 is an agent benchmark in which the model solves tasks by running commands in a terminal. Opus 5.5 scored 66.4%, ahead of GPT-6 Astra (57.9%) and Fable 5.1 (55.8%), and 14.1 percentage points above Opus 5 (52.3%). The Opus 5.5 figure is at xhigh, while GPT-6 Astra's is the high setting as reported by OpenAI.
@@ -63,7 +63,7 @@ GPT-6 Astra is higher on workflow automation (AutomationBench) and science termi
 
 ## Pricing changes
 
-![Change in cache read price per million tokens](/assets/images/ai/claude-opus-55-release/03-chart.webp)
+![Change in cache read price per million tokens](/assets/images/ai/claude-opus-55-release/en/03-chart.webp)
 *Change in cache read price per million tokens — Source: self-rendered from Anthropic's price list*
 
 The biggest cut is to cache reads — the charge for storing a long input you sent earlier and reading it again — down 60%, from $0.50 (₩700) to $0.20 (₩280) per million tokens. Anthropic explained that most of the cost of agent and coding work comes from cache reads.
@@ -161,7 +161,7 @@ Quantium said a coding task that took 4 days and 38 prompts with Opus 5 came dow
 
 In Korea, Anthropic opened a Seoul office on June 17, 2026, and said Naver has adopted Claude Code across its entire engineering organization, with LG CNS and Samsung SDS also using Claude. Organizations already on Claude Code can switch to Opus 5.5 by changing the model setting alone. The announcement materials include no Korean-language performance figures.
 
-![Summary card for deciding whether to switch, by task](/assets/images/ai/claude-opus-55-release/07-items.webp)
+![Summary card for deciding whether to switch, by task](/assets/images/ai/claude-opus-55-release/en/07-items.webp)
 *Summary card for deciding whether to switch, by task — Source: self-rendered from Anthropic's and Vals AI's announcements*
 
 ## What to watch next
