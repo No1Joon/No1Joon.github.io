@@ -101,7 +101,7 @@ async function generateOG() {
               type: 'div',
               props: {
                 style: { position: 'absolute', top: 40, left: 40, fontSize: 24, color: '#00d2ff', fontWeight: 500 },
-                children: 'No1Joon.github.io',
+                children: 'cailmeal.com',
               },
             },
             {

@@ -16,8 +16,8 @@ const TEXT = '#fafafa';
 const MUTED = '#a1a1aa';
 const PRIMARY = '#f5b78f';
 
-const SITE_NAME = 'No1Joon';
-const SITE_SUFFIX = '.dev';
+const SITE_NAME = 'cailmeal';
+const SITE_SUFFIX = '.com';
 const SITE_DESC = '기술 스택, 아키텍처, 개발 경험을 기록하는 블로그';
 
 async function loadFont() {
