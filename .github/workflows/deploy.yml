@@ -87,7 +87,7 @@ jobs:
       INDEXNOW_KEY: 06b5574a68e4933546881fa33ceae910
       SITE: https://cailmeal.com
     steps:
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v8
         with:
           name: indexnow-urls
       - name: Submit changed URLs
