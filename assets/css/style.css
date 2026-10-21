@@ -376,6 +376,31 @@ nav a:hover { color: var(--text); }
   color: #e8e8ea;
 }
 
+/* 광고 자리 — 높이를 먼저 잡아 광고가 늦게 채워져도 읽던 줄이 튀지 않게 한다. 채울 광고가 없으면 자리째 접는다 */
+.ad-slot {
+  margin: 2.5rem 0;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.ad-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+.ad-slot:has(ins[data-ad-status="unfilled"]) { display: none; }
+.ad-preview {
+  flex: 1;
+  border: 1px dashed var(--border-strong);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+}
+
 .post-content h2 {
   font-size: 1.4rem;
   font-weight: 600;

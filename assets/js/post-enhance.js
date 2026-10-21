@@ -1,4 +1,4 @@
-/* 포스트 본문 후처리 — 코드 블록을 Mac 창 스타일로 감싸고 mermaid 다이어그램을 렌더한다.
+/* 포스트 본문 후처리 — 코드 블록을 Mac 창 스타일로 감싸고 mermaid 다이어그램을 렌더하고 광고 자리를 채운다.
  *
  * 부분 네비게이션(post-browser.html)이 본문을 교체한 뒤에도 다시 불러야 하므로
  * window.enhancePostContent 로 노출한다. 이미 처리한 노드는 건너뛰어 재호출이 안전하다.
@@ -51,6 +51,11 @@
       pre.parentNode.insertBefore(wrapper, pre);
       wrapper.appendChild(header);
       wrapper.appendChild(pre);
+    });
+
+    // 광고 자리 — 본문을 교체할 때마다 새로 들어온 빈 자리만 채운다 (이미 채운 자리를 다시 push 하면 애드센스가 오류를 낸다)
+    scope.querySelectorAll('ins.adsbygoogle:not([data-adsbygoogle-status])').forEach(function () {
+      try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch (e) { /* 광고 차단기 등 — 본문은 그대로 */ }
     });
 
     const pending = Array.from(scope.querySelectorAll('.mermaid:not([data-processed])'));

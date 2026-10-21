@@ -42,10 +42,15 @@ layout: default
       </div>
     </header>
 
+    {% comment %}
+      본문 중간 광고 — h2 가 3개 이상인 글에만, 두 번째 h2 바로 앞 한 자리. 문단 수로 세면 이미지·캡션 덩어리를 쪼갠다.
+    {% endcomment %}
+    {% assign h2_parts = content | split: '<h2' %}
     <div class="post-content">
-      {{ content }}
+      {% if h2_parts.size >= 4 %}{% for part in h2_parts %}{% if forloop.index0 == 2 %}{% include ad-slot.html kind="mid" %}{% endif %}{% unless forloop.first %}<h2{% endunless %}{{ part }}{% endfor %}{% else %}{{ content }}{% endif %}
     </div>
   </article>
+  {% include ad-slot.html kind="end" %}
 </div>
 
 <section class="post-browse">

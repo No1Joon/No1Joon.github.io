@@ -17,6 +17,7 @@ ko:
   resources_empty: 아직 자료가 없습니다.
   privacy: /privacy/
   privacy_label: 개인정보처리방침
+  ad_label: 광고
 en:
   home: /en/
   hero_title: Tech Stack Blog
@@ -35,3 +36,4 @@ en:
   resources_empty: No resources yet.
   privacy: /en/privacy/
   privacy_label: Privacy Policy
+  ad_label: Advertisement

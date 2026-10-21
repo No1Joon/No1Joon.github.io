@@ -1,0 +1,18 @@
+{% comment %}
+  광고 한 자리. kind = end(글 끝) | mid(본문 중간). production 은 adsense.client 가 있을 때만,
+  로컬 jekyll serve 는 자리 확인용 빈 상자를 그린다. #postView 안에 있어야 부분 네비게이션 뒤에도 다시 채워진다.
+{% endcomment %}
+{% assign ad_lang = page.lang | default: site.lang %}
+{% assign ad_slot = site.adsense.slot_end %}
+{% if include.kind == "mid" %}{% assign ad_slot = site.adsense.slot_mid %}{% endif %}
+{% if site.adsense.client and site.adsense.client != "" and jekyll.environment == "production" %}
+<aside class="ad-slot ad-slot--{{ include.kind }}" aria-label="{{ site.data.i18n[ad_lang].ad_label }}">
+  <span class="ad-label">{{ site.data.i18n[ad_lang].ad_label }}</span>
+  <ins class="adsbygoogle" style="display:block" data-ad-client="{{ site.adsense.client }}" data-ad-slot="{{ ad_slot }}" data-ad-format="auto" data-full-width-responsive="true"></ins>
+</aside>
+{% elsif jekyll.environment != "production" %}
+<aside class="ad-slot ad-slot--{{ include.kind }} ad-slot--preview" aria-label="{{ site.data.i18n[ad_lang].ad_label }}">
+  <span class="ad-label">{{ site.data.i18n[ad_lang].ad_label }}</span>
+  <div class="ad-preview">ad · {{ include.kind }}</div>
+</aside>
+{% endif %}

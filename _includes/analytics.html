@@ -1,6 +1,7 @@
 {% comment %}
   GA4. _config.yml 의 google_analytics 에 측정 ID(G-XXXXXXXXXX)가 있을 때만,
   그리고 production 빌드에서만 나간다 — 로컬 jekyll serve 는 development 라 집계되지 않는다.
+  애드센스 로더도 같은 조건(adsense.client)으로 붙는다.
 {% endcomment %}
 {% if site.google_analytics and site.google_analytics != "" and jekyll.environment == "production" %}
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
@@ -10,4 +11,7 @@
   gtag('js', new Date());
   gtag('config', '{{ site.google_analytics }}');
 </script>
+{% endif %}
+{% if site.adsense.client and site.adsense.client != "" and jekyll.environment == "production" %}
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.adsense.client }}" crossorigin="anonymous"></script>
 {% endif %}
