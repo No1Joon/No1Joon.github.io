@@ -214,7 +214,7 @@ sitemap: false
   <div class="block">
     <div class="h">성과</div>
     <ul>
-      <li>패션 리테일 매장 <b>PoC 도입</b> 성사</li>
+      <li>패션 리테일 매장 <b>PoC 도입</b> 성사 - 점주와 소통하며 매장 CCTV 영상을 받아 전용 변환 앱의 좌표 기반 클릭 자동화로 mp4 변환, 업로드해 모델을 실행하고 점주 대신 대시보드를 구성해 팀에 공유</li>
       <li>영어, 한국어, 일본어, 인도네시아어 <b>4개 언어 i18n</b> 시스템 설계 및 레거시 하드코딩 리팩토링, 언어 스위처, 날짜 로케일 처리 (번역은 영어, 한국어 담당)</li>
       <li>분석 데이터 <b>export API</b>로 수작업 추출을 대체해 외부 AI 모델 자동화 워크플로 기반 마련</li>
     </ul>
@@ -255,7 +255,7 @@ sitemap: false
 <div class="page proj">
   <div class="ttl"><span class="no">03</span><h2>LLM Insight Agent</h2><span class="kind">Company</span></div>
   <div class="lead">대시보드 차트, 지표를 근거로 매장 개선 액션을 생성하는 <b>LLM 기능</b> - Vertex AI Gemini 통합</div>
-  <div class="stack"><div class="row"><span class="k">Stack</span><span>Google Cloud Vertex AI, Gemini 2.5 Flash, Prompt Engineering</span></div><div class="row"><span class="k">파이프라인</span><span>uiData(JSON) 수집, LLM 친화 텍스트 변환(차트 설명, 표 포맷), 비즈니스 컨텍스트, 매장주 목표 결합 프롬프트, 추론 순으로 처리</span></div></div>
+  <div class="stack"><div class="row"><span class="k">Stack</span><span>Google Cloud Vertex AI, Gemini 2.5 Flash, Prompt Engineering</span></div><div class="row"><span class="k">파이프라인</span><span>uiData(JSON) 수집, LLM 입력용 텍스트 변환(차트 설명, 표 포맷), 비즈니스 컨텍스트, 매장주 목표 결합 프롬프트, 추론 순으로 처리</span></div></div>
 
   <div class="block">
     <div class="h">주요 기여</div>
@@ -424,7 +424,7 @@ sitemap: false
     <div class="h">성과</div>
     <ul>
       <li>담당 수요기업 <b>중간, 최종 감리 통과</b>, 반복 문서 작업을 판단 기준과 예시가 담긴 가이드라인으로 표준화해 <b>Ops팀에 이관</b></li>
-      <li><b>AI 바우처 공급기업 Pool 등록</b> - 자사 AI 솔루션 3종(T-IOD 객체검출, T-NLPT 자연어, T-ASR 음성인식)을 정의, 문서화해 등재, 2023 등록 후 2024, 2025, 2026 갱신</li>
+      <li><b>AI 바우처 공급기업 Pool 등록</b> - 자사 AI 솔루션 3종(T-IOD 객체검출, T-NLPT 자연어, T-ASR 음성인식)을 정의, 문서화해 2023년 등재하고 2024년, 2025년, 2026년 갱신</li>
     </ul>
   </div>
 </div>
@@ -551,31 +551,33 @@ sitemap: false
 <div class="page proj">
   <div class="ttl"><span class="no">11</span><h2>try-ticketing - 티켓 예매, 수강신청 연습 웹 서비스</h2><span class="kind">Personal / 웹 공개 운영</span></div>
   <div class="lead">티켓 예매, 수강신청의 <b>좌석 선점과 과목 신청을 연습</b>하는 웹 서비스 (tryticketing.com)</div>
-  <div class="stack"><div class="row"><span class="k">Stack</span><span>Go 1.27, chi, pgx, sqlc, go-redis / React 19, TypeScript, Vite, Tailwind 4, TanStack Query, Redux Toolkit, Jotai / PostgreSQL 18, Redis 8, Caddy, Docker Compose, AWS Lightsail 서울 단일 VM, Cloudflare DNS, GA4, Prometheus</span></div><div class="row"><span class="k">상태</span><span>2026.09 웹 공개, S3 자동 백업, AMP 중앙 감시와 Discord 알림</span></div><div class="row"><span class="k">링크</span><span><a href="https://tryticketing.com">tryticketing.com</a></span></div></div>
+  <div class="stack"><div class="row"><span class="k">Stack</span><span>Go 1.27, chi, pgx, sqlc, go-redis / React 19, TypeScript, Vite, Tailwind 4, TanStack Query, Redux Toolkit, Jotai / PostgreSQL 18, Redis 8, Caddy, Docker Compose, AWS Lightsail 서울 단일 VM, Cloudflare DNS, GA4, Prometheus 형식 계측</span></div><div class="row"><span class="k">상태</span><span>2026.09 웹 공개, S3 자동 백업, AMP 중앙 감시와 Discord 알림</span></div><div class="row"><span class="k">링크</span><span><a href="https://tryticketing.com">tryticketing.com</a></span></div></div>
 
   <div class="block">
     <div class="h">주요 기여</div>
     <ul>
-      <li><b>경합 판정을 Redis Lua 스크립트를 한 번 실행해 처리</b> - 좌석 선점, 15초 보류, 정원, 마감, 대기열 진입을 서버가 원자적으로 결정하고 클라이언트는 폴링만 함 - Redis 장애 시 SQL로 대체하지 않고 503을 내 저장 원본이 갈라지는 상황을 피함</li>
-      <li><b>영구 데이터와 단기 상태 분리</b> - 커뮤니티, 참여자, 세션은 PostgreSQL, 진행 중 연습, 당일 최고 기록, 24시간 공유 링크는 Redis - 세션 캐시에 닉네임 대신 참여자 ID와 최초 만료만 넣어 이름 변경, 만료 연장 문제를 피하면서 연습 폴링의 SQL 접근을 없앰</li>
-      <li><b>혼잡 제어를 명시적으로 설계</b> - 공통 FIFO 대기열, 활성 참여 250개 한도, 3초 상태 조회, 30초 heartbeat 만료로 입장 순서와 이탈자 정리를 관리 - 티켓, 수강 참여를 분리하되 두 참여가 공통 한도 두 자리를 쓰게 해 우회를 막음</li>
+      <li><b>Redis Lua 스크립트를 한 번 실행해 경합을 판정</b> - 좌석 선점, 최대 15초 보류, 정원, 마감, 대기열 진입을 서버가 원자적으로 결정하고 클라이언트는 실시간 상태를 폴링으로 동기화 - Redis 장애 시 SQL로 대체하지 않고 503을 내 저장 원본이 갈라지는 상황을 피함</li>
+      <li><b>영구 데이터와 단기 상태 분리</b> - 커뮤니티, 참여자, 세션은 PostgreSQL, 진행 중 연습, 당일 최고 기록, 24시간 공유 링크는 Redis - 세션 캐시에 닉네임 대신 참여자 ID와 최초 만료만 넣어 이름 변경, 만료 연장 문제를 피하면서 세션 캐시 적중 시 연습 폴링의 SQL 접근을 없앰</li>
+      <li><b>혼잡 제어를 명시적으로 설계</b> - 공통 FIFO 대기열, 활성 참여 250개 한도, 대기 중 3초 상태 조회, 30초 heartbeat 만료로 입장 순서와 이탈자 정리를 관리 - 티켓, 수강 참여를 분리하되 두 참여가 공통 한도 두 자리를 쓰게 해 우회를 막음</li>
       <li><b>검색 가능한 공개 HTML과 개인 상태 분리</b> - 공개 소개는 빌드 시 프리렌더, 게시글은 Go에서 이스케이프해 HTML과 초기 JSON으로 렌더, 개인 진행과 공유 화면에는 noindex를 적용함</li>
     </ul>
   </div>
 
   <div class="shots arch">
-    <img src="/assets/portfolio/tt_arch.webp" style="max-height:68mm">
-    <div class="cap">현재 구성 - Lightsail 단일 VM에 Caddy, React, Go API, Redis, PostgreSQL을 Docker Compose로 배치, S3 백업과 외부 감시는 VM 밖에 구성</div>
-    <img src="/assets/portfolio/tt_home.webp" style="max-height:38mm">
-    <div class="cap">홈 - 서버 시각과 마감 카운트다운을 보여 주고 닉네임만 입력하면 연습이 시작됨</div>
+    <img src="/assets/portfolio/tt_arch.webp" style="max-height:58mm">
+    <div class="cap">현재 구성 - Lightsail 단일 VM에 Caddy, React, Go API, Redis, PostgreSQL을 Docker Compose로 배치, 백업 저장소(S3)와 AMP 중앙 감시는 VM 밖에 구성</div>
+  </div>
+  <div class="shots pair" style="justify-content:center">
+    <figure><img src="/assets/portfolio/tt_ticket.webp" style="height:42mm"><div class="cap">티켓 예매 - 좌석을 잡으면 최대 15초 보유 카운트다운</div></figure>
+    <figure><img src="/assets/portfolio/tt_course.webp" style="height:42mm"><div class="cap">수강신청 - 과목마다 보안문자를 입력해 신청</div></figure>
   </div>
 
   <div class="block">
     <div class="h">성과 / 지표</div>
     <ul>
       <li><b>2026.09 웹 공개 운영 시작</b> - GA4 동의 기반 방문 통계, S3 자동 백업, 외부 감시 구성</li>
-      <li><b>k6 격리 부하 실험 250 VU에서 조회 p95 티켓 330ms, 수강 171ms, 4회 실행 요청 42,255건에 HTTP 오류 0</b> (2026.09.14, 운영 VM 안 자원 제한 컨테이너 기준)</li>
-      <li>응답 시간 히스토그램과 요청, 거부 카운터를 Prometheus로 계측해 부하 실험 결과를 수치로 판단</li>
+      <li><b>k6 격리 부하 실험 250 VU(HTTP/1.1)에서 조회 p95 티켓 330ms, 수강 171ms, 25~250 VU에서 4회 실행한 총 42,255건의 요청에서 HTTP 오류 0건</b> (2026.09.14, 운영 VM 안 자원 제한 컨테이너 기준)</li>
+      <li>응답 시간 히스토그램과 요청, 거부 카운터를 Prometheus 형식으로 계측</li>
     </ul>
   </div>
 </div>
@@ -587,19 +589,23 @@ sitemap: false
   <div class="stack">
     <div class="row"><span class="k">대시보드</span><span>Go, React, TypeScript, Vite, GA4 Data API, App Store, Google Play 통계, npm 다운로드, Mac 로그인 서비스(LaunchAgent)</span></div>
     <div class="row"><span class="k">중앙 감시</span><span>AWS Lightsail VM 1대, Docker, SQLite, 비공개 S3 백업, HTTPS 응답 감시</span></div>
-    <div class="row"><span class="k">SDK</span><span>공통 Go 오류 수집 SDK - 비공개 모듈로 버전을 발행하고 각 서비스 서버가 고정 버전으로 vendor 적용</span></div>
+    <div class="row"><span class="k">SDK</span><span>공통 Go 오류 수집 SDK - 비공개 모듈로 버전을 발행해 teampler, try-ticketing, 내깜냥이 고정 버전으로 vendor 적용, CaliMeal은 별도 Node SDK</span></div>
   </div>
 
   <div class="shots wide">
     <img src="/assets/portfolio/amp_arch.webp">
   </div>
+  <div class="shots duo" style="margin-top:8px">
+    <img src="/assets/portfolio/amp_dash.webp">
+    <img src="/assets/portfolio/amp_rca.webp">
+  </div>
 
   <div class="block">
     <div class="h">설계 결정</div>
     <ul>
-      <li><b>관리형 DB와 로드밸런서 없이 VM 한 대와 SQLite로 중앙 수집</b> - 수집, 조회와 응답 감시 프로세스를 나누고 DB마다 쓰기는 한 프로세스에서만 처리해, 개인 서비스 규모에 맞는 고정 비용으로 운영</li>
-      <li><b>서비스 DB를 직접 읽지 않는 회원 집계</b> - 서비스마다 전용 생산자가 회원 스냅샷 JSON을 중앙으로 보내고, 대시보드는 방문자와 가입 회원을 별도 지표로 표시</li>
-      <li><b>오류 수집을 공통 SDK로 한 번만 구현</b> - 서비스 서버는 SDK를 고정 버전으로 vendor 해 인증 없이 오프라인 빌드되도록 하고, 설정이 잘못되면 수집만 꺼지고 서비스 응답은 그대로 유지</li>
+      <li><b>관리형 DB와 로드밸런서 없이 VM 한 대와 SQLite로 중앙 수집</b> - collector 안에서 수집, 조회, 관리 리스너를 나누고 응답 감시는 별도 probe 프로세스로 실행, DB별 쓰기를 직렬화</li>
+      <li><b>서비스 DB를 직접 읽지 않는 회원 집계</b> - 전용 생산자가 만든 회원 JSON만 읽음, CaliMeal과 teampler는 중앙으로 보내고 내깜냥은 Mac 로컬 JSON을 사용, 방문자와 가입 회원은 별도 지표로 표시</li>
+      <li><b>오류 수집 코어를 Go 서버와 Lambda가 공유</b> - 앱별 adapter와 transport를 분리하고, SDK를 고정 버전으로 저장소에 포함해 다운로드 인증 없이 빌드되도록 하며, 설정이 잘못되면 수집만 꺼지도록 경계를 둠</li>
       <li><b>다운로드를 사용자 수로 표시하지 않음</b> - 앱 다운로드, 웹 방문자, 가입 회원을 서로 다른 지표로 나눠 집계</li>
     </ul>
   </div>
@@ -660,10 +666,10 @@ sitemap: false
   <div class="block">
     <div class="h">설계 결정</div>
     <ul>
-      <li><b>게스트로 시작하고 계정 연결 시 같은 UID 유지</b> - 가입 없이 바로 연습하고, Apple, Google 계정을 연결하면 기록을 그대로 이어받음 - 이미 다른 계정에 연결된 자격증명은 임의로 병합하지 않음</li>
-      <li><b>소유자 판단을 서버의 토큰 검증으로 한정</b> - 인증 제공자 ID 토큰의 서명, 발급자, 프로젝트, 만료를 서버가 검증한 뒤 자체 세션을 발급하고, 클라이언트가 보낸 사용자 ID는 소유자 근거로 쓰지 않음</li>
+      <li><b>게스트로 시작하고 계정 연결 시 같은 UID 유지</b> - 가입 없이 바로 연습하고, Apple, Google 계정을 현재 게스트 계정에 연결해 기존 UID와 기록 소유권을 보존 - 이미 다른 계정에 연결된 자격증명은 임의로 병합하지 않음</li>
+      <li><b>소유자 판단을 서버의 토큰 검증으로 한정</b> - Firebase ID 토큰의 서명, 발급자, 프로젝트, 만료를 서버가 검증한 뒤 자체 세션을 발급하고, 클라이언트가 보낸 사용자 ID는 소유자 근거로 쓰지 않음</li>
       <li><b>결과 저장을 재시도해도 안전하도록 설계</b> - 상세 원본은 S3 조건부 생성 뒤 DynamoDB에 요약을 기록, 실패 시 같은 ID와 내용으로 다시 보내고, 서버 수신 확인 전에는 기기의 대기 기록을 지우지 않음</li>
-      <li><b>Lambda와 VM이 같은 HTTP 핸들러를 공유</b> - 응답 지연이 커지면 데이터 이관 없이 실행 환경만 교체하도록 구성, 상시 워밍 호출은 쓰지 않음</li>
+      <li><b>Lambda와 VM이 같은 HTTP 핸들러와 저장소를 공유</b> - 응답 지연이 커져 VM으로 옮길 때 저장 데이터 이관이 필요 없도록 구성, 상시 워밍 호출은 쓰지 않음</li>
     </ul>
   </div>
 
@@ -693,24 +699,25 @@ sitemap: false
     <div class="row"><span class="k">링크</span><span><a href="https://apps.apple.com/kr/app/id6807894387">App Store (iOS, macOS)</a></span></div>
   </div>
 
-  <div class="shots wide">
-    <img src="/assets/portfolio/qg_hero.webp">
+  <div class="shots pair" style="justify-content:center">
+    <figure><img src="/assets/portfolio/qg_mac.webp"><div class="cap">macOS - 문장을 선택하면 바로 번역</div></figure>
+    <figure><img src="/assets/portfolio/qg_ios.webp"><div class="cap">iOS - 선택 끝 칩을 눌러 번역</div></figure>
   </div>
 
   <div class="block">
     <div class="h">설계 결정</div>
     <ul>
-      <li><b>번역 엔진을 온디바이스로 한정</b> - 번역 API는 키, 과금, 서버, 프라이버시 비용이 함께 따라오므로, OS가 제공하는 비 UI 번역 세션만 쓰고 최소 지원 버전을 올리는 쪽을 택함 - 네트워크 호출 0건, 확장 권한 1개, host_permissions 없음으로 끝나 처리방침과 심사 프라이버시 라벨이 수집 항목 없음으로 정리됨</li>
-      <li><b>진행률을 추정하지 않고 재조회로 판정</b> - 언어팩 설치 호출이 다운로드 완료가 아니라 시스템 시트가 닫힐 때도 반환하고 취소를 알리지 않으며 진행률을 주지 않음 - 추정 진행 막대를 결함으로 규정하고, 시트가 닫힌 뒤 설치 여부를 다시 조회하는 방식으로 바꿔 멈춘 다운로드가 진행 중으로 보이는 화면을 없앰</li>
+      <li><b>번역 엔진을 온디바이스로 한정</b> - 번역 API에는 API 키 관리, 과금, 서버 운영, 개인정보 처리 부담이 따르므로, OS가 제공하는 번역 세션만 쓰고 최소 지원 버전을 올리는 쪽을 택함 - 자체 번역 요청을 외부로 보내지 않고 host_permissions 없이 동작해 심사 프라이버시 라벨이 수집 항목 없음으로 정리됨</li>
+      <li><b>진행률을 추정하지 않고 재조회로 판정</b> - 언어팩 설치 호출이 다운로드 완료가 아니라 시스템 시트가 닫힐 때도 반환하고 취소를 알리지 않으며 진행률을 주지 않음 - 추정 진행 막대를 결함으로 규정하고, 시트가 닫힌 뒤 설치 여부를 다시 조회하는 방식으로 바꿔 임의 백분율 대신 실제 설치 상태로 판정</li>
       <li><b>플랫폼별 트리거를 나눠 시스템 UI와 충돌하지 않도록 분리</b> - iOS는 선택 제스처를 시스템 콜아웃이 먼저 가져가고 그 위치를 페이지가 알 수 없으므로, macOS는 선택 직후 번역하고 iOS는 선택 끝에 정렬된 칩을 눌러 번역하도록 분리함</li>
-      <li><b>대상 언어를 단일 값으로 공유하고 요청마다 재조회</b> - 앱이 받은 언어팩과 확장이 번역하는 언어가 어긋나면 지원하지만 동작하지 않는 상태가 되며, 앱에서 확장 워커로 변경을 알릴 경로가 없음 - 대상 언어만 App Group에 단일 값으로 두고 번역 요청마다 다시 읽으며, 캐시 키에 대상 언어를 포함하고 성공 응답만 캐시함</li>
+      <li><b>대상 언어를 단일 값으로 공유하고 요청마다 재조회</b> - 앱이 받은 언어팩과 확장이 번역하는 언어가 어긋나면 지원 언어인데도 번역이 동작하지 않는 상태가 되며, 앱에서 확장 워커로 변경을 알릴 경로가 없음 - 대상 언어만 App Group에 단일 값으로 두고 번역 때마다 현재 설정을 확인하며, 성공 응답만 캐시함</li>
     </ul>
   </div>
 
   <div class="block">
     <div class="h">성과 / 지표</div>
     <ul>
-      <li><b>iOS, macOS 양쪽 App Store 정식 출시</b> - 앱 레코드 한 개로 두 플랫폼에 내고 iOS 1.3, macOS 1.2까지 업데이트 출시 - <b>1.0~1.2는 모두 첫 제출에 반려 없이 승인</b></li>
+      <li><b>iOS, macOS 양쪽 App Store 정식 출시</b> - 앱 레코드 한 개로 두 플랫폼에 내고 iOS 1.4, macOS 1.2까지 업데이트 출시 - <b>1.0~1.2는 모두 첫 제출에 반려 없이 승인</b></li>
       <li><b>릴리스 절차와 저장소 점검을 스크립트로 강제</b> - 아카이브부터 플랫폼, 버전, 번들, 수출규정 대조와 업로드까지 CLI로 처리하고 워킹 트리가 정리되지 않으면 중단, 팀 ID와 홈 경로가 공개 저장소에 노출되지 않도록 테스트 단계에서 검사하고 차단</li>
     </ul>
   </div>
@@ -735,10 +742,10 @@ sitemap: false
   <div class="block">
     <div class="h">설계 결정</div>
     <ul>
-      <li><b>네트워크 권한을 조회 XPC 서비스에만 부여</b> - 메뉴바 앱은 사용자가 허용한 폴더 접근만 갖고 폴더 접근 권한(security-scoped bookmark)을 XPC 서비스로 넘김 - XPC 서비스가 앱 번들 안의 공식 Codex 런타임을 stdio JSON-RPC로 실행해 기존 로그인으로 공식 한도를 조회</li>
-      <li><b>응답은 한도 필드만 허용 목록으로 반환</b> - 런타임 응답에서 사용 비율, 기간, 리셋 시각만 골라 앱으로 넘기고 계정 식별자와 원문 오류는 싣지 않음 - 분석, 텔레메트리, 플러그인은 조회 프로세스에서만 끄고 사용자의 설정 파일은 고치지 않음</li>
-      <li><b>기존 Claude Code 상태줄을 보존하는 연결과 해제</b> - 설치 때 settings를 백업하고 수신 helper가 입력을 원래 상태줄 명령에 그대로 넘기며 한도 값만 App Group에 잠금과 원자적 쓰기로 저장 - 해제 때는 관리 대상인지 확인한 뒤 statusLine만 되돌려 이후의 다른 설정 변경을 보존</li>
-      <li><b>실패와 오래된 데이터를 구분</b> - 기본 60초 간격으로 조회를 시도하고 실패하면 재시도 간격을 2분에서 15분까지 늘리며, 마지막 성공값을 유지한 채 실패, 대기, 오래됨, 만료 상태를 나눠 표시</li>
+      <li><b>네트워크 권한을 조회 XPC 서비스에만 부여</b> - 메뉴바 앱은 네트워크 권한 없이 사용자 선택 폴더와 App Group을 사용하고 폴더 접근 권한(security-scoped bookmark)을 XPC 서비스로 넘김 - XPC 서비스가 앱 번들 안의 공식 Codex 런타임을 stdio JSON-RPC로 실행해 기존 로그인으로 공식 한도를 조회</li>
+      <li><b>한도 데이터를 허용 목록으로 추려 반환</b> - 런타임 응답에서 사용 비율, 기간, 리셋 시각과 조회 시각, 고정 오류 분류만 앱으로 넘기고 계정 식별자와 원문 오류는 싣지 않음 - 분석, 텔레메트리, 플러그인은 조회 프로세스에서만 끄고 사용자의 설정 파일은 고치지 않음</li>
+      <li><b>기존 Claude Code 상태줄을 보존하는 연결과 해제</b> - 설치 때 settings를 백업하고 수신 helper가 입력을 원래 상태줄 명령에 그대로 넘기며 한도와 수신 시각, 대기 상태만 App Group에 잠금과 원자적 쓰기로 저장 - 해제 때는 관리 대상인지 확인한 뒤 statusLine만 되돌려 이후의 다른 설정 변경을 보존</li>
+      <li><b>실패와 오래된 데이터를 구분</b> - Codex는 기본 60초 간격으로 조회를 시도하고 일반 오류는 재시도 간격을 2분에서 15분까지 늘리며, 마지막 성공값을 유지한 채 실패, 대기, 오래됨, 만료 상태를 나눠 표시</li>
     </ul>
   </div>
 
@@ -760,15 +767,16 @@ sitemap: false
   <div class="block">
     <div class="h">설계 결정</div>
     <ul>
-      <li><b>레이아웃은 ELK에 위임하고 좌표계 문제를 직접 해결</b> - ELK가 간선 좌표를 간선이 선언된 노드 기준 상대좌표로 반환해, 그룹을 넘나드는 간선을 양 끝점의 <b>최소공통조상 컨테이너</b>에 매달지 않으면 의도하지 않은 위치에 그려짐 - 조상 체인을 구성해 LCA를 계산해 연결함</li>
-      <li><b>해석 안 되는 아이콘은 대체하지 않고 실패하도록 처리</b> - 해석 안 되는 타입은 비슷한 후보를 제시하며 종료 - 에이전트가 오류 메시지를 읽고 스스로 고치는 것을 전제로 설계함</li>
+      <li><b>레이아웃은 ELK에 위임하고 좌표계 문제를 직접 해결</b> - ELK가 간선 좌표를 간선이 선언된 노드 기준 상대좌표로 반환해, 그룹을 넘나드는 간선을 양 끝점의 <b>최소 공통 조상 컨테이너</b>에 매달지 않으면 의도하지 않은 위치에 그려짐 - 조상 체인을 구성해 LCA를 계산해 연결함</li>
+      <li><b>해석 안 되는 아이콘은 대체하지 않고 실패하도록 처리</b> - 해당 타입은 비슷한 후보를 제시하며 종료 - 에이전트가 오류 메시지를 읽고 스스로 고치는 것을 전제로 설계함</li>
       <li><b>입력 두 형태를 단일 IR로 정규화</b> - 사람이 쓰는 중첩형과 생성기가 쓰는 평면형을 함께 받음 - 평면형은 재귀가 없어 LLM이 한 번에 생성하기 쉬움 - 스키마를 zod 정의에서 JSON Schema로 파생해 문서와 스키마가 어긋나지 않도록 함</li>
-      <li><b>에이전트 왕복을 줄이려고 CLI 명령과 옵션을 네 가지로 한정</b> - render, types, schema, --check만 두고, types가 그 다이어그램에 필요한 아이콘 슬러그를 한 번에 반환해 아이콘마다 조회를 반복하지 않도록 함 - 렌더 없이 검증만 하는 --check와 stdin 입력으로 에이전트가 제출 전에 스스로 확인하도록 함</li>
+      <li><b>에이전트의 반복 조회를 줄이는 CLI 설계</b> - 기능 명령을 render, serve, types, schema 네 가지로 두고, types가 여러 검색어의 아이콘 슬러그를 한 번에 반환해 아이콘마다 조회를 반복하지 않도록 함 - 렌더 없이 검증만 하는 --check와 stdin 입력으로 에이전트가 제출 전에 스스로 확인하도록 함</li>
     </ul>
   </div>
 
-  <div class="shots wide">
-    <img src="/assets/portfolio/archdraw_render.webp">
+  <div class="shots pair" style="justify-content:center">
+    <figure><img src="/assets/portfolio/archdraw_render.webp"><div class="cap">render - YAML 한 장을 PNG로 렌더</div></figure>
+    <figure><img src="/assets/portfolio/archdraw_viewer.webp"><div class="cap">오프라인 뷰어 - 시나리오를 고르면 끊긴 경로가 흐려짐</div></figure>
   </div>
 
   <div class="block">
@@ -824,7 +832,7 @@ sitemap: false
 
   <div class="shots duo">
     <img src="/assets/portfolio/omu_solar.webp">
-    <img src="/assets/portfolio/omu_atlas.webp">
+    <img src="/assets/portfolio/omu_deep.webp">
   </div>
 
   <div class="block">
@@ -876,7 +884,7 @@ sitemap: false
       <li><b>환각 방지 절차를 파이프라인 규칙으로 강제</b> - 작성 전 WebSearch 교차 검증 최소 1회 필수, 논문, 공식 자료는 원문 인용 후 출처를 프론트매터에 구조화, 과학 주제는 과장 여부를 짚는 균형 섹션을 필수 항목으로 지정</li>
       <li><b>포맷 변환 자동화</b> - 네이버 SmartEditor가 평문 붙여넣기로 서식을 받지 못하는 제약을, md를 리치 HTML로 렌더해 클립보드로 옮기는 방식으로 우회 - 굵게, 줄바꿈, 구분선, 표 유지</li>
       <li><b>MCP 서버 개발, 운영</b> - 글 검토와 아이디어 탐색을 ChatGPT, Gemini 웹 채팅에 위임하는 원격 MCP 서버를 Cloud Run에 배포, 도구 6종(읽기 4, 쓰기 2)과 OAuth 2.1 인가 서버(동적 클라이언트 등록, PKCE, Google 로그인 허용 계정)를 직접 구현, 작업 완료는 Pub/Sub로 알림</li>
-      <li><b>스킬 상속 구조 설계</b> - 공통 문체, 표기 규칙을 상위 스킬에 두고 포스팅 스킬 전체가 상속, 주제 버티컬은 형식 규칙을 빌려 쓰되 폴더, 이미지 정책만 재정의</li>
+      <li><b>스킬 상속 구조 설계</b> - 공통 문체, 표기 규칙을 상위 스킬에 두고 포스팅 스킬 전체가 상속, 주제별 스킬은 형식 규칙을 공유하되 폴더, 이미지 정책만 재정의</li>
     </ul>
   </div>
 
@@ -984,7 +992,7 @@ sitemap: false
   <div class="block">
     <div class="h">주요 기여 / 성과</div>
     <ul>
-      <li>금연구역 좌표에 <b>K-means를 적용해 중심 좌표를 산출</b>해 인근의 부스 설치 후보지를 선정하고, 프로젝트에서 설정한 <b>귀무가설</b>로 입지 타당성을 함께 판단, <b>서울시 약 500개소의 흡연부스 입지 도출</b></li>
+      <li>금연구역 좌표에 <b>K-means를 적용해 중심 좌표를 산출</b>한 뒤 인근의 부스 설치 후보지를 선정하고, 프로젝트에서 설정한 <b>귀무가설</b>로 입지 타당성을 함께 판단, <b>서울시 약 500개소의 흡연부스 입지 도출</b></li>
       <li>산출 좌표가 <b>설치 불가 지점(산, 특수시설 등)</b>일 때를 대비해 자체 정의 알고리즘으로 대체 입지를 선정하도록 설계</li>
       <li>한국지능정보사회진흥원(NIA) <b>우수과제 선정</b> (제2023-4237호, 2023.12.05)</li>
     </ul>
